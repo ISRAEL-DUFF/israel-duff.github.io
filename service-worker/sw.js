@@ -12,10 +12,14 @@ const CACHE_NAME = 'service-worker-cache-v1'
 const urlsToCache = [
   './',
   './test.html',
-  './dijkstra.html',
   './styles/alert.css',
   './styles/flexbox.css',
-  './scripts/alert.js'
+  './scripts/alert.js',
+
+  './scripts/heap.js',
+  './scripts/graph.js',
+  './scripts/dijkstra.js',
+  './dijkstra.html'
 ]
 
 // the install event
