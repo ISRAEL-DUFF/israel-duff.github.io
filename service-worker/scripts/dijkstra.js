@@ -2,8 +2,8 @@
 // Prim-Dijkstra's Algorithm
 // Copyright (C) Kenji Ikeda 2015
 //
-document.write("<script type='text/javascript' src='./graph.js'></script>");
-document.write("<script type='text/javascript' src='./heap.js'></script>");
+//document.write("<script type='text/javascript' src='./scripts/graph.js'></script>");
+//document.write("<script type='text/javascript' src='./scripts/heap.js'></script>");
 
 //
 //	Dijkstra's Algorithm
@@ -58,7 +58,7 @@ function Dijkstra(canvas,myfont,isdigraph,nodes,edges,isPrim) {
 		}
 		node.drawNode(context,node);
 		printLabel(context,node);
-	
+
 		// local function
 		function printLabel(context,node) {	// print Label
 			var s;
@@ -95,8 +95,8 @@ function Dijkstra(canvas,myfont,isdigraph,nodes,edges,isPrim) {
 			}
 		}
 		this.labelPos = {dx:x0[k], dy: y0[k]};
-	
-		// local function	
+
+		// local function
 		function weight(v0,x1,y1) {// weight of direction (x1, y1)
 			var w = 0;
 			var z;
@@ -120,7 +120,7 @@ function Dijkstra(canvas,myfont,isdigraph,nodes,edges,isPrim) {
 			return w;
 		}	// End of def weight
 	}
-	
+
 	//
 	// Edge extension for Dijkstra's Algorithm	'
 	//
@@ -132,7 +132,7 @@ function Dijkstra(canvas,myfont,isdigraph,nodes,edges,isPrim) {
 	Edge.prototype.paint = function(context,edge) {	// override Edge.paint
 		var istat = Nodes[edge.initv].stat;
 		var tstat = Nodes[edge.termv].stat;
-	
+
 		context.strokeStyle = 'black';
 		context.lineWidth = 1;
 		if (edge.initv == Nodes[edge.termv].prev) {
@@ -153,7 +153,7 @@ function Dijkstra(canvas,myfont,isdigraph,nodes,edges,isPrim) {
 		}
 		edge.drawEdge(context,edge);
 		printLength(context,edge);
-	
+
 		// local function
 		function printLength(context,edge) {
 			var w = context.measureText(""+edge.length).width;
@@ -175,7 +175,7 @@ function Dijkstra(canvas,myfont,isdigraph,nodes,edges,isPrim) {
 		var d2 = Nodes[j].dist;
 		return (d1-d2>0);
 	}
-	
+
 	function step1() {	// initialize labels, stat, and u
 		for (var i=0; i<n; i++) {
 			Nodes[i].dist=-1;
@@ -186,7 +186,7 @@ function Dijkstra(canvas,myfont,isdigraph,nodes,edges,isPrim) {
 		Nodes[u].dist=0;
 		Nodes[u].stat=STAT.sel;
 	}
-	
+
 	function step2() {	// replace Labels
 		var j;
 
@@ -266,7 +266,7 @@ function Dijkstra(canvas,myfont,isdigraph,nodes,edges,isPrim) {
 		var context = canvas.getContext("2d");
 		var w = canvas.width;
 		var h = canvas.height;
-	
+
 		context.clearRect(0,0,w,h);
 		context.strokeStyle = 'black';
 		context.fillStyle = 'black';

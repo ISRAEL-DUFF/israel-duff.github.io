@@ -42,14 +42,14 @@ self.addEventListener('install', function(event) {
 // cache and return requests
 self.addEventListener('fetch', function(event) {
     event.respondWith(
-      caches.match(event.request)
-  ).then((response) => {
-    // chache hit - return the response
-    console.log('cache hit')
-    if(response) {
-      return response
-    } else { // cache mis - fetch from server
-      return fetch(event.request)
-    }
-  })
+      caches.match(event.request).then((response) => {
+        // chache hit - return the response
+        console.log('cache hit')
+        if(response) {
+          return response
+        } else { // cache mis - fetch from server
+          return fetch(event.request)
+        }
+      })
+  )
 })
