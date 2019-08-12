@@ -40,6 +40,7 @@ self.addEventListener('request', function(event) {
       caches.match(event.request)
   ).then((response) => {
     // chache hit - return the response
+    console.log('cache hit')
     if(response) {
       return response
     } else { // cache mis - fetch from server
