@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+		<title>
+			Custom alert box
+		</title>
+
+		<link href="styles/alert.css" rel="stylesheet">
+		<link href="styles/flexbox.css" rel="stylesheet">
+
+		<script src="scripts/alert.js"></script>
+
+		<script>
+			let form1 = `<form action="" method="post">
+				<div class="form-group">
+					<input type="text" placeholder="Email" class = 'alert-text-box pss'>
+				</div>
+				<div class="form-group">
+					<input type="password" placeholder="Password" class = 'alert-text-box pss'>
+				</div>
+				<input type="submit" value="LOGIN">
+			</form>`;
+
+			let form2 = `<form action="" method="post">
+				<div class="form-group">
+					<input type="text" placeholder="Email" class = 'alert-text-box pss'>
+				</div>
+				<div class="form-group">
+					<input type="password" placeholder="Password" class = 'alert-text-box pss'>
+				</div>
+				<div class="form-group">
+					<input type="password" placeholder="Confirm Password" class = 'alert-text-box pss'>
+				</div>
+				<input type="submit" value="CREATE ACCOUNT">
+			</form>`
+
+			//create a new object of Alert
+			var Alert = new CustomAlert(
+				`<div id ='t'>
+					<button onclick='setContent(1)' id='login' class="tab tab-active">Sign in</button>
+					<button onclick='setContent(2)' id='reg' class="tab tab-inactive">Register</button>
+				</div>`,
+
+				form1,
+			" "
+			);
+
+			function setContent(id) {
+				if(id === 1) {
+					Alert.set_body(form1);
+					document.getElementById("reg").classList.remove("tab-active");
+					document.getElementById("reg").classList.add("tab-inactive");
+					document.getElementById("login").classList.remove("tab-inactive");
+					document.getElementById("login").classList.add("tab-active");
+
+				}
+				else if(id === 2){
+					Alert.set_body(form2);
+					document.getElementById("login").classList.remove("tab-active");
+					document.getElementById("login").classList.add("tab-inactive");
+					document.getElementById("reg").classList.remove("tab-inactive");
+					document.getElementById("reg").classList.add("tab-active");
+
+				}
+			}
+		</script>
+	</head>
+	<body>
+
+		<h2>Some other content here</h2>
+		<h2>Some other content here again</h2>
+		<button onclick="alert('This is default alert')">Say Hi</button>
+		<button onclick="Alert.render()">Say Custom Hi</button>
+		<p>Again some other content here</p>
+
+		<!--<embed src="ppp.pdf" width="800px" height="2100px" /> -->
+
+		<div class="flex-container">
+			<div class="flex-child">
+				<p>
+					This tutorial covers the creation of a WAV (RIFF) audio file. It covers bit size, sample rate, channels, data,
+headers and finalizing the file. This document is designed to cover uncompressed PCM audio files, the most
+common type of RIFF files. This document does not cover inserting useful data into the WAV (RIFF) audio
+file.
+				</p>
+			</div>
+
+			<div class="flex-child">
+				<p>
+					This tutorial covers the creation of a WAV (RIFF) audio file. It covers bit size, sample rate, channels, data,
+headers and finalizing the file. This document is designed to cover uncompressed PCM audio files, the most
+common type of RIFF files. This document does not cover inserting useful data into the WAV (RIFF) audio
+file.
+				</p>
+			</div>
+
+			<div class="flex-child">
+				<p>
+					This tutorial covers the creation of a WAV (RIFF) audio file. It covers bit size, sample rate, channels, data,
+headers and finalizing the file. This document is designed to cover uncompressed PCM audio files, the most
+common type of RIFF files. This document does not cover inserting useful data into the WAV (RIFF) audio
+file.
+				</p>
+			</div>
+
+			<div class="flex-child">
+				<p>
+					This tutorial covers the creation of a WAV (RIFF) audio file. It covers bit size, sample rate, channels, data,
+headers and finalizing the file. This document is designed to cover uncompressed PCM audio files, the most
+common type of RIFF files. This document does not cover inserting useful data into the WAV (RIFF) audio
+file.
+				</p>
+			</div>
+
+			<div class="flex-child">
+				<p>
+					This tutorial covers the creation of a WAV (RIFF) audio file. It covers bit size, sample rate, channels, data,
+headers and finalizing the file. This document is designed to cover uncompressed PCM audio files, the most
+common type of RIFF files. This document does not cover inserting useful data into the WAV (RIFF) audio
+file.
+				</p>
+			</div>
+
+			<div class="flex-child">
+				<p>
+					This tutorial covers the creation of a WAV (RIFF) audio file. It covers bit size, sample rate, channels, data,
+headers and finalizing the file. This document is designed to cover uncompressed PCM audio files, the most
+common type of RIFF files. This document does not cover inserting useful data into the WAV (RIFF) audio
+file.
+				</p>
+			</div>
+
+			<div class="flex-child">
+				<p>
+					This tutorial covers the creation of a WAV (RIFF) audio file. It covers bit size, sample rate, channels, data,
+headers and finalizing the file. This document is designed to cover uncompressed PCM audio files, the most
+common type of RIFF files. This document does not cover inserting useful data into the WAV (RIFF) audio
+file.
+				</p>
+			</div>
+		</div>
+
+	</body>
+</html>

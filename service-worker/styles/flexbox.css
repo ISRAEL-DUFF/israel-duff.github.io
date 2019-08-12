@@ -1,0 +1,16 @@
+/*css flex box */
+.flex-container {
+  display:flex; /* you can also use inline-flex */
+  width:1000px;
+  flex-flow:row wrap;
+  justify-content: space-around;
+  height: 200px;
+  background-color:rgb(200,200,200);
+}
+
+.flex-child {
+  padding-left:5px;
+  margin:auto;
+  width:300px;
+  background-color:grey;
+}
