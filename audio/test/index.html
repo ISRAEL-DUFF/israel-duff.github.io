@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <script src = 'scripts/audio.js'>
+    </script>
+    <script src = 'scripts/duff-observable/index.js'></script>
+  </head>
+
+  <body>
+
+    <audio id = 'player' controls></audio>
+
+    <div style = 'heigth: 200px; width: 200px; background-color: grey' id = 'audio-container'>
+      <p id = 'status'></p>
+      <button id = 'startBtn'>Start</button>
+      <button id = 'stopBtn'>Stop</button>
+      <button id = 'playBtn'>Play</button>
+      <!-- <a id = 'download'>Download</a> -->
+    </div>
+
+    <script>
+      const mic = new Microphone({
+        container: 'audio-container',
+        downlLinkId: 'download'
+      })
+
+      document.getElementById('startBtn').addEventListener('click', () => {
+        mic.startRecording()
+      })
+      document.getElementById('stopBtn').addEventListener('click', () => {
+        mic.stopRecording()
+      })
+      document.getElementById('playBtn').addEventListener('click', () => {
+        mic.play()
+      })
+
+      mic.on('recording', (status) => {
+        if(status) {
+          document.getElementById('status').innerHTML = 'Recording...'
+        } else {
+          document.getElementById('status').innerHTML = 'Recording Paused'
+        }
+      })
+
+      mic.on('playing', (status) => {
+        if(status) {
+          document.getElementById('playBtn').innerHTML = 'Pause'
+        } else {
+          document.getElementById('playBtn').innerHTML = 'Play'
+        }
+      })
+
+    </script>
+  </body>
+</html>
