@@ -9,5 +9,326 @@
       <li><a href = 'audio'>Audio</a></li>
       <li><a href = 'service-worker'>Service Worker</a></li>
     </ul>
+
+    <div id = 'c' style='height: 600px; width: 900px; border-style: solid; border-color: grey; margin-left: auto; margin-right: auto; overflow-y: scroll; overflow-x: auto; word-wrap: break-word; padding: 20px'>
+
+
+
+
+<script>
+
+  originalString = `
+    <p>This&nbsp;top&nbsp;level&nbsp;view&nbsp;is&nbsp;by&nbsp;no&nbsp;means&nbsp;a&nbsp;complete&nbsp;description&nbsp;of&nbsp;<strong>project&nbsp;fresh</strong>,&nbsp;it&nbsp;only&nbsp;depicts&nbsp;the&nbsp;component&nbsp;that&nbsp;makes&nbsp;up&nbsp;the&nbsp;system.</p>
+    <p>At&nbsp;the&nbsp;top&nbsp;most&nbsp;level&nbsp;lies&nbsp;the&nbsp;USERS,&nbsp;GROUPS&nbsp;and&nbsp;the&nbsp;INVENTORY&nbsp;subsystems.</p>
+    <p>&nbsp;</p>
+    <p><strong>USERS</strong></p>
+    <p>In project fresh, we treat Users as a sub-system so as to make the system as modular as possible..., more on this later. this's is "s'"</p>
+    <p>&nbsp;</p>
+    <p><strong>GROUPS</strong></p>
+    <p>Of&nbsp;course,&nbsp;one&nbsp;of&nbsp;the&nbsp;primary&nbsp;objectives&nbsp;of&nbsp;project&nbsp;fresh&nbsp;is&nbsp;to&nbsp;enable&nbsp;group&nbsp;buying.&nbsp;Thus,&nbsp;it&nbsp;seems&nbsp;logically&nbsp;wise&nbsp;to&nbsp;make&nbsp;creating,&nbsp;modifying,&nbsp;and&nbsp;categorizing&nbsp;groups&nbsp;as&nbsp;easy&nbsp;as&nbsp;possible.</p>
+    <p>&nbsp;</p>
+    <p><strong>INVENTORY</strong></p>
+    <p>As&nbsp;shown&nbsp;in&nbsp;the&nbsp;diagram&nbsp;above,&nbsp;the&nbsp;inventory&nbsp;system&nbsp;is&nbsp;the&nbsp;largest&nbsp;component&nbsp;(&nbsp;or&nbsp;module)&nbsp;in&nbsp;the&nbsp;system.&nbsp;The&nbsp;goal&nbsp;of&nbsp;this&nbsp;inventory&nbsp;system&nbsp;is&nbsp;to&nbsp;know&nbsp;the&nbsp;current&nbsp;inventory&nbsp;levels&nbsp;and&nbsp;to&nbsp;minimize&nbsp;under-stock&nbsp;and&nbsp;overstock&nbsp;situations.&nbsp;The&nbsp;inventory&nbsp;subsystem&nbsp;comprises&nbsp;of&nbsp;</p>
+    <ol>
+    <li>Aggregation&nbsp;layer&nbsp;(&nbsp;or&nbsp;module)</li>
+    <li>Accounting&nbsp;layer&nbsp;and&nbsp;</li>
+    <li>Reporting</li>
+    </ol>
+    <p>&nbsp;</p>
+    <p><strong>Aggregation&nbsp;Layer</strong></p>
+    <p>The&nbsp;aggregation&nbsp;module&nbsp;will&nbsp;be&nbsp;the&nbsp;<strong>stock&nbsp;taking&nbsp;</strong>component&nbsp;of&nbsp;the&nbsp;system.&nbsp;As&nbsp;such&nbsp;its&nbsp;main&nbsp;objective&nbsp;would&nbsp;be&nbsp;to&nbsp;collection&nbsp;the&nbsp;necessary&nbsp;information&nbsp;about&nbsp;farmer&rsquo;s&nbsp;harvest,&nbsp;be&nbsp;it&nbsp;a&nbsp;pre-harvest&nbsp;(that&nbsp;is&nbsp;,&nbsp;the&nbsp;expected&nbsp;number&nbsp;of&nbsp;crops&nbsp;or&nbsp;products&nbsp;to&nbsp;harvest)&nbsp;or&nbsp;harvested&nbsp;crops&nbsp;or&nbsp;even&nbsp;transit&nbsp;(or&nbsp;exporting)&nbsp;harvest.</p>
+    <p>&nbsp;</p>
+    <table style="border-collapse: collapse; width: 100%;" border="1">
+    <tbody>
+    <tr>
+    <td style="width: 16.6667%;">jkjk</td>
+    <td style="width: 16.6667%;">&nbsp;</td>
+    <td style="width: 16.6667%;">;lklk</td>
+    <td style="width: 16.6667%;">jhiio</td>
+    <td style="width: 16.6667%;">bjk</td>
+    <td style="width: 16.6667%;">dsadd</td>
+    </tr>
+    <tr>
+    <td style="width: 16.6667%;">sdkdf</td>
+    <td style="width: 16.6667%;">kcclds</td>
+    <td style="width: 16.6667%;">&nbsp;</td>
+    <td style="width: 16.6667%;">&nbsp;</td>
+    <td style="width: 16.6667%;">&nbsp;</td>
+    <td style="width: 16.6667%;">&nbsp;</td>
+    </tr>
+    <tr>
+    <td style="width: 16.6667%;">&nbsp;</td>
+    <td style="width: 16.6667%;">&nbsp;</td>
+    <td style="width: 16.6667%;">&nbsp;</td>
+    <td style="width: 16.6667%;">&nbsp;</td>
+    <td style="width: 16.6667%;">&nbsp;</td>
+    <td style="width: 16.6667%;">&nbsp;</td>
+    </tr>
+    <tr>
+    <td style="width: 16.6667%;">&nbsp;</td>
+    <td style="width: 16.6667%;">&nbsp;</td>
+    <td style="width: 16.6667%;">&nbsp;</td>
+    <td style="width: 16.6667%;">&nbsp;</td>
+    <td style="width: 16.6667%;">&nbsp;</td>
+    <td style="width: 16.6667%;">&nbsp;</td>
+    </tr>
+    <tr>
+    <td style="width: 16.6667%;">&nbsp;</td>
+    <td style="width: 16.6667%;">&nbsp;</td>
+    <td style="width: 16.6667%;">&nbsp;</td>
+    <td style="width: 16.6667%;">&nbsp;</td>
+    <td style="width: 16.6667%;">&nbsp;</td>
+    <td style="width: 16.6667%;">&nbsp;</td>
+    </tr>
+    </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p><strong>Accounting&nbsp;Layer</strong></p>
+    <p>The&nbsp;accounting&nbsp;module&nbsp;will&nbsp;be&nbsp;responsible&nbsp;for&nbsp;all&nbsp;things&nbsp;<strong>payments</strong>,&nbsp;<strong>discounting</strong>&nbsp;and&nbsp;<strong>price&nbsp;indexing</strong>.&nbsp;</p>
+    <p>&nbsp;</p>
+    <p><strong>Reporting&nbsp;Layer</strong></p>
+    <p>The&nbsp;current&nbsp;status&nbsp;of&nbsp;the&nbsp;system&nbsp;as&nbsp;well&nbsp;as&nbsp;feed&nbsp;backs&nbsp;from&nbsp;clients&nbsp;is&nbsp;very&nbsp;important,&nbsp;as&nbsp;such&nbsp;the&nbsp;reporting&nbsp;module&nbsp;will&nbsp;be&nbsp;responsible&nbsp;for&nbsp;<strong>creating</strong>,&nbsp;<strong>scheduling</strong>&nbsp;and&nbsp;<strong>share</strong>&nbsp;reports.</p>`
+
+    let nodes = []
+    let selecting = false
+    let corrections = []
+
+    let documentContainer = document.getElementById('c')
+    documentContainer.innerHTML = originalString
+
+      function decodeHtml(html) {
+        let strippedString = html.replace(/(<([^>]+)>)/gi, "");
+        var txt = document.createElement("textarea");
+        txt.innerHTML = strippedString;
+        return txt.value;
+     }
+
+    /*
+      this function is similar to string.replace() function, except that it only replaces the substr that occurs between position i, j
+    */
+     String.prototype.replaceBetween = function (i, j, substr, newSubstr) {
+       let leftStr = this.substr(0, i)
+       let str = this.substr(i, substr.length)
+       let rightStr = this.substr(j+1)
+
+       // console.log('String1:',i,j)
+       // console.log('String2:', leftStr)
+       // console.log('String3:', str)
+       // console.log('String4:', rightStr)
+
+       // replace str
+       str = str.replace(substr, newSubstr)
+
+       // return concatenated string
+       return leftStr + str + rightStr
+     }
+
+     /*
+       given a start and end positions (i and j respectively) in a string, find the nth substring in the string
+       in other words, assume that the substr occurs multiple times in a string, find the nth substr that accurs between i, j
+       Note: A return value of 0 (zero) means that the substr never occurs in the string
+       the function works by sliding the substr through the string to
+       1. find a match
+       2. count the number of matches
+       3. return the number matches so far if position intersects (or returns a zero if no match is found)
+     */
+     String.prototype.getOffset = function (i, j, substr) {
+       let m = 0
+       let n = substr.length
+       offset = 0
+       for(let k = 0; k < this.length - substr.length; k++) {
+         // console.log(m, n, offset, this.substr(m, n))
+         if(this.substr(m, n) === substr) offset++
+         if(m === i) return offset
+         m++
+       }
+       return 0
+     }
+
+    /*
+      given an offset (which represents the nth substr in a string), find the starting position of the substr
+      the function works by sliding the substr through the string to
+      1. find a match
+      2. count the number of matches
+      3. return the starting position of the substr if number of matches = offset
+    */
+     String.prototype.getPosition = function (offset, substr) {
+       let m = 0
+       let n = substr.length
+       let p = 0
+
+        // slide the substr through the string
+       for(let k = 0; k < this.length - substr.length; k++) {
+         // console.log(m, n, offset, this.substr(m, n))
+         if(this.substr(m, n) === substr) p++
+         if(p === offset) return m
+         m++
+       }
+       return -1
+     }
+
+     // console.log(strippedString)
+     // console.log(decodeHtml(originalString))
+
+     function getCordinates(e) {
+       let cordinates = {
+         movementX: e.movementX,
+         movementY: e.movementY,
+         clientX: e.clientX,
+         clientY: e.clientY,
+         offsetX: e.offsetX,
+         offsetY: e.offsetY,
+         pageX: e.pageX,
+         pageY: e.pageY,
+         screenX: e.screenX,
+         screenY: e.screenY,
+         region: e.region,
+         which: e.which
+       }
+       return cordinates
+     }
+
+     function generateEventWrapper(htmlStr) {
+       return `<span style='color: red' class = 'fms-v-2.7'>${htmlStr}</span>`
+     }
+
+     function hasWrapperEvent(node) {
+       for (let child of node.children) {
+         if (child.tagName === 'SPAN' && child.className === 'fms-v-2.7') {
+           return true // event already added
+         }
+       }
+       return false
+     }
+
+     function encodeHTMLEntities(txt) {
+       let p = document.createElement("p");
+       p.textContent = txt;
+       return p.innerHTML
+     }
+
+     documentContainer.onmousedown = (e) => {
+       // console.log('MouseDownCordinates',getCordinates(e))
+       selecting = true
+     }
+
+     documentContainer.onmousemove = (e) => {
+       let c = getCordinates(e)
+       if(selecting && !nodes.includes(document.elementFromPoint(c.clientX, c.clientY))) {
+         if (documentContainer !== document.elementFromPoint(c.clientX, c.clientY))
+            nodes.push(document.elementFromPoint(c.clientX, c.clientY))
+       }
+     }
+
+     documentContainer.onmouseup = (e) => {
+        selectedTxt = getSelectedText()
+        txt = selectedTxt.text
+        if (!txt) {
+          console.log('No text selected')
+        } else {
+          console.log('SELECTED:',txt)
+          let correction = {
+            text: txt,
+            startPosition: selectedTxt.startOffset,
+            endPosition: selectedTxt.endOffset
+          }
+          // alert(nodes)
+
+          // remove all child nodes
+          for(let i = 0; i < nodes.length; i++) {
+            for (let j = 0; j < nodes.length; j++) {
+              if(nodes[i].contains(nodes[j]) && nodes[i] !== nodes[j]) {
+                // remove node[j]
+                nodes.splice(j,1)
+                i = 0;
+              }
+            }
+          }
+
+          for (node of nodes) {
+            if (txt.includes(node.innerText)) {
+              // check for duplicate
+              if(hasWrapperEvent(node)) return
+
+              // add event wrapper
+              node.innerHTML = generateEventWrapper(node.innerHTML)
+
+              // console.log('INNER-tEXT:', node.innerText)
+              txt = txt.replace(node.innerText, '')
+            } else {
+              txt = txt.trim()
+              // get the offset from the remaining copied txt
+              let offset = node.innerText.getOffset(selectedTxt.startOffset, selectedTxt.endOffset, txt)
+
+              // console.log('OFFSET:', offset)
+              console.log('TEXT:', txt)
+              // console.log('INNERTEXT:', node.innerText)
+              // console.log('ACTUALPOSITIONS:', selectedTxt.startOffset, selectedTxt.endOffset)
+
+              // convert txt to HTML entities
+              let converted = encodeHTMLEntities(txt);
+
+              // get the starting position
+              let startPos = node.innerHTML.getPosition(
+                  offset,
+                  converted
+                )
+              let endPos = startPos + converted.length - 1
+
+                console.log('POSITION:', startPos, endPos)
+
+              // for(let i = 0; i < converted.length; i++) {
+              //   if(converted[i] !== node.innerHTML[i]) console.log('SOMETHING WENT WRONG AT', i, converted[i], node.innerHTML[i])
+              // }
+
+              // node.innerHTML = node.innerHTML.replace(converted, `<span style='color: green'>${converted}</span>`)
+              // node.innerHTML = node.innerHTML.replaceBetween(
+              //   selectedTxt.startOffset,
+              //   selectedTxt.endOffset,
+              //   converted,
+              //   `<span style='color: green'>${converted}</span>`
+              // )
+
+              node.innerHTML = node.innerHTML.replaceBetween(
+                startPos,
+                endPos,
+                converted,
+                generateEventWrapper(converted)
+              )
+
+              // console.log('there is a problem of event the makes that is ea pb'.replaceBetween(43,44, 'is', 'was'))
+              // console.log('there is a problem of event the makes that is ea pb'.getOffset(43,44, 'is'))
+              // console.log('there is a problem of event the makes that is ea pb'.getPosition(2, 'is'))
+            }
+          }
+          // alert(nodes)
+          corrections.push(correction)
+        }
+        // let c = getCordinates(e)
+        // console.log('MouseUpCordinates',c)
+        nodes = []
+        selecting = false
+
+      }
+
+
+      function getSelectedText() {
+        var selObj = window.getSelection();
+        var selRange = selObj.getRangeAt(0);
+        // do stuff with the range
+        // console.log('StartContainer:', selRange.startContainer)
+        // console.log('EndContainer:', selRange.endContainer)
+        // console.log('ContainerEquals:', selRange.startContainer === selRange.endContainer)
+        // console.log(selObj)
+
+        // return selObj.toString()
+        return {
+          text: selObj.toString(),
+          startOffset: selRange.startOffset,
+          endOffset: selRange.endOffset
+        }
+      }
+
+    </script>
   </body>
 </html>

@@ -111,6 +111,14 @@ class Microphone {
         that.evt.emit('play')
       }
 
+      // ***** player events *********//
+      that.player.addEventListener('ended', () => {
+        that.stop()
+      })
+      that.player.addEventListener('emptied', => {
+        that.stop()
+      })
+
     }).catch((err)=>{
       console.log('Error:', err.message)
       throw(err)
