@@ -96,12 +96,16 @@
     let documentContainer = document.getElementById('c')
     documentContainer.innerHTML = originalString
 
-      function decodeHtml(html) {
-        let strippedString = html.replace(/(<([^>]+)>)/gi, "");
-        var txt = document.createElement("textarea");
-        txt.innerHTML = strippedString;
-        return txt.value;
-     }
+    function stripTags(html) {
+      return html.replace(/(<([^>]+)>)/gi, "");
+    }
+
+    function decodeHtml(html) {
+      let strippedString = stripTags(html) //html.replace(/(<([^>]+)>)/gi, "");
+      var txt = document.createElement("textarea");
+      txt.innerHTML = strippedString;
+      return txt.value;
+   }
 
     /*
       this function is similar to string.replace() function, except that it only replaces the substr that occurs between position i, j
@@ -136,8 +140,9 @@
        let m = 0
        let n = substr.length
        offset = 0
-       for(let k = 0; k < this.length - substr.length; k++) {
-         // console.log(m, n, offset, this.substr(m, n))
+       // console.log('LENGTH:', this, substr.length, substr)
+       for(let k = 0; k <= this.length - substr.length; k++) {
+         // console.log(m, n, offset, this.substr(m, n), substr)
          if(this.substr(m, n) === substr) offset++
          if(m === i) return offset
          m++
@@ -156,15 +161,86 @@
        let m = 0
        let n = substr.length
        let p = 0
-
+       let str = stripTags(this)
         // slide the substr through the string
-       for(let k = 0; k < this.length - substr.length; k++) {
-         // console.log(m, n, offset, this.substr(m, n))
-         if(this.substr(m, n) === substr) p++
+       for(let k = 0; k <= str.length - substr.length; k++) {
+         let subs = str.substr(m, n)
+         if(subs === substr) p++
+         // console.log(m, n,subs.length, offset,p, subs)
          if(p === offset) return m
          m++
        }
        return -1
+     }
+
+
+     String.prototype.replaceWithoutTags = function (offset, substr) {
+       let p = 0  // offset counter
+       matchFound = false
+       tag = false
+       partialStr = ''
+       matchedStr = ''
+       let str = this // main string
+       let modifiedStr = '' //
+
+        //
+       for(let k = 0, i = 0; k < str.length; k++, i++) {
+         // console.log('i:', i)
+
+         if (str[k] === substr[i] && !tag) {  // match found
+           matchFound = true
+           partialStr += str[k]
+         } else if (str[k] === '<') {
+             if(str[k+1] === '/') isClosingTag = true
+             else isClosingTag = false
+             tag = true
+             console.log(p, offset-1)
+             // is it safe to replace what we have so far?
+             if (p === offset - 1) {
+               if(partialStr) modifiedStr += generateEventWrapper(partialStr)
+               matchedStr += partialStr
+               partialStr = ''
+             }
+             modifiedStr += str[k]
+            --i  // move the index back one unit
+         } else if (str[k] === '>') {
+           tag = false
+           modifiedStr += str[k]
+           --i  // move the index back one unit
+         }
+         else { // match not found
+           if (!tag) {
+             matchFound = false
+             matchedStr += partialStr
+
+             if (matchedStr === substr) {
+               p++  // increase offset count
+             }
+             matchedStr = ''
+
+             if (p === offset && i === substr.length) {
+               if(partialStr) modifiedStr += generateEventWrapper(partialStr)
+             } else {
+               modifiedStr += partialStr
+             }
+             partialStr = ''
+             i = -1  // reset the index to the substring
+
+           } else {
+             --i
+           }
+           modifiedStr += str[k]
+         }
+       }
+       // console.log('meeee:', p, offset, substr.length)
+       if (p === offset-1) {
+         if(partialStr) modifiedStr += generateEventWrapper(partialStr)
+       } else {
+         modifiedStr += partialStr
+       }
+
+       // return modified string
+       return modifiedStr
      }
 
      // console.log(strippedString)
@@ -193,11 +269,12 @@
      }
 
      function hasWrapperEvent(node) {
-       for (let child of node.children) {
-         if (child.tagName === 'SPAN' && child.className === 'fms-v-2.7') {
-           return true // event already added
-         }
-       }
+       // for (let child of node.children) {
+       //   if (child.tagName === 'SPAN' && child.className === 'fms-v-2.7') {
+       //     return true // event already added
+       //   }
+       // }
+       if (node.tagName === 'SPAN' && child.className === 'fms-v-2.7') return true
        return false
      }
 
@@ -206,6 +283,15 @@
        p.textContent = txt;
        return p.innerHTML
      }
+
+     function textNodesUnder(node){
+      var all = [];
+      for (node=node.firstChild;node;node=node.nextSibling){
+        if (node.nodeType==3) all.push(node);
+        else all = all.concat(textNodesUnder(node));
+      }
+      return all;
+    }
 
      documentContainer.onmousedown = (e) => {
        // console.log('MouseDownCordinates',getCordinates(e))
@@ -221,7 +307,8 @@
      }
 
      documentContainer.onmouseup = (e) => {
-        selectedTxt = getSelectedText()
+        selectedTxt = getSelectedText();
+        console.log('sele:', selectedTxt)
         txt = selectedTxt.text
         if (!txt) {
           console.log('No text selected')
@@ -245,28 +332,80 @@
             }
           }
 
+          let nodeCount = 0
           for (node of nodes) {
-            if (txt.includes(node.innerText)) {
+            nodeCount++ // keep track of number of nodes processed
+            if (txt.includes(node.innerText)) { // full selection
               // check for duplicate
               if(hasWrapperEvent(node)) return
 
               // add event wrapper
               node.innerHTML = generateEventWrapper(node.innerHTML)
+              txt = txt.replace(node.innerText, '') // remove processed text from selection
+            } else { // half selection
+              let str = ''
+              let txtNodes = textNodesUnder(node)
+              let startIndex = 0
+              let endIndex = 0
+              let n = 0
+              let focusOffset = selectedTxt.focusOffset
+              let anchorOffset = selectedTxt.anchorOffset
+              let startNode = selectedTxt.startNode
+              let endNode = selectedTxt.endNode
 
-              // console.log('INNER-tEXT:', node.innerText)
-              txt = txt.replace(node.innerText, '')
-            } else {
-              txt = txt.trim()
+              // discard other nodes
+              if(nodes.length > 1 && nodeCount === 1) {
+                endNode = txtNodes[txtNodes.length - 1]
+                focusOffset = txtNodes[txtNodes.length - 1].textContent.length
+                str = ''
+              }
+
+              if(nodes.length > 1 && nodeCount !== 1) {
+                // str = txt.trim()
+                startNode = txtNodes[0]
+                anchorOffset = 0
+              }
+
+              let withinString = false
+              for(let i = 0; i < txtNodes.length; i++) {
+                if(txtNodes[i] === startNode) {
+                  startIndex = anchorOffset + n
+                  withinString = true
+                }
+
+                if (withinString) str += txtNodes[i].textContent
+
+                if(txtNodes[i] === endNode) {
+                  endIndex = focusOffset + n
+                  withinString = false
+                }
+                n += txtNodes[i].textContent.length
+              }
+
+              if(nodes.length > 1 && nodeCount === 1) {
+                str = str.substr(anchorOffset)
+                txt = txt.replace(str, '') // remove processed str from selection
+              } else if(nodes.length > 1 && nodeCount !== 1) {
+                str = txt.trim()
+              } else {
+                //str = str.substr(startIndex, txt.length)
+                str = txt
+              }
+
+
+              console.log('TEXT NODES:', txtNodes, startIndex, endIndex, node.innerText.length)
+
               // get the offset from the remaining copied txt
-              let offset = node.innerText.getOffset(selectedTxt.startOffset, selectedTxt.endOffset, txt)
+              let offset = node.innerText.getOffset(startIndex, endIndex, str)
 
-              // console.log('OFFSET:', offset)
-              console.log('TEXT:', txt)
-              // console.log('INNERTEXT:', node.innerText)
-              // console.log('ACTUALPOSITIONS:', selectedTxt.startOffset, selectedTxt.endOffset)
+              console.log('OFFSET:', offset)
+              console.log('TEXT:', txt, str)
+              console.log('INNERTEXT:', node.innerText)
+              console.log('ACTUALPOSITIONS:', selectedTxt.anchorOffset, selectedTxt.focusOffset)
+
 
               // convert txt to HTML entities
-              let converted = encodeHTMLEntities(txt);
+              let converted = encodeHTMLEntities(str);
 
               // get the starting position
               let startPos = node.innerHTML.getPosition(
@@ -276,36 +415,16 @@
               let endPos = startPos + converted.length - 1
 
                 console.log('POSITION:', startPos, endPos)
-
-              // for(let i = 0; i < converted.length; i++) {
-              //   if(converted[i] !== node.innerHTML[i]) console.log('SOMETHING WENT WRONG AT', i, converted[i], node.innerHTML[i])
-              // }
-
-              // node.innerHTML = node.innerHTML.replace(converted, `<span style='color: green'>${converted}</span>`)
-              // node.innerHTML = node.innerHTML.replaceBetween(
-              //   selectedTxt.startOffset,
-              //   selectedTxt.endOffset,
-              //   converted,
-              //   `<span style='color: green'>${converted}</span>`
-              // )
-
-              node.innerHTML = node.innerHTML.replaceBetween(
-                startPos,
-                endPos,
-                converted,
-                generateEventWrapper(converted)
-              )
-
-              // console.log('there is a problem of event the makes that is ea pb'.replaceBetween(43,44, 'is', 'was'))
-              // console.log('there is a problem of event the makes that is ea pb'.getOffset(43,44, 'is'))
-              // console.log('there is a problem of event the makes that is ea pb'.getPosition(2, 'is'))
+                // console.log('INNERHTML:', node.innerHTML)
+              // console.log('OUTPUT:', node.innerHTML.replaceWithoutTags(offset, converted))
+              node.innerHTML = node.innerHTML.replaceWithoutTags(offset, converted)
             }
           }
           // alert(nodes)
           corrections.push(correction)
         }
-        // let c = getCordinates(e)
-        // console.log('MouseUpCordinates',c)
+        let c = getCordinates(e)
+        console.log('MouseUpCordinates',c)
         nodes = []
         selecting = false
 
@@ -316,16 +435,24 @@
         var selObj = window.getSelection();
         var selRange = selObj.getRangeAt(0);
         // do stuff with the range
-        // console.log('StartContainer:', selRange.startContainer)
+        // console.log('StartContainer:', selRange.startContainer, selRange.startContainer.textContent)
         // console.log('EndContainer:', selRange.endContainer)
         // console.log('ContainerEquals:', selRange.startContainer === selRange.endContainer)
+        // console.log('ContainerEquals:', selRange.startContainer.nodeName)
         // console.log(selObj)
 
         // return selObj.toString()
+        let text = selObj.toString()
+
         return {
-          text: selObj.toString(),
+          text,
           startOffset: selRange.startOffset,
-          endOffset: selRange.endOffset
+          endOffset: selRange.endOffset,
+          anchorOffset: selObj.anchorOffset,
+          focusOffset: selObj.focusOffset,
+
+          startNode: selRange.startContainer,
+          endNode: selRange.endContainer
         }
       }
 
