@@ -20,9 +20,10 @@ class DraftManager {
     this.eventCount = 0
     this.fileId = fileId
     this.eventColors = {
-      'rephrase': 'orange',
-      'remove': 'red',
-      'wrong-grammer': 'grey'
+      'Rephrase': 'rgba(255, 165, 0, .5)',
+      'Remove': 'rgba(255, 50, 50, .3)',
+      'Grammar Error': 'rgba(255,0,0, 0.6)',
+      'Comment': 'rgba(255,85,34,.25)'
     }
 
     // add mouse events
@@ -88,7 +89,7 @@ class DraftManager {
     */
     // return `<span style='color: white; background-color: orange' class = 'fms-v-2.7'>${htmlStr}</span>`
 
-    return `<span style='background-color: ${options.color}; text-decoration: line-through black solid' class = 'fms-v-2.7 ${options.eventClass}'>${htmlStr}</span>`
+    return `<span style='background-color: ${options.color}; text-decoration: line-through black solid; cursor: pointer' class = 'fms-v-2.7 ${options.eventClass}'>${htmlStr}</span>`
   }
 
 
@@ -106,6 +107,7 @@ class DraftManager {
 
       title.innerHTML = options.type
       msgBody.innerHTML = options.comment
+      // msgBody.className = `${options.eventClass}_comment`
       message.appendChild(title)
       message.appendChild(msgBody)
 
@@ -336,15 +338,80 @@ class DraftManager {
         message.element.onmouseover = (e) => {
           document.body.append(message.content);
         }
+
         message.element.onmouseout = (e) => {
           message.content.remove()
         }
-        message.element.ondblclick = (e) => {
-          console.log('item double clicked', message.element)
-          let parentNode = message.content.parentNode
-          parentNode.innerHTML = message.content.innerHTML
-          // message.element
+
+        message.element.onclick = (e) => {
+          console.log('item clicked')
+          // let elements = document.getElementsByClassName(options.eventClass)
+
+          let messageContainer = document.createElement('div')
+          let inputText = document.createElement('textarea')
+          let closeButton = document.createElement('button')
+          let okButton = document.createElement('button')
+          let removeSelectionButton = document.createElement('span')
+          let buttonContainer = document.createElement('div')
+          let title = document.createElement('p');
+
+          closeButton.innerHTML = 'exit'
+          okButton.innerHTML = 'Add comment'
+          removeSelectionButton.innerHTML = 'Unmark'
+          buttonContainer.appendChild(okButton)
+          buttonContainer.appendChild(closeButton)
+          buttonContainer.appendChild(removeSelectionButton)
+          closeButton.onclick = () => {
+            messageContainer.remove()
+          }
+          okButton.onclick = () => {
+            options.comment = inputText.value
+            messageContainer.remove()
+            that.actionBox(options)
+          }
+          removeSelectionButton.onclick = () => {
+            message.element.removeAttribute('style')
+            message.element.removeAttribute('class')
+            // message.element.removeEventListener('mouseover', mouseOver)
+            message.element.onmouseover = null
+            message.element.onmouseout = null
+            message.element.onclick = null
+            messageContainer.remove()
+            message.content.remove()
+          }
+
+          inputText.value = options.comment
+          title.style.cssText = `border-style: solid; border-top: 0; border-left: 0; border-right: 0; border-color: ${options.color}`
+          title.innerHTML = options.type
+
+          messageContainer.appendChild(title)
+          messageContainer.appendChild(inputText)
+          messageContainer.appendChild(buttonContainer)
+
+
+          // better to use a css class for the style here
+          messageContainer.style.cssText = "position:fixed; color: black; background-color: rgb(230,230,230); font-size: 13px; padding: 10px;";
+
+          // assign coordinates, don't forget "px"!
+          let coords = message.element.getBoundingClientRect();
+
+          messageContainer.style.left = coords.left + "px";
+          messageContainer.style.top = coords.bottom + "px";
+          document.body.appendChild(messageContainer)
+
         }
+
+        // message.element.ondblclick = (e) => {
+        //   console.log('item double clicked', message.element)
+        //   message.element.removeAttribute('style')
+        //   message.element.removeAttribute('class')
+        //   // message.element.removeEventListener('mouseover', mouseOver)
+        //   message.element.onmouseover = null
+        //   message.element.onmouseout = null
+        //   message.element.onclick = null
+        //   message.element.ondblclick = null
+        //   message.content.remove()
+        // }
       })
     }
 

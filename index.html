@@ -11,9 +11,14 @@
     </ul>
 
     <ul>
-      <li><button onclick = 'mark("rephrase")'>Rephrase</button></li>
+      <li><button onclick = 'mark("Rephrase")'>Rephrase</button></li>
       <br/>
-      <li><button onclick = 'mark("remove")'>Remove</button></li>
+      <li><button onclick = 'mark("Remove")'>Remove</button></li>
+      <br/>
+      <li><button onclick = 'mark("Grammar Error")'>Grammar Error</button></li>
+      <br/>
+      <li><button onclick = 'mark("Comment")'>Comment Text</button></li>
+
     </ul>
 
     <div id = 'c' style='height: 600px; width: 900px; border-style: solid; border-color: grey; margin-left: auto; margin-right: auto; overflow-y: scroll; overflow-x: auto; word-wrap: break-word; padding: 20px'>
@@ -98,7 +103,7 @@
 
     let draft = new DraftManager('c', originalString, 1)
     function mark(type) {
-      draft.markSelection(type, 'Some little comment to comment on')
+      draft.markSelection(type, '')
     }
 
     </script>
