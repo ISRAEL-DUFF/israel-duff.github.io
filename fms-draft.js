@@ -18,6 +18,12 @@ class DraftManager {
     this.corrections = []
     this.container.innerHTML = htmlContent
     this.eventCount = 0
+    this.scrollPosition = {
+      start: 0,
+      end: 0,
+      distance: 0,
+      changed: false
+    }  // represents the coordinates and distance of container scrollbar
     this.fileId = fileId
     this.eventColors = {
       'Rephrase': 'rgba(255, 165, 0, .5)',
@@ -59,6 +65,26 @@ class DraftManager {
 
       that.selecting = false;
     }
+
+    //detect scroll event on the container and update scrollPosition accordingly
+    this.scrollDistance((distance, start, end) => {
+      let oldPosition = that.scrollPosition
+      that.scrollPosition = { // set new position
+        start,
+        end,
+        distance,
+        changed: false
+      }
+
+      if (that.scrollPosition.end !== oldPosition.end) {
+        that.scrollPosition.changed = true
+        // re-attach all mouse events to reflect new coordinates
+        for(let c of this.corrections) {
+            this.actionBox(c)
+        }
+      }
+      // console.log('You travelled ' + parseInt(Math.abs(distance), 10) + 'px ' + (distance < 0 ? 'up' : 'down'));
+    })
   }
 
   stripTags(html) {
@@ -92,42 +118,6 @@ class DraftManager {
     return `<span style='background-color: ${options.color}; text-decoration: line-through black solid; cursor: pointer' class = 'fms-v-2.7 ${options.eventClass}'>${htmlStr}</span>`
   }
 
-
-  createMessageUnder(options) {
-    // create message element
-    let messages = []
-    let elements = document.getElementsByClassName(options.eventClass)
-
-    for(let elem of elements) {
-      // create message element
-      let message = document.createElement('div')
-      let title = document.createElement('p');
-      title.style.cssText = `border-style: solid; border-top: 0; border-left: 0; border-right: 0; border-color: ${options.color}`
-      let msgBody = document.createElement('p')
-
-      title.innerHTML = options.type
-      msgBody.innerHTML = options.comment
-      // msgBody.className = `${options.eventClass}_comment`
-      message.appendChild(title)
-      message.appendChild(msgBody)
-
-      // better to use a css class for the style here
-      message.style.cssText = "position:fixed; color: black; background-color: rgb(230,230,230); font-size: 13px; padding: 10px;";
-
-      // assign coordinates, don't forget "px"!
-      let coords = elem.getBoundingClientRect();
-
-      message.style.left = coords.left + "px";
-      message.style.top = coords.bottom + "px";
-
-      messages.push({
-        element: elem,
-        content: message
-      })
-    }
-
-    return messages;
-  }
 
   hasWrapperEvent(node) {
     if (node.tagName === 'SPAN' && node.className === 'fms-v-2.7') return true
@@ -330,6 +320,41 @@ class DraftManager {
       this.currentSelection = {}
     }
 
+    createMessageUnder(options) {
+      // create message element
+      let messages = []
+      let elements = document.getElementsByClassName(options.eventClass)
+
+      for(let elem of elements) {
+        // create message element
+        let message = document.createElement('div')
+        let title = document.createElement('p');
+        title.style.cssText = `border-style: solid; border-top: 0; border-left: 0; border-right: 0; border-color: ${options.color}`
+        let msgBody = document.createElement('p')
+
+        title.innerHTML = options.type
+        msgBody.innerHTML = options.comment
+        // msgBody.className = `${options.eventClass}_comment`
+        message.appendChild(title)
+        message.appendChild(msgBody)
+
+        // better to use a css class for the style here
+        message.style.cssText = "position:fixed; color: black; background-color: rgb(230,230,230); font-size: 13px; padding: 10px;";
+
+        // assign coordinates, don't forget "px"!
+        let coords = elem.getBoundingClientRect();
+        message.style.left = coords.left + "px";
+        message.style.top = coords.bottom + "px";
+
+        messages.push({
+          element: elem,
+          content: message
+        })
+      }
+
+      return messages;
+    }
+
     actionBox(options) {
       let that = this
       let messages = that.createMessageUnder(options);
@@ -349,17 +374,20 @@ class DraftManager {
 
           let messageContainer = document.createElement('div')
           let inputText = document.createElement('textarea')
-          let closeButton = document.createElement('button')
-          let okButton = document.createElement('button')
+          let closeButton = document.createElement('span')
+          let okButton = document.createElement('span')
           let removeSelectionButton = document.createElement('span')
           let buttonContainer = document.createElement('div')
           let title = document.createElement('p');
 
-          closeButton.innerHTML = 'exit'
+          closeButton.innerHTML = 'x'
+          closeButton.style.cssText = `cursor: pointer; color: red; float: right`
           okButton.innerHTML = 'Add comment'
-          removeSelectionButton.innerHTML = 'Unmark'
+          okButton.style.cssText = `cursor: pointer; color: green; margin-right: 5px; margin-left: 2px`
+          removeSelectionButton.innerHTML = 'Untag Text'
+          removeSelectionButton.style.cssText = `cursor: pointer; color: blue; margin-left: 5px; margin-right: 5px`
           buttonContainer.appendChild(okButton)
-          buttonContainer.appendChild(closeButton)
+          // buttonContainer.appendChild(closeButton)
           buttonContainer.appendChild(removeSelectionButton)
           closeButton.onclick = () => {
             messageContainer.remove()
@@ -381,16 +409,18 @@ class DraftManager {
           }
 
           inputText.value = options.comment
+          inputText.setAttribute('placeholder', '...comment')
           title.style.cssText = `border-style: solid; border-top: 0; border-left: 0; border-right: 0; border-color: ${options.color}`
           title.innerHTML = options.type
 
+          messageContainer.appendChild(closeButton)
           messageContainer.appendChild(title)
           messageContainer.appendChild(inputText)
           messageContainer.appendChild(buttonContainer)
 
 
           // better to use a css class for the style here
-          messageContainer.style.cssText = "position:fixed; color: black; background-color: rgb(230,230,230); font-size: 13px; padding: 10px;";
+          messageContainer.style.cssText = "position:fixed; color: black; background-color: rgb(230,230,230); font-size: 13px; padding-top: 2px; padding-left: 10px; padding-right: 10px; padding-bottom: 5px";
 
           // assign coordinates, don't forget "px"!
           let coords = message.element.getBoundingClientRect();
@@ -400,18 +430,6 @@ class DraftManager {
           document.body.appendChild(messageContainer)
 
         }
-
-        // message.element.ondblclick = (e) => {
-        //   console.log('item double clicked', message.element)
-        //   message.element.removeAttribute('style')
-        //   message.element.removeAttribute('class')
-        //   // message.element.removeEventListener('mouseover', mouseOver)
-        //   message.element.onmouseover = null
-        //   message.element.onmouseout = null
-        //   message.element.onclick = null
-        //   message.element.ondblclick = null
-        //   message.content.remove()
-        // }
       })
     }
 
@@ -495,4 +513,52 @@ class DraftManager {
          }
        }
      }
+
+
+     /*!
+  * Run a callback after the user scrolls, calculating the distance and direction scrolled
+  * Original Code by Chris Ferdinandi, MIT License, https://gomakethings.com
+  * @param  {Function} callback The callback function to run
+  * @param  {Integer}  refresh  How long to wait between scroll events [optional]
+  */
+ scrollDistance (callback, refresh) {
+   console.log('scroll')
+ 	// Make sure a valid callback was provided
+ 	if (!callback || typeof callback !== 'function') return;
+
+ 	// Variables
+ 	let isScrolling, start, end, distance;
+  let that = this
+
+ 	// Listen for scroll events
+ 	this.container.addEventListener('scroll', function (event) {
+
+ 		// Set starting position
+ 		if (!start) {
+ 			start = that.container.scrollTop;
+ 		}
+
+ 		// Clear our timeout throughout the scroll
+ 		window.clearTimeout(isScrolling);
+
+ 		// Set a timeout to run after scrolling ends
+ 		isScrolling = setTimeout(function() {
+
+ 			// Calculate distance
+ 			end = that.container.scrollTop;
+ 			distance = end - start;
+
+ 			// Run the callback
+ 			callback(distance, start, end);
+
+ 			// Reset calculations
+ 			start = null;
+ 			end = null;
+ 			distance = null;
+
+ 		}, refresh || 66);
+
+ 	}, false);
+
+ }
 }
