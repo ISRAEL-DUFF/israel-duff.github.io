@@ -6,6 +6,40 @@ let availableColors = ["#ffcc80", "#90caf9", "#a5d6a7", "#f48fb1", "#ffab91", "#
 let timer;
 let timeRemaining = 30;
 let gameStarted = false;
+let dataFile = {}
+
+
+// Global variable to hold the selected value
+let selectedValue = null;
+
+// Function to generate the select dropdown
+function generateSelectFromJson(jsonData) {
+  // Create the select element
+  const select = document.createElement("select");
+
+  // Loop through the JSON data and create an option for each item
+  jsonData.forEach(item => {
+    const option = document.createElement("option");
+    option.value = item;
+    option.textContent = item
+    select.appendChild(option);
+  });
+
+  // Add event listener for selection change
+  select.addEventListener('change', (event) => {
+    // Set the global variable to the value of the selected option
+    selectedValue = event.target.value;
+
+    resetGame();
+    let selectedWords = getRandomWords(dataFile[selectedValue]);
+    words = selectedWords;
+    generateMatchingGame();
+    console.log("Selected Word List: " + selectedValue);
+  });
+
+  // Append the select element to the body or any other container
+  document.body.appendChild(select);
+}
 
 
 // Function to randomly select 10 words
@@ -17,10 +51,26 @@ function getRandomWords(list, count = 10) {
     return shuffled.slice(0, count);
 }
 
+// Add event listener to the restart button
+document.getElementById("restartButton").addEventListener("click", () => {
+    resetGame();
+    generateMatchingGame();
+});
+document.getElementById("refreshButton").addEventListener("click", () => {
+    resetGame();
+    let selectedWords = getRandomWords(dataFile[selectedValue ?? "group1"]);
+    words = selectedWords;
+    generateMatchingGame();
+});
+
 
 fetch('./greek-words.json')  // Load vocabulary from a JSON file
     .then(response => response.json())
     .then(data => {
+        dataFile = data;
+        const dataList = Object.keys(data);
+        generateSelectFromJson(dataList);
+
         let selectedWords = getRandomWords(data.group1);
 
         // words = data;
@@ -31,29 +81,7 @@ fetch('./greek-words.json')  // Load vocabulary from a JSON file
         // startTimedChallenge();
     });
 
-// function generateMatchingGame() {
-//     const container = document.getElementById('match-game');
-//     container.innerHTML = '';
-//     let shuffledWords = [...words];
-//     shuffledWords.sort(() => Math.random() - 0.5);
 
-//     let pairs = [];
-//     shuffledWords.forEach(word => {
-//         pairs.push({ text: word.greek, value: word.greek });
-//         pairs.push({ text: word.meaning, value: word.greek });
-//     });
-
-//     pairs.sort(() => Math.random() - 0.5);
-
-//     pairs.forEach(item => {
-//         let div = document.createElement('div');
-//         div.className = 'match-item';
-//         div.textContent = item.text;
-//         div.dataset.value = item.value;
-//         div.onclick = () => selectMatch(div);
-//         container.appendChild(div);
-//     });
-// }
 function generateMatchingGame() {
     const container = document.getElementById('match-game');
     container.innerHTML = '';
@@ -77,43 +105,6 @@ function generateMatchingGame() {
         container.appendChild(div);
     });
 }
-
-// function selectMatch(element) {
-//     if (selectedPair.length < 2) {
-//         element.style.backgroundColor = 'lightgray';
-//         selectedPair.push(element);
-//     }
-
-//     if (selectedPair.length === 2) {
-//         console.log({
-//             pair1: selectedPair[0].dataset.value,
-//             pair2: selectedPair[1].dataset.value
-//         }, selectedPair)
-
-//         if (selectedPair[0].dataset.value === selectedPair[1].dataset.value) {
-//             selectedPair.forEach(el => {
-//                 el.classList.add('matched');
-//                 el.style.backgroundColor = 'green';
-//             });
-//             saveProgress();
-//             selectedPair = [];
-//         } else {
-//             selectedPair.forEach(el => {
-//                 el.style.backgroundColor = 'red';
-//                 el.style.color = 'white';
-//             });
-
-//             setTimeout(() => {
-//                 selectedPair.forEach(el => {
-//                     el.style.backgroundColor = ''
-//                     el.style.color = 'black'
-//                 });
-//                 selectedPair = [];
-//             }, 500);
-//         }
-//         // selectedPair = [];
-//     }
-// }
 
 function selectMatch(element) {
     if (selectedPair.length < 2) {
@@ -179,7 +170,6 @@ function startTimedChallenge() {
 function resetGame() {
     timeRemaining = 30;
     document.getElementById('timer').textContent = timeRemaining;
-    nextWord();
     generateMatchingGame();
     // startTimedChallenge();
     saveProgress();
