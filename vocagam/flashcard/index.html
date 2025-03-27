@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greek Vocabulary Flash card Game</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Greek Flashcard Game</h1>
+    <div class="toggle-container">
+        <button id="toggleMode" class="toggle-btn">🌙 Dark Mode</button>
+    </div>
+
+    <div class = "button-container">
+        <select id = "text-groups">
+            <option value = "">--- Select Word Group ---</option>
+        </select>
+        <!-- <button id="refreshButton" class="btn btn-primary2">Timed Challenge</button> -->
+        <button id="refreshButton" class="btn btn-primary2">Shuffle Words</button>
+    </div>
+
+    <div class="flashcard-container" id="flashcardContainer"></div>
+
+
+    <!-- <div id="flashcard">Click to Reveal</div>
+    <button onclick="nextWord()">Next</button>
+
+    <h2>Timed Challenge</h2>
+    <p>Time remaining: <span id="timer">30</span> seconds</p>
+    <div id="timed-challenge" class="timed-game-container"></div> -->
+
+    <script src="./flashcard.js"></script>
+
+</body>
+</html>

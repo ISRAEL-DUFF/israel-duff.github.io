@@ -13,6 +13,11 @@
     text-align: center;
 }
 
+.dark-mode {
+    background-color: #1e1e1e;
+    color: white;
+}
+
 h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
@@ -25,7 +30,7 @@ h2 {
 }
 
 /* Flashcard styling */
-#flashcard {
+/* #flashcard {
     border: 2px solid #4CAF50;
     background-color: #fff;
     padding: 20px;
@@ -41,6 +46,54 @@ h2 {
 
 #flashcard:hover {
     background-color: #e0f7fa;
+} */
+
+.flashcard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 70%;
+    margin-top: 30px;
+    gap: 20px;
+}
+.flashcard {
+    width: 200px;
+    height: 120px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+.flashcard.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    font-weight: bold;
+}
+.card-front {
+    background-color: #3498db;
+    color: white;
+}
+.card-back {
+    background-color: #2ecc71;
+    color: white;
+    transform: rotateY(180deg);
 }
 
 /* Match game container */
@@ -51,37 +104,10 @@ h2 {
     gap: 15px;
     margin-top: 30px;
     max-width: 800px;
+    height: 70vh;
     width: 100%;
     margin: auto;
 }
-
-/* .match-item {
-    background-color: #fff;
-    padding: 15px;
-    width: 120px;
-    border-radius: 8px;
-    border: 2px solid #4CAF50;
-    cursor: pointer;
-    font-size: 1.2em;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-} */
-
-/* .match-item:hover {
-    background-color: #e0f7fa;
-    transform: scale(1.1);
-}
-
-.match-item.selected {
-    background-color: #81c784;
-}
-
-.match-item.matched {
-    background-color: #4CAF50;
-    color: white;
-    pointer-events: none;
-} */
 
 .match-item {
     background-color: #fff;
@@ -124,6 +150,13 @@ h2 {
 }
 
 /* Buttons */
+.button-container {
+    display: flex;
+    justify-content: center;  /* Center align buttons */
+    gap: 10px;  /* Spacing between buttons */
+    margin-top: 20px;
+}
+
 button {
     background-color: #4CAF50;
     color: white;
@@ -140,6 +173,37 @@ button:hover {
     background-color: #45a049;
 }
 
+.btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+  }
+  .btn-primary { background-color: #007BFF; color: white; }
+  .btn-primary2 { background-color: #17a2b8; color: white; }
+  .btn-success { background-color: #28a745; color: white; }
+  .btn-danger { background-color: #dc3545; color: white; }
+  .btn-warning { background-color: #ffc107; color: black; }
+  
+  .btn:hover {
+    opacity: 0.8;
+  }
+
+  .btn-icon {
+    background-color: #17a2b8;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .btn-icon i {
+    margin-right: 8px;
+  }
+
 /* Timer */
 #timer {
     font-size: 2em;
@@ -152,6 +216,33 @@ button:hover {
     font-size: 1.5em;
     margin-top: 20px;
 }
+
+
+/* Dark Mode Colors */
+.dark-mode .card-front {
+    background-color: #2a3f5f;
+}
+.dark-mode .card-back {
+    background-color: #1c6c3e;
+}
+/* Toggle Button */
+.toggle-container {
+    margin-bottom: 15px;
+}
+.toggle-btn {
+    padding: 10px 15px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.dark-mode .toggle-btn {
+    background: white;
+    color: black;
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

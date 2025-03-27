@@ -1,3 +1,5 @@
+// import { getRandomWords } from '../util.js';
+
 let words = [];
 let currentIndex = 0;
 let selectedPair = [];
@@ -15,7 +17,8 @@ let selectedValue = null;
 // Function to generate the select dropdown
 function generateSelectFromJson(jsonData) {
   // Create the select element
-  const select = document.createElement("select");
+ // const select = document.createElement("select");
+    const select = document.getElementById('text-groups');
 
   // Loop through the JSON data and create an option for each item
   jsonData.forEach(item => {
@@ -38,7 +41,7 @@ function generateSelectFromJson(jsonData) {
   });
 
   // Append the select element to the body or any other container
-  document.body.appendChild(select);
+//   document.body.appendChild(select);
 }
 
 
@@ -64,7 +67,7 @@ document.getElementById("refreshButton").addEventListener("click", () => {
 });
 
 
-fetch('./greek-words.json')  // Load vocabulary from a JSON file
+fetch('../greek-words.json')  // Load vocabulary from a JSON file
     .then(response => response.json())
     .then(data => {
         dataFile = data;
@@ -197,3 +200,29 @@ function checkForSavedProgress() {
         // startTimedChallenge();
     }
 }
+
+// Dark Mode Toggle Function
+const toggleButton = document.getElementById("toggleMode");
+toggleButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    // Save user preference in localStorage
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+        toggleButton.textContent = "☀️ Light Mode";
+    } else {
+        localStorage.setItem("theme", "light");
+        toggleButton.textContent = "🌙 Dark Mode";
+    }
+});
+
+// Check saved user preference
+function loadTheme() {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+        toggleButton.textContent = "☀️ Light Mode";
+    }
+}
+
+loadTheme();
