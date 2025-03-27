@@ -3,7 +3,6 @@
 let words = [];
 let currentIndex = 0;
 let selectedPair = [];
-let colorMap = {};
 let availableColors = ["#ffcc80", "#90caf9", "#a5d6a7", "#f48fb1", "#ffab91", "#b39ddb", "#64b5f6", "#ff8a65", "#ba68c8", "#ffd54f", "#4db6ac"];  // Unique colors
 let timer;
 let timeRemaining = 30;
@@ -11,8 +10,20 @@ let gameStarted = false;
 let dataFile = {}
 
 
+function colorGenerator() {
+    let colors = [...availableColors].slice().sort(() => Math.random() - 0.5);
+
+    let nextColorFn = function() {
+        return colors.pop();
+    }
+
+    return nextColorFn
+}
+
 // Global variable to hold the selected value
 let selectedValue = null;
+let nextCardColor = null;
+let colorMap = {};
 
 // Function to generate the select dropdown
 function generateSelectFromJson(jsonData) {
@@ -108,9 +119,16 @@ function generateMatchingGame() {
         div.onclick = () => selectMatch(div);
         container.appendChild(div);
     });
+
+    nextCardColor = colorGenerator();
+    colorMap = {}
 }
 
 function selectMatch(element) {
+    if (selectedPair.length == 1 && element === selectedPair[0]) {
+        return;
+    }
+
     if (selectedPair.length < 2) {
         element.classList.add("selected");
         selectedPair.push(element);
@@ -123,7 +141,7 @@ function selectMatch(element) {
             let assignedColor = colorMap[first.dataset.value];
 
             if (!assignedColor) {
-                assignedColor = availableColors.pop(); // Assign a unique color
+                assignedColor = nextCardColor(); // Assign a unique color
                 colorMap[first.dataset.value] = assignedColor;
             }
 
@@ -172,8 +190,9 @@ function startTimedChallenge() {
 }
 
 function resetGame() {
-    timeRemaining = 30;
-    document.getElementById('timer').textContent = timeRemaining;
+    // timeRemaining = 30;
+    // document.getElementById('timer').textContent = timeRemaining;
+
     //generateMatchingGame();
     // startTimedChallenge();
     saveProgress();
