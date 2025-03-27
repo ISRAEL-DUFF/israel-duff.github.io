@@ -60,6 +60,7 @@ document.getElementById("restartButton").addEventListener("click", () => {
     generateMatchingGame();
 });
 document.getElementById("refreshButton").addEventListener("click", () => {
+    console.log('Reshuffle...')
     resetGame();
     let selectedWords = getRandomWords(dataFile[selectedValue ?? "group1"]);
     words = selectedWords;
@@ -173,7 +174,7 @@ function startTimedChallenge() {
 function resetGame() {
     timeRemaining = 30;
     document.getElementById('timer').textContent = timeRemaining;
-    generateMatchingGame();
+    //generateMatchingGame();
     // startTimedChallenge();
     saveProgress();
 }
@@ -202,27 +203,27 @@ function checkForSavedProgress() {
 }
 
 // Dark Mode Toggle Function
-const toggleButton = document.getElementById("toggleMode");
-toggleButton.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
+// const toggleButton = document.getElementById("toggleMode");
+// toggleButton.addEventListener("click", () => {
+//     document.body.classList.toggle("dark-mode");
 
-    // Save user preference in localStorage
-    if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-        toggleButton.textContent = "☀️ Light Mode";
-    } else {
-        localStorage.setItem("theme", "light");
-        toggleButton.textContent = "🌙 Dark Mode";
-    }
-});
+//     // Save user preference in localStorage
+//     if (document.body.classList.contains("dark-mode")) {
+//         localStorage.setItem("theme", "dark");
+//         toggleButton.textContent = "☀️ Light Mode";
+//     } else {
+//         localStorage.setItem("theme", "light");
+//         toggleButton.textContent = "🌙 Dark Mode";
+//     }
+// });
 
 // Check saved user preference
-function loadTheme() {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-        document.body.classList.add("dark-mode");
-        toggleButton.textContent = "☀️ Light Mode";
-    }
-}
+// function loadTheme() {
+//     const savedTheme = localStorage.getItem("theme");
+//     if (savedTheme === "dark") {
+//         document.body.classList.add("dark-mode");
+//         toggleButton.textContent = "☀️ Light Mode";
+//     }
+// }
 
-loadTheme();
+// loadTheme();
