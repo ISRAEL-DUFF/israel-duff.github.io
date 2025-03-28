@@ -79,7 +79,7 @@ document.getElementById("refreshButton").addEventListener("click", () => {
 });
 
 
-fetch('../greek-words.json')  // Load vocabulary from a JSON file
+fetch('../word-bank/greek/greek-words.json')  // Load vocabulary from a JSON file
     .then(response => response.json())
     .then(data => {
         dataFile = data;

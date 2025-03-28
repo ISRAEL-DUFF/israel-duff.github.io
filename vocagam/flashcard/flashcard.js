@@ -5,7 +5,7 @@ let currentIndex = 0;
 let dataFile = {}
 
 
-fetch('../greek-words.json')  // Load vocabulary from a JSON file
+fetch('../word-bank/greek/greek-words.json')  // Load vocabulary from a JSON file
     .then(response => response.json())
     .then(data => {
         // words = data;

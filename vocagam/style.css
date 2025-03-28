@@ -1,7 +1,8 @@
  /* Base styling */
  body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f8ff;
+    /* background-color: #f0f8ff; */
+    background: linear-gradient(to right, #3498db, #8e44ad);
     color: #333;
     margin: 0;
     padding: 0;
@@ -21,12 +22,23 @@
 h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
-    color: #2f4f4f;
+    /* color: #2f4f4f; */
+    color: white;
 }
 
 h2 {
     font-size: 1.8em;
     color: #2f4f4f;
+}
+
+h3 {
+    color: white;
+}
+
+h2, h4 {
+    font-size: 1.2em;
+    /* color: #2f4f4f; */
+    color: white;
 }
 
 /* Flashcard styling */
@@ -54,11 +66,14 @@ h2 {
     justify-content: center;
     height: 70%;
     margin-top: 30px;
-    gap: 20px;
+    /* gap: 20px; */
+    gap: 10px;
 }
 .flashcard {
-    width: 200px;
-    height: 120px;
+    /* width: 200px;
+    height: 120px; */
+    width: 160px;
+    height: 80px;
     perspective: 1000px;
     cursor: pointer;
 }
@@ -110,13 +125,15 @@ h2 {
 }
 
 .match-item {
-    background-color: #fff;
+    background-color: #ebf6f9ef;
     padding: 15px;
     width: 120px;
     border-radius: 8px;
-    border: 2px solid #4CAF50;
+    /* border: 2px solid #4CAF50; */
+    /* border: 2px solid #8e44ad; */
+    border: 2px solid #ebf6f9ef;
     cursor: pointer;
-    font-size: 1.2em;
+    font-size: 1.0em;
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -128,7 +145,8 @@ h2 {
 }
 
 .match-item.selected {
-    background-color: #81c784;
+    background-color: #80c684;
+    border-color: #80c684
 }
 
 .match-item.matched {

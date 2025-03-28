@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greek Matching Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            margin: 20px;
+            transition: background 0.3s;
+        }
+        .game-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .word, .meaning {
+            width: 180px;
+            padding: 10px;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            background-color: white;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+        .word:hover, .meaning:hover {
+            background-color: #3498db;
+            color: white;
+        }
+        .matched {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            pointer-events: none;
+        }
+        .reset-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .reset-btn:hover {
+            background: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Greek Matching Game</h2>
+
+    <div class = "button-container">
+        <select id = "text-groups">
+            <option value = "">--- Select Word Group ---</option>
+        </select>
+    </div>
+
+    <br />
+
+    <div class="game-container">
+        <div class="column" id="greekColumn"></div>
+        <div class="column" id="meaningColumn"></div>
+    </div>
+
+    <button class="reset-btn" onclick="startGame()">Restart Game</button>
+
+    <script src="matching-col.js">
+        
+    </script>
+
+</body>
+</html>

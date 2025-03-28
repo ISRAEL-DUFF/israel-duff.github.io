@@ -1,52 +1,51 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greek Vocabulary Matching Game</title>
     <link rel="stylesheet" href="../style.css">
-    <script src="https://kit.fontawesome.com/yourkit.js"></script>
 </head>
 <body>
     <div>
         <h3>Greek Vocabulary Matching Game</h3>
-        <!-- <div class="toggle-container">
-            <button id="toggleMode" class="toggle-btn">🌙 Dark Mode</button>
-        </div> -->
+        
 
         <div class = "button-container">
-            <select id = "text-groups">
-                <option value = "">--- Select Word Group ---</option>
-            </select>
-            <button id="timeChallenge" class="btn btn-primary2">Timed Challenge</button>
+            <a id="grid-layout" class="btn btn-primary">Grid Layout</button>
+            <a id="column-layout" class="btn btn-primary2">Column Layout</button>
         </div>
     </div>
 
     <h4>Match the Words</h4>
 
-    <!-- <h2>Timed Challenge</h2> -->
-    <!-- <p>Time remaining: <span id="timer">30</span> seconds</p> -->
-    <!-- <div id="timed-challenge" class="timed-game-container"></div> -->
+</body>
+</html> -->
 
-    <div class="match-container" id="match-game"></div>
-    <div class="button-container">
-        <button id="restartButton" class="btn btn-warning">Restart</button>
-        <button id="refreshButton" class="btn btn-primary2">Shuffle Words</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greek Learning Games</title>
+    <link rel="stylesheet" href="../menu.css">
+
+</head>
+<body>
+
+    <div class="menu-container">
+        <h1>Matching Game</h1>
+        
+        <div class="game-option" onclick="window.location.href='grid.html'">
+            <!-- <img src="image.png" alt="Flashcard Icon"> -->
+            Grid Layout
+        </div>
+        
+        <div class="game-option" onclick="window.location.href='column.html'">
+            <!-- <img src="https://img.icons8.com/external-flat-juicy-fish/60/000000/external-puzzle-education-and-learning-flat-flat-juicy-fish.png" alt="Matching Game Icon"> -->
+            Column Layout
+        </div>
     </div>
-
-    <br/>
-    
-
-    <!-- <button class="btn btn-primary">Restart</button>
-    <button class="btn btn-success">Start New Round</button>
-    <button class="btn btn-danger">Reset Scores</button>
-    <button class="btn btn-warning">Shuffle Words</button>
-
-    <button class="btn-icon"><i class="fas fa-redo"></i> Restart</button>
-    <button class="btn-icon"><i class="fas fa-random"></i> Shuffle Words</button>
-    <button class="btn-icon"><i class="fas fa-trash"></i> Clear Game</button> -->
-
-    <script src="./matching.js"></script>
 
 </body>
 </html>
