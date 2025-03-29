@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
   <head>
     <title>Duff Playground</title>
   </head>
@@ -10,103 +10,100 @@
       <li><a href = 'service-worker'>Service Worker</a></li>
       <li><a href = 'vocagam'>Vocagam</a></li>
     </ul>
+  </body>
+</html> -->
 
-    <!-- <ul>
-      <li><button onclick = 'mark("Rephrase")'>Rephrase</button></li>
-      <br/>
-      <li><button onclick = 'mark("Remove")'>Remove</button></li>
-      <br/>
-      <li><button onclick = 'mark("Grammar Error")'>Grammar Error</button></li>
-      <br/>
-      <li><button onclick = 'mark("Comment")'>Comment Text</button></li>
+<html>
+  <head>
+    <title>Duff Playground</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background: #35424a;
+        color: #ffffff;
+        padding: 20px 0;
+        text-align: center;
+      }
+      nav {
+        margin: 20px 0;
+      }
+      nav a {
+        color: #ffffff;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+      nav a:hover {
+        color: #f4f4f4;
+      }
+      h1 {
+        margin: 10px 0;
+        font-size: 2.5em;
+      }
+      .content {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      footer {
+        text-align: center;
+        padding: 20px 0;
+        background: #35424a;
+        color: #ffffff;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2em;
+        }
+        nav a {
+          display: block;
+          margin: 10px 0;
+        }
+        .content {
+          padding: 15px;
+        }
+      }
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.8em;
+        }
+        nav a {
+          font-size: 0.9em;
+        }
+      }
+    </style>
+  </head>
 
-    </ul> -->
+  <body>
+    <header>
+      <h1>Duff Playground</h1>
+      <nav>
+        <a href='vocagam'>Vocagam</a>
+        <a href='audio'>Audio</a>
+        <a href='service-worker'>Service Worker</a>
+      </nav>
+    </header>
 
-    <div id = 'c' style='height: 600px; width: 900px; border-style: solid; border-color: grey; margin-left: auto; margin-right: auto; overflow-y: scroll; overflow-x: auto; word-wrap: break-word; padding: 20px'>
+    <div class="content">
+      <h2>Welcome to Duff Playground!</h2>
+      <p>This is a space for experimenting with various projects and ideas. Feel free to explore the links above.</p>
+    </div>
 
-
-
-<script src = 'fms-draft.js'></script>
-<script>
-
-  originalString = `
-    <p>This&nbsp;top&nbsp;level&nbsp;view&nbsp;is&nbsp;by&nbsp;no&nbsp;means&nbsp;a&nbsp;complete&nbsp;description&nbsp;of&nbsp;<strong>project&nbsp;fresh</strong>,&nbsp;it&nbsp;only&nbsp;depicts&nbsp;the&nbsp;component&nbsp;that&nbsp;makes&nbsp;up&nbsp;the&nbsp;system.</p>
-    <p>At&nbsp;the&nbsp;top&nbsp;most&nbsp;level&nbsp;lies&nbsp;the&nbsp;USERS,&nbsp;GROUPS&nbsp;and&nbsp;the&nbsp;INVENTORY&nbsp;subsystems.</p>
-    <p>&nbsp;</p>
-    <p><strong>USERS</strong></p>
-    <p>In project fresh, we treat Users as a sub-system so as to make the system as modular as possible..., more on this later. this's is "s'"</p>
-    <p>&nbsp;</p>
-    <p><strong>GROUPS</strong></p>
-    <p>Of&nbsp;course,&nbsp;one&nbsp;of&nbsp;the&nbsp;primary&nbsp;objectives&nbsp;of&nbsp;project&nbsp;fresh&nbsp;is&nbsp;to&nbsp;enable&nbsp;group&nbsp;buying.&nbsp;Thus,&nbsp;it&nbsp;seems&nbsp;logically&nbsp;wise&nbsp;to&nbsp;make&nbsp;creating,&nbsp;modifying,&nbsp;and&nbsp;categorizing&nbsp;groups&nbsp;as&nbsp;easy&nbsp;as&nbsp;possible.</p>
-    <p>&nbsp;</p>
-    <p><strong>INVENTORY</strong></p>
-    <p>As&nbsp;shown&nbsp;in&nbsp;the&nbsp;diagram&nbsp;above,&nbsp;the&nbsp;inventory&nbsp;system&nbsp;is&nbsp;the&nbsp;largest&nbsp;component&nbsp;(&nbsp;or&nbsp;module)&nbsp;in&nbsp;the&nbsp;system.&nbsp;The&nbsp;goal&nbsp;of&nbsp;this&nbsp;inventory&nbsp;system&nbsp;is&nbsp;to&nbsp;know&nbsp;the&nbsp;current&nbsp;inventory&nbsp;levels&nbsp;and&nbsp;to&nbsp;minimize&nbsp;under-stock&nbsp;and&nbsp;overstock&nbsp;situations.&nbsp;The&nbsp;inventory&nbsp;subsystem&nbsp;comprises&nbsp;of&nbsp;</p>
-    <ol>
-    <li>Aggregation&nbsp;layer&nbsp;(&nbsp;or&nbsp;module)</li>
-    <li>Accounting&nbsp;layer&nbsp;and&nbsp;</li>
-    <li>Reporting</li>
-    </ol>
-    <p>&nbsp;</p>
-    <p><strong>Aggregation&nbsp;Layer</strong></p>
-    <p>The&nbsp;aggregation&nbsp;module&nbsp;will&nbsp;be&nbsp;the&nbsp;<strong>stock&nbsp;taking&nbsp;</strong>component&nbsp;of&nbsp;the&nbsp;system.&nbsp;As&nbsp;such&nbsp;its&nbsp;main&nbsp;objective&nbsp;would&nbsp;be&nbsp;to&nbsp;collection&nbsp;the&nbsp;necessary&nbsp;information&nbsp;about&nbsp;farmer&rsquo;s&nbsp;harvest,&nbsp;be&nbsp;it&nbsp;a&nbsp;pre-harvest&nbsp;(that&nbsp;is&nbsp;,&nbsp;the&nbsp;expected&nbsp;number&nbsp;of&nbsp;crops&nbsp;or&nbsp;products&nbsp;to&nbsp;harvest)&nbsp;or&nbsp;harvested&nbsp;crops&nbsp;or&nbsp;even&nbsp;transit&nbsp;(or&nbsp;exporting)&nbsp;harvest.</p>
-    <p>&nbsp;</p>
-    <table style="border-collapse: collapse; width: 100%;" border="1">
-    <tbody>
-    <tr>
-    <td style="width: 16.6667%;">jkjk</td>
-    <td style="width: 16.6667%;">&nbsp;</td>
-    <td style="width: 16.6667%;">;lklk</td>
-    <td style="width: 16.6667%;">jhiio</td>
-    <td style="width: 16.6667%;">bjk</td>
-    <td style="width: 16.6667%;">dsadd</td>
-    </tr>
-    <tr>
-    <td style="width: 16.6667%;">sdkdf</td>
-    <td style="width: 16.6667%;">kcclds</td>
-    <td style="width: 16.6667%;">&nbsp;</td>
-    <td style="width: 16.6667%;">&nbsp;</td>
-    <td style="width: 16.6667%;">&nbsp;</td>
-    <td style="width: 16.6667%;">&nbsp;</td>
-    </tr>
-    <tr>
-    <td style="width: 16.6667%;">&nbsp;</td>
-    <td style="width: 16.6667%;">&nbsp;</td>
-    <td style="width: 16.6667%;">&nbsp;</td>
-    <td style="width: 16.6667%;">&nbsp;</td>
-    <td style="width: 16.6667%;">&nbsp;</td>
-    <td style="width: 16.6667%;">&nbsp;</td>
-    </tr>
-    <tr>
-    <td style="width: 16.6667%;">&nbsp;</td>
-    <td style="width: 16.6667%;">&nbsp;</td>
-    <td style="width: 16.6667%;">&nbsp;</td>
-    <td style="width: 16.6667%;">&nbsp;</td>
-    <td style="width: 16.6667%;">&nbsp;</td>
-    <td style="width: 16.6667%;">&nbsp;</td>
-    </tr>
-    <tr>
-    <td style="width: 16.6667%;">&nbsp;</td>
-    <td style="width: 16.6667%;">&nbsp;</td>
-    <td style="width: 16.6667%;">&nbsp;</td>
-    <td style="width: 16.6667%;">&nbsp;</td>
-    <td style="width: 16.6667%;">&nbsp;</td>
-    <td style="width: 16.6667%;">&nbsp;</td>
-    </tr>
-    </tbody>
-    </table>
-    <p>&nbsp;</p>
-    <p><strong>Accounting&nbsp;Layer</strong></p>
-    <p>The&nbsp;accounting&nbsp;module&nbsp;will&nbsp;be&nbsp;responsible&nbsp;for&nbsp;all&nbsp;things&nbsp;<strong>payments</strong>,&nbsp;<strong>discounting</strong>&nbsp;and&nbsp;<strong>price&nbsp;indexing</strong>.&nbsp;</p>
-    <p>&nbsp;</p>
-    <p><strong>Reporting&nbsp;Layer</strong></p>
-    <p>The&nbsp;current&nbsp;status&nbsp;of&nbsp;the&nbsp;system&nbsp;as&nbsp;well&nbsp;as&nbsp;feed&nbsp;backs&nbsp;from&nbsp;clients&nbsp;is&nbsp;very&nbsp;important,&nbsp;as&nbsp;such&nbsp;the&nbsp;reporting&nbsp;module&nbsp;will&nbsp;be&nbsp;responsible&nbsp;for&nbsp;<strong>creating</strong>,&nbsp;<strong>scheduling</strong>&nbsp;and&nbsp;<strong>share</strong>&nbsp;reports.</p>`
-
-
-    let draft = new DraftManager('c', originalString, 1)
-    function mark(type) {
-      draft.markSelection(type, '')
-    }
-
-    </script>
+    <footer>
+      <p>&copy; 2025 Duff Playground. All rights reserved.</p>
+    </footer>
   </body>
 </html>

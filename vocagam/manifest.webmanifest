@@ -1,0 +1,34 @@
+{
+    "name": "Vocagam App",
+    "short_name": "Vocagam",
+    "start_url": "./",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "description": "Vocagam is an effective vocabulary learning app",
+    "icons": [
+      {
+        "src": "images/foreign_128.png",
+        "sizes": "128x128",
+        "type": "image/png"
+      },
+      {
+        "src": "images/foreign_512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "screenshots": [
+    {
+      "src": "images/screenshot_mobile.png",
+      "type": "image/png",
+      "sizes": "375x667"
+    },
+    {
+      "src": "images/screenshot_desktop.png",
+      "type": "image/png",
+      "sizes": "1280x800",
+      "form_factor": "wide"
+    }
+  ]
+  }

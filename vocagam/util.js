@@ -208,52 +208,11 @@ function performAction() {
   closeMenu(); // Close the menu after action
 }
 
-// // Function to show the menu
-// function showMenu(itemText, targetElement) {
-//   // Create a menu element
-//   const menu = document.createElement('div');
-//   menu.className = 'context-menu';
-//   menu.innerHTML = `<p>Action for ${itemText}</p>
-//                     <button onclick="performAction()">Perform Action</button>`;
-  
-//   // Position the menu near the target element
-//   const rect = targetElement.getBoundingClientRect();
-//   menu.style.position = 'absolute';
-//   menu.style.top = `${rect.bottom}px`;
-//   menu.style.left = `${rect.left}px`;
-  
-//   document.body.appendChild(menu);
-
-//   // Remove the menu when clicking elsewhere
-//   document.addEventListener('click', () => {
-//       menu.remove();
-//   }, { once: true });
-// }
 
 export function addContextMenu(params) {
   if(!params.div) {
     return;
   }
-
-  // // Variables to handle long press
-  // let pressTimer;
-
-  // // Add event listeners for long press
-  // params.div.addEventListener('mousedown', () => {
-  //     pressTimer = setTimeout(() => {
-  //         // Action to take on long press
-  //         showMenu(params.item.text, params.div); // Call function to show menu
-  //     }, 500); // Adjust time for long press duration
-  // });
-
-  // params.div.addEventListener('mouseup', () => {
-  //     clearTimeout(pressTimer);
-  // });
-
-  // params.div.addEventListener('mouseleave', () => {
-  //     clearTimeout(pressTimer);
-  // });
-
 
   // Variables to handle long press
   let pressTimer;
@@ -297,20 +256,6 @@ export function addContextMenu(params) {
   // });
 
 }
-
-
-// function selectLanguage(language) {
-//     lang = language;
-//     document.querySelector('.selected-option').textContent = language.charAt(0).toUpperCase() + language.slice(1);
-//     console.log("Selected language: " + lang);
-// }
-
-// function visitGame(gameUrl) {
-//     window.location.href = `${gameUrl}?lang=${lang}`;
-// }
-
-// // Call the function to generate the select box on page load
-// window.onload = generateSelectBox;
 
 
 export function localDatabase(storageKey) {
