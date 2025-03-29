@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greek Vocabulary Matching Game</title>
-    <link rel="stylesheet" href="../style.css">
-    <script src="https://kit.fontawesome.com/yourkit.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- <link rel="stylesheet" href="../css/menu.css"> -->
+    <link rel="stylesheet" href="../css/ui-components.css">
 </head>
 <body>
     <div>
@@ -15,9 +16,10 @@
         </div> -->
 
         <div class = "button-container">
-            <select id = "text-groups">
+            <!-- <select id = "text-groups">
                 <option value = "">--- Select Word Group ---</option>
-            </select>
+            </select> -->
+            <div id = 'wordgroup-select-container'></div>
             <button id="timeChallenge" class="btn btn-primary2">Timed Challenge</button>
         </div>
     </div>
@@ -46,7 +48,7 @@
     <button class="btn-icon"><i class="fas fa-random"></i> Shuffle Words</button>
     <button class="btn-icon"><i class="fas fa-trash"></i> Clear Game</button> -->
 
-    <script src="./matching.js"></script>
+    <script src="./matching.js" type = 'module'></script>
 
 </body>
 </html>

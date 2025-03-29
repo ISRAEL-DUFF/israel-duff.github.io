@@ -24,24 +24,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greek Learning Games</title>
-    <link rel="stylesheet" href="./menu.css">
+    <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="./css/ui-components.css">
 
 </head>
+<script>
+    let lang = ''
+    function visitGame(gameUrl) {
+        window.location.href=`${gameUrl}?lang=${lang}`
+    }
+</script>
 <body>
 
     <div class="menu-container">
         <h1>Select a Greek Learning Game</h1>
+
+        <!-- <label for="language-select">Choose a language:</label>
+        <select id="language-select" onchange="changeLanguage(this.value)">
+            <option value="greek">Greek</option>
+            <option value="hebrew">Hebrew</option>
+            <option value="latin">Latin</option>
+        </select> -->
+
+        <div id="language-select-container"></div> <!-- Container for the custom select box -->
+
         
-        <div class="game-option" onclick="window.location.href='flashcard'">
-            <!-- <img src="https://img.icons8.com/external-others-inmotus-design/64/000000/external-flashcard-education-others-inmotus-design.png" alt="Flashcard Icon"> -->
+        <!-- <div class="game-option" onclick="window.location.href='flashcard'">
             Flashcard Game
         </div>
         
         <div class="game-option" onclick="window.location.href='matching'">
-            <!-- <img src="https://img.icons8.com/external-flat-juicy-fish/60/000000/external-puzzle-education-and-learning-flat-flat-juicy-fish.png" alt="Matching Game Icon"> -->
+            Matching Game
+        </div> -->
+
+        <div class="game-option" onclick="visitGame('flashcard')">
+            Flashcard Game
+        </div>
+        
+        <div class="game-option" onclick="visitGame('matching')">
             Matching Game
         </div>
     </div>
+
+    <!-- <script src="./util.js" type = 'module'></script> -->
+
+    <script type = 'module'>
+        import { generateSelectBox } from './util.js'; // Adjust the path as necessary
+
+        function changeLanguage(language) {
+            // Logic to handle language change
+            lang = language.value;
+            console.log("Selected language: " + lang);
+
+
+            // You can add more functionality here to change the game's language
+        }
+
+        generateSelectBox({
+            items: [
+                {
+                    key: 'Greek',
+                    value: 'greek'
+                },
+                {
+                    key: 'Hebrew',
+                    value: 'hebrew'
+                },
+                {
+                    key: 'Latin',
+                    value: 'latin'
+                }
+            ],
+            onSelect: changeLanguage,
+            containerId: 'language-select-container',
+            defaultSelectText: 'Select a language'
+        })
+
+        // window.onload = generateSelectBox;
+    </script>
 
 </body>
 </html>

@@ -1,4 +1,6 @@
 // import { getRandomWords } from '../util.js';
+import { generateSelectBox, getRandomWords, colorGenerator, addContextMenu, localDatabase } from '../util.js'; // Adjust the path as necessary
+
 
 let words = [];
 let currentIndex = 0;
@@ -8,17 +10,8 @@ let timer;
 let timeRemaining = 30;
 let gameStarted = false;
 let dataFile = {}
-
-
-function colorGenerator() {
-    let colors = [...availableColors].slice().sort(() => Math.random() - 0.5);
-
-    let nextColorFn = function() {
-        return colors.pop();
-    }
-
-    return nextColorFn
-}
+let database = localDatabase('difficult_words')
+let savedWords = "savedGreekWords"; // TODO: change for each language
 
 // Global variable to hold the selected value
 let selectedValue = null;
@@ -55,16 +48,6 @@ function generateSelectFromJson(jsonData) {
 //   document.body.appendChild(select);
 }
 
-
-// Function to randomly select 10 words
-function getRandomWords(list, count = 10) {
-    // Shuffle the array using Fisher-Yates algorithm
-    let shuffled = list.slice().sort(() => Math.random() - 0.5);
-    
-    // Select the first 'count' words
-    return shuffled.slice(0, count);
-}
-
 // Add event listener to the restart button
 document.getElementById("restartButton").addEventListener("click", () => {
     resetGame();
@@ -73,8 +56,13 @@ document.getElementById("restartButton").addEventListener("click", () => {
 document.getElementById("refreshButton").addEventListener("click", () => {
     console.log('Reshuffle...')
     resetGame();
-    let selectedWords = getRandomWords(dataFile[selectedValue ?? "group1"]);
-    words = selectedWords;
+
+    if(selectedValue === null || selectedValue === savedWords) {
+        words = getRandomWords(database.getAll())
+    } else {
+        words = getRandomWords(dataFile[selectedValue ?? "group1"]);
+    }
+
     generateMatchingGame();
 });
 
@@ -84,11 +72,39 @@ fetch('../word-bank/greek/greek-words.json')  // Load vocabulary from a JSON fil
     .then(data => {
         dataFile = data;
         const dataList = Object.keys(data);
-        generateSelectFromJson(dataList);
 
-        let selectedWords = getRandomWords(data.group1);
+        // generateSelectFromJson(dataList);
+        generateSelectBox({
+            containerId: 'wordgroup-select-container',
+            items: dataList,
+            onSelect: (event) => {
+                // Set the global variable to the value of the selected option
+                // selectedValue = event.target.value;
+                selectedValue = event;
+            
+                resetGame();
 
-        // words = data;
+                // let selectedWords = getRandomWords(dataFile[selectedValue]);
+                // words = selectedWords;
+                if(selectedValue === null || selectedValue === savedWords) {
+                    words = getRandomWords(database.getAll())
+                } else {
+                    words = getRandomWords(dataFile[selectedValue ?? "group1"]);
+                }
+
+                generateMatchingGame();
+                console.log("Selected Word List: " + selectedValue);
+              },
+            style: {
+                textColor: 'white',
+                backgroundColor: '#8e44ad'
+            },
+            defaultSelectText: 'Select a word group'
+        })
+        
+        let difficultWords = database.getAll()
+        let selectedWords = difficultWords.length > 0 ? difficultWords : getRandomWords(data.group1);
+
         words = selectedWords;
 
         // checkForSavedProgress();
@@ -105,8 +121,8 @@ function generateMatchingGame() {
 
     let pairs = [];
     shuffledWords.forEach(word => {
-        pairs.push({ text: word.greek, value: word.greek });
-        pairs.push({ text: word.meaning, value: word.greek });
+        pairs.push({ text: word.greek, value: word.greek, word });
+        pairs.push({ text: word.meaning, value: word.greek, word });
     });
 
     pairs.sort(() => Math.random() - 0.5);
@@ -117,10 +133,29 @@ function generateMatchingGame() {
         div.textContent = item.text;
         div.dataset.value = item.value;
         div.onclick = () => selectMatch(div);
+        div.ondblclick = () => {
+            // Action to take on double-click
+            console.log("Double-clicked on: " + item.text);
+            // You can add any other action you want to perform here
+        };
+        addContextMenu({
+            div,
+            item,
+            action: () => {
+                console.log({
+                    toBeStored: item
+                })
+                if(item.word.id) {
+                    database.remove(item.word.id)
+                } else {
+                    database.add(item.word)
+                }
+            }
+        })
         container.appendChild(div);
     });
 
-    nextCardColor = colorGenerator();
+    nextCardColor = colorGenerator(availableColors);
     colorMap = {}
 }
 
