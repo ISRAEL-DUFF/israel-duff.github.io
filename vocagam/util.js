@@ -282,7 +282,7 @@ export function addContextMenu(params) {
   params.div.addEventListener('mousedown', mouseDown);
   params.div.addEventListener('mouseup', mouseUp);
   params.div.addEventListener('touchstart', (event) => {
-    event.preventDefault(); // Prevent default touch behavior
+    // event.preventDefault(); // Prevent default touch behavior
     mouseDown();
   });
 

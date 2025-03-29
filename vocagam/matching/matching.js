@@ -133,11 +133,7 @@ function generateMatchingGame() {
         div.textContent = item.text;
         div.dataset.value = item.value;
         div.onclick = () => selectMatch(div);
-        div.ondblclick = () => {
-            // Action to take on double-click
-            console.log("Double-clicked on: " + item.text);
-            // You can add any other action you want to perform here
-        };
+        
         addContextMenu({
             div,
             item,
