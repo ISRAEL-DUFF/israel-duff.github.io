@@ -260,26 +260,34 @@ export function addContextMenu(params) {
   let isLongPress = false;
 
   // Add event listeners for long press
-  params.div.addEventListener('mousedown', () => {
-      isLongPress = false; // Reset long press flag
-      pressTimer = setTimeout(() => {
-        console.log("Setting long press...")
-          isLongPress = true; // Set long press flag
-          // showMenu(params.item.text, params.div); // Call function to show menu
-      }, 500); // Adjust time for long press duration
+  let mouseDown = () => {
+    isLongPress = false; // Reset long press flag
+    pressTimer = setTimeout(() => {
+      console.log("Setting long press...")
+        isLongPress = true; // Set long press flag
+        // showMenu(params.item.text, params.div); // Call function to show menu
+    }, 500); // Adjust time for long press duration
+  }
+  let mouseUp = () => {
+    clearTimeout(pressTimer);
+    if(isLongPress) {
+      console.log('Showing menu...', params.item)
+      showMenu({
+        itemText: params.item.text,
+        targetElement: params.div,
+        action: params.action
+      });
+    }
+  }
+  params.div.addEventListener('mousedown', mouseDown);
+  params.div.addEventListener('mouseup', mouseUp);
+  params.div.addEventListener('touchstart', (event) => {
+    event.preventDefault(); // Prevent default touch behavior
+    mouseDown();
   });
 
-  params.div.addEventListener('mouseup', () => {
-      clearTimeout(pressTimer);
-      if(isLongPress) {
-        console.log('Showing menu...', params.item)
-        showMenu({
-          itemText: params.item.text,
-          targetElement: params.div,
-          action: params.action
-        });
-      }
-  });
+  params.div.addEventListener('touchend', mouseUp);
+  params.div.addEventListener('touchcancel', mouseUp);
 
   // params.div.addEventListener('mouseleave', () => {
   //     clearTimeout(pressTimer);
