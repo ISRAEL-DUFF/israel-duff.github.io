@@ -67,3 +67,30 @@
 .context-menu button:hover {
     background-color: #0056b3;
 }
+
+.btn-nav {
+    background-color: #007bff; /* Button background color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    z-index: 1000; /* Ensures the button is above other elements */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.btn-nav:hover {
+    background-color: #0056b3; /* Darker background on hover */
+}
+
+.btn-nav-forward {
+    position: absolute; /* Position the button absolutely within the container */
+    top: 20px; /* Distance from the top of the container */
+    right: 20px; /* Distance from the right of the container */
+}
+
+.btn-nav-back {
+    position: absolute; /* Position the button absolutely within the container */
+    top: 20px; /* Distance from the top of the container */
+    left: 20px; /* Distance from the left of the container */
+}

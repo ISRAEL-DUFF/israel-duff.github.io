@@ -18,43 +18,13 @@ let selectedValue = null;
 let nextCardColor = null;
 let colorMap = {};
 
-// Function to generate the select dropdown
-function generateSelectFromJson(jsonData) {
-  // Create the select element
- // const select = document.createElement("select");
-    const select = document.getElementById('text-groups');
-
-  // Loop through the JSON data and create an option for each item
-  jsonData.forEach(item => {
-    const option = document.createElement("option");
-    option.value = item;
-    option.textContent = item
-    select.appendChild(option);
-  });
-
-  // Add event listener for selection change
-  select.addEventListener('change', (event) => {
-    // Set the global variable to the value of the selected option
-    selectedValue = event.target.value;
-
-    resetGame();
-    let selectedWords = getRandomWords(dataFile[selectedValue]);
-    words = selectedWords;
-    generateMatchingGame();
-    console.log("Selected Word List: " + selectedValue);
-  });
-
-  // Append the select element to the body or any other container
-//   document.body.appendChild(select);
-}
-
 // Add event listener to the restart button
 document.getElementById("restartButton").addEventListener("click", () => {
     resetGame();
     generateMatchingGame();
 });
 document.getElementById("refreshButton").addEventListener("click", () => {
-    console.log('Reshuffle...')
+    console.log('Reshuffle...') 
     resetGame();
 
     if(selectedValue === null || selectedValue === savedWords) {

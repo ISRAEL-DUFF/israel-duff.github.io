@@ -1,3 +1,4 @@
+import { getRandomWords, localDatabase } from "../util.js";
 // const words = [
 //     { "greek": "ἀγάπη", "meaning": "love" },
 //     { "greek": "λόγος", "meaning": "word" },
@@ -10,6 +11,23 @@ let selectedWord = null;
 let selectedMeaning = null;
 let dataFile = {};
 let words = [];
+let database = localDatabase('difficult_words')
+let savedWords = "savedGreekWords"; // TODO: change for each language
+let selectedValue = null;
+
+
+
+document.getElementById("refreshButton").addEventListener("click", () => {
+    console.log('Reshuffle...')
+    
+    if(selectedValue === null || selectedValue === savedWords) {
+        words = getRandomWords(database.getAll())
+    } else {
+        words = getRandomWords(dataFile[selectedValue ?? "group1"]);
+    }
+
+    startGame();
+});
 
 
 fetch('../word-bank/greek/greek-words.json')  // Load vocabulary from a JSON file
@@ -19,9 +37,9 @@ fetch('../word-bank/greek/greek-words.json')  // Load vocabulary from a JSON fil
         const dataList = Object.keys(data);
         generateSelectFromJson(dataList);
 
-        let selectedWords = getRandomWords(data.group1);
-
         // words = data;
+        let difficultWords = database.getAll()
+        let selectedWords = difficultWords.length > 0 ? difficultWords : getRandomWords(data.group1);
         words = selectedWords;
 
         startGame()
@@ -45,8 +63,14 @@ function generateSelectFromJson(jsonData) {
         // Set the global variable to the value of the selected option
         selectedValue = event.target.value;
     
-        let selectedWords = getRandomWords(dataFile[selectedValue]);
-        words = selectedWords;
+        // let selectedWords = getRandomWords(dataFile[selectedValue]);
+        // words = selectedWords;
+        if(selectedValue === null || selectedValue === savedWords) {
+            words = getRandomWords(database.getAll())
+        } else {
+            words = getRandomWords(dataFile[selectedValue ?? "group1"]);
+        }
+
         startGame();
     });
     
@@ -56,13 +80,13 @@ function generateSelectFromJson(jsonData) {
     
     
 // Function to randomly select 10 words
-function getRandomWords(list, count = 10) {
-    // Shuffle the array using Fisher-Yates algorithm
-    let shuffled = list.slice().sort(() => Math.random() - 0.5);
+// function getRandomWords(list, count = 10) {
+//     // Shuffle the array using Fisher-Yates algorithm
+//     let shuffled = list.slice().sort(() => Math.random() - 0.5);
     
-    // Select the first 'count' words
-    return shuffled.slice(0, count);
-}
+//     // Select the first 'count' words
+//     return shuffled.slice(0, count);
+// }
 
 function shuffle(array) {
     return array.sort(() => Math.random() - 0.5);

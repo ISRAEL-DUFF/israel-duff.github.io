@@ -29,6 +29,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greek Learning Games</title>
     <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/ui-components.css">
 
 </head>
 <body>
@@ -38,13 +39,19 @@
         
         <div class="game-option" onclick="window.location.href='grid.html'">
             <!-- <img src="image.png" alt="Flashcard Icon"> -->
-            Grid Layout
+            Classic Match
         </div>
         
         <div class="game-option" onclick="window.location.href='column.html'">
             <!-- <img src="https://img.icons8.com/external-flat-juicy-fish/60/000000/external-puzzle-education-and-learning-flat-flat-juicy-fish.png" alt="Matching Game Icon"> -->
-            Column Layout
+            Random Match
         </div>
+
+        <button class="btn-nav btn-nav-back" onclick="window.history.back()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.3 1.3a1 1 0 0 1 0 1.4L5.4 8l5.9 5.3a1 1 0 0 1-1.4 1.4l-7-6.3a1 1 0 0 1 0-1.4l7-6.3a1 1 0 0 1 1.4 0z"/>
+            </svg>
+        </button>
     </div>
 
 </body>

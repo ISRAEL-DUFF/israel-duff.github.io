@@ -18,25 +18,10 @@
 <body>
 
     <div class="menu-container">
-        <h1>Select a Greek Learning Game</h1>
-
-        <!-- <label for="language-select">Choose a language:</label>
-        <select id="language-select" onchange="changeLanguage(this.value)">
-            <option value="greek">Greek</option>
-            <option value="hebrew">Hebrew</option>
-            <option value="latin">Latin</option>
-        </select> -->
+        <h1>Choose Game</h1>
 
         <div id="language-select-container"></div> <!-- Container for the custom select box -->
-
-        
-        <!-- <div class="game-option" onclick="window.location.href='flashcard'">
-            Flashcard Game
-        </div>
-        
-        <div class="game-option" onclick="window.location.href='matching'">
-            Matching Game
-        </div> -->
+        <button id="installButton" style="display: none;">Install App</button>
 
         <div class="game-option" onclick="visitGame('flashcard')">
             Flashcard Game
@@ -47,16 +32,23 @@
         </div>
     </div>
 
-    <!-- <script src="./util.js" type = 'module'></script> -->
-
     <script type = 'module'>
         import { generateSelectBox } from './util.js'; // Adjust the path as necessary
+
+        function showInstallButton() {
+            if (window.matchMedia('(display-mode: standalone)').matches) {
+                console.log('The app is installed and running in standalone mode.');
+            } else {
+                console.log('The app is not installed.');
+                const installButton = document.getElementById('installButton');
+                installButton.style.display = 'block'; // Show the button
+            }
+        }
 
         function changeLanguage(language) {
             // Logic to handle language change
             lang = language.value;
             console.log("Selected language: " + lang);
-
 
             // You can add more functionality here to change the game's language
         }
@@ -82,6 +74,7 @@
         })
 
         // window.onload = generateSelectBox;
+        let deferredPrompt;
 
         function registerServiceWorker() {
             if ('serviceWorker' in navigator) {
@@ -97,11 +90,38 @@
             }
         }
 
-        // window.onload = () => {
-        //     // Do something here...
-        //     console.log('WINDOW UNLOAD DONE...')
-        // }
+        function setUpInstall() {
+
+            window.addEventListener('beforeinstallprompt', (e) => {
+                // Prevent the mini-info bar from appearing on mobile
+                e.preventDefault();
+                // Stash the event so it can be triggered later
+                deferredPrompt = e;
+                // Update UI to notify the user they can add to home screen
+                showInstallButton(); // Implement this function to show your install button
+            });
+
+            // When the user clicks the install button
+            const installButton = document.getElementById('installButton');
+            installButton.addEventListener('click', async () => {
+                // Show the install prompt
+                deferredPrompt.prompt();
+                // Wait for the user to respond to the prompt
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    console.log('User accepted the A2HS prompt');
+                    installButton.style.display = 'none'; // Show the button
+                } else {
+                    console.log('User dismissed the A2HS prompt');
+                }
+                // Clear the deferredPrompt variable, since it can only be used once
+                deferredPrompt = null;
+            });
+        }
+
+        setUpInstall()
         registerServiceWorker()
+
     </script>
 
 </body>

@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="../css/ui-components.css">
 </head>
 <body>
+    <button class="btn-nav btn-nav-back" onclick="window.history.back()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M11.3 1.3a1 1 0 0 1 0 1.4L5.4 8l5.9 5.3a1 1 0 0 1-1.4 1.4l-7-6.3a1 1 0 0 1 0-1.4l7-6.3a1 1 0 0 1 1.4 0z"/>
+        </svg>
+    </button>
     <div>
         <h3>Word Matching Game</h3>
         <!-- <div class="toggle-container">
@@ -20,7 +25,7 @@
                 <option value = "">--- Select Word Group ---</option>
             </select> -->
             <div id = 'wordgroup-select-container'></div>
-            <button id="timeChallenge" class="btn btn-primary2">Timed Challenge</button>
+            <button id="timeChallenge" class="game-button btn btn-primary2">Timed Challenge</button>
         </div>
     </div>
 
@@ -32,8 +37,8 @@
 
     <div class="match-container" id="match-game"></div>
     <div class="button-container">
-        <button id="restartButton" class="btn btn-warning">Restart</button>
-        <button id="refreshButton" class="btn btn-primary2">Shuffle Words</button>
+        <button id="restartButton" class="game-button btn btn-warning">Restart</button>
+        <button id="refreshButton" class="game-button btn btn-primary2">Shuffle Words</button>
     </div>
 
     <br/>
