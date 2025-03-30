@@ -67,7 +67,8 @@ fetch('../word-bank/greek/greek-words.json')  // Load vocabulary from a JSON fil
               },
             style: {
                 textColor: 'white',
-                backgroundColor: '#8e44ad'
+                backgroundColor: '#8e44ad',
+                // backgroundColor: 'linear-gradient(to left, #3498db, #8e44ad)'
             },
             defaultSelectText: 'Select a word group'
         })
