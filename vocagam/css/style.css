@@ -172,7 +172,7 @@ h2, h4 {
     display: flex;
     justify-content: center;  /* Center align buttons */
     gap: 10px;  /* Spacing between buttons */
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .game-button {

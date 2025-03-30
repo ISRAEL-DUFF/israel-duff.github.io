@@ -427,7 +427,60 @@
         { "greek": "κενός", "meaning": "empty, vain", "frequency": 70 },
         { "greek": "θαυμάσιος", "meaning": "marvelous, wonderful", "frequency": 60 },
         { "greek": "κρείττων", "meaning": "stronger, better", "frequency": 50 }
+    ],
+
+    "personal_pronounce": [
+        { "greek": "ἐγώ", "case": "nominative", "number": "singular", "person": "1st", "meaning": "I" },
+        { "greek": "ἐμοῦ / μου", "case": "genitive", "number": "singular", "person": "1st", "meaning": "of me, my" },
+        { "greek": "ἐμοί / μοι", "case": "dative", "number": "singular", "person": "1st", "meaning": "to/for me" },
+        { "greek": "ἐμέ / με", "case": "accusative", "number": "singular", "person": "1st", "meaning": "me" },
+        
+        { "greek": "νῶ", "case": "nominative", "number": "dual", "person": "1st", "meaning": "we two" },
+        { "greek": "νωῖν", "case": "genitive", "number": "dual", "person": "1st", "meaning": "of us two" },
+        { "greek": "νωῖν", "case": "dative", "number": "dual", "person": "1st", "meaning": "to/for us two" },
+        { "greek": "νῶ", "case": "accusative", "number": "dual", "person": "1st", "meaning": "us two" },
+    
+        { "greek": "ἡμεῖς", "case": "nominative", "number": "plural", "person": "1st", "meaning": "we" },
+        { "greek": "ἡμῶν", "case": "genitive", "number": "plural", "person": "1st", "meaning": "of us, our" },
+        { "greek": "ἡμῖν", "case": "dative", "number": "plural", "person": "1st", "meaning": "to/for us" },
+        { "greek": "ἡμᾶς", "case": "accusative", "number": "plural", "person": "1st", "meaning": "us" },
+    
+        { "greek": "σύ", "case": "nominative", "number": "singular", "person": "2nd", "meaning": "you" },
+        { "greek": "σοῦ / σου", "case": "genitive", "number": "singular", "person": "2nd", "meaning": "of you, your" },
+        { "greek": "σοί / σοι", "case": "dative", "number": "singular", "person": "2nd", "meaning": "to/for you" },
+        { "greek": "σέ / σε", "case": "accusative", "number": "singular", "person": "2nd", "meaning": "you" },
+    
+        { "greek": "σφῶ", "case": "nominative", "number": "dual", "person": "2nd", "meaning": "you two" },
+        { "greek": "σφῶιν", "case": "genitive", "number": "dual", "person": "2nd", "meaning": "of you two" },
+        { "greek": "σφῶιν", "case": "dative", "number": "dual", "person": "2nd", "meaning": "to/for you two" },
+        { "greek": "σφῶ", "case": "accusative", "number": "dual", "person": "2nd", "meaning": "you two" },
+    
+        { "greek": "ὑμεῖς", "case": "nominative", "number": "plural", "person": "2nd", "meaning": "you (all)" },
+        { "greek": "ὑμῶν", "case": "genitive", "number": "plural", "person": "2nd", "meaning": "of you, your" },
+        { "greek": "ὑμῖν", "case": "dative", "number": "plural", "person": "2nd", "meaning": "to/for you" },
+        { "greek": "ὑμᾶς", "case": "accusative", "number": "plural", "person": "2nd", "meaning": "you" },
+    
+        { "greek": "αὐτός", "case": "nominative", "number": "singular", "person": "3rd", "meaning": "he" },
+        { "greek": "αὐτοῦ", "case": "genitive", "number": "singular", "person": "3rd", "meaning": "of him, his" },
+        { "greek": "αὐτῷ", "case": "dative", "number": "singular", "person": "3rd", "meaning": "to/for him" },
+        { "greek": "αὐτόν", "case": "accusative", "number": "singular", "person": "3rd", "meaning": "him" },
+    
+        { "greek": "αὐτή", "case": "nominative", "number": "singular", "person": "3rd", "meaning": "she" },
+        { "greek": "αὐτῆς", "case": "genitive", "number": "singular", "person": "3rd", "meaning": "of her, her" },
+        { "greek": "αὐτῇ", "case": "dative", "number": "singular", "person": "3rd", "meaning": "to/for her" },
+        { "greek": "αὐτήν", "case": "accusative", "number": "singular", "person": "3rd", "meaning": "her" },
+    
+        { "greek": "αὐτοί", "case": "nominative", "number": "plural", "person": "3rd", "meaning": "they (masc.)" },
+        { "greek": "αὐτῶν", "case": "genitive", "number": "plural", "person": "3rd", "meaning": "of them, their" },
+        { "greek": "αὐτοῖς", "case": "dative", "number": "plural", "person": "3rd", "meaning": "to/for them" },
+        { "greek": "αὐτούς", "case": "accusative", "number": "plural", "person": "3rd", "meaning": "them" },
+    
+        { "greek": "αὐταί", "case": "nominative", "number": "plural", "person": "3rd", "meaning": "they (fem.)" },
+        { "greek": "αὐτῶν", "case": "genitive", "number": "plural", "person": "3rd", "meaning": "of them, their" },
+        { "greek": "αὐταῖς", "case": "dative", "number": "plural", "person": "3rd", "meaning": "to/for them" },
+        { "greek": "αὐτάς", "case": "accusative", "number": "plural", "person": "3rd", "meaning": "them" }
     ]
+    
     
 }
 

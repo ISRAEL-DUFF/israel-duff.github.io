@@ -225,7 +225,7 @@ export function addContextMenu(params) {
       console.log("Setting long press...")
         isLongPress = true; // Set long press flag
         // showMenu(params.item.text, params.div); // Call function to show menu
-    }, 5000); // Adjust time for long press duration
+    }, 2000); // Adjust time for long press duration
   }
   let mouseUp = () => {
     clearTimeout(pressTimer);
