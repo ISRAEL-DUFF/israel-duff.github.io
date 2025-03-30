@@ -1,0 +1,459 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Recall (Multiple Choice)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c3e50;
+            text-align: center;
+            color: white;
+            margin: 20px;
+        }
+        .game-container {
+            background: #34495e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 80%;
+            max-width: 400px;
+            margin: auto;
+        }
+        .word-display {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 20px 0;
+            background: white;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .option-btn {
+            padding: 10px;
+            font-size: 18px;
+            background: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .option-btn:hover {
+            background: #1f6690;
+        }
+        .correct {
+            background: green !important;
+        }
+        .wrong {
+            background: red !important;
+        }
+        .score {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="game-container">
+        <h2>Speed Recall (Multiple Choice)</h2>
+        <div class="word-display" id="wordDisplay">Loading...</div>
+        <div class="options" id="optionsContainer"></div>
+        <p class="score">Score: <span id="score">0</span></p>
+    </div>
+
+    <script>
+        const words = [
+            { greek: "ἀγάπη", meanings: ["love", "faith", "hope", "grace"] },
+            { greek: "πίστις", meanings: ["faith", "life", "grace", "law"] },
+            { greek: "λόγος", meanings: ["word", "time", "truth", "wisdom"] },
+            { greek: "χάρις", meanings: ["grace", "spirit", "joy", "law"] },
+            { greek: "ζωή", meanings: ["life", "light", "path", "faith"] },
+            { greek: "φῶς", meanings: ["light", "darkness", "voice", "earth"] }
+        ];
+
+        let score = 0;
+        let currentWord = {};
+
+        function startGame() {
+            document.getElementById("score").textContent = score;
+            nextWord();
+        }
+
+        function nextWord() {
+            document.getElementById("optionsContainer").innerHTML = ""; // Clear previous options
+            currentWord = words[Math.floor(Math.random() * words.length)];
+            document.getElementById("wordDisplay").textContent = currentWord.greek;
+
+            // Shuffle options so the correct answer isn't always first
+            let shuffledOptions = currentWord.meanings.sort(() => Math.random() - 0.5);
+
+            shuffledOptions.forEach(option => {
+                let button = document.createElement("button");
+                button.textContent = option;
+                button.classList.add("option-btn");
+                button.onclick = () => checkAnswer(option, button);
+                document.getElementById("optionsContainer").appendChild(button);
+            });
+        }
+
+        function checkAnswer(selectedOption, button) {
+            if (selectedOption === currentWord.meanings[0]) {
+                score += 10;
+                button.classList.add("correct");
+            } else {
+                button.classList.add("wrong");
+            }
+
+            setTimeout(() => {
+                nextWord();
+            }, 500);
+
+            document.getElementById("score").textContent = score;
+        }
+
+        startGame();
+    </script>
+
+</body>
+</html> -->
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Recall (Timed Multiple Choice)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c3e50;
+            text-align: center;
+            color: white;
+            margin: 20px;
+        }
+        .game-container {
+            background: #34495e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 80%;
+            max-width: 400px;
+            margin: auto;
+        }
+        .word-display {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 20px 0;
+            background: white;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .option-btn {
+            padding: 10px;
+            font-size: 18px;
+            background: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .option-btn:hover {
+            background: #1f6690;
+        }
+        .correct {
+            background: green !important;
+        }
+        .wrong {
+            background: red !important;
+        }
+        .score {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .timer-bar {
+            width: 100%;
+            height: 10px;
+            background: red;
+            transition: width 5s linear;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="game-container">
+        <h2>Speed Recall (Timed Multiple Choice)</h2>
+        <div class="word-display" id="wordDisplay">Loading...</div>
+        <div class="timer-bar" id="timerBar"></div>
+        <div class="options" id="optionsContainer"></div>
+        <p class="score">Score: <span id="score">0</span></p>
+    </div>
+
+    <script>
+        const words = [
+            { greek: "ἀγάπη", meanings: ["love", "faith", "hope", "grace"] },
+            { greek: "πίστις", meanings: ["faith", "life", "grace", "law"] },
+            { greek: "λόγος", meanings: ["word", "time", "truth", "wisdom"] },
+            { greek: "χάρις", meanings: ["grace", "spirit", "joy", "law"] },
+            { greek: "ζωή", meanings: ["life", "light", "path", "faith"] },
+            { greek: "φῶς", meanings: ["light", "darkness", "voice", "earth"] }
+        ];
+
+        let score = 0;
+        let currentWord = {};
+        let timer;
+
+        function startGame() {
+            document.getElementById("score").textContent = score;
+            nextWord();
+        }
+
+        function nextWord() {
+            document.getElementById("optionsContainer").innerHTML = ""; // Clear previous options
+            document.getElementById("timerBar").style.width = "100%"; // Reset timer bar
+
+            currentWord = words[Math.floor(Math.random() * words.length)];
+            document.getElementById("wordDisplay").textContent = currentWord.greek;
+
+            // Shuffle options so the correct answer isn't always first
+            let shuffledOptions = currentWord.meanings.sort(() => Math.random() - 0.5);
+
+            shuffledOptions.forEach(option => {
+                let button = document.createElement("button");
+                button.textContent = option;
+                button.classList.add("option-btn");
+                button.onclick = () => checkAnswer(option, button);
+                document.getElementById("optionsContainer").appendChild(button);
+            });
+
+            // Start countdown timer
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                document.getElementById("wordDisplay").style.background = "red"; // Indicate time out
+                setTimeout(() => {
+                    document.getElementById("wordDisplay").style.background = "white";
+                    nextWord();
+                }, 500);
+            }, 5000);
+
+            // Animate the timer bar
+            document.getElementById("timerBar").style.transition = "width 5s linear";
+            document.getElementById("timerBar").style.width = "0%";
+        }
+
+        function checkAnswer(selectedOption, button) {
+            clearTimeout(timer); // Stop the timer when an answer is selected
+
+            if (selectedOption === currentWord.meanings[0]) {
+                score += 10;
+                button.classList.add("correct");
+            } else {
+                button.classList.add("wrong");
+            }
+
+            setTimeout(nextWord, 500);
+            document.getElementById("score").textContent = score;
+        }
+
+        startGame();
+    </script>
+
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Recall (Timed + Repeat Missed)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c3e50;
+            text-align: center;
+            color: white;
+            margin: 20px;
+        }
+        .game-container {
+            background: #34495e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 80%;
+            max-width: 400px;
+            margin: auto;
+        }
+        .word-display {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 20px 0;
+            background: white;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .option-btn {
+            padding: 10px;
+            font-size: 18px;
+            background: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .option-btn:hover {
+            background: #1f6690;
+        }
+        .correct {
+            background: green !important;
+        }
+        .wrong {
+            background: red !important;
+        }
+        .score {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .timer-bar {
+            width: 100%;
+            height: 10px;
+            background: red;
+            transition: width 5s linear;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="game-container">
+        <h2>Speed Recall (Timed + Repeat Missed)</h2>
+        <div class="word-display" id="wordDisplay">Loading...</div>
+        <div class="timer-bar" id="timerBar"></div>
+        <div class="options" id="optionsContainer"></div>
+        <p class="score">Score: <span id="score">0</span></p>
+    </div>
+
+    <script>
+        const words = [
+            { greek: "ἀγάπη", meanings: ["love", "faith", "hope", "grace"] },
+            { greek: "πίστις", meanings: ["faith", "life", "grace", "law"] },
+            { greek: "λόγος", meanings: ["word", "time", "truth", "wisdom"] },
+            { greek: "χάρις", meanings: ["grace", "spirit", "joy", "law"] },
+            { greek: "ζωή", meanings: ["life", "light", "path", "faith"] },
+            { greek: "φῶς", meanings: ["light", "darkness", "voice", "earth"] }
+        ];
+
+        let score = 0;
+        let currentWord = {};
+        let timer;
+        let usedWords = [];
+        let missedWords = [];
+
+        function startGame() {
+            document.getElementById("score").textContent = score;
+            usedWords = [];
+            missedWords = [];
+            nextWord();
+        }
+
+        function nextWord() {
+            document.getElementById("optionsContainer").innerHTML = ""; // Clear previous options
+            document.getElementById("timerBar").style.width = "100%"; // Reset timer bar
+
+            // If all words are used, restart with missed words
+            if (words.length === usedWords.length) {
+                if (missedWords.length > 0) {
+                    words.push(...missedWords); // Reintroduce missed words
+                    missedWords = []; // Reset missed words list
+                } else {
+                    alert("Game Over! Restarting...");
+                    startGame();
+                    return;
+                }
+            }
+
+            // Pick a word that hasn't been used yet
+            do {
+                currentWord = words[Math.floor(Math.random() * words.length)];
+            } while (usedWords.includes(currentWord.greek));
+
+            usedWords.push(currentWord.greek);
+            document.getElementById("wordDisplay").textContent = currentWord.greek;
+
+            // Shuffle options
+            let shuffledOptions = currentWord.meanings.sort(() => Math.random() - 0.5);
+
+            shuffledOptions.forEach(option => {
+                let button = document.createElement("button");
+                button.textContent = option;
+                button.classList.add("option-btn");
+                button.onclick = () => checkAnswer(option, button);
+                document.getElementById("optionsContainer").appendChild(button);
+            });
+
+            // Start countdown timer
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                document.getElementById("wordDisplay").style.background = "red"; // Indicate time out
+                missedWords.push(currentWord); // Store for later review
+                setTimeout(() => {
+                    document.getElementById("wordDisplay").style.background = "white";
+                    nextWord();
+                }, 500);
+            }, 5000);
+
+            // Animate the timer bar
+            document.getElementById("timerBar").style.transition = "width 5s linear";
+            document.getElementById("timerBar").style.width = "0%";
+        }
+
+        function checkAnswer(selectedOption, button) {
+            clearTimeout(timer); // Stop the timer when an answer is selected
+
+            if (selectedOption === currentWord.meanings[0]) {
+                score += 10;
+                button.classList.add("correct");
+            } else {
+                button.classList.add("wrong");
+                missedWords.push(currentWord); // Add wrong answers to missed list
+            }
+
+            setTimeout(nextWord, 500);
+            document.getElementById("score").textContent = score;
+        }
+
+        startGame();
+    </script>
+
+</body>
+</html>
+
