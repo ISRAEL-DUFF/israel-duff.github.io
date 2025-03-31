@@ -17,6 +17,21 @@ let savedWords = "savedGreekWords"; // TODO: change for each language
 let selectedValue = null;
 let nextCardColor = null;
 let colorMap = {};
+let wordCount = 5;
+
+function populateWords() {
+    if(selectedValue === null || selectedValue === savedWords) {
+        words = getRandomWords(database.getAll(), wordCount)
+    } else {
+        words = getRandomWords(dataFile[selectedValue ?? "group1"], wordCount);
+    }
+}
+
+function shuffleGame() {
+    resetGame();
+    populateWords()
+    generateMatchingGame();
+}
 
 // Add event listener to the restart button
 document.getElementById("restartButton").addEventListener("click", () => {
@@ -25,15 +40,7 @@ document.getElementById("restartButton").addEventListener("click", () => {
 });
 document.getElementById("refreshButton").addEventListener("click", () => {
     console.log('Reshuffle...') 
-    resetGame();
-
-    if(selectedValue === null || selectedValue === savedWords) {
-        words = getRandomWords(database.getAll())
-    } else {
-        words = getRandomWords(dataFile[selectedValue ?? "group1"]);
-    }
-
-    generateMatchingGame();
+    shuffleGame()
 });
 // JavaScript to handle popup menu
 document.getElementById('popupButton').addEventListener('click', function() {
@@ -50,6 +57,18 @@ document.getElementById('closePopup').addEventListener('click', function() {
     setTimeout(() => {
         popupMenu.style.display = 'none'; // Hide after fade out
     }, 500); // Match the duration of the CSS transition
+});
+document.getElementById("wordCountInput").addEventListener("input", (event) => {
+    const newCount = parseInt(event.target.value, 10);
+    if (!isNaN(newCount) && newCount > 0) {
+        wordCount = newCount; // Update the wordCount variable
+        console.log("Updated word count to:", wordCount);
+    }
+});
+
+document.getElementById("updateWordCount").addEventListener("click", () => {
+    console.log('update word count called')
+    shuffleGame()
 });
 
 
@@ -68,17 +87,7 @@ fetch('../word-bank/greek/greek-words.json')  // Load vocabulary from a JSON fil
                 // selectedValue = event.target.value;
                 selectedValue = event;
             
-                resetGame();
-
-                // let selectedWords = getRandomWords(dataFile[selectedValue]);
-                // words = selectedWords;
-                if(selectedValue === null || selectedValue === savedWords) {
-                    words = getRandomWords(database.getAll())
-                } else {
-                    words = getRandomWords(dataFile[selectedValue ?? "group1"]);
-                }
-
-                generateMatchingGame();
+                shuffleGame()
                 console.log("Selected Word List: " + selectedValue);
               },
             style: {
@@ -90,7 +99,7 @@ fetch('../word-bank/greek/greek-words.json')  // Load vocabulary from a JSON fil
         })
         
         let difficultWords = database.getAll()
-        let selectedWords = difficultWords.length > 0 ? difficultWords : getRandomWords(data.group1);
+        let selectedWords = difficultWords.length > 0 ? difficultWords : getRandomWords(data.group1, wordCount);
 
         words = selectedWords;
 
