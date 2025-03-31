@@ -78,31 +78,79 @@ self.addEventListener('activate', (event) => {
 // });
 
 // Fetch event with network-first strategy
+// self.addEventListener('fetch', (event) => {
+//     console.log('Service Worker: Fetching', event.request.url);
+//     event.respondWith(
+//         fetch(event.request)
+//             .then((response) => {
+//                 // Check if we received a valid response
+//                 if (!response || response.status !== 200 || response.type !== 'basic') {
+//                     return response; // Return the response if it's not valid
+//                 }
+
+//                 // Clone the response so we can cache it
+//                 const responseToCache = response.clone();
+
+//                 // Open the cache and store the response
+//                 caches.open(CACHE_NAME)
+//                     .then((cache) => {
+//                         cache.put(event.request, responseToCache);
+//                     });
+
+//                 return response; // Return the network response
+//             })
+//             .catch(() => {
+//                 // If the network request fails, try to return the cached version
+//                 return caches.match(event.request);
+//             })
+//     );
+// });
+// Fetch event with network-first strategy and timeout
 self.addEventListener('fetch', (event) => {
     console.log('Service Worker: Fetching', event.request.url);
+    
+    // Create a promise that rejects after a timeout
+    const timeoutPromise = new Promise((_, reject) => 
+        setTimeout(() => reject(new Error('Network request timed out')), 5000) // 5 seconds timeout
+    );
+
     event.respondWith(
-        fetch(event.request)
-            .then((response) => {
-                // Check if we received a valid response
-                if (!response || response.status !== 200 || response.type !== 'basic') {
-                    return response; // Return the response if it's not valid
-                }
+        Promise.race([
+            fetch(event.request)
+                .then((response) => {
+                    // Check if we received a valid response
+                    if (!response || response.status !== 200 || response.type !== 'basic') {
+                        return response; // Return the response if it's not valid
+                    }
 
-                // Clone the response so we can cache it
-                const responseToCache = response.clone();
+                    // Clone the response so we can cache it
+                    const responseToCache = response.clone();
 
-                // Open the cache and store the response
-                caches.open(CACHE_NAME)
-                    .then((cache) => {
-                        cache.put(event.request, responseToCache);
-                    });
+                    // Open the cache and store the response
+                    caches.open(CACHE_NAME)
+                        .then((cache) => {
+                            cache.put(event.request, responseToCache);
+                        });
 
-                return response; // Return the network response
-            })
-            .catch(() => {
-                // If the network request fails, try to return the cached version
-                return caches.match(event.request);
-            })
+                    return response; // Return the network response
+                }),
+            timeoutPromise // Add the timeout promise to the race
+        ])
+        .catch(() => {
+            // If the network request fails or times out, try to return the cached version
+            return caches.match(event.request)
+                .then((cachedResponse) => {
+                    if (cachedResponse) {
+                        return cachedResponse; // Return cached response if found
+                    } else {
+                        // Optionally, return a fallback response or message
+                        return new Response('Network request failed and no cached version available.', {
+                            status: 408, // Request Timeout
+                            statusText: 'Request Timeout'
+                        });
+                    }
+                });
+        })
     );
 });
 

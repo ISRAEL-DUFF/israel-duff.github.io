@@ -90,6 +90,9 @@ export function generateSelectFromJson(jsonData) {
         .option-${idNum}:hover {
             background-color: #f1f1f1;
         }
+        .selected-option-${idNum} {
+          ${selectStyle.selectedTextColor ? 'color:' + selectStyle.selectedTextColor : 'white'}
+        }
     `;
     document.head.appendChild(style);
 

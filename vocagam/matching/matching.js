@@ -35,6 +35,22 @@ document.getElementById("refreshButton").addEventListener("click", () => {
 
     generateMatchingGame();
 });
+// JavaScript to handle popup menu
+document.getElementById('popupButton').addEventListener('click', function() {
+    const popupMenu = document.getElementById('popupMenu');
+    popupMenu.style.display = 'flex'; // Show the popup
+    setTimeout(() => {
+        popupMenu.style.opacity = '1'; // Fade in
+    }, 10); // Small delay to allow display to take effect
+});
+
+document.getElementById('closePopup').addEventListener('click', function() {
+    const popupMenu = document.getElementById('popupMenu');
+    popupMenu.style.opacity = '0'; // Fade out
+    setTimeout(() => {
+        popupMenu.style.display = 'none'; // Hide after fade out
+    }, 500); // Match the duration of the CSS transition
+});
 
 
 fetch('../word-bank/greek/greek-words.json')  // Load vocabulary from a JSON file
@@ -67,8 +83,8 @@ fetch('../word-bank/greek/greek-words.json')  // Load vocabulary from a JSON fil
               },
             style: {
                 textColor: 'white',
+                selectedTextColor: 'black',
                 backgroundColor: '#8e44ad',
-                // backgroundColor: 'linear-gradient(to left, #3498db, #8e44ad)'
             },
             defaultSelectText: 'Select a word group'
         })

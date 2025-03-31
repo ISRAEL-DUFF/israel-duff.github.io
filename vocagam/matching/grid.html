@@ -15,18 +15,19 @@
         </svg>
     </button> -->
 
-    <div>
+    <div class ='top-menu'>
         <h3>Word Matching Game</h3>
         <!-- <div class="toggle-container">
             <button id="toggleMode" class="toggle-btn">🌙 Dark Mode</button>
         </div> -->
+        <!-- <p>Saved list</p> -->
 
-        <div class = "button-container">
-            <!-- <select id = "text-groups">
+        <!-- <div class = "button-container">
+            <select id = "text-groups">
                 <option value = "">--- Select Word Group ---</option>
-            </select> -->
+            </select>
             <div id = 'wordgroup-select-container'></div>
-        </div>
+        </div> -->
     </div>
 
     <!-- <h4>Match the Words</h4> -->
@@ -37,10 +38,26 @@
     <!-- <div id="timed-challenge" class="timed-game-container"></div> -->
 
     <div class="match-container" id="match-game"></div>
-    <div class="button-container">
+    <div class="button-container bottom-menu">
         <button id="restartButton" class="game-button btn btn-warning">Restart</button>
         <button id="refreshButton" class="game-button btn btn-primary2">Shuffle</button>
-        <button id="timeChallenge" class="game-button btn btn-primary2">Timer</button>
+        <!-- <button id="timeChallenge" class="game-button btn btn-primary2">Timer</button> -->
+        <button id="popupButton" class="game-button btn btn-primary">Actions</button>
+    </div>
+    <div id="popupMenu" class="popup-menu">
+        <div class="popup-content">
+            <span id="closePopup" class="close-button">&times;</span>
+            <h2>Game Menu</h2>
+            <div id = 'wordgroup-select-container'></div>
+
+
+            <p>Choose an activity:</p>
+            <ul>
+                <li> Timed Challeng </li>
+                <li>Activity 2</li>
+                <li>Activity 3</li>
+            </ul>
+        </div>
     </div>
 
     <br/>
