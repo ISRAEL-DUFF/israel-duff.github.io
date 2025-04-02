@@ -1,3 +1,7 @@
+export function gameLanguage() {
+  const lang = new URLSearchParams(window.location.search).get('lang') || "greek";
+  return lang;
+}
 // Function to randomly select 10 words
 export function getRandomWords(list, count = 10) {
     // Shuffle the array using Fisher-Yates algorithm
@@ -105,6 +109,7 @@ export function generateSelectFromJson(jsonData) {
 
     const items = params.items ?? []; // Add more languages as needed
     const container = document.getElementById(params.containerId);
+    container.innerHTML = '';
 
     const customSelect = document.createElement('div');
     customSelect.className = 'custom-select' + `-${idNum}`;
@@ -312,5 +317,33 @@ export function localDatabase(storageKey) {
     remove: deleteObject,
     update: updateObject,
     getAll: readObjects
+  }
+}
+
+//****** sound  ********/
+export function audioSystem(filePath) {
+  const audio = new Audio(filePath);
+
+  function stopSound() {
+    audio.pause(); // Pause the audio
+    audio.currentTime = 0; // Reset the current time to the beginning
+  }
+  function isSoundPlaying() {
+    return !audio.paused && audio.currentTime > 0 && audio.currentTime < audio.duration;
+  }
+
+  function playSound() {
+    if (isSoundPlaying()) {
+      console.log("The audio is currently playing... stopping...");
+      stopSound()
+    }
+
+    audio.play()
+  }
+
+
+  return {
+    play: playSound,
+    stop: stopSound
   }
 }

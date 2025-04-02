@@ -1,4 +1,4 @@
-import { getRandomWords } from "../util.js";
+import { getRandomWords, audioSystem } from "../util.js";
 
 let wordList = [];
 let currentWordIndex = 0;
@@ -9,8 +9,8 @@ let timer;
 let isGameRunning = false;
 let isReviewMode = false;
 let dataFile = [];
-const correctSound = new Audio('../sounds/rightanswer.mp3');
-const incorrectSound = new Audio('../sounds/wronganswer.mp3');
+const correctSound = audioSystem('../sounds/rightanswer.mp3');
+const incorrectSound = audioSystem('../sounds/wronganswer.mp3');
 
   fetch('../word-bank/greek/greek-core-list.json')  // Load vocabulary from a JSON file
     .then(response => response.json())

@@ -1,5 +1,5 @@
 // import { getRandomWords } from '../util.js';
-import { generateSelectBox, getRandomWords, colorGenerator, addContextMenu, localDatabase } from '../util.js'; // Adjust the path as necessary
+import { generateSelectBox, getRandomWords, colorGenerator, addContextMenu, localDatabase, audioSystem, gameLanguage } from '../util.js'; // Adjust the path as necessary
 
 
 let words = [];
@@ -10,16 +10,29 @@ let timer;
 let timeRemaining = 30;
 let gameStarted = false;
 let dataFile = {}
-let database = localDatabase('difficult_words')
-let savedWords = "savedGreekWords"; // TODO: change for each language
+let currentLanguage = gameLanguage()
+let database = localDatabase(`${currentLanguage}_difficult_words`)
+let databaseSnapshot = localDatabase(`${currentLanguage}_snapshots`)
+let savedWords = `saved${currentLanguage[0].toUpperCase()}Words`; // TODO: change for each language
+let rightSound = audioSystem('../sounds/rightanswer.mp3')
+let wrongSound = audioSystem('../sounds/wronganswer.mp3')
 
 // Global variable to hold the selected value
 let selectedValue = null;
+let currentSnapshot = null;
+let isSnapshot = true;
 let nextCardColor = null;
 let colorMap = {};
 let wordCount = 5;
 
-function populateWords() {
+function populateWords(type = 'from_list') {
+    if(isSnapshot) {
+        if(currentSnapshot) {
+            words = getRandomWords(currentSnapshot.value.data, wordCount);
+        }
+        return;
+    }
+
     if(selectedValue === null || selectedValue === savedWords) {
         words = getRandomWords(database.getAll(), wordCount)
     } else {
@@ -27,9 +40,9 @@ function populateWords() {
     }
 }
 
-function shuffleGame() {
+function shuffleGame(listType = 'from_list') {
     resetGame();
-    populateWords()
+    populateWords(listType)
     generateMatchingGame();
 }
 
@@ -71,6 +84,74 @@ document.getElementById("updateWordCount").addEventListener("click", () => {
     shuffleGame()
 });
 
+document.getElementById('saveSnapshot').addEventListener('click', function() {
+    const itemNameContainer = document.getElementById('itemNameInput')
+    const itemName = itemNameContainer.value;
+    if (itemName && words.length > 0) {
+        databaseSnapshot.add({
+            name: itemName,
+            data: words
+        })
+        document.getElementById('saveFeedback').innerText = 'Snapshot saved successfully!';
+        itemNameContainer.value = ''
+        populateSnapshotList()
+    } else {
+        document.getElementById('saveFeedback').innerText = 'Please enter snapshot name.';
+    }
+});
+
+document.getElementById('deleteSnapshot').addEventListener('click', function() {
+    const itemNameContainer = document.getElementById('itemNameInput')
+    const itemName = itemNameContainer.value;
+    if (currentSnapshot) {
+        console.log(currentSnapshot)
+        databaseSnapshot.remove(currentSnapshot.value.id);
+        document.getElementById('saveFeedback').innerText = 'Snapshot removed successfully!';
+        currentSnapshot =  null;
+        isSnapshot = false;
+        populateSnapshotList()
+        setTimeout(() => {
+            document.getElementById('saveFeedback').innerText = '';
+        }, 2000)
+    } else {
+        document.getElementById('saveFeedback').innerText = 'Please choose.';
+    }
+});
+
+function populateSnapshotList() {
+    const snapshots = databaseSnapshot.getAll();
+
+    generateSelectBox({
+        containerId: 'snapshotListContainer',
+        items: snapshots.map((d) => {
+            console.log(d)
+            return {
+                key: d.name,
+                value: d
+            }
+        }),
+        onSelect: (event) => {
+            // Set the global variable to the value of the selected option
+            // selectedValue = event.target.value;
+            console.log(event)
+            currentSnapshot = event;
+            isSnapshot = true;
+        
+            shuffleGame('snapshot')
+            console.log("Selected Snapshot List: " + currentSnapshot);
+          },
+        style: {
+            textColor: 'white',
+            selectedTextColor: 'black',
+            backgroundColor: '#8e44ad',
+        },
+        defaultSelectText: 'Select a snapshot'
+    })
+}
+
+populateSnapshotList()
+
+
 
 fetch('../word-bank/greek/greek-words.json')  // Load vocabulary from a JSON file
     .then(response => response.json())
@@ -86,6 +167,7 @@ fetch('../word-bank/greek/greek-words.json')  // Load vocabulary from a JSON fil
                 // Set the global variable to the value of the selected option
                 // selectedValue = event.target.value;
                 selectedValue = event;
+                isSnapshot = false;
             
                 shuffleGame()
                 console.log("Selected Word List: " + selectedValue);
@@ -99,7 +181,7 @@ fetch('../word-bank/greek/greek-words.json')  // Load vocabulary from a JSON fil
         })
         
         let difficultWords = database.getAll()
-        let selectedWords = difficultWords.length > 0 ? difficultWords : getRandomWords(data.group1, wordCount);
+        let selectedWords = difficultWords.length > 0 ? getRandomWords(difficultWords, wordCount) : getRandomWords(data.group1, wordCount);
 
         words = selectedWords;
 
@@ -107,7 +189,6 @@ fetch('../word-bank/greek/greek-words.json')  // Load vocabulary from a JSON fil
         generateMatchingGame();
         // startTimedChallenge();
     });
-
 
 function generateMatchingGame() {
     const container = document.getElementById('match-game');
@@ -165,6 +246,7 @@ function selectMatch(element) {
         let [first, second] = selectedPair;
 
         if (first.dataset.value === second.dataset.value) {
+            rightSound.play()
             let assignedColor = colorMap[first.dataset.value];
 
             if (!assignedColor) {
@@ -180,6 +262,7 @@ function selectMatch(element) {
             second.style.backgroundColor = assignedColor;
             second.style.borderColor = assignedColor;
         } else {
+            wrongSound.play()
             selectedPair.forEach(el => {
                 // el.style.backgroundColor = 'red';
                 // el.style.color = 'white';

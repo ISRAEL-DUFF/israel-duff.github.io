@@ -48,6 +48,9 @@
         <div class="popup-content">
             <span id="closePopup" class="close-button">&times;</span>
             <h2>Game Menu</h2>
+
+            <hr/>
+
             <div id = 'wordgroup-select-container'></div>
             <br />
             <div class="input-container">
@@ -55,6 +58,23 @@
                 <input type="number" id="wordCountInput" value="5" min="1" max="20">
                 <button id="updateWordCount" class="game-button btn btn-primary2">Update Game</button>
             </div>
+
+            <hr/>
+
+            <!-- New input for saving to local storage -->
+            <div id="snapshotListContainer"></div>
+
+            <div class="input-container">
+                <p>Save Snapshot</p>
+                <label for="itemNameInput">Snapshot Name:</label>
+                <input type="text" id="itemNameInput" placeholder="Enter item name">
+                <button id="saveSnapshot" class="game-button btn btn-success">Save snapshot</button>
+                <button id="deleteSnapshot" class="game-button btn btn-success">Remove current snapshot</button>
+                <p id="saveFeedback" style="color: green;"></p> <!-- Feedback message -->
+            </div>
+
+            <hr/>
+
 
             <p>Choose an activity:</p>
             <ul>
