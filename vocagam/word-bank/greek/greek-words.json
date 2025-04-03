@@ -1,7 +1,7 @@
 
 
 {
-    "savedGreekWords": [],
+    "greek_difficult_words": [],
     "group0": [
         { "greek": "λόγος", "meaning": "word, speech" },
         { "greek": "ἀλήθεια", "meaning": "truth" },

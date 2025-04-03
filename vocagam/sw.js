@@ -111,7 +111,7 @@ self.addEventListener('fetch', (event) => {
     
     // Create a promise that rejects after a timeout
     const timeoutPromise = new Promise((_, reject) => 
-        setTimeout(() => reject(new Error('Network request timed out')), 5000) // 5 seconds timeout
+        setTimeout(() => reject(new Error('Network request timed out')), 15 * 1000) // 5 seconds timeout
     );
 
     event.respondWith(

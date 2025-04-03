@@ -13,7 +13,7 @@ let dataFile = {}
 let currentLanguage = gameLanguage()
 let database = localDatabase(`${currentLanguage}_difficult_words`)
 let databaseSnapshot = localDatabase(`${currentLanguage}_snapshots`)
-let savedWords = `saved${currentLanguage[0].toUpperCase()}Words`; // TODO: change for each language
+let savedWords = `${currentLanguage}_difficult_words`; // TODO: change for each language
 let rightSound = audioSystem('../sounds/rightanswer.mp3')
 let wrongSound = audioSystem('../sounds/wronganswer.mp3')
 
@@ -25,7 +25,7 @@ let nextCardColor = null;
 let colorMap = {};
 let wordCount = 5;
 
-function populateWords(type = 'from_list') {
+function populateWords() {
     if(isSnapshot) {
         if(currentSnapshot) {
             words = getRandomWords(currentSnapshot.value.data, wordCount);
@@ -40,9 +40,9 @@ function populateWords(type = 'from_list') {
     }
 }
 
-function shuffleGame(listType = 'from_list') {
+function shuffleGame() {
     resetGame();
-    populateWords(listType)
+    populateWords()
     generateMatchingGame();
 }
 
