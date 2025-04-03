@@ -16,6 +16,7 @@ let databaseSnapshot = localDatabase(`${currentLanguage}_snapshots`)
 let savedWords = `${currentLanguage}_difficult_words`; // TODO: change for each language
 let rightSound = audioSystem('../sounds/rightanswer.mp3')
 let wrongSound = audioSystem('../sounds/wronganswer.mp3')
+let gameLayout = 'ordered' // or 'ordered' | 'random'
 
 // Global variable to hold the selected value
 let selectedValue = null;
@@ -44,6 +45,61 @@ function shuffleGame() {
     resetGame();
     populateWords()
     generateMatchingGame();
+}
+
+function getWordMeaning(entry) {
+    if (entry.meanings && entry.meanings.length > 0) {
+        const randomMeaning = entry.meanings[Math.floor(Math.random() * entry.meanings.length)];
+        return randomMeaning;
+    } else if(entry.meaning) {
+        return entry.meaning;
+    }
+}
+
+function showAnimatedFlashcard(data) {
+    const flashcardContainer = document.getElementById("flashcard-container")
+    let meaning = '';
+
+    if(data.word.meaning) {
+        meaning = data.word.meaning;
+    } else if(data.word.meanings && data.word.meanings.length > 0) {
+        meaning = data.word.meanings.join(', ')
+    }
+
+    if(data.type === 'all') {
+        // #20e3fd
+        flashcardContainer.innerHTML = `
+        <div class="flashcard-animation">
+            <h2 style='color: ${data.color}'>${meaning}</h2>
+            <p style="color:#20e3fd">Part of Speech: ${data.word["partOfSpeech"]}</p>
+            <p style="color:#20e3fd">Root: ${data.word["root"]}</p>
+        </div>
+        `;
+    } else if(data.type === 'meaning') {
+        flashcardContainer.innerHTML = `
+        <div class="flashcard-animation">
+            <h2 style='color: ${data.color}'>${meaning}</h2>
+        </div>
+        `;
+    } else if (data.type === 'word') {
+        flashcardContainer.innerHTML = `
+        <div class="flashcard-animation">
+            <p style="color:#20e3fd">Part of Speech: ${data.word["partOfSpeech"]}</p>
+        </div>
+        `;
+    }
+    
+
+    // Add animation class to make the flashcard slide in
+    const flashcard = flashcardContainer.querySelector('.flashcard-animation');
+    setTimeout(() => {
+        flashcard.classList.add('show');
+    }, 100);
+}
+
+function clearAnimatedFlashcard() {
+    const flashcardContainer = document.getElementById("flashcard-container")
+    flashcardContainer.innerHTML = ``;
 }
 
 // Add event listener to the restart button
@@ -101,8 +157,6 @@ document.getElementById('saveSnapshot').addEventListener('click', function() {
 });
 
 document.getElementById('deleteSnapshot').addEventListener('click', function() {
-    const itemNameContainer = document.getElementById('itemNameInput')
-    const itemName = itemNameContainer.value;
     if (currentSnapshot) {
         console.log(currentSnapshot)
         databaseSnapshot.remove(currentSnapshot.value.id);
@@ -152,8 +206,8 @@ function populateSnapshotList() {
 populateSnapshotList()
 
 
-
-fetch('../word-bank/greek/greek-words.json')  // Load vocabulary from a JSON file
+// '../word-bank/greek/greek-words.json'
+fetch('../word-bank/greek/data1.json')  // Load vocabulary from a JSON file
     .then(response => response.json())
     .then(data => {
         dataFile = data;
@@ -197,19 +251,40 @@ function generateMatchingGame() {
     shuffledWords.sort(() => Math.random() - 0.5);
 
     let pairs = [];
-    shuffledWords.forEach(word => {
-        pairs.push({ text: word.greek, value: word.greek, word });
-        pairs.push({ text: word.meaning, value: word.greek, word });
-    });
+    if(gameLayout === 'ordered') {
+        let tempPairWords = [];
+        let tempPairMeanings = []
+        shuffledWords.forEach(word => {
+            tempPairWords.push({ text: word.word, value: word.word, word, isMeaning: false });
+            tempPairMeanings.push({ text: getWordMeaning(word), value: word.word, word, isMeaning: true });
+        });
+        tempPairWords.sort(() => Math.random() - 0.5);
+        tempPairMeanings.sort(() => Math.random() - 0.5);
 
-    pairs.sort(() => Math.random() - 0.5);
+        pairs = [...tempPairMeanings, ...tempPairWords];
+
+    } else {
+
+        // div.textContent = [item.text, ...item.subtexts].join('\n'); // Assuming item has an array of subtexts
+        shuffledWords.forEach(word => {
+            pairs.push({ text: word.word, value: word.word, word, isMeaning: false });
+            pairs.push({ text: getWordMeaning(word), value: word.word, word, isMeaning: true });
+        });
+        pairs.sort(() => Math.random() - 0.5);
+    }
+    
+
 
     pairs.forEach(item => {
         let div = document.createElement('div');
         div.className = 'match-item';
         div.textContent = item.text;
         div.dataset.value = item.value;
-        div.onclick = () => selectMatch(div);
+        div.onclick = () => {
+            (function(d, w){
+                selectMatch(d, w);
+            })(div, item)
+        };
         
         addContextMenu({
             div,
@@ -232,14 +307,22 @@ function generateMatchingGame() {
     colorMap = {}
 }
 
-function selectMatch(element) {
+function selectMatch(element, wordData) {
     if (selectedPair.length == 1 && element === selectedPair[0]) {
+        // TODO: unselect here
         return;
     }
 
     if (selectedPair.length < 2) {
         element.classList.add("selected");
         selectedPair.push(element);
+
+        // display flashcard
+        showAnimatedFlashcard({
+            type: wordData.isMeaning ? 'meaning' : 'word',
+            word: wordData.word,
+            color: 'white'
+        })
     }
 
     if (selectedPair.length === 2) {
@@ -261,6 +344,13 @@ function selectMatch(element) {
             first.style.borderColor = assignedColor;
             second.style.backgroundColor = assignedColor;
             second.style.borderColor = assignedColor;
+
+            
+            showAnimatedFlashcard({
+                type: 'all',
+                word: wordData.word,
+                color: assignedColor
+            })
         } else {
             wrongSound.play()
             selectedPair.forEach(el => {
@@ -278,6 +368,8 @@ function selectMatch(element) {
                 second.classList.remove("unmatch-item");
                 selectedPair = [];
             }, 500);
+
+            clearAnimatedFlashcard()
         }
 
         selectedPair = [];

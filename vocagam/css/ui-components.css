@@ -94,3 +94,30 @@
     top: 20px; /* Distance from the top of the container */
     left: 20px; /* Distance from the left of the container */
 }
+
+/* Flashcard animations */
+#flashcard-container {
+    width: 80%; /* Use percentage for responsiveness */
+    max-width: 300px; /* Maximum width */
+    height: 20vh; /* Height will adjust based on content */
+    aspect-ratio: 3 / 2; /* Maintain a 3:2 aspect ratio */
+    perspective: 1000px; /* For 3D effect */
+    margin: 1vh auto; /* Center the flashcard */
+    /* background-color: blue; */
+}
+.flashcard-animation {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in-out;
+}
+
+.flashcard-animation.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media (max-width: 600px) {
+    #flashcard-container {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+}
