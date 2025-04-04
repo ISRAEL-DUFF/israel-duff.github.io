@@ -99,8 +99,8 @@
 #flashcard-container {
     width: 80%; /* Use percentage for responsiveness */
     max-width: 300px; /* Maximum width */
-    height: 13vh; /* Height will adjust based on content */
-    max-height: 22vh;
+    height: 15vh; /* Height will adjust based on content */
+    max-height: 20vh;
     aspect-ratio: 3 / 2; /* Maintain a 3:2 aspect ratio */
     perspective: 1000px; /* For 3D effect */
     margin: 1vh auto; /* Center the flashcard */
