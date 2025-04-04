@@ -347,3 +347,15 @@ export function audioSystem(filePath) {
     stop: stopSound
   }
 }
+
+// Sort dynamic data sort by word frequency
+export function filterAndSortByFrequency(words, minFrequency, maxFrequency) {
+  return words
+      .map(entry => {
+          // Assign a default frequency of 1 if not defined
+          entry.frequency = entry.frequency || 1;
+          return entry;
+      })
+      .filter(entry => entry.frequency >= minFrequency && entry.frequency <= maxFrequency)
+      .sort((a, b) => b.frequency - a.frequency); // Sort in descending order
+}

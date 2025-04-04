@@ -99,21 +99,64 @@
 #flashcard-container {
     width: 80%; /* Use percentage for responsiveness */
     max-width: 300px; /* Maximum width */
-    height: 20vh; /* Height will adjust based on content */
+    height: 13vh; /* Height will adjust based on content */
+    max-height: 22vh;
     aspect-ratio: 3 / 2; /* Maintain a 3:2 aspect ratio */
     perspective: 1000px; /* For 3D effect */
     margin: 1vh auto; /* Center the flashcard */
     /* background-color: blue; */
+    /* background-color: #f0f0f0; */
 }
-.flashcard-animation {
+/* .flashcard-animation {
     opacity: 0;
     transform: translateX(100%);
     transition: all 0.5s ease-in-out;
+} */
+
+/* .flashcard-animation.show {
+    opacity: 1;
+    transform: translateX(0);
+} */
+
+.flashcard-animation {
+    opacity: 0;
+    transform: scale(0.5); /* Start scaled down */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Separate transitions for opacity and transform */
 }
 
 .flashcard-animation.show {
-    opacity: 1;
-    transform: translateX(0);
+    opacity: 1; /* Fade in */
+    transform: scale(1); /* Zoom to original size */
+}
+
+.flashcard-animation.hide {
+    opacity: 0; /* Fade out */
+    transform: scale(0.5); /* Zoom out */
+}
+
+
+
+#game-progress {
+    width: 100%; /* Full width */
+    height: 5px; /* Height of the progress bar */
+    appearance: none; /* Remove default styling */
+    background-color: #e0e0e0; /* Background color */
+    border-radius: 5px; /* Rounded corners */
+}
+
+#game-progress::-webkit-progress-bar {
+    background-color: #e0e0e0; /* Background color for WebKit browsers */
+    border-radius: 5px; /* Rounded corners */
+}
+
+#game-progress::-webkit-progress-value {
+    background-color: #4caf50; /* Color of the progress */
+    border-radius: 5px; /* Rounded corners */
+}
+
+#game-progress::-moz-progress-bar {
+    background-color: #4caf50; /* Color of the progress for Firefox */
+    border-radius: 5px; /* Rounded corners */
 }
 
 @media (max-width: 600px) {

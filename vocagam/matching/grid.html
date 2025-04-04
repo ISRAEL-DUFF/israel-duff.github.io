@@ -15,37 +15,25 @@
         </svg>
     </button> -->
 
-    <h3>Word Matching Game</h3>
-
-    <div class ='top-menue'>
-        <!-- <div class="toggle-container">
-            <button id="toggleMode" class="toggle-btn">🌙 Dark Mode</button>
-        </div> -->
-        <!-- <p>Saved list</p> -->
-
-        <!-- <div class = "button-container">
-            <select id = "text-groups">
-                <option value = "">--- Select Word Group ---</option>
-            </select>
-            <div id = 'wordgroup-select-container'></div>
-        </div> -->
+    <div class = 'header-container'>
+        <h3>Word Matching Game</h3>
+        <progress id="game-progress" value="100" max="100"></progress>
     </div>
 
-    <!-- <h4>Match the Words</h4> -->
-     <!-- <br /> -->
-
-    <!-- <h2>Timed Challenge</h2> -->
-    <!-- <p>Time remaining: <span id="timer">30</span> seconds</p> -->
-    <!-- <div id="timed-challenge" class="timed-game-container"></div> -->
-
-    <div id="flashcard-container"></div>
-    <div class="match-container" id="match-game"></div>
-    <div class="button-container bottom-menue">
-        <button id="restartButton" class="game-button btn btn-warning">Restart</button>
-        <button id="refreshButton" class="game-button btn btn-primary2">Shuffle</button>
-        <!-- <button id="timeChallenge" class="game-button btn btn-primary2">Timer</button> -->
-        <button id="popupButton" class="game-button btn btn-primary">Actions</button>
+    <div class = "game-content-container">
+        <div id="flashcard-container"></div>
+        <div class="match-container" id="match-game"></div>
     </div>
+
+    <div class = "footer-container">
+        <div class="button-container bottom-menue">
+            <button id="restartButton" class="game-button btn btn-warning">Restart</button>
+            <button id="refreshButton" class="game-button btn btn-primary2">Shuffle</button>
+            <!-- <button id="timeChallenge" class="game-button btn btn-primary2">Timer</button> -->
+            <button id="popupButton" class="game-button btn btn-primary">Actions</button>
+        </div>
+    </div>
+
     <div id="popupMenu" class="popup-menu">
         <div class="popup-content">
             <span id="closePopup" class="close-button">&times;</span>

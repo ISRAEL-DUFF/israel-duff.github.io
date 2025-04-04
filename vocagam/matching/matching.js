@@ -16,7 +16,8 @@ let databaseSnapshot = localDatabase(`${currentLanguage}_snapshots`)
 let savedWords = `${currentLanguage}_difficult_words`; // TODO: change for each language
 let rightSound = audioSystem('../sounds/rightanswer.mp3')
 let wrongSound = audioSystem('../sounds/wronganswer.mp3')
-let gameLayout = 'ordered' // or 'ordered' | 'random'
+let gameEndSound = audioSystem('../sounds/match-finished.mp3')
+let gameLayout = 'random' // or 'ordered' | 'random'
 
 // Global variable to hold the selected value
 let selectedValue = null;
@@ -25,6 +26,7 @@ let isSnapshot = true;
 let nextCardColor = null;
 let colorMap = {};
 let wordCount = 5;
+let matchCounts = 0;
 
 function populateWords() {
     if(isSnapshot) {
@@ -63,14 +65,14 @@ function showAnimatedFlashcard(data) {
     if(data.word.meaning) {
         meaning = data.word.meaning;
     } else if(data.word.meanings && data.word.meanings.length > 0) {
-        meaning = data.word.meanings.join(', ')
+        meaning = data.word.meanings.join(' | ')
     }
 
     if(data.type === 'all') {
         // #20e3fd
         flashcardContainer.innerHTML = `
         <div class="flashcard-animation">
-            <h2 style='color: ${data.color}'>${meaning}</h2>
+            <h4 style='background-color: ${data.color}; color: white; border-radius: 10px; padding: 5px;'>${meaning}</h4>
             <p style="color:#20e3fd">Part of Speech: ${data.word["partOfSpeech"]}</p>
             <p style="color:#20e3fd">Root: ${data.word["root"]}</p>
         </div>
@@ -78,12 +80,13 @@ function showAnimatedFlashcard(data) {
     } else if(data.type === 'meaning') {
         flashcardContainer.innerHTML = `
         <div class="flashcard-animation">
-            <h2 style='color: ${data.color}'>${meaning}</h2>
+            <h4 style='color: ${data.color}'>${meaning}</h4>
         </div>
         `;
     } else if (data.type === 'word') {
         flashcardContainer.innerHTML = `
         <div class="flashcard-animation">
+            <p style="color:#20e3fd">Root: ${data.word["root"]}</p>
             <p style="color:#20e3fd">Part of Speech: ${data.word["partOfSpeech"]}</p>
         </div>
         `;
@@ -100,6 +103,15 @@ function showAnimatedFlashcard(data) {
 function clearAnimatedFlashcard() {
     const flashcardContainer = document.getElementById("flashcard-container")
     flashcardContainer.innerHTML = ``;
+}
+
+function updateProgress(value, max) {
+    const progressBar = document.getElementById('game-progress');
+    progressBar.value = value;
+
+    if(max) {
+        progressBar.max = max;
+    }
 }
 
 // Add event listener to the restart button
@@ -303,8 +315,12 @@ function generateMatchingGame() {
         container.appendChild(div);
     });
 
+    // RESET state here
     nextCardColor = colorGenerator(availableColors);
     colorMap = {}
+    matchCounts = 0;
+    updateProgress(0, words.length);
+    clearAnimatedFlashcard()
 }
 
 function selectMatch(element, wordData) {
@@ -330,6 +346,7 @@ function selectMatch(element, wordData) {
 
         if (first.dataset.value === second.dataset.value) {
             rightSound.play()
+            matchCounts += 1;
             let assignedColor = colorMap[first.dataset.value];
 
             if (!assignedColor) {
@@ -350,7 +367,13 @@ function selectMatch(element, wordData) {
                 type: 'all',
                 word: wordData.word,
                 color: assignedColor
-            })
+            });
+            updateProgress(matchCounts)
+
+            if(matchCounts === words.length) {
+                // game over, you have matched all words
+                gameEndSound.play();
+            }
         } else {
             wrongSound.play()
             selectedPair.forEach(el => {
@@ -397,6 +420,8 @@ function resetGame() {
 
     //generateMatchingGame();
     // startTimedChallenge();
+
+    // updateProgress(0, words.length)
     saveProgress();
 }
 
