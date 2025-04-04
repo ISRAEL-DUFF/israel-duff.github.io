@@ -104,6 +104,7 @@
     aspect-ratio: 3 / 2; /* Maintain a 3:2 aspect ratio */
     perspective: 1000px; /* For 3D effect */
     margin: 1vh auto; /* Center the flashcard */
+    overflow-y: auto;
     /* background-color: blue; */
     /* background-color: #f0f0f0; */
 }

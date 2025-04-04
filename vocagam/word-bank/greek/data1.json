@@ -1749,7 +1749,7 @@
             "partOfSpeech": "noun"
         }
     ],
-    
+
     "adjectives_one": [
         {
             "word": "ἀγαθός",
@@ -2071,6 +2071,22 @@
             "root": "κρείττον-",
             "meanings": ["stronger", "better"],
             "frequency": 50,
+            "partOfSpeech": "adjective"
+        }
+    ],
+    "test": [
+        {
+            "word": "ἀγαθός",
+            "root": "ἀγαθ-",
+            "meanings": ["good", "noble", "dkakdalkadk dafdk", "addklsdla ddaldkald kadjl da", "akdladkfajldkjaldk fjaldjaadfjladkfaljsdkdkad"],
+            "frequency": 1000,
+            "partOfSpeech": "adjective"
+        },
+        {
+            "word": "καλός",
+            "root": "καλ-",
+            "meanings": ["dkakdalkadk dafdk","aeiald akdlfkadf akfjlad", "addklsdla ddaldkald kadjl da", "akdladkfajldkjaldkfjal djaadfjladkfaljsdkdkad", "beautiful", "good"],
+            "frequency": 950,
             "partOfSpeech": "adjective"
         }
     ]

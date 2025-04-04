@@ -72,8 +72,8 @@ function showAnimatedFlashcard(data) {
         // #20e3fd
         flashcardContainer.innerHTML = `
         <div class="flashcard-animation">
-            <h4 style='background-color: ${data.color}; color: white; border-radius: 10px; padding: 5px;'>${meaning}</h4>
-            <p style="color:#20e3fd">Root: ${data.word["root"]} (${data.word["partOfSpeech"]})</p>
+            <p style="color:#20e3fd">${data.word["word"]} | Root: ${data.word["root"]} (${data.word["partOfSpeech"]})</p>
+            <p style='background-color: ${data.color}; color: white; border-radius: 10px; padding: 5px; font-size: 1.0em; font-weight: bold;'>${meaning}</p>
         </div>
         `;
     } else if(data.type === 'meaning') {
