@@ -26,7 +26,7 @@ let currentSnapshot = null;
 let isSnapshot = true;
 let nextCardColor = null;
 let colorMap = {};
-let wordCount = 5;
+let wordCount = 8;
 let matchCounts = 0;
 
 function populateWords() {
@@ -114,7 +114,7 @@ function showAnimatedFlashcard(data) {
             all:  `
             <div class="flashcard-animation">
                 <p style="color:#20e3fd">${data.word["word"]} | ${data.word["inflection"]}</p>
-                <p>${data.word["partOfSpeech"]}</p>
+                <p>${data.word["partOfSpeech"] ?? ''}</p>
                 <p style='background-color: ${data.color}; color: white; border-radius: 10px; padding: 5px; font-size: 1.0em; font-weight: bold;'>${meaning}</p>
             </div>
             `,
@@ -126,39 +126,15 @@ function showAnimatedFlashcard(data) {
             word: `
             <div class="flashcard-animation">
                 <p style="color:#20e3fd">${data.word["inflection"]}</p>
-                <p style="color:#20e3fd">${data.word["partOfSpeech"]}</p>
-                <p style="color:#20e3fd">Semantic Group: ${data.word["semanticGroup"]}</p>
+                <p style="color:#20e3fd">${data.word["partOfSpeech"] ?? ''}</p>
+                <p style="color:#20e3fd"> ${data.word["semanticGroup"] ? 'Semantic Group: ' + data.word["semanticGroup"] : ''}</p>
             </div>
             `
         }
     }
 
     flashcardContainer.innerHTML = flashC[currentLanguage][data.type]
-
-    // if(data.type === 'all') {
-    //     // #20e3fd
-    //     flashcardContainer.innerHTML = `
-    //     <div class="flashcard-animation">
-    //         <p style="color:#20e3fd">${data.word["word"]} | Root: ${data.word["root"]} (${data.word["partOfSpeech"]})</p>
-    //         <p style='background-color: ${data.color}; color: white; border-radius: 10px; padding: 5px; font-size: 1.0em; font-weight: bold;'>${meaning}</p>
-    //     </div>
-    //     `;
-    // } else if(data.type === 'meaning') {
-    //     flashcardContainer.innerHTML = `
-    //     <div class="flashcard-animation">
-    //         <h4 style='color: ${data.color}'>${meaning}</h4>
-    //     </div>
-    //     `;
-    // } else if (data.type === 'word') {
-    //     flashcardContainer.innerHTML = `
-    //     <div class="flashcard-animation">
-    //         <p style="color:#20e3fd">Root: ${data.word["root"]}</p>
-    //         <p style="color:#20e3fd">Part of Speech: ${data.word["partOfSpeech"]}</p>
-    //     </div>
-    //     `;
-    // }
     
-
     // Add animation class to make the flashcard slide in
     const flashcard = flashcardContainer.querySelector('.flashcard-animation');
     setTimeout(() => {
@@ -284,18 +260,15 @@ function populateSnapshotList() {
 populateSnapshotList()
 
 
-// '../word-bank/greek/greek-words.json'
 function loadData(data) {
     dataFile = data;
     const dataList = Object.keys(data);
 
-    // generateSelectFromJson(dataList);
     generateSelectBox({
         containerId: 'wordgroup-select-container',
         items: dataList,
         onSelect: (event) => {
             // Set the global variable to the value of the selected option
-            // selectedValue = event.target.value;
             selectedValue = event;
             isSnapshot = false;
         
@@ -311,20 +284,16 @@ function loadData(data) {
     })
     
     let difficultWords = database.getAll()
-    console.log("GROUP:", dataList)
     let selectedWords = difficultWords.length > 0 ? getRandomWords(difficultWords, wordCount) : getRandomWords(dataList[0] ? dataFile[dataList[0]] : [], wordCount);
 
     words = selectedWords;
 
-    // checkForSavedProgress();
     generateMatchingGame();
-    // startTimedChallenge();
 }
 
 fetch(`../word-bank/${currentLanguage}/files.json`)  // Load vocabulary from a JSON file
     .then(response => response.json())
     .then(datasources => {
-        // const dataSourceList = Object.keys(datasources);
         const dataSourceList = [];
 
         for(const k of Object.keys(datasources)) {
@@ -334,13 +303,11 @@ fetch(`../word-bank/${currentLanguage}/files.json`)  // Load vocabulary from a J
             })
         }
 
-        // generateSelectFromJson(dataList);
         generateSelectBox({
             containerId: 'datasource-select-container',
             items: dataSourceList,
             onSelect: (event) => {
                 // Set the global variable to the value of the selected option
-                // selectedValue = event.target.value;
                 selectedDataSource = event.value;
                 isSnapshot = false;
             
@@ -383,8 +350,6 @@ function generateMatchingGame() {
         pairs = [...tempPairMeanings, ...tempPairWords];
 
     } else {
-
-        // div.textContent = [item.text, ...item.subtexts].join('\n'); // Assuming item has an array of subtexts
         shuffledWords.forEach(word => {
             pairs.push({ text: word.word, value: word.word, word, isMeaning: false });
             pairs.push({ text: getWordMeaning(word), value: word.word, word, isMeaning: true });
@@ -429,6 +394,7 @@ function generateMatchingGame() {
     });
 
     // RESET state here
+    selectedPair = [];
     nextCardColor = colorGenerator(availableColors);
     colorMap = {}
     matchCounts = 0;
@@ -490,16 +456,12 @@ function selectMatch(element, wordData) {
         } else {
             wrongSound.play()
             selectedPair.forEach(el => {
-                // el.style.backgroundColor = 'red';
-                // el.style.color = 'white';
                 first.classList.remove("selected");
                 second.classList.remove("selected");
                 first.classList.add("unmatch-item");
                 second.classList.add("unmatch-item");
             });
             setTimeout(() => {
-                // first.classList.remove("selected");
-                // second.classList.remove("selected");
                 first.classList.remove("unmatch-item");
                 second.classList.remove("unmatch-item");
                 selectedPair = [];
@@ -560,29 +522,3 @@ function checkForSavedProgress() {
         // startTimedChallenge();
     }
 }
-
-// Dark Mode Toggle Function
-// const toggleButton = document.getElementById("toggleMode");
-// toggleButton.addEventListener("click", () => {
-//     document.body.classList.toggle("dark-mode");
-
-//     // Save user preference in localStorage
-//     if (document.body.classList.contains("dark-mode")) {
-//         localStorage.setItem("theme", "dark");
-//         toggleButton.textContent = "☀️ Light Mode";
-//     } else {
-//         localStorage.setItem("theme", "light");
-//         toggleButton.textContent = "🌙 Dark Mode";
-//     }
-// });
-
-// Check saved user preference
-// function loadTheme() {
-//     const savedTheme = localStorage.getItem("theme");
-//     if (savedTheme === "dark") {
-//         document.body.classList.add("dark-mode");
-//         toggleButton.textContent = "☀️ Light Mode";
-//     }
-// }
-
-// loadTheme();
