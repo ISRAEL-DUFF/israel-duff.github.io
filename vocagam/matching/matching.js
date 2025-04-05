@@ -26,7 +26,7 @@ let currentSnapshot = null;
 let isSnapshot = true;
 let nextCardColor = null;
 let colorMap = {};
-let wordCount = 8;
+let wordCount = 6;
 let matchCounts = 0;
 
 function populateWords() {
