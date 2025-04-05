@@ -246,8 +246,8 @@ function loadData(data) {
     })
     
     let difficultWords = database.getAll()
-    console.log("GROUP:", data.group1)
-    let selectedWords = difficultWords.length > 0 ? getRandomWords(difficultWords, wordCount) : getRandomWords(data.group1 ?? [], wordCount);
+    console.log("GROUP:", dataList)
+    let selectedWords = difficultWords.length > 0 ? getRandomWords(difficultWords, wordCount) : getRandomWords(dataList[0] ? dataFile[dataList[0]] : [], wordCount);
 
     words = selectedWords;
 
@@ -279,7 +279,7 @@ fetch(`../word-bank/${currentLanguage}/files.json`)  // Load vocabulary from a J
                 selectedDataSource = event.value;
                 isSnapshot = false;
             
-                fetch(`../word-bank/${currentLanguage}/${selectedDataSource}`)  // Load vocabulary from a JSON file
+                fetch(`../word-bank/${currentLanguage}/${selectedDataSource ?? dataSourceList[0].value}`)  // Load vocabulary from a JSON file
                 .then(response => response.json())
                 .then(loadData);
                 console.log("Selected Datasource List: " + selectedDataSource);
@@ -292,7 +292,7 @@ fetch(`../word-bank/${currentLanguage}/files.json`)  // Load vocabulary from a J
             defaultSelectText: 'Select Data source'
         })
 
-        fetch(`../word-bank/${currentLanguage}/data1.json`)  // Load vocabulary from a JSON file
+        fetch(`../word-bank/${currentLanguage}/${selectedDataSource ?? dataSourceList[0].value}`)  // Load vocabulary from a JSON file
         .then(response => response.json())
         .then(loadData);
 
