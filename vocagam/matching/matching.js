@@ -70,28 +70,93 @@ function showAnimatedFlashcard(data) {
         meaning = data.word.meanings.join(' | ')
     }
 
-    if(data.type === 'all') {
-        // #20e3fd
-        flashcardContainer.innerHTML = `
-        <div class="flashcard-animation">
-            <p style="color:#20e3fd">${data.word["word"]} | Root: ${data.word["root"]} (${data.word["partOfSpeech"]})</p>
-            <p style='background-color: ${data.color}; color: white; border-radius: 10px; padding: 5px; font-size: 1.0em; font-weight: bold;'>${meaning}</p>
-        </div>
-        `;
-    } else if(data.type === 'meaning') {
-        flashcardContainer.innerHTML = `
-        <div class="flashcard-animation">
-            <h4 style='color: ${data.color}'>${meaning}</h4>
-        </div>
-        `;
-    } else if (data.type === 'word') {
-        flashcardContainer.innerHTML = `
-        <div class="flashcard-animation">
-            <p style="color:#20e3fd">Root: ${data.word["root"]}</p>
-            <p style="color:#20e3fd">Part of Speech: ${data.word["partOfSpeech"]}</p>
-        </div>
-        `;
+    const flashC = {
+        greek: {
+            all:  `
+            <div class="flashcard-animation">
+                <p style="color:#20e3fd">${data.word["word"]} | Root: ${data.word["root"]} (${data.word["partOfSpeech"]})</p>
+                <p style='background-color: ${data.color}; color: white; border-radius: 10px; padding: 5px; font-size: 1.0em; font-weight: bold;'>${meaning}</p>
+            </div>
+            `,
+            meaning: `
+            <div class="flashcard-animation">
+                <h4 style='color: ${data.color}'>${meaning}</h4>
+            </div>
+            `,
+            word: `
+            <div class="flashcard-animation">
+                <p style="color:#20e3fd">Root: ${data.word["root"]}</p>
+                <p style="color:#20e3fd">Part of Speech: ${data.word["partOfSpeech"]}</p>
+            </div>
+            `
+        },
+        hebrew: {
+            all:  `
+            <div class="flashcard-animation">
+                <p style="color:#20e3fd">${data.word["word"]}${data.word["transliteration"] ? ' | ' + data.word["transliteration"] : ''}</p>
+                <p>${data.word["partOfSpeech"]}</p>
+                <p style='background-color: ${data.color}; color: white; border-radius: 10px; padding: 5px; font-size: 1.0em; font-weight: bold;'>${meaning}</p>
+            </div>
+            `,
+            meaning: `
+            <div class="flashcard-animation">
+                <h4 style='color: ${data.color}'>${meaning}</h4>
+            </div>
+            `,
+            word: `
+            <div class="flashcard-animation">
+                <p style="color:#20e3fd">${data.word["word"]}${data.word["transliteration"] ? ' | ' + data.word["transliteration"] : ''}</p>
+                <p style="color:#20e3fd">${data.word["partOfSpeech"]}</p>
+            </div>
+            `
+        },
+        latin: {
+            all:  `
+            <div class="flashcard-animation">
+                <p style="color:#20e3fd">${data.word["word"]} | ${data.word["inflection"]}</p>
+                <p>${data.word["partOfSpeech"]}</p>
+                <p style='background-color: ${data.color}; color: white; border-radius: 10px; padding: 5px; font-size: 1.0em; font-weight: bold;'>${meaning}</p>
+            </div>
+            `,
+            meaning: `
+            <div class="flashcard-animation">
+                <h4 style='color: ${data.color}'>${meaning}</h4>
+            </div>
+            `,
+            word: `
+            <div class="flashcard-animation">
+                <p style="color:#20e3fd">${data.word["inflection"]}</p>
+                <p style="color:#20e3fd">${data.word["partOfSpeech"]}</p>
+                <p style="color:#20e3fd">Semantic Group: ${data.word["semanticGroup"]}</p>
+            </div>
+            `
+        }
     }
+
+    flashcardContainer.innerHTML = flashC[currentLanguage][data.type]
+
+    // if(data.type === 'all') {
+    //     // #20e3fd
+    //     flashcardContainer.innerHTML = `
+    //     <div class="flashcard-animation">
+    //         <p style="color:#20e3fd">${data.word["word"]} | Root: ${data.word["root"]} (${data.word["partOfSpeech"]})</p>
+    //         <p style='background-color: ${data.color}; color: white; border-radius: 10px; padding: 5px; font-size: 1.0em; font-weight: bold;'>${meaning}</p>
+    //     </div>
+    //     `;
+    // } else if(data.type === 'meaning') {
+    //     flashcardContainer.innerHTML = `
+    //     <div class="flashcard-animation">
+    //         <h4 style='color: ${data.color}'>${meaning}</h4>
+    //     </div>
+    //     `;
+    // } else if (data.type === 'word') {
+    //     flashcardContainer.innerHTML = `
+    //     <div class="flashcard-animation">
+    //         <p style="color:#20e3fd">Root: ${data.word["root"]}</p>
+    //         <p style="color:#20e3fd">Part of Speech: ${data.word["partOfSpeech"]}</p>
+    //     </div>
+    //     `;
+    // }
     
 
     // Add animation class to make the flashcard slide in
@@ -334,7 +399,8 @@ function generateMatchingGame() {
         div.className = 'match-item';
 
         if(!item.isMeaning && currentLanguage === 'latin') {
-            div.style.border = '1px solid rgba(215, 11, 174, 0.98)'// '1px solid #b51f9e'
+            div.style.border = '2.0px solid rgba(167, 35, 2, 0.98)'// '1px solid #b51f9e'
+            // div.style.backgroundColor = '#c3d8e3fb';
         }
 
         div.textContent = item.text;
