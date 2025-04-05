@@ -1,0 +1,51 @@
+{
+    "group1": [{
+        "word": "הוּא הִיא",
+        "root": "הוא היא",
+        "meanings": [
+          "(the third person pronoun singular) he, she, or it (only expressed when emphatic or without a verb)",
+          "(intensively) self",
+          "(especially with the article) the same",
+          "(sometimes, as demonstrative) this or that",
+          "(occasionally, instead of copula) as or are",
+          "KJV: he, as for her, him(-self), it, the same, she (herself), such, that (...it), these, they, this, those, which (is), who. "
+        ],
+        "frequency": "1889",
+        "partOfSpeech": "p/d."
+      },
+      {
+        "word": "עַם",
+        "root": "עמם",
+        "meanings": [
+          "a people (as a congregated unit)",
+          "specifically, a tribe (as those of Israel)",
+          "hence (collectively) troops or attendants",
+          "(figuratively) a flock",
+          "KJV: folk, men, nation, people. "
+        ],
+        "frequency": "1868",
+        "partOfSpeech": "noun masc"
+      },
+      {
+        "word": "אִישׁ",
+        "root": "אנשׁ",
+        "meanings": [
+          "a man as an individual or a male person",
+          "often used as an adjunct to a more definite term (and in such cases frequently not expressed in translation)",
+          "KJV: also, another, any (man), a certain, + champion, consent, each, every (one), fellow, (foot-, husband-)man, (good-, great, mighty) man, he, high (degree), him (that is), husband, man(-kind), + none, one, people, person, + steward, what (man) soever, whoso(-ever), worthy. "
+        ],
+        "frequency": "1662",
+        "partOfSpeech": "noun masc"
+      },
+      {
+        "word": "יָד",
+        "root": "יוד",
+        "meanings": [
+          "a hand (the open one (indicating power, means, direction, etc.), in distinction from H3709, the closed one)",
+          "used (as noun, adverb, etc.) in a great variety of applications, both literally and figuratively, both proximate and remote (as follows)",
+          "KJV: (+ be) able, X about, + armholes, at, axletree, because of, beside, border, X bounty, + broad, (broken-)handed, X by, charge, coast, + consecrate, + creditor, custody, debt, dominion, X enough, + fellowship, force, X from, hand(-staves, -y work), X he, himself, X in, labour, + large, ledge, (left-)handed, means, X mine, ministry, near, X of, X order, ordinance, X our, parts, pain, power, X presumptuously, service, side, sore, state, stay, draw with strength, stroke, + swear, terror, X thee, X by them, X themselves, X thine own, X thou, through, X throwing, + thumb, times, X to, X under, X us, X wait on, (way-)side, where, + wide, X with (him, me, you), work, + yield, X yourselves. "
+        ],
+        "frequency": "1627",
+        "partOfSpeech": "noun fem"
+    }]
+}

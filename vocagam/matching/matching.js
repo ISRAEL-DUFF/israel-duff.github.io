@@ -21,6 +21,7 @@ let gameLayout = 'random' // or 'ordered' | 'random'
 
 // Global variable to hold the selected value
 let selectedValue = null;
+let selectedDataSource = null;
 let currentSnapshot = null;
 let isSnapshot = true;
 let nextCardColor = null;
@@ -50,11 +51,12 @@ function shuffleGame() {
 }
 
 function getWordMeaning(entry) {
+    const maxLength = 20;
     if (entry.meanings && entry.meanings.length > 0) {
         const randomMeaning = entry.meanings[Math.floor(Math.random() * entry.meanings.length)];
-        return randomMeaning;
+        return randomMeaning.length > maxLength ? randomMeaning.slice(0, maxLength) + "..." : randomMeaning;
     } else if(entry.meaning) {
-        return entry.meaning;
+        return entry.meaning.length > maxLength ? entry.meaning.slice(0, maxLength) + "..." : entry.meaning;
     }
 }
 
@@ -218,41 +220,82 @@ populateSnapshotList()
 
 
 // '../word-bank/greek/greek-words.json'
-fetch('../word-bank/greek/data1.json')  // Load vocabulary from a JSON file
+function loadData(data) {
+    dataFile = data;
+    const dataList = Object.keys(data);
+
+    // generateSelectFromJson(dataList);
+    generateSelectBox({
+        containerId: 'wordgroup-select-container',
+        items: dataList,
+        onSelect: (event) => {
+            // Set the global variable to the value of the selected option
+            // selectedValue = event.target.value;
+            selectedValue = event;
+            isSnapshot = false;
+        
+            shuffleGame()
+            console.log("Selected Word List: " + selectedValue);
+          },
+        style: {
+            textColor: 'white',
+            selectedTextColor: 'black',
+            backgroundColor: '#8e44ad',
+        },
+        defaultSelectText: 'Select a word group'
+    })
+    
+    let difficultWords = database.getAll()
+    console.log("GROUP:", data.group1)
+    let selectedWords = difficultWords.length > 0 ? getRandomWords(difficultWords, wordCount) : getRandomWords(data.group1 ?? [], wordCount);
+
+    words = selectedWords;
+
+    // checkForSavedProgress();
+    generateMatchingGame();
+    // startTimedChallenge();
+}
+
+fetch(`../word-bank/${currentLanguage}/files.json`)  // Load vocabulary from a JSON file
     .then(response => response.json())
-    .then(data => {
-        dataFile = data;
-        const dataList = Object.keys(data);
+    .then(datasources => {
+        // const dataSourceList = Object.keys(datasources);
+        const dataSourceList = [];
+
+        for(const k of Object.keys(datasources)) {
+            dataSourceList.push({
+                key: k,
+                value: datasources[k]
+            })
+        }
 
         // generateSelectFromJson(dataList);
         generateSelectBox({
-            containerId: 'wordgroup-select-container',
-            items: dataList,
+            containerId: 'datasource-select-container',
+            items: dataSourceList,
             onSelect: (event) => {
                 // Set the global variable to the value of the selected option
                 // selectedValue = event.target.value;
-                selectedValue = event;
+                selectedDataSource = event.value;
                 isSnapshot = false;
             
-                shuffleGame()
-                console.log("Selected Word List: " + selectedValue);
-              },
+                fetch(`../word-bank/${currentLanguage}/${selectedDataSource}`)  // Load vocabulary from a JSON file
+                .then(response => response.json())
+                .then(loadData);
+                console.log("Selected Datasource List: " + selectedDataSource);
+            },
             style: {
                 textColor: 'white',
                 selectedTextColor: 'black',
                 backgroundColor: '#8e44ad',
             },
-            defaultSelectText: 'Select a word group'
+            defaultSelectText: 'Select Data source'
         })
-        
-        let difficultWords = database.getAll()
-        let selectedWords = difficultWords.length > 0 ? getRandomWords(difficultWords, wordCount) : getRandomWords(data.group1, wordCount);
 
-        words = selectedWords;
+        fetch(`../word-bank/${currentLanguage}/data1.json`)  // Load vocabulary from a JSON file
+        .then(response => response.json())
+        .then(loadData);
 
-        // checkForSavedProgress();
-        generateMatchingGame();
-        // startTimedChallenge();
     });
 
 function generateMatchingGame() {
@@ -289,6 +332,11 @@ function generateMatchingGame() {
     pairs.forEach(item => {
         let div = document.createElement('div');
         div.className = 'match-item';
+
+        if(!item.isMeaning && currentLanguage === 'latin') {
+            div.style.border = '1px solid rgba(215, 11, 174, 0.98)'// '1px solid #b51f9e'
+        }
+
         div.textContent = item.text;
         div.dataset.value = item.value;
         div.onclick = () => {

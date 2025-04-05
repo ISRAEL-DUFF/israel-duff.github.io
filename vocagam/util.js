@@ -83,6 +83,8 @@ export function generateSelectFromJson(jsonData) {
             border-radius: 4px;
             z-index: 1;
             width: 100%;
+            max-height: 40vh;
+            overflow-y: auto;
         }
         .options-${idNum}.show {
             display: block;
