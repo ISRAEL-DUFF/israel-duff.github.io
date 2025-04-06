@@ -207,8 +207,9 @@
       "word": "φράζω",
       "meanings": [
         "tell",
-        " declare; (mid. and pass.) think (about)"
-      ],
+        " declare",
+        "think (about)"
+      ], 
       "frequency": 504,
       "partOfSpeech": "verb: -ω dental stem",
       "inflection": "φράζω, φράσω, ἔφρασα, πέφρακα, πέφρασμαι, ἐφράσθην",
@@ -229,7 +230,8 @@
       "meanings": [
         "word",
         " speech",
-        " tale; prophecy"
+        " tale",
+        "prophecy"
       ],
       "frequency": 502,
       "partOfSpeech": "noun: 3rd declension σ-stem",
@@ -348,15 +350,14 @@
     {
       "word": "μυρίος",
       "meanings": [
-        "countless; μύριοι 10",
-        "000; μυριάς -άδος ἡ 10",
-        "000",
-        " a countless amount"
+        "countless",
+        "a countless amount"
       ],
       "frequency": 491,
       "partOfSpeech": "adjective: 1st and 2nd declension",
       "inflection": "μυρίος μυρία μυρίον",
-      "semanticGroup": "Measurements and Numerals"
+      "semanticGroup": "Measurements and Numerals",
+      "examples": "μύριοι 10; μυριάς -άδος ἡ 10"
     },
     {
       "word": "εἴκοσι(ν)",
@@ -405,7 +406,8 @@
       "word": "τολμάω",
       "meanings": [
         "have the courage",
-        "dare; undertake",
+        "dare",
+        "undertake",
         "undergo"
       ],
       "frequency": 486,
@@ -426,7 +428,8 @@
     {
       "word": "γλῶσσα",
       "meanings": [
-        "tongue; language"
+        "tongue",
+        "language"
       ],
       "frequency": 484,
       "partOfSpeech": "noun: 1st declension",
@@ -536,7 +539,7 @@
       "word": "λαμπρός",
       "meanings": [
         "bright",
-        "brilliant;",
+        "brilliant",
         "illustrious",
         "well-known"
       ],
@@ -627,7 +630,8 @@
       "word": "ὧδε",
       "meanings": [
         "thus",
-        "in this way; hither",
+        "in this way",
+        "hither",
         "here"
       ],
       "frequency": 466,
@@ -762,7 +766,8 @@
       "word": "σκοπέω",
       "meanings": [
         "look at",
-        "watch; look into",
+        "watch",
+        "look into",
         "consider",
         "examine"
       ],
@@ -834,7 +839,8 @@
       "word": "φρονέω",
       "meanings": [
         "think",
-        " intend to (+infin.); be minded towards (+adv. and dat.)"
+        "intend to",
+        "be minded towards"
       ],
       "frequency": 448,
       "partOfSpeech": "verb: contracted",
@@ -892,9 +898,10 @@
       "word": "θυμός",
       "meanings": [
         "life",
-        " spirit; soul",
-        " heart",
-        " mind"
+        " spirit",
+        "soul",
+        "heart",
+        "mind"
       ],
       "frequency": 443,
       "partOfSpeech": "noun: 2nd declension",
@@ -929,7 +936,8 @@
       "meanings": [
         "a drawing",
         " painting",
-        " writing; indictment"
+        " writing",
+        "indictment"
       ],
       "frequency": 440,
       "partOfSpeech": "noun: 1st declension",
@@ -951,8 +959,10 @@
       "word": "βουλή",
       "meanings": [
         "will",
-        " determination; counsel",
-        " piece of advice; council of elders"
+        " determination",
+        "counsel",
+        " piece of advice",
+        "council of elders"
       ],
       "frequency": 438,
       "partOfSpeech": "noun: 1st declension",
@@ -1032,9 +1042,11 @@
       "word": "τρέπω",
       "meanings": [
         "turn",
-        " direct towards a thing; put to flight",
-        " defeat; (pass.) turn one’s steps in a certain direction",
-        " go"
+        "direct towards a thing",
+        "put to flight",
+        "defeat",
+        "turn one’s steps in a certain direction",
+        "go"
       ],
       "frequency": 432,
       "partOfSpeech": "verb: -ω labial stem",
@@ -1077,7 +1089,8 @@
       "meanings": [
         "separate",
         " set apart",
-        " choοse; (mid.) answer",
+        " choοse",
+        "answer",
         " reply"
       ],
       "frequency": 428,
@@ -1088,7 +1101,8 @@
     {
       "word": "πορεύω",
       "meanings": [
-        "carry; (mid. and pass) go",
+        "carry",
+        "go",
         " walk",
         " march"
       ],
@@ -1101,7 +1115,8 @@
       "word": "πάντως",
       "meanings": [
         "altogether",
-        " in all ways; at any rate"
+        "in all ways",
+        "at any rate"
       ],
       "frequency": 426,
       "partOfSpeech": "adverb",
@@ -1121,8 +1136,9 @@
     {
       "word": "λανθάνω",
       "meanings": [
-        "escape the notice of (+acc. and nom. participle)",
-        " be unknown; (mid. and pass.) forget"
+        "escape the notice of",
+        " be unknown",
+        "forget"
       ],
       "frequency": 424,
       "partOfSpeech": "verb: -ω liquid stem",
@@ -1144,8 +1160,10 @@
       "word": "ὑπολαμβάνω",
       "meanings": [
         "take up",
-        " seize; answer",
-        " reply; assume",
+        " seize",
+        "answer",
+        " reply",
+        "assume",
         " suppose"
       ],
       "frequency": 422,
@@ -1157,7 +1175,8 @@
       "word": "πίστις",
       "meanings": [
         "trust in others",
-        " faith; that which gives confidence",
+        " faith",
+        "that which gives confidence",
         " assurance",
         " pledge",
         " guarantee"
@@ -1336,7 +1355,8 @@
       "word": "τάξις",
       "meanings": [
         "arrangement",
-        " order; military unit"
+        "order",
+        "military unit"
       ],
       "frequency": 406,
       "partOfSpeech": "noun: 3rd declension ι-stem",
@@ -1357,9 +1377,10 @@
       "word": "πόνος",
       "meanings": [
         "work",
-        " labor; stress",
-        " trouble",
-        " pain"
+        " labor",
+        "stress",
+        "trouble",
+        "pain"
       ],
       "frequency": 404,
       "partOfSpeech": "noun: 2nd declension",
@@ -1798,7 +1819,8 @@
     {
       "word": "τελευτάω",
       "meanings": [
-        "finish; die"
+        "finish",
+        "die"
       ],
       "frequency": 365,
       "partOfSpeech": "verb: contracted",
@@ -1913,7 +1935,8 @@
       "word": "τιμή",
       "meanings": [
         "honor",
-        " esteem; price",
+        " esteem",
+        "price",
         " value",
         "office",
         " magistracy"
@@ -1995,7 +2018,9 @@
     {
       "word": "αὖ",
       "meanings": [
-        "moreover; on the other hand; back (again)"
+        "moreover",
+        "on the other hand",
+        "back (again)"
       ],
       "frequency": 349,
       "partOfSpeech": "adverb",
@@ -2282,7 +2307,8 @@
         "nourish",
         " feed",
         " support",
-        " maintain; rear",
+        " maintain",
+        "rear",
         " educate"
       ],
       "frequency": 324,
@@ -2695,7 +2721,8 @@
       "meanings": [
         "well",
         "thoroughly",
-        " competently; happily",
+        " competently",
+        "happily",
         " fortunately"
       ],
       "frequency": 289,
@@ -2997,7 +3024,8 @@
         "order",
         "ornament",
         " decoration",
-        " adornment; world",
+        " adornment",
+        "world",
         " universe"
       ],
       "frequency": 263,
@@ -3417,7 +3445,8 @@
       "word": "οὐσία",
       "meanings": [
         "substance",
-        " property; essence"
+        " property",
+        "essence"
       ],
       "frequency": 227,
       "partOfSpeech": "noun: 1st declension",
@@ -3713,7 +3742,8 @@
         " misfortune",
         " experience",
         "passion",
-        " emotion; state",
+        " emotion",
+        "state",
         " condition"
       ],
       "frequency": 202,
@@ -4269,7 +4299,8 @@
       "meanings": [
         "meet",
         " come to an agreement",
-        " correspond; happen",
+        " correspond",
+        "happen",
         " occur",
         " come to pass",
         "turn out in a certain way",
@@ -4501,19 +4532,21 @@
       "meanings": [
         "first",
         " foremost",
-        " earliest; (adv.) τὸ πρῶτον in the first place"
+        " earliest"
       ],
       "frequency": 135,
       "partOfSpeech": "adjective: 1st and 2nd declension",
       "inflection": "πρῶτος πρώτη πρῶτον",
-      "semanticGroup": "Measurements and Numerals"
+      "semanticGroup": "Measurements and Numerals",
+      "examples": "(adv.) τὸ πρῶτον in the first place"
     },
     {
       "word": "πράσσω",
       "meanings": [
         "do",
         " achieve",
-        " accomplish; do or fare in a certain way (+adv.)"
+        " accomplish",
+        "do or fare in a certain way"
       ],
       "frequency": 134,
       "partOfSpeech": "verb: -ω dental stem",
@@ -4536,7 +4569,8 @@
     {
       "word": "τόπος",
       "meanings": [
-        "place; topic"
+        "place",
+        "topic"
       ],
       "frequency": 133,
       "partOfSpeech": "noun: 2nd declension",
@@ -5054,9 +5088,11 @@
       "word": "ἀρχή",
       "meanings": [
         "beginning",
-        " origin; rule",
+        " origin",
+        "rule",
         " empire",
-        " realm; magistracy"
+        " realm",
+        "magistracy"
       ],
       "frequency": 87,
       "partOfSpeech": "noun: 1st declension",
@@ -5709,7 +5745,8 @@
       "word": "ὅστις",
       "meanings": [
         "anyone who",
-        " anything which; (in indir. quest.) who",
+        " anything which",
+        "who",
         " which",
         " what"
       ],
@@ -5781,7 +5818,8 @@
       "word": "πᾶς",
       "meanings": [
         "every",
-        " all; whole (with article)"
+        " all",
+        "whole"
       ],
       "frequency": 27,
       "partOfSpeech": "noun: 3rd declension irregular",
@@ -5823,7 +5861,8 @@
     {
       "word": "γίγνομαι",
       "meanings": [
-        "become; be born",
+        "become",
+        "be born",
         "happen",
         " be"
       ],
@@ -5872,7 +5911,7 @@
       "partOfSpeech": "preposition",
       "inflection": "κατά",
       "semanticGroup": "Direction",
-      "examples": "; κατὰ γῆν by land; κατὰ φύσιν in accordance with nature; κατ’ ἔθνη by nations; καθ᾿ἕνα one by one."
+      "examples": "κατὰ γῆν by land; κατὰ φύσιν in accordance with nature; κατ’ ἔθνη by nations; καθ᾿ἕνα one by one."
     }
   ],
   "19 - 5": [
@@ -5904,12 +5943,13 @@
     {
       "word": "τε",
       "meanings": [
-        "and; τε…τε both…and"
+        "and"
       ],
       "frequency": 17,
       "partOfSpeech": "conjunction: coordinating",
       "inflection": "τε",
-      "semanticGroup": "Conjunctions/Adverbs"
+      "semanticGroup": "Conjunctions/Adverbs",
+      "examples": "τε…τε both…and"
     },
     {
       "word": "ὡς",
