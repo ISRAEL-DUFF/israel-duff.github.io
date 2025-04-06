@@ -51,7 +51,7 @@ function shuffleGame() {
 }
 
 function getWordMeaning(entry) {
-    const maxLength = 20;
+    const maxLength = 40;
     if (entry.meanings && entry.meanings.length > 0) {
         const randomMeaning = entry.meanings[Math.floor(Math.random() * entry.meanings.length)];
         return randomMeaning.length > maxLength ? randomMeaning.slice(0, maxLength) + "..." : randomMeaning;
@@ -74,7 +74,7 @@ function showAnimatedFlashcard(data) {
         greek: {
             all:  `
             <div class="flashcard-animation">
-                <p style="color:#20e3fd">${data.word["word"]} | Root: ${data.word["root"]} (${data.word["partOfSpeech"]})</p>
+                <p style="color:#20e3fd">${data.word["word"]} | ${data.word["root"] ? "root: " + data.word["root"] : '' } (${data.word["partOfSpeech"]})</p>
                 <p style='background-color: ${data.color}; color: white; border-radius: 10px; padding: 5px; font-size: 1.0em; font-weight: bold;'>${meaning}</p>
             </div>
             `,
@@ -85,7 +85,7 @@ function showAnimatedFlashcard(data) {
             `,
             word: `
             <div class="flashcard-animation">
-                <p style="color:#20e3fd">Root: ${data.word["root"]}</p>
+                <p style="color:#20e3fd">${data.word["word"]} | ${data.word["root"] ? "root: " + data.word["root"] : '' } (${data.word["partOfSpeech"]})</p>
                 <p style="color:#20e3fd">Part of Speech: ${data.word["partOfSpeech"]}</p>
             </div>
             `

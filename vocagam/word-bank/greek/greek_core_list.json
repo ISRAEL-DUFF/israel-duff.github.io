@@ -382,17 +382,19 @@
       "word": "εἰκός",
       "meanings": [
         "likelihood",
-        " probability; εἰκός (ἐστι) it is likely (+infin.) →ἔοικα"
+        "probability"
       ],
       "frequency": 488,
       "partOfSpeech": "noun: 3rd declension consonant stem",
       "inflection": "εἰκός εἰκότος, τό",
-      "semanticGroup": "The Mind, Perceiving and Learning"
+      "semanticGroup": "The Mind, Perceiving and Learning",
+      "examples": "εἰκός (ἐστι) it is likely (+infin.) →ἔοικα"
     },
     {
       "word": "δεσπότης",
       "meanings": [
-        "master (of the household); absolute ruler"
+        "master (of the household)",
+        "absolute ruler"
       ],
       "frequency": 487,
       "partOfSpeech": "noun: 1st declension",
@@ -403,8 +405,8 @@
       "word": "τολμάω",
       "meanings": [
         "have the courage",
-        " dare; undertake",
-        " undergo"
+        "dare; undertake",
+        "undergo"
       ],
       "frequency": 486,
       "partOfSpeech": "verb: contracted",
@@ -488,7 +490,7 @@
       "word": "αἰτέω",
       "meanings": [
         "ask (for)",
-        " beg"
+        "beg"
       ],
       "frequency": 478,
       "partOfSpeech": "verb: contracted",
@@ -499,7 +501,7 @@
       "word": "μάλα",
       "meanings": [
         "very",
-        " very much"
+        "very much"
       ],
       "frequency": 477,
       "partOfSpeech": "adverb",
@@ -510,7 +512,8 @@
       "word": "βουλεύω",
       "meanings": [
         "plan (to)",
-        " decide (to); (mid.) deliberate"
+        "decide (to)",
+        "deliberate"
       ],
       "frequency": 476,
       "partOfSpeech": "verb: -ω vowel stem",
@@ -521,8 +524,8 @@
       "word": "ἀπαλλάσσω",
       "meanings": [
         "set free",
-        " release",
-        " deliver"
+        "release",
+        "deliver"
       ],
       "frequency": 475,
       "partOfSpeech": "verb: -ω palatal stem",
@@ -533,8 +536,9 @@
       "word": "λαμπρός",
       "meanings": [
         "bright",
-        " brilliant; well-known",
-        " illustrious"
+        "brilliant;",
+        "illustrious",
+        "well-known"
       ],
       "frequency": 474,
       "partOfSpeech": "adjective: 1st and 2nd declension",
@@ -545,7 +549,7 @@
       "word": "βοηθέω",
       "meanings": [
         "help",
-        " assist (+dat.)"
+        "assist"
       ],
       "frequency": 473,
       "partOfSpeech": "verb: contracted",
@@ -556,7 +560,7 @@
       "word": "χείρων",
       "meanings": [
         "worse",
-        " inferior (comp. of κακός)"
+        "inferior"
       ],
       "frequency": 472,
       "partOfSpeech": "adjective: 3rd declension -ων, -ον",
@@ -567,9 +571,9 @@
       "word": "ἀμείνων",
       "meanings": [
         "better",
-        " abler",
-        " stronger",
-        " braver (comp. of ἀγαθός)"
+        "abler",
+        "stronger",
+        "braver"
       ],
       "frequency": 471,
       "partOfSpeech": "adjective: 3rd declension -ων, -ον",
@@ -590,7 +594,7 @@
       "word": "ἁλίσκομαι",
       "meanings": [
         "to be taken",
-        " conquered (act. supplied by αἱρέω)"
+        "conquered)"
       ],
       "frequency": 469,
       "partOfSpeech": "verb: deponent",
@@ -611,8 +615,8 @@
       "word": "αἰσχρός",
       "meanings": [
         "ugly",
-        " shameful",
-        " disgraceful"
+        "shameful",
+        "disgraceful"
       ],
       "frequency": 467,
       "partOfSpeech": "adjective: 1st and 2nd declension",
@@ -623,8 +627,8 @@
       "word": "ὧδε",
       "meanings": [
         "thus",
-        " in this way; hither",
-        " here"
+        "in this way; hither",
+        "here"
       ],
       "frequency": 466,
       "partOfSpeech": "adverb",
@@ -635,8 +639,8 @@
       "word": "βαρύς",
       "meanings": [
         "heavy",
-        " grievous",
-        " tiresome"
+        "grievous",
+        "tiresome"
       ],
       "frequency": 465,
       "partOfSpeech": "adjective: -ύς, -εῖα, -ύ",
@@ -647,8 +651,8 @@
       "word": "ἡγεμών",
       "meanings": [
         "guide",
-        " leader",
-        " commander"
+        "leader",
+        "commander"
       ],
       "frequency": 464,
       "partOfSpeech": "noun: 3rd declension consonant stem",
@@ -658,12 +662,13 @@
     {
       "word": "σύμμαχος",
       "meanings": [
-        "allied with (+dat.); οἱ σύμμαχοι allies"
+        "allied with"
       ],
       "frequency": 463,
       "partOfSpeech": "adjective: 1st and 2nd declension",
       "inflection": "σύμμαχος –ον",
-      "semanticGroup": "War and Peace"
+      "semanticGroup": "War and Peace",
+      "examples": "οἱ σύμμαχοι (allies)"
     },
     {
       "word": "δέδοικα",
@@ -679,7 +684,7 @@
       "word": "ἐλαύνω",
       "meanings": [
         "drive",
-        " set in motion"
+        "set in motion"
       ],
       "frequency": 461,
       "partOfSpeech": "verb: -ω liquid stem",
@@ -709,8 +714,9 @@
     {
       "word": "ἐρωτάω",
       "meanings": [
-        "ask someone (acc.) something (acc.); question",
-        " beg"
+        "ask someone something",
+        "question",
+        "beg"
       ],
       "frequency": 458,
       "partOfSpeech": "verb: contracted",
@@ -721,8 +727,9 @@
       "word": "γράμμα",
       "meanings": [
         "letter",
-        " written character; (pl.) piece of writing",
-        " document(s)"
+        "written character",
+        "piece of writing",
+        "document(s)"
       ],
       "frequency": 457,
       "partOfSpeech": "noun: 3rd declension consonant stem",
@@ -743,8 +750,8 @@
       "word": "βοῦς",
       "meanings": [
         "bull",
-        " ox",
-        " cow"
+        "ox",
+        "cow"
       ],
       "frequency": 455,
       "partOfSpeech": "noun: 3rd declension irregular",
@@ -755,9 +762,9 @@
       "word": "σκοπέω",
       "meanings": [
         "look at",
-        " watch; look into",
-        " consider",
-        " examine"
+        "watch; look into",
+        "consider",
+        "examine"
       ],
       "frequency": 454,
       "partOfSpeech": "verb: contracted",
@@ -803,8 +810,9 @@
       "word": "ὁρμάω",
       "meanings": [
         "set in motion",
-        " urge on; (intrans.) start",
-        " hasten on"
+        "urge on",
+        "start",
+        "hasten on"
       ],
       "frequency": 450,
       "partOfSpeech": "verb: contracted",
@@ -815,7 +823,7 @@
       "word": "τοιόσδε",
       "meanings": [
         "such (as this)",
-        " of such a sort (as this)"
+        "of such a sort (as this)"
       ],
       "frequency": 449,
       "partOfSpeech": "adjective: 1st and 2nd declension",
@@ -837,8 +845,8 @@
       "word": "στάδιον",
       "meanings": [
         "stadion or stade",
-        " the longest Greek unit of linear measure",
-        " about 185 meters"
+        "the longest Greek unit of linear measure",
+        "about 185 meters"
       ],
       "frequency": 447,
       "partOfSpeech": "noun: 2nd declension",
@@ -931,7 +939,8 @@
     {
       "word": "ἐλπίς",
       "meanings": [
-        "hope; expectation"
+        "hope",
+        "expectation"
       ],
       "frequency": 439,
       "partOfSpeech": "noun: 3rd declension consonant stem",
@@ -1163,7 +1172,7 @@
       "meanings": [
         "weapon",
         " tool",
-        " implement (mostly pl.)"
+        " implement"
       ],
       "frequency": 420,
       "partOfSpeech": "noun: 2nd declension",
@@ -1218,7 +1227,7 @@
       "meanings": [
         "learn",
         " hear",
-        " inquire concerning (+gen.)"
+        " inquire concerning"
       ],
       "frequency": 415,
       "partOfSpeech": "verb: deponent",
@@ -1229,8 +1238,8 @@
       "word": "συμφέρω",
       "meanings": [
         "benefit",
-        " be useful or profitable to (+dat.); (impers.) συμφέρει it is of use",
-        " expedient (+infin.); τὸ συμφέρον use",
+        " be useful or profitable to",
+        " expedient",
         " profit",
         " advantage"
       ],
@@ -1254,7 +1263,8 @@
       "word": "βάρβαρος",
       "meanings": [
         "non-Greek",
-        " foreign; barbarous"
+        "foreign",
+        "barbarous"
       ],
       "frequency": 412,
       "partOfSpeech": "adjective: 1st and 2nd declension",
@@ -1264,8 +1274,9 @@
     {
       "word": "ξένος",
       "meanings": [
-        "guest-friend; foreigner",
-        " stranger"
+        "guest-friend",
+        "foreigner",
+        "stranger"
       ],
       "frequency": 411,
       "partOfSpeech": "noun: 2nd declension",
@@ -1288,8 +1299,9 @@
       "word": "βάλλω",
       "meanings": [
         "throw",
-        " hurl; throw at",
-        " hit (acc.) with (dat.)"
+        "hurl",
+        "throw at",
+        "hit with"
       ],
       "frequency": 409,
       "partOfSpeech": "verb: -ω liquid stem",
@@ -1299,8 +1311,9 @@
     {
       "word": "φοβέω",
       "meanings": [
-        "put to flight; (mid. and pass.) flee",
-        " fear"
+        "put to flight",
+        "flee",
+        "fear"
       ],
       "frequency": 408,
       "partOfSpeech": "verb: contracted",
@@ -1311,8 +1324,8 @@
       "word": "πειράω",
       "meanings": [
         "attempt",
-        " try",
-        " make a trial of (+gen.)"
+        "try",
+        "make a trial of"
       ],
       "frequency": 407,
       "partOfSpeech": "verb: contracted",
@@ -1356,9 +1369,9 @@
     {
       "word": "πως",
       "meanings": [
-        "(enclitic) somehow",
-        " in some way",
-        " in any way"
+        "somehow",
+        "in some way",
+        "in any way"
       ],
       "frequency": 403,
       "partOfSpeech": "adverb",
@@ -1368,7 +1381,8 @@
     {
       "word": "διαφθείρω",
       "meanings": [
-        "destroy; corrupt"
+        "destroy",
+        "corrupt"
       ],
       "frequency": 402,
       "partOfSpeech": "verb: -ω liquid stem",
@@ -1378,9 +1392,10 @@
     {
       "word": "ἁμαρτάνω",
       "meanings": [
-        "miss the mark (+gen.); fail",
-        " be wrong",
-        " make a mistake"
+        "miss the mark",
+        "fail",
+        "be wrong",
+        "make a mistake"
       ],
       "frequency": 401,
       "partOfSpeech": "verb: -ω dental stem",
@@ -1392,7 +1407,7 @@
       "meanings": [
         "hinder",
         " check",
-        " prevent (+acc. and infin.)"
+        " prevent"
       ],
       "frequency": 400,
       "partOfSpeech": "verb: -ω vowel stem",
@@ -1402,7 +1417,8 @@
     {
       "word": "ἀγών",
       "meanings": [
-        "contest; struggle"
+        "contest",
+        "struggle"
       ],
       "frequency": 399,
       "partOfSpeech": "noun: 3rd declension consonant stem",
@@ -1413,7 +1429,8 @@
       "word": "ἐχθρός",
       "meanings": [
         "hated",
-        " hateful; hostile to (+dat.)"
+        "hateful",
+        "hostile to"
       ],
       "frequency": 398,
       "partOfSpeech": "adjective: 1st and 2nd declension",
@@ -1446,7 +1463,7 @@
       "word": "πίπτω",
       "meanings": [
         "fall",
-        " fall down"
+        "fall down"
       ],
       "frequency": 395,
       "partOfSpeech": "verb: -ω dental stem",
@@ -1468,7 +1485,7 @@
     {
       "word": "πότερος",
       "meanings": [
-        "which of the two? πότερον whether"
+        "which of the two?"
       ],
       "frequency": 393,
       "partOfSpeech": "adjective: 1st and 2nd declension",
@@ -1478,7 +1495,7 @@
     {
       "word": "ἄνευ",
       "meanings": [
-        "without (+gen.)"
+        "without"
       ],
       "frequency": 392,
       "partOfSpeech": "preposition",
@@ -1509,7 +1526,8 @@
       "word": "αἴρω",
       "meanings": [
         "take up",
-        " lift up; remove"
+        "lift up",
+        "remove"
       ],
       "frequency": 389,
       "partOfSpeech": "verb: -ω palatal stem",
@@ -1552,7 +1570,7 @@
       "word": "θνῄσκω",
       "meanings": [
         "to die",
-        " be dying"
+        "be dying"
       ],
       "frequency": 384,
       "partOfSpeech": "verb: -ω palatal stem",
@@ -1564,8 +1582,9 @@
       "meanings": [
         "loosen",
         " unbind",
-        " set free; undo",
-        " destroy"
+        " set free",
+        " destroy",
+        "undo"
       ],
       "frequency": 384,
       "partOfSpeech": "verb: -ω vowel stem",
@@ -1575,7 +1594,8 @@
     {
       "word": "μιμνήσκω",
       "meanings": [
-        "remind; (in pf. mid.) remember"
+        "remind",
+        "remember"
       ],
       "frequency": 383,
       "partOfSpeech": "verb: -ω palatal stem",
@@ -1585,7 +1605,7 @@
     {
       "word": "μάχομαι",
       "meanings": [
-        "fight (against) (+dat.)"
+        "fight (against)"
       ],
       "frequency": 382,
       "partOfSpeech": "verb: deponent",
@@ -1619,7 +1639,7 @@
       "word": "χαλεπός",
       "meanings": [
         "difficult",
-        " troublesome"
+        "troublesome"
       ],
       "frequency": 379,
       "partOfSpeech": "adjective: 1st and 2nd declension",
@@ -1630,9 +1650,8 @@
       "word": "χαίρω",
       "meanings": [
         "to be happy",
-        " rejoice at (+dat.)",
-        " take joy in (+ptc.); χαῖρε",
-        " (pl.) χαίρετε hello",
+        " rejoice at",
+        " take joy in",
         " goodbye"
       ],
       "frequency": 378,
@@ -1657,7 +1676,7 @@
       "word": "θαυμάζω",
       "meanings": [
         "to be in awe (of)",
-        " be astonished (at)"
+        "be astonished (at)"
       ],
       "frequency": 376,
       "partOfSpeech": "verb: -ω dental stem",
@@ -1668,7 +1687,8 @@
       "word": "ἐάω",
       "meanings": [
         "allow",
-        " permit (+acc. and infin.); let be",
+        " permit",
+        " let be",
         " let alone"
       ],
       "frequency": 375,
@@ -1711,7 +1731,8 @@
     {
       "word": "ἔξω",
       "meanings": [
-        "outside; except"
+        "outside",
+        "except"
       ],
       "frequency": 371,
       "partOfSpeech": "adverb",
@@ -1722,8 +1743,8 @@
       "word": "παραδίδωμι",
       "meanings": [
         "transmit",
-        " hand over",
-        " surrender"
+        "hand over",
+        "surrender"
       ],
       "frequency": 370,
       "partOfSpeech": "verb: -μι",
@@ -1788,7 +1809,8 @@
       "word": "παύω",
       "meanings": [
         "stop",
-        " put an end to; (mid.) cease"
+        "put an end to",
+        "cease"
       ],
       "frequency": 364,
       "partOfSpeech": "verb: -ω vowel stem",
@@ -1798,7 +1820,8 @@
     {
       "word": "πρέσβυς",
       "meanings": [
-        "old man; (pl.) ambassadors"
+        "old man",
+        "ambassadors"
       ],
       "frequency": 363,
       "partOfSpeech": "noun: 3rd declension -εύς, -έως",
@@ -1809,7 +1832,7 @@
       "word": "οὐκέτι",
       "meanings": [
         "no longer",
-        " no more"
+        "no more"
       ],
       "frequency": 362,
       "partOfSpeech": "adverb",
@@ -1831,7 +1854,8 @@
     {
       "word": "ἀδικέω",
       "meanings": [
-        "do wrong; injure"
+        "do wrong",
+        "injure"
       ],
       "frequency": 360,
       "partOfSpeech": "verb: contracted",
@@ -1842,7 +1866,7 @@
       "word": "πρίν",
       "meanings": [
         "before",
-        " until"
+        "until"
       ],
       "frequency": 359,
       "partOfSpeech": "conjunction: subordinating",
@@ -1864,17 +1888,21 @@
       "word": "προσήκω",
       "meanings": [
         "belong to",
-        " have to do with; be fitting for (+dat.); arrive at; οἱ προσήκοντες relatives; τὰ προσήκoντα duties"
+        " have to do with",
+        "arrive at",
+        "be fitting for"
       ],
       "frequency": 358,
       "partOfSpeech": "verb: -ω palatal stem",
       "inflection": "προσήκω προσήξω",
-      "semanticGroup": "Ethics and Morals"
+      "semanticGroup": "Ethics and Morals",
+      "examples": "οἱ προσήκοντες relatives; τὰ προσήκoντα duties"
     },
     {
       "word": "μεταξύ",
       "meanings": [
-        "between (prep. + gen.); in the midst of (adv.)"
+        "between",
+        "in the midst of"
       ],
       "frequency": 357,
       "partOfSpeech": "preposition",
@@ -1886,7 +1914,8 @@
       "meanings": [
         "honor",
         " esteem; price",
-        " value; office",
+        " value",
+        "office",
         " magistracy"
       ],
       "frequency": 356,
@@ -1911,7 +1940,7 @@
       "word": "πλέων",
       "meanings": [
         "more",
-        " larger (comp. of πολύς)"
+        "larger"
       ],
       "frequency": 354,
       "partOfSpeech": "adjective: 3rd declension -ων, -ον",
@@ -1987,7 +2016,7 @@
       "word": "ὁμολογέω",
       "meanings": [
         "agree with",
-        " say the same thing as (+dat.)"
+        " say the same thing as"
       ],
       "frequency": 347,
       "partOfSpeech": "verb: contracted",
@@ -2055,7 +2084,8 @@
       "word": "ἀφίημι",
       "meanings": [
         "send away",
-        " let go; let alone",
+        " let go",
+        "let alone",
         " neglect"
       ],
       "frequency": 341,
@@ -2166,8 +2196,9 @@
       "word": "κρείσσων",
       "meanings": [
         "stronger",
-        " mightier; better",
-        " more excellent (comp. of ἀγαθός)"
+        " mightier",
+        "better",
+        "more excellent"
       ],
       "frequency": 331,
       "partOfSpeech": "adjective: 3rd declension -ων, -ον",
@@ -2178,8 +2209,9 @@
       "word": "χωρίς",
       "meanings": [
         "separately",
-        " apart; (+gen.) without",
-        " separate from"
+        " apart",
+        "without",
+        "separate from"
       ],
       "frequency": 330,
       "partOfSpeech": "adverb",
@@ -2212,8 +2244,9 @@
     {
       "word": "που",
       "meanings": [
-        "(enclitic) somewhere; I suppose",
-        " perhaps (to qualify an assertion)"
+        "somewhere",
+        "I suppose",
+        "perhaps"
       ],
       "frequency": 327,
       "partOfSpeech": "adverb",
@@ -2235,7 +2268,8 @@
     {
       "word": "ἀδύνατος",
       "meanings": [
-        "impossible; powerless"
+        "impossible",
+        "powerless"
       ],
       "frequency": 325,
       "partOfSpeech": "adjective: 1st and 2nd declension",
@@ -2281,8 +2315,9 @@
       "word": "ἱκανός",
       "meanings": [
         "sufficient",
-        " enough; competent",
-        " able to (+infin.)"
+        "enough",
+        "competent",
+        "able to"
       ],
       "frequency": 321,
       "partOfSpeech": "adjective: 1st and 2nd declension",
@@ -2293,7 +2328,7 @@
       "word": "ἀφικνέομαι",
       "meanings": [
         "come to",
-        " arrive at"
+        "arrive at"
       ],
       "frequency": 320,
       "partOfSpeech": "verb: deponent",
@@ -2304,7 +2339,8 @@
       "word": "δέχομαι",
       "meanings": [
         "take",
-        " accept; welcome",
+        " accept",
+        "welcome",
         " entertain"
       ],
       "frequency": 319,
@@ -2359,7 +2395,7 @@
       "meanings": [
         "trust",
         " rely on",
-        " believe in (+dat.)"
+        " believe in"
       ],
       "frequency": 314,
       "partOfSpeech": "verb: -ω vowel stem",
@@ -2427,7 +2463,7 @@
       "word": "ἄριστος",
       "meanings": [
         "best",
-        " noblest (superl. of ἀγαθός)"
+        " noblest"
       ],
       "frequency": 308,
       "partOfSpeech": "adjective: 1st and 2nd declension",
@@ -2471,7 +2507,8 @@
     {
       "word": "πλήν",
       "meanings": [
-        "(prep.) except (+gen.); (conj.) except that",
+        "except",
+        "except that",
         " unless",
         " but"
       ],
@@ -2495,7 +2532,7 @@
       "word": "ἥσσων",
       "meanings": [
         "less",
-        " weaker (comp. of κακός or μικρός)"
+        " weaker"
       ],
       "frequency": 302,
       "partOfSpeech": "adjective: 3rd declension -ων, -ον",
@@ -2506,7 +2543,7 @@
       "word": "ἥσσων",
       "meanings": [
         "less",
-        " weaker (comp. of κακός or μικρός)"
+        " weaker"
       ],
       "frequency": 302,
       "partOfSpeech": "adjective: 3rd declension -ων, -ον",
@@ -2537,7 +2574,8 @@
     {
       "word": "δῆμος",
       "meanings": [
-        "the (common) people; country district (opp. πόλις)"
+        "the (common) people",
+        "country district"
       ],
       "frequency": 299,
       "partOfSpeech": "noun: 2nd declension",
@@ -2573,8 +2611,9 @@
       "word": "δεινός",
       "meanings": [
         "awesome",
-        " terrible; clever",
-        " clever at (+infin.)"
+        " terrible",
+        "clever",
+        " clever at"
       ],
       "frequency": 296,
       "partOfSpeech": "adjective: 1st and 2nd declension",
@@ -2630,7 +2669,8 @@
       "word": "ἀναιρέω",
       "meanings": [
         "raise",
-        " take up; kill",
+        " take up",
+        "kill",
         " destroy"
       ],
       "frequency": 291,
@@ -2653,7 +2693,8 @@
     {
       "word": "εὖ",
       "meanings": [
-        "well (opp. κακῶς); thoroughly",
+        "well",
+        "thoroughly",
         " competently; happily",
         " fortunately"
       ],
@@ -2711,7 +2752,10 @@
     {
       "word": "ἀποδίδωμι",
       "meanings": [
-        "give back; render; allow; (mid.) sell"
+        "give back",
+        "render",
+        "allow",
+        "sell"
       ],
       "frequency": 284,
       "partOfSpeech": "verb: -μι",
@@ -2764,8 +2808,9 @@
       "word": "ἀπόλλυμι",
       "meanings": [
         "kill",
-        " destroy; (mid.) perish",
-        " die"
+        " destroy",
+        "perish",
+        "die"
       ],
       "frequency": 279,
       "partOfSpeech": "verb: -μι",
@@ -2776,7 +2821,7 @@
       "word": "ἕνεκα",
       "meanings": [
         "on account of",
-        " for the sake of (+gen.)"
+        "for the sake of"
       ],
       "frequency": 278,
       "partOfSpeech": "preposition",
@@ -2818,8 +2863,8 @@
       "word": "χρῆμα",
       "meanings": [
         "thing",
-        " matter; (more commonly in pl.) goods or property",
-        " esp. money"
+        "matter",
+        "goods or property (esp. money)"
       ],
       "frequency": 274,
       "partOfSpeech": "noun: 3rd declension consonant stem",
@@ -2842,19 +2887,8 @@
       "word": "καθίστημι",
       "meanings": [
         "set down",
-        " establish; bring into a certain state",
-        " render"
-      ],
-      "frequency": 272,
-      "partOfSpeech": "verb: -μι",
-      "inflection": "καθίστημι, καταστήσω, κατέστησα, κατέστην, καθέστηκα, plupf. καθειστήκη, κατεστάθην",
-      "semanticGroup": "Work and Leisure"
-    },
-    {
-      "word": "καθίστημι",
-      "meanings": [
-        "set down",
-        " establish; bring into a certain state",
+        " establish",
+        "bring into a certain state",
         " render"
       ],
       "frequency": 272,
@@ -2865,7 +2899,7 @@
     {
       "word": "κἄν",
       "meanings": [
-        "even if (+subj.)"
+        "even if"
       ],
       "frequency": 271,
       "partOfSpeech": "conjunction: subordinating",
@@ -2876,7 +2910,9 @@
       "word": "ἔοικα",
       "meanings": [
         "be like",
-        " look like (+dat.); seem; befit"
+        " look like",
+        "seem",
+        "befit"
       ],
       "frequency": 270,
       "partOfSpeech": "verb: irregular",
@@ -2898,7 +2934,8 @@
     {
       "word": "ἕως",
       "meanings": [
-        "until; while",
+        "until",
+        "while",
         " so long as"
       ],
       "frequency": 268,
@@ -2909,7 +2946,8 @@
     {
       "word": "ἀξιόω",
       "meanings": [
-        "consider worthy; require",
+        "consider worthy",
+        "require",
         " demand",
         " ask",
         " claim"
@@ -2922,7 +2960,8 @@
     {
       "word": "προστίθημι",
       "meanings": [
-        "add; (med.) join"
+        "add",
+        "join"
       ],
       "frequency": 266,
       "partOfSpeech": "verb: -μι",
@@ -2934,7 +2973,8 @@
       "meanings": [
         "take",
         " grasp",
-        " take by force; (mid.) choose"
+        " take by force",
+        "choose"
       ],
       "frequency": 265,
       "partOfSpeech": "verb: contracted",
@@ -2954,7 +2994,8 @@
     {
       "word": "κόσμος",
       "meanings": [
-        "order; ornament",
+        "order",
+        "ornament",
         " decoration",
         " adornment; world",
         " universe"
@@ -3059,10 +3100,11 @@
       "meanings": [
         "splendor",
         " honor",
-        " glory; favor",
-        " goodwill",
-        " gratitude",
-        " thanks"
+        " glory",
+        "favor",
+        "goodwill",
+        "gratitude",
+        "thanks"
       ],
       "frequency": 254,
       "partOfSpeech": "noun: 3rd declension consonant stem",
@@ -3096,7 +3138,8 @@
         " be situated",
         " be laid up in store",
         " be set up",
-        " be established or ordained (used as pf. pass. of τίθημι)"
+        " be established",
+        "ordained"
       ],
       "frequency": 251,
       "partOfSpeech": "verb: deponent",
@@ -3149,19 +3192,21 @@
     {
       "word": "πολέμιος",
       "meanings": [
-        "hostile; οἱ πολέμιοι the enemy"
+        "hostile"
       ],
       "frequency": 246,
       "partOfSpeech": "adjective: 1st and 2nd declension",
       "inflection": "πολέμιος πολεμία πολέμιον",
-      "semanticGroup": "War and Peace"
+      "semanticGroup": "War and Peace",
+      "examples": "οἱ πολέμιοι (the enemy)"
     },
     {
       "word": "τοίνυν",
       "meanings": [
         "therefore",
-        " accordingly (inferential); further",
-        " moreover (transitional)"
+        " accordingly",
+        "further",
+        " moreover"
       ],
       "frequency": 245,
       "partOfSpeech": "adverb",
@@ -3183,7 +3228,7 @@
     {
       "word": "ἦ",
       "meanings": [
-        "truly (emphasizes what follows)"
+        "truly"
       ],
       "frequency": 243,
       "partOfSpeech": "adverb",
@@ -3205,7 +3250,8 @@
       "word": "ἡγέομαι",
       "meanings": [
         "lead",
-        " be the leader; regard",
+        " be the leader",
+        "regard",
         " believe",
         " think"
       ],
@@ -3231,7 +3277,7 @@
       "meanings": [
         "order",
         " bid",
-        " command (+acc. and infin.)"
+        " command"
       ],
       "frequency": 239,
       "partOfSpeech": "verb: -ω vowel stem",
@@ -3242,8 +3288,10 @@
       "word": "οἰκεῖος",
       "meanings": [
         "domestic",
-        " of the house; one’s own; fitting",
-        " suitable"
+        " of the house",
+        "one’s own",
+        "fitting",
+        "suitable"
       ],
       "frequency": 238,
       "partOfSpeech": "adjective: 1st and 2nd declension",
@@ -3277,7 +3325,8 @@
       "meanings": [
         "provide",
         " present",
-        " offer; allow",
+        " offer",
+        "allow",
         " grant"
       ],
       "frequency": 235,
@@ -3333,7 +3382,8 @@
       "meanings": [
         "watch",
         " guard",
-        " defend; (mid.) be on one’s guard against (+acc.)"
+        " defend",
+        "be on one’s guard against"
       ],
       "frequency": 230,
       "partOfSpeech": "verb: -ω palatal stem",
@@ -3344,8 +3394,9 @@
       "word": "ὕστερος",
       "meanings": [
         "coming after",
-        " following (+gen.); next",
-        " later; (adv.) ὕστερον afterwards"
+        " following",
+        "next",
+        " later"
       ],
       "frequency": 229,
       "partOfSpeech": "adjective: 1st and 2nd declension",
@@ -3388,7 +3439,8 @@
       "word": "ταχύς",
       "meanings": [
         "quick",
-        " fast; (adv.) τάχα quickly; perhaps"
+        "fast",
+        "perhaps"
       ],
       "frequency": 225,
       "partOfSpeech": "adjective: -ύς, -εῖα, -ύ",
@@ -3398,7 +3450,8 @@
     {
       "word": "εἶμι",
       "meanings": [
-        "I will go (fut. of ἔρχομαι)"
+        "I am",
+        "I will go"
       ],
       "frequency": 224,
       "partOfSpeech": "verb: -μι",
@@ -3409,7 +3462,8 @@
       "word": "εὐθύς",
       "meanings": [
         "straight",
-        " direct; (adv.) immediately"
+        "direct",
+        "immediately"
       ],
       "frequency": 223,
       "partOfSpeech": "adjective: -ύς, -εῖα, -ύ",
@@ -3443,7 +3497,7 @@
       "meanings": [
         "smaller",
         " less",
-        " fewer (comp. of μικρός)"
+        " fewer"
       ],
       "frequency": 220,
       "partOfSpeech": "adjective: 3rd declension -ων, -ον",
@@ -3474,7 +3528,8 @@
       "word": "δόξα",
       "meanings": [
         "opinion",
-        " judgment; reputation",
+        " judgment",
+        "reputation",
         " honor",
         " glory"
       ],
@@ -3486,8 +3541,9 @@
     {
       "word": "μέχρι",
       "meanings": [
-        "until (conj.); as far as",
-        " up to (prep. +gen.)"
+        "until",
+        " as far as",
+        " up to"
       ],
       "frequency": 216,
       "partOfSpeech": "preposition",
@@ -3498,7 +3554,8 @@
       "word": "διαφέρω",
       "meanings": [
         "carry in different ways",
-        " spread; differ; (impers.) διαφέρει it makes a difference to (+dat.)"
+        "spread",
+        "differ"
       ],
       "frequency": 215,
       "partOfSpeech": "verb: -ω liquid stem",
@@ -3563,7 +3620,7 @@
     {
       "word": "ἀντί",
       "meanings": [
-        "opposite (+gen.)"
+        "opposite"
       ],
       "frequency": 209,
       "partOfSpeech": "preposition",
@@ -3584,7 +3641,7 @@
       "word": "ὑμέτερος",
       "meanings": [
         "your",
-        " yours (pl.; σός = sg.)"
+        " yours"
       ],
       "frequency": 206,
       "partOfSpeech": "adjective: 1st and 2nd declension",
@@ -3595,8 +3652,10 @@
       "word": "ἀρετή",
       "meanings": [
         "goodness",
-        " excellence; virtue; valor",
-        " bravery"
+        "excellence",
+        "valor",
+        "virtue",
+        "bravery"
       ],
       "frequency": 206,
       "partOfSpeech": "noun: 1st declension",
@@ -3606,7 +3665,8 @@
     {
       "word": "μέντοι",
       "meanings": [
-        "however; of course"
+        "however",
+        "of course"
       ],
       "frequency": 204,
       "partOfSpeech": "adverb",
@@ -3627,7 +3687,7 @@
       "word": "πρό",
       "meanings": [
         "before",
-        " in front of (+gen.)"
+        " in front of"
       ],
       "frequency": 203,
       "partOfSpeech": "preposition",
@@ -3638,7 +3698,7 @@
       "word": "πρό",
       "meanings": [
         "before",
-        " in front of (+gen.)"
+        " in front of"
       ],
       "frequency": 203,
       "partOfSpeech": "preposition",
@@ -3651,7 +3711,8 @@
         "incident",
         " accident",
         " misfortune",
-        " experience; passion",
+        " experience",
+        "passion",
         " emotion; state",
         " condition"
       ],
@@ -3678,8 +3739,9 @@
       "word": "νομίζω",
       "meanings": [
         "think",
-        " believe that (+acc. and infin.); hold as a custom",
-        " be accustomed to (+infin.)"
+        " believe that",
+        " hold as a custom",
+        " be accustomed to"
       ],
       "frequency": 200,
       "partOfSpeech": "verb: -ω dental stem",
@@ -3712,8 +3774,9 @@
       "word": "ὅπως",
       "meanings": [
         "how",
-        " as; so that",
-        " in order that (+subj. or opt.)"
+        " as",
+        "so that",
+        " in order that"
       ],
       "frequency": 197,
       "partOfSpeech": "conjunction: subordinating",
@@ -3725,7 +3788,8 @@
       "meanings": [
         "form",
         " shape",
-        " figure; class",
+        " figure",
+        "class",
         " kind",
         " sort"
       ],
@@ -3739,7 +3803,7 @@
       "meanings": [
         "most",
         " greatest",
-        " largest (superl. of πολύς)"
+        " largest"
       ],
       "frequency": 195,
       "partOfSpeech": "adjective: 1st and 2nd declension",
@@ -3750,21 +3814,23 @@
       "word": "πάρειμι",
       "meanings": [
         "be present",
-        " be ready or at hand; (impers.) πάρεστί μοι it depends on me",
-        " it is in my power; τὰ παρόντα the present circumstances; τὸ παρόν just now"
+        " be ready or at hand",
+        " it is in my power"
       ],
       "frequency": 194,
       "partOfSpeech": "verb: irregular",
       "inflection": "πάρειμι",
-      "semanticGroup": "Humanity and Being"
+      "semanticGroup": "Humanity and Being",
+      "examples": "πάρεστί μοι it depends on me; τὰ παρόντα the present circumstances; τὸ παρόν just now"
     },
     {
       "word": "πείθω",
       "meanings": [
         "persuade",
-        " win over; (mid. and pass.) obey",
+        " win over",
+        "obey",
         " believe in",
-        " trust in (+dat.)"
+        " trust in"
       ],
       "frequency": 193,
       "partOfSpeech": "verb: -ω dental stem",
@@ -3775,8 +3841,9 @@
       "word": "αἰτία",
       "meanings": [
         "cause",
-        " origin; charge",
-        " accusation"
+        " origin",
+        "charge",
+        "accusation"
       ],
       "frequency": 192,
       "partOfSpeech": "noun: 1st declension",
@@ -3798,7 +3865,8 @@
       "meanings": [
         "mass",
         " throng",
-        " crowd; number"
+        " crowd",
+        "number"
       ],
       "frequency": 190,
       "partOfSpeech": "noun: 3rd declension σ-stem",
@@ -3818,7 +3886,8 @@
     {
       "word": "χώρα",
       "meanings": [
-        "land; place"
+        "land",
+        "place"
       ],
       "frequency": 188,
       "partOfSpeech": "noun: 1st declension",
@@ -3849,7 +3918,7 @@
       "word": "ὅτε",
       "meanings": [
         "when",
-        " whenever (+indic. or opt.)"
+        " whenever"
       ],
       "frequency": 185,
       "partOfSpeech": "conjunction: subordinating",
@@ -3881,7 +3950,8 @@
     {
       "word": "ἐθέλω",
       "meanings": [
-        "(+infin.) wish (to); be willing (to)"
+        "wish (to)",
+        "be willing (to)"
       ],
       "frequency": 182,
       "partOfSpeech": "verb: -ω liquid stem",
@@ -3891,7 +3961,7 @@
     {
       "word": "μέλλω",
       "meanings": [
-        "(+infin.) think of doing",
+        "think of doing",
         " intend to",
         " be about to"
       ],
@@ -3935,7 +4005,7 @@
     {
       "word": "σύν",
       "meanings": [
-        "with (+ dat. of accompaniment or means)"
+        "with"
       ],
       "frequency": 177,
       "partOfSpeech": "preposition",
@@ -3979,7 +4049,7 @@
       "meanings": [
         "suffer",
         " experience",
-        " be affected in a certain way (+adv.)"
+        " be affected in a certain way"
       ],
       "frequency": 173,
       "partOfSpeech": "verb: -ω dental stem",
@@ -4003,7 +4073,7 @@
       "meanings": [
         "think",
         " suppose",
-        " imagine (+acc. and infin.)"
+        " imagine"
       ],
       "frequency": 171,
       "partOfSpeech": "verb: deponent",
@@ -4080,9 +4150,11 @@
       "word": "τίθημι",
       "meanings": [
         "to put",
-        " place; establish",
+        " place",
+        "establish",
         " ordain",
-        " institute; put in a certain state"
+        " institute",
+        "put in a certain state"
       ],
       "frequency": 164,
       "partOfSpeech": "verb: -μι",
@@ -4093,7 +4165,8 @@
       "word": "ἐναντίος",
       "meanings": [
         "opposite",
-        " facing; opposing"
+        "facing",
+        "opposing"
       ],
       "frequency": 163,
       "partOfSpeech": "adjective: 1st and 2nd declension",
@@ -4103,7 +4176,8 @@
     {
       "word": "πρᾶγμα",
       "meanings": [
-        "thing; (pl.) circumstances",
+        "thing",
+        "circumstances",
         " affairs",
         " business"
       ],
@@ -4139,7 +4213,7 @@
       "meanings": [
         "it is necessary",
         " it is fated",
-        " one ought (+infin. or +acc. and infin.)"
+        " one ought"
       ],
       "frequency": 159,
       "partOfSpeech": "verb: impersonal",
@@ -4160,12 +4234,13 @@
       "word": "τότε",
       "meanings": [
         "then",
-        " at that time; οἱ τότε the men of that time (opp. οἱ νῦν)"
+        " at that time"
       ],
       "frequency": 157,
       "partOfSpeech": "adverb",
       "inflection": "τότε",
-      "semanticGroup": "Time"
+      "semanticGroup": "Time",
+      "examples": "οἱ τότε the men of that time (opp. οἱ νῦν)"
     },
     {
       "word": "πλέω",
@@ -4196,7 +4271,8 @@
         " come to an agreement",
         " correspond; happen",
         " occur",
-        " come to pass; turn out in a certain way (+adv.)",
+        " come to pass",
+        "turn out in a certain way",
         " result"
       ],
       "frequency": 154,
@@ -4208,7 +4284,8 @@
       "word": "φίλος",
       "meanings": [
         "beloved",
-        " dear; friendly"
+        " dear",
+        "friendly"
       ],
       "frequency": 153,
       "partOfSpeech": "adjective: 1st and 2nd declension",
@@ -4228,8 +4305,8 @@
     {
       "word": "ἀλλήλων",
       "meanings": [
-        "(oblique cases plural only) one another",
-        " each other"
+        "one another",
+        "each other"
       ],
       "frequency": 151,
       "partOfSpeech": "pronoun",
@@ -4240,13 +4317,14 @@
       "word": "μέσος",
       "meanings": [
         "middle",
-        " in the middle",
-        " moderate; τὸ μέσον midst"
+        "in the middle",
+        " moderate"
       ],
       "frequency": 150,
       "partOfSpeech": "adjective: 1st and 2nd declension",
       "inflection": "μέσος μέση μέσον",
-      "semanticGroup": "Measurements and Numerals"
+      "semanticGroup": "Measurements and Numerals",
+      "examples": "τὸ μέσον midst"
     },
     {
       "word": "μήτε...μήτε",
@@ -4263,7 +4341,8 @@
       "meanings": [
         "way",
         " manner",
-        " fashion; way of life",
+        " fashion",
+        "way of life",
         " habit",
         " custom"
       ],
@@ -4277,7 +4356,8 @@
       "meanings": [
         "lead",
         " carry",
-        " bring; pass (time)"
+        " bring",
+        "pass (time)"
       ],
       "frequency": 147,
       "partOfSpeech": "verb: -ω palatal stem",
@@ -4287,7 +4367,8 @@
     {
       "word": "ἅμα",
       "meanings": [
-        "at the same time; (prep.) together with (+dat.)"
+        "at the same time",
+        "together with"
       ],
       "frequency": 146,
       "partOfSpeech": "adverb",
@@ -4310,9 +4391,11 @@
       "meanings": [
         "hit",
         " light upon",
-        " meet by chance (+gen.); reach",
+        " meet by chance",
+        "reach",
         " gain",
-        " obtain; happen to be (+ptc.)"
+        " obtain",
+        "happen to be"
       ],
       "frequency": 144,
       "partOfSpeech": "verb: -ω palatal stem",
@@ -4323,9 +4406,10 @@
       "word": "γιγνώσκω",
       "meanings": [
         "come to know",
-        " learn; judge",
+        " learn",
+        "judge",
         " think",
-        " or determine that (+acc. and infin.)"
+        "or determine that"
       ],
       "frequency": 143,
       "partOfSpeech": "verb: irregular",
@@ -4336,7 +4420,7 @@
       "word": "σός",
       "meanings": [
         "your",
-        " yours (sg.; ὑμέτερος = pl.)"
+        " yours"
       ],
       "frequency": 142,
       "partOfSpeech": "adjective: 1st and 2nd declension",
@@ -4346,7 +4430,8 @@
     {
       "word": "ἴδιος",
       "meanings": [
-        "one’s own; peculiar",
+        "one’s own",
+        "peculiar",
         " separate",
         " distinct"
       ],
@@ -4391,7 +4476,8 @@
       "meanings": [
         "son",
         " daughter",
-        " child; slave"
+        " child",
+        "slave"
       ],
       "frequency": 137,
       "partOfSpeech": "noun: 3rd declension consonant stem",
@@ -4439,7 +4525,8 @@
       "meanings": [
         "do",
         " achieve",
-        " accomplish; do or fare in a certain way (+adv.)"
+        " accomplish",
+        "do or fare in a certain way"
       ],
       "frequency": 134,
       "partOfSpeech": "verb: -ω dental stem",
@@ -4460,7 +4547,8 @@
       "word": "γένος",
       "meanings": [
         "race",
-        " family; kind",
+        " family",
+        "kind",
         " class"
       ],
       "frequency": 132,
@@ -4493,7 +4581,8 @@
       "word": "ἤδη",
       "meanings": [
         "already",
-        " now (of the immediate past); presently (of the immediate future)"
+        " now",
+        "presently"
       ],
       "frequency": 129,
       "partOfSpeech": "adverb",
@@ -4503,8 +4592,8 @@
     {
       "word": "ὑπέρ",
       "meanings": [
-        "for (+gen)",
-        " beyond (+acc.)"
+        "for",
+        " beyond"
       ],
       "frequency": 128,
       "partOfSpeech": "preposition",
@@ -4514,7 +4603,8 @@
     {
       "word": "ὄνομα",
       "meanings": [
-        "name; fame"
+        "name",
+        "fame"
       ],
       "frequency": 127,
       "partOfSpeech": "noun: 3rd declension consonant stem",
@@ -4524,7 +4614,8 @@
     {
       "word": "ἵνα",
       "meanings": [
-        "in order that (conj. +subj. or opt.); where (rel. adv. +indic.)"
+        "in order that",
+        "where"
       ],
       "frequency": 126,
       "partOfSpeech": "conjunction: subordinating",
@@ -4557,9 +4648,10 @@
     {
       "word": "ἄρχω",
       "meanings": [
-        "begin (+gen.); lead",
+        "begin",
+        "lead",
         " rule",
-        " govern (+gen.)"
+        " govern"
       ],
       "frequency": 123,
       "partOfSpeech": "verb: -ω palatal stem",
@@ -4571,18 +4663,20 @@
       "meanings": [
         "exist",
         " be",
-        " belong to; τὰ ὑπάρχοντα existing circumstances"
+        " belong to"
       ],
       "frequency": 122,
       "partOfSpeech": "verb: -ω palatal stem",
       "inflection": "ὑπάρχω, ὑπάρξω, ὑπῆρξα, ὑπῆργμαι, ὑπήρχθην",
-      "semanticGroup": "Humanity and Being"
+      "semanticGroup": "Humanity and Being",
+      "examples": "τὰ ὑπάρχοντα existing circumstances"
     },
     {
       "word": "μάλιστα",
       "meanings": [
         "most",
-        " most of all; (in replies) certainly"
+        " most of all",
+        "certainly"
       ],
       "frequency": 121,
       "partOfSpeech": "adverb",
@@ -4593,7 +4687,8 @@
       "word": "πάλιν",
       "meanings": [
         "back",
-        " backwards; again"
+        "backwards",
+        "again"
       ],
       "frequency": 120,
       "partOfSpeech": "adverb",
@@ -4639,7 +4734,8 @@
       "meanings": [
         "carry",
         " bring",
-        " fetch; carry off or away; φέρε come now",
+        " fetch",
+        "carry off or away",
         " well"
       ],
       "frequency": 116,
@@ -4662,10 +4758,11 @@
       "meanings": [
         "bring to light",
         " make appear",
-        " make clear; (pass.) come to light",
+        " make clear",
+        "come to light",
         " be seen",
         " appear",
-        " appear to be (+ptc. or infin.)"
+        " appear to be"
       ],
       "frequency": 114,
       "partOfSpeech": "verb: -ω liquid stem",
@@ -4675,8 +4772,9 @@
     {
       "word": "βούλομαι",
       "meanings": [
-        "(+infin.) will",
-        " wish (to); be willing (to); ὁ βουλόμενος anyone who likes"
+        "will",
+        " wish (to)",
+        "be willing (to)"
       ],
       "frequency": 113,
       "partOfSpeech": "verb: deponent",
@@ -4686,7 +4784,7 @@
     {
       "word": "ὦ",
       "meanings": [
-        "oh! (unemphatic when with the vocative)"
+        "oh!"
       ],
       "frequency": 112,
       "partOfSpeech": "interjection",
@@ -4706,7 +4804,8 @@
     {
       "word": "οἶδα",
       "meanings": [
-        "to know (pf. in pres. sense); to know how to (+infin.)"
+        "to know",
+        "to know how to"
       ],
       "frequency": 110,
       "partOfSpeech": "verb: irregular",
@@ -4726,7 +4825,7 @@
     {
       "word": "ὅταν",
       "meanings": [
-        "whenever (+subj.)"
+        "whenever"
       ],
       "frequency": 108,
       "partOfSpeech": "conjunction: subordinating",
@@ -4737,7 +4836,7 @@
       "word": "ἴσος",
       "meanings": [
         "equal",
-        " the same as (+dat.)"
+        " the same as"
       ],
       "frequency": 107,
       "partOfSpeech": "adjective: 1st and 2nd declension",
@@ -4769,7 +4868,8 @@
       "meanings": [
         "use",
         " experience",
-        " suffer (+dat.); treat someone in a certain way (+dat. and adv.)"
+        " suffer",
+        "treat someone in a certain way"
       ],
       "frequency": 104,
       "partOfSpeech": "verb: deponent",
@@ -4791,7 +4891,7 @@
       "word": "ἄρα",
       "meanings": [
         "therefore",
-        " then (drawing an inference)"
+        " then"
       ],
       "frequency": 102,
       "partOfSpeech": "adverb",
@@ -4835,7 +4935,7 @@
       "word": "μᾶλλον",
       "meanings": [
         "more",
-        " rather; μᾶλλον...ἤ rather than"
+        " rather"
       ],
       "frequency": 98,
       "partOfSpeech": "adverb",
@@ -4901,7 +5001,7 @@
       "word": "ὅμοιος",
       "meanings": [
         "like",
-        " resembling (+dat.)"
+        " resembling"
       ],
       "frequency": 92,
       "partOfSpeech": "adjective: 1st and 2nd declension",
@@ -4923,8 +5023,7 @@
       "meanings": [
         "bring forth",
         " produce",
-        " beget; 2 aor. ἔφυν grew",
-        " pf. πέφυκα be by nature"
+        " beget"
       ],
       "frequency": 90,
       "partOfSpeech": "verb: -ω vowel stem",
@@ -4967,9 +5066,9 @@
     {
       "word": "ὥστε",
       "meanings": [
-        "(introducing natural or actual result clause) so as",
+        "so as",
         " so that",
-        " (with the result) that"
+        "that"
       ],
       "frequency": 86,
       "partOfSpeech": "conjunction: subordinating",
@@ -4979,7 +5078,7 @@
     {
       "word": "δύναμαι",
       "meanings": [
-        "(+infin.) to be able (to)",
+        "to be able (to)",
         " be strong enough (to)"
       ],
       "frequency": 85,
@@ -5002,7 +5101,9 @@
     {
       "word": "φύσις",
       "meanings": [
-        "nature; (of the mind) one’s nature or disposition; regular order of nature"
+        "nature",
+        "one’s nature or disposition (of the mind)",
+        "regular order of nature"
       ],
       "frequency": 83,
       "partOfSpeech": "noun: 3rd declension ι-stem",
@@ -5060,7 +5161,7 @@
       "meanings": [
         "it is necessary",
         " one must",
-        " one ought (+acc. and infin.)"
+        " one ought"
       ],
       "frequency": 79,
       "partOfSpeech": "verb: impersonal",
@@ -5091,7 +5192,10 @@
     {
       "word": "ὅσος",
       "meanings": [
-        "however much; as great as; (in pl.) as many as; ὅσον (adv.) as much as"
+        "however much",
+        "as many as",
+        "as great as",
+        "as much as"
       ],
       "frequency": 76,
       "partOfSpeech": "adjective: 1st and 2nd declension",
@@ -5136,7 +5240,8 @@
     {
       "word": "ἕτερος",
       "meanings": [
-        "the other (of two); other",
+        "the other (of two)",
+        "other",
         " another"
       ],
       "frequency": 72,
@@ -5149,20 +5254,23 @@
       "meanings": [
         "think",
         " suppose",
-        " imagine (+acc. and infin.); seem",
-        " seem good; (impers.) δοκεῖ μοι it seems to me"
+        " imagine",
+        " seem",
+        " seem good"
       ],
       "frequency": 71,
       "partOfSpeech": "verb: contracted",
       "inflection": "δοκέω, δόξω, ἔδοξα",
-      "semanticGroup": "The Mind, Perceiving and Learning"
+      "semanticGroup": "The Mind, Perceiving and Learning",
+      "examples": "(impers.) δοκεῖ μοι it seems to me"
     },
     {
       "word": "λαμβάνω",
       "meanings": [
         "take",
         " grasp",
-        " seize; receive",
+        " seize",
+        "receive",
         " get"
       ],
       "frequency": 70,
@@ -5177,12 +5285,13 @@
         " of what sort",
         " like",
         " (exclam.) what a!",
-        " how! ; οἷός τε (+infin.) fit or able to; οἷόν τε (+infin.) it is possible to"
+        " how!"
       ],
       "frequency": 69,
       "partOfSpeech": "adjective: 1st and 2nd declension",
       "inflection": "οἷος οἵα οἷον",
-      "semanticGroup": "Pronouns/Interrogatives"
+      "semanticGroup": "Pronouns/Interrogatives",
+      "examples": "οἷός τε (+infin.) fit or able to; οἷόν τε (+infin.) it is possible to"
     },
     {
       "word": "οὔτε...οὔτε",
@@ -5231,7 +5340,7 @@
       "meanings": [
         "lack",
         " miss",
-        " stand in need of (+gen.)"
+        " stand in need of"
       ],
       "frequency": 64,
       "partOfSpeech": "verb: contracted",
@@ -5243,8 +5352,9 @@
       "meanings": [
         "put in motion",
         " let go",
-        " shoot; (mid.) hasten",
-        " rush"
+        " shoot",
+        " rush",
+        "hasten"
       ],
       "frequency": 63,
       "partOfSpeech": "verb: -μι",
@@ -5279,7 +5389,7 @@
         " really",
         " now",
         " in fact",
-        " indeed (gives greater exactness)"
+        " indeed"
       ],
       "frequency": 60,
       "partOfSpeech": "adverb",
@@ -5289,7 +5399,8 @@
     {
       "word": "γε",
       "meanings": [
-        "(enclitic) indeed; at least",
+        "(enclitic) indeed",
+        "at least",
         " at any rate"
       ],
       "frequency": 59,
@@ -5314,9 +5425,7 @@
       "word": "εἶπον",
       "meanings": [
         "I said",
-        " I spoke",
-        " 2 aor. → λέγω",
-        " φημί"
+        " I spoke"
       ],
       "frequency": 57,
       "partOfSpeech": "verb: irregular",
@@ -5348,24 +5457,26 @@
     {
       "word": "ἐκεῖνος",
       "meanings": [
-        "that person or thing; ἐκεῖνος…οὗτος the former…the latter"
+        "that person or thing"
       ],
       "frequency": 54,
       "partOfSpeech": "pronoun",
       "inflection": "ἐκεῖνος ἐκείνη ἐκεῖνο",
-      "semanticGroup": "Pronouns/Interrogatives"
+      "semanticGroup": "Pronouns/Interrogatives",
+      "examples": "ἐκεῖνος…οὗτος the former…the latter"
     },
     {
       "word": "οὐδέ",
       "meanings": [
         "and not",
         " but not",
-        " nor; οὐδέ...οὐδέ not even...nor yet"
+        " nor"
       ],
       "frequency": 53,
       "partOfSpeech": "conjunction: coordinating",
       "inflection": "οὐδέ",
-      "semanticGroup": "Conjunctions/Adverbs"
+      "semanticGroup": "Conjunctions/Adverbs",
+      "examples": "οὐδέ...οὐδέ not even...nor yet"
     },
     {
       "word": "μέγας",
@@ -5382,7 +5493,7 @@
     {
       "word": "ἑαυτοῦ",
       "meanings": [
-        "him- her- itself (reflexive pron.)"
+        "him- her- itself"
       ],
       "frequency": 51,
       "partOfSpeech": "pronoun",
@@ -5392,7 +5503,8 @@
     {
       "word": "μετά",
       "meanings": [
-        "with (+gen.); after (+acc.)"
+        "with",
+        "after"
       ],
       "frequency": 50,
       "partOfSpeech": "preposition",
@@ -5416,25 +5528,14 @@
       "word": "πρότερος",
       "meanings": [
         "before",
-        " earlier; τὸ πρότερον previously",
+        " earlier",
         " before"
       ],
       "frequency": 48,
       "partOfSpeech": "adjective: 1st and 2nd declension",
       "inflection": "πρότερος προτέρα πρότερον",
-      "semanticGroup": "Time"
-    },
-    {
-      "word": "πρότερος",
-      "meanings": [
-        "before",
-        " earlier; τὸ πρότερον previously",
-        " before"
-      ],
-      "frequency": 48,
-      "partOfSpeech": "adjective: 1st and 2nd declension",
-      "inflection": "πρότερος προτέρα πρότερον",
-      "semanticGroup": "Time"
+      "semanticGroup": "Time",
+      "examples": "τὸ πρότερον previously"
     },
     {
       "word": "οὕτως",
@@ -5449,9 +5550,11 @@
     {
       "word": "παρά",
       "meanings": [
-        "from (+gen.); beside (+dat.); to",
+        "from",
+        " beside",
         " to the side of",
-        " contrary to (+acc.)"
+        "to",
+        " contrary to"
       ],
       "frequency": 46,
       "partOfSpeech": "preposition",
@@ -5463,7 +5566,8 @@
       "meanings": [
         "word",
         " speech",
-        " discourse; thought",
+        " discourse",
+        "thought",
         " reason",
         " account"
       ],
@@ -5476,7 +5580,8 @@
       "word": "οὖν",
       "meanings": [
         "therefore",
-        " accordingly; at any rate"
+        " accordingly",
+        "at any rate"
       ],
       "frequency": 44,
       "partOfSpeech": "adverb",
@@ -5489,7 +5594,8 @@
         "make",
         " produce",
         " cause",
-        " do; (mid.) consider",
+        " do",
+        "consider",
         " reckon"
       ],
       "frequency": 43,
@@ -5500,8 +5606,9 @@
     {
       "word": "ὑπό",
       "meanings": [
-        "under (+gen.",
-        " dat.); by (+gen. of personal agent); down under (+acc.)"
+        "under ",
+        "by",
+        "down under"
       ],
       "frequency": 42,
       "partOfSpeech": "preposition",
@@ -5513,19 +5620,20 @@
       "meanings": [
         "say",
         " assert",
-        " declare; οὐ φημί deny",
+        " declare",
         " refuse",
         " say that...not"
       ],
       "frequency": 41,
       "partOfSpeech": "verb: -μι",
       "inflection": "φημί, φήσω, impf. ἔφην",
-      "semanticGroup": "Writing and Talking"
+      "semanticGroup": "Writing and Talking",
+      "examples": "οὐ φημί deny"
     },
     {
       "word": "ἀπό",
       "meanings": [
-        "from (+gen.)"
+        "from"
       ],
       "frequency": 40,
       "partOfSpeech": "preposition",
@@ -5546,7 +5654,7 @@
     {
       "word": "εἰ",
       "meanings": [
-        "if (+indic. or opt.); εἴπερ if indeed"
+        "if"
       ],
       "frequency": 38,
       "partOfSpeech": "conjunction: subordinating",
@@ -5557,7 +5665,8 @@
       "word": "ὅτι",
       "meanings": [
         "because",
-        " that; (with superl.) as...as possible"
+        " that",
+        "as...as possible"
       ],
       "frequency": 37,
       "partOfSpeech": "conjunction: subordinating",
@@ -5568,7 +5677,8 @@
       "word": "ἀνά",
       "meanings": [
         "up",
-        " on; throughout"
+        " on",
+        "throughout"
       ],
       "frequency": 36,
       "partOfSpeech": "preposition",
@@ -5588,8 +5698,7 @@
     {
       "word": "ἄν",
       "meanings": [
-        "[marks verbs as potential (with optative)",
-        " or generalizing (with subjunctive)]"
+        "generalizing (with subjunctive)]"
       ],
       "frequency": 34,
       "partOfSpeech": "adverb",
@@ -5612,19 +5721,21 @@
     {
       "word": "μή",
       "meanings": [
-        "not (marks the negative as subjective or conditional); εἰ μή if not",
-        " except"
+        "not",
+        "except"
       ],
       "frequency": 32,
       "partOfSpeech": "conjunction: subordinating",
       "inflection": "μή",
-      "semanticGroup": "Conjunctions/Adverbs"
+      "semanticGroup": "Conjunctions/Adverbs",
+      "examples": "(marks the negative as subjective or conditional); εἰ μή if not"
     },
     {
       "word": "περί",
       "meanings": [
         "around",
-        " about; concerning (+gen.)"
+        " about",
+        "concerning"
       ],
       "frequency": 31,
       "partOfSpeech": "preposition",
@@ -5635,12 +5746,13 @@
       "word": "πολύς",
       "meanings": [
         "much",
-        " many; ὡς ἐπὶ τὸ πολύ for the most part"
+        " many"
       ],
       "frequency": 30,
       "partOfSpeech": "noun: 3rd declension irregular",
       "inflection": "πολύς πολλή πολύ",
-      "semanticGroup": "Measurements and Numerals"
+      "semanticGroup": "Measurements and Numerals",
+      "examples": "ὡς ἐπὶ τὸ πολύ for the most part"
     },
     {
       "word": "ἐκ",
@@ -5691,8 +5803,7 @@
       "meanings": [
         "through",
         " during",
-        " because of (+gen.",
-        " acc.)"
+        " because of"
       ],
       "frequency": 25,
       "partOfSpeech": "preposition",
@@ -5702,7 +5813,7 @@
     {
       "word": "ἐάν",
       "meanings": [
-        "if (+subj.)"
+        "if"
       ],
       "frequency": 24,
       "partOfSpeech": "conjunction: subordinating",
@@ -5712,7 +5823,8 @@
     {
       "word": "γίγνομαι",
       "meanings": [
-        "become; be born; happen",
+        "become; be born",
+        "happen",
         " be"
       ],
       "frequency": 23,
@@ -5724,11 +5836,13 @@
       "word": "πρός",
       "meanings": [
         "from the side of",
-        " in the presence of (+gen.); near",
+        " in the presence of",
+        "near",
         " at",
-        " in addition to (+dat.); to",
+        " in addition to",
+        "to",
         " towards",
-        " in relation to (+acc.)"
+        " in relation to"
       ],
       "frequency": 22,
       "partOfSpeech": "preposition",
@@ -5752,20 +5866,23 @@
         "down",
         " down (from or along)",
         " throughout",
-        " according to; κατὰ γῆν by land; κατὰ φύσιν in accordance with nature; κατ’ ἔθνη by nations; καθ᾿ἕνα one by one."
+        " according to"
       ],
       "frequency": 20,
       "partOfSpeech": "preposition",
       "inflection": "κατά",
-      "semanticGroup": "Direction"
+      "semanticGroup": "Direction",
+      "examples": "; κατὰ γῆν by land; κατὰ φύσιν in accordance with nature; κατ’ ἔθνη by nations; καθ᾿ἕνα one by one."
     }
   ],
   "19 - 5": [
     {
       "word": "ἐπί",
       "meanings": [
-        "at (+gen.); on (+dat.); on to",
-        " against (+acc.)"
+        "at",
+        "on to",
+        "on",
+        " against"
       ],
       "frequency": 19,
       "partOfSpeech": "preposition",
@@ -5777,7 +5894,7 @@
       "meanings": [
         "into",
         " to",
-        " towards (+acc.)"
+        " towards"
       ],
       "frequency": 18,
       "partOfSpeech": "preposition",
@@ -5798,7 +5915,9 @@
       "word": "ὡς",
       "meanings": [
         "as",
-        " since; (introducing purpose clause) so that (+subj./opt.); (introducing indir. statement) that"
+        " since",
+        "that",
+        "so that"
       ],
       "frequency": 16,
       "partOfSpeech": "conjunction: subordinating",
@@ -5810,7 +5929,8 @@
       "meanings": [
         "say",
         " speak (of)",
-        " recount; pick up",
+        " recount",
+        "pick up",
         " collect",
         " count"
       ],
@@ -5832,7 +5952,7 @@
     {
       "word": "γάρ",
       "meanings": [
-        "for (explanatory)",
+        "for",
         " indeed",
         " in fact (confirming)"
       ],
@@ -5861,7 +5981,7 @@
         " anyone",
         " anything",
         " some",
-        " any (enclitic indef. pron./adj.)"
+        " any"
       ],
       "frequency": 11,
       "partOfSpeech": "pronoun",
@@ -5871,7 +5991,7 @@
     {
       "word": "μέν...δέ",
       "meanings": [
-        "on the one hand...on the other hand (often untranslated); μέν (by itself) indeed"
+        "on the one hand...on the other hand"
       ],
       "frequency": 10,
       "partOfSpeech": "conjunction: coordinating",
@@ -5882,7 +6002,7 @@
       "word": "ἐν",
       "meanings": [
         "in",
-        " among (+dat.)"
+        "among"
       ],
       "frequency": 9,
       "partOfSpeech": "preposition",
@@ -5892,18 +6012,19 @@
     {
       "word": "ἤ",
       "meanings": [
-        "or; than (after a comparative); ἤ...ἤ either...or"
+        "or"
       ],
       "frequency": 8,
       "partOfSpeech": "conjunction: coordinating",
       "inflection": "ἤ",
-      "semanticGroup": "Conjunctions/Adverbs"
+      "semanticGroup": "Conjunctions/Adverbs",
+      "examples": "ἤ...ἤ either...or"
     },
     {
       "word": "οὗτος",
       "meanings": [
         "this",
-        " these; μετὰ ταῦτα after this"
+        "these"
       ],
       "frequency": 7,
       "partOfSpeech": "pronoun",
@@ -5924,7 +6045,7 @@
     {
       "word": "τίς",
       "meanings": [
-        "who? what? which? (interrog. pron./adj.)"
+        "who? what? which?"
       ],
       "frequency": 5,
       "partOfSpeech": "pronoun",
@@ -5936,7 +6057,8 @@
     {
       "word": "δέ",
       "meanings": [
-        "and; but"
+        "and",
+        "but"
       ],
       "frequency": 4,
       "partOfSpeech": "conjunction: coordinating",
@@ -5948,19 +6070,22 @@
       "meanings": [
         "and",
         " also",
-        " even; καί...καί both...and"
+        " even"
       ],
       "frequency": 3,
       "partOfSpeech": "conjunction: coordinating",
       "inflection": "καί",
-      "semanticGroup": "Conjunctions/Adverbs"
+      "semanticGroup": "Conjunctions/Adverbs",
+      "examples": "καί...καί both...and"
     },
     {
       "word": "αὐτός",
       "meanings": [
-        "him- her- itself etc. (for emphasis); the same (with article); (pron.) him",
+        "him- her- itself",
+        "the same",
+        "him",
         " her",
-        " it etc. (in oblique cases)"
+        " it"
       ],
       "frequency": 2,
       "partOfSpeech": "adjective: 1st and 2nd declension",
