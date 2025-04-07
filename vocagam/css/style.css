@@ -1,7 +1,7 @@
  /* Base styling */
  @font-face {
     font-family: 'SBL BibLit';
-    src: url('fonts/SBL_BibLit.ttf') format('truetype');
+    src: url('../fonts/SBL_BibLit.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
