@@ -74,7 +74,7 @@ function showAnimatedFlashcard(data) {
         greek: {
             all:  `
             <div class="flashcard-animation">
-                <p style="color:#20e3fd">${data.word["word"]} | ${data.word["root"] ? "root: " + data.word["root"] : '' } (${data.word["partOfSpeech"]})</p>
+                <p style="color:#20e3fd"><span class = 'bib-lit-text'>${data.word["word"]}</span> | ${data.word["root"] ? "root: " + data.word["root"] : '' }</span> (${data.word["partOfSpeech"]})</p>
                 <p style='background-color: ${data.color}; color: white; border-radius: 10px; padding: 5px; font-size: 1.0em; font-weight: bold;'>${meaning}</p>
             </div>
             `,
@@ -85,7 +85,7 @@ function showAnimatedFlashcard(data) {
             `,
             word: `
             <div class="flashcard-animation">
-                <p style="color:#20e3fd">${data.word["word"]} | ${data.word["root"] ? "root: " + data.word["root"] : '' } (${data.word["partOfSpeech"]})</p>
+                <p style="color:#20e3fd"><span class = 'bib-lit-text'>${data.word["word"]} | ${data.word["root"] ? "root: " + data.word["root"] : '' }</span> (${data.word["partOfSpeech"]})</p>
                 <p style="color:#20e3fd">Part of Speech: ${data.word["partOfSpeech"]}</p>
             </div>
             `
@@ -93,7 +93,7 @@ function showAnimatedFlashcard(data) {
         hebrew: {
             all:  `
             <div class="flashcard-animation">
-                <p style="color:#20e3fd">${data.word["word"]}${data.word["transliteration"] ? ' | ' + data.word["transliteration"] : ''}</p>
+                <p style="color:#20e3fd"><span class = 'bib-lit-text hebrew'>${data.word["word"]}</span>${data.word["transliteration"] ? ' | ' + data.word["transliteration"] : ''}</p>
                 <p>${data.word["partOfSpeech"]}</p>
                 <p style='background-color: ${data.color}; color: white; border-radius: 10px; padding: 5px; font-size: 1.0em; font-weight: bold;'>${meaning}</p>
             </div>
@@ -105,7 +105,7 @@ function showAnimatedFlashcard(data) {
             `,
             word: `
             <div class="flashcard-animation">
-                <p style="color:#20e3fd">${data.word["word"]}${data.word["transliteration"] ? ' | ' + data.word["transliteration"] : ''}</p>
+                <p style="color:#20e3fd"><span class = 'bib-lit-text hebrew'>${data.word["word"]}</span>${data.word["transliteration"] ? ' | ' + data.word["transliteration"] : ''}</p>
                 <p style="color:#20e3fd">${data.word["partOfSpeech"]}</p>
             </div>
             `
@@ -113,7 +113,7 @@ function showAnimatedFlashcard(data) {
         latin: {
             all:  `
             <div class="flashcard-animation">
-                <p style="color:#20e3fd">${data.word["word"]} | ${data.word["inflection"]}</p>
+                <p style="color:#20e3fd" class = 'bib-lit-text hebrew'>${data.word["word"]} | ${data.word["inflection"]}</p>
                 <p>${data.word["partOfSpeech"] ?? ''}</p>
                 <p style='background-color: ${data.color}; color: white; border-radius: 10px; padding: 5px; font-size: 1.0em; font-weight: bold;'>${meaning}</p>
             </div>
@@ -125,7 +125,7 @@ function showAnimatedFlashcard(data) {
             `,
             word: `
             <div class="flashcard-animation">
-                <p style="color:#20e3fd">${data.word["inflection"]}</p>
+                <p style="color:#20e3fd" class = 'bib-lit-text hebrew'>${data.word["inflection"]}</p>
                 <p style="color:#20e3fd">${data.word["partOfSpeech"] ?? ''}</p>
                 <p style="color:#20e3fd"> ${data.word["semanticGroup"] ? 'Semantic Group: ' + data.word["semanticGroup"] : ''}</p>
             </div>
@@ -365,7 +365,17 @@ function generateMatchingGame() {
 
         if(!item.isMeaning && currentLanguage === 'latin') {
             div.style.border = '2.0px solid rgba(167, 35, 2, 0.98)'// '1px solid #b51f9e'
+            div.classList.add('bib-lit-text')
             // div.style.backgroundColor = '#c3d8e3fb';
+        }
+
+        if(!item.isMeaning && currentLanguage === 'hebrew') {
+            div.classList.add('bib-lit-text')
+            div.classList.add('hebrew')
+        }
+
+        if(!item.isMeaning && currentLanguage === 'greek') {
+            div.classList.add('bib-lit-text')
         }
 
         div.textContent = item.text;
@@ -405,6 +415,8 @@ function generateMatchingGame() {
 function selectMatch(element, wordData) {
     if (selectedPair.length == 1 && element === selectedPair[0]) {
         // TODO: unselect here
+        element.classList.remove("selected");
+        selectedPair = [];
         return;
     }
 

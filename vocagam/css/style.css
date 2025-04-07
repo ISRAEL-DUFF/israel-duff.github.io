@@ -1,4 +1,31 @@
  /* Base styling */
+ @font-face {
+    font-family: 'SBL BibLit';
+    src: url('fonts/SBL_BibLit.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* @font-face {
+    font-family: 'SBL Hebrew';
+    src: url('fonts/SBL_Hbrw.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'SBL Greek';
+    src: url('fonts/SBL_grk.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  } */
+  .bib-lit-text {
+    font-family: 'SBL BibLit', serif;
+    font-size: 1.2em;
+  }
+  
+  .hebrew {
+    direction: rtl;
+  }
  html {
     scroll-behavior: smooth;
 }
