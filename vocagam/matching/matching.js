@@ -8,10 +8,11 @@ let selectedPair = [];
 // let availableColors = ["#ffcc80", "#90caf9", "#a5d6a7", "#f48fb1", "#ffab91", "#b39ddb", "#64b5f6", "#ff8a65", "#ba68c8", "#ffd54f", "#4db6ac"];  // Unique colors
 let availableColors = [
     "#ffcc80", "#90caf9", "#a5d6a7", "#f48fb1", "#ffab91", 
-    "#b39ddb", "#64b5f6", "#ff8a65", "#ba68c8", "#ffd54f", 
-    "#4db6ac", "#ff6f61", "#6b5b95", "#88b04b", "#f7cac9", 
+    "#b39ddb", "#64b5f6", "#ba68c8", "#ffd54f", 
+    "#4db6ac", "#ff6f61", "#88b04b", "#f7cac9", 
     "#92a8d1", "#955251", "#b9cbb8", "#e4b5b5", "#f6e58d", 
-    "#ff7979", "#badc58", "#ffbe76", "#ff9ff3", "#ff6f61"
+    "#badc58", "#ffbe76", "#ff9ff3", "#ff5733", "#33ff57", "#3357ff", "#f1c40f", "#8e44ad",
+    "#ff9f00", "#00bfff", "#ff1493", "#32cd32"
 ]
 let timer;
 let timeRemaining = 30;
@@ -237,6 +238,25 @@ document.getElementById('deleteSnapshot').addEventListener('click', function() {
         document.getElementById('saveFeedback').innerText = 'Please choose.';
     }
 });
+
+// function previewColors() {
+//     const colorContainer = document.getElementById('color-preview-container');
+//     colorContainer.innerHTML = ''; // Clear previous content
+
+//     availableColors.forEach(color => {
+//         const colorDiv = document.createElement('div');
+//         colorDiv.style.backgroundColor = color;
+//         colorDiv.style.width = '100px'; // Set width
+//         colorDiv.style.height = '100px'; // Set height
+//         colorDiv.style.display = 'inline-block'; // Display inline
+//         colorDiv.style.margin = '5px'; // Add some margin
+//         colorDiv.style.border = '1px solid #000'; // Optional border
+//         colorDiv.innerHTML = `<p>${color}</p>`
+//         colorContainer.appendChild(colorDiv);
+//     });
+// }
+// // Call the function to preview colors
+// previewColors();
 
 function populateSnapshotList() {
     const snapshots = databaseSnapshot.getAll();
