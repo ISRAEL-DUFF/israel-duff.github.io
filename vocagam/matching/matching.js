@@ -247,24 +247,24 @@ document.getElementById('deleteSnapshot').addEventListener('click', function() {
     }
 });
 
-function previewColors() {
-    const colorContainer = document.getElementById('color-preview-container');
-    colorContainer.innerHTML = ''; // Clear previous content
+// function previewColors() {
+//     const colorContainer = document.getElementById('color-preview-container');
+//     colorContainer.innerHTML = ''; // Clear previous content
 
-    availableColors.forEach(color => {
-        const colorDiv = document.createElement('div');
-        colorDiv.style.backgroundColor = color;
-        colorDiv.style.width = '100px'; // Set width
-        colorDiv.style.height = '100px'; // Set height
-        colorDiv.style.display = 'inline-block'; // Display inline
-        colorDiv.style.margin = '5px'; // Add some margin
-        colorDiv.style.border = '1px solid #000'; // Optional border
-        colorDiv.innerHTML = `<p>${color}</p>`
-        colorContainer.appendChild(colorDiv);
-    });
-}
-// Call the function to preview colors
-previewColors();
+//     availableColors.forEach(color => {
+//         const colorDiv = document.createElement('div');
+//         colorDiv.style.backgroundColor = color;
+//         colorDiv.style.width = '100px'; // Set width
+//         colorDiv.style.height = '100px'; // Set height
+//         colorDiv.style.display = 'inline-block'; // Display inline
+//         colorDiv.style.margin = '5px'; // Add some margin
+//         colorDiv.style.border = '1px solid #000'; // Optional border
+//         colorDiv.innerHTML = `<p>${color}</p>`
+//         colorContainer.appendChild(colorDiv);
+//     });
+// }
+// // Call the function to preview colors
+// previewColors();
 
 function populateSnapshotList() {
     const snapshots = databaseSnapshot.getAll();
