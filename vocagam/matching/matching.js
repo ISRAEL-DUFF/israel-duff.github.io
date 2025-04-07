@@ -5,7 +5,14 @@ import { generateSelectBox, getRandomWords, colorGenerator, addContextMenu, loca
 let words = [];
 let currentIndex = 0;
 let selectedPair = [];
-let availableColors = ["#ffcc80", "#90caf9", "#a5d6a7", "#f48fb1", "#ffab91", "#b39ddb", "#64b5f6", "#ff8a65", "#ba68c8", "#ffd54f", "#4db6ac"];  // Unique colors
+// let availableColors = ["#ffcc80", "#90caf9", "#a5d6a7", "#f48fb1", "#ffab91", "#b39ddb", "#64b5f6", "#ff8a65", "#ba68c8", "#ffd54f", "#4db6ac"];  // Unique colors
+let availableColors = [
+    "#ffcc80", "#90caf9", "#a5d6a7", "#f48fb1", "#ffab91", 
+    "#b39ddb", "#64b5f6", "#ff8a65", "#ba68c8", "#ffd54f", 
+    "#4db6ac", "#ff6f61", "#6b5b95", "#88b04b", "#f7cac9", 
+    "#92a8d1", "#955251", "#b9cbb8", "#e4b5b5", "#f6e58d", 
+    "#ff7979", "#badc58", "#ffbe76", "#ff9ff3", "#ff6f61"
+]
 let timer;
 let timeRemaining = 30;
 let gameStarted = false;
@@ -70,11 +77,13 @@ function showAnimatedFlashcard(data) {
         meaning = data.word.meanings.join(' | ')
     }
 
+    // <p style="color:#20e3fd"><span class = 'bib-lit-text greek-size'>${data.word["word"]} | ${data.word["root"] ? "root: " + data.word["root"] : '' }</span> (${data.word["partOfSpeech"]})</p>
     const flashC = {
         greek: {
             all:  `
             <div class="flashcard-animation">
-                <p style="color:#20e3fd"><span class = 'bib-lit-text'>${data.word["word"]}</span> | ${data.word["root"] ? "root: " + data.word["root"] : '' }</span> (${data.word["partOfSpeech"]})</p>
+                <p style="color:#20e3fd"><span class = 'bib-lit-text greek-size'>${data.word["word"]}</span></p>
+                <p style="color:#ffc107"><span class = 'bib-lit-text'>${data.word["root"] ? "root: " + data.word["root"] : '' }</span></p>
                 <p style='background-color: ${data.color}; color: white; border-radius: 10px; padding: 5px; font-size: 1.0em; font-weight: bold;'>${meaning}</p>
             </div>
             `,
@@ -85,7 +94,8 @@ function showAnimatedFlashcard(data) {
             `,
             word: `
             <div class="flashcard-animation">
-                <p style="color:#20e3fd"><span class = 'bib-lit-text'>${data.word["word"]} | ${data.word["root"] ? "root: " + data.word["root"] : '' }</span> (${data.word["partOfSpeech"]})</p>
+                <p style="color:#20e3fd"><span class = 'bib-lit-text greek-size'>${data.word["word"]}</span></p>
+                <p style="color:#ffc107"><span class = 'bib-lit-text'>${data.word["root"] ? "root: " + data.word["root"] : '' }</span></p>
                 <p style="color:#20e3fd">Part of Speech: ${data.word["partOfSpeech"]}</p>
             </div>
             `
@@ -93,7 +103,8 @@ function showAnimatedFlashcard(data) {
         hebrew: {
             all:  `
             <div class="flashcard-animation">
-                <p style="color:#20e3fd"><span class = 'bib-lit-text hebrew'>${data.word["word"]}</span>${data.word["transliteration"] ? ' | ' + data.word["transliteration"] : ''}</p>
+                <p style="color:#20e3fd"><span class = 'bib-lit-text hebrew hebrew-size'>${data.word["word"]}</span></p>
+                <p>${data.word["transliteration"] ? '( ' + data.word["transliteration"] + ' )' : ''}</p>
                 <p>${data.word["partOfSpeech"]}</p>
                 <p style='background-color: ${data.color}; color: white; border-radius: 10px; padding: 5px; font-size: 1.0em; font-weight: bold;'>${meaning}</p>
             </div>
@@ -105,7 +116,8 @@ function showAnimatedFlashcard(data) {
             `,
             word: `
             <div class="flashcard-animation">
-                <p style="color:#20e3fd"><span class = 'bib-lit-text hebrew'>${data.word["word"]}</span>${data.word["transliteration"] ? ' | ' + data.word["transliteration"] : ''}</p>
+                <p style="color:#20e3fd"><span class = 'bib-lit-text hebrew hebrew-size'>${data.word["word"]}</span></p>
+                <p>${data.word["transliteration"] ? '( ' + data.word["transliteration"] + ' )' : ''}</p>
                 <p style="color:#20e3fd">${data.word["partOfSpeech"]}</p>
             </div>
             `
@@ -416,6 +428,7 @@ function selectMatch(element, wordData) {
     if (selectedPair.length == 1 && element === selectedPair[0]) {
         // TODO: unselect here
         element.classList.remove("selected");
+        element.style.transform = 'scale(1.0)';
         selectedPair = [];
         return;
     }

@@ -2,11 +2,20 @@ export function gameLanguage() {
   const lang = new URLSearchParams(window.location.search).get('lang') || "greek";
   return lang;
 }
+
 // Function to randomly select 10 words
+function fisherYateShuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1)); // Random index from 0 to i
+      [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+  }
+}
 export function getRandomWords(list, count = 10) {
     // Shuffle the array using Fisher-Yates algorithm
-    let shuffled = list.slice().sort(() => Math.random() - 0.5);
-    
+    // let shuffled = list.slice().sort(() => Math.random() - 0.5);
+    let shuffled = [...list]
+    fisherYateShuffle(shuffled)
+
     // Select the first 'count' words
     return shuffled.slice(0, count);
 }

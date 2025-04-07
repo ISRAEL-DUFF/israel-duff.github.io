@@ -124,6 +124,9 @@
     transform: scale(0.5); /* Start scaled down */
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Separate transitions for opacity and transform */
 }
+.flashcard-animation p {
+    margin: 2px;
+}
 
 .flashcard-animation.show {
     opacity: 1; /* Fade in */
