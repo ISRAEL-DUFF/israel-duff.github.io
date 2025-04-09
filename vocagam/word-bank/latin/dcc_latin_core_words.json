@@ -88,7 +88,7 @@
       "meanings": [
         "be eager",
         " be zealous",
-        " care for (+ dat.)"
+        " care for"
       ],
       "frequency": 989,
       "partOfSpeech": "Verb: 2nd Conjugation",
@@ -99,8 +99,9 @@
       "word": "pendo",
       "meanings": [
         "weigh",
-        " hang",
-        " suspend; pay"
+        "hang",
+        "suspend",
+        "pay"
       ],
       "frequency": 988,
       "partOfSpeech": "Verb: 3rd Conjugation -ō",
@@ -160,7 +161,8 @@
       "word": "disciplina",
       "meanings": [
         "training",
-        " instruction; learning",
+        " instruction",
+        "learning",
         " discipline"
       ],
       "frequency": 982,
@@ -204,7 +206,8 @@
       "word": "creo",
       "meanings": [
         "produce",
-        " create; elect",
+        "create",
+        "elect",
         " choose"
       ],
       "frequency": 978,
@@ -268,7 +271,8 @@
       "word": "confiteor",
       "meanings": [
         "admit (a fact)",
-        " confess (a crime); reveal",
+        " confess (a crime)",
+        "reveal",
         " disclose"
       ],
       "frequency": 972,
@@ -300,7 +304,8 @@
     {
       "word": "quiesco",
       "meanings": [
-        "keep quiet; sleep"
+        "keep quiet",
+        "sleep"
       ],
       "frequency": 969,
       "partOfSpeech": "Verb: 3rd Conjugation -ō",
@@ -345,7 +350,8 @@
     {
       "word": "aedes",
       "meanings": [
-        "building; (pl.) house"
+        "building",
+        "house"
       ],
       "frequency": 965,
       "partOfSpeech": "Noun: 3rd Declension",
@@ -377,7 +383,8 @@
       "word": "divus",
       "meanings": [
         "divine",
-        " godlike; (as subst.) a god"
+        "godlike",
+        "a god"
       ],
       "frequency": 962,
       "partOfSpeech": "Adjective: 1st and 2nd Declension",
@@ -397,7 +404,7 @@
     {
       "word": "caelestis",
       "meanings": [
-        "from or of heaven; caelestēs",
+        "from or of heaven",
         " the gods"
       ],
       "frequency": 960,
@@ -419,7 +426,7 @@
       "word": "afficio",
       "meanings": [
         "affect",
-        " visit with (+ abl.)"
+        " visit with"
       ],
       "frequency": 958,
       "partOfSpeech": "Verb: 3rd Conjugation -iō",
@@ -473,7 +480,7 @@
       "word": "interrogo",
       "meanings": [
         "put a question to",
-        " ask (+ acc.)"
+        " ask"
       ],
       "frequency": 953,
       "partOfSpeech": "Verb: 1st Conjugation",
@@ -483,7 +490,8 @@
     {
       "word": "inimicus",
       "meanings": [
-        "unfriendly; (as subst.) enemy"
+        "unfriendly",
+        "enemy"
       ],
       "frequency": 952,
       "partOfSpeech": "Adjective: 1st and 2nd Declension",
@@ -504,7 +512,8 @@
       "word": "mortalis",
       "meanings": [
         "liable to death",
-        " mortal; (as subst.) a mortal"
+        " mortal",
+        "a mortal"
       ],
       "frequency": 950,
       "partOfSpeech": "Adjective: 3rd Declension",
@@ -706,7 +715,8 @@
     {
       "word": "instituo",
       "meanings": [
-        "undertake; equip"
+        "undertake",
+        "equip"
       ],
       "frequency": 931,
       "partOfSpeech": "Verb: 3rd Conjugation -ō",
@@ -729,7 +739,8 @@
       "word": "prodo",
       "meanings": [
         "publish",
-        " hand down; give over",
+        " hand down",
+        "give over",
         " betray"
       ],
       "frequency": 929,
@@ -741,7 +752,8 @@
       "word": "censeo",
       "meanings": [
         "assess",
-        " rate; think",
+        " rate",
+        "think",
         " decide"
       ],
       "frequency": 928,
@@ -753,7 +765,8 @@
       "word": "fructus",
       "meanings": [
         "fruit",
-        " crops; enjoyment",
+        " crops",
+        "enjoyment",
         " delight"
       ],
       "frequency": 927,
@@ -797,7 +810,7 @@
       "meanings": [
         "enjoy the produce of",
         " profit by",
-        " use (+ abl.)"
+        " use"
       ],
       "frequency": 923,
       "partOfSpeech": "Verb: Deponent",
@@ -839,7 +852,8 @@
     {
       "word": "nuntius",
       "meanings": [
-        "messenger; news"
+        "messenger",
+        "news"
       ],
       "frequency": 919,
       "partOfSpeech": "Noun: 2nd Declension",
@@ -916,7 +930,7 @@
       "meanings": [
         "stride out",
         " depart",
-        " disembark from (+ abl.)"
+        " disembark from"
       ],
       "frequency": 912,
       "partOfSpeech": "Verb: Deponent",
@@ -948,7 +962,8 @@
     {
       "word": "filia",
       "meanings": [
-        "daughter; son"
+        "daughter",
+        "son"
       ],
       "frequency": 909,
       "partOfSpeech": "Noun: 1st Declension",
@@ -1043,7 +1058,8 @@
       "word": "laboro",
       "meanings": [
         "toil",
-        " work; be in trouble or distress"
+        " work",
+        "be in trouble or distress"
       ],
       "frequency": 900,
       "partOfSpeech": "Verb: 1st Conjugation",
@@ -1088,7 +1104,7 @@
       "word": "iuro",
       "meanings": [
         "take an oath",
-        " swear; iūs iūrandum",
+        " swear",
         " oath"
       ],
       "frequency": 896,
@@ -1111,7 +1127,8 @@
       "word": "conficio",
       "meanings": [
         "complete",
-        " accomplish; destroy",
+        " accomplish",
+        "destroy",
         " kill",
         " consume"
       ],
@@ -1158,7 +1175,8 @@
       "word": "comparo",
       "meanings": [
         "get ready",
-        " provide; compare"
+        " provide",
+        "compare"
       ],
       "frequency": 890,
       "partOfSpeech": "Verb: 1st Conjugation",
@@ -1235,7 +1253,7 @@
       "word": "servio",
       "meanings": [
         "be a slave",
-        " serve (+ dat.)"
+        " serve"
       ],
       "frequency": 883,
       "partOfSpeech": "Verb: 4th Conjugation",
@@ -1267,8 +1285,11 @@
     {
       "word": "differo",
       "meanings": [
-        "scatter; publish",
-        " divulge; differ; defer",
+        "scatter",
+        "publish",
+        " divulge",
+        "defer",
+        "differ",
         " postpone"
       ],
       "frequency": 880,
@@ -1312,7 +1333,8 @@
       "word": "audax",
       "meanings": [
         "bold",
-        " daring; reckless"
+        " daring",
+        "reckless"
       ],
       "frequency": 876,
       "partOfSpeech": "Adjective: 3rd Declension",
@@ -1322,7 +1344,8 @@
     {
       "word": "aevum",
       "meanings": [
-        "eternity; lifetime",
+        "eternity",
+        "lifetime",
         " age"
       ],
       "frequency": 875,
@@ -1345,7 +1368,9 @@
       "word": "hospes",
       "meanings": [
         "guest",
-        " guest-friend; stranger; host"
+        " guest-friend",
+        "stranger",
+        "host"
       ],
       "frequency": 873,
       "partOfSpeech": "Noun: 3rd Declension",
@@ -1368,7 +1393,8 @@
       "word": "incido",
       "meanings": [
         "fall upon",
-        " fall into; happen"
+        " fall into",
+        "happen"
       ],
       "frequency": 871,
       "partOfSpeech": "Verb: 3rd Conjugation -ō",
@@ -1423,7 +1449,8 @@
       "word": "pertineo",
       "meanings": [
         "extend over",
-        " reach; refer to",
+        " reach",
+        "refer to",
         " pertain to",
         " be the business of"
       ],
@@ -1445,7 +1472,8 @@
     {
       "word": "certo",
       "meanings": [
-        "decide by contest; fight",
+        "decide by contest",
+        "fight",
         " compete",
         " vie"
       ],
@@ -1523,7 +1551,8 @@
       "word": "materia",
       "meanings": [
         "material",
-        " subject matter; timber",
+        " subject matter",
+        "timber",
         " lumber"
       ],
       "frequency": 857,
@@ -1534,7 +1563,8 @@
     {
       "word": "vanus",
       "meanings": [
-        "empty; false",
+        "empty",
+        "false",
         " deceitful"
       ],
       "frequency": 856,
@@ -1577,7 +1607,8 @@
       "word": "mereo",
       "meanings": [
         "deserve",
-        " merit; serve as a soldier"
+        " merit",
+        "serve as a soldier"
       ],
       "frequency": 852,
       "partOfSpeech": "Verb: 2nd Conjugation",
@@ -1749,7 +1780,9 @@
     {
       "word": "secundus",
       "meanings": [
-        "following; favorable; (as numeral) second"
+        "following",
+        "second",
+        "favorable"
       ],
       "frequency": 836,
       "partOfSpeech": "Adjective: 1st and 2nd Declension",
@@ -1793,7 +1826,8 @@
     {
       "word": "error",
       "meanings": [
-        "wandering; error",
+        "wandering",
+        "error",
         " mistake"
       ],
       "frequency": 832,
@@ -1827,7 +1861,8 @@
       "word": "pario",
       "meanings": [
         "bring forth",
-        " give birth to; accomplish"
+        " give birth to",
+        "accomplish"
       ],
       "frequency": 829,
       "partOfSpeech": "Verb: 3rd Conjugation -iō",
@@ -1848,12 +1883,13 @@
     {
       "word": "utrum",
       "meanings": [
-        "whether; utrum ... an: whether ... or"
+        "whether"
       ],
       "frequency": 827,
       "partOfSpeech": "Conjunction",
       "inflection": "utrum",
-      "semanticGroup": "Conjunctions/Adverbs"
+      "semanticGroup": "Conjunctions/Adverbs",
+      "examples": "utrum ... an: whether ... or"
     },
     {
       "word": "recedo",
@@ -1872,7 +1908,8 @@
       "word": "praeceptum",
       "meanings": [
         "rule",
-        " precept; command"
+        " precept",
+        "command"
       ],
       "frequency": 825,
       "partOfSpeech": "Noun: 2nd Declension",
@@ -1917,7 +1954,8 @@
       "word": "pergo",
       "meanings": [
         "continue",
-        " proceed; awaken"
+        " proceed",
+        "awaken"
       ],
       "frequency": 821,
       "partOfSpeech": "Verb: 3rd Conjugation -ō",
@@ -2049,17 +2087,18 @@
     {
       "word": "irascor",
       "meanings": [
-        "grow angry; īrātus -a -um: angry"
+        "grow angry"
       ],
       "frequency": 809,
       "partOfSpeech": "Verb: Deponent",
       "inflection": "īrāscor īrāscī īrātus sum",
-      "semanticGroup": "Emotions"
+      "semanticGroup": "Emotions",
+      "examples": "īrātus -a -um: angry"
     },
     {
       "word": "bos",
       "meanings": [
-        "ox; gen. pl. boum"
+        "ox"
       ],
       "frequency": 808,
       "partOfSpeech": "Noun: 3rd Declension",
@@ -2084,7 +2123,7 @@
       "word": "oportet",
       "meanings": [
         "it is proper",
-        " right (+ acc. + infin.)"
+        " right"
       ],
       "frequency": 806,
       "partOfSpeech": "Verb: Impersonal",
@@ -2159,7 +2198,8 @@
     {
       "word": "accido",
       "meanings": [
-        "fall; happen"
+        "fall",
+        "happen"
       ],
       "frequency": 799,
       "partOfSpeech": "Verb: 3rd Conjugation -ō",
@@ -2199,8 +2239,8 @@
     {
       "word": "cor",
       "meanings": [
-        "heart; cordī est",
-        " it is pleasing to (+ dat.)"
+        "heart",
+        "it is pleasing to"
       ],
       "frequency": 795,
       "partOfSpeech": "Noun: 3rd Declension",
@@ -2317,7 +2357,8 @@
       "word": "probo",
       "meanings": [
         "approve",
-        " prove; convince one (dat.) of a thing (acc.)"
+        " prove",
+        "convince one of a thing"
       ],
       "frequency": 784,
       "partOfSpeech": "Verb: 1st Conjugation",
@@ -2360,7 +2401,8 @@
     {
       "word": "consisto",
       "meanings": [
-        "take position; consist in",
+        "take position",
+        "consist in",
         " be composed of"
       ],
       "frequency": 780,
@@ -2442,7 +2484,7 @@
       ],
       "frequency": 773,
       "partOfSpeech": "Adjective: Indeclinable",
-      "inflection": "necesse (indecl. adj.)",
+      "inflection": "necesse",
       "semanticGroup": "Business/Money"
     },
     {
@@ -2579,9 +2621,11 @@
     {
       "word": "intersum",
       "meanings": [
-        "to be between; take part in",
-        " attend (+dat.); interest",
-        " it is in the interest of (+ gen.)"
+        "to be between",
+        "take part in",
+        " attend",
+        "interest",
+        " it is in the interest of"
       ],
       "frequency": 760,
       "partOfSpeech": "Verb: Irregular",
@@ -2612,7 +2656,8 @@
       "word": "consulo",
       "meanings": [
         "consult",
-        " plan (+ acc.); consider the interests of (+dat)"
+        " plan",
+        "consider the interests of"
       ],
       "frequency": 757,
       "partOfSpeech": "Verb: 3rd Conjugation -ō",
@@ -2624,8 +2669,9 @@
       "meanings": [
         "by",
         " along",
-        " past; besides",
-        " except (+ acc.)"
+        " past",
+        "besides",
+        " except"
       ],
       "frequency": 756,
       "partOfSpeech": "Preposition",
@@ -2658,7 +2704,8 @@
       "word": "tempestas",
       "meanings": [
         "period of time",
-        " season; bad weather",
+        " season",
+        "bad weather",
         " storm"
       ],
       "frequency": 753,
@@ -2671,7 +2718,8 @@
       "meanings": [
         "wide apart",
         " loose",
-        " thin; rare",
+        " thin",
+        "rare",
         " seldom"
       ],
       "frequency": 752,
@@ -2771,7 +2819,7 @@
       "meanings": [
         "watch over",
         " look after",
-        " care for (+ acc.)"
+        " care for"
       ],
       "frequency": 743,
       "partOfSpeech": "Verb: 1st Conjugation",
@@ -2782,12 +2830,13 @@
       "word": "infero",
       "meanings": [
         "bring upon",
-        " against; bellum īnferre: make war on"
+        " against"
       ],
       "frequency": 742,
       "partOfSpeech": "Verb: Irregular",
       "inflection": "īnferō īnferre intulī illātum",
-      "semanticGroup": "War and Peace"
+      "semanticGroup": "War and Peace",
+      "examples": "bellum īnferre: make war on"
     },
     {
       "word": "testis",
@@ -2802,12 +2851,13 @@
     {
       "word": "humus",
       "meanings": [
-        "ground; humī: on the ground"
+        "ground"
       ],
       "frequency": 740,
       "partOfSpeech": "Noun: 2nd Declension",
       "inflection": "humus -ī f.",
-      "semanticGroup": "Earth and Water"
+      "semanticGroup": "Earth and Water",
+      "examples": "humī: on the ground"
     },
     {
       "word": "for",
@@ -2856,7 +2906,7 @@
     {
       "word": "circa",
       "meanings": [
-        "around (adv. and prep. +acc.)"
+        "around"
       ],
       "frequency": 735,
       "partOfSpeech": "Preposition",
@@ -2888,7 +2938,8 @@
     {
       "word": "lingua",
       "meanings": [
-        "tongue; language"
+        "tongue",
+        "language"
       ],
       "frequency": 732,
       "partOfSpeech": "Noun: 1st Declension",
@@ -2898,8 +2949,9 @@
     {
       "word": "consto",
       "meanings": [
-        "agree; constat",
-        " it is established that (+ acc. and infin.)"
+        "agree",
+        "constat",
+        "it is established that"
       ],
       "frequency": 731,
       "partOfSpeech": "Verb: 1st Conjugation",
@@ -2919,7 +2971,7 @@
     {
       "word": "libet",
       "meanings": [
-        "it is pleasing (+ dat. + infin.)"
+        "it is pleasing"
       ],
       "frequency": 729,
       "partOfSpeech": "Verb: Impersonal",
@@ -2930,7 +2982,8 @@
       "word": "caecus",
       "meanings": [
         "blind",
-        " unseeing; dark",
+        " unseeing",
+        "dark",
         " obscure"
       ],
       "frequency": 728,
@@ -3008,7 +3061,8 @@
     {
       "word": "fingo",
       "meanings": [
-        "shape; invent"
+        "shape",
+        "invent"
       ],
       "frequency": 721,
       "partOfSpeech": "Verb: 3rd Conjugation -ō",
@@ -3041,7 +3095,7 @@
       "meanings": [
         "it is right",
         " proper",
-        " fitting (+ acc. + infin.)"
+        " fitting"
       ],
       "frequency": 718,
       "partOfSpeech": "Verb: Impersonal",
@@ -3130,7 +3184,7 @@
       "word": "littera",
       "meanings": [
         "letter",
-        " (pl.) literature"
+        "literature"
       ],
       "frequency": 710,
       "partOfSpeech": "Noun: 1st Declension",
@@ -3194,7 +3248,7 @@
     {
       "word": "intra",
       "meanings": [
-        "within (+ acc.)"
+        "within"
       ],
       "frequency": 704,
       "partOfSpeech": "Preposition",
@@ -3263,7 +3317,8 @@
       "word": "convenio",
       "meanings": [
         "assemble",
-        " meet; agree"
+        " meet",
+        "agree"
       ],
       "frequency": 698,
       "partOfSpeech": "Verb: 4th Conjugation",
@@ -3274,7 +3329,8 @@
       "word": "securus",
       "meanings": [
         "free from care",
-        " tranquil; careless"
+        " tranquil",
+        "careless"
       ],
       "frequency": 697,
       "partOfSpeech": "Adjective: 1st and 2nd Declension",
@@ -3336,7 +3392,8 @@
     {
       "word": "aureus",
       "meanings": [
-        "golden; splendid"
+        "golden",
+        "splendid"
       ],
       "frequency": 691,
       "partOfSpeech": "Adjective: 1st and 2nd Declension",
@@ -3357,8 +3414,10 @@
       "word": "fateor",
       "meanings": [
         "admit",
-        " confess; profess",
-        " declare; assent",
+        " confess",
+        "profess",
+        " declare",
+        "assent",
         " say yes"
       ],
       "frequency": 689,
@@ -3402,7 +3461,8 @@
     {
       "word": "astrum",
       "meanings": [
-        "star; constellation"
+        "star",
+        "constellation"
       ],
       "frequency": 685,
       "partOfSpeech": "Noun: 2nd Declension",
@@ -3487,7 +3547,8 @@
     {
       "word": "occurro",
       "meanings": [
-        "run to meet; come into one’s mind"
+        "run to meet",
+        "come into one’s mind"
       ],
       "frequency": 677,
       "partOfSpeech": "Verb: 3rd Conjugation -ō",
@@ -3498,7 +3559,8 @@
       "word": "deficio",
       "meanings": [
         "fail",
-        " give out; revolt from"
+        " give out",
+        "revolt from"
       ],
       "frequency": 676,
       "partOfSpeech": "Verb: 3rd Conjugation -iō",
@@ -3573,7 +3635,8 @@
       "word": "maestus",
       "meanings": [
         "sad",
-        " sorrowful; depressing"
+        " sorrowful",
+        "depressing"
       ],
       "frequency": 669,
       "partOfSpeech": "Adjective: 1st and 2nd Declension",
@@ -3705,7 +3768,8 @@
       "word": "adversus",
       "meanings": [
         "facing",
-        " opposed; unfavorable"
+        " opposed",
+        "unfavorable"
       ],
       "frequency": 657,
       "partOfSpeech": "Adjective: 1st and 2nd Declension",
@@ -3771,8 +3835,11 @@
       "word": "repeto",
       "meanings": [
         "demand",
-        " exact; revisit; call to mind",
-        " recollect; repeat"
+        " exact",
+        "revisit",
+        "call to mind",
+        "recollect",
+        "repeat"
       ],
       "frequency": 651,
       "partOfSpeech": "Verb: 3rd Conjugation -ō",
@@ -3782,7 +3849,8 @@
     {
       "word": "pugna",
       "meanings": [
-        "fist-fight; battle"
+        "fist-fight",
+        "battle"
       ],
       "frequency": 650,
       "partOfSpeech": "Noun: 1st Declension",
@@ -3901,7 +3969,8 @@
       "meanings": [
         "lot",
         " fate",
-        " destiny; oracle"
+        " destiny",
+        "oracle"
       ],
       "frequency": 639,
       "partOfSpeech": "Noun: 3rd Declension",
@@ -3912,7 +3981,8 @@
       "word": "arx",
       "meanings": [
         "citadel",
-        " castle; summit"
+        " castle",
+        "summit"
       ],
       "frequency": 638,
       "partOfSpeech": "Noun: 3rd Declension",
@@ -3974,13 +4044,14 @@
     {
       "word": "veho",
       "meanings": [
-        "carry; vehor vehī vectus sum: travel",
+        "carry",
         " ride"
       ],
       "frequency": 632,
       "partOfSpeech": "Verb: 3rd Conjugation -ō",
       "inflection": "vehō vehere vēxī vectum",
-      "semanticGroup": "Travel"
+      "semanticGroup": "Travel",
+      "examples": "vehor vehī vectus sum: travel"
     },
     {
       "word": "varius",
@@ -4010,12 +4081,13 @@
       "meanings": [
         "price",
         " worth",
-        " reward; pretium operae: a reward for trouble"
+        " reward"
       ],
       "frequency": 629,
       "partOfSpeech": "Noun: 2nd Declension",
       "inflection": "pretium -ī n.",
-      "semanticGroup": "Business/Money"
+      "semanticGroup": "Business/Money",
+      "examples": "pretium operae: a reward for trouble"
     },
     {
       "word": "divido",
@@ -4076,7 +4148,8 @@
       "word": "supersum",
       "meanings": [
         "remain",
-        " survive; be superfluous (to)"
+        " survive",
+        "be superfluous (to)"
       ],
       "frequency": 623,
       "partOfSpeech": "Verb: Irregular",
@@ -4096,17 +4169,20 @@
     {
       "word": "quando",
       "meanings": [
-        "when?; since; sī quandō: if ever"
+        "when?",
+        "since"
       ],
       "frequency": 621,
       "partOfSpeech": "Adverb",
       "inflection": "quandō",
-      "semanticGroup": "Pronouns/Interrogatives"
+      "semanticGroup": "Pronouns/Interrogatives",
+      "examples": "sī quandō: if ever"
     },
     {
       "word": "provincia",
       "meanings": [
-        "province; official duty"
+        "province",
+        "official duty"
       ],
       "frequency": 620,
       "partOfSpeech": "Noun: 1st Declension",
@@ -4127,7 +4203,8 @@
       "word": "ardeo",
       "meanings": [
         "blaze",
-        " glow; be eager"
+        " glow",
+        "be eager"
       ],
       "frequency": 618,
       "partOfSpeech": "Verb: 2nd Conjugation",
@@ -4239,7 +4316,8 @@
       "word": "committo",
       "meanings": [
         "join",
-        " entrust to (+ dat.); perform",
+        " entrust to",
+        "perform",
         " do"
       ],
       "frequency": 608,
@@ -4261,7 +4339,7 @@
     {
       "word": "dono",
       "meanings": [
-        "present with a gift (+ acc. of person and abl. of thing)"
+        "present with a gift"
       ],
       "frequency": 606,
       "partOfSpeech": "Verb: 1st Conjugation",
@@ -4293,7 +4371,7 @@
     {
       "word": "male",
       "meanings": [
-        "(adv.) badly"
+        "badly"
       ],
       "frequency": 603,
       "partOfSpeech": "Adverb",
@@ -4326,7 +4404,7 @@
       "word": "ultra",
       "meanings": [
         "beyond",
-        " further (adv. and prep. + acc.)"
+        " further"
       ],
       "frequency": 600,
       "partOfSpeech": "Preposition",
@@ -4433,7 +4511,7 @@
     {
       "word": "citus",
       "meanings": [
-        "swift; citō swiftly"
+        "swift"
       ],
       "frequency": 590,
       "partOfSpeech": "Adjective: 1st and 2nd Declension",
@@ -4456,7 +4534,7 @@
       "word": "supra",
       "meanings": [
         "above",
-        " beyond (adv. and prep. +acc.)"
+        " beyond"
       ],
       "frequency": 588,
       "partOfSpeech": "Preposition",
@@ -4574,7 +4652,8 @@
       "word": "gradus",
       "meanings": [
         "step",
-        " pace; grade",
+        " pace",
+        "grade",
         " rank"
       ],
       "frequency": 577,
@@ -4620,7 +4699,8 @@
       "word": "efficio",
       "meanings": [
         "bring about",
-        " complete; render (+ ut + subj.)"
+        " complete",
+        "render"
       ],
       "frequency": 573,
       "partOfSpeech": "Verb: 3rd Conjugation -iō",
@@ -4630,7 +4710,7 @@
     {
       "word": "careo",
       "meanings": [
-        "lack (+ abl.)"
+        "lack"
       ],
       "frequency": 572,
       "partOfSpeech": "Verb: 2nd Conjugation",
@@ -4715,8 +4795,7 @@
     {
       "word": "dives",
       "meanings": [
-        "rich (poet. dīs",
-        " dītis)"
+        "rich"
       ],
       "frequency": 564,
       "partOfSpeech": "Adjective: 3rd Declension",
@@ -4760,7 +4839,7 @@
     {
       "word": "propter",
       "meanings": [
-        "because of (+ acc.)"
+        "because of"
       ],
       "frequency": 560,
       "partOfSpeech": "Preposition",
@@ -4771,7 +4850,8 @@
       "word": "frons",
       "meanings": [
         "forehead",
-        " brow; front"
+        " brow",
+        "front"
       ],
       "frequency": 559,
       "partOfSpeech": "Noun: 3rd Declension",
@@ -4782,7 +4862,8 @@
       "word": "senex",
       "meanings": [
         "old man",
-        " elder; senior",
+        " elder",
+        "senior",
         " older"
       ],
       "frequency": 558,
@@ -4793,7 +4874,10 @@
     {
       "word": "quantum",
       "meanings": [
-        "(adv.) how much? how greatly? how much! how greatly! as much as"
+        "how much?",
+        "how much! how greatly!",
+        "how greatly?",
+        "as much as"
       ],
       "frequency": 557,
       "partOfSpeech": "Adverb",
@@ -4813,7 +4897,7 @@
     {
       "word": "adeo",
       "meanings": [
-        "(adv.) to such a degree",
+        "to such a degree",
         " so"
       ],
       "frequency": 555,
@@ -4866,7 +4950,8 @@
       "word": "pateo",
       "meanings": [
         "lie open",
-        " extend; be evident or obvious"
+        " extend",
+        "be evident or obvious"
       ],
       "frequency": 550,
       "partOfSpeech": "Verb: 2nd Conjugation",
@@ -4888,7 +4973,8 @@
       "word": "decus",
       "meanings": [
         "beauty",
-        " grace; ornament",
+        " grace",
+        "ornament",
         " glory",
         " honor"
       ],
@@ -4946,7 +5032,8 @@
       "word": "auxilium",
       "meanings": [
         "support",
-        " assistance; (pl.) auxiliary forces"
+        " assistance",
+        "auxiliary forces"
       ],
       "frequency": 543,
       "partOfSpeech": "Noun: 2nd Declension",
@@ -4979,7 +5066,9 @@
       "word": "condo",
       "meanings": [
         "build",
-        " found; store up; hide",
+        " found",
+        "store up",
+        "hide",
         " conceal"
       ],
       "frequency": 540,
@@ -4993,17 +5082,19 @@
         "be strong",
         " excel",
         " be valid",
-        " prevail; valē: farewell!"
+        " prevail"
       ],
       "frequency": 539,
       "partOfSpeech": "Verb: 2nd Conjugation",
       "inflection": "valeō valēre valuī",
-      "semanticGroup": "Social Life"
+      "semanticGroup": "Social Life",
+      "examples": "valē: farewell!"
     },
     {
       "word": "subeo",
       "meanings": [
-        "go under; endure"
+        "go under",
+        "endure"
       ],
       "frequency": 538,
       "partOfSpeech": "Verb: Irregular",
@@ -5107,7 +5198,8 @@
     {
       "word": "dubius",
       "meanings": [
-        "doubtful; (as subst.) a doubt; sine dubiō",
+        "doubtful",
+        "a doubt",
         " without a doubt",
         " certainly"
       ],
@@ -5119,7 +5211,8 @@
     {
       "word": "usque",
       "meanings": [
-        "up to; continuously"
+        "up to",
+        "continuously"
       ],
       "frequency": 527,
       "partOfSpeech": "Adverb",
@@ -5151,7 +5244,8 @@
     {
       "word": "funus",
       "meanings": [
-        "funeral; death; dead body"
+        "funeral",
+        "death"
       ],
       "frequency": 524,
       "partOfSpeech": "Noun: 3rd Declension",
@@ -5363,7 +5457,7 @@
       "word": "miror",
       "meanings": [
         "wonder at",
-        " marvel at (+ acc.)"
+        " marvel at"
       ],
       "frequency": 504,
       "partOfSpeech": "Verb: Deponent",
@@ -5404,7 +5498,8 @@
     {
       "word": "exigo",
       "meanings": [
-        "drive out; collect"
+        "drive out",
+        "collect"
       ],
       "frequency": 500,
       "partOfSpeech": "Verb: 3rd Conjugation -ō",
@@ -5416,7 +5511,7 @@
     {
       "word": "quippe",
       "meanings": [
-        "(adv.) indeed",
+        "indeed",
         " surely"
       ],
       "frequency": 499,
@@ -5522,7 +5617,8 @@
     {
       "word": "quamvis",
       "meanings": [
-        "however you like; although"
+        "however you like",
+        "although"
       ],
       "frequency": 489,
       "partOfSpeech": "Adverb",
@@ -5543,7 +5639,8 @@
       "word": "posco",
       "meanings": [
         "demand",
-        " claim; inquire into"
+        " claim",
+        "inquire into"
       ],
       "frequency": 487,
       "partOfSpeech": "Verb: 3rd Conjugation -ō",
@@ -5564,7 +5661,8 @@
     {
       "word": "templum",
       "meanings": [
-        "consecrated ground; temple"
+        "consecrated ground",
+        "temple"
       ],
       "frequency": 485,
       "partOfSpeech": "Noun: 2nd Declension",
@@ -5638,9 +5736,10 @@
     {
       "word": "sinus",
       "meanings": [
-        "fold of a garment; lap",
-        " bay",
-        " gulf"
+        "fold of a garment",
+        "lap",
+        "bay",
+        "gulf"
       ],
       "frequency": 478,
       "partOfSpeech": "Noun: 4th Declension",
@@ -5683,12 +5782,13 @@
       "word": "tergum",
       "meanings": [
         "back",
-        " rear; ā tergō: from the rear"
+        " rear"
       ],
       "frequency": 474,
       "partOfSpeech": "Noun: 2nd Declension",
       "inflection": "tergum -ī n.",
-      "semanticGroup": "The Body"
+      "semanticGroup": "The Body",
+      "examples": "ā tergō: from the rear"
     },
     {
       "word": "specto",
@@ -5705,8 +5805,9 @@
       "word": "occupo",
       "meanings": [
         "seize",
-        " occupy; anticipate",
-        " do a thing first (+ infin.)"
+        " occupy",
+        "anticipate",
+        " do a thing first"
       ],
       "frequency": 472,
       "partOfSpeech": "Verb: 1st Conjugation",
@@ -5726,7 +5827,7 @@
     {
       "word": "eo",
       "meanings": [
-        "(adv.) there",
+        "there",
         " to that place"
       ],
       "frequency": 470,
@@ -5831,7 +5932,7 @@
     {
       "word": "adversus",
       "meanings": [
-        "(adv. and prep.) facing",
+        "facing",
         " opposite",
         " against",
         " opposed (to)"
@@ -5874,8 +5975,8 @@
     {
       "word": "quin",
       "meanings": [
-        "(adv.) indeed",
-        " in fact; (conjunction) so that ... not (+ subj.)"
+        "indeed",
+        "in fact"
       ],
       "frequency": 456,
       "partOfSpeech": "Adverb",
@@ -5886,7 +5987,8 @@
       "word": "nobilis",
       "meanings": [
         "distinguished",
-        " noble; (as subst.) a nobleman or woman"
+        " noble",
+        "a nobleman or woman"
       ],
       "frequency": 455,
       "partOfSpeech": "Adjective: 3rd Declension",
@@ -5906,9 +6008,10 @@
     {
       "word": "sapiens",
       "meanings": [
-        "wise; (as subst.) wise man",
-        " sage",
-        " philosopher"
+        "wise",
+        "wise man",
+        "sage",
+        "philosopher"
       ],
       "frequency": 453,
       "partOfSpeech": "Adjective: 3rd Declension",
@@ -5951,7 +6054,7 @@
       "word": "ob",
       "meanings": [
         "against",
-        " on account of (+acc)"
+        " on account of"
       ],
       "frequency": 449,
       "partOfSpeech": "Preposition",
@@ -5962,7 +6065,8 @@
       "word": "comes",
       "meanings": [
         "companion",
-        " comrade; attendant",
+        " comrade",
+        "attendant",
         " follower"
       ],
       "frequency": 448,
@@ -6062,7 +6166,8 @@
     {
       "word": "acies",
       "meanings": [
-        "edge; line of battle"
+        "edge",
+        "line of battle"
       ],
       "frequency": 439,
       "partOfSpeech": "Noun: 5th Declension",
@@ -6073,7 +6178,8 @@
       "word": "somnus",
       "meanings": [
         "sleep",
-        " slumber; (pl.) dreams"
+        " slumber",
+        "dreams"
       ],
       "frequency": 438,
       "partOfSpeech": "Noun: 2nd Declension",
@@ -6116,7 +6222,8 @@
     {
       "word": "gratus",
       "meanings": [
-        "pleasant; grateful"
+        "pleasant",
+        "grateful"
       ],
       "frequency": 434,
       "partOfSpeech": "Adjective: 1st and 2nd Declension",
@@ -6181,12 +6288,13 @@
     {
       "word": "inferus",
       "meanings": [
-        "low; īnferior: lower; īnfimus or īmus: lowest"
+        "low"
       ],
       "frequency": 428,
       "partOfSpeech": "Adjective: 1st and 2nd Declension",
       "inflection": "īnferus -a -um",
-      "semanticGroup": "Geography"
+      "semanticGroup": "Geography",
+      "examples": "īnferior: lower; īnfimus or īmus: lowest"
     },
     {
       "word": "tandem",
@@ -6244,7 +6352,8 @@
     {
       "word": "forma",
       "meanings": [
-        "shape; beauty"
+        "shape",
+        "beauty"
       ],
       "frequency": 422,
       "partOfSpeech": "Noun: 1st Declension",
@@ -6355,7 +6464,7 @@
       "word": "parco",
       "meanings": [
         "spare",
-        " be sparing of (+ dat.)"
+        " be sparing of"
       ],
       "frequency": 412,
       "partOfSpeech": "Verb: 3rd Conjugation -ō",
@@ -6421,12 +6530,13 @@
       "meanings": [
         "say",
         " affirm",
-        " say yes; ut āiunt: as they say"
+        " say yes"
       ],
       "frequency": 406,
       "partOfSpeech": "Verb: Irregular",
       "inflection": "aiō",
-      "semanticGroup": "Speech/Oratory"
+      "semanticGroup": "Speech/Oratory",
+      "examples": "ut āiunt: as they say"
     },
     {
       "word": "coma",
@@ -6475,7 +6585,7 @@
     {
       "word": "super",
       "meanings": [
-        "over (adv. and prep. +acc.)"
+        "over"
       ],
       "frequency": 401,
       "partOfSpeech": "Adverb",
@@ -6529,12 +6639,13 @@
       "word": "illic",
       "meanings": [
         "at that place",
-        " there; illinc: from that place"
+        "there"
       ],
       "frequency": 396,
       "partOfSpeech": "Adverb",
       "inflection": "illīc",
-      "semanticGroup": "Place"
+      "semanticGroup": "Place",
+      "examples": "illinc: from that place"
     },
     {
       "word": "clarus",
@@ -6593,7 +6704,8 @@
       "word": "iuvo",
       "meanings": [
         "help",
-        " assist; please",
+        " assist",
+        "please",
         " delight"
       ],
       "frequency": 390,
@@ -6636,7 +6748,8 @@
     {
       "word": "tectum",
       "meanings": [
-        "roof; building",
+        "roof",
+        "building",
         " house"
       ],
       "frequency": 386,
@@ -6737,7 +6850,8 @@
       "word": "turpis",
       "meanings": [
         "ugly",
-        " unsightly; disgraceful"
+        " unsightly",
+        "disgraceful"
       ],
       "frequency": 377,
       "partOfSpeech": "Adjective: 3rd Declension",
@@ -6780,7 +6894,7 @@
       "meanings": [
         "be of use",
         " do good",
-        " help (+ dat.)"
+        " help"
       ],
       "frequency": 373,
       "partOfSpeech": "Verb: Irregular",
@@ -6791,13 +6905,14 @@
       "word": "socius",
       "meanings": [
         "friendly",
-        " allied; socius -ī m.: partner",
+        " allied",
         " comrade"
       ],
       "frequency": 372,
       "partOfSpeech": "Adjective: 1st and 2nd Declension",
       "inflection": "socius -a -um",
-      "semanticGroup": "Social Life"
+      "semanticGroup": "Social Life",
+      "examples": "socius -ī m.: partner"
     },
     {
       "word": "ostendo",
@@ -6823,7 +6938,7 @@
     {
       "word": "taceo",
       "meanings": [
-        "be silent; tacitus -a -um",
+        "be silent",
         " silent"
       ],
       "frequency": 369,
@@ -6898,12 +7013,13 @@
     {
       "word": "sive",
       "meanings": [
-        "whether; sīve ... sīve: whether ... or → seu"
+        "whether"
       ],
       "frequency": 362,
       "partOfSpeech": "Conjunction",
       "inflection": "sīve",
-      "semanticGroup": "Conjunctions/Adverbs"
+      "semanticGroup": "Conjunctions/Adverbs",
+      "examples": "sīve ... sīve: whether ... or → seu"
     },
     {
       "word": "diu:",
@@ -7090,7 +7206,8 @@
     {
       "word": "casus",
       "meanings": [
-        "a fall; chance",
+        "a fall",
+        "chance",
         " accident"
       ],
       "frequency": 344,
@@ -7101,12 +7218,13 @@
     {
       "word": "seu",
       "meanings": [
-        "whether; seu ... seu: whether ... or → sīve"
+        "whether"
       ],
       "frequency": 343,
       "partOfSpeech": "Conjunction",
       "inflection": "seu",
-      "semanticGroup": "Conjunctions/Adverbs"
+      "semanticGroup": "Conjunctions/Adverbs",
+      "examples": "seu ... seu: whether ... or → sīve"
     },
     {
       "word": "patria",
@@ -7187,7 +7305,8 @@
     {
       "word": "iugum",
       "meanings": [
-        "yoke; ridge",
+        "yoke",
+        "ridge",
         " chain of hills"
       ],
       "frequency": 335,
@@ -7199,7 +7318,8 @@
       "word": "votum",
       "meanings": [
         "solemn promise",
-        " vow; hope"
+        " vow",
+        "hope"
       ],
       "frequency": 334,
       "partOfSpeech": "Noun: 2nd Declension",
@@ -7230,7 +7350,8 @@
     {
       "word": "copia",
       "meanings": [
-        "abundance; (pl.) troops"
+        "abundance",
+        "troops"
       ],
       "frequency": 331,
       "partOfSpeech": "Noun: 1st Declension",
@@ -7242,7 +7363,7 @@
       "meanings": [
         "use",
         " consume",
-        " employ (+ abl.)"
+        " employ"
       ],
       "frequency": 330,
       "partOfSpeech": "Verb: Deponent",
@@ -7327,12 +7448,13 @@
     {
       "word": "orbis",
       "meanings": [
-        "circle; orbis terrārum: world"
+        "circle"
       ],
       "frequency": 322,
       "partOfSpeech": "Noun: 3rd Declension",
       "inflection": "orbis -is m.",
-      "semanticGroup": "Geography"
+      "semanticGroup": "Geography",
+      "examples": "orbis terrārum: world"
     },
     {
       "word": "consul",
@@ -7358,7 +7480,7 @@
       "word": "recipio",
       "meanings": [
         "take back",
-        " receive; sē recipere",
+        " receive",
         " betake oneself",
         " go"
       ],
@@ -7382,8 +7504,9 @@
       "word": "princeps",
       "meanings": [
         "first",
-        " chief; (as subst.) leader",
-        " person in charge"
+        " chief",
+        "leader",
+        "person in charge"
       ],
       "frequency": 317,
       "partOfSpeech": "Adjective: 3rd Declension",
@@ -7393,7 +7516,8 @@
     {
       "word": "invenio",
       "meanings": [
-        "find; discover"
+        "find",
+        "discover"
       ],
       "frequency": 316,
       "partOfSpeech": "Verb: 4th Conjugation",
@@ -7445,10 +7569,13 @@
     {
       "word": "quantus",
       "meanings": [
-        "(interr.) how great? (rel.) of what size",
+        "how great?",
+        "of what size",
         " amount",
-        " etc. (as subst.) what amount? (rel.) which amount; quantī",
-        " at what price? (rel.) at which price"
+        "what amount?",
+        "which amount",
+        " at what price?",
+        "at which price"
       ],
       "frequency": 311,
       "partOfSpeech": "Pronoun",
@@ -7512,7 +7639,9 @@
     {
       "word": "quo",
       "meanings": [
-        "for which reason; to or in what place; to what end",
+        "for which reason",
+        "to or in what place",
+        "to what end",
         " for what purpose?"
       ],
       "frequency": 305,
@@ -7524,7 +7653,8 @@
       "word": "cedo",
       "meanings": [
         "go",
-        " move; yield"
+        " move",
+        "yield"
       ],
       "frequency": 304,
       "partOfSpeech": "Verb: 3rd Conjugation -ō",
@@ -7674,7 +7804,8 @@
       "word": "honor",
       "meanings": [
         "honor",
-        " glory; office",
+        " glory",
+        "office",
         " post"
       ],
       "frequency": 290,
@@ -7823,8 +7954,10 @@
       "word": "munus",
       "meanings": [
         "gift",
-        " offering; duty",
-        " obligation; (pl.) gladiatorial show"
+        " offering",
+        "duty",
+        " obligation",
+        "gladiatorial show"
       ],
       "frequency": 276,
       "partOfSpeech": "Noun: 3rd Declension",
@@ -7878,7 +8011,7 @@
       "word": "contra",
       "meanings": [
         "against",
-        " opposite (adv. and prep. +acc.)"
+        " opposite"
       ],
       "frequency": 271,
       "partOfSpeech": "Preposition",
@@ -7993,12 +8126,13 @@
     {
       "word": "dexter",
       "meanings": [
-        "right; dextera -ae f.: right hand"
+        "right"
       ],
       "frequency": 260,
       "partOfSpeech": "Adjective: 1st and 2nd Declension",
       "inflection": "dexter -tra -trum",
-      "semanticGroup": "Place"
+      "semanticGroup": "Place",
+      "examples": "dextera -ae f.: right hand"
     },
     {
       "word": "tot",
@@ -8099,7 +8233,8 @@
     {
       "word": "cogo",
       "meanings": [
-        "drive together; compel"
+        "drive together",
+        "compel"
       ],
       "frequency": 250,
       "partOfSpeech": "Verb: 3rd Conjugation -ō",
@@ -8194,7 +8329,8 @@
       "word": "dominus",
       "meanings": [
         "household master",
-        " lord; mistress"
+        " lord",
+        "mistress"
       ],
       "frequency": 241,
       "partOfSpeech": "Noun: 2nd Declension",
@@ -8238,7 +8374,7 @@
       "word": "gero",
       "meanings": [
         "bear",
-        " manage; bellum gerere",
+        " manage",
         " wage war"
       ],
       "frequency": 237,
@@ -8281,7 +8417,8 @@
     {
       "word": "puella",
       "meanings": [
-        "girl; girl-friend"
+        "girl",
+        "girl-friend"
       ],
       "frequency": 233,
       "partOfSpeech": "Noun: 1st Declension",
@@ -8323,12 +8460,13 @@
     {
       "word": "liber",
       "meanings": [
-        "free; līberī (m. pl.): freeborn children"
+        "free"
       ],
       "frequency": 229,
       "partOfSpeech": "Adjective: 1st and 2nd Declension",
       "inflection": "līber lībera līberum",
-      "semanticGroup": "Justice"
+      "semanticGroup": "Justice",
+      "examples": "līberī (m. pl.): freeborn children"
     },
     {
       "word": "iaceo",
@@ -8374,9 +8512,7 @@
     {
       "word": "castrum",
       "meanings": [
-        "fortress",
-        " (regularly plural",
-        " castra camp)"
+        "fortress"
       ],
       "frequency": 224,
       "partOfSpeech": "Noun: 2nd Declension",
@@ -8398,12 +8534,13 @@
       "word": "ferus",
       "meanings": [
         "wild",
-        " fierce; fera -ae f.: wild animal"
+        " fierce"
       ],
       "frequency": 222,
       "partOfSpeech": "Adjective: 1st and 2nd Declension",
       "inflection": "ferus -a -um",
-      "semanticGroup": "Animals/Plants"
+      "semanticGroup": "Animals/Plants",
+      "examples": "fera -ae f.: wild animal"
     },
     {
       "word": "duo",
@@ -8429,12 +8566,13 @@
     {
       "word": "amo",
       "meanings": [
-        "to love; amāns -ntis m./f.: lover"
+        "to love"
       ],
       "frequency": 219,
       "partOfSpeech": "Verb: 1st Conjugation",
       "inflection": "amō -āre",
-      "semanticGroup": "Love"
+      "semanticGroup": "Love",
+      "examples": "amāns -ntis m./f.: lover"
     },
     {
       "word": "coniunx",
@@ -8451,7 +8589,8 @@
     {
       "word": "consilium",
       "meanings": [
-        "plan; council",
+        "plan",
+        "council",
         " group of advisors"
       ],
       "frequency": 217,
@@ -8581,7 +8720,7 @@
       "word": "apud",
       "meanings": [
         "near",
-        " in the presence of (+acc.)"
+        " in the presence of"
       ],
       "frequency": 205,
       "partOfSpeech": "Preposition",
@@ -8656,7 +8795,8 @@
     {
       "word": "amicus",
       "meanings": [
-        "friendly; (as subst.) friend"
+        "friendly",
+        "friend"
       ],
       "frequency": 198,
       "partOfSpeech": "Adjective: 1st and 2nd Declension",
@@ -8732,7 +8872,8 @@
     {
       "word": "puer",
       "meanings": [
-        "boy; slave"
+        "boy",
+        "slave"
       ],
       "frequency": 191,
       "partOfSpeech": "Noun: 2nd Declension",
@@ -8753,8 +8894,9 @@
       "word": "prope",
       "meanings": [
         "near",
-        " next; (comp.) propior",
-        " (superl.) proximus; (adv.) prope",
+        " next",
+        "propior",
+        "prope",
         " nearly",
         " almost"
       ],
@@ -8843,7 +8985,8 @@
       "word": "mos",
       "meanings": [
         "custom",
-        " habit; (pl.) character"
+        " habit",
+        "character"
       ],
       "frequency": 181,
       "partOfSpeech": "Noun: 3rd Declension",
@@ -8863,9 +9006,7 @@
     {
       "word": "nemo",
       "meanings": [
-        "no one (gen. nūllīus",
-        " dat. nūllī",
-        " abl. nūllō or nūllā → nūllus -a -um)"
+        "no one"
       ],
       "frequency": 179,
       "partOfSpeech": "Pronoun",
@@ -8908,7 +9049,7 @@
     {
       "word": "licet",
       "meanings": [
-        "it is permitted (+ dat. + infin.)"
+        "it is permitted"
       ],
       "frequency": 175,
       "partOfSpeech": "Verb: Impersonal",
@@ -8949,7 +9090,8 @@
     {
       "word": "refero",
       "meanings": [
-        "bring back; report"
+        "bring back",
+        "report"
       ],
       "frequency": 171,
       "partOfSpeech": "Verb: Irregular",
@@ -9024,7 +9166,7 @@
     {
       "word": "post",
       "meanings": [
-        "after (adv. and prep. +acc.)"
+        "after"
       ],
       "frequency": 164,
       "partOfSpeech": "Preposition",
@@ -9034,7 +9176,7 @@
     {
       "word": "inquam",
       "meanings": [
-        "say (used with direct speech)"
+        "say"
       ],
       "frequency": 163,
       "partOfSpeech": "Verb: Irregular",
@@ -9066,8 +9208,8 @@
       "word": "paro",
       "meanings": [
         "prepare",
-        " acquire; parātus -a -um",
-        " ready"
+        "acquire",
+        "ready"
       ],
       "frequency": 160,
       "partOfSpeech": "Verb: 1st Conjugation",
@@ -9078,7 +9220,8 @@
       "word": "altus",
       "meanings": [
         "high",
-        " lofty; deep"
+        " lofty",
+        "deep"
       ],
       "frequency": 159,
       "partOfSpeech": "Adjective: 1st and 2nd Declension",
@@ -9098,7 +9241,8 @@
     {
       "word": "fatum",
       "meanings": [
-        "fate; death"
+        "fate",
+        "death"
       ],
       "frequency": 157,
       "partOfSpeech": "Noun: 2nd Declension",
@@ -9152,14 +9296,15 @@
       "word": "modo",
       "meanings": [
         "just",
-        " just now; modo ... modo: now ... now",
+        " just now",
         " at one moment ... at another",
         " sometimes ... sometimes"
       ],
       "frequency": 152,
       "partOfSpeech": "Adverb",
       "inflection": "modo",
-      "semanticGroup": "Time"
+      "semanticGroup": "Time",
+      "examples": "modo ... modo: now ... now"
     },
     {
       "word": "ignis",
@@ -9271,12 +9416,14 @@
       "word": "vel",
       "meanings": [
         "or else",
-        " or; even; vel ... vel: either … or"
+        " or",
+        "even"
       ],
       "frequency": 141,
       "partOfSpeech": "Conjunction",
       "inflection": "vel",
-      "semanticGroup": "Conjunctions/Adverbs"
+      "semanticGroup": "Conjunctions/Adverbs",
+      "examples": "vel ... vel: either … or"
     },
     {
       "word": "gravis",
@@ -9354,13 +9501,14 @@
     {
       "word": "duco",
       "meanings": [
-        "lead; uxōrem dūcere",
+        "lead",
         " marry"
       ],
       "frequency": 133,
       "partOfSpeech": "Verb: 3rd Conjugation -ō",
       "inflection": "dūcō dūcere dūxī ductum",
-      "semanticGroup": "Verbs of Compelling/Directing"
+      "semanticGroup": "Verbs of Compelling/Directing",
+      "examples":"uxōrem dūcere"
     },
     {
       "word": "quia",
@@ -9385,9 +9533,7 @@
     {
       "word": "vos",
       "meanings": [
-        "you (pl.); (gen.) vestrum/vestrī",
-        " (dat./abl.) vōbīs",
-        " (acc.) vōs"
+        "you"
       ],
       "frequency": 130,
       "partOfSpeech": "Adjective: 1st and 2nd Declension",
@@ -9410,7 +9556,7 @@
       "meanings": [
         "for",
         " on behalf of",
-        " in proportion to (+abl.)"
+        " in proportion to"
       ],
       "frequency": 128,
       "partOfSpeech": "Preposition",
@@ -9516,7 +9662,7 @@
       "word": "sub",
       "meanings": [
         "under",
-        " close to (+acc. or abl.)"
+        " close to"
       ],
       "frequency": 118,
       "partOfSpeech": "Preposition",
@@ -9547,8 +9693,7 @@
     {
       "word": "vis",
       "meanings": [
-        "force; (acc.) vim",
-        " (abl.) vī; (pl.) vīrēs",
+        "force",
         " strength"
       ],
       "frequency": 115,
@@ -9582,7 +9727,7 @@
       "word": "ante",
       "meanings": [
         "before",
-        " in front of (adv. and prep. + acc.)"
+        " in front of"
       ],
       "frequency": 112,
       "partOfSpeech": "Preposition",
@@ -9635,7 +9780,7 @@
       "word": "causa",
       "meanings": [
         "cause",
-        " reason; causā + preceding genitive",
+        " reason",
         " for the sake of"
       ],
       "frequency": 107,
@@ -9658,8 +9803,8 @@
       "word": "tantus",
       "meanings": [
         "so great",
-        " so much; (as pronoun) such a quantity",
-        " so much; tantī",
+        "such a quantity",
+        " so much",
         " at such a price",
         " of such worth"
       ],
@@ -9671,7 +9816,7 @@
     {
       "word": "sine",
       "meanings": [
-        "without (+ abl.)"
+        "without"
       ],
       "frequency": 104,
       "partOfSpeech": "Preposition",
@@ -9681,7 +9826,9 @@
     {
       "word": "dum",
       "meanings": [
-        "while (+ indic.); until (+ subj.); provided that (+ subj.)"
+        "while",
+        "until",
+        "provided that"
       ],
       "frequency": 103,
       "partOfSpeech": "Conjunction",
@@ -9692,7 +9839,8 @@
       "word": "pono",
       "meanings": [
         "put",
-        " place; put aside"
+        " place",
+        "put aside"
       ],
       "frequency": 102,
       "partOfSpeech": "Verb: 3rd Conjugation -ō",
@@ -9776,12 +9924,13 @@
     {
       "word": "an",
       "meanings": [
-        "or (in questions); utrum ... an: whether ... or"
+        "or"
       ],
       "frequency": 94,
       "partOfSpeech": "Conjunction",
       "inflection": "an",
-      "semanticGroup": "Conjunctions/Adverbs"
+      "semanticGroup": "Conjunctions/Adverbs",
+      "examples": "utrum ... an: whether ... or"
     },
     {
       "word": "hostis",
@@ -9911,33 +10060,36 @@
       "word": "iste",
       "meanings": [
         "that",
-        " that of yours; adv. istīc or istūc: over there; istinc: from over there"
+        " that of yours"
       ],
       "frequency": 81,
       "partOfSpeech": "Pronoun",
       "inflection": "iste ista istud",
-      "semanticGroup": "Pronouns/Interrogatives"
+      "semanticGroup": "Pronouns/Interrogatives",
+      "examples": "adv. istīc or istūc: over there; istinc: from over there"
     },
     {
       "word": "hic",
       "meanings": [
-        "here; hinc: from here"
+        "here"
       ],
       "frequency": 80,
       "partOfSpeech": "Adverb",
       "inflection": "hīc",
-      "semanticGroup": "Place"
+      "semanticGroup": "Place",
+      "examples": "hinc: from here"
     },
     {
       "word": "sic",
       "meanings": [
         "in this manner",
-        " thus; sīc ... ut: in the same way as"
+        " thus"
       ],
       "frequency": 79,
       "partOfSpeech": "Adverb",
       "inflection": "sīc",
-      "semanticGroup": "Conjunctions/Adverbs"
+      "semanticGroup": "Conjunctions/Adverbs",
+      "examples": "sīc ... ut: in the same way as"
     },
     {
       "word": "totus",
@@ -9954,14 +10106,14 @@
       "word": "aliquis",
       "meanings": [
         "some",
-        " any; si quis",
-        " si quid: anyone who",
+        " any",
         " anything that"
       ],
       "frequency": 77,
       "partOfSpeech": "Pronoun",
       "inflection": "aliquis -quae -quod",
-      "semanticGroup": "Pronouns/Interrogatives"
+      "semanticGroup": "Pronouns/Interrogatives",
+      "examples": "si quid: anyone who"
     },
     {
       "word": "quoque",
@@ -10010,8 +10162,8 @@
       "word": "neque",
       "meanings": [
         "and not",
-        " nor; neque ... neque",
-        " neither ... nor; → nec"
+        " nor",
+        " neither ... nor"
       ],
       "frequency": 72,
       "partOfSpeech": "Conjunction",
@@ -10097,7 +10249,8 @@
       "word": "inter",
       "meanings": [
         "between",
-        " among; during (+ acc.)"
+        " among",
+        "during"
       ],
       "frequency": 64,
       "partOfSpeech": "Preposition",
@@ -10117,7 +10270,8 @@
     {
       "word": "locus",
       "meanings": [
-        "place; loca (n. pl.) region"
+        "place",
+        "region"
       ],
       "frequency": 62,
       "partOfSpeech": "Noun: 2nd Declension",
@@ -10191,7 +10345,8 @@
     {
       "word": "nihil",
       "meanings": [
-        "nothing; not at all"
+        "nothing",
+        "not at all"
       ],
       "frequency": 55,
       "partOfSpeech": "Noun: Indeclinable",
@@ -10264,7 +10419,8 @@
     {
       "word": "manus",
       "meanings": [
-        "hand; band of men"
+        "hand",
+        "band of men"
       ],
       "frequency": 48,
       "partOfSpeech": "Noun: 4th Declension",
@@ -10287,7 +10443,7 @@
       "meanings": [
         "down from",
         " about",
-        " concerning (+ abl.)"
+        " concerning"
       ],
       "frequency": 46,
       "partOfSpeech": "Preposition",
@@ -10320,7 +10476,7 @@
       "word": "multus",
       "meanings": [
         "much",
-        " many; multō",
+        " many",
         " by far"
       ],
       "frequency": 43,
@@ -10331,7 +10487,8 @@
     {
       "word": "deus",
       "meanings": [
-        "god; goddess"
+        "god",
+        "goddess"
       ],
       "frequency": 42,
       "partOfSpeech": "Noun: 2nd Declension",
@@ -10373,12 +10530,12 @@
     {
       "word": "res",
       "meanings": [
-        "thing (rēs pūblica",
-        " commonwealth; rēs familiāris",
+        "thing",
+        " commonwealth",
         " family property",
-        " estate; rēs mīlitāris",
-        " art of war; rēs novae",
-        " revolution)"
+        " estate",
+        " art of war",
+        " revolution"
       ],
       "frequency": 38,
       "partOfSpeech": "Noun: 5th Declension",
@@ -10389,20 +10546,22 @@
       "word": "alius",
       "meanings": [
         "other",
-        " another; ālias: at another time"
+        " another"
       ],
       "frequency": 37,
       "partOfSpeech": "Adjective: 1st and 2nd Declension",
       "inflection": "alius -a -ud",
-      "semanticGroup": "Pronouns/Interrogatives"
+      "semanticGroup": "Pronouns/Interrogatives",
+      "example": "ālias: at another time"
     },
     {
       "word": "ac",
       "meanings": [
         "and in addition",
         " and also",
-        " and; (after comparatives) than; simul ac",
-        " as soon as; → atque"
+        " and",
+        "than",
+        " as soon as"
       ],
       "frequency": 36,
       "partOfSpeech": "Conjunction",
@@ -10414,8 +10573,9 @@
       "meanings": [
         "and in addition",
         " and also",
-        " and; (after comparatives) than; simul atque",
-        " as soon as; → ac"
+        " and",
+        "than",
+        "as soon as"
       ],
       "frequency": 35,
       "partOfSpeech": "Conjunction",
@@ -10425,7 +10585,8 @@
     {
       "word": "iam",
       "meanings": [
-        "now; already"
+        "now",
+        "already"
       ],
       "frequency": 34,
       "partOfSpeech": "Adverb",
@@ -10435,8 +10596,8 @@
     {
       "word": "dico",
       "meanings": [
-        "say; causam dīcere",
-        " plead a case; diem dīcere",
+        "say",
+        " plead a case",
         " appoint a day"
       ],
       "frequency": 33,
@@ -10468,7 +10629,7 @@
     {
       "word": "per",
       "meanings": [
-        "through (+acc.)"
+        "through"
       ],
       "frequency": 30,
       "partOfSpeech": "Preposition",
@@ -10478,7 +10639,8 @@
     {
       "word": "quam",
       "meanings": [
-        "how?; (after comparative) than"
+        "how?",
+        "than"
       ],
       "frequency": 29,
       "partOfSpeech": "Adverb",
@@ -10511,7 +10673,7 @@
       "word": "ex",
       "meanings": [
         "out of",
-        " from (+ abl.)"
+        " from"
       ],
       "frequency": 26,
       "partOfSpeech": "Preposition",
@@ -10562,7 +10724,7 @@
       "word": "ab",
       "meanings": [
         "from",
-        " by (+abl.)"
+        " by"
       ],
       "frequency": 21,
       "partOfSpeech": "Preposition",
@@ -10585,8 +10747,8 @@
       "word": "nec",
       "meanings": [
         "and not",
-        " nor; nec ... nec",
-        " neither ... nor; → neque"
+        " nor",
+        " neither ... nor"
       ],
       "frequency": 19,
       "partOfSpeech": "Conjunction",
@@ -10629,9 +10791,12 @@
     {
       "word": "ut",
       "meanings": [
-        "as (+ indic.); so that",
-        " with the result that (+ subj.); (in questions) in what manner",
-        " how; (exclam.) to what an extent! how!"
+        "as",
+        "so that",
+        "with the result that",
+        "in what manner",
+        " how",
+        "to what an extent!"
       ],
       "frequency": 15,
       "partOfSpeech": "Adverb",
@@ -10643,7 +10808,7 @@
       "meanings": [
         "to",
         " up to",
-        " towards (+acc.)"
+        " towards"
       ],
       "frequency": 14,
       "partOfSpeech": "Preposition",
@@ -10687,9 +10852,10 @@
     {
       "word": "cum",
       "meanings": [
-        "with (prep. + abl.); when",
+        "with",
+        "when",
         " since",
-        " although (conjunction + subj.)"
+        " although"
       ],
       "frequency": 10,
       "partOfSpeech": "Preposition",
@@ -10741,8 +10907,9 @@
       "word": "in",
       "meanings": [
         "in",
-        " on (+ abl.); into",
-        " onto (+ acc)"
+        " on",
+        "into",
+        "onto"
       ],
       "frequency": 5,
       "partOfSpeech": "Preposition",
@@ -10754,7 +10921,7 @@
     {
       "word": "que",
       "meanings": [
-        "and (postpositive enclitic)"
+        "and"
       ],
       "frequency": 4,
       "partOfSpeech": "Conjunction",
@@ -10777,8 +10944,7 @@
       "word": "sum",
       "meanings": [
         "be",
-        " exist; fut. infin. often = fore",
-        " impf. subj. often = forem for essem"
+        " exist"
       ],
       "frequency": 2,
       "partOfSpeech": "Verb: Irregular",
