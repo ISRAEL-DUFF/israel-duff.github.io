@@ -50,18 +50,6 @@ export function generateSelectFromJson(jsonData) {
   //   document.body.appendChild(select);
   }
 
-  export function colorGenerator(availableColors) {
-    // let colors = [...availableColors].slice().sort(() => Math.random() - 0.5);
-    let colors = [...availableColors];
-    fisherYateShuffle(colors);
-
-    let nextColorFn = function() {
-        return colors.pop();
-    }
-
-    return nextColorFn
-}
-
   export function generateSelectBox(params) {
     console.log(params)
     if(!params.containerId) {
@@ -372,4 +360,53 @@ export function filterAndSortByFrequency(words, minFrequency, maxFrequency) {
       })
       .filter(entry => entry.frequency >= minFrequency && entry.frequency <= maxFrequency)
       .sort((a, b) => b.frequency - a.frequency); // Sort in descending order
+}
+
+
+// ***** COLOR MANIPULATION ********
+function shadeColor(color, percent) {
+  // Convert hex to RGB
+  let r = parseInt(color.slice(1, 3), 16);
+  let g = parseInt(color.slice(3, 5), 16);
+  let b = parseInt(color.slice(5, 7), 16);
+
+  // Adjust the RGB values
+  r = Math.round(Math.min(255, Math.max(0, r + (r * percent))));
+  g = Math.round(Math.min(255, Math.max(0, g + (g * percent))));
+  b = Math.round(Math.min(255, Math.max(0, b + (b * percent))));
+
+  // Convert back to hex
+  return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).padStart(6, '0')}`;
+}
+
+// [0.2, 0.4, -0.2, -0.4, -0.6] , NEGATIVE values means darker shades
+export function generateColorShades(color, listOfShadePercents = [0.3, -0.2]) {
+  const colors = [];
+
+  for(const p of listOfShadePercents) {
+    colors.push(shadeColor(color, p));
+  }
+
+  return colors;
+}
+
+export function colorGenerator(availableColors) {
+  // let colors = [...availableColors];
+  let colors = [];
+
+  for(const c of availableColors) {
+    colors.push(c)
+    colors.push(...generateColorShades(c))
+  }
+
+  fisherYateShuffle(colors);
+  console.log({
+    colors
+  })
+
+  let nextColorFn = function() {
+      return colors.pop();
+  }
+
+  return nextColorFn
 }

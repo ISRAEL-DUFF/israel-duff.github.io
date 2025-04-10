@@ -1,27 +1,30 @@
 // import { getRandomWords } from '../util.js';
-import { generateSelectBox, getRandomWords, colorGenerator, addContextMenu, localDatabase, audioSystem, gameLanguage } from '../util.js'; // Adjust the path as necessary
+import { generateSelectBox, getRandomWords, colorGenerator, addContextMenu, localDatabase, audioSystem, gameLanguage, generateColorShades } from '../util.js'; // Adjust the path as necessary
 
 
 let words = [];
 let currentIndex = 0;
 let selectedPair = [];
 // let availableColors = ["#ffcc80", "#90caf9", "#a5d6a7", "#f48fb1", "#ffab91", "#b39ddb", "#64b5f6", "#ff8a65", "#ba68c8", "#ffd54f", "#4db6ac"];  // Unique colors
-let availableColors = [
-    "#b39ddb", "#64b5f6", "#ba68c8", "#ffd54f", 
-    "#4db6ac", "#ff6f61", "#88b04b", "#f7cac9", 
-    "#92a8d1", "#955251", "#b9cbb8", "#e4b5b5", "#f6e58d", 
-    "#badc58", "#ffbe76", "#ff9ff3", "#ff5733", "#33ff57", "#3357ff", "#f1c40f", "#8e44ad",
-    "#ff9f00", "#00bfff", "#ff1493", "#32cd32",
+let availableColors = ["#45B39D", "#227bc4", "#8d0b96", "#f48fb1", "#ffab91", "#b39ddb", "#64b5f6", "#ff8a65", "#ba68c8", "#d1058d", "#4db6ac"];  // Unique colors
+// let availableColors = [
+//     "#b39ddb", "#64b5f6", "#ba68c8", "#ffd54f", 
+//     "#4db6ac", "#ff6f61", "#88b04b", "#f7cac9", 
+//     "#92a8d1", "#b9cbb8", "#e4b5b5", "#f6e58d", 
+//     "#badc58", "#ffbe76", "#ff9ff3", "#ff5733", "#33ff57", "#f1c40f", "#8e44ad",
+//     "#ff9f00", "#00bfff", "#ff1493",
 
-    // "#6ab04c", "#f9ca24", "#e84118", "#4a69bd", "#00b894",
-    // "#dcdde1", "#2c3e50", "#e84393", "#00a8ff", "#fbc531",
+//     // "#6ab04c", "#f9ca24", "#e84118", "#4a69bd", "#00b894",
+//     // "#dcdde1", "#2c3e50", "#e84393", "#00a8ff", "#fbc531",
 
-  "#ffcc80", "#90caf9", "#a5d6a7", "#f48fb1", "#ffab91",
-  '#F1948A', // Light Coral – gentle contrast
-  '#D2B4DE',  // Lavender Mist – soft and elegant
-  '#45B39D', // Soft Aqua – calming and readable
-  '#00C9A7', // Mint Green – vibrant and fresh
-]
+//     // "#955251", "#3357ff", "#32cd32",
+
+//   "#ffcc80", "#90caf9", "#a5d6a7", "#f48fb1", "#ffab91",
+//   '#F1948A', // Light Coral – gentle contrast
+//   '#D2B4DE',  // Lavender Mist – soft and elegant
+//   '#45B39D', // Soft Aqua – calming and readable
+//   // '#00C9A7', // Mint Green – vibrant and fresh
+// ]
 let timer;
 let timeRemaining = 30;
 let gameStarted = false;
@@ -250,20 +253,24 @@ document.getElementById('deleteSnapshot').addEventListener('click', function() {
 // function previewColors() {
 //     const colorContainer = document.getElementById('color-preview-container');
 //     colorContainer.innerHTML = ''; // Clear previous content
-
-//     availableColors.forEach(color => {
+//     const fn = color => {
 //         const colorDiv = document.createElement('div');
 //         colorDiv.style.backgroundColor = color;
 //         colorDiv.style.width = '100px'; // Set width
 //         colorDiv.style.height = '100px'; // Set height
 //         colorDiv.style.display = 'inline-block'; // Display inline
 //         colorDiv.style.margin = '5px'; // Add some margin
-//         colorDiv.style.border = '1px solid #000'; // Optional border
-//         colorDiv.innerHTML = `<p>${color}</p>`
+//         // colorDiv.style.border = '1px solid #000'; // Optional border
+//         colorDiv.innerHTML = `<p style='color:white'>${color}</p>`
 //         colorContainer.appendChild(colorDiv);
+//     }
+//     availableColors.forEach(mainColor => {
+//         fn(mainColor);
+//         const shades = generateColorShades(mainColor);
+//         shades.forEach(fn)
 //     });
 // }
-// // Call the function to preview colors
+// Call the function to preview colors
 // previewColors();
 
 function populateSnapshotList() {
