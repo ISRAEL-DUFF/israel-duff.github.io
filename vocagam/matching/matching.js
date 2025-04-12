@@ -1,5 +1,5 @@
 // import { getRandomWords } from '../util.js';
-import { generateSelectBox, getRandomWords, colorGenerator, addContextMenu, localDatabase, audioSystem, gameLanguage, generateColorShades } from '../util.js'; // Adjust the path as necessary
+import { generateSelectBox, getRandomWords, colorGenerator, addContextMenu, localDatabase, audioSystem, gameLanguage, fisherYateShuffle } from '../util.js'; // Adjust the path as necessary
 
 
 let words = [];
@@ -47,6 +47,9 @@ let nextCardColor = null;
 let colorMap = {};
 let wordCount = 6;
 let matchCounts = 0;
+let demoPlayerState = {
+    isPlaying: false,
+}
 
 function populateWords() {
     if(isSnapshot) {
@@ -182,15 +185,38 @@ function updateProgress(value, max) {
 
 // Add event listener to the restart button
 document.getElementById("restartButton").addEventListener("click", () => {
+    if(demoPlayerState.isPlaying) {
+        return;
+    }
     resetGame();
     generateMatchingGame();
 });
 document.getElementById("refreshButton").addEventListener("click", () => {
+    if(demoPlayerState.isPlaying) {
+        return;
+    }
     console.log('Reshuffle...') 
     shuffleGame()
 });
+document.getElementById("playButton").addEventListener("click", () => {
+    const playbtn = document.getElementById('playIcon');
+    if(demoPlayerState.isPlaying) {
+        playbtn.classList.remove('fa-stop');    
+        playbtn.classList.add('fa-play');
+    } else {
+        playbtn.classList.remove('fa-play');
+        playbtn.classList.add('fa-stop');    
+    }
+    resetGame();
+    // generateMatchingGame();
+    rhythmMode()
+});
 // JavaScript to handle popup menu
 document.getElementById('popupButton').addEventListener('click', function() {
+    if(demoPlayerState.isPlaying) {
+        return;
+    }
+    
     const popupMenu = document.getElementById('popupMenu');
     popupMenu.style.display = 'flex'; // Show the popup
     setTimeout(() => {
@@ -410,6 +436,12 @@ function generateMatchingGame() {
         let div = document.createElement('div');
         div.className = 'match-item';
 
+        if(!item.isMeaning) {
+            div.classList.add('lword')
+        } else {
+            div.classList.add('lmeaning')
+        }
+
         if(!item.isMeaning && currentLanguage === 'latin') {
             div.style.border = '2.0px solid rgba(167, 35, 2, 0.98)'// '1px solid #b51f9e'
             div.classList.add('bib-lit-text')
@@ -581,4 +613,90 @@ function checkForSavedProgress() {
         document.getElementById('timer').textContent = timeRemaining;
         // startTimedChallenge();
     }
+}
+
+
+//******** RHYTHM MODE */
+function rhythmMode(options) {
+    const words = document.getElementsByClassName('lword');
+    const meanings = document.getElementsByClassName('lmeaning');
+
+    let wordMeaningList = {};
+    let wordList = []
+    Array.from(words).forEach((w) => {
+        wordMeaningList[w.dataset.value] = {
+            wordDiv: w,
+            word: w.dataset.value
+        }
+    })
+    Array.from(meanings).forEach((m) => {
+        const w = wordMeaningList[m.dataset.value];
+        w.meaningDiv = m;
+        w.meaning = m.textContent;
+        wordList.push(w)
+    });
+
+    fisherYateShuffle(wordList);
+
+
+    function resetRhythm(divElement) {
+        divElement.classList.remove("matched");
+        divElement.classList.remove("selected");
+        divElement.style = undefined;
+        matchCounts = 0;
+    }
+
+    function resetDemo() {
+        wordList.forEach((w) => {
+            resetRhythm(w.wordDiv)
+            resetRhythm(w.meaningDiv)
+        });
+        clearAnimatedFlashcard();
+    }
+
+    function endDemo() {
+        clearInterval(demoPlayerState.timer1);
+        clearTimeout(demoPlayerState.timer2);
+        resetDemo();
+        matchCounts = 0;
+        selectedPair = [];
+        updateProgress(0, words.length);
+        demoPlayerState.isPlaying = false;
+        const playbtn = document.getElementById('playIcon');
+        if(playbtn) {
+            playbtn.classList.remove('fa-stop');    
+            playbtn.classList.add('fa-play');
+        }
+    }
+
+    if(demoPlayerState.isPlaying) {
+        endDemo()
+        return;
+    }
+
+    function demoPlayer (wordList, repeat = 2) {
+        let i = 0;
+        demoPlayerState.timer1 = setInterval(()=>{
+            if(i < wordList.length && repeat > 0) {
+                const item = wordList[i];
+                item.wordDiv.click();
+    
+                demoPlayerState.timer2 = setTimeout(()=> {
+                    item.meaningDiv.click();
+                    i += 1;
+                }, 3000)
+            } else if(repeat > 0) {
+                i = 0;
+                repeat -= 1;
+                resetDemo();
+            } else {
+                endDemo();
+                // clearInterval(demoPlayerState.timer1);
+                // demoPlayerState.isPlaying = false;
+            }
+        }, 6000)
+    }
+
+    demoPlayer(wordList);
+    demoPlayerState.isPlaying = true;
 }

@@ -3,7 +3,7 @@ export function gameLanguage() {
   return lang;
 }
 
-function fisherYateShuffle(array) {
+export function fisherYateShuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1)); // Random index from 0 to i
       [array[i], array[j]] = [array[j], array[i]]; // Swap elements
@@ -350,7 +350,7 @@ export function audioSystem(filePath) {
   }
 }
 
-// Sort dynamic data sort by word frequency
+//********* Sort dynamic data sort by word frequency ***************/
 export function filterAndSortByFrequency(words, minFrequency, maxFrequency) {
   return words
       .map(entry => {

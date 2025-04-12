@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greek Vocabulary Matching Game</title>
+    <title>Vocabulary Matching Game</title>
     <link rel="stylesheet" href="../css/style.css">
     <!-- <link rel="stylesheet" href="../css/menu.css"> -->
     <link rel="stylesheet" href="../css/ui-components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <!-- <button class="btn-nav btn-nav-back" onclick="window.history.back()">
@@ -27,11 +28,30 @@
     </div>
 
     <div class = "footer-container">
-        <div class="button-container bottom-menue">
+        <!-- <div class="button-container bottom-menue">
             <button id="restartButton" class="game-button btn btn-warning">Restart</button>
             <button id="refreshButton" class="game-button btn btn-primary2">Shuffle</button>
-            <!-- <button id="timeChallenge" class="game-button btn btn-primary2">Timer</button> -->
+            <button id="playButton" class="game-button btn btn-primary2">Play</button>
             <button id="popupButton" class="game-button btn btn-primary">Actions</button>
+        </div> -->
+        <div class = "footer-container">
+            <nav class="button-container bottom-menue">
+                <button id="restartButton" class="game-button btn btn-warning">
+                    <i class="fas fa-redo"></i>
+                </button>
+                <button id="refreshButton" class="game-button btn btn-primary2">
+                    <i class="fas fa-sync"></i>
+                </button>
+                <button id="playButton" class="game-button btn btn-primary2">
+                    <i id = 'playIcon' class="fas fa-play"></i>
+                </button>
+                <!-- <button id="timeChallenge" class="game-button btn btn-primary2">
+                    <i class="fas fa-clock"></i> Timer
+                </button> -->
+                <button id="popupButton" class="game-button btn btn-primary">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
         </div>
     </div>
 
