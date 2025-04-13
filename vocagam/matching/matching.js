@@ -617,6 +617,29 @@ function checkForSavedProgress() {
 
 
 //******** RHYTHM MODE */
+function startCountdown(options) {
+    const { countDownTime } = options;
+
+    // Get modal elements
+    const modal = document.getElementById("countdownModal");
+    const countdownDisplay = document.getElementById("countdown");
+    const closeModal = document.querySelector(".close");
+
+    let timeLeft = countDownTime ?? 3; // Countdown time in seconds
+    countdownDisplay.textContent = timeLeft;
+    modal.style.display = "flex"; // Show the modal
+
+    const countdownInterval = setInterval(() => {
+        countdownDisplay.textContent = timeLeft;
+        timeLeft--;
+
+        if (timeLeft < 0) {
+            clearInterval(countdownInterval);
+            modal.style.display = "none"; // Hide the modal
+            // startGame(); // Call the function to start the game
+        }
+    }, 1000);
+}
 function rhythmMode(options) {
     const words = document.getElementsByClassName('lword');
     const meanings = document.getElementsByClassName('lmeaning');
@@ -674,8 +697,13 @@ function rhythmMode(options) {
         return;
     }
 
+    let speedInsec = 6000;
+    let userMatchTimer = 5000;
+    let userMatch = false;
+
     function demoPlayer (wordList, repeat = 2) {
         let i = 0;
+        let playerChoosed = false;
         demoPlayerState.timer1 = setInterval(()=>{
             if(i < wordList.length && repeat > 0) {
                 const item = wordList[i];
@@ -685,16 +713,52 @@ function rhythmMode(options) {
                     item.meaningDiv.click();
                     i += 1;
                 }, 3000)
+            } else if(i < wordList.length && userMatch) {
+                if(!playerChoosed && i !== 0) {
+                    return; // allow user choose
+                }
+
+                const item = wordList[i];
+                item.wordDiv.click();
+                playerChoosed = false;
+    
+                demoPlayerState.timer2 = setTimeout(()=> {
+                    // Play wrong sound here
+                    wrongSound.play();
+                    // item.meaningDiv.classList.add("unmatch-item");
+                    // item.wordDiv.classList.add("unmatch-item");
+                    playerChoosed = true;
+                    i += 1;
+                }, userMatchTimer)
             } else if(repeat > 0) {
                 i = 0;
                 repeat -= 1;
                 resetDemo();
+                startCountdown({
+                    countDownTime: (speedInsec / 1000) - 1
+                })
             } else {
                 endDemo();
-                // clearInterval(demoPlayerState.timer1);
-                // demoPlayerState.isPlaying = false;
             }
-        }, 6000)
+            
+            // else if(repeat == 0) {
+            //     i = 0;
+            //     resetDemo();
+            //     userMatch = true;
+
+            //     // get ready for user to match
+            //     startCountdown({
+            //         countDownTime: (speedInsec / 1000) - 1
+            //     })
+            // } else {
+            //     endDemo();
+            // }
+        }, speedInsec);
+
+        startCountdown({
+            countDownTime: (speedInsec / 1000) - 1
+        })
+
     }
 
     demoPlayer(wordList);
