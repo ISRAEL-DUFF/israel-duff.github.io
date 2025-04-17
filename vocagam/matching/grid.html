@@ -89,11 +89,22 @@
 
             <hr/>
 
+            <p>Demo Player setting</p>
+            <div class="input-container">
+                <label for="demoRepeatInput">repeat:</label>
+                <input type="number" id="demoRepeatInput" value="2" min="1" max="20">
+            </div>
+            <div class="input-container">
+                <label for="demoSpeedInput">speed:</label>
+                <input type="number" id="demoSpeedInput" value="6" min="1" max="20">
+            </div>
 
-            <p>Choose an activity:</p>
+            <hr/>
+
+            <!-- <p>Choose an activity:</p>
             <ul>
                 <li> Timed Challeng </li>
-            </ul>
+            </ul> -->
         </div>
     </div>
 
@@ -101,7 +112,7 @@
     <div id="countdownModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h4>Demo Starting In...</h4>
+            <h4 id = 'countDownModalText'></h4>
             <div id="countdown">0</div>
         </div>
     </div>

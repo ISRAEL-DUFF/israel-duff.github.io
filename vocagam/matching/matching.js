@@ -1,5 +1,6 @@
 // import { getRandomWords } from '../util.js';
 import { generateSelectBox, getRandomWords, colorGenerator, addContextMenu, localDatabase, audioSystem, gameLanguage, fisherYateShuffle } from '../util.js'; // Adjust the path as necessary
+import Observable from '../libs/duff-observable/index.js';
 
 
 let words = [];
@@ -35,7 +36,7 @@ let databaseSnapshot = localDatabase(`${currentLanguage}_snapshots`)
 let savedWords = `${currentLanguage}_difficult_words`; // TODO: change for each language
 let rightSound = audioSystem('../sounds/rightanswer.mp3')
 let wrongSound = audioSystem('../sounds/wronganswer.mp3')
-let gameEndSound = audioSystem('../sounds/match-finished.mp3')
+let gameEndSound = audioSystem('../sounds/match-finished.mp3', 0.3)
 let gameLayout = 'random' // or 'ordered' | 'random'
 
 // Global variable to hold the selected value
@@ -49,7 +50,10 @@ let wordCount = 6;
 let matchCounts = 0;
 let demoPlayerState = {
     isPlaying: false,
+    speedInsec: 6000,
+    repeat: 2
 }
+let eventEmitter = new Observable()
 
 function populateWords() {
     if(isSnapshot) {
@@ -273,6 +277,21 @@ document.getElementById('deleteSnapshot').addEventListener('click', function() {
         }, 2000)
     } else {
         document.getElementById('saveFeedback').innerText = 'Please choose.';
+    }
+});
+
+document.getElementById("demoSpeedInput").addEventListener("input", (event) => {
+    const newSpeed = parseInt(event.target.value, 10);
+    if (!isNaN(newSpeed) && newSpeed > 0) {
+        demoPlayerState.speedInsec = newSpeed * 1000; // Update the wordCount variable
+        console.log("Updated demo speed to:", demoPlayerState.speedInsec);
+    }
+});
+document.getElementById("demoRepeatInput").addEventListener("input", (event) => {
+    const newRepeat = parseInt(event.target.value, 10);
+    if (!isNaN(newRepeat) && newRepeat > 0) {
+        demoPlayerState.repeat = newRepeat; // Update the wordCount variable
+        console.log("Updated demo repeat to:", demoPlayerState.repeat);
     }
 });
 
@@ -509,13 +528,20 @@ function selectMatch(element, wordData) {
             type: wordData.isMeaning ? 'meaning' : 'word',
             word: wordData.word,
             color: 'white'
-        })
+        });
+
+        eventEmitter.emit('select:first')
     }
 
     if (selectedPair.length === 2) {
         let [first, second] = selectedPair;
 
         if (first.dataset.value === second.dataset.value) {
+            eventEmitter.emit('select:matched', {
+                first,
+                second
+            })
+
             rightSound.play()
             matchCounts += 1;
             let assignedColor = colorMap[first.dataset.value];
@@ -546,6 +572,7 @@ function selectMatch(element, wordData) {
                 gameEndSound.play();
             }
         } else {
+            eventEmitter.emit('select:unmatch')
             wrongSound.play()
             selectedPair.forEach(el => {
                 first.classList.remove("selected");
@@ -618,17 +645,22 @@ function checkForSavedProgress() {
 
 //******** RHYTHM MODE */
 function startCountdown(options) {
-    const { countDownTime } = options;
+    const { countDownTime, displayText } = options;
 
     // Get modal elements
     const modal = document.getElementById("countdownModal");
     const countdownDisplay = document.getElementById("countdown");
+
+    const countdownDisplayText = document.getElementById("countDownModalText");
+    countdownDisplayText.textContent = displayText ?? '';
+
     const closeModal = document.querySelector(".close");
 
     let timeLeft = countDownTime ?? 3; // Countdown time in seconds
     countdownDisplay.textContent = timeLeft;
     modal.style.display = "flex"; // Show the modal
 
+    eventEmitter.emit('countdown:start')
     const countdownInterval = setInterval(() => {
         countdownDisplay.textContent = timeLeft;
         timeLeft--;
@@ -636,7 +668,7 @@ function startCountdown(options) {
         if (timeLeft < 0) {
             clearInterval(countdownInterval);
             modal.style.display = "none"; // Hide the modal
-            // startGame(); // Call the function to start the game
+            eventEmitter.emit('countdown:end')
         }
     }, 1000);
 }
@@ -677,20 +709,25 @@ function rhythmMode(options) {
         clearAnimatedFlashcard();
     }
 
-    function endDemo() {
+    function endDemo(quit = false) {
         clearInterval(demoPlayerState.timer1);
         clearTimeout(demoPlayerState.timer2);
         resetDemo();
         matchCounts = 0;
         selectedPair = [];
         updateProgress(0, words.length);
-        demoPlayerState.isPlaying = false;
-        const playbtn = document.getElementById('playIcon');
-        if(playbtn) {
-            playbtn.classList.remove('fa-stop');    
-            playbtn.classList.add('fa-play');
+
+        if(quit) {
+            demoPlayerState.isPlaying = false;
+            const playbtn = document.getElementById('playIcon');
+            if(playbtn) {
+                playbtn.classList.remove('fa-stop');    
+                playbtn.classList.add('fa-play');
+            }
         }
     }
+
+
 
     if(demoPlayerState.isPlaying) {
         endDemo()
@@ -698,69 +735,80 @@ function rhythmMode(options) {
     }
 
     let speedInsec = 6000;
-    let userMatchTimer = 5000;
-    let userMatch = false;
+
+    // let userMatchTimer = 5000;
+    // let userMatch = false;
+
+    
+    // eventEmitter.on('select:first', (data) => {
+    //     console.log('Selected:', data)
+    // })
+
+    // eventEmitter.on('select:matched', (data) => {
+    //     console.log(data)
+    // })
+    // eventEmitter.on('select:unmatched', (data) => {
+    //     console.log(data)
+    // })
+
 
     function demoPlayer (wordList, repeat = 2) {
         let i = 0;
-        let playerChoosed = false;
+        let meaningChoosed = true;
+
+        eventEmitter.once('countdown:start', (data) => {
+            meaningChoosed = false;
+        })
+        eventEmitter.once('countdown:end', (data) => {
+            meaningChoosed = true;
+        })
+
         demoPlayerState.timer1 = setInterval(()=>{
+            if(!meaningChoosed) {
+                return;
+            }
+
             if(i < wordList.length && repeat > 0) {
                 const item = wordList[i];
                 item.wordDiv.click();
+                meaningChoosed = false;
     
                 demoPlayerState.timer2 = setTimeout(()=> {
                     item.meaningDiv.click();
                     i += 1;
-                }, 3000)
-            } else if(i < wordList.length && userMatch) {
-                if(!playerChoosed && i !== 0) {
-                    return; // allow user choose
-                }
-
-                const item = wordList[i];
-                item.wordDiv.click();
-                playerChoosed = false;
-    
-                demoPlayerState.timer2 = setTimeout(()=> {
-                    // Play wrong sound here
-                    wrongSound.play();
-                    // item.meaningDiv.classList.add("unmatch-item");
-                    // item.wordDiv.classList.add("unmatch-item");
-                    playerChoosed = true;
-                    i += 1;
-                }, userMatchTimer)
+                    meaningChoosed = true;
+                }, demoPlayerState.speedInsec)
             } else if(repeat > 0) {
                 i = 0;
                 repeat -= 1;
                 resetDemo();
-                startCountdown({
-                    countDownTime: (speedInsec / 1000) - 1
-                })
-            } else {
-                endDemo();
-            }
-            
-            // else if(repeat == 0) {
-            //     i = 0;
-            //     resetDemo();
-            //     userMatch = true;
 
-            //     // get ready for user to match
-            //     startCountdown({
-            //         countDownTime: (speedInsec / 1000) - 1
-            //     })
-            // } else {
-            //     endDemo();
-            // }
-        }, speedInsec);
+                if(repeat > 0) {
+                    eventEmitter.once('countdown:start', () => {
+                        meaningChoosed = false;
+                    })
+                    eventEmitter.once('countdown:end', () => {
+                        meaningChoosed = true;
+                    })
+                    startCountdown({
+                        countDownTime: (speedInsec / 1000) - 1,
+                        displayText: `Ready for next ...`
+                    })
+                } else {
+                    endDemo(true);
+                }
+            } else {
+                endDemo(true);
+            }
+        }, demoPlayerState.speedInsec);
 
         startCountdown({
-            countDownTime: (speedInsec / 1000) - 1
+            countDownTime: (speedInsec / 1000) - 1,
+            displayText: `Demo in ...`
         })
 
     }
 
-    demoPlayer(wordList);
+    demoPlayer(wordList, demoPlayerState.repeat);
     demoPlayerState.isPlaying = true;
 }

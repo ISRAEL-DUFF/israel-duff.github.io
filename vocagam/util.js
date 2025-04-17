@@ -323,7 +323,7 @@ export function localDatabase(storageKey) {
 }
 
 //****** sound  ********/
-export function audioSystem(filePath) {
+export function audioSystem(filePath, volume = 1) {
   const audio = new Audio(filePath);
 
   function stopSound() {
@@ -334,12 +334,20 @@ export function audioSystem(filePath) {
     return !audio.paused && audio.currentTime > 0 && audio.currentTime < audio.duration;
   }
 
-  function playSound() {
+  function playSound(option = {}) {
+    const { playVolume } = option;
+
     if (isSoundPlaying()) {
       console.log("The audio is currently playing... stopping...");
       stopSound()
     }
 
+    audio.volume = playVolume ?? volume; // Set the volume before playing
+    console.log({
+      filePath,
+      volume,
+      playVolume: audio.volume
+    })
     audio.play()
   }
 
