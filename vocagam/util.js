@@ -48,9 +48,9 @@ export function generateSelectFromJson(jsonData) {
   
     // Append the select element to the body or any other container
   //   document.body.appendChild(select);
-  }
+}
 
-  export function generateSelectBox(params) {
+export function generateSelectBox(params) {
     console.log(params)
     if(!params.containerId) {
       console.error('No select container Id provided');
@@ -368,6 +368,73 @@ export function filterAndSortByFrequency(words, minFrequency, maxFrequency) {
       })
       .filter(entry => entry.frequency >= minFrequency && entry.frequency <= maxFrequency)
       .sort((a, b) => b.frequency - a.frequency); // Sort in descending order
+}
+
+export function filterDuplicates(data) {
+  const seenWords = new Set();
+  const filteredData = {};
+
+  let totalWordCount = 0;
+  let filteredWordCount = 0;
+
+  const wordAndGroupName = {};
+
+  // Helper function to merge meanings arrays
+  function mergeMeanings(existingMeanings, newMeanings) {
+    const merged = [...new Set([...existingMeanings, ...newMeanings])];
+    return merged;
+  }
+
+  for(const groupName of Object.keys(data)) {
+    filteredData[groupName] = [];
+
+    for(const word of data[groupName]) {
+      totalWordCount += 1;
+
+      if (!seenWords.has(word.word)) {
+        seenWords.add(word.word);
+        filteredData[groupName].push(word);
+
+        wordAndGroupName[word.word] = groupName;
+
+        filteredWordCount += 1;
+      } else {
+        // Update the meanings in the existing word
+        const prevGroupName = wordAndGroupName[word.word];
+        const existingWord = filteredData[prevGroupName].find(w => w.word === word.word);
+
+        if(existingWord) {
+          existingWord.meanings = mergeMeanings(existingWord.meanings, word.meanings);
+        }
+      }
+    }
+  }
+
+  console.log({
+    totalWordCount,
+    filteredWordCount
+  })
+
+  return filteredData;
+}
+
+export function filterDuplicatesAndDownload(fileUrl) {
+  fetch(fileUrl)
+    .then(response => response.json())
+    .then(data => {
+        // 2. Filter the data
+        const filteredData = filterDuplicates(data);
+        
+        // 3. Create a download link for the filtered data
+        const blob = new Blob([JSON.stringify(filteredData, null, 4)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'data1_filtered.json';
+        a.click();
+        URL.revokeObjectURL(url);
+    })
+    .catch(error => console.error('Error:', error));
 }
 
 

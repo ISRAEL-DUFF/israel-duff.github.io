@@ -97,6 +97,7 @@ function showAnimatedFlashcard(data) {
     }
 
     // <p style="color:#20e3fd"><span class = 'bib-lit-text greek-size'>${data.word["word"]} | ${data.word["root"] ? "root: " + data.word["root"] : '' }</span> (${data.word["partOfSpeech"]})</p>
+    // <p>${data.word["transliteration"] ? '( ' + data.word["transliteration"] + ' )' : ''}</p>
     const flashC = {
         greek: {
             all:  `
@@ -122,10 +123,9 @@ function showAnimatedFlashcard(data) {
         hebrew: {
             all:  `
             <div class="flashcard-animation">
-                <p style="color:#20e3fd"><span class = 'bib-lit-text hebrew hebrew-size'>${data.word["word"]}</span></p>
-                <p>${data.word["transliteration"] ? '( ' + data.word["transliteration"] + ' )' : ''}</p>
-                <p>${data.word["partOfSpeech"]}</p>
+                <p style="color:#20e3fd"><span class = 'bib-lit-text hebrew hebrew-size'>${data.word["word"]}</span> | <span style=''>${data.word["transliteration"] ? ' ' + data.word["transliteration"] + ' ' : ''}</span></p>
                 <p style='background-color: ${data.color}; color: white; border-radius: 10px; padding: 5px; font-size: 1.0em; font-weight: bold;'>${meaning}</p>
+                <p>${data.word["partOfSpeech"]}</p>
             </div>
             `,
             meaning: `

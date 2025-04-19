@@ -1,0 +1,550 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greek Prepositions Quiz</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .quiz-box {
+      background: #1e1e1e;
+      padding: 2rem;
+      border-radius: 1rem;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+    }
+    button {
+      background: #333;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      margin: 0.5rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #555;
+    }
+    .correct {
+      background-color: #2e7d32 !important;
+    }
+    .wrong {
+      background-color: #c62828 !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-box">
+    <h2 id="question"></h2>
+    <div id="options"></div>
+    <p id="hint"></p>
+    <button onclick="nextQuestion()">Next</button>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        question: "What does 'ἐν' mean when used with the dative case?",
+        options: ["in", "into", "from", "after"],
+        answer: "in",
+        hint: "Often used to indicate location or presence"
+      },
+      {
+        question: "What does 'εἰς' mean with the accusative case?",
+        options: ["on", "into", "beside", "against"],
+        answer: "into",
+        hint: "Movement toward a place"
+      },
+      {
+        question: "What does 'ἐκ' (or 'ἐξ') mean with the genitive case?",
+        options: ["to", "from", "with", "about"],
+        answer: "from",
+        hint: "Indicates source or origin"
+      },
+      {
+        question: "What does 'μετά' mean with the genitive case?",
+        options: ["with", "after", "from", "toward"],
+        answer: "with",
+        hint: "Denotes accompaniment"
+      },
+      {
+        question: "What does 'μετά' mean with the accusative case?",
+        options: ["toward", "with", "after", "under"],
+        answer: "after",
+        hint: "Sequential or temporal usage"
+      }
+    ];
+
+    let current = 0;
+
+    function renderQuestion() {
+      const q = questions[current];
+      document.getElementById("question").innerText = q.question;
+      document.getElementById("hint").innerText = "Hint: " + q.hint;
+      const optionsContainer = document.getElementById("options");
+      optionsContainer.innerHTML = "";
+
+      q.options.forEach(option => {
+        const btn = document.createElement("button");
+        btn.innerText = option;
+        btn.onclick = () => {
+          if (option === q.answer) {
+            btn.classList.add("correct");
+          } else {
+            btn.classList.add("wrong");
+          }
+          Array.from(optionsContainer.children).forEach(b => b.disabled = true);
+        };
+        optionsContainer.appendChild(btn);
+      });
+    }
+
+    function nextQuestion() {
+      current = (current + 1) % questions.length;
+      renderQuestion();
+    }
+
+    renderQuestion();
+  </script>
+</body>
+</html> -->
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greek Prepositions Quiz</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .quiz-box {
+      background: #1e1e1e;
+      padding: 2rem;
+      border-radius: 1rem;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+    }
+    button {
+      background: #333;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      margin: 0.5rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #555;
+    }
+    .correct {
+      background-color: #2e7d32 !important;
+    }
+    .wrong {
+      background-color: #c62828 !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-box">
+    <h2 id="question"></h2>
+    <div id="options"></div>
+    <p id="hint"></p>
+    <button onclick="nextQuestion()">Next</button>
+  </div>
+
+  <script>
+    const prepositionData = [
+      { preposition: "ἐν", cases: { dative: ["in", "on", "among"] }, notes: "" },
+      { preposition: "εἰς", cases: { accusative: ["into", "to", "toward"] }, notes: "" },
+      { preposition: "ἐκ / ἐξ", cases: { genitive: ["out of", "from"] }, notes: "ἐξ used before vowels" },
+      { preposition: "ἀπό", cases: { genitive: ["from", "away from"] }, notes: "" },
+      { preposition: "πρός", cases: { genitive: ["from"], dative: ["near", "at"], accusative: ["to", "toward", "against"] }, notes: "" },
+      { preposition: "διά", cases: { genitive: ["through"], accusative: ["because of", "on account of"] }, notes: "" },
+      { preposition: "μετά", cases: { genitive: ["with"], accusative: ["after"] }, notes: "" },
+      { preposition: "περί", cases: { genitive: ["concerning", "about"], accusative: ["around"] }, notes: "" },
+      { preposition: "ὑπέρ", cases: { genitive: ["for", "on behalf of"], accusative: ["above", "beyond"] }, notes: "" },
+      { preposition: "ὑπό", cases: { genitive: ["by (agent)"], accusative: ["under"] }, notes: "" },
+      { preposition: "ἐπί", cases: { genitive: ["on", "upon", "in the time of"], dative: ["on", "over", "for the purpose of"], accusative: ["onto", "toward", "against"] }, notes: "" },
+      { preposition: "παρά", cases: { genitive: ["from (beside)"], dative: ["beside", "at the house of"], accusative: ["to the side of", "along", "past"] }, notes: "" },
+      { preposition: "ἀντί", cases: { genitive: ["instead of", "in place of", "for"] }, notes: "" },
+      { preposition: "κατά", cases: { genitive: ["down from", "against"], accusative: ["according to", "throughout"] }, notes: "" },
+      { preposition: "σύν", cases: { dative: ["with", "together with"] }, notes: "" },
+      { preposition: "ἄνευ", cases: { genitive: ["without"] }, notes: "" },
+      { preposition: "ἐναντίον", cases: { genitive: ["before", "in the presence of", "against"] }, notes: "" },
+      { preposition: "ἕνεκα / ἕνεκεν", cases: { genitive: ["because of", "on account of"] }, notes: "postpositive (usually comes after the noun)" }
+    ];
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    function generateQuestions(data) {
+      const allOptions = Array.from(new Set(data.flatMap(entry => Object.values(entry.cases).flat())));
+      const questions = [];
+      data.forEach(entry => {
+        for (const caseName in entry.cases) {
+          const correct = entry.cases[caseName][0];
+          const distractors = shuffle(allOptions.filter(o => o !== correct)).slice(0, 3);
+          const options = shuffle([correct, ...distractors]);
+          questions.push({
+            question: `What does '${entry.preposition}' mean with the ${caseName} case?`,
+            options,
+            answer: correct,
+            hint: entry.notes || "No hint"
+          });
+        }
+      });
+      return shuffle(questions);
+    }
+
+    const questions = generateQuestions(prepositionData);
+    let current = 0;
+
+    function renderQuestion() {
+      const q = questions[current];
+      document.getElementById("question").innerText = q.question;
+      document.getElementById("hint").innerText = "Hint: " + q.hint;
+      const optionsContainer = document.getElementById("options");
+      optionsContainer.innerHTML = "";
+
+      q.options.forEach(option => {
+        const btn = document.createElement("button");
+        btn.innerText = option;
+        btn.onclick = () => {
+          if (option === q.answer) {
+            btn.classList.add("correct");
+          } else {
+            btn.classList.add("wrong");
+          }
+          Array.from(optionsContainer.children).forEach(b => b.disabled = true);
+        };
+        optionsContainer.appendChild(btn);
+      });
+    }
+
+    function nextQuestion() {
+      current = (current + 1) % questions.length;
+      renderQuestion();
+    }
+
+    renderQuestion();
+  </script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greek Prepositions Module</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 1rem;
+    }
+    .box {
+      background: #1e1e1e;
+      padding: 2rem;
+      border-radius: 1rem;
+      width: 90%;
+      height: 90vh;
+      overflow-y: scroll;
+      max-width: 600px;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+    button {
+      background: #333;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      margin: 0.5rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    button:hover {
+      background: #555;
+      transform: scale(1.05);
+    }
+    .hidden {
+      display: none;
+    }
+    /* table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 0.5rem;
+      text-align: left;
+    }
+    th {
+      background-color: #2c2c2c;
+    } */
+
+    /* table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      overflow-x: auto;
+      display: block;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 0.5rem;
+      text-align: left;
+      min-width: 100px;
+    }
+    th {
+      background-color: #2c2c2c;
+      position: sticky;
+      top: 0;
+    }
+    @media (max-width: 600px) {
+      th, td {
+        padding: 0.25rem;
+        font-size: 0.9rem;
+      }
+      .box {
+        padding: 1rem;
+      }
+    } */
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      overflow-x: auto;
+      display: block;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 0.5rem;
+      text-align: left;
+      min-width: 100px;
+    }
+    th {
+      background-color: #2c2c2c;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    @media (max-width: 600px) {
+      th, td {
+        padding: 0.25rem;
+        font-size: 0.9rem;
+      }
+      .box {
+        padding: 1rem;
+      }
+    }
+
+    .correct {
+      background-color: #2e7d32 !important;
+      animation: bounce 0.3s;
+    }
+    .wrong {
+      background-color: #c62828 !important;
+      animation: shake 0.3s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounce {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+    }
+  </style>
+
+  <script type = 'module'>
+    import { audioSystem } from '../util.js'
+    // let correctSound = audioSystem('../sounds/rightanswer.mp3')
+    // let wrongSound = audioSystem('../sounds/wronganswer.mp3')
+    window.correctSound = audioSystem('../sounds/rightanswer.mp3')
+    window.wrongSound = audioSystem('../sounds/wronganswer.mp3', 0.3)
+  </script>
+</head>
+<body>
+  <div class="box">
+    <h2>Greek Prepositions Learning Module</h2>
+    <div id="learn-mode"></div>
+    <div id="quiz-mode" class="hidden">
+      <h3 id="question"></h3>
+      <div id="options"></div>
+      <p id="hint"></p>
+      <button onclick="nextQuestion()">Next</button>
+    </div>
+    <button onclick="toggleMode()" id="toggle-btn">Switch to Quiz Mode</button>
+  </div>
+
+  <!-- <audio id="correct-sound" src="https://cdn.jsdelivr.net/gh/mahemoff/audiofx/correct.mp3"></audio>
+  <audio id="wrong-sound" src="https://cdn.jsdelivr.net/gh/mahemoff/audiofx/wrong.mp3"></audio> -->
+
+  <script>
+    const prepositionData = [
+  { preposition: "ἐν", cases: { dative: ["in", "on", "among"] }, notes: "" },
+  { preposition: "εἰς", cases: { accusative: ["into", "to", "toward"] }, notes: "" },
+  { preposition: "ἐκ / ἐξ", cases: { genitive: ["out of", "from"] }, notes: "ἐξ used before vowels" },
+  { preposition: "ἀπό", cases: { genitive: ["from", "away from"] }, notes: "" },
+  { preposition: "πρός", cases: { genitive: ["from"], dative: ["near", "at"], accusative: ["to", "toward", "against"] }, notes: "" },
+  { preposition: "διά", cases: { genitive: ["through"], accusative: ["because of", "on account of"] }, notes: "" },
+  { preposition: "μετά", cases: { genitive: ["with"], accusative: ["after"] }, notes: "" },
+  { preposition: "περί", cases: { genitive: ["concerning", "about"], accusative: ["around"] }, notes: "" },
+  { preposition: "ὑπέρ", cases: { genitive: ["for", "on behalf of"], accusative: ["above", "beyond"] }, notes: "" },
+  { preposition: "ὑπό", cases: { genitive: ["by (agent)"], accusative: ["under"] }, notes: "" },
+  { preposition: "ἐπί", cases: { genitive: ["on", "upon", "in the time of"], dative: ["on", "over", "for the purpose of"], accusative: ["onto", "toward", "against"] }, notes: "" },
+  { preposition: "παρά", cases: { genitive: ["from (beside)"], dative: ["beside", "at the house of"], accusative: ["to the side of", "along", "past"] }, notes: "" },
+  { preposition: "ἀντί", cases: { genitive: ["instead of", "in place of", "for"] }, notes: "" },
+  { preposition: "κατά", cases: { genitive: ["down from", "against"], accusative: ["according to", "throughout"] }, notes: "" },
+  { preposition: "σύν", cases: { dative: ["with", "together with"] }, notes: "" },
+  { preposition: "ἄνευ", cases: { genitive: ["without"] }, notes: "" },
+  { preposition: "ἐναντίον", cases: { genitive: ["before", "in the presence of", "against"] }, notes: "" },
+  { preposition: "ἕνεκα / ἕνεκεν", cases: { genitive: ["because of", "on account of"] }, notes: "postpositive (usually comes after the noun)" }
+];
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    function generateQuestions(data) {
+      const allOptions = Array.from(new Set(data.flatMap(entry => Object.values(entry.cases).flat())));
+      const questions = [];
+      data.forEach(entry => {
+        for (const caseName in entry.cases) {
+          const correct = entry.cases[caseName][0];
+          const distractors = shuffle(allOptions.filter(o => o !== correct)).slice(0, 3);
+          const options = shuffle([correct, ...distractors]);
+          questions.push({
+            question: `What does '${entry.preposition}' mean with the ${caseName} case?`,
+            options,
+            answer: correct,
+            hint: entry.notes || "No hint"
+          });
+        }
+      });
+      return shuffle(questions);
+    }
+
+    const questions = generateQuestions(prepositionData);
+    let current = 0;
+
+    function renderQuestion() {
+      const q = questions[current];
+      document.getElementById("question").innerText = q.question;
+      document.getElementById("hint").innerText = "Hint: " + q.hint;
+      const optionsContainer = document.getElementById("options");
+      optionsContainer.innerHTML = "";
+
+      q.options.forEach(option => {
+        const btn = document.createElement("button");
+        btn.innerText = option;
+        btn.onclick = () => {
+          if (option === q.answer) {
+            btn.classList.add("correct");
+            correctSound.play();
+          } else {
+            btn.classList.add("wrong");
+            wrongSound.play();
+            document.getElementById("hint").innerText = "Correct Answer: " + q.answer;
+          }
+          Array.from(optionsContainer.children).forEach(b => b.disabled = true);
+        };
+        optionsContainer.appendChild(btn);
+      });
+    }
+
+    function nextQuestion() {
+      current = (current + 1) % questions.length;
+      renderQuestion();
+    }
+
+    function toggleMode() {
+      const learn = document.getElementById("learn-mode");
+      const quiz = document.getElementById("quiz-mode");
+      const btn = document.getElementById("toggle-btn");
+      if (learn.classList.contains("hidden")) {
+        learn.classList.remove("hidden");
+        quiz.classList.add("hidden");
+        btn.innerText = "Switch to Quiz Mode";
+      } else {
+        learn.classList.add("hidden");
+        quiz.classList.remove("hidden");
+        btn.innerText = "Switch to Learn Mode";
+        renderQuestion();
+      }
+    }
+
+    function renderLearnMode() {
+      const container = document.getElementById("learn-mode");
+      let html = '<table><tr><th>Preposition</th><th>Case</th><th>Meaning(s)</th><th>Notes</th></tr>';
+      prepositionData.forEach(entry => {
+        for (const caseName in entry.cases) {
+          html += `<tr><td>${entry.preposition}</td><td>${caseName}</td><td>${entry.cases[caseName].join(", ")}</td><td>${entry.notes}</td></tr>`;
+        }
+      });
+      html += '</table>';
+      container.innerHTML = html;
+    }
+
+    renderLearnMode();
+  </script>
+</body>
+</html>
+
+

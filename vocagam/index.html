@@ -31,13 +31,21 @@
             Matching Game
         </div>
 
+        <div class="game-option" onclick="visitGame('quiz')">
+            Quiz Game
+        </div>
+
         <div class="game-option" onclick="visitGame('speedrecall')">
             Speed Recall Game
         </div>
+
+        <!-- <a href="./ipa.html">IPA</a> -->
+        <!-- <a href="./quiz">Preposition Quiz</a> -->
+
     </div>
 
     <script type = 'module'>
-        import { generateSelectBox } from './util.js'; // Adjust the path as necessary
+        import { generateSelectBox, filterDuplicatesAndDownload } from './util.js'; // Adjust the path as necessary
 
         function showInstallButton() {
             if (window.matchMedia('(display-mode: standalone)').matches) {
@@ -125,6 +133,20 @@
 
         setUpInstall()
         registerServiceWorker()
+
+        
+
+        // Unused functions
+        // function removeDuplicate() {
+        //     const button = document.createElement('button');
+        //     button.innerText = "Remove Duplicates"
+        //     button.onclick = () => {
+        //         filterDuplicatesAndDownload('word-bank/hebrew/pseudo_1000_hebrew_words_old_testament.json')
+        //     }
+        //     document.body.appendChild(button);
+        // }
+
+        // removeDuplicate()
 
     </script>
 

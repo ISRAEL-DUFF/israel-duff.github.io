@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ancient Greek Audio Tool</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #121212;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    input, select, button {
+      font-size: 1.2em;
+      margin: 0.5em;
+      padding: 0.5em;
+      border-radius: 8px;
+      border: none;
+    }
+    button {
+      background-color: #1e88e5;
+      color: white;
+      cursor: pointer;
+    }
+    audio {
+      margin-top: 1em;
+    }
+    #ipa {
+      margin-top: 1em;
+      font-size: 1.2em;
+      color: #90caf9;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ancient Greek Audio Tool</h1>
+  <input id="greekInput" placeholder="Enter Greek word (e.g. λόγος)" />
+  <select id="style">
+    <option value="koine">Koine</option>
+    <option value="attic">Attic</option>
+    <option value="erasmian">Erasmian</option>
+  </select>
+  <button onclick="generateAudio()">Speak</button>
+  <div id="ipa"></div>
+  <audio id="audio" controls style="display:none"></audio>
+  <a id="downloadLink" href="#" download="pronunciation.wav" style="display:none; color: #64b5f6; margin-top: 1em;">Download Audio</a>
+
+  <script>
+    async function generateAudio() {
+      const word = document.getElementById('greekInput').value;
+      const style = document.getElementById('style').value;
+      const ipaDiv = document.getElementById('ipa');
+      const audio = document.getElementById('audio');
+      const downloadLink = document.getElementById('downloadLink');
+
+      if (!word) return alert('Please enter a Greek word.');
+
+      const apiUrl = `http://localhost:3007/greek-pronounce?word=${encodeURIComponent(word)}&style=${style}`;
+
+      try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error("Failed to fetch audio");
+
+        const contentType = response.headers.get("Content-Type");
+
+        if (contentType === 'application/json') {
+          const data = await response.json();
+          ipaDiv.textContent = data.ipa || '(IPA unavailable)';
+        } else {
+          const blob = await response.blob();
+          const url = URL.createObjectURL(blob);
+
+          audio.src = url;
+          audio.style.display = 'block';
+          audio.play();
+
+          downloadLink.href = url;
+          downloadLink.style.display = 'inline';
+
+          // Fetch IPA from separate endpoint
+        //   const ipaResp = await fetch(`http://localhost:5000/ipa-lookup?word=${encodeURIComponent(word)}&style=${style}`);
+        // const ipaResp = await fetch(`http://localhost:5000/ipa-lookup/dynamic?word=${encodeURIComponent(word)}&style=${style}`);
+        const ipaResp = await fetch(`http://localhost:3007/ipa-lookup/dynamic?word=${encodeURIComponent(word)}&style=${style}`);
+        if (ipaResp.ok) {
+            const ipaJson = await ipaResp.json();
+            ipaDiv.textContent = ipaJson.ipa || '(IPA unavailable)';
+          } else {
+            ipaDiv.textContent = '(IPA unavailable)';
+          }
+        }
+      } catch (err) {
+        console.error(err);
+        alert("An error occurred while generating audio.");
+      }
+    }
+  </script>
+</body>
+</html>
