@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ancient Greek Audio Tool</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #121212;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    input, select, button {
+      font-size: 1.2em;
+      margin: 0.5em;
+      padding: 0.5em;
+      border-radius: 8px;
+      border: none;
+    }
+    button {
+      background-color: #1e88e5;
+      color: white;
+      cursor: pointer;
+    }
+    audio {
+      margin-top: 1em;
+    }
+    #ipa {
+      margin-top: 1em;
+      font-size: 1.2em;
+      color: #90caf9;
+    }
+
+
+    .modal1 {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow-y: scroll;
+      background-color: rgba(0,0,0,0.4);
+    }
+    .modal-content1 {
+      background-color: #1e1e1e;
+      margin: 15% auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 80%;
+      max-width: 500px;
+    }
+    .close1 {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .modal-link1 {
+      color: #64b5f6;
+      text-decoration: none;
+      margin-top: 10px;
+      display: inline-block;
+    }
+
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
+    }
+    .modal-content {
+      background-color: #1e1e1e;
+      margin: 0;
+      padding: 20px;
+      border-radius: 8px;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .close {
+      color: #aaa;
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 2;
+      background-color: rgba(30, 30, 30, 0.8);
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+    .modal-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      margin-top: 20px;
+    }
+
+
+    /* .grammar-info {
+      background-color: #2a2a2a;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: left;
+    }
+    .grammar-item {
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #1e1e1e;
+      border-radius: 4px;
+    }
+    .grammar-label {
+      color: #90caf9;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    .grammar-value {
+      color: #ffffff;
+    } */
+    .grammar-info {
+      background-color: #2a2a2a;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: left;
+    }
+    .grammar-form {
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: #1e1e1e;
+      border-radius: 8px;
+      border-left: 4px solid #1e88e5;
+    }
+    .grammar-item {
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #2a2a2a;
+      border-radius: 4px;
+    }
+    .grammar-label {
+      color: #90caf9;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    .grammar-value {
+      color: #ffffff;
+    }
+    .form-number {
+      color: #64b5f6;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ancient Greek Lexica Tool</h1>
+  <input id="greekInput" placeholder="Enter Greek word (e.g. λόγος)" />
+  <button onclick="getMorph()">Check word</button>
+  <div id="ipa"></div>
+  <!-- <a id="downloadLink" href="#" download="pronunciation.wav" style="display:none; color: #64b5f6; margin-top: 1em;">Download Audio</a> -->
+
+
+  <!-- Modal 1 -->
+  <div id="myModal1" class="modal1">
+    <div class="modal-content1">
+      <span class="close1">&times;</span>
+      <p>Check out more details about this word:</p>
+      <!-- <a id="modalLink1" class="modal-link1" href="#" target="_blank">Open in Perseus</a> -->
+      <a id="modalLink1" class="modal-link1" href="#" onclick="showLogeionModal()">Open in Logeion</a>
+
+
+      <!-- Grammar Info Display -->
+      <div id="grammarInfo" class="grammar-info" style="display: none;"></div>
+
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <iframe id="modalIframe" class="modal-iframe" src=""></iframe>
+    </div>
+  </div>
+
+  <script>
+    let morphResponseData = {};
+    function parsePerseusResponse(response) {
+        const body = response?.RDF?.Annotation?.Body;
+        if (!body) return [];
+    
+        const bodyList = Array.isArray(body) ? body : [body];
+        const rawOutput = bodyList.flatMap(bodyItem => {
+        const entry = bodyItem.rest?.entry;
+        const dict = entry?.dict || {};
+        const infls = Array.isArray(entry?.infl) ? entry.infl : [entry?.infl].filter(Boolean);
+    
+        const base = {
+            lemma: dict.hdwd?.["$"] || null,
+            partOfSpeech: dict.pofs?.["$"] || null
+        };
+    
+        return infls.map(infl => ({
+            ...base,
+            case: infl?.case?.["$"] || null,
+            gender: infl?.gend?.["$"] || null,
+            number: infl?.num?.["$"] || null,
+            tense: infl?.tense?.["$"] || null,
+            voice: infl?.voice?.["$"] || null,
+            mood: infl?.mood?.["$"] || null,
+            person: infl?.pers?.["$"] || null,
+            stem: infl?.term?.stem?.["$"] || null,
+            suffix: infl?.term?.suff?.["$"] || null,
+            morph: infl?.morph?.["$"] || null,
+            stemtype: infl?.stemtype?.["$"] || null,
+            derivtype: infl?.derivtype?.["$"] || null,
+            dialect: infl?.dial?.["$"] || null
+        }));
+        });
+
+        // remove null fields
+        return rawOutput.map((o) => {
+            let d = {}
+            for(const k of Object.keys(o)) {
+                if(o[k]) {
+                    d[k] = o[k]
+                }
+            }
+
+            return d;
+        })
+    }
+
+    // function displayGrammarInfo(data) {
+    //   const grammarInfo = document.getElementById('grammarInfo');
+    //   grammarInfo.style.display = 'block';
+      
+    //   // Clear previous content
+    //   grammarInfo.innerHTML = '';
+      
+    //   // Create a container for each grammatical item
+    //   const container = document.createElement('div');
+      
+    //   // Helper function to create a grammar item
+    //   const createGrammarItem = (label, value) => {
+    //     if (!value) return null;
+    //     const item = document.createElement('div');
+    //     item.className = 'grammar-item';
+    //     item.innerHTML = `
+    //       <span class="grammar-label">${label}:</span>
+    //       <span class="grammar-value">${value}</span>
+    //     `;
+    //     return item;
+    //   };
+
+    //   // Add each grammatical feature
+    //   const features = [
+    //     { label: 'Lemma', value: data.lemma },
+    //     { label: 'Part of Speech', value: data.partOfSpeech },
+    //     { label: 'Case', value: data.case },
+    //     { label: 'Gender', value: data.gender },
+    //     { label: 'Number', value: data.number },
+    //     { label: 'Tense', value: data.tense },
+    //     { label: 'Voice', value: data.voice },
+    //     { label: 'Mood', value: data.mood },
+    //     { label: 'Person', value: data.person },
+    //     { label: 'Stem', value: data.stem },
+    //     { label: 'Suffix', value: data.suffix },
+    //     { label: 'Morphology', value: data.morph },
+    //     { label: 'Stem Type', value: data.stemtype },
+    //     { label: 'Derivation Type', value: data.derivtype },
+    //     { label: 'Dialect', value: data.dialect }
+    //   ];
+
+    //   // Add only non-null features
+    //   features.forEach(feature => {
+    //     const item = createGrammarItem(feature.label, feature.value);
+    //     if (item) container.appendChild(item);
+    //   });
+
+    //   grammarInfo.appendChild(container);
+    // }
+
+    function displayGrammarInfo(dataArray) {
+      const grammarInfo = document.getElementById('grammarInfo');
+      grammarInfo.style.display = 'block';
+      
+      // Clear previous content
+      grammarInfo.innerHTML = '';
+      
+      // Helper function to create a grammar item
+      const createGrammarItem = (label, value) => {
+        if (!value) return null;
+        const item = document.createElement('div');
+        item.className = 'grammar-item';
+        item.innerHTML = `
+          <span class="grammar-label">${label}:</span>
+          <span class="grammar-value">${value}</span>
+        `;
+        return item;
+      };
+
+      // Process each form in the data array
+      dataArray.forEach((data, index) => {
+        // Create container for this form
+        const formContainer = document.createElement('div');
+        formContainer.className = 'grammar-form';
+        
+        // Add form number
+        const formNumber = document.createElement('div');
+        formNumber.className = 'form-number';
+        formNumber.textContent = `Form ${index + 1}`;
+        formContainer.appendChild(formNumber);
+        
+        // Add each grammatical feature
+        const features = [
+          { label: 'Lemma', value: data.lemma },
+          { label: 'Part of Speech', value: data.partOfSpeech },
+          { label: 'Case', value: data.case },
+          { label: 'Gender', value: data.gender },
+          { label: 'Number', value: data.number },
+          { label: 'Tense', value: data.tense },
+          { label: 'Voice', value: data.voice },
+          { label: 'Mood', value: data.mood },
+          { label: 'Person', value: data.person },
+          { label: 'Stem', value: data.stem },
+          { label: 'Suffix', value: data.suffix },
+          { label: 'Morphology', value: data.morph },
+          { label: 'Stem Type', value: data.stemtype },
+          { label: 'Derivation Type', value: data.derivtype },
+          { label: 'Dialect', value: data.dialect }
+        ];
+
+        // Add only non-null features
+        features.forEach(feature => {
+          const item = createGrammarItem(feature.label, feature.value);
+          if (item) formContainer.appendChild(item);
+        });
+
+        grammarInfo.appendChild(formContainer);
+      });
+    }
+
+    function showLogeionModal() {
+        // Show modal with iframe
+        const modal = document.getElementById("myModal");
+        const modalIframe = document.getElementById("modalIframe");
+        const closeBtn = document.getElementsByClassName("close")[0];
+
+        // modalIframe.src = `http://www.perseus.tufts.edu/hopper/morph?l=${encodeURIComponent(word)}&la=greek`;
+        modalIframe.src = `https://logeion.uchicago.edu/${encodeURIComponent(morphResponseData.morphData[0].lemma)}`
+        modal.style.display = "block";
+
+        // Close modal when clicking the X
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+            modalIframe.src = ""; // Clear the iframe source when closing
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                modalIframe.src = ""; // Clear the iframe source when closing
+            }
+        }
+    }
+
+    async function getMorph() {
+        const word = document.getElementById('greekInput').value;
+        // const word = req.query.word;
+        if (!word) {
+            throw new Error('Word cannot be empty')
+        }
+    
+        try {
+        const url = `https://services.perseids.org/bsp/morphologyservice/analysis/word?lang=grc&engine=morpheusgrc&word=${encodeURIComponent(word)}`;
+
+        const resRaw = await fetch(url);
+            if (!resRaw.ok) throw new Error("Failed to fetch morph");
+
+            const contentType = resRaw.headers.get("Content-Type");
+
+            let response = {};
+
+            if (contentType === 'application/json') {
+                response = await resRaw.json();
+            }
+
+            console.log(response)
+    
+        let parseResp = parsePerseusResponse(response);
+        const responseData = {
+            morphData: parseResp,
+            meanings:[]
+            // meanings: await getMeaning(parseResp[0].lemma)
+        }
+        morphResponseData= responseData
+
+        console.log(responseData)
+
+
+        // Show modal with link
+        const modal = document.getElementById("myModal1");
+        const modalLink = document.getElementById("modalLink1");
+        // modalLink.href = `http://www.perseus.tufts.edu/hopper/morph?l=${encodeURIComponent(word)}&la=greek`;
+        modal.style.display = "block";
+
+        // Close modal when clicking the X
+        const closeBtn = document.getElementsByClassName("close1")[0];
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // // Display the first result's grammatical information
+        // if (parseResp.length > 0) {
+        //   displayGrammarInfo(parseResp[0]);
+        // }
+
+        // Display all morphological forms
+        if (parseResp.length > 0) {
+          displayGrammarInfo(parseResp);
+        }
+
+        
+    
+        return responseData;
+        } catch (error) {
+            console.log(error)
+        }
+  }
+  </script>
+</body>
+</html>
