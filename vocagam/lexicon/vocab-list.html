@@ -358,8 +358,16 @@
         card.appendChild(head);
 
         const morph = word.morphData?.[0];
+        let morphText = `${morph.partOfSpeech}: ${morph.case} ${morph.number}, ${morph.gender}`;
         if (morph) {
-          const morphText = `${morph.partOfSpeech}, ${morph.case} ${morph.number}, ${morph.gender}`;
+          if(morph.partOfSpeech === 'verb' && morph.mood !== 'participle' && morph.mood !== 'infinitive') {
+            morphText = `${morph.partOfSpeech}: ${morph.person} ${morph.number}, ${morph.tense}, ${morph.voice}, ${morph.mood}`;
+          } else if(morph.partOfSpeech === 'verb' && morph.mood === 'infinitive') {
+            morphText = `${morph.partOfSpeech}: ${morph.tense}, ${morph.voice}, ${morph.mood}`;
+          } else if(morph.partOfSpeech === 'verb' && morph.mood === 'participle') {
+            morphText = `${morph.partOfSpeech}: ${morph.tense}, ${morph.voice}, ${morph.mood} (${morph.case}, ${morph.gender}, ${morph.number} )`;
+          }
+          
           const morphEl = document.createElement('div');
           morphEl.className = 'morph';
           morphEl.textContent = morphText;
@@ -458,6 +466,14 @@
         console.error(err);
       });
     }
+
+    // PING GLITCH EVERY MINUTE
+  setInterval(() => {
+    console.log('pinging backend...')
+    fetch("https://rumbling-quintessential-banjo.glitch.me/")
+      .then(res => console.log(`[Ping] Status: ${res.status}`))
+      .catch(err => console.error('[Ping Error]', err));
+  }, 60 * 1000); // every minute
   </script>
 </body>
 </html>
