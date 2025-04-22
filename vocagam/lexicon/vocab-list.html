@@ -1,0 +1,466 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greek Vocabulary Browser</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #111;
+      color: #eee;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .vocab-card {
+      background: #1c1c1c;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 5px rgba(255,255,255,0.05);
+    }
+    .vocab-card h2 {
+      margin: 0;
+      font-size: 1.4rem;
+      color: #6cf;
+    }
+    .morph {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-top: 0.5rem;
+    }
+    .meanings {
+      margin-top: 0.75rem;
+      padding-left: 1rem;
+    }
+    .meanings li {
+      margin-bottom: 0.25rem;
+    }
+    .input-area {
+      margin-bottom: 1.5rem;
+    }
+    .input-area input {
+      padding: 0.5rem;
+      font-size: 1rem;
+      width: 300px;
+      margin-right: 0.5rem;
+      border-radius: 0.3rem;
+      border: none;
+    }
+    .input-area button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 0.3rem;
+      background-color: #6cf;
+      color: #000;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>📚 Greek Vocabulary Review</h1>
+
+  <div class="input-area">
+    <input type="text" id="listInput" placeholder="Enter vocab list ID or name" />
+    <button onclick="loadVocabList()">Load</button>
+  </div>
+
+  <div id="vocab-container">Enter a vocab list name above and press Load.</div>
+
+  <script>
+    const vocabContainer = document.getElementById('vocab-container');
+
+    async function loadVocabList() {
+      const listId = document.getElementById('listInput').value.trim();
+      if (!listId) {
+        alert('Please enter a list name or ID.');
+        return;
+      }
+
+      vocabContainer.innerHTML = 'Loading...';
+      try {
+        const url = `https://rumbling-quintessential-banjo.glitch.me/api/vocab/list/${listId}`; // replace with your URL pattern
+        const response = await fetch(url);
+        const data = await response.json();
+        displayVocab(data.words);
+      } catch (err) {
+        vocabContainer.innerHTML = '<p style="color: red">Failed to load vocabulary list.</p>';
+        console.error(err);
+      }
+    }
+
+    function displayVocab(words) {
+      if (!words.length) {
+        vocabContainer.innerHTML = '<p>No vocabulary found.</p>';
+        return;
+      }
+
+      vocabContainer.innerHTML = '';
+
+      words.forEach(word => {
+        const card = document.createElement('div');
+        card.className = 'vocab-card';
+
+        const head = document.createElement('h2');
+        head.textContent = `${word.word} → ${word.headWord}`;
+        card.appendChild(head);
+
+        const morph = word.morphData?.[0];
+        if (morph) {
+          const morphText = `${morph.partOfSpeech}, ${morph.case} ${morph.number}, ${morph.gender}`;
+          const morphEl = document.createElement('div');
+          morphEl.className = 'morph';
+          morphEl.textContent = morphText;
+          card.appendChild(morphEl);
+        }
+
+        const meaningList = document.createElement('ul');
+        meaningList.className = 'meanings';
+        word.meanings.forEach(m => {
+          const li = document.createElement('li');
+          li.textContent = m;
+          meaningList.appendChild(li);
+        });
+        card.appendChild(meaningList);
+
+        vocabContainer.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greek Vocabulary Browser</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #111;
+      color: #eee;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .vocab-card {
+      background: #1c1c1c;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 5px rgba(255,255,255,0.05);
+    }
+    .vocab-card h2 {
+      margin: 0;
+      font-size: 1.4rem;
+      color: #6cf;
+    }
+    .highlight {
+      background-color: yellow;
+      color: #000;
+    }
+    .morph {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-top: 0.5rem;
+    }
+    .meanings {
+      margin-top: 0.75rem;
+      padding-left: 1rem;
+    }
+    .meanings li {
+      margin-bottom: 0.25rem;
+    }
+    .input-area {
+      margin-bottom: 1.5rem;
+    }
+    .input-area input, .input-area select {
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin-right: 0.5rem;
+      border-radius: 0.3rem;
+      border: none;
+    }
+    .input-area button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 0.3rem;
+      background-color: #6cf;
+      color: #000;
+      cursor: pointer;
+    }
+    .actions {
+      margin-top: 0.75rem;
+    }
+    .actions button {
+      margin-right: 0.5rem;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    #modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+    }
+    #modal-content {
+      background: #222;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      width: 400px;
+    }
+    #modal input, #modal textarea {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 0.3rem;
+    }
+    .pagination {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .pagination button {
+      margin: 0 0.25rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      background: #333;
+      color: #fff;
+      border-radius: 0.25rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>📚 Greek Vocabulary Review</h1>
+
+  <div class="input-area">
+    <input type="text" id="listInput" placeholder="Enter vocab list ID or name" />
+    <button onclick="loadVocabList()">Load</button>
+    <input type="text" id="filterInput" placeholder="Filter words..." oninput="filterAndDisplay()"  style = 'margin-top: 5px; margin-bottom: 5px;'/>
+    <label>Page Size: 
+      <select id="pageSizeSelect" onchange="changePageSize()">
+        <option value="5">5</option>
+        <option value="10" selected>10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+      </select>
+    </label>
+  </div>
+
+  <div id="vocab-container">Enter a vocab list name above and press Load.</div>
+  <div class="pagination" id="pagination"></div>
+
+  <div id="modal">
+    <div id="modal-content">
+      <h3>Edit Vocabulary</h3>
+      <input id="editWord" placeholder="Word" />
+      <input id="editHeadWord" placeholder="Headword" />
+      <textarea id="editMeanings" placeholder="Meanings (comma separated)"></textarea>
+      <button onclick="submitUpdate()">Submit</button>
+      <button onclick="closeModal()">Cancel</button>
+    </div>
+  </div>
+
+  <script>
+    const vocabContainer = document.getElementById('vocab-container');
+    const modal = document.getElementById('modal');
+    const filterInput = document.getElementById('filterInput');
+    const pagination = document.getElementById('pagination');
+    const pageSizeSelect = document.getElementById('pageSizeSelect');
+    let currentEditId = null;
+    let fullList = [];
+    let filteredList = [];
+    let currentPage = 1;
+    let pageSize = parseInt(pageSizeSelect.value);
+    let listName = '';
+
+    function highlightMatch(text, keyword) {
+      const regex = new RegExp(`(${keyword})`, 'gi');
+      return text.replace(regex, '<span class="highlight">$1</span>');
+    }
+
+    function changePageSize() {
+      pageSize = parseInt(pageSizeSelect.value);
+      currentPage = 1;
+      displayVocab();
+    }
+
+    async function loadVocabList() {
+      const listId = document.getElementById('listInput').value.trim();
+      if (!listId) {
+        alert('Please enter a list name or ID.');
+        return;
+      }
+
+      listName = listId;
+
+      vocabContainer.innerHTML = 'Loading...';
+      try {
+        const url = `https://rumbling-quintessential-banjo.glitch.me/api/vocab/list/${listId}`;
+        const response = await fetch(url);
+        const data = await response.json();
+        fullList = data.words;
+        currentPage = 1;
+        filterAndDisplay();
+      } catch (err) {
+        vocabContainer.innerHTML = '<p style="color: red">Failed to load vocabulary list.</p>';
+        console.error(err);
+      }
+    }
+
+    function filterAndDisplay() {
+      const keyword = filterInput.value.toLowerCase();
+      filteredList = fullList.filter(word => word.word.toLowerCase().includes(keyword) || word.headWord.toLowerCase().includes(keyword));
+      currentPage = 1;
+      displayVocab();
+    }
+
+    function displayVocab() {
+      const keyword = filterInput.value.toLowerCase();
+      const start = (currentPage - 1) * pageSize;
+      const end = start + pageSize;
+      const words = filteredList.slice(start, end);
+
+      vocabContainer.innerHTML = '';
+      if (!words.length) {
+        vocabContainer.innerHTML = '<p>No vocabulary found.</p>';
+        pagination.innerHTML = '';
+        return;
+      }
+
+      words.forEach(word => {
+        const card = document.createElement('div');
+        card.className = 'vocab-card';
+
+        const head = document.createElement('h2');
+        const wordText = highlightMatch(word.word, keyword);
+        const headWordText = highlightMatch(word.headWord, keyword);
+        head.innerHTML = `${wordText} → ${headWordText}`;
+        card.appendChild(head);
+
+        const morph = word.morphData?.[0];
+        if (morph) {
+          const morphText = `${morph.partOfSpeech}, ${morph.case} ${morph.number}, ${morph.gender}`;
+          const morphEl = document.createElement('div');
+          morphEl.className = 'morph';
+          morphEl.textContent = morphText;
+          card.appendChild(morphEl);
+        }
+
+        const meaningList = document.createElement('ul');
+        meaningList.className = 'meanings';
+        word.meanings.forEach(m => {
+          const li = document.createElement('li');
+          li.textContent = m;
+          meaningList.appendChild(li);
+        });
+        card.appendChild(meaningList);
+
+        const actions = document.createElement('div');
+        actions.className = 'actions';
+
+        const updateBtn = document.createElement('button');
+        updateBtn.textContent = 'Update';
+        updateBtn.onclick = () => openUpdateModal(word);
+        actions.appendChild(updateBtn);
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.onclick = () => {
+          if (confirm(`Delete word: ${word.word}?`)) {
+            fetch(`https://rumbling-quintessential-banjo.glitch.me/api/vocab/delete/${listName}`, { method: 'DELETE', body: JSON.stringify({ id: word.id }) })
+              .then(() => {
+                fullList = fullList.filter(w => w.id !== word.id);
+                filterAndDisplay();
+              })
+              .catch(err => console.error('Delete failed:', err));
+          }
+        };
+        actions.appendChild(deleteBtn);
+
+        card.appendChild(actions);
+        vocabContainer.appendChild(card);
+      });
+
+      const pageCount = Math.ceil(filteredList.length / pageSize);
+      pagination.innerHTML = '';
+      for (let i = 1; i <= pageCount; i++) {
+        const btn = document.createElement('button');
+        btn.textContent = i;
+        if (i === currentPage) btn.style.background = '#6cf';
+        btn.onclick = () => {
+          currentPage = i;
+          displayVocab();
+        };
+        pagination.appendChild(btn);
+      }
+    }
+
+    function openUpdateModal(word) {
+      currentEditId = word.id;
+      document.getElementById('editWord').value = word.word;
+      document.getElementById('editHeadWord').value = word.headWord;
+      document.getElementById('editMeanings').value = word.meanings.join(', ');
+      modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+
+    function submitUpdate() {
+      const updated = {
+        vocabKey: listName,
+        word: document.getElementById('editWord').value,
+        headWord: document.getElementById('editHeadWord').value,
+        meanings: document.getElementById('editMeanings').value.split(',').map(m => m.trim()),
+        id: currentEditId
+      };
+
+      fetch(`https://rumbling-quintessential-banjo.glitch.me/api/vocab/update`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updated)
+      })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+
+        if(res.success) {
+            closeModal();
+            loadVocabList();
+        } else {
+            alert(`Update failed: ${res.message}`);
+        }
+        
+      })
+      .catch(err => {
+        alert('Update failed');
+        console.error(err);
+      });
+    }
+  </script>
+</body>
+</html>
+
+
+
