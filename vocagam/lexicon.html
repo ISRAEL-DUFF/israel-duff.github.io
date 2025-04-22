@@ -188,6 +188,11 @@
       <!-- Grammar Info Display -->
       <div id="grammarInfo" class="grammar-info" style="display: none;"></div>
 
+
+      <input id="meaningsInput" placeholder="Enter glosses (separated by comma)" />
+      <input id="vocabKeyInput" placeholder="E.g eusebius" />
+      <button onclick="addNewMorph()">Save word</button>
+
     </div>
   </div>
 
@@ -201,6 +206,7 @@
 
   <script>
     let morphResponseData = {};
+    let originalWord = '';
     function parsePerseusResponse(response) {
         const body = response?.RDF?.Annotation?.Body;
         if (!body) return [];
@@ -246,56 +252,6 @@
             return d;
         })
     }
-
-    // function displayGrammarInfo(data) {
-    //   const grammarInfo = document.getElementById('grammarInfo');
-    //   grammarInfo.style.display = 'block';
-      
-    //   // Clear previous content
-    //   grammarInfo.innerHTML = '';
-      
-    //   // Create a container for each grammatical item
-    //   const container = document.createElement('div');
-      
-    //   // Helper function to create a grammar item
-    //   const createGrammarItem = (label, value) => {
-    //     if (!value) return null;
-    //     const item = document.createElement('div');
-    //     item.className = 'grammar-item';
-    //     item.innerHTML = `
-    //       <span class="grammar-label">${label}:</span>
-    //       <span class="grammar-value">${value}</span>
-    //     `;
-    //     return item;
-    //   };
-
-    //   // Add each grammatical feature
-    //   const features = [
-    //     { label: 'Lemma', value: data.lemma },
-    //     { label: 'Part of Speech', value: data.partOfSpeech },
-    //     { label: 'Case', value: data.case },
-    //     { label: 'Gender', value: data.gender },
-    //     { label: 'Number', value: data.number },
-    //     { label: 'Tense', value: data.tense },
-    //     { label: 'Voice', value: data.voice },
-    //     { label: 'Mood', value: data.mood },
-    //     { label: 'Person', value: data.person },
-    //     { label: 'Stem', value: data.stem },
-    //     { label: 'Suffix', value: data.suffix },
-    //     { label: 'Morphology', value: data.morph },
-    //     { label: 'Stem Type', value: data.stemtype },
-    //     { label: 'Derivation Type', value: data.derivtype },
-    //     { label: 'Dialect', value: data.dialect }
-    //   ];
-
-    //   // Add only non-null features
-    //   features.forEach(feature => {
-    //     const item = createGrammarItem(feature.label, feature.value);
-    //     if (item) container.appendChild(item);
-    //   });
-
-    //   grammarInfo.appendChild(container);
-    // }
 
     function displayGrammarInfo(dataArray) {
       const grammarInfo = document.getElementById('grammarInfo');
@@ -388,11 +344,13 @@
         if (!word) {
             throw new Error('Word cannot be empty')
         }
+
+        originalWord = word;
     
         try {
-        const url = `https://services.perseids.org/bsp/morphologyservice/analysis/word?lang=grc&engine=morpheusgrc&word=${encodeURIComponent(word)}`;
+            const url = `https://services.perseids.org/bsp/morphologyservice/analysis/word?lang=grc&engine=morpheusgrc&word=${encodeURIComponent(word)}`;
 
-        const resRaw = await fetch(url);
+            const resRaw = await fetch(url);
             if (!resRaw.ok) throw new Error("Failed to fetch morph");
 
             const contentType = resRaw.headers.get("Content-Type");
@@ -405,52 +363,99 @@
 
             console.log(response)
     
-        let parseResp = parsePerseusResponse(response);
-        const responseData = {
-            morphData: parseResp,
-            meanings:[]
-            // meanings: await getMeaning(parseResp[0].lemma)
-        }
-        morphResponseData= responseData
+            let parseResp = parsePerseusResponse(response);
+            const responseData = {
+                morphData: parseResp,
+                meanings:[]
+                // meanings: await getMeaning(parseResp[0].lemma)
+            }
+            morphResponseData= responseData
 
-        console.log(responseData)
+            console.log(responseData)
 
 
-        // Show modal with link
-        const modal = document.getElementById("myModal1");
-        const modalLink = document.getElementById("modalLink1");
-        // modalLink.href = `http://www.perseus.tufts.edu/hopper/morph?l=${encodeURIComponent(word)}&la=greek`;
-        modal.style.display = "block";
+            // Show modal with link
+            const modal = document.getElementById("myModal1");
+            const modalLink = document.getElementById("modalLink1");
+            // modalLink.href = `http://www.perseus.tufts.edu/hopper/morph?l=${encodeURIComponent(word)}&la=greek`;
+            modal.style.display = "block";
 
-        // Close modal when clicking the X
-        const closeBtn = document.getElementsByClassName("close1")[0];
-        closeBtn.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            if (event.target == modal) {
+            // Close modal when clicking the X
+            const closeBtn = document.getElementsByClassName("close1")[0];
+            closeBtn.onclick = function() {
                 modal.style.display = "none";
             }
-        }
 
-        // // Display the first result's grammatical information
-        // if (parseResp.length > 0) {
-        //   displayGrammarInfo(parseResp[0]);
-        // }
+            // Close modal when clicking outside
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
 
-        // Display all morphological forms
-        if (parseResp.length > 0) {
-          displayGrammarInfo(parseResp);
-        }
+            // // Display the first result's grammatical information
+            // if (parseResp.length > 0) {
+            //   displayGrammarInfo(parseResp[0]);
+            // }
 
+            // Display all morphological forms
+            if (parseResp.length > 0) {
+                displayGrammarInfo(parseResp);
+            }
+
+            
         
-    
-        return responseData;
+            return responseData;
         } catch (error) {
             console.log(error)
         }
+    }
+
+  async function addNewMorph() {
+    const meanings = document.getElementById('meaningsInput').value;
+    const vocabKeyInput = document.getElementById('vocabKeyInput').value;
+    
+    if (!meanings) {
+        throw new Error('Meanings should not be empty')
+    }
+
+    if (!vocabKeyInput) {
+        throw new Error('Dictionary key should not be empty')
+    }
+
+    // Cache the new data
+    // https://rumbling-quintessential-banjo.glitch.me/api/vocab/list/eusebius
+    const resRaw = await fetch('https://rumbling-quintessential-banjo.glitch.me/api/vocab/add', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            vocabKey: vocabKeyInput,
+            word: originalWord,
+            ...morphResponseData,
+            meanings: meanings.split(',')
+        })
+    });
+
+    if (!resRaw.ok) throw new Error("Failed save to Dictionary");
+
+    const contentType = resRaw.headers.get("Content-Type");
+
+    let response = {};
+
+    // if (contentType === 'application/json') {
+    //     response = await resRaw.json();
+    // }
+    response = await resRaw.json();
+
+    if(!response.successful) {
+        alert(response.message)
+    } else {
+        alert('Successfully saved word')
+    }
+
+    console.log(response)
   }
   </script>
 </body>
