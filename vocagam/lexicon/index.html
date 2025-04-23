@@ -507,7 +507,7 @@
   // PING GLITCH EVERY MINUTE
   setInterval(() => {
     console.log('pinging backend...')
-    fetch("https://rumbling-quintessential-banjo.glitch.me/")
+    fetch("https://rumbling-quintessential-banjo.glitch.me/status")
       .then(res => console.log(`[Ping] Status: ${res.status}`))
       .catch(err => console.error('[Ping Error]', err));
   }, 60 * 1000); // every minute
