@@ -5,7 +5,7 @@ const { createClient } = require('@supabase/supabase-js');
 const { Client } = require('pg');
 const axios = require("axios");
 
-const client = new Client(process.env.DATABASE_URL);
+const client = new Client(process.env.DIRECT_DATABASE_URL);
 
 let tableName = 'greek_morphology'
 
@@ -134,6 +134,7 @@ function parsePerseusResponse(response) {
         voice: infl?.voice?.["$"] || null,
         mood: infl?.mood?.["$"] || null,
         person: infl?.pers?.["$"] || null,
+        declension: infl?.decl?.["$"],
         stem: infl?.term?.stem?.["$"] || null,
         suffix: infl?.term?.suff?.["$"] || null,
         morph: infl?.morph?.["$"] || null,
@@ -180,7 +181,7 @@ async function getMorphology(word) {
         } catch (error) {
             reject(error)
         }
-    }, 500)
+    }, 200)
   })
 
   
@@ -206,11 +207,13 @@ async function insertWordsIntoDB(wordData, sourceFile) {
               if(morph.voice === 'mediopassive') {
                 wordProps.push({
                     ...txtD,
-                    voice: 'middle'
+                    voice: 'middle',
+                    is_mediopassive: true
                 })
                 wordProps.push({
                     ...txtD,
-                    voice: 'passive'
+                    voice: 'passive',
+                    is_mediopassive: true
                 })
               } else {
                 wordProps.push(txtD)
@@ -228,11 +231,13 @@ async function insertWordsIntoDB(wordData, sourceFile) {
             if(morph.voice === 'mediopassive') {
                 wordProps.push({
                     ...txtD,
-                    voice: 'middle'
+                    voice: 'middle',
+                    is_mediopassive: true
                 })
                 wordProps.push({
                     ...txtD,
-                    voice: 'passive'
+                    voice: 'passive',
+                    is_mediopassive: true
                 })
               } else {
                 wordProps.push(txtD)
@@ -248,16 +253,19 @@ async function insertWordsIntoDB(wordData, sourceFile) {
                     mood: morph.mood,
                     case: morph.case,
                     number: morph.number,
-                    gender: morph.gender
+                    gender: morph.gender,
+                    declension: morph.declension
                 }
                 if(morph.voice === 'mediopassive') {
                     wordProps.push({
                         ...txtD,
-                        voice: 'middle'
+                        voice: 'middle',
+                        is_mediopassive: true
                     })
                     wordProps.push({
                         ...txtD,
-                        voice: 'passive'
+                        voice: 'passive',
+                        is_mediopassive: true
                     })
                   } else {
                     wordProps.push(txtD)
@@ -273,21 +281,24 @@ async function insertWordsIntoDB(wordData, sourceFile) {
                 part_of_speech: 'noun',
                 case: morph.case,
                 number: morph.number,
-                gender: morph.gender
+                gender: morph.gender,
+                declension: morph.declension
             })
         } else if(morph.partOfSpeech === 'pronoun') {
             wordProps.push({
                 part_of_speech: 'pronoun',
                 case: morph.case,
                 number: morph.number,
-                gender: morph.gender
+                gender: morph.gender,
+                declension: morph.declension,
             })
         } else if(morph.partOfSpeech === 'article') {
             wordProps.push({
                 part_of_speech: 'article',
                 case: morph.case,
                 number: morph.number,
-                gender: morph.gender
+                gender: morph.gender,
+                declension: morph.declension
             })
         }
         else if(morph.partOfSpeech === 'adjective') {
@@ -295,7 +306,8 @@ async function insertWordsIntoDB(wordData, sourceFile) {
                 part_of_speech: 'adjective',
                 case: morph.case,
                 number: morph.number,
-                gender: morph.gender
+                gender: morph.gender,
+                declension: morph.declension,
             })
           }
         });
@@ -337,7 +349,8 @@ async function insertWordsIntoDB(wordData, sourceFile) {
 }
 
 async function storeMorphData(wordList, source) {
-    let startIndex = 498;
+    // let startIndex = 498;
+    let startIndex = 8279;
     let i = startIndex;
     for(let j = startIndex; j < wordList.length; j++) {
         const word = wordList[j]
@@ -363,16 +376,19 @@ async function storeMorphData(wordList, source) {
 
 // Example usage
 // const xmlFilePath = './data/eusebius.xml'; // path to your Perseus XML file
-const xmlFilePath = './data/eusiebus-book-1.xml'; // path to your Perseus XML file
+const xmlFilePath = './data/eusiebus-book-2.xml'; // path to your Perseus XML file
 extractGreekWordsFromXML2(xmlFilePath).then(async words => {
   console.log(`Extracted ${words.length} Greek words:`);
   console.log(words.slice(0, 10)); // preview first 20
 
   await client.connect();
 
-  storeMorphData(words, 'eusebius_book_1').then((r) => console.log(r))
+  storeMorphData(words, 'eusebius_book_2').then((r) => console.log(r))
 }).catch(async (e) => {
     console.log(e);
     await client.end();
 });
+
+
+/// MEDIO PASSIVES: 1,929 records
 

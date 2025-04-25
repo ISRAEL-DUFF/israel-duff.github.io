@@ -44,48 +44,11 @@
 const express = require("express");
 const axios = require("axios");
 const xml2js = require("xml2js");
+const { fetchGreekMorphs } = require('./morph-dynamic-filter')
 
 const app = express();
 const PORT = 3000;
 
-function parseNoun(data) {
-    try {
-        if(data.RDF.Annotation.Body.rest.entry.dict.hdwd['$'] && data.RDF.Annotation.Body.rest.entry.dict.decl['$'] && 
-            data.RDF.Annotation.Body.rest.entry.dict.gend['$'] && data.RDF.Annotation.Body.rest.entry.infl['case']['$'] &&
-            data.RDF.Annotation.Body.rest.entry.infl['num']['$']
-        ) {
-            return {
-                headWord: data.RDF.Annotation.Body.rest.entry.dict.hdwd['$'],
-                declensionType: data.RDF.Annotation.Body.rest.entry.dict.decl['$'],
-                gender: data.RDF.Annotation.Body.rest.entry.dict.gend['$'],
-                case: data.RDF.Annotation.Body.rest.entry.infl['case']['$'],
-                number: data.RDF.Annotation.Body.rest.entry.infl['num']['$']
-            }
-        }
-    } catch(e) {
-        console.log(e)
-    }
-}
-
-function parseVerb(data) {
-    try {
-        if(data.RDF.Annotation.Body.rest.entry.dict.hdwd['$'] && data.RDF.Annotation.Body.rest.entry.infl.mood['$'] &&
-            data.RDF.Annotation.Body.rest.entry.infl['pers']['$'] && data.RDF.Annotation.Body.rest.entry.infl['num']['$'] &&
-            data.RDF.Annotation.Body.rest.entry.infl['tense']['$'] && data.RDF.Annotation.Body.rest.entry.infl['voice']['$']
-        ) {
-            return {
-                headWord: data.RDF.Annotation.Body.rest.entry.dict.hdwd['$'],
-                mood: data.RDF.Annotation.Body.rest.entry.infl.mood['$'],
-                person: data.RDF.Annotation.Body.rest.entry.infl['pers']['$'],
-                number: data.RDF.Annotation.Body.rest.entry.infl['num']['$'],
-                tense: data.RDF.Annotation.Body.rest.entry.infl['tense']['$'],
-                voice: data.RDF.Annotation.Body.rest.entry.infl['voice']['$']
-            }
-        }
-    } catch(e) {
-        console.log(e)
-    }
-}
 
 function extractAllGreekDefinitions(wikitext) {
     const result = [];
@@ -243,8 +206,6 @@ function parsePerseusResponse2(response) {
     })
     
   }
-  
-  
 
 app.get("/morphology", async (req, res) => {
   const word = req.query.word;
@@ -297,6 +258,26 @@ app.get("/morphology-and-meanings", async (req, res) => {
       }
   
       return res.json(responseData);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch analysis", details: error.message });
+    }
+  });
+
+  app.get("/morphology/fetch", async (req, res) => {
+    const filters = req.query;
+    if (!filters) return res.status(400).json({ error: "Missing 'filter' parameter" });
+
+    const filtrs = JSON.parse(JSON.stringify(filters))
+    console.log(filtrs)
+  
+    try {
+      const morphs = await fetchGreekMorphs(filtrs)
+      
+    //   console.log({
+    //     morphs
+    //   })
+  
+      return res.json(morphs);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch analysis", details: error.message });
     }
