@@ -1,0 +1,729 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greek Verb Parser Game</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #111;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background-color: #222;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      margin-bottom: 1rem;
+    }
+    .word {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .category {
+      margin-bottom: 1rem;
+    }
+    .category label {
+      display: block;
+    }
+    .feedback {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    .correct { color: limegreen; }
+    .incorrect { color: tomato; }
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #444;
+      border: none;
+      color: #eee;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #666;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="settings-card">
+    <h2>Practice Settings</h2>
+    <form id="settings-form">
+      <div class="category">
+        <strong>Select Tense(s):</strong><br />
+        <label><input type="checkbox" name="tense" value="present" /> Present</label>
+        <label><input type="checkbox" name="tense" value="aorist" /> Aorist</label>
+      </div>
+      <div class="category">
+        <strong>Select Mood(s):</strong><br />
+        <label><input type="checkbox" name="mood" value="indicative" /> Indicative</label>
+        <label><input type="checkbox" name="mood" value="subjunctive" /> Subjunctive</label>
+      </div>
+      <div class="category">
+        <strong>Select Voice(s):</strong><br />
+        <label><input type="checkbox" name="voice" value="active" /> Active</label>
+        <label><input type="checkbox" name="voice" value="middle" /> Middle</label>
+      </div>
+      <button type="submit">Start Practice</button>
+    </form>
+  </div>
+
+  <div class="card hidden" id="game-card">
+    <div class="word" id="word">λύουσιν</div>
+    <form id="parser-form">
+      <div class="category">
+        <strong>Tense</strong><br />
+        <label><input type="checkbox" name="tense" value="present" /> Present</label>
+        <label><input type="checkbox" name="tense" value="aorist" /> Aorist</label>
+      </div>
+      <div class="category">
+        <strong>Mood</strong><br />
+        <label><input type="checkbox" name="mood" value="indicative" /> Indicative</label>
+        <label><input type="checkbox" name="mood" value="subjunctive" /> Subjunctive</label>
+      </div>
+      <div class="category">
+        <strong>Voice</strong><br />
+        <label><input type="checkbox" name="voice" value="active" /> Active</label>
+        <label><input type="checkbox" name="voice" value="middle" /> Middle</label>
+      </div>
+      <div class="category">
+        <strong>Person</strong><br />
+        <label><input type="checkbox" name="person" value="3rd" /> 3rd Person</label>
+        <label><input type="checkbox" name="person" value="1st" /> 1st Person</label>
+      </div>
+      <div class="category">
+        <strong>Number</strong><br />
+        <label><input type="checkbox" name="number" value="plural" /> Plural</label>
+        <label><input type="checkbox" name="number" value="singular" /> Singular</label>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="feedback" class="feedback"></div>
+  </div>
+
+  <script>
+    const wordList = [
+      {
+        word: "λύουσιν",
+        tense: "present",
+        mood: "indicative",
+        voice: "active",
+        person: "3rd",
+        number: "plural"
+      },
+      {
+        word: "ἔλυσαν",
+        tense: "aorist",
+        mood: "indicative",
+        voice: "active",
+        person: "3rd",
+        number: "plural"
+      }
+    ];
+
+    let selectedWords = [];
+    let currentWord = null;
+
+    document.getElementById("settings-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const tenses = formData.getAll("tense");
+      const moods = formData.getAll("mood");
+      const voices = formData.getAll("voice");
+
+      selectedWords = wordList.filter(w =>
+        tenses.includes(w.tense) &&
+        moods.includes(w.mood) &&
+        voices.includes(w.voice)
+      );
+
+      if (selectedWords.length > 0) {
+        currentWord = selectedWords[Math.floor(Math.random() * selectedWords.length)];
+        document.getElementById("word").textContent = currentWord.word;
+        document.getElementById("settings-card").classList.add("hidden");
+        document.getElementById("game-card").classList.remove("hidden");
+      } else {
+        alert("No words match your criteria. Try selecting more options.");
+      }
+    });
+
+    document.getElementById("parser-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+
+      let correct =
+        formData.getAll("tense").includes(currentWord.tense) &&
+        formData.getAll("mood").includes(currentWord.mood) &&
+        formData.getAll("voice").includes(currentWord.voice) &&
+        formData.getAll("person").includes(currentWord.person) &&
+        formData.getAll("number").includes(currentWord.number);
+
+      const feedback = document.getElementById("feedback");
+      if (correct) {
+        feedback.textContent = "✅ Correct!";
+        feedback.className = "feedback correct";
+      } else {
+        feedback.textContent = `❌ Incorrect. Correct answer: ${currentWord.tense}, ${currentWord.mood}, ${currentWord.voice}, ${currentWord.person} person, ${currentWord.number}`;
+        feedback.className = "feedback incorrect";
+      }
+    });
+  </script>
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greek Verb Parser Game</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #111;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background-color: #222;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      margin-bottom: 1rem;
+    }
+    .word {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .category {
+      margin-bottom: 1rem;
+    }
+    .category label {
+      display: block;
+    }
+    .feedback {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    .correct { color: limegreen; }
+    .incorrect { color: tomato; }
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #444;
+      border: none;
+      color: #eee;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #666;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="settings-card">
+    <h2>Practice Settings</h2>
+    <form id="settings-form">
+      <div class="category">
+        <strong>Select Tense(s):</strong><br />
+        <label><input type="checkbox" name="tense" value="present" /> Present</label>
+        <label><input type="checkbox" name="tense" value="aorist" /> Aorist</label>
+      </div>
+      <div class="category">
+        <strong>Select Mood(s):</strong><br />
+        <label><input type="checkbox" name="mood" value="indicative" /> Indicative</label>
+        <label><input type="checkbox" name="mood" value="subjunctive" /> Subjunctive</label>
+      </div>
+      <div class="category">
+        <strong>Select Voice(s):</strong><br />
+        <label><input type="checkbox" name="voice" value="active" /> Active</label>
+        <label><input type="checkbox" name="voice" value="middle" /> Middle</label>
+      </div>
+      <div class="category">
+        <strong>Select Verb Type(s):</strong><br />
+        <label><input type="checkbox" name="verbType" value="luo" /> Luo</label>
+        <label><input type="checkbox" name="verbType" value="regular" /> Regular</label>
+        <label><input type="checkbox" name="verbType" value="contract" /> Contract</label>
+        <label><input type="checkbox" name="verbType" value="liquid" /> Liquid</label>
+        <label><input type="checkbox" name="verbType" value="mi" /> Mi</label>
+        <label><input type="checkbox" name="verbType" value="eimi" /> Eimi</label>
+      </div>
+      <button type="submit">Start Practice</button>
+    </form>
+  </div>
+
+  <div class="card hidden" id="game-card">
+    <div class="word" id="word">λύουσιν</div>
+    <form id="parser-form">
+      <div class="category">
+        <strong>Tense</strong><br />
+        <label><input type="checkbox" name="tense" value="present" /> Present</label>
+        <label><input type="checkbox" name="tense" value="aorist" /> Aorist</label>
+      </div>
+      <div class="category">
+        <strong>Mood</strong><br />
+        <label><input type="checkbox" name="mood" value="indicative" /> Indicative</label>
+        <label><input type="checkbox" name="mood" value="subjunctive" /> Subjunctive</label>
+      </div>
+      <div class="category">
+        <strong>Voice</strong><br />
+        <label><input type="checkbox" name="voice" value="active" /> Active</label>
+        <label><input type="checkbox" name="voice" value="middle" /> Middle</label>
+      </div>
+      <div class="category">
+        <strong>Person</strong><br />
+        <label><input type="checkbox" name="person" value="1st" /> 1st Person</label>
+        <label><input type="checkbox" name="person" value="2nd" /> 2nd Person</label>
+        <label><input type="checkbox" name="person" value="3rd" /> 3rd Person</label>
+      </div>
+      <div class="category">
+        <strong>Number</strong><br />
+        <label><input type="checkbox" name="number" value="singular" /> Singular</label>
+        <label><input type="checkbox" name="number" value="plural" /> Plural</label>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="feedback" class="feedback"></div>
+  </div>
+
+  <script>
+    const wordList = [
+      {
+        word: "λύουσιν",
+        tense: "present",
+        mood: "indicative",
+        voice: "active",
+        person: "3rd",
+        number: "plural",
+        verbType: "luo"
+      },
+      {
+        word: "ἔλυσαν",
+        tense: "aorist",
+        mood: "indicative",
+        voice: "active",
+        person: "3rd",
+        number: "plural",
+        verbType: "luo"
+      }
+    ];
+
+    let selectedWords = [];
+    let currentWord = null;
+
+    document.getElementById("settings-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const tenses = formData.getAll("tense");
+      const moods = formData.getAll("mood");
+      const voices = formData.getAll("voice");
+      const verbTypes = formData.getAll("verbType");
+
+      selectedWords = wordList.filter(w =>
+        tenses.includes(w.tense) &&
+        moods.includes(w.mood) &&
+        voices.includes(w.voice) &&
+        verbTypes.includes(w.verbType)
+      );
+
+      if (selectedWords.length > 0) {
+        currentWord = selectedWords[Math.floor(Math.random() * selectedWords.length)];
+        document.getElementById("word").textContent = currentWord.word;
+        document.getElementById("settings-card").classList.add("hidden");
+        document.getElementById("game-card").classList.remove("hidden");
+      } else {
+        alert("No words match your criteria. Try selecting more options.");
+      }
+    });
+
+    document.getElementById("parser-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+
+      let correct =
+        formData.getAll("tense").includes(currentWord.tense) &&
+        formData.getAll("mood").includes(currentWord.mood) &&
+        formData.getAll("voice").includes(currentWord.voice) &&
+        formData.getAll("person").includes(currentWord.person) &&
+        formData.getAll("number").includes(currentWord.number);
+
+      const feedback = document.getElementById("feedback");
+      if (correct) {
+        feedback.textContent = "✅ Correct!";
+        feedback.className = "feedback correct";
+      } else {
+        feedback.innerHTML = `❌ Incorrect. <br />Correct answer: <br />Tense: <b>${currentWord.tense}</b><br />Mood: <b>${currentWord.mood}</b><br />Voice: <b>${currentWord.voice}</b><br />Person: <b>${currentWord.person}</b> person<br />Number: <b>${currentWord.number}</b>`;
+        feedback.className = "feedback incorrect";
+      }
+
+      document.querySelectorAll('#parser-form input[type="checkbox"]').forEach(cb => cb.checked = false);
+
+      currentWord = selectedWords[Math.floor(Math.random() * selectedWords.length)];
+      document.getElementById("word").textContent = currentWord.word;
+    });
+  </script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greek Verb Parser Game</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #111;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background-color: #222;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      margin-bottom: 1rem;
+    }
+    .word {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .category {
+      margin-bottom: 1rem;
+    }
+    .category label {
+      display: block;
+    }
+    .feedback {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    .correct { color: limegreen; }
+    .incorrect { color: tomato; }
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #444;
+      border: none;
+      color: #eee;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #666;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="mode-card">
+    <h2>Select Parsing Mode</h2>
+    <button onclick="startMode('verb')">Verb Parsing</button>
+    <button onclick="startMode('noun')">Noun Parsing</button>
+    <button onclick="startMode('participle')">Participle Parsing</button>
+  </div>
+
+  <div class="card hidden" id="settings-card">
+    <h2>Practice Settings</h2>
+    <form id="settings-form"></form>
+  </div>
+
+  <div class="card hidden" id="game-card">
+    <div class="word" id="word">λύουσιν</div>
+    <form id="parser-form"></form>
+    <div id="feedback" class="feedback"></div>
+  </div>
+
+  <script>
+    const wordList = [
+      {
+        word: "λύουσιν",
+        tense: "present",
+        mood: "indicative",
+        voice: "active",
+        person: "3rd",
+        number: "plural",
+        verbType: "luo",
+        type: "verb"
+      },
+      {
+        word: "ἔλυσαν",
+        tense: "aorist",
+        mood: "indicative",
+        voice: "active",
+        person: "3rd",
+        number: "plural",
+        verbType: "luo",
+        type: "verb"
+      },
+      {
+        word: "λόγος",
+        gender: "masculine",
+        number: "singular",
+        case: "nominative",
+        type: "noun"
+      },
+      {
+        word: "λόγοι",
+        gender: "masculine",
+        number: "plural",
+        case: "nominative",
+        type: "noun"
+      }
+    ];
+
+    let selectedWords = [];
+    let currentWord = null;
+    let currentMode = null;
+
+    function startMode(mode) {
+      currentMode = mode;
+      document.getElementById("mode-card").classList.add("hidden");
+      const settingsForm = document.getElementById("settings-form");
+      settingsForm.innerHTML = '';
+
+      if (mode === "verb") {
+        settingsForm.innerHTML = `
+          <div class="category">
+            <strong>Select Tense(s):</strong><br />
+            <label><input type="checkbox" name="tense" value="present" /> Present</label>
+            <label><input type="checkbox" name="tense" value="aorist" /> Aorist</label>
+          </div>
+          <div class="category">
+            <strong>Select Mood(s):</strong><br />
+            <label><input type="checkbox" name="mood" value="indicative" /> Indicative</label>
+            <label><input type="checkbox" name="mood" value="subjunctive" /> Subjunctive</label>
+          </div>
+          <div class="category">
+            <strong>Select Voice(s):</strong><br />
+            <label><input type="checkbox" name="voice" value="active" /> Active</label>
+            <label><input type="checkbox" name="voice" value="middle" /> Middle</label>
+          </div>
+          <div class="category">
+            <strong>Select Verb Type(s):</strong><br />
+            <label><input type="checkbox" name="verbType" value="luo" /> Luo</label>
+          </div>
+          <button type="submit">Start Practice</button>
+        `;
+      } else if (mode === "noun") {
+        settingsForm.innerHTML = `
+          <div class="category">
+            <strong>Select Gender:</strong><br />
+            <label><input type="checkbox" name="gender" value="masculine" /> Masculine</label>
+            <label><input type="checkbox" name="gender" value="feminine" /> Feminine</label>
+            <label><input type="checkbox" name="gender" value="neuter" /> Neuter</label>
+          </div>
+          <div class="category">
+            <strong>Select Case:</strong><br />
+            <label><input type="checkbox" name="case" value="nominative" /> Nominative</label>
+            <label><input type="checkbox" name="case" value="accusative" /> Accusative</label>
+          </div>
+          <div class="category">
+            <strong>Select Number:</strong><br />
+            <label><input type="checkbox" name="number" value="singular" /> Singular</label>
+            <label><input type="checkbox" name="number" value="plural" /> Plural</label>
+          </div>
+          <button type="submit">Start Practice</button>
+        `;
+      }
+
+      document.getElementById("settings-card").classList.remove("hidden");
+    }
+
+    document.getElementById("settings-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+
+      if (currentMode === "verb") {
+        const tenses = formData.getAll("tense");
+        const moods = formData.getAll("mood");
+        const voices = formData.getAll("voice");
+        const types = formData.getAll("verbType");
+        selectedWords = wordList.filter(w =>
+          w.type === "verb" &&
+          tenses.includes(w.tense) &&
+          moods.includes(w.mood) &&
+          voices.includes(w.voice) &&
+          types.includes(w.verbType)
+        );
+      } else if (currentMode === "noun") {
+        const genders = formData.getAll("gender");
+        const cases = formData.getAll("case");
+        const numbers = formData.getAll("number");
+        selectedWords = wordList.filter(w =>
+          w.type === "noun" &&
+          genders.includes(w.gender) &&
+          cases.includes(w.case) &&
+          numbers.includes(w.number)
+        );
+      }
+
+      if (selectedWords.length > 0) {
+        currentWord = selectedWords[Math.floor(Math.random() * selectedWords.length)];
+        document.getElementById("word").textContent = currentWord.word;
+        renderParserForm();
+        document.getElementById("settings-card").classList.add("hidden");
+        document.getElementById("game-card").classList.remove("hidden");
+      } else {
+        alert("No words match your criteria. Try selecting more options.");
+      }
+    });
+
+    function renderParserForm() {
+      const form = document.getElementById("parser-form");
+      form.innerHTML = "";
+      if (currentMode === "verb") {
+        form.innerHTML = `
+          <div class="category">
+            <strong>Tense</strong><br />
+            <label><input type="checkbox" name="tense" value="present" /> Present</label>
+            <label><input type="checkbox" name="tense" value="aorist" /> Aorist</label>
+          </div>
+          <div class="category">
+            <strong>Mood</strong><br />
+            <label><input type="checkbox" name="mood" value="indicative" /> Indicative</label>
+            <label><input type="checkbox" name="mood" value="subjunctive" /> Subjunctive</label>
+          </div>
+          <div class="category">
+            <strong>Voice</strong><br />
+            <label><input type="checkbox" name="voice" value="active" /> Active</label>
+            <label><input type="checkbox" name="voice" value="middle" /> Middle</label>
+          </div>
+          <div class="category">
+            <strong>Person</strong><br />
+            <label><input type="checkbox" name="person" value="1st" /> 1st</label>
+            <label><input type="checkbox" name="person" value="2nd" /> 2nd</label>
+            <label><input type="checkbox" name="person" value="3rd" /> 3rd</label>
+          </div>
+          <div class="category">
+            <strong>Number</strong><br />
+            <label><input type="checkbox" name="number" value="singular" /> Singular</label>
+            <label><input type="checkbox" name="number" value="plural" /> Plural</label>
+          </div>
+          <button type="submit">Submit</button>
+        `;
+      } else if (currentMode === "noun") {
+        form.innerHTML = `
+          <div class="category">
+            <strong>Gender</strong><br />
+            <label><input type="checkbox" name="gender" value="masculine" /> Masculine</label>
+            <label><input type="checkbox" name="gender" value="feminine" /> Feminine</label>
+            <label><input type="checkbox" name="gender" value="neuter" /> Neuter</label>
+          </div>
+          <div class="category">
+            <strong>Case</strong><br />
+            <label><input type="checkbox" name="case" value="nominative" /> Nominative</label>
+            <label><input type="checkbox" name="case" value="accusative" /> Accusative</label>
+          </div>
+          <div class="category">
+            <strong>Number</strong><br />
+            <label><input type="checkbox" name="number" value="singular" /> Singular</label>
+            <label><input type="checkbox" name="number" value="plural" /> Plural</label>
+          </div>
+          <button type="submit">Submit</button>
+        `;
+      }
+    }
+
+    document.getElementById("parser-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      let correct = false;
+
+      if (currentMode === "verb") {
+        correct =
+          formData.getAll("tense").includes(currentWord.tense) &&
+          formData.getAll("mood").includes(currentWord.mood) &&
+          formData.getAll("voice").includes(currentWord.voice) &&
+          formData.getAll("person").includes(currentWord.person) &&
+          formData.getAll("number").includes(currentWord.number);
+      } else if (currentMode === "noun") {
+        correct =
+          formData.getAll("gender").includes(currentWord.gender) &&
+          formData.getAll("case").includes(currentWord.case) &&
+          formData.getAll("number").includes(currentWord.number);
+      }
+
+    //   const feedback = document.getElementById("feedback");
+    //   feedback.className = "feedback";
+
+    //   if (correct) {
+    //     feedback.textContent = "✅ Correct!";
+    //     feedback.classList.add("correct");
+    //   } else {
+    //     let solution = Object.entries(currentWord)
+    //       .filter(([key]) => ["tense", "mood", "voice", "person", "number", "gender", "case"].includes(key))
+    //       .map(([key, val]) => `<b>${key}</b>: ${val}`)
+    //       .join("<br />");
+    //     feedback.innerHTML = `❌ Incorrect.<br />Correct answer:<br />${solution}`;
+    //     feedback.classList.add("incorrect");
+    //   }
+
+        const categories = ["tense", "mood", "voice", "person", "number"];
+        const feedback = document.getElementById("feedback");
+        let summaryHTML = "Answer Summary:<br />";
+
+        categories.forEach(cat => {
+            const correctValue = currentWord[cat];
+            const userValues = formData.getAll(cat);
+            const isCorrect = userValues.includes(correctValue);
+            summaryHTML += `${cat.charAt(0).toUpperCase() + cat.slice(1)}: <mark class="${isCorrect ? 'correct' : 'incorrect'}">${correctValue}</mark><br />`;
+        });
+
+        if (categories.every(cat => formData.getAll(cat).includes(currentWord[cat]))) {
+            feedback.innerHTML = `✅ Correct!<br /><br />${summaryHTML}`;
+            feedback.className = "feedback correct";
+        } else {
+            feedback.innerHTML = `❌ Incorrect.<br /><br />${summaryHTML}`;
+            feedback.className = "feedback incorrect";
+        }
+
+
+      document.querySelectorAll('#parser-form input[type="checkbox"]').forEach(cb => cb.checked = false);
+      currentWord = selectedWords[Math.floor(Math.random() * selectedWords.length)];
+      document.getElementById("word").textContent = currentWord.word;
+    });
+  </script>
+</body>
+</html>
