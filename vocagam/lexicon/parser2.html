@@ -1088,6 +1088,8 @@
     <div class="modal-content-quiz">
       <span class="close-quiz">&times;</span>
 
+      <div id = "progressCount"></div>
+      
       <div class="question" id="question">Loading...</div>
 
         <form id="answerForm"></form>
@@ -1162,6 +1164,7 @@
 
     let currentMode = 'verb';
     let currentQuestion = {};
+    let currentIndex = 0;
     let streak = 0;
     let filters = {};
     let backendFilters = {
@@ -1172,6 +1175,7 @@
     const resultDiv = document.getElementById('result');
     const streakDiv = document.getElementById('streak');
     const questionDiv = document.getElementById('question');
+    const progressDiv = document.getElementById('progressCount');
     const filterControls = document.getElementById('filterControls');
     const modal = document.getElementById('answerModal');
 
@@ -1312,7 +1316,7 @@
         if(key === 'is_mediopassive') {
             continue;
         }
-        
+
         const values = getOptionsFor(key);
         const fieldset = document.createElement('fieldset');
         const legend = document.createElement('legend');
@@ -1424,6 +1428,15 @@
 
     function nextQuestion() {
       let list = questions[currentMode];
+
+      if(currentIndex >= list.length && list.length !== 0) {
+        questionDiv.textContent = 'Game ended';
+        form.innerHTML = '';
+        resultDiv.textContent = '';
+        progressDiv.textContent = '';
+        return;
+      }
+
       if (Object.keys(filters).length > 0) {
         list = list.filter(q => {
           return Object.entries(filters).every(([k, v]) => {
@@ -1435,10 +1448,14 @@
         questionDiv.textContent = 'No matching questions. Adjust filters.';
         form.innerHTML = '';
         resultDiv.textContent = '';
+        progressDiv.textContent = '';
         return;
       }
-      currentQuestion = list[Math.floor(Math.random() * list.length)];
+
+      //   currentQuestion = list[Math.floor(Math.random() * list.length)];
+      currentQuestion = list[currentIndex++];
       questionDiv.textContent = `${currentQuestion.form}`;
+      progressDiv.textContent = `${currentIndex} of ${list.length}`
       buildForm(currentQuestion.correct);
       resultDiv.textContent = '';
     }
