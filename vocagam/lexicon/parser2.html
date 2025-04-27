@@ -49,6 +49,11 @@
       color: #ff5555;
       font-weight: bold;
     }
+    .correct-icon {
+      margin-left: 0.5em;
+      color: #7fff7f;
+      font-weight: bold;
+    }
     .filter-controls {
       margin-bottom: 2rem;
     }
@@ -111,7 +116,7 @@
     }
 
     #question {
-        margin-top: 5vh;
+        margin-top: 2vh;
         margin-bottom: 15px;
         text-align: center;
         color: #6cf;
@@ -165,7 +170,7 @@
     .close-quiz {
       color: #aaa;
       position: absolute;
-      right: 40px;
+      right: 20px;
       top: 5px;
       font-size: 20px;
       font-weight: bold;
@@ -178,7 +183,7 @@
   </style>
 </head>
 <body>
-  <h1>Greek Word Parser Game</h1>
+  <h2>Greek Word Parser Game</h2>
 
   <!-- <label for="mode">Choose mode:</label>
   <select id="mode">
@@ -483,31 +488,61 @@
         const alternates = correct.alternates || [];
         let isCorrect = true;
 
+        const allCorrectOptions = [correct, ...alternates]
+        matchedCorrect = {}
+
+
         // Helper function to check if an answer matches a parsing
         const isAnswerMatching = (parsing) => {
             for (const key in parsing) {
-            if (key === 'alternates' || key === 'is_mediopassive' || key === 'verb_type') continue;
-            
-            if (userAnswer[key] !== parsing[key]) {
-                // Special case for mediopassive
-                if (key === 'voice' && parsing.is_mediopassive && 
-                    (userAnswer[key] === 'middle' || userAnswer[key] === 'passive')) {
-                continue;
+                if (key === 'alternates' || key === 'is_mediopassive' || key === 'verb_type') continue;
+                
+                if (userAnswer[key] !== parsing[key]) {
+                    // Special case for mediopassive
+                    if (key === 'voice' && parsing.is_mediopassive && 
+                        (userAnswer[key] === 'middle' || userAnswer[key] === 'passive')) {
+                        continue;
+                    }
+
+                    return false;
                 }
-                return false;
-            }
             }
             return true;
         };
 
+        for(const parsing of allCorrectOptions) {
+            for (const key in parsing) {
+                if (key === 'alternates' || key === 'is_mediopassive' || key === 'verb_type') continue;
+                
+                if (userAnswer[key] !== parsing[key]) {
+                    // Special case for mediopassive
+                    if (key === 'voice' && parsing.is_mediopassive && 
+                        (userAnswer[key] === 'middle' || userAnswer[key] === 'passive')) {
+                        matchedCorrect[key] = true;
+                        continue;
+                    }
+
+                    // if(matchedCorrect[key] !== true) {
+                    //     matchedCorrect[key] = false;
+                    // }
+
+                    // return false;
+                    continue;
+                }
+
+                matchedCorrect[key] = true;
+            }
+        }
+
+
         // Check against correct answer and alternates
-        const isAnyMatch = [correct, ...alternates].some(isAnswerMatching);
+        const isAnyMatch = allCorrectOptions.some(isAnswerMatching);
 
         if (isAnyMatch) {
             resultDiv.textContent = '✅ Correct!';
             streak++;
             updateStreak();
-            setTimeout(nextQuestion, 1500);
+            setTimeout(nextQuestion, 2000);
         } else {
             resultDiv.textContent = '❌ Incorrect. You can reveal the correct answer.';
             streak = 0;
@@ -518,16 +553,22 @@
         for (const key in userAnswer) {
             const input = form.querySelector(`input[name="${key}"][value="${userAnswer[key]}"]`);
             const label = input?.parentElement;
-            if (isAnyMatch) {
-            label?.classList.add('correct-label');
+            if (matchedCorrect[key]) {
+                label?.classList.add('correct-label');
+                if (label) {
+                    const icon = document.createElement('span');
+                    icon.className = 'correct-icon';
+                    icon.textContent = '✓';
+                    label.appendChild(icon);
+                }
             } else {
-            label?.classList.add('incorrect-label');
-            if (label) {
-                const icon = document.createElement('span');
-                icon.className = 'error-icon';
-                icon.textContent = '✖';
-                label.appendChild(icon);
-            }
+                label?.classList.add('incorrect-label');
+                if (label) {
+                    const icon = document.createElement('span');
+                    icon.className = 'error-icon';
+                    icon.textContent = '✖';
+                    label.appendChild(icon);
+                }
             }
         }
     }
