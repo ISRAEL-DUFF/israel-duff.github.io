@@ -9,6 +9,85 @@ const client = new Client(process.env.DIRECT_DATABASE_URL);
 
 let tableName = 'greek_morphology'
 
+const sqlVerbTypes = `UPDATE greek_morphology
+SET verb_type = CASE
+    WHEN lemma IN (
+    'εἰμί',    -- to be
+    'οἶδα',    -- to know
+    'φημί',    -- to say
+    'ἔρχομαι', -- to come, go
+    'βαίνω',   -- to go, walk
+    'τίθημι',  -- to place, put
+    'δίδωμι',  -- to give
+    'ἵστημι',  -- to stand, set up
+    'ἵημι',    -- to send, let go
+    'λαμβάνω', -- to take, receive
+    'λέγω',    -- to say
+    'ὁράω',    -- to see
+    'φέρω',    -- to bear, carry
+    'ἀφικνέομαι', -- to arrive
+    'γίγνομαι',   -- to become, happen
+    'τρέχω',      -- to run
+    'πίνω',       -- to drink
+    'πίπτω',      -- to fall
+    'μανθάνω',    -- to learn
+    'τυγχάνω',    -- to happen, hit
+    'τυφλός εἰμι',-- (idiomatically irregular usage)
+    'λανθάνω',    -- to escape notice
+    'λανθάνομαι', -- passive of λανθάνω
+    'λανθάνοιμι', -- optative form irregularity
+    'δεικνύω',    -- to show
+    'ἐσθίω',      -- to eat
+    'ἀποθνῄσκω',  -- to die
+    'θνῄσκω',     -- to die (poetic shorter form)
+    'καίω',       -- to burn (future καύσω is irregular)
+    'ἁλίσκομαι',  -- to be captured
+    'γίγνομαι',   -- to become
+    'ἁμαρτάνω',   -- to miss, err
+    'εὑρίσκω',    -- to find
+    'τίκτω',      -- to give birth
+    'τίλλω',      -- to pluck (very rare)
+    'ἀγείρω',     -- to gather
+    'ἀγγέλλω',    -- to announce
+    'ἕπομαι',     -- to follow
+    'ἀνίστημι',   -- to raise up
+    'καθίστημι',  -- to appoint, establish
+    'διαφθείρω'   -- to destroy
+    ) THEN 'irregular'
+    WHEN lemma LIKE '%μι' THEN 'mi'
+    WHEN lemma LIKE '%άω' OR lemma LIKE '%έω' OR lemma LIKE '%όω' THEN 'contract'
+    WHEN lemma LIKE '%νω' OR lemma LIKE '%λω' OR lemma LIKE '%ρω' OR lemma LIKE '%μω' THEN 'liquid'
+    WHEN lemma LIKE '%ω' THEN 'w'
+    ELSE NULL
+END
+WHERE part_of_speech IN ('verb', 'participle', 'infinitive');
+`
+function classifyVerbType(lemma) {
+    const irregularVerbs = [
+        'εἰμί', 'οἶδα', 'φημί', 'ἔρχομαι', 'βαίνω', 'τίθημι', 'δίδωμι', 
+        'ἵστημι', 'ἵημι', 'λαμβάνω', 'λέγω', 'ὁράω', 'φέρω', 'ἀφικνέομαι', 
+        'γίγνομαι', 'τρέχω', 'πίνω', 'πίπτω', 'μανθάνω', 'τυγχάνω', 
+        'τυφλός εἰμι', 'λανθάνω', 'λανθάνομαι', 'λανθάνοιμι', 'δεικνύω', 
+        'ἐσθίω', 'ἀποθνῄσκω', 'θνῄσκω', 'καίω', 'ἁλίσκομαι', 'γίγνομαι', 
+        'ἁμαρτάνω', 'εὑρίσκω', 'τίκτω', 'τίλλω', 'ἀγείρω', 'ἀγγέλλω', 
+        'ἕπομαι', 'ἀνίστημι', 'καθίστημι', 'διαφθείρω'
+    ];
+
+    if (irregularVerbs.includes(lemma)) {
+        return 'irregular';
+    } else if (lemma.endsWith('μι')) {
+        return 'mi';
+    } else if (lemma.endsWith('άω') || lemma.endsWith('έω') || lemma.endsWith('όω')) {
+        return 'contract';
+    } else if (lemma.endsWith('νω') || lemma.endsWith('λω') || lemma.endsWith('ρω') || lemma.endsWith('μω')) {
+        return 'liquid';
+    } else if (lemma.endsWith('ω')) {
+        return 'w';
+    }
+    
+    return null;
+}
+
 
 async function fetchQuery(whereParams = {}, limit = 10) {
     try {
@@ -192,17 +271,15 @@ async function insertWordsIntoDB(wordData, sourceFile) {
 
     if (Array.isArray(wordData.morphData)) {
         wordData.morphData.forEach(morph => {
-            
-          let morphText = `${morph.partOfSpeech}: ${morph.case} ${morph.number}, ${morph.gender}`;
           if(morph.partOfSpeech === 'verb' && morph.mood !== 'participle' && morph.mood !== 'infinitive') {
-            morphText = `${morph.partOfSpeech}: ${morph.person} ${morph.number}, ${morph.tense}, ${morph.voice}, ${morph.mood}`;
             let txtD = {
                 part_of_speech: 'verb',
                 number: morph.number,
                 person: morph.person,
                 tense: morph.tense,
                 voice: morph.voice,
-                mood: morph.mood
+                mood: morph.mood,
+                verb_type: classifyVerbType(morph.lemma)
             }
               if(morph.voice === 'mediopassive') {
                 wordProps.push({
@@ -220,12 +297,12 @@ async function insertWordsIntoDB(wordData, sourceFile) {
               }
               
           } else if(morph.partOfSpeech === 'verb' && morph.mood === 'infinitive') {
-              morphText = `${morph.partOfSpeech}: ${morph.tense}, ${morph.voice}, ${morph.mood}`;
               const txtD = {
-                part_of_speech: 'verb',
+                part_of_speech: 'infinitive',
                 tense: morph.tense,
                 mood: morph.mood,
-                voice: morph.voice
+                voice: morph.voice,
+                verb_type: classifyVerbType(morph.lemma)
             }
 
             if(morph.voice === 'mediopassive') {
@@ -243,7 +320,6 @@ async function insertWordsIntoDB(wordData, sourceFile) {
                 wordProps.push(txtD)
               }
           } else if(morph.partOfSpeech === 'verb' && morph.mood === 'participle') {
-              morphText = `${morph.partOfSpeech}: ${morph.tense}, ${morph.voice}, ${morph.mood} (${morph.case}, ${morph.gender}, ${morph.number} )`;
               let txtD = {
                     part_of_speech: 'participle',
                     number: morph.number,
@@ -254,7 +330,8 @@ async function insertWordsIntoDB(wordData, sourceFile) {
                     case: morph.case,
                     number: morph.number,
                     gender: morph.gender,
-                    declension: morph.declension
+                    declension: morph.declension,
+                    verb_type: classifyVerbType(morph.lemma)
                 }
                 if(morph.voice === 'mediopassive') {
                     wordProps.push({
@@ -272,7 +349,6 @@ async function insertWordsIntoDB(wordData, sourceFile) {
                   }
               
             } else if(morph.partOfSpeech === 'adverb') {
-              morphText = `${morph.partOfSpeech}`;
               wordProps.push({
                 part_of_speech: 'adverb',
             })

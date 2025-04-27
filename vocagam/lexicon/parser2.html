@@ -239,20 +239,20 @@
   <script>
     const questions = {
       verb: [
-        { form: "λύομεν", correct: { tense: "present", voice: "active", mood: "indicative", number: "plural", person: "first" } },
-        { form: "ἔλυσαν", correct: { tense: "aorist", voice: "active", mood: "indicative", number: "plural", person: "third" } }
+        { form: "λύομεν", correct: { tense: "present", voice: "active", mood: "indicative", number: "plural", person: "first", verb_type: '-' } },
+        { form: "ἔλυσαν", correct: { tense: "aorist", voice: "active", mood: "indicative", number: "plural", person: "third", verb_type: '-' } }
       ],
       noun: [
-        { form: "λόγου", correct: { case: "genitive", number: "singular", gender: "masculine" } },
-        { form: "χαράς", correct: { case: "genitive", number: "singular", gender: "feminine" } }
+        { form: "λόγου", correct: { case: "genitive", number: "singular", gender: "masculine", declension: "2nd" } },
+        { form: "χαράς", correct: { case: "genitive", number: "singular", gender: "feminine", declension: "1st" } }
       ],
       participle: [
-        { form: "λύων", correct: { tense: "present", voice: "active", gender: "masculine", case: "nominative", number: "singular" } },
-        { form: "λυθείς", correct: { tense: "aorist", voice: "passive", gender: "masculine", case: "nominative", number: "singular" } }
+        { form: "λύων", correct: { tense: "present", voice: "active", gender: "masculine", case: "nominative", number: "singular", verb_type: '-' } },
+        { form: "λυθείς", correct: { tense: "aorist", voice: "passive", gender: "masculine", case: "nominative", number: "singular", verb_type: '-' } }
       ],
       adjective: [
-        { form: "ἀγαθός", correct: { gender: "masculine", case: "nominative", number: "singular" } },
-        { form: "καλῆς", correct: { gender: "feminine", case: "genitive", number: "singular" } }
+        { form: "ἀγαθός", correct: { gender: "masculine", case: "nominative", number: "singular", declension: "2nd" } },
+        { form: "καλῆς", correct: { gender: "feminine", case: "genitive", number: "singular", declension: "1st" } }
       ],
       pronoun: [
         { form: "ἐμοί", correct: { case: "dative", number: "singular", person: "first" } },
@@ -267,7 +267,9 @@
       person: ['first', 'second', 'third'],
       number: ['singular', 'plural'],
       case: ['nominative', 'genitive', 'dative', 'accusative', 'vocative'],
-      gender: ['masculine', 'feminine', 'neuter']
+      gender: ['masculine', 'feminine', 'neuter'],
+      declension: ['1st', '2nd', '3rd', '1st & 2nd', ],
+      verb_type: ['w', 'mi', 'contract', 'liquid', 'irregular']
     };
 
     let currentMode = 'verb';
@@ -372,7 +374,7 @@
     function buildForm(correct) {
       form.innerHTML = '';
       for (const key in correct) {
-        if(key === 'is_mediopassive' || key === 'alternates') {
+        if(key === 'is_mediopassive' || key === 'alternates' || key === 'verb_type') {
             continue;
         }
 
@@ -484,7 +486,7 @@
         // Helper function to check if an answer matches a parsing
         const isAnswerMatching = (parsing) => {
             for (const key in parsing) {
-            if (key === 'alternates' || key === 'is_mediopassive') continue;
+            if (key === 'alternates' || key === 'is_mediopassive' || key === 'verb_type') continue;
             
             if (userAnswer[key] !== parsing[key]) {
                 // Special case for mediopassive
@@ -568,7 +570,7 @@
 
             // Create a formatted string for each parsing
             const parsingText = Object.entries(parsing)
-                .filter(([key]) => key !== 'part_of_speech' && key !== 'is_mediopassive' && key !== 'alternates')
+                .filter(([key]) => key !== 'part_of_speech' && key !== 'is_mediopassive' && key !== 'alternates' && key !== 'verb_type')
                 .map(([key, value]) => {
                     // Capitalize first letter and format the value
                     const formattedKey = key.charAt(0).toUpperCase() + key.slice(1);
