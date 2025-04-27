@@ -181,7 +181,7 @@ async function getMorphology(word) {
         } catch (error) {
             reject(error)
         }
-    }, 200)
+    }, 100)
   })
 
   
@@ -290,7 +290,7 @@ async function insertWordsIntoDB(wordData, sourceFile) {
                 case: morph.case,
                 number: morph.number,
                 gender: morph.gender,
-                declension: morph.declension,
+                // declension: morph.declension,
             })
         } else if(morph.partOfSpeech === 'article') {
             wordProps.push({
@@ -298,7 +298,7 @@ async function insertWordsIntoDB(wordData, sourceFile) {
                 case: morph.case,
                 number: morph.number,
                 gender: morph.gender,
-                declension: morph.declension
+                // declension: morph.declension
             })
         }
         else if(morph.partOfSpeech === 'adjective') {
@@ -316,14 +316,22 @@ async function insertWordsIntoDB(wordData, sourceFile) {
     try {
         
         for(const wp of wordProps) {
-            const wordsExist = await fetchQuery({
+            const queryParams = {
                 ...wp,
                 lemma: wordData.morphData[0].lemma,
                 word: wordData.word
-            });
+            };
+            
+            // Remove null/undefined fields
+            const cleanParams = Object.fromEntries(
+                Object.entries(queryParams).filter(([_, value]) => value != null && value != undefined)
+            );
+
+            const wordsExist = await fetchQuery(cleanParams);
 
             if(wordsExist.length > 0) {
-                console.log('word ', wordData.word, 'already exist:', JSON.stringify(wordsExist[0]))
+                // console.log('word ', wordData.word, 'already exist:', JSON.stringify(wordsExist[0]))
+                console.log('word ', wordData.word, 'already exist with ID:', JSON.stringify(wordsExist[0].id))
                 continue
             }
 
@@ -349,8 +357,7 @@ async function insertWordsIntoDB(wordData, sourceFile) {
 }
 
 async function storeMorphData(wordList, source) {
-    // let startIndex = 498;
-    let startIndex = 8279;
+    let startIndex = 1525;
     let i = startIndex;
     for(let j = startIndex; j < wordList.length; j++) {
         const word = wordList[j]
@@ -376,14 +383,14 @@ async function storeMorphData(wordList, source) {
 
 // Example usage
 // const xmlFilePath = './data/eusebius.xml'; // path to your Perseus XML file
-const xmlFilePath = './data/eusiebus-book-2.xml'; // path to your Perseus XML file
+const xmlFilePath = './data/eusebius-book-3.xml'; // path to your Perseus XML file
 extractGreekWordsFromXML2(xmlFilePath).then(async words => {
   console.log(`Extracted ${words.length} Greek words:`);
   console.log(words.slice(0, 10)); // preview first 20
 
   await client.connect();
 
-  storeMorphData(words, 'eusebius_book_2').then((r) => console.log(r))
+  storeMorphData(words, 'eusebius_book_3').then((r) => console.log(r))
 }).catch(async (e) => {
     console.log(e);
     await client.end();
@@ -391,4 +398,5 @@ extractGreekWordsFromXML2(xmlFilePath).then(async words => {
 
 
 /// MEDIO PASSIVES: 1,929 records
+// τοῦ, τῶν, Τὰ
 

@@ -44,7 +44,9 @@
 const express = require("express");
 const axios = require("axios");
 const xml2js = require("xml2js");
-const { fetchGreekMorphs } = require('./morph-dynamic-filter')
+const { fetchGreekMorphs } = require('./morph-dynamic-filter');
+const { analyzeWord } = require("./word-analizer");
+const { parseMorphology } = require('./analyzer/matcher')
 
 const app = express();
 const PORT = 3000;
@@ -278,6 +280,22 @@ app.get("/morphology-and-meanings", async (req, res) => {
     //   })
   
       return res.json(morphs);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch analysis", details: error.message });
+    }
+  });
+
+  app.get("/morphology-analyzer", async (req, res) => {
+    const word = req.query.word;
+    if (!word) return res.status(400).json({ error: "Missing 'word' parameter" });
+  
+    try {
+      const morphs = analyzeWord(word)
+      const morphs2 = parseMorphology(word)
+      return res.json({
+        morphs,
+        morphs2
+      });
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch analysis", details: error.message });
     }
