@@ -489,7 +489,7 @@
         let isCorrect = true;
 
         const allCorrectOptions = [correct, ...alternates]
-        matchedCorrect = {}
+        const matchedCorrects = []
 
 
         // Helper function to check if an answer matches a parsing
@@ -511,6 +511,9 @@
         };
 
         for(const parsing of allCorrectOptions) {
+            const matchedCorrect = {}
+            let numberOfMatch = 0;
+
             for (const key in parsing) {
                 if (key === 'alternates' || key === 'is_mediopassive' || key === 'verb_type') continue;
                 
@@ -519,6 +522,7 @@
                     if (key === 'voice' && parsing.is_mediopassive && 
                         (userAnswer[key] === 'middle' || userAnswer[key] === 'passive')) {
                         matchedCorrect[key] = true;
+                        numberOfMatch += 1;
                         continue;
                     }
 
@@ -530,13 +534,20 @@
                     continue;
                 }
 
+                numberOfMatch += 1;
                 matchedCorrect[key] = true;
             }
+
+            matchedCorrects.push({
+                numberOfMatch,
+                matchedCorrect
+            })
         }
 
 
         // Check against correct answer and alternates
         const isAnyMatch = allCorrectOptions.some(isAnswerMatching);
+        const matchedCorrect = matchedCorrects.sort((a, b) => b.numberOfMatch - a.numberOfMatch)[0].matchedCorrect;
 
         if (isAnyMatch) {
             resultDiv.textContent = '✅ Correct!';
