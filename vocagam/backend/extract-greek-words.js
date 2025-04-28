@@ -7,7 +7,8 @@ const axios = require("axios");
 
 const client = new Client(process.env.DIRECT_DATABASE_URL);
 
-let tableName = 'greek_morphology'
+// let tableName = 'greek_morphology'
+let tableName = 'biblical_greek_morphology'
 
 const sqlVerbTypes = `UPDATE greek_morphology
 SET verb_type = CASE
@@ -273,6 +274,7 @@ async function insertWordsIntoDB(wordData, sourceFile) {
         wordData.morphData.forEach(morph => {
           if(morph.partOfSpeech === 'verb' && morph.mood !== 'participle' && morph.mood !== 'infinitive') {
             let txtD = {
+                lemma: morph.lemma,
                 part_of_speech: 'verb',
                 number: morph.number,
                 person: morph.person,
@@ -298,6 +300,7 @@ async function insertWordsIntoDB(wordData, sourceFile) {
               
           } else if(morph.partOfSpeech === 'verb' && morph.mood === 'infinitive') {
               const txtD = {
+                lemma: morph.lemma,
                 part_of_speech: 'infinitive',
                 tense: morph.tense,
                 mood: morph.mood,
@@ -321,6 +324,7 @@ async function insertWordsIntoDB(wordData, sourceFile) {
               }
           } else if(morph.partOfSpeech === 'verb' && morph.mood === 'participle') {
               let txtD = {
+                    lemma: morph.lemma,
                     part_of_speech: 'participle',
                     number: morph.number,
                     person: morph.person,
@@ -350,10 +354,12 @@ async function insertWordsIntoDB(wordData, sourceFile) {
               
             } else if(morph.partOfSpeech === 'adverb') {
               wordProps.push({
+                lemma: morph.lemma,
                 part_of_speech: 'adverb',
             })
           } else if(morph.partOfSpeech === 'noun') {
             wordProps.push({
+                lemma: morph.lemma,
                 part_of_speech: 'noun',
                 case: morph.case,
                 number: morph.number,
@@ -362,6 +368,7 @@ async function insertWordsIntoDB(wordData, sourceFile) {
             })
         } else if(morph.partOfSpeech === 'pronoun') {
             wordProps.push({
+                lemma: morph.lemma,
                 part_of_speech: 'pronoun',
                 case: morph.case,
                 number: morph.number,
@@ -370,6 +377,7 @@ async function insertWordsIntoDB(wordData, sourceFile) {
             })
         } else if(morph.partOfSpeech === 'article') {
             wordProps.push({
+                lemma: morph.lemma,
                 part_of_speech: 'article',
                 case: morph.case,
                 number: morph.number,
@@ -379,6 +387,7 @@ async function insertWordsIntoDB(wordData, sourceFile) {
         }
         else if(morph.partOfSpeech === 'adjective') {
             wordProps.push({
+                lemma: morph.lemma,
                 part_of_speech: 'adjective',
                 case: morph.case,
                 number: morph.number,
@@ -394,7 +403,7 @@ async function insertWordsIntoDB(wordData, sourceFile) {
         for(const wp of wordProps) {
             const queryParams = {
                 ...wp,
-                lemma: wordData.morphData[0].lemma,
+                // lemma: wordData.morphData[0].lemma,
                 word: wordData.word
             };
             
@@ -414,7 +423,7 @@ async function insertWordsIntoDB(wordData, sourceFile) {
             const { error } = await supabase.from(tableName).insert([
                 {  
                     ...wp,
-                    lemma: wordData.morphData[0].lemma,
+                    // lemma: wordData.morphData[0].lemma,
                     word: wordData.word,
                     word_source: sourceFile,
                     meta_data: wordData
@@ -433,7 +442,7 @@ async function insertWordsIntoDB(wordData, sourceFile) {
 }
 
 async function storeMorphData(wordList, source) {
-    let startIndex = 1525;
+    let startIndex = 8377;
     let i = startIndex;
     for(let j = startIndex; j < wordList.length; j++) {
         const word = wordList[j]
@@ -459,18 +468,38 @@ async function storeMorphData(wordList, source) {
 
 // Example usage
 // const xmlFilePath = './data/eusebius.xml'; // path to your Perseus XML file
-const xmlFilePath = './data/eusebius-book-3.xml'; // path to your Perseus XML file
-extractGreekWordsFromXML2(xmlFilePath).then(async words => {
-  console.log(`Extracted ${words.length} Greek words:`);
-  console.log(words.slice(0, 10)); // preview first 20
 
-  await client.connect();
+// const xmlFilePath = './data/eusebius-book-3.xml'; // path to your Perseus XML file
+// extractGreekWordsFromXML2(xmlFilePath).then(async words => {
+//   console.log(`Extracted ${words.length} Greek words:`);
+//   console.log(words.slice(0, 10)); // preview first 20
 
-  storeMorphData(words, 'eusebius_book_3').then((r) => console.log(r))
+//   await client.connect();
+
+//   storeMorphData(words, 'eusebius_book_3').then((r) => console.log(r))
+// }).catch(async (e) => {
+//     console.log(e);
+//     await client.end();
+// });
+
+
+
+async function readWordsFromJSON(filePath) {
+    const words = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    // return words.map(w => w.word)
+    return words
+}
+
+readWordsFromJSON('./data/greet_nt_words.json').then(async words => {
+    console.log(`Extracted ${words.length} Greek words:`);
+    console.log(words.slice(0, 10)); // preview first 10
+    await client.connect();
+    await storeMorphData(words, 'greek_new_testament');
+    await client.end();
 }).catch(async (e) => {
     console.log(e);
     await client.end();
-});
+})
 
 
 /// MEDIO PASSIVES: 1,929 records
