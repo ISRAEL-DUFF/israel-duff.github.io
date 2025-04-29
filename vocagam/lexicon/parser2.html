@@ -223,13 +223,13 @@
 
     #morphoButton {
       color: #aaa;
-      position: absolute;
+      /* position: absolute;
       right: 50vw;
-      top: 5px;
+      top: 5px; */
       font-size: 10px;
       font-weight: bold;
       cursor: pointer;
-      z-index: 2;
+      /* z-index: 2; */
       background-color: rgba(30, 30, 30, 0.8);
       padding: 5px 10px;
       border-radius: 4px;
@@ -240,6 +240,20 @@
       font-size: 14px;
       font-weight: bold;
       cursor: pointer;
+      background-color: rgba(30, 30, 30, 0.8);
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+
+    #scoreCount {
+      /* color: #aaa; */
+      position: absolute;
+      right: 50vw;
+      top: 5px;
+      font-size: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 2;
       background-color: rgba(30, 30, 30, 0.8);
       padding: 5px 10px;
       border-radius: 4px;
@@ -282,17 +296,19 @@
       <span class="close-quiz">&times;</span>
 
       <div id = "progressCount"></div>
+      <div id = "scoreCount"></div>
 
-      <button id="morphoButton" onclick="showLogeionModal()">Morpho</button>
+      <!-- <button id="morphoButton" onclick="showLogeionModal()">Morpho</button> -->
       
       <div class="question" id="question">Loading...</div>
 
         <form id="answerForm"></form>
         <button onclick="checkAnswer()" class = "customButton">Check Answer</button>
         <button onclick="revealAnswer()" type="button" class = "customButton">Reveal Answer</button>
+        <button id="morphoButton" onclick="showLogeionModal()">View in morpho</button>
 
         <div class="result" id="result"></div>
-        <div class="streak" id="streak">Streak: 0</div>
+        <!-- <div class="streak" id="streak">Streak: 0</div> -->
 
         <div id="answerModal" class="modal">
             <div class="modal-content">
@@ -362,6 +378,8 @@
     let currentQuestion = {};
     let currentIndex = 0;
     let streak = 0;
+    let correctScore = 0;
+    let incorrectScore = 0;
     let filters = {};
     let backendFilters = {
         part_of_speech: currentMode
@@ -369,21 +387,22 @@
 
     const form = document.getElementById('answerForm');
     const resultDiv = document.getElementById('result');
-    const streakDiv = document.getElementById('streak');
     const questionDiv = document.getElementById('question');
     const progressDiv = document.getElementById('progressCount');
+    const scoreDiv = document.getElementById('scoreCount');
     const filterControls = document.getElementById('filterControls');
     const modal = document.getElementById('answerModal');
-
+    let userChoice = 'reveal';
     document.getElementById('mode').addEventListener('change', (e) => {
       currentMode = e.target.value;
       streak = 0;
+      correctScore = 0;
+      incorrectScore = 0;
       filters = {};
       backendFilters = {
         part_of_speech: currentMode
       };
 
-      updateStreak();
       buildFilterControls();
       
       // nextQuestion();
@@ -501,63 +520,21 @@
       return allFilters[key] || [];
     }
 
-    // function checkAnswer() {
-    //   const userAnswer = {};
-    //   const inputs = form.querySelectorAll('input[type="radio"]');
-    //   inputs.forEach(input => {
-    //     // input.disabled = true;
-    //     const label = input.parentElement;
-    //     label.classList.remove('correct-label', 'incorrect-label');
-    //     const existingIcon = label.querySelector('.error-icon');
-    //     if (existingIcon) label.removeChild(existingIcon);
-    //   });
-
-    //   const selected = form.querySelectorAll('input[type="radio"]:checked');
-    //   selected.forEach(input => {
-    //     userAnswer[input.name] = input.value;
-    //   });
-
-    //   const correct = currentQuestion.correct;
-    //   let isCorrect = true;
-    //   for (const key in correct) {
-    //     const input = form.querySelector(`input[name="${key}"][value="${userAnswer[key]}"]`);
-    //     const label = input?.parentElement;
-    //     if (userAnswer[key] === correct[key]) {
-    //       label?.classList.add('correct-label');
-    //     } else if(correct['is_mediopassive'] && (userAnswer['voice'] === 'middle' || userAnswer['voice'] === 'passive')) {
-    //         label?.classList.add('correct-label');
-    //     } else {
-    //       label?.classList.add('incorrect-label');
-    //       if (label) {
-    //         const icon = document.createElement('span');
-    //         icon.className = 'error-icon';
-    //         icon.textContent = '✖';
-    //         label.appendChild(icon);
-    //       }
-    //       isCorrect = false;
-    //     }
-    //   }
-
-    //   if (isCorrect) {
-    //     resultDiv.textContent = '✅ Correct!';
-    //     streak++;
-    //     updateStreak();
-    //     setTimeout(nextQuestion, 1500);
-    //   } else {
-    //     resultDiv.textContent = '❌ Incorrect. You can reveal the correct answer.';
-    //     streak = 0;
-    //     updateStreak();
-    //   }
-    // }
+    function shouldIgnoreKey(key) {
+        return key === 'is_mediopassive' || key === 'alternates' || key === 'verb_type' || key === 'part_of_speech';
+    }
 
     function checkAnswer() {
+        userChoice = 'check';
         const userAnswer = {};
         const inputs = form.querySelectorAll('input[type="radio"]');
         inputs.forEach(input => {
             const label = input.parentElement;
             label.classList.remove('correct-label', 'incorrect-label');
             const existingIcon = label.querySelector('.error-icon');
+            const existingIcon2 = label.querySelector('.correct-icon');
             if (existingIcon) label.removeChild(existingIcon);
+            if (existingIcon2) label.removeChild(existingIcon2);
         });
 
         const selected = form.querySelectorAll('input[type="radio"]:checked');
@@ -574,29 +551,32 @@
 
 
         // Helper function to check if an answer matches a parsing
-        const isAnswerMatching = (parsing) => {
-            for (const key in parsing) {
-                if (key === 'alternates' || key === 'is_mediopassive' || key === 'verb_type') continue;
+        // const isAnswerMatching = (parsing) => {
+        //     for (const key in parsing) {
+        //         if (shouldIgnoreKey(key)) continue;
                 
-                if (userAnswer[key] !== parsing[key]) {
-                    // Special case for mediopassive
-                    if (key === 'voice' && parsing.is_mediopassive && 
-                        (userAnswer[key] === 'middle' || userAnswer[key] === 'passive')) {
-                        continue;
-                    }
+        //         if (userAnswer[key] !== parsing[key]) {
+        //             // Special case for mediopassive
+        //             if (key === 'voice' && parsing.is_mediopassive && 
+        //                 (userAnswer[key] === 'middle' || userAnswer[key] === 'passive')) {
+        //                 continue;
+        //             }
 
-                    return false;
-                }
-            }
-            return true;
-        };
+        //             return false;
+        //         }
+        //     }
+        //     return true;
+        // };
+
+        let isAnyMatch = false;
 
         for(const parsing of allCorrectOptions) {
             const matchedCorrect = {}
             let numberOfMatch = 0;
+            let isCorrect = true;
 
             for (const key in parsing) {
-                if (key === 'alternates' || key === 'is_mediopassive' || key === 'verb_type') continue;
+                if (shouldIgnoreKey(key)) continue;
                 
                 if (userAnswer[key] !== parsing[key]) {
                     // Special case for mediopassive
@@ -604,19 +584,21 @@
                         (userAnswer[key] === 'middle' || userAnswer[key] === 'passive')) {
                         matchedCorrect[key] = true;
                         numberOfMatch += 1;
+                        isCorrect = true;
                         continue;
                     }
 
-                    // if(matchedCorrect[key] !== true) {
-                    //     matchedCorrect[key] = false;
-                    // }
-
                     // return false;
+                    isCorrect = false;
                     continue;
                 }
 
                 numberOfMatch += 1;
                 matchedCorrect[key] = true;
+            }
+
+            if(isCorrect) {
+                isAnyMatch = true;
             }
 
             matchedCorrects.push({
@@ -627,18 +609,18 @@
 
 
         // Check against correct answer and alternates
-        const isAnyMatch = allCorrectOptions.some(isAnswerMatching);
+        // const isAnyMatch = allCorrectOptions.some(isAnswerMatching);
         const matchedCorrect = matchedCorrects.sort((a, b) => b.numberOfMatch - a.numberOfMatch)[0].matchedCorrect;
 
         if (isAnyMatch) {
             resultDiv.textContent = '✅ Correct!';
             streak++;
-            updateStreak();
+            correctScore++;
             setTimeout(nextQuestion, 2000);
         } else {
             resultDiv.textContent = '❌ Incorrect. You can reveal the correct answer.';
             streak = 0;
-            updateStreak();
+            incorrectScore++;
         }
 
         // Mark correct/incorrect labels
@@ -717,6 +699,11 @@
         });
 
         modal.classList.add('show');
+
+        if(userChoice === 'reveal') {
+            streak = 0;
+            incorrectScore++;
+        }
     }
 
     function closeModal() {
@@ -726,9 +713,6 @@
       }, 300);
     }
 
-    function updateStreak() {
-      streakDiv.textContent = `Streak: ${streak}`;
-    }
 
     function nextQuestion() {
       let list = questions[currentMode];
@@ -760,8 +744,10 @@
       currentQuestion = list[currentIndex++];
       questionDiv.textContent = `${currentQuestion.form}`;
       progressDiv.textContent = `${currentIndex} of ${list.length}`
+      scoreDiv.innerHTML = `<span style="color: #7fffd4; margin-right: 10px"> ✓ ${correctScore} </span>  <span style="color: #ff6b6b; margin-right: 10px"> ✖ ${incorrectScore} </span> <span style="color: #aaa"> streak: ${streak} </span>`
       buildForm(currentQuestion.correct);
       resultDiv.textContent = '';
+      userChoice = 'reveal';
     }
 
     function showQuizModal() {

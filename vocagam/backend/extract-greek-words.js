@@ -107,6 +107,18 @@ async function fetchQuery(whereParams = {}, limit = 10) {
     }
 }
 
+async function updateFrequency(id, frequency) {
+    try {
+        const res = await client.query(`UPDATE ${tableName} SET morphology_frequency = ${frequency} WHERE id = ${id}`);
+        return res.rows
+    } catch (err) {
+      console.error('Query failed', err);
+    } finally {
+      //await client.end();
+      console.log('')
+    }
+}
+
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
 
 async function extractGreekWordsFromXML(xmlFilePath) {
@@ -416,7 +428,11 @@ async function insertWordsIntoDB(wordData, sourceFile) {
 
             if(wordsExist.length > 0) {
                 // console.log('word ', wordData.word, 'already exist:', JSON.stringify(wordsExist[0]))
-                console.log('word ', wordData.word, 'already exist with ID:', JSON.stringify(wordsExist[0].id))
+                console.log('word ', wordData.word, 'already exist with ID:', JSON.stringify(wordsExist[0].id));
+
+                // TODO: update the word morphology frequency
+                await updateFrequency(wordsExist[0].id, wordsExist[0].morphology_frequency + 1);
+
                 continue
             }
 
@@ -442,7 +458,8 @@ async function insertWordsIntoDB(wordData, sourceFile) {
 }
 
 async function storeMorphData(wordList, source) {
-    let startIndex = 8377;
+    // 5400
+    let startIndex = 3600;
     let i = startIndex;
     for(let j = startIndex; j < wordList.length; j++) {
         const word = wordList[j]
