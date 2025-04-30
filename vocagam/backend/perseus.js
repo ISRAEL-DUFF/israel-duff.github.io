@@ -44,9 +44,6 @@
 const express = require("express");
 const axios = require("axios");
 const xml2js = require("xml2js");
-const { fetchGreekMorphs } = require('./morph-dynamic-filter');
-const { analyzeWord } = require("./word-analizer");
-const { parseMorphology } = require('./analyzer/matcher')
 
 const app = express();
 const PORT = 3000;
@@ -219,10 +216,6 @@ app.get("/morphology", async (req, res) => {
 
     // console.log(response.data)
     
-    // xml2js.parseString(response.data, { explicitArray: false }, (err, result) => {
-    //   if (err) {
-    //     return res.status(500).json({ error: "Failed to parse XML" });
-    //   }
 
     //   const analysis = result?.morphologicalAnalysis?.analysis?.body;
     //   res.json(analysis || { message: "No analysis found" });
@@ -265,41 +258,6 @@ app.get("/morphology-and-meanings", async (req, res) => {
     }
   });
 
-  app.get("/morphology/fetch", async (req, res) => {
-    const filters = req.query;
-    if (!filters) return res.status(400).json({ error: "Missing 'filter' parameter" });
-
-    const filtrs = JSON.parse(JSON.stringify(filters))
-    console.log(filtrs)
-  
-    try {
-      const morphs = await fetchGreekMorphs(filtrs)
-      
-    //   console.log({
-    //     morphs
-    //   })
-  
-      return res.json(morphs);
-    } catch (error) {
-      res.status(500).json({ error: "Failed to fetch analysis", details: error.message });
-    }
-  });
-
-  app.get("/morphology-analyzer", async (req, res) => {
-    const word = req.query.word;
-    if (!word) return res.status(400).json({ error: "Missing 'word' parameter" });
-  
-    try {
-      const morphs = analyzeWord(word)
-      const morphs2 = parseMorphology(word)
-      return res.json({
-        morphs,
-        morphs2
-      });
-    } catch (error) {
-      res.status(500).json({ error: "Failed to fetch analysis", details: error.message });
-    }
-  });
 
 app.listen(PORT, () => {
   console.log(`Morphology server listening at http://localhost:${PORT}`);

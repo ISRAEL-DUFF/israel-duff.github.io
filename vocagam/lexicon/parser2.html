@@ -345,16 +345,16 @@
         { form: "ἔλυσαν", correct: { tense: "aorist", voice: "active", mood: "indicative", number: "plural", person: "third", verb_type: '-' } }
       ],
       noun: [
-        { form: "λόγου", correct: { case: "genitive", number: "singular", gender: "masculine", declension: "2nd" } },
-        { form: "χαράς", correct: { case: "genitive", number: "singular", gender: "feminine", declension: "1st" } }
+        { form: "λόγου", correct: { declension: "2nd", case: "genitive", number: "singular", gender: "masculine" } },
+        { form: "χαράς", correct: { declension: "1st", case: "genitive", number: "singular", gender: "feminine" } }
       ],
       participle: [
         { form: "λύων", correct: { tense: "present", voice: "active", gender: "masculine", case: "nominative", number: "singular", verb_type: '-' } },
         { form: "λυθείς", correct: { tense: "aorist", voice: "passive", gender: "masculine", case: "nominative", number: "singular", verb_type: '-' } }
       ],
       adjective: [
-        { form: "ἀγαθός", correct: { gender: "masculine", case: "nominative", number: "singular", declension: "2nd" } },
-        { form: "καλῆς", correct: { gender: "feminine", case: "genitive", number: "singular", declension: "1st" } }
+        { form: "ἀγαθός", correct: { declension: "2nd", gender: "masculine", case: "nominative", number: "singular" } },
+        { form: "καλῆς", correct: { declension: "1st", gender: "feminine", case: "genitive", number: "singular" } }
       ],
       pronoun: [
         { form: "ἐμοί", correct: { case: "dative", number: "singular", person: "first" } },
@@ -370,7 +370,7 @@
       number: ['singular', 'plural', 'dual'],
       case: ['nominative', 'genitive', 'dative', 'accusative', 'vocative'],
       gender: ['masculine', 'feminine', 'neuter'],
-      declension: ['1st', '2nd', '3rd', '1st & 2nd', ],
+      declension: ['1st', '2nd', '3rd', '1st & 2nd'],
       verb_type: ['w', 'mi', 'contract', 'liquid', 'irregular']
     };
 
@@ -521,7 +521,7 @@
     }
 
     function shouldIgnoreKey(key) {
-        return key === 'is_mediopassive' || key === 'alternates' || key === 'verb_type' || key === 'part_of_speech';
+        return key === 'is_mediopassive' || key === 'alternates' || key === 'verb_type' || key === 'part_of_speech' || key === 'declension';
     }
 
     function checkAnswer() {
