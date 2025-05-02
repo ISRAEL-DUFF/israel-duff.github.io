@@ -459,7 +459,7 @@ async function insertWordsIntoDB(wordData, sourceFile) {
 
 async function storeMorphData(wordList, source) {
     // 14000
-    let startIndex = 30252;
+    let startIndex = 46483;
     let i = startIndex;
     for(let j = startIndex; j < wordList.length; j++) {
         const word = wordList[j]

@@ -1,49 +1,8 @@
-// const axios = require("axios");
-// const fs = require("fs-extra");
-// const path = require("path");
-
-// const BASE_URL = "http://www.perseus.tufts.edu/hopper/dltext?doc=Perseus:text:2008.01.0643";
-
-// const saveDir = path.join(__dirname, "downloads");
-// fs.ensureDirSync(saveDir);
-
-// async function downloadSection(book, section) {
-//   const url = `${BASE_URL}:book=${book}:section=${section}`;
-//   const filename = `book-${book}-section-${section}.xml`;
-//   const filepath = path.join(saveDir, filename);
-
-//   try {
-//     const { data } = await axios.get(url);
-//     if (data.includes("<text>")) {
-//       await fs.writeFile(filepath, data);
-//       console.log(`✅ Saved ${filename}`);
-//       return true;
-//     } else {
-//       console.log(`❌ No content at book ${book}, section ${section}`);
-//       return false;
-//     }
-//   } catch (err) {
-//     console.error(`⚠️ Error fetching book ${book}, section ${section}:`, err.message);
-//     return false;
-//   }
-// }
-
-// async function downloadAll() {
-//   for (let book = 1; book <= 10; book++) {
-//     for (let section = 1; section <= 40; section++) {
-//       const success = await downloadSection(book, section);
-//       if (!success) break; // stop if no section exists
-//     }
-//   }
-// }
-
-// downloadAll();
-
-
-
 const express = require("express");
 const axios = require("axios");
 const xml2js = require("xml2js");
+const { lookupHeadwordByGreek, lookupHeadwordByGreek2 } = require("./lsj-lookup");
+const dodsonData = require('./data/dodson-dictionary.json');
 
 const app = express();
 const PORT = 3000;
@@ -256,7 +215,68 @@ app.get("/morphology-and-meanings", async (req, res) => {
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch analysis", details: error.message });
     }
-  });
+});
+
+app.get("/lexica", async (req, res) => {
+    const word = req.query.word;
+    if (!word) return res.status(400).json({ error: "Missing 'word' parameter" });
+  
+    try {
+        const responseData = await lookupHeadwordByGreek(word);
+        const dodsonResp = dodsonData[word];
+  
+      return res.json({
+        lsj: {
+            key: responseData.key,
+            senses: responseData.entry.sense.map(s => {
+                if(typeof s.i === 'string') {
+                    return {
+                        introText: s._,
+                        meanings:s.i
+                    };
+                } else if(Array.isArray(s.i)) {
+                    const meanings = s.i.reduce((acc, item) => {
+                        acc += ` ${item};`;
+                        return acc;
+                    }, '');
+
+                    return {
+                        introText: s._,
+                        meanings:meanings
+                    };
+                } else {
+                    return '-';
+                }
+            }),
+            // sense: responseData.entry.sense,
+            // sense2: responseData.entry.sense[1].i,
+            // sense3: responseData.entry.sense[2].i,
+            // sense4: responseData.entry.sense[3].i,
+            // sense5: responseData.entry.sense[4].i,
+        },
+        dodson: dodsonResp
+      });
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch analysis", details: error.message });
+    }
+});
+
+app.get("/lexica2", async (req, res) => {
+    const word = req.query.word;
+    if (!word) return res.status(400).json({ error: "Missing 'word' parameter" });
+  
+    try {
+        const responseData = await lookupHeadwordByGreek2(word);
+        const dodsonResp = dodsonData[word];
+  
+      return res.json({
+        lsj: responseData,
+        dodson: dodsonResp
+      });
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch analysis", details: error.message });
+    }
+});
 
 
 app.listen(PORT, () => {
@@ -267,4 +287,9 @@ app.listen(PORT, () => {
 // Noun: σωτῆρος
 // Verb: ἐλάμβανεν
 // Adjective: αὐτοῦ
+
+// λέγω
+// καλέω
+// τίκτω
+// θεάομαι
 

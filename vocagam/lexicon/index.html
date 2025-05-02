@@ -51,7 +51,7 @@
     }
     .modal-content1 {
       background-color: #1e1e1e;
-      margin: 15% auto;
+      margin: 5% auto;
       padding: 20px;
       border-radius: 8px;
       width: 80%;
@@ -113,28 +113,9 @@
     }
 
 
-    /* .grammar-info {
-      background-color: #2a2a2a;
-      padding: 20px;
-      border-radius: 8px;
-      margin-top: 20px;
-      text-align: left;
-    }
-    .grammar-item {
-      margin: 10px 0;
-      padding: 10px;
-      background-color: #1e1e1e;
-      border-radius: 4px;
-    }
-    .grammar-label {
-      color: #90caf9;
-      font-weight: bold;
-      margin-right: 10px;
-    }
-    .grammar-value {
-      color: #ffffff;
-    } */
+    
     .grammar-info {
+      display: flex;
       background-color: #2a2a2a;
       padding: 20px;
       border-radius: 8px;
@@ -142,6 +123,7 @@
       text-align: left;
     }
     .grammar-form {
+      /* width: 100%; */
       margin-bottom: 20px;
       padding: 15px;
       background-color: #1e1e1e;
@@ -194,6 +176,29 @@
       padding: 5px 10px;
       border-radius: 4px;
     }
+
+
+  .scroll-row {
+  display: flex;
+  gap: 1rem; /* space between boxes */
+  overflow-x: auto;
+  padding: 1rem;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+
+.box {
+  flex: 0 0 auto;
+  width: 150px;
+  height: 100px;
+  background-color: #3498db;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 1.5rem;
+}
   </style>
 </head>
 <body>
@@ -217,7 +222,7 @@
 
 
       <!-- Grammar Info Display -->
-      <div id="grammarInfo" class="grammar-info" style="display: none;"></div>
+      <div id="grammarInfo" class="grammar-info scroll-row" style="display: none;"></div>
 
 
       <!-- <input id="meaningsInput" placeholder="Enter glosses (separated by comma)" /> -->
@@ -240,6 +245,16 @@
       <iframe id="modalIframe" class="modal-iframe" src=""></iframe>
     </div>
   </div>
+
+
+  <!-- <div class="scroll-row">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+  </div> -->
 
   <script>
     let morphResponseData = {};
@@ -292,7 +307,7 @@
 
     function displayGrammarInfo(dataArray) {
       const grammarInfo = document.getElementById('grammarInfo');
-      grammarInfo.style.display = 'block';
+      grammarInfo.style.display = 'flex';
       
       // Clear previous content
       grammarInfo.innerHTML = '';
@@ -504,6 +519,108 @@
     const container = document.getElementById('copyInputContainer');
     container.style.display = container.style.display === 'none' ? 'block' : 'none';
   }
+
+
+
+  function parseLSJEntries(xmlString) {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(xmlString, "text/xml");
+
+    const entries = [];
+
+    const divs = doc.querySelectorAll("div2");
+
+    divs.forEach(div => {
+      const entry = {
+        id: div.getAttribute("id"),
+        key: div.getAttribute("key"),
+        headword: null,
+        forms: [],
+        etymology: null,
+        senses: []
+      };
+
+      // Headword
+      const head = div.querySelector("head");
+      if (head) {
+        entry.headword = head.textContent.trim();
+      }
+
+      // Forms (e.g., adjective endings)
+      const itypes = div.querySelectorAll("itype");
+      entry.forms = Array.from(itypes).map(i => i.textContent.trim());
+
+      // Etymology
+      const etym = div.querySelector("etym");
+      if (etym) {
+        entry.etymology = etym.textContent.trim();
+      }
+
+      // Senses
+      const senses = div.querySelectorAll("sense");
+      entry.senses = Array.from(senses).map(sense => {
+        const senseObj = {
+          id: sense.getAttribute("id"),
+          level: sense.getAttribute("level"),
+          gloss: sense.querySelector("i")?.textContent.trim() || null,
+          quotes: []
+        };
+
+        const quotes = sense.querySelectorAll("cit");
+        senseObj.quotes = Array.from(quotes).map(cit => {
+          const quote = cit.querySelector("quote")?.textContent.trim();
+          const bibl = cit.querySelector("bibl");
+          let biblRef = null;
+          if (bibl) {
+            biblRef = {
+              author: bibl.querySelector("author")?.textContent.trim() || null,
+              title: bibl.querySelector("title")?.textContent.trim() || null,
+              passage: bibl.textContent.trim()
+            };
+          }
+          return { quote, bibl: biblRef };
+        });
+
+        return senseObj;
+      });
+
+      entries.push(entry);
+    });
+
+    return entries;
+  }
+
+
+  const xmlString = `
+  <div2 id="crossa)/grios" orig_id="n892" key="a)/grios" type="main" opt="n"><head extent="full" lang="greek" opt="n" orth_orig="ἄγριος">ἄγριος</head>, <itype lang="greek" opt="n">α</itype>, <itype lang="greek" opt="n">ον</itype>, <bibl n="Perseus:abo:tlg,0012,002:9:119"><title>Od.</title> 9.119</bibl>
+; also <itype lang="greek" opt="n">ος</itype>, <itype lang="greek" opt="n">ον</itype> (not in Trag. or com). <bibl n="Perseus:abo:tlg,0012,001:19:88"><title>Il.</title> 19.88</bibl>, <bibl n="Perseus:abo:tlg,1604,001:3:6" default="NO"><author>Phoc.</author> 3.6</bibl>, 
+<bibl n="Perseus:abo:tlg,0059,034:824a"><author>Pl.</author> <title>Lg.</title> 824a</bibl>, <bibl n="Perseus:abo:tlg,0005,001:22:36"><author>Theoc.</author> 22.36</bibl>: <gramGrp opt="n"><gram type="comp" opt="n">Comp.</gram></gramGrp> <cit><quote lang="greek">-ώτερος</quote> 
+<bibl n="Perseus:abo:tlg,0003,001:6:60"><author>Th.</author> 6.60</bibl></cit>: <gramGrp opt="n"><gram type="comp" opt="n">Sup.</gram></gramGrp> <cit><quote lang="greek">-ώτατος</quote> <bibl n="Perseus:abo:tlg,0059,030:564a"><author>Pl.</author> <title>R.</title> 564a</bibl></cit> 
+(<etym lang="greek" opt="n">ἀγρός</etym>): <sense id="n892.0" n="" level="1" opt="n"><i>living in the fields, wild, savage.</i> </sense><sense n="I" id="n892.1" level="2" opt="n"> of animals, opp. <foreign lang="greek">τιθασός ἥμερος,</foreign> <i>wild,</i> 
+<cit><quote lang="greek">βάλλειν ἄγρια πάντα</quote> <bibl n="Perseus:abo:tlg,0012,001:5:52"><title>Il.</title> 5.52</bibl></cit>; <foreign lang="greek">αἶξ, σῦς,</foreign> <bibl n="Perseus:abo:tlg,0012,001:3:24">3.24</bibl>, <bibl n="Perseus:abo:tlg,0012,001:9:539">9.539</bibl>
+; even of flies, <cit><quote lang="greek">ἄ. φῦλα, μυίας</quote> <bibl n="Perseus:abo:tlg,0012,001:19:30">19.30</bibl></cit>; <foreign lang="greek">ἵπποι, ὄνοι,</foreign> etc., <bibl n="Perseus:abo:tlg,0016,001:7:86"><author>Hdt.</author> 7.86</bibl>, etc.; 
+<foreign lang="greek">ἄ. τέρας,</foreign> of a bull, <bibl n="Perseus:abo:tlg,0006,005:1214"><author>E.</author> <title>Hipp.</title> 1214</bibl>; 
+<cit><quote lang="greek">ἄ. θηρία</quote> <bibl n="Perseus:abo:tlg,0032,006:1:2:7"><author>X.</author> <title>An.</title> 1.2.7</bibl></cit>; of men, <i>living in a wild state,</i> <bibl n="Perseus:abo:tlg,0016,001:4:191"><author>Hdt.</author> 4.191</bibl>. </sense><sense n="2" id="n892.2" level="3" opt="n"> of trees, opp. <foreign lang="greek">ἥμερος,</foreign> <i>wild,</i> <bibl n="Perseus:abo:tlg,0033,005:46" default="NO"><author>Pi.</author> <title>Fr.</title> 46</bibl>, <bibl n="Perseus:abo:tlg,0016,001:4:21"><author>Hdt.</author> 4.21</bibl>, etc.; <foreign lang="greek">μητρὸς ἀγρίας ἄπο ποτόν</foreign> of the <i>wild</i> vine, <bibl n="Perseus:abo:tlg,0085,002:614"><author>A.</author> <title>Pers.</title> 614</bibl>, cf. <bibl n="Perseus:abo:tlg,0086,036:896a:8" default="NO"><author>Arist.</author> <title>Pr.</title> 896a8</bibl>; <cit><quote lang="greek">ἄ. ἔλαιον</quote> <bibl n="Perseus:abo:tlg,0011,001:1197"><author>S.</author> <title>Tr.</title> 1197</bibl></cit>; <cit><quote lang="greek">ὕλη</quote> <bibl n="Perseus:abo:tlg,0011,004:476"><author>Id.</author> <title>OT</title> 476</bibl></cit>, etc.; <cit><quote lang="greek">μέλι</quote> <bibl n="Perseus:abo:tlg,0031,001:3:4"><title>Ev.Matt.</title> 3.4</bibl></cit>. </sense><sense n="3" id="n892.3" level="3" opt="n"> of countries, <i>wild, uncultivated,</i> <bibl n="Perseus:abo:tlg,0059,004:113b"><author>Pl.</author> <title>Phd.</title> 113b</bibl>, <bibl n="Perseus:abo:tlg,0059,034:905b"><title>Lg.</title> 905b</bibl>. </sense><sense n="II" id="n892.4" level="2" opt="n"> mostly of men, beasts, etc.: </sense><sense n="1" id="n892.5" level="3" opt="n"> in moral sense, <i>savage, fierce,</i> <bibl n="Perseus:abo:tlg,0012,001:8:96"><title>Il.</title> 8.96</bibl>, <bibl n="Perseus:abo:tlg,0012,002:1:199"><title>Od.</title> 1.199</bibl>, etc., cf. <bibl n="Perseus:abo:tlg,0019,003:567"><author>Ar.</author> <title>Nu.</title> 567</bibl>; <cit><quote lang="greek">δεσπότης</quote> <bibl n="Perseus:abo:tlg,0059,030:329c"><author>Pl.</author> <title>R.</title> 329c</bibl></cit>; <cit><quote lang="greek">ἄ. καὶ ἀπαίδευτος</quote> <bibl n="Perseus:abo:tlg,0059,023:510b"><author>Id.</author> <title>Grg.</title> 510b</bibl></cit>; <cit><quote lang="greek">ἄγριε παῖ καὶ στυγνέ</quote> <bibl n="Perseus:abo:tlg,0005,001:23:19"><author>Theoc.</author> 23.19</bibl></cit>, cf. <bibl n="Perseus:abo:tlg,0005,001:2:54">2.54</bibl>; <foreign lang="greek">ἄ. κυβευτής</foreign> a <i>passionate</i> gambler, <bibl n="Perseus:abo:tlg,0541,001:965" default="NO"><author>Men.</author> 965</bibl>; esp. of <foreign lang="greek">παιδερασταί,</foreign> <bibl n="Perseus:abo:tlg,0019,003:349"><author>Ar.</author> <title>Nu.</title> 349</bibl> (cf. Sch. ad loc.), <bibl n="Perseus:abo:tlg,0026,001:52"><author>Aeschin.</author> 1.52</bibl>, <bibl n="Perseus:abo:tlg,4001,001:p.14B" default="NO"><author>Aen.Gaz.</author> <title>Thphr.</title> p.14B</bibl>. </sense><sense n="2" id="n892.6" level="3" opt="n"> of temper, <i>wild, fierce,</i> <foreign lang="greek">θυμός, χόλος,</foreign> <bibl n="Perseus:abo:tlg,0012,001:9:629"><title>Il.</title> 9.629</bibl>, <bibl n="Perseus:abo:tlg,0012,001:4:23">4.23</bibl>; <cit><quote lang="greek">λέων δʼ ὥς, ἄγρια οἶδεν</quote> <bibl n="Perseus:abo:tlg,0012,001:24:41">24.41</bibl></cit>; <foreign lang="greek">ἄ. πτόλεμος, μῶλος,</foreign> <bibl n="Perseus:abo:tlg,0012,001:17:737">17.737</bibl>, <bibl n="Perseus:abo:tlg,0012,001:17:398">398</bibl>; <cit><quote lang="greek">ἄγριος ἄτη</quote> <bibl n="Perseus:abo:tlg,0012,001:19:88">19.88</bibl></cit>; <foreign lang="greek">ἄ. ὁδοί</foreign> <i>cruel</i> ways or counsels, <bibl n="Perseus:abo:tlg,0011,002:1274"><author>S.</author> <title>Ant.</title> 1274</bibl>; <cit><quote lang="greek">ὀργή</quote> <bibl n="Perseus:abo:tlg,0011,004:344"><title>OT</title> 344</bibl></cit> (<gramGrp opt="n"><gram type="comp" opt="n">Sup.</gram></gramGrp>); <cit><quote lang="greek">ἀγριώτατα ἤθεα</quote> <bibl n="Perseus:abo:tlg,0016,001:4:106"><author>Hdt.</author> 4.106</bibl></cit>; <cit><quote lang="greek">ἔρωτες</quote> <bibl n="Perseus:abo:tlg,0059,004:81a"><author>Pl.</author> <title>Phd.</title> 81a</bibl></cit>; <cit><quote lang="greek">φιλία</quote> <bibl n="Perseus:abo:tlg,0059,034:837b"><author>Id.</author> <title>Lg.</title> 837b</bibl></cit>, cf. <bibl n="Perseus:abo:tlg,0059,030:572b"><title>R.</title> 572b</bibl>, etc.; <foreign lang="greek">τὸ ἄ.</foreign> <i>savageness,</i> <bibl n="Perseus:abo:tlg,0059,005:394e"><author>Id.</author> <title>Cra.</title> 394e</bibl>; <foreign lang="greek">ἐς τὸ -ώτερον</foreign> <i>to harsher measures,</i> <author>Th.</author> l.c. </sense><sense n="3" id="n892.7" level="3" opt="n"> of things, circumstances, etc., <i>cruel, harsh,</i> <cit><quote lang="greek">δεσμά</quote> <bibl n="Perseus:abo:tlg,0085,003:177"><author>A.</author> <title>Pr.</title> 177</bibl></cit>; <foreign lang="greek">νὺξ -ωτέρη</foreign> <i>wild, stormy,</i> <bibl n="Perseus:abo:tlg,0016,001:8:13"><author>Hdt.</author> 8.13</bibl>; <cit><quote lang="greek">δουλεία</quote> <bibl n="Perseus:abo:tlg,0059,030:564a"><author>Pl.</author> <title>R.</title> 564a</bibl></cit>; <foreign lang="greek">σύντασις ἀ.</foreign> a <i>violent</i> strain, <bibl n="Perseus:abo:tlg,0059,010:46d"><author>Id.</author> <title>Phlb.</title> 46d</bibl>; <foreign lang="greek">ἄ. βάρος,</foreign> of strong, hot wine, <bibl n="Perseus:abo:tlg,0019,012:351" default="NO"><author>Ar.</author> <title>Fr.</title> 351</bibl>. </sense><sense n="b" id="n892.8" level="4" opt="n"> <foreign lang="greek">ἀ. νόσος,</foreign> prob., <i>malignant,</i> <bibl n="Perseus:abo:tlg,0011,006:173"><author>S.</author> <title>Ph.</title> 173</bibl>, <bibl n="Perseus:abo:tlg,0011,006:265">265</bibl>; <cit><quote lang="greek">ἄ. ἕλκος</quote> <bibl n="Perseus:abo:tlg,0036,001:1:16" default="NO"><author>Bion</author> 1.16</bibl></cit>. </sense><sense n="III" id="n892.9" level="2" opt="n"> <pos opt="n">Adv.</pos> <foreign lang="greek">-ίως,</foreign> <i>savagely,</i> <bibl n="Perseus:abo:tlg,0085,007:972"><author>A.</author> <title>Eu.</title> 972</bibl>, <bibl n="Perseus:abo:tlg,0019,004:705"><author>Ar.</author> <title>V.</title> 705</bibl>; <foreign lang="greek">ἄγρια δερκομένω, παίσδων,</foreign> <bibl n="Perseus:abo:tlg,0020,003:236"><author>Hes.</author> <title>Sc.</title> 236</bibl>, <bibl n="Perseus:abo:tlg,0035,001:1:11" default="NO"><author>Mosch.</author> 1.11</bibl>. [<pron extent="full" lang="greek" opt="n">ᾱ</pron> <author>Hom.</author>; <pron extent="full" lang="greek" opt="n">ᾱ</pron> in trim., <pron extent="full" lang="greek" opt="n">ᾰ</pron> in lyr. <author>A.</author> and <author>S.</author>; <itype lang="greek" opt="n">ᾱ/ᾰ</itype> <author>E.</author>; <pron extent="full" lang="greek" opt="n">ῑ</pron> metri grat., where the ult. is long, <bibl n="Perseus:abo:tlg,0012,001:22:313"><title>Il.</title> 22.313</bibl> (nisi leg. <foreign lang="greek">ἀγρίοο</foreign>).]</sense></div2>
+
+  `
+  const xmlString2 = `<div2 id="crossa)rti/xeir" orig_id="n15723" key="a)rti/xeir" type="main" opt="n">
+<head extent="suff" lang="greek" opt="n" orth_orig="ἀρτί-χειρ">ἀρτίχειρ</head>, 
+<gen lang="greek" opt="n">ὁ</gen>, <gen lang="greek" opt="n">ἡ</gen>, gen. <itype lang="greek" opt="n">χειρος</itype>, <sense id="n15723.0" n="" level="1" opt="n"><i>strong of hand</i> (cf. <foreign lang="greek">ἀρτίπους</foreign>), 
+<bibl n="Perseus:abo:tlg,0059,034:795d"><author>Pl.</author> <title>Lg.</title> 795d</bibl>.</sense></div2>`
+
+  const entryString = xmlString.replace(/<[^>]*>/g, '')
+  const entryString2 = xmlString2.replace(/<[^>]*>/g, '')
+
+  const entries = parseLSJEntries(xmlString);
+  const entries2 = parseLSJEntries(xmlString2);
+  console.log(entries)
+  console.log(entries2)
+
+  console.log("--------------------------------")
+  console.log(entryString)
+  console.log("--------------------------------")
+  console.log(entryString2)
+
 
   // PING GLITCH EVERY MINUTE
   setInterval(() => {

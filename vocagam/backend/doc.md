@@ -1,120 +1,28 @@
-Phase 2 — What Forms to Cover
-Let's start Phase 1 covering verbs only, like:
+I am super grateful for the data sources that made this project possible.
 
-Type | Included
-Present Active, Middle, Passive | ✅
-Imperfect Active, Middle, Passive | ✅
-Future Active, Middle, Passive | ✅
-Aorist Active, Middle, Passive | ✅
-Subjunctive, Optative, Imperative | ✅
-Contract Verbs (ει, οι endings) | ✅
+The data for this project came from the following sources:
+
+Throughout the app, i constantly used the Logeion API (by linking to the following urls):
+https://logeion.uchicago.edu/morpho
+https://logeion.uchicago.edu/%CF%80%CF%81%CE%BF%CE%B4%CE%B5%CE%AF%CE%BA%CE%BD%CF%85%CE%BC%CE%B9
+
+The Perseus API for the morphology of Greek words:
+https://services.perseids.org/bsp/morphologyservice/analysis/word?lang=grc&engine=morpheusgrc&word=πληροῖ
+
+The Perseus Greek NT Document used for the word parser is found on the following perseus page:
+https://www.perseus.tufts.edu/hopper/collection?collection=Perseus%3Acollection%3AGreco-Roman
+
+Greek NT Dictionary
+https://github.com/biblicalhumanities/Dodson-Greek-Lexicon/blob/master/dodson.csv
+
+Great inspiration for my word parser project:
+https://mastergreek.com/#home
+
+Diogenes provided the xml data for the LSJ dictionary.
+https://d.iogen.es/
 
 
-Later we can add:
-
-- Infinitives
-
-- Participles
-
-- Perfect Tenses
-
-- Irregulars
-
-
-🛤️ Phase 6 — Future Expansion
-Handle contract verbs (augment the endings slightly).
-
-Handle irregulars (special rules).
-
-Handle infinitives (-ειν, -σθαι, etc).
-
-Handle participles (-ων, -ουσα, -ον).
-
-Smartly filter out impossible forms if extra info is given (like part of speech).
+All the data for the project is stored as a zip file inside the backend folder.
 
 
 
-
-
-
-
-
-
-
-👉 Next Steps?
-If you want, next I can help you:
-
-Auto-build endings database from standard tables (present, future, aorist endings).
-
-Expand participles fully (all cases/genders/numbers).
-
-Add verb stems + real lemma matching for super accuracy.
-
-
-
-
-
-
-
-🏗 Plan
-We will organize endings into major categories:
-
-Category | Example
-Present Active | λύω
-Present Middle/Passive | λύομαι
-Imperfect Active | ἔλυον
-Imperfect Middle/Passive | ἐλυόμην
-Future Active | λύσω
-Future Middle | λύσομαι
-Future Passive | λυθήσομαι
-Aorist Active | ἔλυσα
-Aorist Middle | ἐλυσάμην
-Aorist Passive | ἐλύθην
-Perfect Active | λέλυκα
-Perfect Middle/Passive | λέλυμαι
-Pluperfect Active | ἐλελύκειν
-Pluperfect Middle/Passive | ἐλελύμην
-
-
-📋 Status so far
-Tense/Voice | Done?
-Present Active Indicative | ✅
-Present Middle/Passive Indicative | ✅
-Imperfect Active Indicative | ✅
-Imperfect Middle/Passive Indicative | ✅
-Future Active Indicative | ✅
-Future Middle Indicative | ✅
-Aorist Active Indicative | ✅
-Infinitives | ✅
-Participles | ✅
-
-
-
-📋 Current Supported Set
-Tense/Voice | Mood | Covered?
-Present Active | Indicative | ✅
-Present Middle/Passive | Indicative | ✅
-Imperfect Active | Indicative | ✅
-Imperfect Middle/Passive | Indicative | ✅
-Future Active | Indicative | ✅
-Future Middle | Indicative | ✅
-Future Passive | Indicative | ✅
-Aorist Active | Indicative | ✅
-Aorist Middle | Indicative | ✅
-Perfect Active | Indicative | ✅
-Perfect Middle/Passive | Indicative | ✅
-Infinitives (various) | — | ✅
-Participles (basic masc nom sg) | — | ✅
-
-
-When you're ready, we can also expand to:
-
-Contract forms
-
-Irregular roots
-
-Subjunctive/optative systems
-
-Infinitive endings
-
-All participle cases (full declension)
