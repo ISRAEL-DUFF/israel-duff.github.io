@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const { Client } = require('pg');
+const { betaCodeToGreek } = require('beta-code-js');
+const { parseStringPromise } = require("xml2js");
 
 const client = new Client(process.env.DIRECT_DATABASE_URL);
 let connectedToDb = false;
@@ -332,6 +334,83 @@ async function fetchQuery(whereParams = {}, limit = 10) {
     }
 }
 
+function normalizeGreek(lemma) {
+    const unicode = betaCodeToGreek(lemma);
+    return unicode
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^\p{Script=Greek}]/gu, "")
+      .toLowerCase();
+}
+
+async function extractLexiconSenses(lexiconEntryXml) {
+    const wrappedXml = `<root>${lexiconEntryXml}</root>`;
+    const json = await parseStringPromise(wrappedXml, {
+      mergeAttrs: true,
+      explicitArray: false,
+      preserveChildrenOrder: true,
+      charsAsChildren: true,
+    });
+
+    const senses = json.root.div2.sense.map(s => {
+        if(typeof s.i === 'string') {
+            return {
+                introText: s._,
+                meanings:s.i
+            };
+        } else if(Array.isArray(s.i)) {
+            const meanings = s.i.reduce((acc, item) => {
+                acc += ` ${item};`;
+                return acc;
+            }, '');
+
+            return {
+                introText: s._,
+                meanings:meanings
+            };
+        } else {
+            return '-';
+        }
+    })
+  
+    return senses;
+}
+
+async function fetchLexiconEntry(greekWord) {
+    try {
+        if(!connectedToDb) {
+            await client.connect();
+            connectedToDb = true;
+        }
+
+        const normalizedWord = normalizeGreek(greekWord)
+        let columns = `word, beta_code, normalized_word, xml_entry`
+        let whereCondition = `normalized_word = '${normalizedWord}' OR word = '${greekWord}'`
+      
+      
+      // 4. Fetch random page
+      const query = `
+        SELECT ${columns} FROM lsj_lexicon
+        WHERE ${whereCondition}
+      `;
+
+      console.log(query)
+      const res = await client.query(query);
+
+      for(const row of res.rows) {
+        row.senses = await extractLexiconSenses(row.xml_entry)
+      }
+
+      return res.rows
+  
+    } catch (err) {
+      console.error('Query failed', err);
+    } finally {
+      //await client.end();
+      console.log('')
+    }
+}
+
 async function fetchGreekMorphs(filters) {
   function removeNullValues(jsonData) {
     return Object.fromEntries(
@@ -395,5 +474,6 @@ module.exports = {
     deleteMorphologyEntry,
     getAllMorphologyData,
    listAllVocabsInfo,
-  fetchGreekMorphs
+  fetchGreekMorphs,
+  fetchLexiconEntry
 };

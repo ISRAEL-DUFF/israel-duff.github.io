@@ -187,7 +187,7 @@
   scroll-behavior: smooth;
 }
 
-.box {
+/* .box {
   flex: 0 0 auto;
   width: 150px;
   height: 100px;
@@ -198,7 +198,82 @@
   justify-content: center;
   border-radius: 8px;
   font-size: 1.5rem;
-}
+} */
+
+  .lexicon-entry {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    font-family: 'Noto Serif Greek', serif;
+    background: #1b1b1b;
+    color: #e0e0e0;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    max-height: 30vh;
+    width: 98vw;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+  }
+
+  .gloss {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #80ffd0;
+    text-wrap: balance;
+  }
+
+  .quotes ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .quotes li {
+    margin-bottom: 0.75rem;
+    /* padding-left: 1rem; */
+    border-left: 2px solid #444;
+  }
+
+  .quote {
+    font-size: 1rem;
+    color: #ffd580;
+  }
+
+  .bibl {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 0.2rem;
+  }
+
+
+
+  .dodson-entry-card {
+      background: #1e1e1e;
+      border-radius: 12px;
+      padding: 1.5rem;
+      max-width: 600px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .dodson-entry-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #333;
+    }
+    .dodson-entry-row:last-child {
+      border-bottom: none;
+    }
+    .dodson-key {
+      font-weight: bold;
+      color: #90caf9;
+      flex-basis: 40%;
+    }
+    .dodson-value {
+      flex-basis: 58%;
+      text-align: right;
+    }
+
   </style>
 </head>
 <body>
@@ -219,6 +294,10 @@
       <p>Check out more details about this word:</p>
       <!-- <a id="modalLink1" class="modal-link1" href="#" target="_blank">Open in Perseus</a> -->
       <a id="modalLink1" class="modal-link1" href="#" onclick="showLogeionModal()">Open in Logeion</a>
+
+      <div id="lexiconEntryDisplay" class="scroll-row"></div>
+      <div id="dodsonEntryContainer" class="dodson-entry-card"></div>
+
 
 
       <!-- Grammar Info Display -->
@@ -394,6 +473,142 @@
         }
     }
 
+    function parseLSJEntry(xmlString) {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(xmlString, "text/xml");
+
+      const entries = [];
+
+      const divs = doc.querySelectorAll("div2");
+
+      divs.forEach(div => {
+        const entry = {
+          id: div.getAttribute("id"),
+          key: div.getAttribute("key"),
+          headword: null,
+          forms: [],
+          etymology: null,
+          senses: []
+        };
+
+        // Headword
+        const head = div.querySelector("head");
+        if (head) {
+          entry.headword = head.textContent.trim();
+        }
+
+        // Forms (e.g., adjective endings)
+        const itypes = div.querySelectorAll("itype");
+        entry.forms = Array.from(itypes).map(i => i.textContent.trim());
+
+        // Etymology
+        const etym = div.querySelector("etym");
+        if (etym) {
+          entry.etymology = etym.textContent.trim();
+        }
+
+        // Senses
+        const senses = div.querySelectorAll("sense");
+        entry.senses = Array.from(senses).map(sense => {
+          const senseObj = {
+            id: sense.getAttribute("id"),
+            level: sense.getAttribute("level"),
+            gloss: sense.querySelector("i")?.textContent.trim() || null,
+            quotes: []
+          };
+
+          const quotes = sense.querySelectorAll("cit");
+          senseObj.quotes = Array.from(quotes).map(cit => {
+            const quote = cit.querySelector("quote")?.textContent.trim();
+            const bibl = cit.querySelector("bibl");
+            let biblRef = null;
+            if (bibl) {
+              biblRef = {
+                author: bibl.querySelector("author")?.textContent.trim() || null,
+                title: bibl.querySelector("title")?.textContent.trim() || null,
+                passage: bibl.textContent.trim()
+              };
+            }
+            return { quote, bibl: biblRef };
+          });
+
+          return senseObj;
+        });
+
+        entries.push(entry);
+      });
+
+      return entries;
+    }
+    
+    function renderLexiconEntry(jsonEntry, i) {
+      const data = jsonEntry;
+      // const container = document.getElementById('entry');
+      const container = document.createElement('div');
+
+      // if(!data.gloss) {
+      //   return;
+      // }
+
+      container.className = 'lexicon-entry';
+
+      const quotesHTML = data.quotes.map(q => {
+        const b = q.bibl;
+        const biblText = [b.author, b.title, b.passage].filter(Boolean).join(' ');
+        return `
+          <li>
+            <span class="quote">${q.quote}</span>
+            <span class="bibl">– ${biblText}</span>
+          </li>`;
+      }).join('');
+
+      container.innerHTML = `
+        <div style="font-size: 12px; color: #808080; float: left;">📘 Sense ${i+1}</div>
+        <br />
+        <div class="gloss"> <p>${data.processedGloss}</p></div>
+        <div class="quotes">
+          <h4>📜 Examples:</h4>
+          <ul>${quotesHTML}</ul>
+        </div>
+      `;
+
+      return container;
+    }
+
+    function renderDodsonEntry(data) {
+      // const data = {
+      //   "Strong's": "2564",
+      //   "Goodrick-Kohlenberger": "2813",
+      //   "English Definition (brief)": "I call, invite, name",
+      //   "English Definition (longer)": "(a) I call, summon, invite, (b) I call, name.",
+      //   "greekWord": "καλέω",
+      //   "Beta Code": "kale/w"
+      // };
+
+      if(!data) {
+        return;
+      }
+
+      const container = document.getElementById('dodsonEntryContainer');
+
+      for (const [key, value] of Object.entries(data)) {
+        const row = document.createElement('div');
+        row.className = 'dodson-entry-row';
+
+        const keyDiv = document.createElement('div');
+        keyDiv.className = 'dodson-key';
+        keyDiv.textContent = key;
+
+        const valueDiv = document.createElement('div');
+        valueDiv.className = 'dodson-value';
+        valueDiv.textContent = value;
+
+        row.appendChild(keyDiv);
+        row.appendChild(valueDiv);
+        container.appendChild(row);
+      }
+    }
+
     async function getMorph() {
         const word = document.getElementById('greekInput').value;
         // const word = req.query.word;
@@ -428,6 +643,26 @@
             morphResponseData= responseData
 
             console.log(responseData)
+
+
+            // <<<< LEXICON SECTION >>>>
+            const lexiconUrl = `https://rumbling-quintessential-banjo.glitch.me/api/lexica/${encodeURIComponent(parseResp[0].lemma)}`;
+
+            const lexiconRes = await fetch(lexiconUrl);
+            if (!lexiconRes.ok) throw new Error("Failed to fetch lexicon");
+
+            let lexiconResponse = await lexiconRes.json();
+
+            console.log(lexiconResponse)
+            // const lsjJsonData = parseLSJEntry(lexiconResponse.lsj[0]?.xml_entry)
+            const lsjJsonData = lexiconResponse.lsj
+            console.log(lsjJsonData, lexiconResponse.dodson)
+            const lexiconEntryDisplay = document.getElementById('lexiconEntryDisplay');
+            lsjJsonData[0].senses.forEach((sense, i) => {
+              lexiconEntryDisplay.appendChild(renderLexiconEntry(sense, i));
+            })
+            renderDodsonEntry(lexiconResponse.dodson)
+            // <<< END LEXICON SECTION >>>
 
 
             // Show modal with link
@@ -521,76 +756,6 @@
   }
 
 
-
-  function parseLSJEntries(xmlString) {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(xmlString, "text/xml");
-
-    const entries = [];
-
-    const divs = doc.querySelectorAll("div2");
-
-    divs.forEach(div => {
-      const entry = {
-        id: div.getAttribute("id"),
-        key: div.getAttribute("key"),
-        headword: null,
-        forms: [],
-        etymology: null,
-        senses: []
-      };
-
-      // Headword
-      const head = div.querySelector("head");
-      if (head) {
-        entry.headword = head.textContent.trim();
-      }
-
-      // Forms (e.g., adjective endings)
-      const itypes = div.querySelectorAll("itype");
-      entry.forms = Array.from(itypes).map(i => i.textContent.trim());
-
-      // Etymology
-      const etym = div.querySelector("etym");
-      if (etym) {
-        entry.etymology = etym.textContent.trim();
-      }
-
-      // Senses
-      const senses = div.querySelectorAll("sense");
-      entry.senses = Array.from(senses).map(sense => {
-        const senseObj = {
-          id: sense.getAttribute("id"),
-          level: sense.getAttribute("level"),
-          gloss: sense.querySelector("i")?.textContent.trim() || null,
-          quotes: []
-        };
-
-        const quotes = sense.querySelectorAll("cit");
-        senseObj.quotes = Array.from(quotes).map(cit => {
-          const quote = cit.querySelector("quote")?.textContent.trim();
-          const bibl = cit.querySelector("bibl");
-          let biblRef = null;
-          if (bibl) {
-            biblRef = {
-              author: bibl.querySelector("author")?.textContent.trim() || null,
-              title: bibl.querySelector("title")?.textContent.trim() || null,
-              passage: bibl.textContent.trim()
-            };
-          }
-          return { quote, bibl: biblRef };
-        });
-
-        return senseObj;
-      });
-
-      entries.push(entry);
-    });
-
-    return entries;
-  }
-
-
   const xmlString = `
   <div2 id="crossa)/grios" orig_id="n892" key="a)/grios" type="main" opt="n"><head extent="full" lang="greek" opt="n" orth_orig="ἄγριος">ἄγριος</head>, <itype lang="greek" opt="n">α</itype>, <itype lang="greek" opt="n">ον</itype>, <bibl n="Perseus:abo:tlg,0012,002:9:119"><title>Od.</title> 9.119</bibl>
 ; also <itype lang="greek" opt="n">ος</itype>, <itype lang="greek" opt="n">ον</itype> (not in Trag. or com). <bibl n="Perseus:abo:tlg,0012,001:19:88"><title>Il.</title> 19.88</bibl>, <bibl n="Perseus:abo:tlg,1604,001:3:6" default="NO"><author>Phoc.</author> 3.6</bibl>, 
@@ -611,8 +776,8 @@
   const entryString = xmlString.replace(/<[^>]*>/g, '')
   const entryString2 = xmlString2.replace(/<[^>]*>/g, '')
 
-  const entries = parseLSJEntries(xmlString);
-  const entries2 = parseLSJEntries(xmlString2);
+  const entries = parseLSJEntry(xmlString);
+  const entries2 = parseLSJEntry(xmlString2);
   console.log(entries)
   console.log(entries2)
 

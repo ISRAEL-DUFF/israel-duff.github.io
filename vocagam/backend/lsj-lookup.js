@@ -253,7 +253,7 @@ async function storeLexicaData() {
     const keys = Object.keys(index);
     const total = keys.length;
     // const startIndex = 15790;   <<< FROM INDEX 0 - 15790 contains old json format that needs to be updated >>>
-    const startIndex = 100000;
+    const startIndex = 0;
     for(let i = startIndex; i < total; i++) {
         const key = keys[i];
         const offset = index[key];
@@ -279,9 +279,9 @@ async function storeLexicaData() {
     // throw new Error(`No LSJ entry found or close matches for: ${rawQuery}`);
 }
 
-storeLexicaData().then(() => {
-    console.log("Lexica data stored successfully");
-}).catch(console.error);
+// storeLexicaData().then(() => {
+//     console.log("Lexica data stored successfully");
+// }).catch(console.error);
 
 module.exports = {
     lookupHeadwordByBetaCode: lookupHeadword,
