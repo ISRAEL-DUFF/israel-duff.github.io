@@ -1,729 +1,900 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Greek Verb Parser Game</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background-color: #111;
-      color: #eee;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .card {
-      background-color: #222;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-      text-align: center;
-      width: 90%;
-      max-width: 400px;
-      margin-bottom: 1rem;
-    }
-    .word {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .category {
-      margin-bottom: 1rem;
-    }
-    .category label {
-      display: block;
-    }
-    .feedback {
-      margin-top: 1rem;
-      font-weight: bold;
-    }
-    .correct { color: limegreen; }
-    .incorrect { color: tomato; }
-    button {
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background-color: #444;
-      border: none;
-      color: #eee;
-      border-radius: 0.5rem;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #666;
-    }
-    .hidden {
-      display: none;
-    }
-  </style>
-</head>
-<body>
-  <div class="card" id="settings-card">
-    <h2>Practice Settings</h2>
-    <form id="settings-form">
-      <div class="category">
-        <strong>Select Tense(s):</strong><br />
-        <label><input type="checkbox" name="tense" value="present" /> Present</label>
-        <label><input type="checkbox" name="tense" value="aorist" /> Aorist</label>
-      </div>
-      <div class="category">
-        <strong>Select Mood(s):</strong><br />
-        <label><input type="checkbox" name="mood" value="indicative" /> Indicative</label>
-        <label><input type="checkbox" name="mood" value="subjunctive" /> Subjunctive</label>
-      </div>
-      <div class="category">
-        <strong>Select Voice(s):</strong><br />
-        <label><input type="checkbox" name="voice" value="active" /> Active</label>
-        <label><input type="checkbox" name="voice" value="middle" /> Middle</label>
-      </div>
-      <button type="submit">Start Practice</button>
-    </form>
-  </div>
-
-  <div class="card hidden" id="game-card">
-    <div class="word" id="word">λύουσιν</div>
-    <form id="parser-form">
-      <div class="category">
-        <strong>Tense</strong><br />
-        <label><input type="checkbox" name="tense" value="present" /> Present</label>
-        <label><input type="checkbox" name="tense" value="aorist" /> Aorist</label>
-      </div>
-      <div class="category">
-        <strong>Mood</strong><br />
-        <label><input type="checkbox" name="mood" value="indicative" /> Indicative</label>
-        <label><input type="checkbox" name="mood" value="subjunctive" /> Subjunctive</label>
-      </div>
-      <div class="category">
-        <strong>Voice</strong><br />
-        <label><input type="checkbox" name="voice" value="active" /> Active</label>
-        <label><input type="checkbox" name="voice" value="middle" /> Middle</label>
-      </div>
-      <div class="category">
-        <strong>Person</strong><br />
-        <label><input type="checkbox" name="person" value="3rd" /> 3rd Person</label>
-        <label><input type="checkbox" name="person" value="1st" /> 1st Person</label>
-      </div>
-      <div class="category">
-        <strong>Number</strong><br />
-        <label><input type="checkbox" name="number" value="plural" /> Plural</label>
-        <label><input type="checkbox" name="number" value="singular" /> Singular</label>
-      </div>
-      <button type="submit">Submit</button>
-    </form>
-    <div id="feedback" class="feedback"></div>
-  </div>
-
-  <script>
-    const wordList = [
-      {
-        word: "λύουσιν",
-        tense: "present",
-        mood: "indicative",
-        voice: "active",
-        person: "3rd",
-        number: "plural"
-      },
-      {
-        word: "ἔλυσαν",
-        tense: "aorist",
-        mood: "indicative",
-        voice: "active",
-        person: "3rd",
-        number: "plural"
-      }
-    ];
-
-    let selectedWords = [];
-    let currentWord = null;
-
-    document.getElementById("settings-form").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const formData = new FormData(e.target);
-      const tenses = formData.getAll("tense");
-      const moods = formData.getAll("mood");
-      const voices = formData.getAll("voice");
-
-      selectedWords = wordList.filter(w =>
-        tenses.includes(w.tense) &&
-        moods.includes(w.mood) &&
-        voices.includes(w.voice)
-      );
-
-      if (selectedWords.length > 0) {
-        currentWord = selectedWords[Math.floor(Math.random() * selectedWords.length)];
-        document.getElementById("word").textContent = currentWord.word;
-        document.getElementById("settings-card").classList.add("hidden");
-        document.getElementById("game-card").classList.remove("hidden");
-      } else {
-        alert("No words match your criteria. Try selecting more options.");
-      }
-    });
-
-    document.getElementById("parser-form").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const formData = new FormData(e.target);
-
-      let correct =
-        formData.getAll("tense").includes(currentWord.tense) &&
-        formData.getAll("mood").includes(currentWord.mood) &&
-        formData.getAll("voice").includes(currentWord.voice) &&
-        formData.getAll("person").includes(currentWord.person) &&
-        formData.getAll("number").includes(currentWord.number);
-
-      const feedback = document.getElementById("feedback");
-      if (correct) {
-        feedback.textContent = "✅ Correct!";
-        feedback.className = "feedback correct";
-      } else {
-        feedback.textContent = `❌ Incorrect. Correct answer: ${currentWord.tense}, ${currentWord.mood}, ${currentWord.voice}, ${currentWord.person} person, ${currentWord.number}`;
-        feedback.className = "feedback incorrect";
-      }
-    });
-  </script>
-</body>
-</html> -->
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Greek Verb Parser Game</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background-color: #111;
-      color: #eee;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .card {
-      background-color: #222;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-      text-align: center;
-      width: 90%;
-      max-width: 400px;
-      margin-bottom: 1rem;
-    }
-    .word {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .category {
-      margin-bottom: 1rem;
-    }
-    .category label {
-      display: block;
-    }
-    .feedback {
-      margin-top: 1rem;
-      font-weight: bold;
-    }
-    .correct { color: limegreen; }
-    .incorrect { color: tomato; }
-    button {
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background-color: #444;
-      border: none;
-      color: #eee;
-      border-radius: 0.5rem;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #666;
-    }
-    .hidden {
-      display: none;
-    }
-  </style>
-</head>
-<body>
-  <div class="card" id="settings-card">
-    <h2>Practice Settings</h2>
-    <form id="settings-form">
-      <div class="category">
-        <strong>Select Tense(s):</strong><br />
-        <label><input type="checkbox" name="tense" value="present" /> Present</label>
-        <label><input type="checkbox" name="tense" value="aorist" /> Aorist</label>
-      </div>
-      <div class="category">
-        <strong>Select Mood(s):</strong><br />
-        <label><input type="checkbox" name="mood" value="indicative" /> Indicative</label>
-        <label><input type="checkbox" name="mood" value="subjunctive" /> Subjunctive</label>
-      </div>
-      <div class="category">
-        <strong>Select Voice(s):</strong><br />
-        <label><input type="checkbox" name="voice" value="active" /> Active</label>
-        <label><input type="checkbox" name="voice" value="middle" /> Middle</label>
-      </div>
-      <div class="category">
-        <strong>Select Verb Type(s):</strong><br />
-        <label><input type="checkbox" name="verbType" value="luo" /> Luo</label>
-        <label><input type="checkbox" name="verbType" value="regular" /> Regular</label>
-        <label><input type="checkbox" name="verbType" value="contract" /> Contract</label>
-        <label><input type="checkbox" name="verbType" value="liquid" /> Liquid</label>
-        <label><input type="checkbox" name="verbType" value="mi" /> Mi</label>
-        <label><input type="checkbox" name="verbType" value="eimi" /> Eimi</label>
-      </div>
-      <button type="submit">Start Practice</button>
-    </form>
-  </div>
-
-  <div class="card hidden" id="game-card">
-    <div class="word" id="word">λύουσιν</div>
-    <form id="parser-form">
-      <div class="category">
-        <strong>Tense</strong><br />
-        <label><input type="checkbox" name="tense" value="present" /> Present</label>
-        <label><input type="checkbox" name="tense" value="aorist" /> Aorist</label>
-      </div>
-      <div class="category">
-        <strong>Mood</strong><br />
-        <label><input type="checkbox" name="mood" value="indicative" /> Indicative</label>
-        <label><input type="checkbox" name="mood" value="subjunctive" /> Subjunctive</label>
-      </div>
-      <div class="category">
-        <strong>Voice</strong><br />
-        <label><input type="checkbox" name="voice" value="active" /> Active</label>
-        <label><input type="checkbox" name="voice" value="middle" /> Middle</label>
-      </div>
-      <div class="category">
-        <strong>Person</strong><br />
-        <label><input type="checkbox" name="person" value="1st" /> 1st Person</label>
-        <label><input type="checkbox" name="person" value="2nd" /> 2nd Person</label>
-        <label><input type="checkbox" name="person" value="3rd" /> 3rd Person</label>
-      </div>
-      <div class="category">
-        <strong>Number</strong><br />
-        <label><input type="checkbox" name="number" value="singular" /> Singular</label>
-        <label><input type="checkbox" name="number" value="plural" /> Plural</label>
-      </div>
-      <button type="submit">Submit</button>
-    </form>
-    <div id="feedback" class="feedback"></div>
-  </div>
-
-  <script>
-    const wordList = [
-      {
-        word: "λύουσιν",
-        tense: "present",
-        mood: "indicative",
-        voice: "active",
-        person: "3rd",
-        number: "plural",
-        verbType: "luo"
-      },
-      {
-        word: "ἔλυσαν",
-        tense: "aorist",
-        mood: "indicative",
-        voice: "active",
-        person: "3rd",
-        number: "plural",
-        verbType: "luo"
-      }
-    ];
-
-    let selectedWords = [];
-    let currentWord = null;
-
-    document.getElementById("settings-form").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const formData = new FormData(e.target);
-      const tenses = formData.getAll("tense");
-      const moods = formData.getAll("mood");
-      const voices = formData.getAll("voice");
-      const verbTypes = formData.getAll("verbType");
-
-      selectedWords = wordList.filter(w =>
-        tenses.includes(w.tense) &&
-        moods.includes(w.mood) &&
-        voices.includes(w.voice) &&
-        verbTypes.includes(w.verbType)
-      );
-
-      if (selectedWords.length > 0) {
-        currentWord = selectedWords[Math.floor(Math.random() * selectedWords.length)];
-        document.getElementById("word").textContent = currentWord.word;
-        document.getElementById("settings-card").classList.add("hidden");
-        document.getElementById("game-card").classList.remove("hidden");
-      } else {
-        alert("No words match your criteria. Try selecting more options.");
-      }
-    });
-
-    document.getElementById("parser-form").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const formData = new FormData(e.target);
-
-      let correct =
-        formData.getAll("tense").includes(currentWord.tense) &&
-        formData.getAll("mood").includes(currentWord.mood) &&
-        formData.getAll("voice").includes(currentWord.voice) &&
-        formData.getAll("person").includes(currentWord.person) &&
-        formData.getAll("number").includes(currentWord.number);
-
-      const feedback = document.getElementById("feedback");
-      if (correct) {
-        feedback.textContent = "✅ Correct!";
-        feedback.className = "feedback correct";
-      } else {
-        feedback.innerHTML = `❌ Incorrect. <br />Correct answer: <br />Tense: <b>${currentWord.tense}</b><br />Mood: <b>${currentWord.mood}</b><br />Voice: <b>${currentWord.voice}</b><br />Person: <b>${currentWord.person}</b> person<br />Number: <b>${currentWord.number}</b>`;
-        feedback.className = "feedback incorrect";
-      }
-
-      document.querySelectorAll('#parser-form input[type="checkbox"]').forEach(cb => cb.checked = false);
-
-      currentWord = selectedWords[Math.floor(Math.random() * selectedWords.length)];
-      document.getElementById("word").textContent = currentWord.word;
-    });
-  </script>
-</body>
-</html> -->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Greek Verb Parser Game</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greek Word Parser Game</title>
   <style>
     body {
       font-family: sans-serif;
       background-color: #111;
       color: #eee;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .card {
-      background-color: #222;
       padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-      text-align: center;
-      width: 90%;
-      max-width: 400px;
+    }
+    .question {
+      font-size: 1.5rem;
       margin-bottom: 1rem;
     }
-    .word {
-      font-size: 2rem;
+    .options {
+      margin-bottom: 2rem;
+    }
+    fieldset {
+      border: 1px solid #444;
       margin-bottom: 1rem;
+      padding: 1rem;
     }
-    .category {
-      margin-bottom: 1rem;
-    }
-    .category label {
-      display: block;
-    }
-    .feedback {
-      margin-top: 1rem;
+    legend {
       font-weight: bold;
     }
-    .correct { color: limegreen; }
-    .incorrect { color: tomato; }
-    button {
+    .result {
+      font-size: 1.2rem;
       margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background-color: #444;
-      border: none;
-      color: #eee;
-      border-radius: 0.5rem;
-      cursor: pointer;
     }
-    button:hover {
-      background-color: #666;
+    .streak {
+      font-size: 1rem;
+      color: #7fffd4;
+      margin-top: 0.5rem;
     }
     .hidden {
       display: none;
     }
+    .correct-label {
+      color: #7fff7f;
+    }
+    .incorrect-label {
+      color: #ff7f7f;
+    }
+    .error-icon {
+      margin-left: 0.5em;
+      color: #ff5555;
+      font-weight: bold;
+    }
+    .correct-icon {
+      margin-left: 0.5em;
+      color: #7fff7f;
+      font-weight: bold;
+    }
+    .filter-controls {
+      margin-bottom: 2rem;
+    }
+    .filter-controls label {
+      display: inline-block;
+      margin-right: 1rem;
+    }
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      visibility: hidden; /* Initially hidden */
+    }
+    .modal.show {
+      visibility: visible; /* Show when 'show' class is added */
+    }
+    /* .modal-content {
+      background: #222;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 90%;
+      text-align: center;
+    } */
+    .modal-content {
+        background: #222;
+        padding: 2rem;
+        border-radius: 8px;
+        max-width: 90%;
+        max-height: 80vh;
+        overflow-y: auto;
+        text-align: center;
+    }
+    .modal-content h2 {
+      color: #7fff7f;
+    }
+    .close-btn {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #parsingList {
+        max-height: 60vh;
+        overflow-y: auto;
+        padding: 1rem;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        margin: 1rem 0;
+    }
+
+    #question {
+        margin-top: 2vh;
+        margin-bottom: 15px;
+        text-align: center;
+        color: #6cf;
+    }
+
+    #answerForm {
+        margin-right: 20px;
+    }
+
+
+    #mode {
+      padding: 0.75rem;
+      font-size: 1.1rem;
+      border-radius: 6px;
+      background-color: #333;
+      color: #fff;
+      border: 2px solid #444;
+      width: 100%;
+      max-width: 300px;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    #mode-label {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #7fffd4;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-quiz {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
+    }
+    .modal-content-quiz {
+      background-color: #1e1e1e;
+      margin: 0;
+      padding: 10px;
+      border-radius: 8px;
+      width: 100%;
+      height: 100%;
+      overflow-y: scroll;
+      position: relative;
+    }
+    .close-quiz {
+      color: #aaa;
+      position: absolute;
+      right: 20px;
+      top: 5px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 2;
+      background-color: rgba(30, 30, 30, 0.8);
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+
+    .morpho-modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
+    }
+    .morpho-modal-content {
+      background-color: #1e1e1e;
+      margin: 0;
+      padding: 10px;
+      border-radius: 8px;
+      width: 100%;
+      height: 100%;
+      overflow-y: scroll;
+      position: relative;
+    }
+    .morpho-close {
+      color: #aaa;
+      position: absolute;
+      right: 40px;
+      top: 5px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 2;
+      background-color: rgba(30, 30, 30, 0.8);
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+    .morpho-modal-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      margin-top: 20px;
+    }
+
+    #morphoButton {
+      color: #aaa;
+      /* position: absolute;
+      right: 50vw;
+      top: 5px; */
+      font-size: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      /* z-index: 2; */
+      background-color: rgba(30, 30, 30, 0.8);
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+
+    .customButton {
+      color: #05aad7;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      background-color: rgba(30, 30, 30, 0.8);
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+
+    #scoreCount {
+      /* color: #aaa; */
+      position: absolute;
+      right: 50vw;
+      top: 5px;
+      font-size: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 2;
+      background-color: rgba(30, 30, 30, 0.8);
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
-  <div class="card" id="mode-card">
-    <h2>Select Parsing Mode</h2>
-    <button onclick="startMode('verb')">Verb Parsing</button>
-    <button onclick="startMode('noun')">Noun Parsing</button>
-    <button onclick="startMode('participle')">Participle Parsing</button>
+  <h2>Greek Word Parser Game</h2>
+
+  <!-- <label for="mode">Choose mode:</label>
+  <select id="mode">
+    <option value="verb">Verb</option>
+    <option value="noun">Noun</option>
+    <option value="participle">Participle</option>
+    <option value="adjective">Adjective</option>
+    <option value="pronoun">Pronoun</option>
+  </select> -->
+
+  <div style="margin-bottom: 2rem;">
+    <label for="mode">Choose Practice Mode:</label>
+    <select id="mode">
+      <option value="verb">Verb</option>
+      <option value="noun">Noun</option>
+      <option value="participle">Participle</option>
+      <option value="adjective">Adjective</option>
+      <option value="pronoun">Pronoun</option>
+    </select>
   </div>
 
-  <div class="card hidden" id="settings-card">
-    <h2>Practice Settings</h2>
-    <form id="settings-form"></form>
+  <div class="filter-controls" id="filterControls"></div>
+
+  <button onclick="fetchMorphData()" type="button" class="customButton">Load Questions</button>
+  <br />
+
+
+
+  <!-- Modal Quiz -->
+  <div id="myModal-quiz" class="modal-quiz">
+    <div class="modal-content-quiz">
+      <span class="close-quiz">&times;</span>
+
+      <div id = "progressCount"></div>
+      <div id = "scoreCount"></div>
+
+      <!-- <button id="morphoButton" onclick="showLogeionModal()">Morpho</button> -->
+      
+      <div class="question" id="question">Loading...</div>
+
+        <form id="answerForm"></form>
+        <button onclick="checkAnswer()" class = "customButton">Check Answer</button>
+        <button onclick="revealAnswer()" type="button" class = "customButton">Reveal Answer</button>
+        <button id="morphoButton" onclick="showLogeionModal()">View in morpho</button>
+
+        <div class="result" id="result"></div>
+        <!-- <div class="streak" id="streak">Streak: 0</div> -->
+
+        <div id="answerModal" class="modal">
+            <div class="modal-content">
+                <h2>Possible Parsings</h2>
+                <div id="parsingList" style="text-align: left; margin: 1rem 0;">
+                    <!-- Parsings will be inserted here -->
+                </div>
+                <button class="close-btn" onclick="closeModal()">Next</button>
+            </div>
+        </div>
+
+    </div>
   </div>
 
-  <div class="card hidden" id="game-card">
-    <div class="word" id="word">λύουσιν</div>
-    <form id="parser-form"></form>
-    <div id="feedback" class="feedback"></div>
+
+  <!-- MORPHO Modal -->
+  <div id="morphoModal" class="morpho-modal">
+    <div class="morpho-modal-content">
+      <!-- <button >✂️ Paste from Logeion</button> -->
+      <!-- <span id = 'pasteToogle' onclick="toggleCopyArea()">✂️</span>
+      <div id="copyInputContainer">
+        <textarea id="copyTextarea" placeholder="Paste here..."></textarea>
+      </div> -->
+
+      <span class="morpho-close">&times;</span>
+      <iframe id="morphoModalIframe" class="morpho-modal-iframe" src=""></iframe>
+    </div>
   </div>
 
   <script>
-    const wordList = [
-      {
-        word: "λύουσιν",
-        tense: "present",
-        mood: "indicative",
-        voice: "active",
-        person: "3rd",
-        number: "plural",
-        verbType: "luo",
-        type: "verb"
-      },
-      {
-        word: "ἔλυσαν",
-        tense: "aorist",
-        mood: "indicative",
-        voice: "active",
-        person: "3rd",
-        number: "plural",
-        verbType: "luo",
-        type: "verb"
-      },
-      {
-        word: "λόγος",
-        gender: "masculine",
-        number: "singular",
-        case: "nominative",
-        type: "noun"
-      },
-      {
-        word: "λόγοι",
-        gender: "masculine",
-        number: "plural",
-        case: "nominative",
-        type: "noun"
-      }
-    ];
+    const questions = {
+      verb: [
+        { form: "λύομεν", correct: { tense: "present", voice: "active", mood: "indicative", number: "plural", person: "first", verb_type: '-' } },
+        { form: "ἔλυσαν", correct: { tense: "aorist", voice: "active", mood: "indicative", number: "plural", person: "third", verb_type: '-' } }
+      ],
+      noun: [
+        { form: "λόγου", correct: { declension: "2nd", case: "genitive", number: "singular", gender: "masculine" } },
+        { form: "χαράς", correct: { declension: "1st", case: "genitive", number: "singular", gender: "feminine" } }
+      ],
+      participle: [
+        { form: "λύων", correct: { tense: "present", voice: "active", gender: "masculine", case: "nominative", number: "singular", verb_type: '-' } },
+        { form: "λυθείς", correct: { tense: "aorist", voice: "passive", gender: "masculine", case: "nominative", number: "singular", verb_type: '-' } }
+      ],
+      adjective: [
+        { form: "ἀγαθός", correct: { declension: "2nd", gender: "masculine", case: "nominative", number: "singular" } },
+        { form: "καλῆς", correct: { declension: "1st", gender: "feminine", case: "genitive", number: "singular" } }
+      ],
+      pronoun: [
+        { form: "ἐμοί", correct: { case: "dative", number: "singular", person: "first" } },
+        { form: "σοῦ", correct: { case: "genitive", number: "singular", person: "second" } }
+      ]
+    };
 
-    let selectedWords = [];
-    let currentWord = null;
-    let currentMode = null;
+    const allFilters = {
+      tense: ['present', 'aorist', 'imperfect', 'perfect', 'pluperfect', 'future', 'future perfect'],
+      voice: ['active', 'middle', 'passive'],
+      mood: ['indicative', 'subjunctive', 'optative', 'imperative'],
+      person: ['first', 'second', 'third'],
+      number: ['singular', 'plural', 'dual'],
+      case: ['nominative', 'genitive', 'dative', 'accusative', 'vocative'],
+      gender: ['masculine', 'feminine', 'neuter'],
+      declension: ['1st', '2nd', '3rd', '1st & 2nd'],
+      verb_type: ['w', 'mi', 'contract', 'liquid', 'irregular']
+    };
 
-    function startMode(mode) {
-      currentMode = mode;
-      document.getElementById("mode-card").classList.add("hidden");
-      const settingsForm = document.getElementById("settings-form");
-      settingsForm.innerHTML = '';
+    let currentMode = 'verb';
+    let currentQuestion = {};
+    let currentIndex = 0;
+    let streak = 0;
+    let correctScore = 0;
+    let incorrectScore = 0;
+    let filters = {};
+    let backendFilters = {
+        part_of_speech: currentMode
+    };
 
-      if (mode === "verb") {
-        settingsForm.innerHTML = `
-          <div class="category">
-            <strong>Select Tense(s):</strong><br />
-            <label><input type="checkbox" name="tense" value="present" /> Present</label>
-            <label><input type="checkbox" name="tense" value="aorist" /> Aorist</label>
-          </div>
-          <div class="category">
-            <strong>Select Mood(s):</strong><br />
-            <label><input type="checkbox" name="mood" value="indicative" /> Indicative</label>
-            <label><input type="checkbox" name="mood" value="subjunctive" /> Subjunctive</label>
-          </div>
-          <div class="category">
-            <strong>Select Voice(s):</strong><br />
-            <label><input type="checkbox" name="voice" value="active" /> Active</label>
-            <label><input type="checkbox" name="voice" value="middle" /> Middle</label>
-          </div>
-          <div class="category">
-            <strong>Select Verb Type(s):</strong><br />
-            <label><input type="checkbox" name="verbType" value="luo" /> Luo</label>
-          </div>
-          <button type="submit">Start Practice</button>
-        `;
-      } else if (mode === "noun") {
-        settingsForm.innerHTML = `
-          <div class="category">
-            <strong>Select Gender:</strong><br />
-            <label><input type="checkbox" name="gender" value="masculine" /> Masculine</label>
-            <label><input type="checkbox" name="gender" value="feminine" /> Feminine</label>
-            <label><input type="checkbox" name="gender" value="neuter" /> Neuter</label>
-          </div>
-          <div class="category">
-            <strong>Select Case:</strong><br />
-            <label><input type="checkbox" name="case" value="nominative" /> Nominative</label>
-            <label><input type="checkbox" name="case" value="accusative" /> Accusative</label>
-          </div>
-          <div class="category">
-            <strong>Select Number:</strong><br />
-            <label><input type="checkbox" name="number" value="singular" /> Singular</label>
-            <label><input type="checkbox" name="number" value="plural" /> Plural</label>
-          </div>
-          <button type="submit">Start Practice</button>
-        `;
-      }
+    const form = document.getElementById('answerForm');
+    const resultDiv = document.getElementById('result');
+    const questionDiv = document.getElementById('question');
+    const progressDiv = document.getElementById('progressCount');
+    const scoreDiv = document.getElementById('scoreCount');
+    const filterControls = document.getElementById('filterControls');
+    const modal = document.getElementById('answerModal');
+    let userChoice = 'reveal';
+    document.getElementById('mode').addEventListener('change', (e) => {
+      currentMode = e.target.value;
+      streak = 0;
+      correctScore = 0;
+      incorrectScore = 0;
+      filters = {};
+      backendFilters = {
+        part_of_speech: currentMode
+      };
 
-      document.getElementById("settings-card").classList.remove("hidden");
-    }
-
-    document.getElementById("settings-form").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const formData = new FormData(e.target);
-
-      if (currentMode === "verb") {
-        const tenses = formData.getAll("tense");
-        const moods = formData.getAll("mood");
-        const voices = formData.getAll("voice");
-        const types = formData.getAll("verbType");
-        selectedWords = wordList.filter(w =>
-          w.type === "verb" &&
-          tenses.includes(w.tense) &&
-          moods.includes(w.mood) &&
-          voices.includes(w.voice) &&
-          types.includes(w.verbType)
-        );
-      } else if (currentMode === "noun") {
-        const genders = formData.getAll("gender");
-        const cases = formData.getAll("case");
-        const numbers = formData.getAll("number");
-        selectedWords = wordList.filter(w =>
-          w.type === "noun" &&
-          genders.includes(w.gender) &&
-          cases.includes(w.case) &&
-          numbers.includes(w.number)
-        );
-      }
-
-      if (selectedWords.length > 0) {
-        currentWord = selectedWords[Math.floor(Math.random() * selectedWords.length)];
-        document.getElementById("word").textContent = currentWord.word;
-        renderParserForm();
-        document.getElementById("settings-card").classList.add("hidden");
-        document.getElementById("game-card").classList.remove("hidden");
-      } else {
-        alert("No words match your criteria. Try selecting more options.");
-      }
+      buildFilterControls();
+      
+      // nextQuestion();
     });
 
-    function renderParserForm() {
-      const form = document.getElementById("parser-form");
-      form.innerHTML = "";
-      if (currentMode === "verb") {
-        form.innerHTML = `
-          <div class="category">
-            <strong>Tense</strong><br />
-            <label><input type="checkbox" name="tense" value="present" /> Present</label>
-            <label><input type="checkbox" name="tense" value="aorist" /> Aorist</label>
-          </div>
-          <div class="category">
-            <strong>Mood</strong><br />
-            <label><input type="checkbox" name="mood" value="indicative" /> Indicative</label>
-            <label><input type="checkbox" name="mood" value="subjunctive" /> Subjunctive</label>
-          </div>
-          <div class="category">
-            <strong>Voice</strong><br />
-            <label><input type="checkbox" name="voice" value="active" /> Active</label>
-            <label><input type="checkbox" name="voice" value="middle" /> Middle</label>
-          </div>
-          <div class="category">
-            <strong>Person</strong><br />
-            <label><input type="checkbox" name="person" value="1st" /> 1st</label>
-            <label><input type="checkbox" name="person" value="2nd" /> 2nd</label>
-            <label><input type="checkbox" name="person" value="3rd" /> 3rd</label>
-          </div>
-          <div class="category">
-            <strong>Number</strong><br />
-            <label><input type="checkbox" name="number" value="singular" /> Singular</label>
-            <label><input type="checkbox" name="number" value="plural" /> Plural</label>
-          </div>
-          <button type="submit">Submit</button>
-        `;
-      } else if (currentMode === "noun") {
-        form.innerHTML = `
-          <div class="category">
-            <strong>Gender</strong><br />
-            <label><input type="checkbox" name="gender" value="masculine" /> Masculine</label>
-            <label><input type="checkbox" name="gender" value="feminine" /> Feminine</label>
-            <label><input type="checkbox" name="gender" value="neuter" /> Neuter</label>
-          </div>
-          <div class="category">
-            <strong>Case</strong><br />
-            <label><input type="checkbox" name="case" value="nominative" /> Nominative</label>
-            <label><input type="checkbox" name="case" value="accusative" /> Accusative</label>
-          </div>
-          <div class="category">
-            <strong>Number</strong><br />
-            <label><input type="checkbox" name="number" value="singular" /> Singular</label>
-            <label><input type="checkbox" name="number" value="plural" /> Plural</label>
-          </div>
-          <button type="submit">Submit</button>
-        `;
+    function shouldIgnoreKey(key) {
+        return key === 'is_mediopassive' || key === 'alternates' || key === 'verb_type' || key === 'part_of_speech' || key === 'declension';
+    }
+
+    function buildFilterControls() {
+      filterControls.innerHTML = '';
+      
+      // Create a container for the filters
+      const filterContainer = document.createElement('div');
+      filterContainer.style.display = 'grid';
+      filterContainer.style.gridTemplateColumns = 'repeat(auto-fit, minmax(200px, 1fr))';
+      filterContainer.style.gap = '1rem';
+      filterContainer.style.marginBottom = '1.5rem';
+      
+      const fields = Object.keys(getFirstCorrect(currentMode));
+      fields.forEach(field => {
+        if(field === 'alternates' || field === 'is_mediopassive') {
+            return;
+        }
+
+        const filterGroup = document.createElement('div');
+        filterGroup.style.display = 'flex';
+        filterGroup.style.flexDirection = 'column';
+        filterGroup.style.gap = '0.5rem';
+        
+        const label = document.createElement('label');
+        label.textContent = field.charAt(0).toUpperCase() + field.slice(1); // Capitalize first letter
+        label.style.fontWeight = 'bold';
+        label.style.color = '#7fffd4'; // Match the streak color
+        
+        const select = document.createElement('select');
+        select.name = field;
+        select.style.padding = '0.5rem';
+        select.style.borderRadius = '4px';
+        select.style.backgroundColor = '#333';
+        select.style.color = '#fff';
+        select.style.border = '1px solid #444';
+        select.style.width = '100%';
+        
+        const allOption = document.createElement('option');
+        allOption.value = '';
+        allOption.textContent = 'All';
+        select.appendChild(allOption);
+        
+        allFilters[field].forEach(val => {
+          const option = document.createElement('option');
+          option.value = val;
+          option.textContent = val.charAt(0).toUpperCase() + val.slice(1); // Capitalize first letter
+          select.appendChild(option);
+        });
+        
+        select.addEventListener('change', () => {
+          filters[field] = select.value;
+          backendFilters = {
+            ...filters,
+            part_of_speech: currentMode
+          }
+          console.log('Filters:', backendFilters);
+        });
+        
+        filterGroup.appendChild(label);
+        filterGroup.appendChild(select);
+        filterContainer.appendChild(filterGroup);
+      });
+      
+      filterControls.appendChild(filterContainer);
+    }
+
+    function getFirstCorrect(mode) {
+      return questions[mode][0]?.correct || {};
+    }
+
+    function buildForm(correct) {
+      form.innerHTML = '';
+      for (const key in correct) {
+        // if(key === 'is_mediopassive' || key === 'alternates' || key === 'verb_type') {
+        //     continue;
+        // }
+
+        if(shouldIgnoreKey(key)) {
+            continue;
+        }
+
+        const values = getOptionsFor(key);
+        const fieldset = document.createElement('fieldset');
+        const legend = document.createElement('legend');
+        legend.textContent = key;
+        fieldset.appendChild(legend);
+        
+        // Create a container for the options
+        const optionsContainer = document.createElement('div');
+        optionsContainer.style.display = 'grid';
+        optionsContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
+        optionsContainer.style.gap = '0.5rem';
+        
+        values.forEach(val => {
+          const label = document.createElement('label');
+          label.style.display = 'flex';
+          label.style.alignItems = 'center';
+          label.style.gap = '0.5rem';
+          
+          const input = document.createElement('input');
+          input.type = 'radio';
+          input.name = key;
+          input.value = val;
+          
+          label.appendChild(input);
+          label.appendChild(document.createTextNode(val));
+          optionsContainer.appendChild(label);
+        });
+        
+        fieldset.appendChild(optionsContainer);
+        form.appendChild(fieldset);
       }
     }
 
-    document.getElementById("parser-form").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const formData = new FormData(e.target);
-      let correct = false;
+    function getOptionsFor(key) {
+      return allFilters[key] || [];
+    }
 
-      if (currentMode === "verb") {
-        correct =
-          formData.getAll("tense").includes(currentWord.tense) &&
-          formData.getAll("mood").includes(currentWord.mood) &&
-          formData.getAll("voice").includes(currentWord.voice) &&
-          formData.getAll("person").includes(currentWord.person) &&
-          formData.getAll("number").includes(currentWord.number);
-      } else if (currentMode === "noun") {
-        correct =
-          formData.getAll("gender").includes(currentWord.gender) &&
-          formData.getAll("case").includes(currentWord.case) &&
-          formData.getAll("number").includes(currentWord.number);
-      }
-
-    //   const feedback = document.getElementById("feedback");
-    //   feedback.className = "feedback";
-
-    //   if (correct) {
-    //     feedback.textContent = "✅ Correct!";
-    //     feedback.classList.add("correct");
-    //   } else {
-    //     let solution = Object.entries(currentWord)
-    //       .filter(([key]) => ["tense", "mood", "voice", "person", "number", "gender", "case"].includes(key))
-    //       .map(([key, val]) => `<b>${key}</b>: ${val}`)
-    //       .join("<br />");
-    //     feedback.innerHTML = `❌ Incorrect.<br />Correct answer:<br />${solution}`;
-    //     feedback.classList.add("incorrect");
-    //   }
-
-        const categories = ["tense", "mood", "voice", "person", "number"];
-        const feedback = document.getElementById("feedback");
-        let summaryHTML = "Answer Summary:<br />";
-
-        categories.forEach(cat => {
-            const correctValue = currentWord[cat];
-            const userValues = formData.getAll(cat);
-            const isCorrect = userValues.includes(correctValue);
-            summaryHTML += `${cat.charAt(0).toUpperCase() + cat.slice(1)}: <mark class="${isCorrect ? 'correct' : 'incorrect'}">${correctValue}</mark><br />`;
+    function checkAnswer() {
+        userChoice = 'check';
+        const userAnswer = {};
+        const inputs = form.querySelectorAll('input[type="radio"]');
+        inputs.forEach(input => {
+            const label = input.parentElement;
+            label.classList.remove('correct-label', 'incorrect-label');
+            const existingIcon = label.querySelector('.error-icon');
+            const existingIcon2 = label.querySelector('.correct-icon');
+            if (existingIcon) label.removeChild(existingIcon);
+            if (existingIcon2) label.removeChild(existingIcon2);
         });
 
-        if (categories.every(cat => formData.getAll(cat).includes(currentWord[cat]))) {
-            feedback.innerHTML = `✅ Correct!<br /><br />${summaryHTML}`;
-            feedback.className = "feedback correct";
-        } else {
-            feedback.innerHTML = `❌ Incorrect.<br /><br />${summaryHTML}`;
-            feedback.className = "feedback incorrect";
+        const selected = form.querySelectorAll('input[type="radio"]:checked');
+        selected.forEach(input => {
+            userAnswer[input.name] = input.value;
+        });
+
+        const correct = currentQuestion.correct;
+        const alternates = correct.alternates || [];
+        let isCorrect = true;
+
+        const allCorrectOptions = [correct, ...alternates]
+        const matchedCorrects = []
+
+
+        // Helper function to check if an answer matches a parsing
+        // const isAnswerMatching = (parsing) => {
+        //     for (const key in parsing) {
+        //         if (shouldIgnoreKey(key)) continue;
+                
+        //         if (userAnswer[key] !== parsing[key]) {
+        //             // Special case for mediopassive
+        //             if (key === 'voice' && parsing.is_mediopassive && 
+        //                 (userAnswer[key] === 'middle' || userAnswer[key] === 'passive')) {
+        //                 continue;
+        //             }
+
+        //             return false;
+        //         }
+        //     }
+        //     return true;
+        // };
+
+        let isAnyMatch = false;
+
+        for(const parsing of allCorrectOptions) {
+            const matchedCorrect = {}
+            let numberOfMatch = 0;
+            let isCorrect = true;
+
+            for (const key in parsing) {
+                if (shouldIgnoreKey(key)) continue;
+                
+                if (userAnswer[key] !== parsing[key]) {
+                    // Special case for mediopassive
+                    if (key === 'voice' && parsing.is_mediopassive && 
+                        (userAnswer[key] === 'middle' || userAnswer[key] === 'passive')) {
+                        matchedCorrect[key] = true;
+                        numberOfMatch += 1;
+                        isCorrect = true;
+                        continue;
+                    }
+
+                    // return false;
+                    isCorrect = false;
+                    continue;
+                }
+
+                numberOfMatch += 1;
+                matchedCorrect[key] = true;
+            }
+
+            if(isCorrect) {
+                isAnyMatch = true;
+            }
+
+            matchedCorrects.push({
+                numberOfMatch,
+                matchedCorrect
+            })
         }
 
 
-      document.querySelectorAll('#parser-form input[type="checkbox"]').forEach(cb => cb.checked = false);
-      currentWord = selectedWords[Math.floor(Math.random() * selectedWords.length)];
-      document.getElementById("word").textContent = currentWord.word;
-    });
+        // Check against correct answer and alternates
+        // const isAnyMatch = allCorrectOptions.some(isAnswerMatching);
+        const matchedCorrect = matchedCorrects.sort((a, b) => b.numberOfMatch - a.numberOfMatch)[0].matchedCorrect;
+
+        if (isAnyMatch) {
+            resultDiv.textContent = '✅ Correct!';
+            streak++;
+            correctScore++;
+            setTimeout(nextQuestion, 2000);
+        } else {
+            resultDiv.textContent = '❌ Incorrect. You can reveal the correct answer.';
+            streak = 0;
+            incorrectScore++;
+        }
+
+        // Mark correct/incorrect labels
+        for (const key in userAnswer) {
+            const input = form.querySelector(`input[name="${key}"][value="${userAnswer[key]}"]`);
+            const label = input?.parentElement;
+            if (matchedCorrect[key]) {
+                label?.classList.add('correct-label');
+                if (label) {
+                    const icon = document.createElement('span');
+                    icon.className = 'correct-icon';
+                    icon.textContent = '✓';
+                    label.appendChild(icon);
+                }
+            } else {
+                label?.classList.add('incorrect-label');
+                if (label) {
+                    const icon = document.createElement('span');
+                    icon.className = 'error-icon';
+                    icon.textContent = '✖';
+                    label.appendChild(icon);
+                }
+            }
+        }
+    }
+
+    
+    function revealAnswer() {
+        const correct = currentQuestion.correct;
+        for (const key in correct) {
+            const input = form.querySelector(`input[name="${key}"][value="${correct[key]}"]`);
+            const label = input?.parentElement;
+            if (label && !label.classList.contains('correct-label')) {
+                label.classList.add('correct-label');
+            }
+        }
+
+        // Format and display the parsings
+        const parsingList = document.getElementById('parsingList');
+        parsingList.innerHTML = ''; // Clear previous content
+
+        // Get the alternates from the current question
+        const alternates = correct.alternates || [];
+        const currentMorph = {
+            ...correct,
+            alternates: undefined
+        }
+        
+        // Add the correct answer as the first parsing
+        const allParsings = [currentMorph, ...alternates];
+
+        allParsings.forEach((parsing, index) => {
+            const parsingDiv = document.createElement('div');
+            parsingDiv.style.cssText = `
+                margin: 0.75rem 0;
+                padding: 1rem;
+                background: ${index === 0 ? 'rgba(127, 255, 127, 0.15)' : 'rgba(127, 127, 255, 0.15)'};
+                border-radius: 8px;
+                border: 1px solid ${index === 0 ? 'rgba(127, 255, 127, 0.3)' : 'rgba(127, 127, 255, 0.3)'};
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            `;
+
+            // Create a formatted string for each parsing
+            const parsingText = Object.entries(parsing)
+                .filter(([key]) => key !== 'part_of_speech' && key !== 'is_mediopassive' && key !== 'alternates' && key !== 'verb_type')
+                .map(([key, value]) => {
+                    // Capitalize first letter and format the value
+                    const formattedKey = key.charAt(0).toUpperCase() + key.slice(1);
+                    const formattedValue = value.charAt(0).toUpperCase() + value.slice(1);
+                    return `<span style="color: #7fffd4">${formattedKey}</span>: <span style="color: #fff">${formattedValue}</span>`;
+                })
+                .join('  •  '); // Use a bullet point separator
+
+            parsingDiv.innerHTML = parsingText;
+            parsingList.appendChild(parsingDiv);
+        });
+
+        modal.classList.add('show');
+
+        if(userChoice === 'reveal') {
+            streak = 0;
+            incorrectScore++;
+        }
+    }
+
+    function closeModal() {
+      modal.classList.remove('show');  // Remove 'show' class to hide modal
+      setTimeout(() => {
+        nextQuestion();
+      }, 300);
+    }
+
+
+    function nextQuestion() {
+      let list = questions[currentMode];
+
+      if(currentIndex >= list.length && list.length !== 0) {
+        questionDiv.textContent = 'Game ended';
+        form.innerHTML = '';
+        resultDiv.textContent = '';
+        progressDiv.textContent = '';
+        return;
+      }
+
+      if (Object.keys(filters).length > 0) {
+        list = list.filter(q => {
+          return Object.entries(filters).every(([k, v]) => {
+            return !v || q.correct[k] === v;
+          });
+        });
+      }
+      if (list.length === 0) {
+        questionDiv.textContent = 'No matching questions. Adjust filters.';
+        form.innerHTML = '';
+        resultDiv.textContent = '';
+        progressDiv.textContent = '';
+        return;
+      }
+
+      //   currentQuestion = list[Math.floor(Math.random() * list.length)];
+      currentQuestion = list[currentIndex++];
+      questionDiv.textContent = `${currentQuestion.form}`;
+      progressDiv.textContent = `${currentIndex} of ${list.length}`
+      scoreDiv.innerHTML = `<span style="color: #7fffd4; margin-right: 10px"> ✓ ${correctScore} </span>  <span style="color: #ff6b6b; margin-right: 10px"> ✖ ${incorrectScore} </span> <span style="color: #aaa"> streak: ${streak} </span>`
+      buildForm(currentQuestion.correct);
+      resultDiv.textContent = '';
+      userChoice = 'reveal';
+    }
+
+    function showQuizModal() {
+        // Show modal with link
+        const modal = document.getElementById("myModal-quiz");
+            const modalLink = document.getElementById("modalLink-quiz");
+            // modalLink.href = `http://www.perseus.tufts.edu/hopper/morph?l=${encodeURIComponent(word)}&la=greek`;
+            modal.style.display = "block";
+
+            // Close modal when clicking the X
+            const closeBtn = document.getElementsByClassName("close-quiz")[0];
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // Close modal when clicking outside
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+    }
+
+    function showLogeionModal() {
+        // Show modal with iframe
+        const modal = document.getElementById("morphoModal");
+        const modalIframe = document.getElementById("morphoModalIframe");
+        const closeBtn = document.getElementsByClassName("morpho-close")[0];
+
+        // modalIframe.src = `http://www.perseus.tufts.edu/hopper/morph?l=${encodeURIComponent(word)}&la=greek`;
+        let src = `https://logeion.uchicago.edu/morpho/${encodeURIComponent(currentQuestion.form)}`;
+        if(src !== modalIframe.src) {
+          console.log('....Setting source frame source to', src)
+          modalIframe.src = src;
+        }
+        modal.style.display = "block";
+
+        // Close modal when clicking the X
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+            modalIframe.src = ""; // Clear the iframe source when closing
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                modalIframe.src = ""; // Clear the iframe source when closing
+            }
+        }
+    }
+
+    // Backend functions
+    function convertPerson(person) {
+        if(person === 'first') {
+            return '1st'
+        } 
+        
+        if(person === 'second') {
+            return '2nd'
+        }
+        
+        if(person === 'third') {
+            return '3rd'
+        }
+
+        if(person === '1st') {
+            return 'first'
+        } 
+        
+        if(person === '2nd') {
+            return 'second'
+        }
+        
+        if(person === '3rd') {
+            return 'third'
+        }
+    }
+    
+    function toQueryParams(filters) {
+        const params = new URLSearchParams();
+        for (const key in filters) {
+            if (filters[key] !== undefined && filters[key] !== null && filters[key] !== '') {
+                // params.append(key, filters[key]);
+                params.append(key, key === 'person' ? convertPerson(filters[key]) : filters[key]);
+            }
+        }
+        return params.toString(); // returns string like "case=dative&number=plural"
+    }
+
+    async function fetchMorphData() {
+        currentIndex = 0;
+        showQuizModal()
+
+        try {
+            const queryParams = toQueryParams(backendFilters);
+            const response = await fetch(`https://rumbling-quintessential-banjo.glitch.me/api/morphology?${queryParams}`);
+            const list = await response.json();
+
+            console.log('server Resp:', list)
+            const morphQuestions = list.map(item => {
+                let correct = {};
+
+                for(const field in item) {
+                    if(field === 'id' || field === 'word' || field === 'part_of_speech') {
+                        continue;
+                    }
+
+                    if(!item[field]) {
+                        continue;
+                    }
+
+                    if(field === 'alternates') {
+                        correct[field] = item[field].map(a => {
+                            if(a.person) {
+                                a.person = convertPerson(a.person)
+                            }
+                            return a
+                        })
+                        continue;
+                    }
+
+                    correct[field] = field === 'person' ? convertPerson(item[field]) : item[field]
+                }
+
+                return {
+                    form: item.word,
+                    correct
+                }
+            });
+            console.log('Processed questions:', morphQuestions);
+            questions[currentMode] = morphQuestions;
+            nextQuestion();
+        } catch (err) {
+            console.error('Failed to fetch vocab lists:', err);
+        }
+    }
+
+
+
+    buildFilterControls();
+    //nextQuestion();
   </script>
 </body>
 </html>
+
