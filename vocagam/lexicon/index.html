@@ -51,11 +51,11 @@
     }
     .modal-content1 {
       background-color: #1e1e1e;
-      margin: 5% auto;
+      margin: 2% auto;
       padding: 20px;
       border-radius: 8px;
-      width: 80%;
-      max-width: 500px;
+      width: 85%;
+      max-width: 800px;
     }
     .close1 {
       color: #aaa;
@@ -229,6 +229,26 @@
     font-weight: bold;
     font-style: italic;
   }
+  .gloss-sense {
+    color: #80ffd0;
+    font-weight: bold;
+    font-style: italic;
+    margin-right: 10px;
+  }
+  .gloss-context {
+    margin-right: 10px;
+  }
+  .foreign-text {
+    color: #debaf7;
+    margin-right: 10px;
+    font-size: 0.9em;
+  }
+  .inline-citation {
+    color: #ffd580;
+    margin-right: 10px;
+    font-size: 0.9em;
+  }
+
 
   .quotes ul {
     list-style: none;
@@ -584,12 +604,13 @@
           </li>`;
       }).join('');
 
+      // <div class="gloss"> ${processGloss(data)}</div>
       container.innerHTML = `
         <div style="font-size: 12px; color: #808080; float: left;">📘 Sense ${i+1}</div>
         <br />
-        <div class="gloss"> ${processGloss(data)}</div>
+        <div class="gloss"> ${data.htmlText}</div>
         <div class="quotes">
-          <h4>📜 Examples:</h4>
+          <h4>📜 Quotes:</h4>
           <ul>${quotesHTML}</ul>
         </div>
       `;
@@ -657,11 +678,11 @@
             let lexiconResponse = await lexiconRes.json();
 
             console.log(lexiconResponse)
-            // const lsjJsonData = parseLSJEntry(lexiconResponse.lsj[0]?.xml_entry)
             morphResponseData.morphData = lexiconResponse.morphology
-            const lsjJsonWordSenses = lexiconResponse.senses
-            // console.log(lsjJsonData, lexiconResponse.dodson)
+            const lsjJsonWordSenses = lexiconResponse.senses3
+
             const lexiconEntryDisplay = document.getElementById('lexiconEntryDisplay');
+            lexiconEntryDisplay.innerHTML = '';
             lsjJsonWordSenses.forEach((sense, i) => {
               lexiconEntryDisplay.appendChild(renderLexiconEntry(sense, i));
             })
