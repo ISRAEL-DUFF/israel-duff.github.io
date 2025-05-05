@@ -311,6 +311,11 @@
   <div id="ipa"></div>
   <!-- <a id="downloadLink" href="#" download="pronunciation.wav" style="display:none; color: #64b5f6; margin-top: 1em;">Download Audio</a> -->
 
+  <div id="namespaceContainer">
+    <input type="text" id="namespaceInput" placeholder="Your namespace" />
+    <select id="namespaceSelect"></select>
+  </div>
+
   <a id="browserVocab" href="./vocab-list.html" style="color: #64b5f6; margin-top: 1em;">Browse Vocabulary</a>
   <!-- <a id="parser2" href="./parser2.html" style="color: #64b5f6; margin-top: 1em;">Greek Parser</a> -->
 
@@ -333,7 +338,7 @@
 
 
       <!-- <input id="meaningsInput" placeholder="Enter glosses (separated by comma)" /> -->
-      <input id="vocabKeyInput" placeholder="Key (e.g eusebius)" />
+      <!-- <input id="vocabKeyInput" placeholder="Key (e.g eusebius)" /> -->
       <button onclick="addNewMorph()">Save word</button>
 
     </div>
@@ -365,6 +370,7 @@
 
   <script>
     let morphResponseData = {};
+    let lexiconResponseData = {};
     let originalWord = '';
     function parsePerseusResponse(response) {
         const body = response?.RDF?.Annotation?.Body;
@@ -632,7 +638,8 @@
         return;
       }
 
-      const container = document.getElementById('dodsonEntryContainer');
+      let container = document.getElementById('dodsonEntryContainer');
+      container.innerHTML = '';
 
       for (const [key, value] of Object.entries(data)) {
         const row = document.createElement('div');
@@ -677,14 +684,19 @@
 
             let lexiconResponse = await lexiconRes.json();
 
-            console.log(lexiconResponse)
             morphResponseData.morphData = lexiconResponse.morphology
-            const lsjJsonWordSenses = lexiconResponse.senses3
+            lexiconResponseData = {
+              ...lexiconResponse,
+              meanings: [],
+              morphology: undefined
+            }
+            const lsjJsonWordSenses = lexiconResponse.senses
 
             const lexiconEntryDisplay = document.getElementById('lexiconEntryDisplay');
             lexiconEntryDisplay.innerHTML = '';
             const totalSenses = lsjJsonWordSenses.length;
             lsjJsonWordSenses.forEach((sense, i) => {
+              lexiconResponseData.meanings = lexiconResponseData.meanings.concat(sense.glosses)
               lexiconEntryDisplay.appendChild(renderLexiconEntry(sense, i, totalSenses));
             })
             renderDodsonEntry(lexiconResponse.dodson)
@@ -722,16 +734,17 @@
     }
 
   async function addNewMorph() {
+    const namespace = localStorage.getItem('namespace') ?? 'default';
     // const meanings = document.getElementById('meaningsInput').value;
-    const meanings = document.getElementById('copyTextarea').value;
-    const vocabKeyInput = document.getElementById('vocabKeyInput').value;
+    const notes = document.getElementById('copyTextarea').value;
+    // const vocabKeyInput = document.getElementById('vocabKeyInput').value;
     
-    if (!meanings) {
-        throw new Error('Meanings should not be empty')
-    }
+    // if (!meanings) {
+    //     throw new Error('Meanings should not be empty')
+    // }
 
-    if (!vocabKeyInput) {
-        throw new Error('Dictionary key should not be empty')
+    if (!namespace) {
+        throw new Error('Namespace should not be empty')
     }
 
     // Cache the new data
@@ -742,10 +755,12 @@
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            vocabKey: vocabKeyInput,
+            vocabKey: namespace,
             word: originalWord,
             ...morphResponseData,
-            meanings: meanings.split(',')
+            lexiconData: lexiconResponseData,
+            meanings: lexiconResponseData.meanings,
+            notes
         })
     });
 
@@ -773,6 +788,40 @@
     const container = document.getElementById('copyInputContainer');
     container.style.display = container.style.display === 'none' ? 'block' : 'none';
   }
+
+  async function fetchListNames() {
+    try {
+    const response = await fetch('https://rumbling-quintessential-banjo.glitch.me/api/vocab/info'); // expects [{ name: 'list-name', count: 42 }]
+    const list = await response.json();
+    namespaceSelect.innerHTML = list.map(item => {
+        const label = item.name + (item.count ? ` (${item.count} words)` : '');
+        return `<option value="${item.name}">${label}</option>`;
+    }).join('');
+    } catch (err) {
+    console.error('Failed to fetch vocab lists:', err);
+    }
+  }
+
+  let timeoutId1;
+  namespaceSelect.addEventListener('change', () => {
+    document.getElementById('namespaceInput').value = namespaceSelect.value;
+    clearTimeout(timeoutId1);
+    timeoutId1 = setTimeout(() => {
+      console.log("setting namespace from namespace select:", namespaceSelect.value)
+      localStorage.setItem('namespace', namespaceSelect.value);
+    }, 2000)
+  });
+
+  let timeoutId2;
+  document.getElementById('namespaceInput').addEventListener('input', () => {
+    clearTimeout(timeoutId2);
+    timeoutId2 = setTimeout(() => {
+      console.log("setting namespace:", document.getElementById('namespaceInput').value)
+      localStorage.setItem('namespace', document.getElementById('namespaceInput').value);
+    }, 2000)
+  });
+
+  fetchListNames();
 
 
 //   const xmlString = `

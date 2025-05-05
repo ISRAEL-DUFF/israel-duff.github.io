@@ -293,7 +293,7 @@
   <div class="input-area">
     <input type="text" id="listInput" placeholder="Enter vocab list ID or name" />
     <select id="listSelect"></select>
-    <button onclick="loadVocabList()">Load</button>
+    <button onclick="loadVocabList()">Load</button> 
     <button onclick="downloadVocabList()">Download JSON</button>
     <input type="text" id="filterInput" placeholder="Filter words..." oninput="filterAndDisplay()"  style = 'margin-top: 5px; margin-bottom: 5px;'/>
     <label>Page Size: 
@@ -442,6 +442,7 @@
         }
 
         const meaningList = document.createElement('ul');
+        console.log("word:", word)
         meaningList.className = 'meanings';
         word.meanings.forEach(m => {
           const li = document.createElement('li');
