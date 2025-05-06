@@ -143,61 +143,82 @@ async function extractLexiconSenses2(xmlEntry) {
 }
 
 async function extractLexiconSenses3(xmlEntry) {
-  const doc = new DOMParser().parseFromString(xmlEntry, "text/xml");
-  const senseNodes = xpath.select("//sense", doc);
-  const results = [];
-
-  const processCitation = (citation) => {
-    const quote = (xpath.select(".//quote", citation))[0]?.textContent.trim();
-    const bibl = (xpath.select(".//bibl", citation))[0];
-    let biblRef = null;
-    if (bibl) {
-        biblRef = {
-        author: (xpath.select(".//author", bibl))[0]?.textContent.trim() || null,
-        title: (xpath.select(".//title", bibl))[0]?.textContent.trim() || null,
-        passage: bibl.textContent.trim()
-        };
-    }
-    return { quote, bibl: biblRef };
-  }
-
-  senseNodes.forEach(sense => {
-    const children = xpath.select('./node()', sense);
-    let htmlText = '<div>';
-    let citations = [];
-    children.forEach((node, i) => {
-        // console.log(`[${i}] type: ${node.nodeType}, name: ${node.nodeName}, value: "${node.nodeValue || node.textContent}"`);
-
-        if(node.nodeName === 'cit') {
-          const citation = processCitation(node);
-          htmlText += `<span class="inline-citation">${citation.quote}</span>`;
-          citations.push(citation)
-        } else if(node.nodeName === '#text') {
-          const text = node.textContent.trim();
-          htmlText += `<span class="text">${text}</span>`;
-        } else if(node.nodeName === 'i') {
-          const text = node.textContent.trim();
-          htmlText += `<span class="gloss-sense">${text}</span>`;
-        } else if(node.nodeName === 'foreign') {
-          const text = node.textContent.trim();
-          htmlText += `<span class="foreign-text">${text}</span>`;
-        }
-    });
-
-    htmlText += '</div>';
-
-    const senseObj = {
-      id: sense.getAttribute("id"),
-      level: sense.getAttribute("level"),
-      htmlText,
-      citations
-    }
-
-    results.push(senseObj)
-  });
-
-  console.log(results)
-  return results;
+	const doc = new DOMParser().parseFromString(xmlEntry, "text/xml");
+	const senseNodes = xpath.select("//sense", doc);
+	const results = [];
+  
+	const processCitation = (citation) => {
+	  const quote = (xpath.select(".//quote", citation))[0]?.textContent.trim();
+	  const bibl = (xpath.select(".//bibl", citation))[0];
+	  let biblRef = null;
+	  if (bibl) {
+		  biblRef = {
+		  author: (xpath.select(".//author", bibl))[0]?.textContent.trim() || null,
+		  title: (xpath.select(".//title", bibl))[0]?.textContent.trim() || null,
+		  passage: bibl.textContent.trim()
+		  };
+	  }
+	  return { quote, bibl: biblRef };
+	}
+	
+	const processBibl = (bibliology) => {
+	  const title = (xpath.select(".//title", bibliology))[0]?.textContent.trim();
+	  const author = (xpath.select(".//author", bibliology))[0];
+	  const txt = xpath.select(".//text()", bibliology).join('')
+	  
+	  return { text: txt ?? '', title: title ?? '', author: author ?? '' };
+	}
+	
+	senseNodes.forEach(sense => {
+	  const children = xpath.select('./node()', sense);
+	  let htmlText = '<div>';
+	  let glosses = [];
+	  let citations = [];
+	  children.forEach((node, i) => {
+		  // console.log(`[${i}] type: ${node.nodeType}, name: ${node.nodeName}, value: "${node.nodeValue || node.textContent}"`);
+		  // const ignoredTexts = ['.', ',', ';', 'cf.', 'etc.;']
+		  const ignoredTexts = []
+  
+		  if(node.nodeName === 'cit') {
+			const citation = processCitation(node);
+			htmlText += `<span class="inline-citation">${citation.quote}</span>`;
+			citations.push(citation)
+		  } else if(node.nodeName === '#text') {
+			const text = node.textContent.trim();
+			htmlText += `<span class="gloss-context">${ignoredTexts.includes(text) ? '' : text}</span>`;
+		  } else if(node.nodeName === 'i') {
+			const text = node.textContent.trim();
+			glosses.push(text)
+			htmlText += `<span class="gloss-sense">${text}</span>`;
+		  } else if(node.nodeName === 'foreign') {
+			const text = node.textContent.trim();
+			htmlText += `<span class="foreign-text">${text}</span>`;
+		  } else if(node.nodeName === 'bibl') {
+			const bibl = processBibl(node);
+			htmlText += `
+			<span class="inline-bibl">
+			  <span class="author">${bibl.author}</span>, 
+			  <span class="title">${bibl.title}</span> 
+			  <span class="reference">${bibl.text}</span>
+			</span>`
+		  }
+	  });
+  
+	  htmlText += '</div>';
+  
+	  const senseObj = {
+		id: sense.getAttribute("id"),
+		level: sense.getAttribute("level"),
+		htmlText,
+		glosses,
+		quotes: citations
+	  }
+  
+	  results.push(senseObj)
+	});
+  
+	console.log(results)
+	return results;
 }
 
 async function fetchLexiconEntry(greekWord) {

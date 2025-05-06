@@ -249,6 +249,10 @@
     font-size: 0.9em;
   }
 
+  .inline-bibl {
+    color: #905f90;
+  }
+
 
   .quotes ul {
     list-style: none;
@@ -369,54 +373,11 @@
   </div> -->
 
   <script>
-    let morphResponseData = {};
-    let lexiconResponseData = {};
+    let morphologyData = {};
+    let lexiconData = {};
+    let currentMorphData = {}
     let originalWord = '';
-    function parsePerseusResponse(response) {
-        const body = response?.RDF?.Annotation?.Body;
-        if (!body) return [];
     
-        const bodyList = Array.isArray(body) ? body : [body];
-        const rawOutput = bodyList.flatMap(bodyItem => {
-        const entry = bodyItem.rest?.entry;
-        const dict = entry?.dict || {};
-        const infls = Array.isArray(entry?.infl) ? entry.infl : [entry?.infl].filter(Boolean);
-    
-        const base = {
-            lemma: dict.hdwd?.["$"] || null,
-            partOfSpeech: dict.pofs?.["$"] || null
-        };
-    
-        return infls.map(infl => ({
-            ...base,
-            case: infl?.case?.["$"] || null,
-            gender: infl?.gend?.["$"] || null,
-            number: infl?.num?.["$"] || null,
-            tense: infl?.tense?.["$"] || null,
-            voice: infl?.voice?.["$"] || null,
-            mood: infl?.mood?.["$"] || null,
-            person: infl?.pers?.["$"] || null,
-            stem: infl?.term?.stem?.["$"] || null,
-            suffix: infl?.term?.suff?.["$"] || null,
-            morph: infl?.morph?.["$"] || null,
-            stemtype: infl?.stemtype?.["$"] || null,
-            derivtype: infl?.derivtype?.["$"] || null,
-            dialect: infl?.dial?.["$"] || null
-        }));
-        });
-
-        // remove null fields
-        return rawOutput.map((o) => {
-            let d = {}
-            for(const k of Object.keys(o)) {
-                if(o[k]) {
-                    d[k] = o[k]
-                }
-            }
-
-            return d;
-        })
-    }
 
     function displayGrammarInfo(dataArray) {
       const grammarInfo = document.getElementById('grammarInfo');
@@ -447,6 +408,10 @@
         const formNumber = document.createElement('div');
         formNumber.className = 'form-number';
         formNumber.textContent = `Form ${index + 1}`;
+
+        formNumber.onclick = () => {
+          DisplayLexiconInfo(data.lemma)
+        }
         formContainer.appendChild(formNumber);
         
         // Add each grammatical feature
@@ -485,7 +450,7 @@
         const closeBtn = document.getElementsByClassName("close")[0];
 
         // modalIframe.src = `http://www.perseus.tufts.edu/hopper/morph?l=${encodeURIComponent(word)}&la=greek`;
-        let src = `https://logeion.uchicago.edu/${encodeURIComponent(morphResponseData.morphData[0].lemma)}`;
+        let src = `https://logeion.uchicago.edu/${encodeURIComponent(currentMorphData.lemma)}`;
         if(src !== modalIframe.src) {
           console.log('....Setting source frame source to', src)
           modalIframe.src = src;
@@ -634,12 +599,12 @@
       //   "Beta Code": "kale/w"
       // };
 
+      let container = document.getElementById('dodsonEntryContainer');
+      container.innerHTML = '';
+
       if(!data) {
         return;
       }
-
-      let container = document.getElementById('dodsonEntryContainer');
-      container.innerHTML = '';
 
       for (const [key, value] of Object.entries(data)) {
         const row = document.createElement('div');
@@ -669,12 +634,6 @@
         originalWord = word;
     
         try {
-            const responseData = {
-                morphData: {},
-                meanings:[]
-            }
-            morphResponseData= responseData
-
             // <<<< LEXICON SECTION >>>>
             // const lexiconUrl = `https://rumbling-quintessential-banjo.glitch.me/api/lexica/${encodeURIComponent(parseResp[0].lemma)}`;
             const lexiconUrl = `https://rumbling-quintessential-banjo.glitch.me/api/lexica/${encodeURIComponent(word)}`;
@@ -684,22 +643,15 @@
 
             let lexiconResponse = await lexiconRes.json();
 
-            morphResponseData.morphData = lexiconResponse.morphology
-            lexiconResponseData = {
-              ...lexiconResponse,
-              meanings: [],
-              morphology: undefined
-            }
-            const lsjJsonWordSenses = lexiconResponse.senses
+            morphologyData = lexiconResponse.morphology;
+            lexiconData = lexiconResponse.lexica;
+            currentMorphData = lexiconResponse.morphology[0];
 
-            const lexiconEntryDisplay = document.getElementById('lexiconEntryDisplay');
-            lexiconEntryDisplay.innerHTML = '';
-            const totalSenses = lsjJsonWordSenses.length;
-            lsjJsonWordSenses.forEach((sense, i) => {
-              lexiconResponseData.meanings = lexiconResponseData.meanings.concat(sense.glosses)
-              lexiconEntryDisplay.appendChild(renderLexiconEntry(sense, i, totalSenses));
+            console.log({
+              morphologyData,
+              lexiconData
             })
-            renderDodsonEntry(lexiconResponse.dodson)
+            DisplayLexiconInfo(currentMorphData.lemma)
             // <<< END LEXICON SECTION >>>
 
 
@@ -723,15 +675,35 @@
             }
 
             // Display all morphological forms
-            if (morphResponseData.morphData.length > 0) {
-                displayGrammarInfo(morphResponseData.morphData);
+            if (morphologyData.length > 0) {
+                displayGrammarInfo(morphologyData);
             }
+            
 
-            return responseData;
+            return lexiconResponse;
         } catch (error) {
             console.log(error)
         }
     }
+
+  function DisplayLexiconInfo(lemma) {
+    const lexiconResponse = lexiconData[lemma];
+    currentMorphData = morphologyData.find(m => m.lemma === lemma);
+    lexiconResponseData = {
+      ...lexiconResponse,
+      meanings: [],
+    }
+    const lsjJsonWordSenses = lexiconResponse.senses
+
+    const lexiconEntryDisplay = document.getElementById('lexiconEntryDisplay');
+    lexiconEntryDisplay.innerHTML = '';
+    const totalSenses = lsjJsonWordSenses.length;
+    lsjJsonWordSenses.forEach((sense, i) => {
+      lexiconResponseData.meanings = lexiconResponseData.meanings.concat(sense.glosses)
+      lexiconEntryDisplay.appendChild(renderLexiconEntry(sense, i, totalSenses));
+    })
+    renderDodsonEntry(lexiconResponse.dodson)
+  }
 
   async function addNewMorph() {
     const namespace = localStorage.getItem('namespace') ?? 'default';
