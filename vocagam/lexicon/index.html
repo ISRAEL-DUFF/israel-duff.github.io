@@ -376,6 +376,7 @@
     let morphologyData = {};
     let lexiconData = {};
     let currentMorphData = {}
+    let currentLexiconResponseData = {};
     let originalWord = '';
     
 
@@ -703,6 +704,8 @@
       lexiconEntryDisplay.appendChild(renderLexiconEntry(sense, i, totalSenses));
     })
     renderDodsonEntry(lexiconResponse.dodson)
+
+    currentLexiconResponseData = lexiconResponseData;
   }
 
   async function addNewMorph() {
@@ -729,9 +732,9 @@
         body: JSON.stringify({
             vocabKey: namespace,
             word: originalWord,
-            ...morphResponseData,
-            lexiconData: lexiconResponseData,
-            meanings: lexiconResponseData.meanings,
+            morphData: [currentMorphData],
+            lexiconData: currentLexiconResponseData,
+            meanings: currentLexiconResponseData.meanings,
             notes
         })
     });
