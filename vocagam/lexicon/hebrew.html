@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hebrew Lexicon Lookup</title>
+  <style>
+    body { font-family: sans-serif; padding: 2em; background: #f8f8f8; }
+    input { margin: 0.5em; padding: 0.5em; width: 350px; }
+    table { border-collapse: collapse; margin-top: 1em; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 0.5em; text-align: center; }
+
+    .entry-container {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    max-width: 600px;
+    }
+
+    .entry-container h2 {
+    text-align: center;
+    color: #333;
+    }
+
+    .entry p {
+    margin: 8px 0;
+    line-height: 1.6;
+    }
+
+    .entry p strong {
+    color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h2>🔍 Hebrew Lexicon Lookup</h2>
+  <form id="searchForm">
+    <input type="text" id="word" placeholder="Hebrew Word or Strong's Number (e.g, H0120)" />
+    <button type="submit">Search</button>
+  </form>
+
+  <div id="lexicalEntry"></div>
+
+
+  <table id="results" style="display:none">
+    <thead>
+      <tr><th>Word</th><th>Strongs Number</th><th>Morph</th><th>Ref</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    const form = document.getElementById('searchForm');
+    const table = document.getElementById('results');
+    const tbody = table.querySelector('tbody');
+
+    form.onsubmit = async (e) => {
+      e.preventDefault();
+      const word = document.getElementById('word').value.trim();
+
+      const res = await fetch('http://localhost:3000/search', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ word })
+      });
+        if (!res.ok) {
+            alert('Error: ' + res.statusText);
+            return;
+        }
+
+      if (res.status !== 200) {
+        alert('Error: ' + res.statusText);
+        return;
+      }
+
+
+      const dataResp = await res.json();
+      const data = dataResp.refs;
+
+      if(!dataResp.lexicalEntries) {
+        alert('No results found.');
+        document.getElementById('lexicalEntry').innerHTML = '';
+        table.style.display = 'none';
+        tbody.innerHTML = '';
+        return;
+      }
+
+      const strongsEntry = dataResp.lexicalEntries.strongsEntry;
+      const bdbEntry = dataResp.lexicalEntries.bdbEntry;
+      tbody.innerHTML = '';
+
+      console.log(dataResp)
+
+
+      if (data.length > 0) {
+        table.style.display = 'table';
+        data.forEach(row => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${row.word}</td>
+            <td>${row.strongNumber}</td>
+            <td>${row.morphology.morph}</td>
+            <td>${row.book} ${row.chapter}:${row.verse}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+
+        document.getElementById('lexicalEntry').innerHTML = `
+          <div class="entry-container">
+            <h3>Morphology</h3>
+            <p><strong>Word:</strong> ${data[0].word}</p>
+            <p><strong>Strong's Number:</strong> ${data[0].strongNumber}</p>
+            <p><strong>Morphology:</strong> ${data[0].morphology.morph}</p>
+            <p><strong>Reference:</strong> ${data[0].book} ${data[0].chapter}:${data[0].verse}</p>
+          </div>
+
+          <div class="entry-container">
+            <h3>Strong's Lexical Entry</h3>
+                <div class="entry">
+                    <p><strong>Strong's Number:</strong> ${strongsEntry.strong_number}</p>
+                    <p><strong>Lemma:</strong> ${strongsEntry.entry.lemma}</p>
+                    <p><strong>Transliteration:</strong> ${strongsEntry.entry.xlit}</p>
+                    <p><strong>Pronunciation:</strong>${strongsEntry.entry.pron}</p>
+                    <p><strong>Derivation:</strong> ${strongsEntry.entry.derivation}</p>
+                    <p><strong>Strong's Definition:</strong> ${strongsEntry.entry.strongs_def}</p>
+                    <p><strong>KJV Definition:</strong> ${strongsEntry.entry.kjv_def}</p>
+                </div>
+            </div>
+
+            <div class="entry-container">
+                <h3>BDB Lexical Entry</h3>
+                ${bdbEntry.xml_entry}
+            </div>
+        `;
+      } else {
+        table.style.display = 'none';
+        alert('No results found.');
+      }
+    };
+  </script>
+</body>
+</html>

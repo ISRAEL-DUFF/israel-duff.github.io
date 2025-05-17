@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hebrew Morph Parser</title>
+  <style>
+    body { font-family: sans-serif; padding: 2em; background: #1c1c1c; color: #eee; }
+    label, select { display: block; margin: 0.5em 0; }
+    .form-section { margin-top: 1.5em; }
+    select, button { padding: 0.4em; background: #333; color: #eee; border: 1px solid #444; }
+    #output { margin-top: 1em; font-weight: bold; color: #5fe7a2; }
+  </style>
+</head>
+<body>
+  <h1>Hebrew Morphology Code Builder</h1>
+
+  <label>
+    Part of Speech:
+    <select id="partOfSpeech">
+      <option value="noun">Noun</option>
+      <option value="verb">Verb</option>
+    </select>
+  </label>
+
+  <div id="nounFields" class="form-section">
+    <label>Noun Type:
+      <select id="nounType">
+        <option value="common">Common</option>
+        <option value="proper">Proper</option>
+      </select>
+    </label>
+    <label>Gender:
+      <select id="nounGender">
+        <option value="masculine">Masculine</option>
+        <option value="feminine">Feminine</option>
+      </select>
+    </label>
+    <label>Number:
+      <select id="nounNumber">
+        <option value="singular">Singular</option>
+        <option value="plural">Plural</option>
+        <option value="dual">Dual</option>
+      </select>
+    </label>
+    <label>State:
+      <select id="nounState">
+        <option value="absolute">Absolute</option>
+        <option value="construct">Construct</option>
+        <option value="determined">Determined</option>
+      </select>
+    </label>
+  </div>
+
+  <div id="verbFields" class="form-section" style="display: none;">
+    <label>Stem:
+      <select id="verbStem">
+        <option value="qal">Qal</option>
+        <option value="niphal">Niphal</option>
+        <option value="piel">Piel</option>
+        <option value="pual">Pual</option>
+        <option value="hiphil">Hiphil</option>
+        <option value="hophal">Hophal</option>
+        <option value="hithpael">Hithpael</option>
+      </select>
+    </label>
+    <label>Aspect:
+      <select id="verbAspect">
+        <option value="perfect">Perfect</option>
+        <option value="imperfect">Imperfect</option>
+        <option value="imperative">Imperative</option>
+        <option value="infinitive-construct">Infinitive Construct</option>
+        <option value="infinitive-absolute">Infinitive Absolute</option>
+        <option value="participle">Participle</option>
+      </select>
+    </label>
+    <label>Person:
+      <select id="verbPerson">
+        <option value="1">1st</option>
+        <option value="2">2nd</option>
+        <option value="3">3rd</option>
+      </select>
+    </label>
+    <label>Gender:
+      <select id="verbGender">
+        <option value="masculine">Masculine</option>
+        <option value="feminine">Feminine</option>
+        <option value="both">Both</option>
+      </select>
+    </label>
+    <label>Number:
+      <select id="verbNumber">
+        <option value="singular">Singular</option>
+        <option value="plural">Plural</option>
+      </select>
+    </label>
+  </div>
+
+  <button onclick="generateCode()">Generate MorphHB Code</button>
+  <div id="output"></div>
+
+
+  <button onclick="searchMorph()">Search Morph</button>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Book</th><th>Chapter</th><th>Verse</th><th>Word</th><th>Morph</th><th>Morphology</th><th>Lemma</th>
+      </tr>
+    </thead>
+    <tbody id="results"></tbody>
+  </table>
+
+  <script>
+    const morphMap = {
+      noun: {
+        partOfSpeech: { noun: "N" },
+        nounType: { common: "c", proper: "p", gentilic: "g" },
+        gender: { masculine: "m", feminine: "f", common: "c", both: "b" },
+        number: { singular: "s", plural: "p", dual: "d" },
+        state: { absolute: "a", construct: "c", determined: "d" }
+      },
+      adjective: {
+        partOfSpeech: { adjective: "A" },
+        adjectiveType: { adjective: "a", cardinalNumber: "c", gentilic: "g", ordinalNumber: "o"},
+        gender: { masculine: "m", feminine: "f", common: "c", both: "b" },
+        number: { singular: "s", plural: "p", dual: "d" },
+        state: { absolute: "a", construct: "c", determined: "d" }
+      },
+      pronoun: {
+        partOfSpeech: { pronoun: "P" },
+        pronounType: {demonstrative: "d", indefinite: "f", interrogative: "i", personal: "p", relative: "r"},
+        person: { "1": "1", "2": "2", "3": "3" },
+        gender: { masculine: "m", feminine: "f" },
+        number: { singular: "s", plural: "p", dual: "d" },
+      },
+      verb: {
+        partOfSpeech: { verb: "V" },
+        stem: {
+          qal: "q", qalpassive: "Q", niphal: "n", piel: "p", pual: "P",
+          hiphil: "h", hophal: "H", hithpael: "t", polel: "o", polal: "O",
+          hithpolel: "r", poel: "m", poal: "M", palel: "k", pulal: "K",
+          pilpel: "l", polpal: "L", hithpalpel: "f", nithpael: "D", pealal: "j",
+          pilel: "i", hothpal: "u", tiphil: "c", hishtaphel: "v", nithpalel: "w",
+          nithpoel: "y", hithpoel: "z"
+        },
+        aspect: {
+          perfect: "p", "sequential-perfect": "q", imperfect: "i", "sequential-imperfect": "w", imperative: "m",
+          cohortative: "h", jusive: "j", imperative: "v",
+          "infinitive-construct": "c", "infinitive-absolute": "a", "participle-active": "r", "participle-passive": "s"
+        },
+        person: { "1": "1", "2": "2", "3": "3" },
+        gender: { masculine: "m", feminine: "f", both: "b" },
+        number: { singular: "s", plural: "p" }
+      }
+    };
+
+    let generatedCode = '';
+
+    document.getElementById("partOfSpeech").addEventListener("change", function () {
+      document.getElementById("nounFields").style.display = this.value === "noun" ? "block" : "none";
+      document.getElementById("verbFields").style.display = this.value === "verb" ? "block" : "none";
+    });
+
+    function generateCode() {
+      const pos = document.getElementById("partOfSpeech").value;
+      const langPrefix = "HTd";
+
+      if (pos === "noun") {
+        const code = [
+          morphMap.noun.partOfSpeech[pos],
+          morphMap.noun.nounType[document.getElementById("nounType").value],
+          morphMap.noun.gender[document.getElementById("nounGender").value],
+          morphMap.noun.number[document.getElementById("nounNumber").value],
+          morphMap.noun.state[document.getElementById("nounState").value]
+        ].join('');
+        generatedCode = `${langPrefix}/${code}`;
+        document.getElementById("output").textContent = `→ ${generatedCode}`;
+      } else {
+        const code = [
+          morphMap.verb.partOfSpeech[pos],
+          morphMap.verb.stem[document.getElementById("verbStem").value],
+          morphMap.verb.aspect[document.getElementById("verbAspect").value],
+          morphMap.verb.person[document.getElementById("verbPerson").value],
+          morphMap.verb.gender[document.getElementById("verbGender").value],
+          morphMap.verb.number[document.getElementById("verbNumber").value]
+        ].join('');
+        generatedCode = `${langPrefix}/${code}`
+        document.getElementById("output").textContent = `→ ${generatedCode}`;
+      }
+    }
+
+    async function searchMorph() {
+        generateCode();
+        
+      const res = await fetch(`http://localhost:3000/search-morph?code=${generatedCode}`);
+      const data = await res.json();
+      const tbody = document.getElementById('results');
+      tbody.innerHTML = '';
+
+      data.forEach(row => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${row.book}</td>
+          <td>${row.chapter}</td>
+          <td>${row.verse}</td>
+          <td>${row.word}</td>
+          <td>${row.morph}</td>
+          <td>${row.morphology.morph}</td>
+          <td>${row.strongNumber}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+  </script>
+</body>
+</html>

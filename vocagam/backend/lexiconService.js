@@ -696,3 +696,12 @@ module.exports = {
     fetchLexiconEntry,
   fetchLexiconEntryWithMorphData
 };
+
+
+// HEBRW lexicon
+// https://github.com/openscriptures/strongs/tree/master
+// DBD dictionary: https://github.com/eliranwong/unabridged-BDB-Hebrew-lexicon/blob/master/DictBDB.json
+// https://github.com/openscriptures/HebrewLexicon/tree/master
+
+// Greek (Septuagint)
+// https://github.com/openscriptures/GreekResources/tree/master
