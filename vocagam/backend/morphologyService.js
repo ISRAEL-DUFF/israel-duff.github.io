@@ -3,6 +3,8 @@ const path = require('path');
 const { Client } = require('pg');
 const { betaCodeToGreek } = require('beta-code-js');
 const { parseStringPromise } = require("xml2js");
+const xpath = require("xpath");
+const { DOMParser } = require("xmldom");
 
 const client = new Client(process.env.DIRECT_DATABASE_URL);
 let connectedToDb = false;
@@ -10,7 +12,7 @@ let tableName = 'greek_morphology'
 
 
 // Path to store the data
-const DATA_FILE = path.join(__dirname, '.data');
+const DATA_FILE = path.join(__dirname, 'data');
 
 // Ensure data directory exists
 if (!fs.existsSync(path.dirname(DATA_FILE))) {
@@ -41,7 +43,7 @@ function getAllMorphologyData(key) {
 
 // Create new morphology entry
 async function createMorphologyEntry(morph) {
-    const {key, headWord, word, morphData, meanings} = morph;
+    const {key, headWord, word, morphData, meanings, lexicalData, notes} = morph;
     try {
         const data = getAllMorphologyData(key);
         const newEntry = {
@@ -50,6 +52,8 @@ async function createMorphologyEntry(morph) {
             word,
             morphData,
             meanings,
+            lexicalData,
+            notes,
             createdAt: new Date().toISOString(),
             updatedAt: new Date().toISOString()
         };
@@ -281,9 +285,12 @@ function extractAlternatForms(morphData) {
 
 async function fetchQuery(whereParams = {}, limit = 10) {
     try {
-        if(!connectedToDb) {
+        if(!client._connected) {
+          console.log("Connecting to DB....")
             await client.connect();
             connectedToDb = true;
+        } else {
+          console.log("Client DB already connected")
         }
 
         let whereCondition = `1=1`
@@ -323,83 +330,6 @@ async function fetchQuery(whereParams = {}, limit = 10) {
         console.log(query)
         const oldQuery = `SELECT ${columns} FROM ${tableName} WHERE ${whereCondition} LIMIT ${limit}`;
       const res = await client.query(query);
-
-      return res.rows
-  
-    } catch (err) {
-      console.error('Query failed', err);
-    } finally {
-      //await client.end();
-      console.log('')
-    }
-}
-
-function normalizeGreek(lemma) {
-    const unicode = betaCodeToGreek(lemma);
-    return unicode
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/[^\p{Script=Greek}]/gu, "")
-      .toLowerCase();
-}
-
-async function extractLexiconSenses(lexiconEntryXml) {
-    const wrappedXml = `<root>${lexiconEntryXml}</root>`;
-    const json = await parseStringPromise(wrappedXml, {
-      mergeAttrs: true,
-      explicitArray: false,
-      preserveChildrenOrder: true,
-      charsAsChildren: true,
-    });
-
-    const senses = json.root.div2.sense.map(s => {
-        if(typeof s.i === 'string') {
-            return {
-                introText: s._,
-                meanings:s.i
-            };
-        } else if(Array.isArray(s.i)) {
-            const meanings = s.i.reduce((acc, item) => {
-                acc += ` ${item};`;
-                return acc;
-            }, '');
-
-            return {
-                introText: s._,
-                meanings:meanings
-            };
-        } else {
-            return '-';
-        }
-    })
-  
-    return senses;
-}
-
-async function fetchLexiconEntry(greekWord) {
-    try {
-        if(!connectedToDb) {
-            await client.connect();
-            connectedToDb = true;
-        }
-
-        const normalizedWord = normalizeGreek(greekWord)
-        let columns = `word, beta_code, normalized_word, xml_entry`
-        let whereCondition = `normalized_word = '${normalizedWord}' OR word = '${greekWord}'`
-      
-      
-      // 4. Fetch random page
-      const query = `
-        SELECT ${columns} FROM lsj_lexicon
-        WHERE ${whereCondition}
-      `;
-
-      console.log(query)
-      const res = await client.query(query);
-
-      for(const row of res.rows) {
-        row.senses = await extractLexiconSenses(row.xml_entry)
-      }
 
       return res.rows
   
@@ -467,6 +397,8 @@ async function fetchGreekMorphs(filters) {
   return resultData
 }
 
+
+
 module.exports = {
     createMorphologyEntry,
     getMorphologyEntry,
@@ -474,6 +406,5 @@ module.exports = {
     deleteMorphologyEntry,
     getAllMorphologyData,
    listAllVocabsInfo,
-  fetchGreekMorphs,
-  fetchLexiconEntry
+  fetchGreekMorphs
 };
