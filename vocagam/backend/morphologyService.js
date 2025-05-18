@@ -12,7 +12,7 @@ let tableName = 'greek_morphology'
 
 
 // Path to store the data
-const DATA_FILE = path.join(__dirname, 'data');
+const DATA_FILE = path.join(__dirname, 'data/vocabs');
 
 // Ensure data directory exists
 if (!fs.existsSync(path.dirname(DATA_FILE))) {
