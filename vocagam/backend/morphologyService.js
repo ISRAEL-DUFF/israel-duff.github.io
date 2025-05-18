@@ -5,9 +5,11 @@ const { betaCodeToGreek } = require('beta-code-js');
 const { parseStringPromise } = require("xml2js");
 const xpath = require("xpath");
 const { DOMParser } = require("xmldom");
+require('dotenv').config();
+
 
 const client = new Client(process.env.DIRECT_DATABASE_URL);
-let connectedToDb = false;
+let connectedToDb = false; 
 let tableName = 'greek_morphology'
 
 

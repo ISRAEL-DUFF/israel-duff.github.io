@@ -4,12 +4,15 @@ const xpath = require("xpath");
 const { DOMParser } = require("xmldom");
 const dodsonData = require('./data/dodson-dictionary.json');
 const axios = require("axios")
+require('dotenv').config();
 
 const { Client } = require('pg');
 
 
 const client = new Client(process.env.DIRECT_DATABASE_URL);
 let connectedToDb = false;
+
+console.log(process.env)
 
 
 function normalizeGreek(lemma) {
