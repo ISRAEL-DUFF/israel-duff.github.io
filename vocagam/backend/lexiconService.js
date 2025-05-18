@@ -226,7 +226,7 @@ async function extractLexiconSenses3(xmlEntry) {
 
 async function fetchLexiconEntry(greekWord) {
     try {
-        if(!connectedToDb) {
+        if(!client._connected) {
             await client.connect();
             connectedToDb = true;
         }
