@@ -12,9 +12,6 @@ const { Client } = require('pg');
 const client = new Client(process.env.DIRECT_DATABASE_URL);
 let connectedToDb = false;
 
-console.log(process.env)
-
-
 function normalizeGreek(lemma) {
     const unicode = betaCodeToGreek(lemma);
     return unicode

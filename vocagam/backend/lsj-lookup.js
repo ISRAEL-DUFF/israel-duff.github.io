@@ -8,7 +8,6 @@ const { createClient } = require('@supabase/supabase-js');
 const { extractEntry } = require("./lsj-extractor");
 require('dotenv').config();
 
-
 const LSJ_PATH = "./data/grc.lsj.xml"; // path to your full LSJ XML file
 const INDEX_PATH = "./data/lsj_index_2.json";
 
@@ -279,8 +278,86 @@ async function storeLexicaData() {
     // throw new Error(`No LSJ entry found or close matches for: ${rawQuery}`);
 }
 
+async function importLSJLexicaDataToSqlite() {
+  const sqlite3 = require('sqlite3').verbose();
+  const index = JSON.parse(fs.readFileSync(INDEX_PATH, "utf8"));
+  const tableName = "lsj_lexicon";
+  const keys = Object.keys(index);
+  const total = keys.length;
+  const startIndex = 0;
+
+
+  const db = new sqlite3.Database('./data/database/greek_lexicon.db');
+
+  db.serialize(async () => {
+    const insert = db.prepare(`
+      INSERT INTO ${tableName} (word, normalized_word, beta_code, xml_entry)
+      VALUES (?, ?, ?, ?)
+    `);
+
+    for(let i = startIndex; i < total; i++) {
+      const key = keys[i];
+      const offset = index[key];
+      const entryData = await readEntryAtOffset(key, offset);
+
+      insert.run(
+        key,  // word
+        normalizeGreek(key),
+        greekToBetaCode(key), // beta_code
+        entryData.xml // xml_entry
+      );
+    }
+
+    insert.finalize();
+
+    console.log("✅ Database created and populated.");
+  });
+
+  db.close();
+}
+
+async function importDodsonLexicaDataToSqlite() {
+  const sqlite3 = require('sqlite3').verbose();
+  const tableName = "dodson_lexicon";
+
+  const dodsonList = JSON.parse(fs.readFileSync('./data/dodson.json', 'utf8'));
+  const db = new sqlite3.Database('./data/database/greek_lexicon.db');
+
+  db.serialize(async () => {
+    const insert = db.prepare(`
+      INSERT INTO ${tableName} (greek_word, beta_code, strong_number, lemma, short_definition, long_definition)
+      VALUES (?, ?, ?, ?, ?, ?)
+    `);
+
+    for(const dodsonData of dodsonList) {
+      insert.run(
+        dodsonData.greekWord,  // word
+        dodsonData['Beta Code'],
+        "G" + dodsonData["Strong's"].replace(/^0+/, ''),
+        dodsonData.greekWord.split(',')[0], // dodsonData['Lemma'],
+        dodsonData['English Definition (brief)'],
+        dodsonData['English Definition (longer)']
+      );
+    }
+
+    insert.finalize();
+
+    console.log("✅ Database created and populated.");
+  });
+
+  db.close();
+}
+
 // storeLexicaData().then(() => {
 //     console.log("Lexica data stored successfully");
+// }).catch(console.error);
+
+// importLSJLexicaDataToSqlite().then(() => {
+//     console.log("Lexica data imported successfully");
+// }).catch(console.error);
+
+// importDodsonLexicaDataToSqlite().then(() => {
+//     console.log("Dodson lexica data imported successfully");
 // }).catch(console.error);
 
 module.exports = {

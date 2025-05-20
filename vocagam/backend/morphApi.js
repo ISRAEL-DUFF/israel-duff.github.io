@@ -11,7 +11,8 @@ const {
     fetchGreekMorphs,
 } = require('./morphologyService');
 const { fetchLexiconEntryWithMorphData } = require('./lexiconService')
-const { lookupHeadwordByGreek } = require("./lsj-lookup");
+// const { lookupHeadwordByGreek } = require("./lsj-lookup");
+const { findOccurrencesInGNT, findOccurrencesInGNTBook, findOccurrencesInLXX, findOccurrencesInLXXBook, } = require("./greek/greek.service");
 
 const startedAt = new Date().toISOString();
 
@@ -216,6 +217,61 @@ app.get("/lexica/:word", async (req, res) => {
     } catch (error) {
       res.status(500).send({ error: "Failed to fetch analysis", details: error.message });;
     }
+});
+
+app.get("/gnt/occurrence", async (req, res) => {
+  const word = req.query.lemma_word;
+  const strongNumber = req.query.strong_number;
+  const bookName = req.query.book_name;
+
+  if (!word && !strongNumber) return res.status(400).json({ error: "Missing 'word' or 'strong_number' parameter" });
+
+  try {
+    if(bookName) {
+      const resp = await findOccurrencesInGNTBook({
+        lemma: word,
+        strongNumber: strongNumber,
+        bookName
+      });
+    
+      return res.send(resp);
+    } else {
+      const resp = await findOccurrencesInGNT({
+        lemma: word,
+        strongsNumber: strongNumber
+      });
+    
+      return res.send(resp);
+    }
+  } catch (error) {
+    res.status(500).send({ error: "Failed to fetch analysis", details: error.message });;
+  }
+});
+
+app.get("/lxx/occurrence", async (req, res) => {
+  const word = req.query.lemma_word;
+  const bookName = req.query.book_name;
+
+  if (!word) return res.status(400).json({ error: "Missing 'word' parameter" });
+
+  try {
+    if(bookName) {
+      const resp = await findOccurrencesInLXXBook({
+        lemma: word,
+        bookName
+      });
+    
+      return res.send(resp);
+    } else {
+      const resp = await findOccurrencesInLXX({
+        lemma: word,
+      });
+    
+      return res.send(resp);
+    }
+  } catch (error) {
+    res.status(500).send({ error: "Failed to fetch analysis", details: error.message });;
+  }
 });
 
 app.listen(PORT, () => {
