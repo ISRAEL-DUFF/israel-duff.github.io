@@ -1,6 +1,10 @@
 const sqlite3 = require('sqlite3').verbose();
-const { betaCodeToGreek } = require('beta-code-js');
 const path = require('path');
+const { DOMParser } = require("xmldom");
+const { betaCodeToGreek } = require('beta-code-js');
+// const { parseStringPromise } = require("xml2js");
+const xpath = require("xpath");
+
 
 console.log(__dirname)
 const dbLexiconPath = path.join(__dirname, '../data/database', 'greek_lexicon.db')
@@ -122,23 +126,47 @@ async function extractLSJEntrySenses(xmlEntry) {
     results.push(senseObj)
   });
 
-  console.log(results)
+  // console.log(results)
   return results;
 }
 
-function fetchStrongsLexiconEntry(strongsNumber) {
+function fetchStrongsLexiconEntry({strongsNumber, greekWordLemma}) {
+    let query = '';
+
+    if(strongsNumber) {
+        query += `strong_number = ?`;
+    }
+    if(greekWordLemma) {
+        if(query.length > 0) {
+            query += ` OR `;
+        }
+        query += `lemma = ?`;
+    }
+    if(query.length > 0) {
+        query = `WHERE ` + query;
+    }
+
+    const sql = `SELECT * FROM dodson_lexicon ${query}`;
+    const params = [];
+    if(strongsNumber) {
+        params.push(prepareStrongNumber(strongsNumber));
+    }
+    if(greekWordLemma) {
+        params.push(greekWordLemma);
+    }
+
+    console.log('SQL:', sql);
+
     return new Promise((resolve, reject) => {
-        const sql = `SELECT * FROM strongs_lexicon WHERE strong_number = ?`;
-        greekLexiconDb.get(sql, [prepareStrongNumber(strongsNumber)], (err, row) => {
+        // const sql = `SELECT * FROM strongs_lexicon WHERE strong_number = ?`;
+        greekLexiconDb.get(sql, params, (err, row) => {
             if (err) {
                 console.error('Error fetching lexicon entry:', err);
                 reject(err);
             } else {
                 if (row) {
-                    resolve({
-                        ...row,
-                        entry: JSON.parse(row.entry)
-                    });
+                    console.log(row)
+                    resolve(row);
                 } else {
                     resolve(null);
                 }
@@ -171,7 +199,7 @@ function fetchDodsonLexiconEntry({ strongsNumber, greekWordLemma }) {
         params.push(greekWordLemma);
     }
 
-    console.log('SQL:', sql);
+    console.log('SQL:', sql, params);
 
     return new Promise((resolve, reject) => {
         // const sql = `SELECT * FROM dodson_lexicon WHERE strong_number = ?`;
@@ -181,10 +209,11 @@ function fetchDodsonLexiconEntry({ strongsNumber, greekWordLemma }) {
                 reject(err);
             } else {
                 if (row) {
-                    resolve({
-                        ...row,
-                        entry: JSON.parse(row.entry)
-                    });
+                    // resolve({
+                    //     ...row,
+                    //     entry: JSON.parse(row.entry)
+                    // });
+                    resolve(row);
                 } else {
                     resolve(null);
                 }
@@ -212,6 +241,7 @@ function fetchLSJLexiconEntries(greekWord) {
                 if (rows && rows.length > 0) {
                     for(const row of rows) {
                         row.senses = await extractLSJEntrySenses(row.xml_entry)
+                        row.xml_entry = undefined;
                     }
                     resolve(rows);
                 } else {
@@ -404,10 +434,27 @@ function findOccurrencesInLXXBook({
     });
 }
 
+async function getAllLexiconEntries(greekWord) {
+    const lsjEntries = await fetchLSJLexiconEntries(greekWord);
+    const dodsonEntry = await fetchDodsonLexiconEntry({
+        greekWordLemma: greekWord
+    });
+    const strongsEntry = await fetchStrongsLexiconEntry({
+        lemma: greekWord
+    });
+
+    return {
+        lsj: lsjEntries,
+        dodson: dodsonEntry,
+        strongs: strongsEntry
+    }
+}
+
 module.exports = {
     fetchLSJLexiconEntries,
     fetchDodsonLexiconEntry,
     fetchStrongsLexiconEntry,
+    getAllLexiconEntries,
     findOccurrencesInGNT,
     findOccurrencesInGNTBook,
     findOccurrencesInLXX,

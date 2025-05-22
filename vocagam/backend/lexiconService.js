@@ -3,6 +3,7 @@ const { parseStringPromise } = require("xml2js");
 const xpath = require("xpath");
 const { DOMParser } = require("xmldom");
 const dodsonData = require('./data/dodson-dictionary.json');
+const { getAllLexiconEntries } = require('./greek/greek.service')
 const axios = require("axios")
 require('dotenv').config();
 
@@ -339,14 +340,16 @@ async function fetchLexiconEntryWithMorphData(greekWord) {
   
   const lexica = {}
   
-  for(const morphEntry of morphology) {
-    const lexicalEntry = await fetchLexiconEntry(morphEntry.lemma);
-    const dodsonEntry = dodsonData[lexicalEntry.word];
-    lexica[morphEntry.lemma] = {
-        ...lexicalEntry,
-      xml_entry: undefined,
-      dodson: dodsonEntry,
-    }
+  for(const morphEntry of morphology) { 
+    // const lexicalEntry = await fetchLexiconEntry(morphEntry.lemma);
+    // const dodsonEntry = dodsonData[lexicalEntry.word];
+    // lexica[morphEntry.lemma] = {
+    //     ...lexicalEntry,
+    //   xml_entry: undefined,
+    //   dodson: dodsonEntry,
+    // }
+	const lexEntries = await getAllLexiconEntries(morphEntry.lemma)
+	lexica[morphEntry.lemma] = lexEntries;
   }
   // const lexicalEntry = await fetchLexiconEntry(morphology[0].lemma);
   
