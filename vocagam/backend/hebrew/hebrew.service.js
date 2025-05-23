@@ -73,6 +73,32 @@ async function fetchLexiconEntry(strongsNumber) {
     };
 }
 
+async function searchMorphologyByCode(morphCode) {
+    return new Promise((resolve, reject) => {
+        const sql = `
+        SELECT * FROM morphology
+        WHERE morph LIKE ?
+        ORDER BY book, chapter, verse
+        LIMIT 100;
+        `;
+        hebrewMorphDb.all(sql, [`%${morphCode}%`], (err, rows) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(rows.map(row => ({
+            morph: row.morph,
+            book: row.book,
+            chapter: row.chapter,
+            verse: row.verse,
+            word: row.word,
+          morphology: parseMorphHB(row.morph),
+          strongNumber: `H${row.strong_number}`,
+        })));
+      }
+    });
+    })
+}
+
 async function fetchLexiconEntriesAndMorphology(word) {
     let query = `SELECT * FROM morphology WHERE 1=1`;
     return new Promise((resolve, reject) => {
@@ -93,7 +119,7 @@ async function fetchLexiconEntriesAndMorphology(word) {
         console.log('Query:', query);
         console.log('Params:', params);
         // query + ` LIMIT 100`
-        hebrewMorphDb.all(query + ` LIMIT 100`, params, async (err, rows) => {
+        hebrewMorphDb.all(query, params, async (err, rows) => {
             if (err) return reject(err);
             // console.log('Rows:', rows);
             let bookSummary = {}
@@ -146,5 +172,6 @@ module.exports = {
     fetchLexiconEntriesAndMorphology,
     fetchBDBLexiconEntry,
     fetchStrongsLexiconEntry,
-    fetchLexiconEntry
+    fetchLexiconEntry,
+    searchMorphologyByCode
 }

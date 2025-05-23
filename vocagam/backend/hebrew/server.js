@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors'); // Import the CORS middleware
-const { fetchLexiconEntriesAndMorphology } = require('./hebrew.service')
+const { fetchLexiconEntriesAndMorphology, searchMorphologyByCode } = require('./hebrew.service')
 
 // Enable CORS for all routes
 app.use(cors());
@@ -59,34 +59,18 @@ app.get('/lexicon', (req, res) => {
     });
 });
 
-app.get('/search-morph', (req, res) => {
+app.get('/search-morph', async (req, res) => {
     const morphCode = req.query.code;
     if (!morphCode) {
       return res.status(400).json({ error: 'Missing morph code' });
     }
   
-    const sql = `
-      SELECT * FROM morphology
-      WHERE morph LIKE ?
-      ORDER BY book, chapter, verse
-      LIMIT 100;
-    `;
-  
-    hebrewMorphDb.all(sql, [`%${morphCode}%`], (err, rows) => {
-      if (err) {
-        res.status(500).json({ error: err.message });
-      } else {
-        res.json(rows.map(row => ({
-            morph: row.morph,
-            book: row.book,
-            chapter: row.chapter,
-            verse: row.verse,
-            word: row.word,
-          morphology: parseMorphHB(row.morph),
-          strongNumber: `H${row.strong_number}`,
-        })));
-      }
-    });
+    const morphs = await searchMorphologyByCode(morphCode)
+    
+    res.json({
+      results: morphs
+    })
+    
 });
 
 const PORT = 3000;

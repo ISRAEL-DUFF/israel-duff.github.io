@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MorphHB Code Generator</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f4f4f4; }
+    .section { background: white; padding: 15px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+    .section h3 { margin-top: 0; }
+    select, input { margin: 5px; padding: 5px; }
+    button { padding: 6px 10px; margin-top: 10px; }
+    .prefix-row { display: flex; align-items: center; margin-bottom: 5px; }
+    .prefix-row select { margin-right: 5px; }
+    .output { font-size: 1.2em; color: #333; }
+  </style>
+</head>
+<body>
+  <div class="section">
+    <h3>Prefix Morphemes</h3>
+    <div id="prefixes"></div>
+    <button onclick="addPrefix()">+ Add Prefix</button>
+  </div>
+
+  <div class="section">
+    <h3>Main Word</h3>
+    <label>Language:
+      <select id="mainLang">
+        <option value="H">H</option>
+      </select>
+    </label>
+    <label>Part of Speech:
+      <select id="mainPOS" onchange="updateMainOptions()">
+        <option value="N">Noun</option>
+        <!-- Add more parts of speech later -->
+      </select>
+    </label>
+    <div id="mainOptions"></div>
+  </div>
+
+  <div class="section">
+    <h3>Generated MorphHB Code</h3>
+    <div class="output" id="codeOutput">-</div>
+  </div>
+
+  <script>
+    const prefixesContainer = document.getElementById('prefixes');
+    const output = document.getElementById('codeOutput');
+
+    const prefixOptions = [
+      { value: 'C', label: 'Conjunction' },
+      { value: 'S', label: 'Preposition' },
+      { value: 'D', label: 'Article' },
+      { value: 'R', label: 'Relative' },
+      { value: 'T', label: 'Direct Object Marker' },
+    ];
+
+    let prefixCount = 0;
+
+    function addPrefix() {
+      const id = `prefix-${prefixCount++}`;
+      const div = document.createElement('div');
+      div.className = 'prefix-row';
+      div.id = id;
+      div.innerHTML = `
+        <select onchange="updateCode()">
+          <option value="H">H</option>
+        </select>
+        <select onchange="updateCode()">
+          ${prefixOptions.map(opt => `<option value="${opt.value}">${opt.label}</option>`).join('')}
+        </select>
+        <button onclick="removePrefix('${id}')">🗑</button>
+      `;
+      prefixesContainer.appendChild(div);
+      updateCode();
+    }
+
+    function removePrefix(id) {
+      document.getElementById(id).remove();
+      updateCode();
+    }
+
+    function updateMainOptions() {
+      const pos = document.getElementById('mainPOS').value;
+      const container = document.getElementById('mainOptions');
+      container.innerHTML = '';
+
+      if (pos === 'N') {
+        container.innerHTML = `
+          <label>Type:
+            <select id="nounType" onchange="updateCode()">
+              <option value="c">Common</option>
+              <option value="p">Proper</option>
+            </select>
+          </label>
+          <label>Gender:
+            <select id="nounGender" onchange="updateCode()">
+              <option value="m">Masculine</option>
+              <option value="f">Feminine</option>
+            </select>
+          </label>
+          <label>Number:
+            <select id="nounNumber" onchange="updateCode()">
+              <option value="s">Singular</option>
+              <option value="p">Plural</option>
+            </select>
+          </label>
+          <label>State:
+            <select id="nounState" onchange="updateCode()">
+              <option value="a">Absolute</option>
+              <option value="c">Construct</option>
+            </select>
+          </label>
+        `;
+      }
+    }
+
+    function updateCode() {
+      let code = [];
+      for (let row of prefixesContainer.children) {
+        const selects = row.getElementsByTagName('select');
+        code.push(selects[0].value + selects[1].value);
+      }
+
+      const mainLang = document.getElementById('mainLang').value;
+      const mainPOS = document.getElementById('mainPOS').value;
+
+      let mainCode = mainLang + mainPOS;
+
+      if (mainPOS === 'N') {
+        mainCode += document.getElementById('nounType').value;
+        mainCode += document.getElementById('nounGender').value;
+        mainCode += document.getElementById('nounNumber').value;
+        mainCode += document.getElementById('nounState').value;
+      }
+
+      if (code.length > 0) {
+        code = code.join('/') + '/' + mainCode;
+      } else {
+        code = mainCode;
+      }
+
+      output.textContent = code;
+    }
+
+    // Initialize
+    updateMainOptions();
+    updateCode();
+  </script>
+</body>
+</html>
