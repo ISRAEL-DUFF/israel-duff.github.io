@@ -133,6 +133,10 @@ async function extractLSJEntrySenses(xmlEntry) {
 function fetchStrongsLexiconEntry({strongsNumber, greekWordLemma}) {
     let query = '';
 
+    if(!strongsNumber && !greekWordLemma) {
+        throw new Error("strongs number or word lemma is expected")
+    }
+
     if(strongsNumber) {
         query += `strong_number = ?`;
     }
@@ -146,7 +150,7 @@ function fetchStrongsLexiconEntry({strongsNumber, greekWordLemma}) {
         query = `WHERE ` + query;
     }
 
-    const sql = `SELECT * FROM dodson_lexicon ${query}`;
+    const sql = `SELECT * FROM strongs_lexicon ${query}`;
     const params = [];
     if(strongsNumber) {
         params.push(prepareStrongNumber(strongsNumber));
@@ -155,7 +159,7 @@ function fetchStrongsLexiconEntry({strongsNumber, greekWordLemma}) {
         params.push(greekWordLemma);
     }
 
-    console.log('SQL:', sql);
+    console.log('SQL:', sql, params);
 
     return new Promise((resolve, reject) => {
         // const sql = `SELECT * FROM strongs_lexicon WHERE strong_number = ?`;
@@ -166,7 +170,7 @@ function fetchStrongsLexiconEntry({strongsNumber, greekWordLemma}) {
             } else {
                 if (row) {
                     console.log(row)
-                    resolve(row);
+                    resolve(JSON.parse(row.entry));
                 } else {
                     resolve(null);
                 }
@@ -440,7 +444,7 @@ async function getAllLexiconEntries(greekWord) {
         greekWordLemma: greekWord
     });
     const strongsEntry = await fetchStrongsLexiconEntry({
-        lemma: greekWord
+        greekWordLemma: greekWord
     });
 
     return {

@@ -21,7 +21,7 @@ const PORT = 3001;
 
 // Enable CORS
 app.use(cors());
-
+app.use(express.json({ limit: '10mb'}));
 
 app.get('/ping', (req, res) => {
   res.status(200).send('🟢 Glitch app is awake and responding!');
@@ -40,10 +40,8 @@ app.get('/vocab/info', (req, res) => {
   res.json(info);
 });
 
-app.post("/vocab/add", async function (request, reply) {
-  
-  // If the user submitted a color through the form it'll be passed here in the request body
-  let vocab = request.body;
+app.post("/vocab/add", async function (req, reply) {
+  let vocab = req.body;
   const {vocabKey, word, morphData, meanings, lexicalData, notes} = vocab;
   
   if(!word) {
