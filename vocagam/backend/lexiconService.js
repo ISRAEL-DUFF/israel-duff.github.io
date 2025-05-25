@@ -318,8 +318,10 @@ async function getPerseusMorph(word) {
     }
 
     try {
-        const url = `https://services.perseids.org/bsp/morphologyservice/analysis/word?lang=grc&engine=morpheusgrc&word=${encodeURIComponent(word)}`;
-
+        // const url = `https://services.perseids.org/bsp/morphologyservice/analysis/word?lang=grc&engine=morpheusgrc&word=${encodeURIComponent(word)}`;
+        const url = `http://localhost:1500/analysis/word?lang=grc&engine=morpheusgrc&word=${encodeURIComponent(word)}`;
+        // const url = `http://68.168.222.218:1500/analysis/word?lang=grc&engine=morpheusgrc&word=${encodeURIComponent(word)}`;
+		
         const resRaw = await axios.get(url);
         let response = resRaw.data;
         let parsedResp = parsePerseusResponse(response);
