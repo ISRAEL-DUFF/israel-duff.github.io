@@ -13,6 +13,7 @@ const {
 const { fetchLexiconEntryWithMorphData } = require('./lexiconService')
 // const { lookupHeadwordByGreek } = require("./lsj-lookup");
 const { findOccurrencesInGNT, findOccurrencesInGNTBook, findOccurrencesInLXX, findOccurrencesInLXXBook, } = require("./greek/greek.service");
+const { fetchNamespaces, fetchLookupHistory, addLookupHistory } = require('./lookup.service')
 
 const startedAt = new Date().toISOString();
 
@@ -59,7 +60,6 @@ app.post("/vocab/add", async function (req, reply) {
   }
   
   if(!morphData) {
-    console.log(morphData)
     return reply.send({
       success: false,
       message: 'Morph Data must be an array'
@@ -116,7 +116,6 @@ app.put("/vocab/update", async function (request, reply) {
   }
   
   if(morphData && !morphData[0]) {
-    console.log(morphData)
     return reply.send({
       success: false,
       message: 'Morph Data must be an array'
@@ -209,8 +208,8 @@ app.get("/lexica/:word", async (req, res) => {
     if (!word) return res.status(400).json({ error: "Missing 'word' parameter" });
   
     try {
-        const responseData = await fetchLexiconEntryWithMorphData(word);
-      
+      const responseData = await fetchLexiconEntryWithMorphData(word);
+        
       return res.send(responseData);
     } catch (error) {
       res.status(500).send({ error: "Failed to fetch analysis", details: error.message });;
@@ -269,6 +268,64 @@ app.get("/lxx/occurrence", async (req, res) => {
     }
   } catch (error) {
     res.status(500).send({ error: "Failed to fetch analysis", details: error.message });;
+  }
+});
+
+app.post("/lookup-history/log", async (req, res) => {
+  const { word, lemma, namespace } = req.body;
+
+  if (!word) {
+    return res.status(400).json({ error: "Missing 'word' parameter" });
+  }
+
+  if( !lemma) {
+    return res.status(400).json({ error: "Missing 'lemma' parameter" });
+  }
+  if( !namespace) {
+    return res.status(400).json({ error: "Missing 'namespace' parameter" });
+  }
+
+  try {
+    await addLookupHistory({
+      language: 'greek',
+      namespace,
+      word,
+      lemma,
+    });
+    
+    return res.json({ message: "lookup info stored" });
+  } catch (error) {
+    console.log(error)
+    res.status(500).send({ error: "Failed to fetch analysis", details: error.message });
+  }
+});
+
+app.get("/lookup-history/namespaces", async (req, res) => {
+  try {
+    const namespaces = await fetchNamespaces('greek');
+    return res.json(namespaces);
+  } catch (error) {
+    res.status(500).send({ error: "Failed to fetch analysis", details: error.message });
+  }
+});
+
+app.get("/lookup-history/entries", async (req, res) => {
+  const namespace = req.query.namespace;
+
+  if(!namespace) {
+    res.status(404).send({
+      error: "Missing namespace query"
+    })
+  }
+
+  try {
+    const namespaces = await fetchLookupHistory({
+      language: 'greek',
+      namespace
+    });
+    return res.json(namespaces);
+  } catch (error) {
+    res.status(500).send({ error: "Failed to fetch analysis", details: error.message });
   }
 });
 
