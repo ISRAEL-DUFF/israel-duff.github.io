@@ -355,8 +355,9 @@ async function fetchLexiconEntryWithMorphData(greekWord) {
     //   xml_entry: undefined,
     //   dodson: dodsonEntry,
     // }
-	const lexEntries = await getAllLexiconEntries(normalizeLemma(morphEntry.lemma))
-	lexica[morphEntry.lemma] = lexEntries;
+	let lemma = normalizeLemma(morphEntry.lemma)
+	const lexEntries = await getAllLexiconEntries(lemma)
+	lexica[lemma] = lexEntries;
   }
   // const lexicalEntry = await fetchLexiconEntry(morphology[0].lemma);
   

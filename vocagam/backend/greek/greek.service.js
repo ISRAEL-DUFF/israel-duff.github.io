@@ -169,7 +169,7 @@ function fetchStrongsLexiconEntry({strongsNumber, greekWordLemma}) {
                 reject(err);
             } else {
                 if (row) {
-                    console.log(row)
+                    // console.log(row)
                     resolve(JSON.parse(row.entry));
                 } else {
                     resolve(null);
