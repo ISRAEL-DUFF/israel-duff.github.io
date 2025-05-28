@@ -4,6 +4,7 @@ const xpath = require("xpath");
 const { DOMParser } = require("xmldom");
 const dodsonData = require('./data/dodson-dictionary.json');
 const { getAllLexiconEntries } = require('./greek/greek.service')
+const { addLookupHistory } = require('./lookup.service');
 const axios = require("axios")
 require('dotenv').config();
 
@@ -20,6 +21,10 @@ function normalizeGreek(lemma) {
       .replace(/[\u0300-\u036f]/g, "")
       .replace(/[^\p{Script=Greek}]/gu, "")
       .toLowerCase();
+}
+
+function normalizeLemma(lemma) {
+  return lemma.replace(/\d+$/, '');
 }
 
 async function extractLexiconSenses(lexiconEntryXml) {
@@ -350,14 +355,12 @@ async function fetchLexiconEntryWithMorphData(greekWord) {
     //   xml_entry: undefined,
     //   dodson: dodsonEntry,
     // }
-	const lexEntries = await getAllLexiconEntries(morphEntry.lemma)
+	const lexEntries = await getAllLexiconEntries(normalizeLemma(morphEntry.lemma))
 	lexica[morphEntry.lemma] = lexEntries;
   }
   // const lexicalEntry = await fetchLexiconEntry(morphology[0].lemma);
   
   // console.log(lexicalEntry)
-  
-  
   
   return {
     lexica,
