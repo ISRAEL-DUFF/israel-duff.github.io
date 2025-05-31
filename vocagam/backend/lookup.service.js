@@ -2,6 +2,9 @@ require('dotenv').config();
 
 const { Client } = require('pg');
 const client = new Client(process.env.DIRECT_DATABASE_URL);
+const { 
+    listAllVocabsInfo,
+} = require('./morphologyService');
 
 function normalizeGreek(word) {
     return word
@@ -39,10 +42,36 @@ async function fetchNamespaces(language) {
 
       console.log(res.rows)
 
-      return res.rows.map(row => ({
-        namespace: row.namespace,
-        count: Number(row.count)
-      }));
+      let namespaces = [];
+      let nameSpaceMap = {};
+      let i = 0;
+
+      for(const row of res.rows) {
+        namespaces.push({
+            namespace: row.namespace,
+            count: Number(row.count)
+        })
+        nameSpaceMap[row.namespace] = {
+            index: i,
+        };
+        i += 1;
+      }
+
+      const vocabNamespaces = listAllVocabsInfo()
+
+      for(const vocabName of vocabNamespaces) {
+        if(nameSpaceMap[vocabName.name]) {
+            let d = nameSpaceMap[vocabName.name];
+            namespaces[d.index].vocabCount = vocabName.count;
+        }
+      }
+
+    //   return res.rows.map(row => ({
+    //     namespace: row.namespace,
+    //     count: Number(row.count)
+    //   }));
+
+    return namespaces;
   
     } catch (err) {
       console.error('Query failed', err);
