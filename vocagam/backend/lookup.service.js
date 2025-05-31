@@ -3,6 +3,14 @@ require('dotenv').config();
 const { Client } = require('pg');
 const client = new Client(process.env.DIRECT_DATABASE_URL);
 
+function normalizeGreek(word) {
+    return word
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^\p{Script=Greek}]/gu, "")
+      .toLowerCase();
+}
+
 let tableName = 'lookup_history';
 
 function validateLanguage(language) {
@@ -69,6 +77,54 @@ async function fetchLookupHistory({ language, namespace }) {
         createdAt: row.created_at,
         updatedAt: row.updated_at,
       }));
+    }
+    catch (err) {
+      console.error('Query failed', err);
+    }
+}
+
+async function fetchIndexedLookupHistory({ language, namespace }) {
+    validateLanguage(language);
+
+    try {
+        if(!client._connected) {
+            await client.connect();
+        }
+      
+      const query = `
+        SELECT * FROM ${tableName}
+        WHERE language = '${language}' AND namespace = '${namespace}'
+        ORDER BY created_at DESC
+      `;
+
+      console.log(query)
+      const res = await client.query(query);
+
+      const indexList = {};
+      const index = [];
+
+      for(const row of res.rows) {
+        const normWord = normalizeGreek(row.word);
+
+        if(!indexList[normWord[0]]) {
+            indexList[normWord[0]] = []
+            index.push(normWord[0])
+        }
+
+        indexList[normWord[0]].push({
+            id: row.id,
+            word: row.word,
+            namespace: row.namespace,
+            frequency: row.frequency,
+            createdAt: row.created_at,
+            updatedAt: row.updated_at,
+        })
+      }
+
+      return {
+        index,
+        indexList
+      }
     }
     catch (err) {
       console.error('Query failed', err);
@@ -201,6 +257,7 @@ async function deleteLookupHistory(language, namespace, id) {
 module.exports = {
     fetchNamespaces,
     fetchLookupHistory,
+    fetchIndexedLookupHistory,
     addLookupHistory,
     deleteLookupHistory
 };

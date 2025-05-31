@@ -13,7 +13,7 @@ const {
 const { fetchLexiconEntryWithMorphData } = require('./lexiconService')
 // const { lookupHeadwordByGreek } = require("./lsj-lookup");
 const { findOccurrencesInGNT, findOccurrencesInGNTBook, findOccurrencesInLXX, findOccurrencesInLXXBook, } = require("./greek/greek.service");
-const { fetchNamespaces, fetchLookupHistory, addLookupHistory } = require('./lookup.service')
+const { fetchNamespaces, fetchLookupHistory, fetchIndexedLookupHistory, addLookupHistory } = require('./lookup.service')
 
 const startedAt = new Date().toISOString();
 
@@ -320,6 +320,26 @@ app.get("/lookup-history/entries", async (req, res) => {
 
   try {
     const namespaces = await fetchLookupHistory({
+      language: 'greek',
+      namespace
+    });
+    return res.json(namespaces);
+  } catch (error) {
+    res.status(500).send({ error: "Failed to fetch analysis", details: error.message });
+  }
+});
+
+app.get("/lookup-history/indexed-entries", async (req, res) => {
+  const namespace = req.query.namespace;
+
+  if(!namespace) {
+    res.status(404).send({
+      error: "Missing namespace query"
+    })
+  }
+
+  try {
+    const namespaces = await fetchIndexedLookupHistory({
       language: 'greek',
       namespace
     });

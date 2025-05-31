@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language keyboard</title>
+
+    <script src='https://s.keyman.com/kmw/engine/18.0.237/keymanweb.js'></script>
+    <script src='https://s.keyman.com/kmw/engine/18.0.237/kmwuitoggle.js'></script>
+    
+    <script>
+    // (function() {
+    //     // keyman.init({attachType:'auto'});
+    //     keyman.init({attachType:'manual'});
+    //     keyman.addKeyboards('@en'); // Loads default English keyboard from Keyman Cloud (CDN)
+    //     // keyman.addKeyboards('grkpoly2@grc-grek'); // Loads default Greek keyboard from Keyman Cloud (CDN)
+    //     // keyman.addKeyboards('greek_polytonic'); // Loads default Greek keyboard from Keyman Cloud (CDN)
+    //     // keyman.addKeyboards('greek_polytonic_plus@grc-grek'); // Loads default Greek keyboard from Keyman Cloud (CDN)
+    //     keyman.addKeyboards('sil_greek_polytonic@el'); // Loads default Greek keyboard from Keyman Cloud (CDN)
+    //     // keyman.addKeyboards('sil_greek_polytonic@grc-grek'); // Loads default Greek keyboard from Keyman Cloud (CDN)
+    //     // keyman.addKeyboards('sil_hebr_grek_trans@el-latn')
+    //     // keyman.addKeyboards('sil_hebr_grek_trans@grc-latn')
+    //     // keyman.addKeyboards('sil_hebr_grek_trans@he-latn')
+    //     // keyman.addKeyboards('sil_hebr_grek_trans@hbo-latn')
+    //     // keyman.addKeyboards('sil_hebrew@hbo')
+    //     // 
+    // })();
+    </script>
+
+</head>
+<body>
+
+    <div class="menu-container">
+        <h1>Matching Game</h1>
+        
+        <input type="text" id="inputText" placeholder="Enter text" />
+        <input type="text" id="inputText2" placeholder="Enter text in another input" />
+
+        <div id="displayText" style="font-size: 2.5em; margin-top: 1em;"></div>
+
+    </div>
+
+
+
+    <!-- <script>
+        let ele = document.getElementById('inputText');
+        console.log(ele)
+        window.keyman.attachToControl(ele)
+        window.keyman.enableControl(ele)
+        document.getElementById('inputText').addEventListener('input', function(e) {
+            document.getElementById('displayText').textContent = e.target.value;
+        });
+    </script> -->
+
+    <script>
+        function initKeymanInput() {
+            if (window.keyman && document.getElementById('inputText')) {
+            let ele = document.getElementById('inputText');
+            window.keyman.attachToControl(ele);
+            window.keyman.enableControl(ele);
+            ele.addEventListener('input', function(e) {
+                document.getElementById('displayText').textContent = e.target.value;
+            });
+            } else {
+            // Try again shortly if keyman or input isn't ready yet
+            setTimeout(initKeymanInput, 100);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+                keyman.init({attachType:'manual'}).then(() => {
+                console.log("Attached....")
+                keyman.addKeyboards('@en'); // Loads default English keyboard from Keyman Cloud (CDN)
+                keyman.addKeyboards('sil_greek_polytonic@el'); // Loads default Greek keyboard from Keyman Cloud (CDN)
+
+                initKeymanInput();
+            });
+        });
+        
+    </script>
+
+</body>
+</html>
