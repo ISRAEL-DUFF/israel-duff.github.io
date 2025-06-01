@@ -302,6 +302,8 @@ function fetchThayerLexiconEntry({ strongsNumber }) {
                     htmlText = htmlText.replaceAll('<i', '<i class="thayer-gloss-sense"')
                     htmlText = htmlText.replaceAll('<p', '<p class="sense-section"');
 
+                    htmlText = htmlText.replaceAll('Latin', "Latin: ")
+
                     // console.log(htmlText)
 
                     resolve({
