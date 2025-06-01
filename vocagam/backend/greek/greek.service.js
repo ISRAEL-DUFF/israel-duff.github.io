@@ -8,12 +8,14 @@ const xpath = require("xpath");
 
 console.log(__dirname)
 const dbLexiconPath = path.join(__dirname, '../data/database', 'greek_lexicon.db')
+const dbThayersLexiconPath = path.join(__dirname, '../data/database', 'thayer.db')
 const dbGNTMorphoPath = path.join(__dirname, '../data/database', 'gnt_morph.db')
 const dbLXXMorphoPath = path.join(__dirname, '../data/database', 'lxx_morph.db')
 
 
 // '../data/database/greek_lexicon.db'
 const greekLexiconDb = new sqlite3.Database(dbLexiconPath);
+const thayerLexiconDb = new sqlite3.Database(dbThayersLexiconPath);
 const gntMorphDb = new sqlite3.Database(dbGNTMorphoPath);
 const lxxMorphDb = new sqlite3.Database(dbLXXMorphoPath);
 
@@ -256,6 +258,64 @@ function fetchLSJLexiconEntries(greekWord) {
     });
 }
 
+function fetchThayerLexiconEntry({ strongsNumber }) {
+    let query = '';
+
+    console.log("thayer Input:", {
+        strongsNumber
+    })
+
+    if(!strongsNumber) {
+        // throw new Error("strongs number is expected")
+        return null;
+    }
+
+    
+    query += `Topic = ?`;
+
+    
+    if(query.length > 0) {
+        query = `WHERE ` + query;
+    }
+
+    const sql = `SELECT * FROM Lexicon ${query}`;
+    const params = [prepareStrongNumber(strongsNumber)];
+
+    console.log('SQL:', sql, params);
+
+    return new Promise((resolve, reject) => {
+        // const sql = `SELECT * FROM strongs_lexicon WHERE strong_number = ?`;
+        thayerLexiconDb.get(sql, params, (err, row) => {
+            if (err) {
+                console.error('Error fetching lexicon entry:', err);
+                reject(err);
+            } else {
+                if (row) {
+                    // console.log(row)
+                    // TODO: format thayer output
+                    let htmlText = row.Definition.replaceAll('<ref0 class="word"', '<span class="thayer-word-reference"')
+                    htmlText = htmlText.replaceAll('</ref0>', '</span>');
+
+                    htmlText = htmlText.replaceAll('<ref', '<span class="thayer-scripture-reference"')
+                    htmlText = htmlText.replaceAll('</ref>', '</span>');
+
+                    htmlText = htmlText.replaceAll('<i', '<i class="thayer-gloss-sense"')
+                    htmlText = htmlText.replaceAll('<p', '<p class="sense-section"');
+
+                    // console.log(htmlText)
+
+                    resolve({
+                        strongNumber: row.Topic,
+                        htmlText
+                    });
+                } else {
+                    resolve(null);
+                }
+            }
+        });
+    });
+}
+
 function findOccurrencesInGNT({
     lemma,
     strongsNumber
@@ -446,11 +506,13 @@ async function getAllLexiconEntries(greekWord) {
     const strongsEntry = await fetchStrongsLexiconEntry({
         greekWordLemma: greekWord
     });
+    const thayerEntry = await fetchThayerLexiconEntry({strongsNumber: dodsonEntry?.strong_number })
 
     return {
         lsj: lsjEntries,
         dodson: dodsonEntry,
-        strongs: strongsEntry
+        strongs: strongsEntry,
+        thayer: thayerEntry
     }
 }
 
