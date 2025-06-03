@@ -1,4 +1,4 @@
-export const irregulaVerbs = {
+const irregulaVerbs = {
   "εἶπον": "ἔπω",
   "εἴπατε": "λέγω",
   "εἴπῃ": "λέγω",
@@ -63,5 +63,9 @@ export const irregulaVerbs = {
   "κατέβην": "καταβαίνω",
   "ἀνεώχθη": "ἀνοίγω",
   "ἠνοίγη": "ἀνοίγω"
+}
+
+module.exports = {
+  irregulaVerbs
 }
 
