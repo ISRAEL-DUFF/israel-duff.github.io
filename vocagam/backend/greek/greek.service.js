@@ -4,6 +4,7 @@ const { DOMParser } = require("xmldom");
 const { betaCodeToGreek } = require('beta-code-js');
 // const { parseStringPromise } = require("xml2js");
 const xpath = require("xpath");
+const { irregulaVerbs } = require('./irregular-verbs');
 
 
 console.log(__dirname)
@@ -52,7 +53,7 @@ function prepareStrongNumber2(strongNum) {
     return strongNum.replace(/^0+/, '');
 }
 
-async function extractLSJEntrySenses(xmlEntry) {
+async function extractLSJEntrySensesOld(xmlEntry) {
   const doc = new DOMParser().parseFromString(xmlEntry, "text/xml");
   const senseNodes = xpath.select("//sense", doc);
   const results = [];
@@ -110,7 +111,7 @@ async function extractLSJEntrySenses(xmlEntry) {
             <span class="reference">${bibl.text}</span>
           </span>`
         } else {
-            const text = node.textContent.trim();
+            const text = node.textContent; // .trim();
             htmlText += `<span class="other-text">${text}</span>`;
         }
     });
@@ -130,6 +131,123 @@ async function extractLSJEntrySenses(xmlEntry) {
 
   // console.log(results)
   return results;
+}
+
+async function extractLSJEntrySenses(xmlEntry) {
+  const doc = new DOMParser().parseFromString(xmlEntry, "text/xml");
+//   const senseNodes = xpath.select("//sense", doc);
+  const divNode = xpath.select("./node()", doc)[0];
+  const allNodes = xpath.select("./node()", divNode);
+  const results = [];
+
+  const processCitation = (citation) => {
+    const quote = (xpath.select(".//quote", citation))[0]?.textContent.trim();
+    const bibl = (xpath.select(".//bibl", citation))[0];
+    let biblRef = null;
+    if (bibl) {
+        biblRef = {
+        author: (xpath.select(".//author", bibl))[0]?.textContent.trim() || null,
+        title: (xpath.select(".//title", bibl))[0]?.textContent.trim() || null,
+        passage: bibl.textContent.trim()
+        };
+    }
+    return { quote, bibl: biblRef };
+  }
+  
+  const processBibl = (bibliology) => {
+    const title = (xpath.select(".//title", bibliology))[0]?.textContent.trim();
+    const author = (xpath.select(".//author", bibliology))[0];
+      const txt = xpath.select(".//text()", bibliology).join('')
+    
+    return { text: txt ?? '', title: title ?? '', author: author ?? '' };
+  }
+
+  function processSense(sense) {
+    const children = xpath.select('./node()', sense);
+    let htmlText = '<div>';
+    let glosses = [];
+    let citations = [];
+    children.forEach((node, i) => {
+        const ignoredTexts = []
+
+        if(node.nodeName === 'cit') {
+          const citation = processCitation(node);
+          htmlText += `<span class="inline-citation">${citation.quote}</span>`;
+          citations.push(citation)
+        } else if(node.nodeName === '#text') {
+          const text = node.textContent.trim();
+          htmlText += `<span class="gloss-context">${ignoredTexts.includes(text) ? '' : text}</span>`;
+        } else if(node.nodeName === 'i') {
+          const text = node.textContent.trim();
+          glosses.push(text)
+          htmlText += `<span class="gloss-sense">${text}</span>`;
+        } else if(node.nodeName === 'foreign') {
+          const text = node.textContent.trim();
+          htmlText += `<span class="foreign-text">${text}</span>`;
+        } else if(node.nodeName === 'bibl') {
+          const bibl = processBibl(node);
+          htmlText += `
+          <span class="inline-bibl">
+            <span class="author">${bibl.author}</span>, 
+            <span class="title">${bibl.title}</span> 
+            <span class="reference">${bibl.text}</span>
+          </span>`
+        } else {
+            const text = node.textContent; // .trim();
+            htmlText += `<span class="other-text">${text}</span>`;
+        }
+    });
+
+    htmlText += '</div>';
+
+    const senseObj = {
+      id: sense.getAttribute("id"),
+      level: sense.getAttribute("level"),
+      htmlText,
+      glosses,
+      quotes: citations
+    }
+
+    results.push(senseObj)
+  }
+
+  let lsjHtml = "<div>"
+  
+  allNodes.forEach((node) => {
+    if(node.nodeName === 'head' || node.nodeName === 'itype') {
+        const text = node.textContent; // .trim();
+        lsjHtml += `<span class="gloss-sense">${text}</span>`;
+    } else if(node.nodeName === 'etym') {
+        const text = node.textContent; // .trim();
+        lsjHtml += `Etymology: <span class="etymology">${text}</span>`;
+    } else if(node.nodeName === 'cit') {
+        const citation = processCitation(node);
+        lsjHtml += `<span class="inline-citation">${citation.quote}</span>`;
+    } else if(node.nodeName === '#text') {
+        const text = node.textContent // .trim();
+        lsjHtml += `<span class="gloss-context">${text}</span>`;
+    } else if(node.nodeName === 'sense') {
+        processSense(node);
+    } else {
+        const text = node.textContent; // .trim();
+        lsjHtml += `<span class="other-text">${text}</span>`;
+    }
+  });
+
+  lsjHtml += '</div>';
+
+  // console.log(results)
+//   return [{
+//       id: 'pretext0',
+//       level: '0',
+//       htmlText: lsjHtml,
+//       glosses: [],
+//       quotes: []
+//     }, ...results];
+return {
+      headerHtml: lsjHtml,
+      senses: results
+    };
 }
 
 function fetchStrongsLexiconEntry({strongsNumber, greekWordLemma}) {
@@ -246,7 +364,7 @@ function fetchLSJLexiconEntries(greekWord) {
             } else {
                 if (rows && rows.length > 0) {
                     for(const row of rows) {
-                        row.senses = await extractLSJEntrySenses(row.xml_entry)
+                        row.entry = await extractLSJEntrySenses(row.xml_entry)
                         row.xml_entry = undefined;
                     }
                     resolve(rows);
@@ -502,9 +620,24 @@ function findOccurrencesInLXXBook({
 
 async function getAllLexiconEntries(greekWord) {
     const lsjEntries = await fetchLSJLexiconEntries(greekWord);
-    const dodsonEntry = await fetchDodsonLexiconEntry({
+    let dodsonEntry = await fetchDodsonLexiconEntry({
         greekWordLemma: greekWord
     });
+
+    if(!dodsonEntry) {
+        const greekWord2 = irregulaVerbs[greekWord]
+
+        if(greekWord2) {
+            dodsonEntry = await fetchDodsonLexiconEntry({
+                greekWordLemma: greekWord2
+            });
+
+            if(dodsonEntry) {
+                greekWord = greekWord2
+            }
+        }
+    }
+
     const strongsEntry = await fetchStrongsLexiconEntry({
         greekWordLemma: greekWord
     });
