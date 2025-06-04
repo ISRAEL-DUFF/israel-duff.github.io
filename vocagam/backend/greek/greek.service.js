@@ -6,12 +6,11 @@ const { betaCodeToGreek } = require('beta-code-js');
 const xpath = require("xpath");
 const { irregulaVerbs } = require('./irregular-verbs');
 
-
-console.log(__dirname)
-const dbLexiconPath = path.join(__dirname, '../data/database', 'greek_lexicon.db')
-const dbThayersLexiconPath = path.join(__dirname, '../data/database', 'thayer.db')
-const dbGNTMorphoPath = path.join(__dirname, '../data/database', 'gnt_morph.db')
-const dbLXXMorphoPath = path.join(__dirname, '../data/database', 'lxx_morph.db')
+const DATA_DIR='../data/database'
+const dbLexiconPath = path.join(__dirname, DATA_DIR, 'greek_lexicon.db')
+const dbThayersLexiconPath = path.join(__dirname, DATA_DIR, 'thayer.db')
+const dbGNTMorphoPath = path.join(__dirname, DATA_DIR, 'gnt_morph.db')
+const dbLXXMorphoPath = path.join(__dirname, DATA_DIR, 'lxx_morph.db')
 
 
 // '../data/database/greek_lexicon.db'

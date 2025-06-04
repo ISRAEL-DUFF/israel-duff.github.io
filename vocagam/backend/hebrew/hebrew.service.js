@@ -3,8 +3,9 @@ const path = require('path');
 const utils = require('./util'); // Import the utils module
 const { parseMorphHB, makeAccentless } = require('./morphParser'); // Import the MorphParser module
  
-const hebrewMorphDb = new sqlite3.Database('../data/database/hebrew_morphology.db');
-const hebrewLexiconDb = new sqlite3.Database('../data/database/hebrew_lexicon.db');
+const DATA_DIR='./data/database'
+const hebrewMorphDb = new sqlite3.Database(`${DATA_DIR}/hebrew_morphology.db`);
+const hebrewLexiconDb = new sqlite3.Database(`${DATA_DIR}/hebrew_lexicon.db`);
 
 function fetchBDBLexiconEntry(strongsNumber) {
     return new Promise((resolve, reject) => {
