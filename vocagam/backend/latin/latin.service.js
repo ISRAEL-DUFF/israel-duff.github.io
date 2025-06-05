@@ -1,4 +1,10 @@
 const axios = require("axios")
+const path = require('path');
+const sqlite3 = require('sqlite3').verbose();
+
+const DATA_DIR='../data/database'
+const dbLexiconPath = path.join(__dirname, DATA_DIR, 'latin_lexicon.db')
+const latinLexiconDb = new sqlite3.Database(dbLexiconPath);
 
 // <<<< MORPHESEUS >>>>
 function parsePerseusResponse(response) {
@@ -66,14 +72,84 @@ async function getPerseusMorph(word) {
     }
 }
 
-async function fetchLexiconEntriesAndMorphology(word) {
-    const morphology = await getPerseusMorph(word);
+async function processLexiconEntry(xml_entry) {
+    let htmlText = xml_entry.replaceAll('<div1', '<div class="latin-lexicon-entry"')
+    htmlText = htmlText.replaceAll('</div1>', '</div>');
+
+    htmlText = htmlText.replaceAll('<head', '<span class="latin-word"')
+    htmlText = htmlText.replaceAll('</head>', '</span>');
+    htmlText = htmlText.replaceAll('<itype', '<span class="latin-word"')
+    htmlText = htmlText.replaceAll('</itype>', '</span>');
+
+    htmlText = htmlText.replaceAll('<i>', '<i class="latin-gloss-sense">')
+
+    htmlText = htmlText.replaceAll('<sense', '<p class="sense-section"');
+    htmlText = htmlText.replaceAll('</sense>', '</p');
+
+    return htmlText;
+}
+
+function fetchLSLexiconEntries(latinWord) {
+    return new Promise((resolve, reject) => {
+        const normalizedWord = latinWord
+        let columns = `word, macronized_word, xml_entry`
+        const queryParams = [normalizedWord, latinWord]
+        let whereCondition = `macronized_word = ? OR word = ?`
+        
+        const sql = `
+        SELECT ${columns} FROM ls_lexicon
+        WHERE ${whereCondition}
+        `;
+        latinLexiconDb.all(sql, queryParams, async (err, rows) => {
+            if (err) {
+                console.error('Error fetching lexicon entry:', err);
+                reject(err);
+            } else {
+                if (rows && rows.length > 0) {
+                    for(const row of rows) {
+                        row.htmlText = await processLexiconEntry(row.xml_entry);
+                        row.macronizedWord = row.macronized_word;
+
+                        row.macronized_word = undefined;
+                        row.xml_entry = undefined;
+                    }
+                    resolve(rows);
+                } else {
+                    resolve([]);
+                }
+            }
+        });
+    });
+}
+
+async function getAllLexiconEntries(latinWord) {
+    const lsEntries = await fetchLSLexiconEntries(latinWord);
 
     return {
-        morphology
+        lewisAndShort: lsEntries,
     }
 }
 
+async function fetchLexiconEntryWithMorphData(latinWord) {
+  const morphology = await getPerseusMorph(latinWord)
+  if(!morphology[0]?.lemma) {
+    throw new Error("Invalid word")
+  }
+  
+  const lexica = {}
+  
+  for(const morphEntry of morphology) { 
+	let lemma = morphEntry.lemma // normalizeLemma(morphEntry.lemma)
+	const lexEntries = await getAllLexiconEntries(lemma)
+	lexica[lemma] = lexEntries;
+  }
+  
+  return {
+    lexica,
+    morphology
+  }
+}
+
 module.exports = {
-    fetchLexiconEntriesAndMorphology
+    fetchLexiconEntryWithMorphData
 }

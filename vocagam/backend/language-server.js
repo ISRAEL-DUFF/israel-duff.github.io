@@ -7,6 +7,9 @@ const { latinApiRoutes } = require('./latin/api')
 const startedAt = new Date().toISOString();
 
 const app = express();
+app.use(cors()); // Enable CORS
+app.use(express.json({ limit: '10mb'}));
+
 const PORT = 3001;
 
 // // Mount the Greek router
@@ -17,10 +20,6 @@ app.use('/hebrew', hebrewApiRoutes);
 
 // Mount the Hebrew router
 app.use('/latin', latinApiRoutes);
-
-// Enable CORS
-app.use(cors());
-app.use(express.json({ limit: '10mb'}));
 
 app.get('/ping', (req, res) => {
   res.status(200).send('🟢 Language server is alive and responding!');

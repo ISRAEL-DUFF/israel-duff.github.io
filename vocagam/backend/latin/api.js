@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express.Router();
-const { fetchLexiconEntriesAndMorphology } = require('./latin.service')
+const { fetchLexiconEntryWithMorphData } = require('./latin.service')
 const { processWords } = require('./whitaker')
 
-app.get('/lexicon', async (req, res) => {
+app.get('/lexica', async (req, res) => {
     const { word } = req.query;
 
     console.log(req.query, req.query.word)
@@ -12,7 +12,7 @@ app.get('/lexicon', async (req, res) => {
       return res.status(400).json({ error: 'Missing word' });
     }
   
-    const data = await fetchLexiconEntriesAndMorphology(word)
+    const data = await fetchLexiconEntryWithMorphData(word)
   
     res.send(data)
     
