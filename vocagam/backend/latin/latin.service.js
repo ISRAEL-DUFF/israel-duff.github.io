@@ -6,6 +6,10 @@ const DATA_DIR='../data/database'
 const dbLexiconPath = path.join(__dirname, DATA_DIR, 'latin_lexicon.db')
 const latinLexiconDb = new sqlite3.Database(dbLexiconPath);
 
+function normalizeLemma(lemma) {
+  return lemma.replace(/\d+$/, '');
+}
+
 // <<<< MORPHESEUS >>>>
 function parsePerseusResponse(response) {
     const body = response?.RDF?.Annotation?.Body;
@@ -139,7 +143,7 @@ async function fetchLexiconEntryWithMorphData(latinWord) {
   const lexica = {}
   
   for(const morphEntry of morphology) { 
-	let lemma = morphEntry.lemma // normalizeLemma(morphEntry.lemma)
+	let lemma = normalizeLemma(morphEntry.lemma)
 	const lexEntries = await getAllLexiconEntries(lemma)
 	lexica[lemma] = lexEntries;
   }

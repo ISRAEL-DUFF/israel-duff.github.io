@@ -184,12 +184,15 @@ app.get("/morphology", async (req, res) => {
 app.get("/lexica/:word", async (req, res) => {
     const word = req.params.word;
     if (!word) return res.status(400).json({ error: "Missing 'word' parameter" });
+
+    console.log("Fetching lexicon entry for word:", word);
   
     try {
       const responseData = await fetchLexiconEntryWithMorphData(word);
         
       return res.send(responseData);
     } catch (error) {
+      console.log(error);
       res.status(500).send({ error: "Failed to fetch analysis", details: error.message });;
     }
 });

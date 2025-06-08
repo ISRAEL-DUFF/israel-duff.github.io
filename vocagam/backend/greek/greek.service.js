@@ -4,7 +4,7 @@ const { DOMParser } = require("xmldom");
 const { betaCodeToGreek } = require('beta-code-js');
 // const { parseStringPromise } = require("xml2js");
 const xpath = require("xpath");
-const { irregulaVerbs } = require('./irregular-verbs');
+const { irregulaVerbs, ManualLemmaMap } = require('./irregular-verbs');
 
 const DATA_DIR='../data/database'
 const dbLexiconPath = path.join(__dirname, DATA_DIR, 'greek_lexicon.db')
@@ -617,6 +617,53 @@ function findOccurrencesInLXXBook({
     });
 }
 
+function findWordInGNTOrLxx({ word }) {
+    const params = [];
+
+    if(!word) {
+        return Promise.reject('No greek word provided');
+    }
+
+    params.push(word);
+    params.push(word);
+    const sqlGNT = `SELECT * FROM new_testament_morphology WHERE greek_word = ? OR lemma = ? LIMIT 1`;
+    const sqlLxx = `SELECT * FROM lxx_morphology WHERE greek_word = ? OR lemma = ? LIMIT 1`;
+
+    return new Promise((resolve, reject) => {
+        gntMorphDb.all(sqlGNT, params, (err, rows) => {
+            if (err) {
+                console.error('Error fetching morph entry:', err);
+                reject(err);
+            } else {
+                if (rows && rows.length > 0) {
+                    resolve(rows[0].lemma);
+                } else {
+                    // If not found in GNT, check LXX
+                    lxxMorphDb.all(sqlLxx, params, (err, rows) => {
+                        if (err) {
+                            console.error('Error fetching morph entry:', err);
+                            reject(err);
+                        } else {
+                            if (rows && rows.length > 0) {
+                                resolve(rows[0].lemma);
+                            } else {
+                                // if not found, check irregular verbs
+                                console.log('Finding it in Irregula Verbs or Manual Lemma Map')
+                                const greekWord2 = ManualLemmaMap[word] ??  irregulaVerbs[word];
+                                if(greekWord2) {
+                                    return resolve(greekWord2);
+                                }
+
+                                resolve(null);
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    });
+}
+
 async function getAllLexiconEntries(greekWord) {
     const lsjEntries = await fetchLSJLexiconEntries(greekWord);
     let dodsonEntry = await fetchDodsonLexiconEntry({
@@ -659,4 +706,5 @@ module.exports = {
     findOccurrencesInGNTBook,
     findOccurrencesInLXX,
     findOccurrencesInLXXBook,
+    findWordInGNTOrLxx
 }

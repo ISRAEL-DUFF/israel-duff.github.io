@@ -3,7 +3,7 @@ const { parseStringPromise } = require("xml2js");
 const xpath = require("xpath");
 const { DOMParser } = require("xmldom");
 const dodsonData = require('./data/dodson-dictionary.json');
-const { getAllLexiconEntries } = require('./greek/greek.service')
+const { getAllLexiconEntries, findWordInGNTOrLxx } = require('./greek/greek.service')
 const { addLookupHistory } = require('./lookup.service');
 const axios = require("axios")
 require('dotenv').config();
@@ -339,29 +339,38 @@ async function getPerseusMorph(word) {
     }
 }
 
+async function getLemmaFromBiblicalGreek(word) {
+
+}
+
 async function fetchLexiconEntryWithMorphData(greekWord) {
   const morphology = await getPerseusMorph(greekWord)
+  const lexica = {}
+
   if(!morphology[0]?.lemma) {
-    throw new Error("Invalid word")
+	let lemma = await findWordInGNTOrLxx({
+		word: greekWord
+	})
+
+	if(!lemma) {
+		throw new Error("Invalid word")
+	}
+
+	lemma = normalizeLemma(lemma)
+	const lexEntries = await getAllLexiconEntries(lemma)
+	lexica[lemma] = lexEntries;
+
+	return {
+		lexica,
+		morphology
+	}
   }
   
-  const lexica = {}
-  
   for(const morphEntry of morphology) { 
-    // const lexicalEntry = await fetchLexiconEntry(morphEntry.lemma);
-    // const dodsonEntry = dodsonData[lexicalEntry.word];
-    // lexica[morphEntry.lemma] = {
-    //     ...lexicalEntry,
-    //   xml_entry: undefined,
-    //   dodson: dodsonEntry,
-    // }
 	let lemma = normalizeLemma(morphEntry.lemma)
 	const lexEntries = await getAllLexiconEntries(lemma)
 	lexica[lemma] = lexEntries;
   }
-  // const lexicalEntry = await fetchLexiconEntry(morphology[0].lemma);
-  
-  // console.log(lexicalEntry)
   
   return {
     lexica,
