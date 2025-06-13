@@ -10,7 +10,7 @@ const {
 } = require('../morphologyService');
 const { fetchLexiconEntryWithMorphData } = require('../lexiconService')
 const { findOccurrencesInGNT, findOccurrencesInGNTBook, findOccurrencesInLXX, findOccurrencesInLXXBook, } = require("./greek.service");
-const { fetchNamespaces, fetchLookupHistory, fetchIndexedLookupHistory, addLookupHistory } = require('../lookup.service')
+const { fetchNamespaces, fetchLookupHistory, fetchIndexedLookupHistory,fetchAllIndexedLookupHistory, addLookupHistory } = require('../lookup.service')
 
 const app = express.Router();
 
@@ -323,6 +323,17 @@ app.get("/lookup-history/indexed-entries", async (req, res) => {
     const namespaces = await fetchIndexedLookupHistory({
       language: 'greek',
       namespace
+    });
+    return res.json(namespaces);
+  } catch (error) {
+    res.status(500).send({ error: "Failed to fetch analysis", details: error.message });
+  }
+});
+
+app.get("/lookup-history/all-indexed-entries", async (req, res) => {
+  try {
+    const namespaces = await fetchAllIndexedLookupHistory({
+      language: 'greek',
     });
     return res.json(namespaces);
   } catch (error) {

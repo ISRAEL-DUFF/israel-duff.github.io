@@ -160,6 +160,53 @@ async function fetchIndexedLookupHistory({ language, namespace }) {
     }
 }
 
+async function fetchAllIndexedLookupHistory({ language }) {
+    validateLanguage(language);
+
+    try {
+        if(!client._connected) {
+            await client.connect();
+        }
+      
+      const query = `
+        SELECT DISTINCT * FROM ${tableName}
+        WHERE language = '${language}'
+        ORDER BY created_at DESC
+      `;
+
+      const res = await client.query(query);
+
+      const indexList = {};
+      const index = [];
+
+      for(const row of res.rows) {
+        const normWord = normalizeGreek(row.word);
+
+        if(!indexList[normWord[0]]) {
+            indexList[normWord[0]] = []
+            index.push(normWord[0])
+        }
+
+        indexList[normWord[0]].push({
+            id: row.id,
+            word: row.word,
+            namespace: row.namespace,
+            frequency: row.frequency,
+            createdAt: row.created_at,
+            updatedAt: row.updated_at,
+        })
+      }
+
+      return {
+        index,
+        indexList
+      }
+    }
+    catch (err) {
+      console.error('Query failed', err);
+    }
+}
+
 async function getLookupEntry({language, namespace, word }) {
     validateLanguage(language);
 
@@ -287,6 +334,7 @@ module.exports = {
     fetchNamespaces,
     fetchLookupHistory,
     fetchIndexedLookupHistory,
+    fetchAllIndexedLookupHistory,
     addLookupHistory,
     deleteLookupHistory
 };
