@@ -664,14 +664,21 @@ function findWordInGNTOrLxx({ word }) {
     });
 }
 
-async function getAllLexiconEntries(greekWord) {
-    const lsjEntries = await fetchLSJLexiconEntries(greekWord);
+async function getAllBiblicalLexicalEntries({ greekWord, otherLemma }) {
+    let lemma = await findWordInGNTOrLxx({
+		word: greekWord
+	})
+
+	if(!lemma) {
+		lemma = otherLemma
+	}
+
     let dodsonEntry = await fetchDodsonLexiconEntry({
-        greekWordLemma: greekWord
+        greekWordLemma: lemma
     });
 
     if(!dodsonEntry) {
-        const greekWord2 = irregulaVerbs[greekWord]
+        const greekWord2 = irregulaVerbs[otherLemma]
 
         if(greekWord2) {
             dodsonEntry = await fetchDodsonLexiconEntry({
@@ -679,21 +686,55 @@ async function getAllLexiconEntries(greekWord) {
             });
 
             if(dodsonEntry) {
-                greekWord = greekWord2
+                lemma = greekWord2
             }
         }
     }
 
     const strongsEntry = await fetchStrongsLexiconEntry({
-        greekWordLemma: greekWord
+        greekWordLemma: lemma
     });
     const thayerEntry = await fetchThayerLexiconEntry({strongsNumber: dodsonEntry?.strong_number })
 
     return {
-        lsj: lsjEntries,
         dodson: dodsonEntry,
         strongs: strongsEntry,
         thayer: thayerEntry
+    }
+}
+
+async function getAllLexiconEntries(greekWordLemma, greekWord) {
+    const lsjEntries = await fetchLSJLexiconEntries(greekWordLemma);
+    // let dodsonEntry = await fetchDodsonLexiconEntry({
+    //     greekWordLemma: greekWord
+    // });
+
+    // if(!dodsonEntry) {
+    //     const greekWord2 = irregulaVerbs[greekWord]
+
+    //     if(greekWord2) {
+    //         dodsonEntry = await fetchDodsonLexiconEntry({
+    //             greekWordLemma: greekWord2
+    //         });
+
+    //         if(dodsonEntry) {
+    //             greekWord = greekWord2
+    //         }
+    //     }
+    // }
+
+    // const strongsEntry = await fetchStrongsLexiconEntry({
+    //     greekWordLemma: greekWord
+    // });
+    // const thayerEntry = await fetchThayerLexiconEntry({strongsNumber: dodsonEntry?.strong_number })
+    const biblLexEntries = await getAllBiblicalLexicalEntries({
+        greekWord,
+        otherLemma: greekWordLemma
+    })
+
+    return {
+        lsj: lsjEntries,
+        ...biblLexEntries
     }
 }
 

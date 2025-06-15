@@ -348,16 +348,19 @@ async function fetchLexiconEntryWithMorphData(greekWord) {
   const lexica = {}
 
   if(!morphology[0]?.lemma) {
-	let lemma = await findWordInGNTOrLxx({
-		word: greekWord
-	})
+	// let lemma = await findWordInGNTOrLxx({
+	// 	word: greekWord
+	// })
 
-	if(!lemma) {
-		throw new Error("Invalid word")
-	}
+	// if(!lemma) {
+	// 	throw new Error("Invalid word")
+	// }
 
-	lemma = normalizeLemma(lemma)
-	const lexEntries = await getAllLexiconEntries(lemma)
+	// lemma = normalizeLemma(lemma)
+	// const lexEntries = await getAllLexiconEntries(lemma)
+	// lexica[lemma] = lexEntries;
+
+	const lexEntries = await getAllLexiconEntries(null, greekWord)
 	lexica[lemma] = lexEntries;
 
 	return {
@@ -368,7 +371,7 @@ async function fetchLexiconEntryWithMorphData(greekWord) {
   
   for(const morphEntry of morphology) { 
 	let lemma = normalizeLemma(morphEntry.lemma)
-	const lexEntries = await getAllLexiconEntries(lemma)
+	const lexEntries = await getAllLexiconEntries(lemma, greekWord)
 	lexica[lemma] = lexEntries;
   }
   
