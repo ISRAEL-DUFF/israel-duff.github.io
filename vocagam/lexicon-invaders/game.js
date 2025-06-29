@@ -3,6 +3,7 @@ const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const urlParams = new URLSearchParams(window.location.search);
 const gameMode = urlParams.get('mode') || 'auto'; // Default to auto
+const currentLanguage = urlParams.get('lang') || 'greek'; // Default to Greek
 
 canvas.width = 800;
 canvas.height = 600;
@@ -16,7 +17,6 @@ const player = {
     speed: 8,
     projectiles: []
 };
-
 
 const LIVES = 20;
 const BASE_SPAWN_INTERVAL = 10000; // Base interval in milliseconds (10 seconds)
@@ -56,10 +56,39 @@ if (gameMode === 'manual') {
     });
 }
 
+// Helper to get the correct vocabulary file path
+function getVocabularyFilePath(lang) {
+    switch (lang) {
+        case 'greek':
+            return '../word-bank/greek/greek_core_list.json';
+        case 'hebrew':
+            return '../word-bank/hebrew/hebrew_words_old_testament.json';
+        case 'latin':
+            return '../word-bank/latin/dcc_latin_core_words.json';
+        default:
+            return '../word-bank/greek/greek_core_list.json'; // Default to Greek
+    }
+}
+
+// Helper to get the correct font for the language
+function getFontForLanguage(lang) {
+    switch (lang) {
+        case 'greek':
+            return '20px SBL_grk';
+        case 'hebrew':
+            return '20px SBL_Hbrw'; // Assuming SBL_Hbrw.ttf for Hebrew
+        case 'latin':
+            return '20px Arial'; // Latin can use a standard font
+        default:
+            return '20px SBL_grk';
+    }
+}
+
 // Fetch Vocabulary Data
 async function loadVocabulary() {
     try {
-        const response = await fetch('../word-bank/greek/greek_core_list.json');
+        const vocabFilePath = getVocabularyFilePath(currentLanguage);
+        const response = await fetch(vocabFilePath);
         const data = await response.json();
         const allWords = Object.values(data).flat();
 
@@ -81,7 +110,7 @@ async function loadVocabulary() {
             definition: Array.isArray(item.meanings) ? item.meanings.join(', ').trim() : item.meanings.trim()
         }));
 
-        console.log("Vocabulary loaded successfully with 30 random words");
+        console.log(`Vocabulary loaded successfully for ${currentLanguage} with 30 random words`);
         initGame(); // Call initGame to start the game
     } catch (error) {
         console.error("Error loading vocabulary:", error);
@@ -239,7 +268,7 @@ function drawProjectiles() {
 
 function drawFallingWords() {
     ctx.fillStyle = '#00ffcc'; // Neon green for visibility
-    ctx.font = '20px SBL_grk';
+    ctx.font = getFontForLanguage(currentLanguage);
     for (const word of fallingWords) {
         ctx.fillText(word.word, word.x, word.y);
     }
@@ -265,18 +294,9 @@ function drawUI() {
     }
 }
 
-let updateCallCount = 0;
-let lastSecond = Date.now();
+
 
 function update() {
-    // Debugging: Log update frequency
-    updateCallCount++;
-    if (Date.now() - lastSecond >= 1000) {
-        console.log(`Update calls per second: ${updateCallCount}`);
-        updateCallCount = 0;
-        lastSecond = Date.now();
-    }
-
     if (gameOver) {
         // Stop the animation frame loop when game is over
         if (window.gameLoopId) {

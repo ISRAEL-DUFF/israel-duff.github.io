@@ -1,6 +1,12 @@
+
 @font-face {
     font-family: 'SBL_grk';
     src: url('../fonts/SBL_grk.ttf');
+}
+
+@font-face {
+    font-family: 'SBL_Hbrw';
+    src: url('../fonts/SBL_Hbrw.ttf');
 }
 
 html, body {
@@ -18,6 +24,7 @@ html, body {
     font-family: 'Press Start 2P', cursive, Arial, sans-serif; /* Pixel font for game feel */
     font-size: 1.8vw; /* Responsive font size */
 }
+
 
 /* Import Google Font for a game-like feel */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
