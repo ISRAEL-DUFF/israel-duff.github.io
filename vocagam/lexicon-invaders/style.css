@@ -1,0 +1,165 @@
+@font-face {
+    font-family: 'SBL_grk';
+    src: url('../fonts/SBL_grk.ttf');
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #1a0033, #000000); /* Dark, space-like gradient */
+    color: #e0e0e0; /* Light grey text */
+    font-family: 'Press Start 2P', cursive, Arial, sans-serif; /* Pixel font for game feel */
+    font-size: 1.8vw; /* Responsive font size */
+}
+
+/* Import Google Font for a game-like feel */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+h1 {
+    font-size: 4vw; /* Responsive heading */
+    color: #00ffcc; /* Neon green */
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    margin-bottom: 2vh;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh; /* Responsive gap between elements */
+    padding: 3vw;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #00ffcc;
+    box-shadow: 0 0 15px #00ffcc;
+    border-radius: 10px;
+}
+
+.menu-container h2 {
+    font-size: 2.5vw;
+    color: #ff66cc; /* Neon pink */
+    text-shadow: 0 0 8px #ff66cc;
+    margin-bottom: 1.5vh;
+}
+
+.button {
+    display: block;
+    width: 25vw; /* Responsive width */
+    padding: 1.5vh 2vw; /* Responsive padding */
+    background-color: #663399; /* Deep purple */
+    color: #ffffff;
+    text-decoration: none;
+    border: 2px solid #cc00ff; /* Bright purple border */
+    border-radius: 8px;
+    font-size: 1.8vw;
+    text-align: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px rgba(204, 0, 255, 0.5);
+}
+
+.button:hover {
+    background-color: #9933cc; /* Lighter purple on hover */
+    box-shadow: 0 0 20px rgba(204, 0, 255, 0.8);
+}
+
+canvas {
+    border: 2px solid #00ffcc;
+    background-color: #000000; /* Black background for space */
+    display: block;
+    margin: 2vh auto; /* Center with responsive margin */
+    max-width: 90vw; /* Max width for mobile responsiveness */
+    height: auto; /* Maintain aspect ratio */
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.7);
+}
+
+#speedSlider {
+    width: 80%; /* Responsive width */
+    margin-top: 2vh;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 1.5vh;
+    background: #333;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+    border-radius: 5px;
+}
+
+#speedSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    background: #00ffcc;
+    cursor: pointer;
+    box-shadow: 0 0 5px #00ffcc;
+}
+
+#speedSlider::-moz-range-thumb {
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    background: #00ffcc;
+    cursor: pointer;
+    box-shadow: 0 0 5px #00ffcc;
+}
+
+/* Instructions page specific styles */
+.menu-container ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    width: 80%;
+}
+
+.menu-container li {
+    margin-bottom: 1vh;
+    font-size: 1.5vw;
+}
+
+/* Media queries for smaller screens (e.g., phones) */
+@media (max-width: 768px) {
+    html, body {
+        font-size: 3vw;
+    }
+
+    h1 {
+        font-size: 6vw;
+    }
+
+    .menu-container {
+        padding: 5vw;
+        gap: 3vh;
+    }
+
+    .menu-container h2 {
+        font-size: 4vw;
+    }
+
+    .button {
+        width: 60vw;
+        font-size: 4vw;
+        padding: 2vh 4vw;
+    }
+
+    canvas {
+        max-width: 95vw;
+    }
+
+    #speedSlider::-webkit-slider-thumb,
+    #speedSlider::-moz-range-thumb {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .menu-container li {
+        font-size: 3vw;
+    }
+}

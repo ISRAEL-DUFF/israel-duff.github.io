@@ -347,6 +347,8 @@ async function fetchLexiconEntryWithMorphData(greekWord) {
   const morphology = await getPerseusMorph(greekWord)
   const lexica = {}
 
+  console.log(morphology)
+
   if(!morphology[0]?.lemma) {
 	// let lemma = await findWordInGNTOrLxx({
 	// 	word: greekWord
@@ -359,6 +361,8 @@ async function fetchLexiconEntryWithMorphData(greekWord) {
 	// lemma = normalizeLemma(lemma)
 	// const lexEntries = await getAllLexiconEntries(lemma)
 	// lexica[lemma] = lexEntries;
+
+	console.log("NO LEMMA")
 
 	const lexEntries = await getAllLexiconEntries(null, greekWord)
 	lexica[lemma] = lexEntries;

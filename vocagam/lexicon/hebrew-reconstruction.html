@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hebrew Historical Vowel Reconstructor</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      background-color: #f9f9f9;
+    }
+    input, select, button {
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin: 0.5rem 0;
+    }
+    #output {
+      background: #fff;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .step {
+      margin: 0.25rem 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hebrew Historical Vowel Reconstructor</h1>
+  <label for="hebrewInput">Enter a Hebrew word:</label><br>
+  <input type="text" id="hebrewInput" placeholder="e.g. שלום" /><br>
+  <button onclick="reconstruct()">Reconstruct</button>
+
+  <div id="output"></div>
+
+  <script>
+    function reconstruct() {
+      const input = document.getElementById("hebrewInput").value.trim();
+      const output = document.getElementById("output");
+
+      if (!input) {
+        output.innerHTML = "<p>Please enter a Hebrew word.</p>";
+        return;
+      }
+
+      // Sample rule application for demo
+      let recon = input;
+      const steps = [];
+
+      // Rule: Final long ā becomes ō (Canaanite Shift)
+      if (/ם$/.test(recon)) {
+        recon = recon.replace(/ָ/, "וֹ");
+        steps.push("Canaanite Shift applied: ā > ō in final syllable.");
+      }
+
+      // Rule: ay > ē (e.g., בַּיִת > בֵּית)
+      if (/ַי/.test(recon)) {
+        recon = recon.replace(/ַי/, "ֵ");
+        steps.push("Monophthongization: ay > ē.");
+      }
+
+      // Rule: Remove final short vowels (simplified)
+      if (/[aeiouāēīōū]$/.test(recon)) {
+        recon = recon.slice(0, -1);
+        steps.push("Final short vowel dropped.");
+      }
+
+      // Display results
+      output.innerHTML = `
+        <h3>Original Word:</h3>
+        <p>${input}</p>
+        <h3>Reconstructed Historical Form:</h3>
+        <p><strong>${recon}</strong></p>
+        <h3>Transformation Steps:</h3>
+        ${steps.length ? steps.map(s => `<div class="step">- ${s}</div>`).join("") : "<p>No historical changes applied.</p>"}
+      `;
+    }
+  </script>
+</body>
+</html>

@@ -665,6 +665,10 @@ function findWordInGNTOrLxx({ word }) {
 }
 
 async function getAllBiblicalLexicalEntries({ greekWord, otherLemma }) {
+    console.log("BIBLICA:", {
+        greekWord,
+        otherLemma
+    })
     let lemma = await findWordInGNTOrLxx({
 		word: greekWord
 	})
@@ -672,6 +676,10 @@ async function getAllBiblicalLexicalEntries({ greekWord, otherLemma }) {
 	if(!lemma) {
 		lemma = otherLemma
 	}
+
+    console.log("BIBLICA 2:", {
+        lemma
+    })
 
     let dodsonEntry = await fetchDodsonLexiconEntry({
         greekWordLemma: lemma
