@@ -60,6 +60,34 @@ const IPA_MAP = [
     ['ω', 'ɔː']
 ];
 
+const IPA_TO_ESPEAK_MAP = {
+    // Vowels
+    "a": "a", "e": "e", "eː": "e:", "i": "i", "o": "o", "ɔː": "O:",
+    "u": "u", "y": "y",
+  
+    // Stops
+    "p": "p", "b": "b", "t": "t", "d": "d", "k": "k", "g": "g",
+  
+    // Aspirated stops
+    "pʰ": "p_h", "tʰ": "t_h", "kʰ": "k_h",
+  
+    // Fricatives
+    "s": "s", "z": "z",
+  
+    // Nasals
+    "m": "m", "n": "n", "ŋ": "N",
+  
+    // Affricates and clusters
+    "ks": "k s", "ps": "p s", "dz": "d z", "ŋg": "N g", "ŋk": "N k", "ŋks": "N k s",
+  
+    // Liquids
+    "r": "r", "l": "l",
+  
+    // Diphthongs (mapped to sequences)
+    "ai": "a i", "ei": "e i", "oi": "o i", "au": "a u", "eu": "e u", "ou": "u",
+  };
+  
+
 function greekToIpa(word, style = 'koine') {
     let text = word.toLowerCase();
     text = text.replace(/[῾᾽'᾿]/g, '');  // remove rough/smooth breathing
@@ -71,6 +99,25 @@ function greekToIpa(word, style = 'koine') {
 
     return text;
 }
+
+function ipaToEspeakPhonemes(ipa) {
+    let output = ipa;
+  
+    // Longer matches first to avoid partial replacements (e.g., "pʰ" before "p")
+    const keys = Object.keys(IPA_TO_ESPEAK_MAP).sort((a, b) => b.length - a.length);
+  
+    for (const ipaSound of keys) {
+      const espeakPhoneme = IPA_TO_ESPEAK_MAP[ipaSound];
+      const regex = new RegExp(ipaSound.replace(/[ː]/g, "\\ː"), 'g');
+      output = output.replace(regex, espeakPhoneme);
+    }
+  
+    // Replace stress mark
+    output = output.replace(/ˈ/, "'");
+  
+    return output;
+}
+  
 
 app.get('/greek-pronounce', (req, res) => {
     const word = req.query.word || '';
@@ -84,8 +131,11 @@ app.get('/greek-pronounce', (req, res) => {
 
     let cmd;
     if (style === 'erasmian') {
-        const ipa = erasmianIpaMap[word] || word;
-        cmd = `espeak-ng -v en -s 120 -w ${filename} "${ipa}"`;
+        // const ipa = erasmianIpaMap[word] || word;
+        const ipa = word; // ipaToEspeakPhonemes(word); // TODO: convert word to IPA
+        cmd = `espeak-ng -v el --ipa -s 110 -w ${filename} "${ipa}"`;
+
+        console.log(cmd)
     } else {
         const voice = 'grc';  // Classical Greek voice in espeak-ng
         // cmd = `espeak-ng -v ${voice} -s 120 -w ${filename} "${word}"`;
@@ -104,6 +154,7 @@ app.get('/greek-pronounce', (req, res) => {
 
     exec(cmd, (error) => {
         if (error) {
+            console.log(error)
             return res.status(500).send('Error generating audio');
         }
 

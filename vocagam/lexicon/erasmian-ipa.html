@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Greek to IPA (Erasmian Pronunciation)</title>
+  <style>
+    body { font-family: sans-serif; background: #121212; color: #eee; padding: 2em; max-width: 800px; margin: auto; }
+    textarea { width: 100%; height: 150px; background: #1e1e1e; color: #eee; padding: 1em; font-size: 1.1em; border: 1px solid #444; border-radius: 8px; }
+    button { padding: 0.5em 1em; font-size: 1em; margin-top: 1em; background: #333; color: #fff; border: none; border-radius: 6px; cursor: pointer; }
+    pre { background: #1a1a1a; padding: 1em; border-radius: 8px; white-space: pre-wrap; word-wrap: break-word; }
+    h1 { font-size: 1.5em; color: #ffa726; }
+  </style>
+</head>
+<body>
+  <h1>Ancient Greek to IPA (Erasmian)</h1>
+  <textarea id="input" placeholder="Paste Greek text here...">Ἐν ἀρχῇ ἦν ὁ λόγος, καὶ ὁ λόγος ἦν πρὸς τὸν θεόν.</textarea>
+  <br>
+  <button onclick="convert()">Convert to IPA</button>
+  <h2>IPA Output:</h2>
+  <pre id="output"></pre>
+
+  <script>
+    function normalizeGreek(text) {
+      return text
+        .replace(/ς/g, 'σ')
+        .normalize('NFD');
+    }
+
+    function stripAccents(text) {
+      return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
+    function greekWordToIPA(word) {
+      const accentMap = {
+        'ά': 'a', 'έ': 'e', 'ή': 'eː', 'ί': 'i', 'ό': 'o', 'ύ': 'y', 'ώ': 'ɔː'
+      };
+
+      const ipaMap = [
+        ["αι", "ai"], ["ει", "ei"], ["οι", "oi"], ["αυ", "au"],
+        ["ευ", "eu"], ["ηυ", "eːu"], ["ου", "u"],
+        ["γγ", "ŋg"], ["γκ", "ŋk"], ["γξ", "ŋks"], ["γχ", "ŋkʰ"],
+
+        ["α", "a"], ["β", "b"], ["γ", "g"], ["δ", "d"], ["ε", "e"],
+        ["ζ", "dz"], ["η", "eː"], ["θ", "tʰ"], ["ι", "i"], ["κ", "k"],
+        ["λ", "l"], ["μ", "m"], ["ν", "n"], ["ξ", "ks"], ["ο", "o"],
+        ["π", "p"], ["ρ", "r"], ["σ", "s"], ["τ", "t"], ["υ", "y"],
+        ["φ", "pʰ"], ["χ", "kʰ"], ["ψ", "ps"], ["ω", "ɔː"]
+      ];
+
+      let normWord = normalizeGreek(word);
+      let stressIndex = -1;
+
+      for (let i = 0; i < normWord.length; i++) {
+        if ('άέήίόύώ'.includes(normWord[i])) {
+          stressIndex = i;
+          break;
+        }
+      }
+
+      let stripped = stripAccents(normWord);
+      if (stressIndex !== -1) {
+        stripped = stripped.slice(0, stressIndex) + 'ˈ' + stripped.slice(stressIndex);
+      }
+
+      for (const [gr, ipa] of ipaMap) {
+        stripped = stripped.replaceAll(gr, ipa);
+      }
+
+      for (const [char, rep] of Object.entries(accentMap)) {
+        stripped = stripped.replaceAll(char, rep);
+      }
+
+      return stripped;
+    }
+
+    function greekTextToIPA(text) {
+        const words = text.split(/(\s+|[.,;·—!?“”"()])/);
+        return words.map(token => {
+            // Test if the token contains Greek characters (basic + extended)
+            if (/[ἀ-῾Α-ῼα-ωͰ-ͽ]/.test(token)) {
+                return greekWordToIPA(token);
+            } else {
+                return token;
+            }
+        }).join('');
+    }
+
+
+    function convert() {
+      const input = document.getElementById("input").value;
+      const output = greekTextToIPA(input);
+      document.getElementById("output").textContent = output;
+    }
+  </script>
+</body>
+</html>
