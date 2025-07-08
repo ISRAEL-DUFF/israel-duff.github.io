@@ -10,7 +10,7 @@ const startedAt = new Date().toISOString();
 
 const app = express();
 app.use(cors()); // Enable CORS
-app.use(express.json({ limit: '10mb'}));
+app.use(express.json({ limit: '50mb'}));
 
 // Static file serving for uploaded assets
 app.use('/assets', express.static(path.join(__dirname, process.env.STORAGE_PATH || 'uploads')));
