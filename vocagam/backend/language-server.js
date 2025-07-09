@@ -9,8 +9,6 @@ const { storyApiRoutes } = require('./story-creator/api');
 const startedAt = new Date().toISOString();
 
 const app = express();
-app.options('*', cors()); // allow all preflights
-
 
 const allowedOrigins = [
   'https://polyglossia.vercel.app',
@@ -19,7 +17,8 @@ const allowedOrigins = [
   'http://localhost:9002',
 ];
 
-app.use(cors({
+// CORS middleware config
+const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
@@ -28,7 +27,10 @@ app.use(cors({
     }
   },
   credentials: true,
-}));
+};
+
+app.use(cors(corsOptions));
+app.options(/^\/.*$/, cors(corsOptions)); // allow all preflights
 
 // app.use(cors()); // Enable CORS
 
