@@ -9,7 +9,30 @@ const { storyApiRoutes } = require('./story-creator/api');
 const startedAt = new Date().toISOString();
 
 const app = express();
-app.use(cors()); // Enable CORS
+app.options('*', cors()); // allow all preflights
+
+
+const allowedOrigins = [
+  'https://polyglossia.vercel.app',
+  'https://fantastic-snickerdoodle-0c27cc.netlify.app',
+  'https://polyglossia.surge.sh',
+  'http://localhost:9002',
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+}));
+
+// app.use(cors()); // Enable CORS
+
+
 app.use(express.json({ limit: '50mb'}));
 
 // Static file serving for uploaded assets
