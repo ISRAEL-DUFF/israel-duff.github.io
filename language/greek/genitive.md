@@ -91,6 +91,56 @@ We categorize genitive usage into **syntactic (structural)** and **semantic (mea
 
 ---
 
+### 8. 🕰️ Genitive of Time Within Which
+
+#### 🏷️ Syntactic Category:
+- This is a **genitive of measure**, but more specifically, it refers to **time “within which” something happens** — often contrasted with the **dative of time “when”** and **accusative of time “duration”**.
+
+---
+
+#### 📌 Definition:
+The **Genitive of Time Within Which** indicates the time *during the course of which* or *within which* something occurs.
+
+- It answers the question: **"within what time frame?"**
+- Most commonly seen with **temporal nouns** in the **genitive singular or plural**.
+
+---
+
+#### 🔠 Example:
+**Greek:** τούτων τῶν ἡμερῶν ἥκω.  
+**Translation:** *I have arrived during these days* / *within these days*  
+**Explanation:** The genitive (τούτων τῶν ἡμερῶν) sets a time frame in which the action of arrival takes place.
+
+---
+
+#### ⚖️ Compare:
+| Construction | Case       | Example                         | Translation                        |
+|--------------|------------|----------------------------------|------------------------------------|
+| Time **when**      | Dative     | τῇ τρίτῃ ἡμέρᾳ                  | *on the third day*                 |
+| Time **within which** | Genitive   | τριῶν ἡμερῶν                     | *within three days*                |
+| Time **how long**      | Accusative | τρεῖς ἡμέρας                     | *for three days*                   |
+
+---
+
+#### 🧠 More Examples:
+
+1. **Greek:** τοῦ θέρους ἔπλεον εἰς Ἀσίαν  
+   **Translation:** *They sailed to Asia during the summer*  
+   **Genitive of Time Within Which** — τοῦ θέρους
+
+2. **Greek:** χειμῶνος οὐκ ἐμάχομεθα  
+   **Translation:** *We did not fight during the winter*  
+   **Genitive of Time Within Which** — χειμῶνος
+
+---
+
+#### 🧩 Summary:
+- This construction is **temporal** in nature.
+- It's **common in historiography** (e.g. Herodotus, Thucydides).
+- It sets the **period or range** within which an event occurs.
+
+---
+
 ## 🌀 III. Complex & Rare Uses
 
 #### 1. 🔍 **Genitive Absolute**

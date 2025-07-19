@@ -34,6 +34,7 @@ It often agrees in **gender**, **number**, and **case** with the **subject** (or
 ---
 
 ### 2. **Aspectual Nuance**
+
 | Tense of Participle | Relation to Main Verb |
 |---------------------|------------------------|
 | **Present**         | Simultaneous           |
