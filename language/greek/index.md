@@ -1,3 +1,6 @@
 - [Participles Overview](participles.md)
-- [Genitive Case](genitive.md)
 - [Infinitives](infinitives.md)
+- [Mi Verbs](mi-verbs.md)
+- [Genitive Case](genitive.md)
+- [Dative Case](dative.md)
+- [Accusative Case](accusative.md)
