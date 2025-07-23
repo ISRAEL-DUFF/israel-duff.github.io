@@ -230,3 +230,178 @@ Understanding the difference between active and passive participles in Attic Gre
 ### 🔍 Tip: Look for the Agent
 Ask: Is the noun doing the action (use active)?  
 Or is it receiving the action (use passive)?
+
+
+
+# Morphology
+## 🔹 Participles of λύω
+
+All participles are **declinable adjectives**, agreeing in gender, number, and case with their noun. Below is the **nominative singular** for each form, plus a full layout for **present**, **aorist**, and **perfect**.
+
+---
+
+### 📌 Present Participle
+
+| Voice   | Masculine (sg) | Feminine (sg) | Neuter (sg) |
+|---------|----------------|----------------|-------------|
+| Active  | λύων            | λύουσα         | λῦον        |
+| Middle  | λυόμενος        | λυομένη        | λυόμενον     |
+| Passive | λυόμενος        | λυομένη        | λυόμενον     |
+
+---
+
+### 📌 Future Participle
+
+| Voice   | Masculine (sg) | Feminine (sg) | Neuter (sg) |
+|---------|----------------|----------------|-------------|
+| Active  | λύσων           | λύσουσα        | λῦσον       |
+| Middle  | λυσόμενος       | λυσομένη       | λυσόμενον    |
+| Passive | λυθησόμενος     | λυθησομένη     | λυθησόμενον  |
+
+---
+
+### 📌 Aorist Participle
+
+| Voice   | Masculine (sg) | Feminine (sg) | Neuter (sg) |
+|---------|----------------|----------------|-------------|
+| Active  | λύσας           | λύσασα         | λῦσαν       |
+| Middle  | λυσάμενος       | λυσαμένη       | λυσάμενον    |
+| Passive | λυθείς          | λυθεῖσα        | λυθέν       |
+
+---
+
+### 📌 Perfect Participle
+
+| Voice   | Masculine (sg) | Feminine (sg) | Neuter (sg) |
+|---------|----------------|----------------|-------------|
+| Active  | λελυκώς         | λελυκυῖα        | λελυκός      |
+| Middle  | λελυμένος       | λελυμένη        | λελυμένον    |
+| Passive | λελυμένος       | λελυμένη        | λελυμένον    |
+
+---
+
+## 📌 Declension Notes
+
+- **Active Participles** (e.g. λύων, λύσας, λελυκώς) use **3rd declension** endings.
+- **Middle/Passive Participles** use **1st and 2nd declension** endings.
+- **Neuters** always use **-ν** ending in nominative/accusative singular.
+
+---
+
+
+## 📘 Contract Verbs – Full Participle Charts (All Genders/Cases)
+
+## Legend:
+- τιμάω → τιμῶ (α-contract)
+- ποιέω → ποιῶ (ε-contract)
+- δηλόω → δηλῶ (ο-contract)
+
+---
+
+## 🔵 Present Active Participle
+
+### Masculine
+
+| Case       | τιμῶν     | ποιῶν     | δηλῶν     |
+|------------|-----------|-----------|-----------|
+| Nom. sg    | τιμῶν     | ποιῶν     | δηλῶν     |
+| Gen. sg    | τιμῶντος  | ποιοῦντος | δηλοῦντος |
+| Dat. sg    | τιμῶντι   | ποιοῦντι  | δηλοῦντι  |
+| Acc. sg    | τιμῶντα   | ποιοῦντα  | δηλοῦντα  |
+| Nom. pl    | τιμῶντες  | ποιοῦντες | δηλοῦντες |
+| Gen. pl    | τιμώντων  | ποιούντων | δηλούντων |
+| Dat. pl    | τιμῶσι(ν) | ποιοῦσι(ν)| δηλοῦσι(ν)|
+| Acc. pl    | τιμῶντας  | ποιοῦντας | δηλοῦντας |
+
+### Feminine
+
+| Case       | τιμῶσα     | ποιοῦσα    | δηλοῦσα    |
+|------------|------------|------------|------------|
+| Nom. sg    | τιμῶσα     | ποιοῦσα    | δηλοῦσα    |
+| Gen. sg    | τιμώσης    | ποιούσης   | δηλούσης   |
+| Dat. sg    | τιμώσῃ     | ποιούσῃ    | δηλούσῃ    |
+| Acc. sg    | τιμῶσαν    | ποιοῦσαν   | δηλοῦσαν   |
+| Nom. pl    | τιμῶσαι    | ποιοῦσαι   | δηλοῦσαι   |
+| Gen. pl    | τιμωσῶν    | ποιουσῶν   | δηλουσῶν   |
+| Dat. pl    | τιμώσαις   | ποιούσαις  | δηλούσαις  |
+| Acc. pl    | τιμώσας    | ποιούσας   | δηλούσας   |
+
+### Neuter
+
+| Case       | τιμῶν     | ποιοῦν     | δηλοῦν     |
+|------------|-----------|------------|------------|
+| Nom. sg    | τιμῶν     | ποιοῦν     | δηλοῦν     |
+| Gen. sg    | τιμῶντος  | ποιοῦντος  | δηλοῦντος  |
+| Dat. sg    | τιμῶντι   | ποιοῦντι   | δηλοῦντι   |
+| Acc. sg    | τιμῶν     | ποιοῦν     | δηλοῦν     |
+| Nom. pl    | τιμῶντα   | ποιοῦντα   | δηλοῦντα   |
+| Gen. pl    | τιμώντων  | ποιούντων  | δηλούντων  |
+| Dat. pl    | τιμῶσι(ν) | ποιοῦσι(ν) | δηλοῦσι(ν) |
+| Acc. pl    | τιμῶντα   | ποιοῦντα   | δηλοῦντα   |
+
+---
+
+## 🔵 Present Middle/Passive Participle
+
+_Same endings as thematic verbs (e.g., λύομαι), but with contraction._
+
+| Masc Nom. sg | τιμώμενος | ποιούμενος | δηλούμενος |
+| Fem. Nom. sg | τιμωμένη  | ποιουμένη  | δηλουμένη  |
+| Neut. Nom. sg| τιμώμενον | ποιούμενον | δηλούμενον |
+
+(The rest follow standard middle/passive participle declension.)
+
+---
+
+## 🟣 Future Active Participle
+
+| Masc Nom. sg | τιμήσων   | ποιήσων    | δηλώσων    |
+| Fem. Nom. sg | τιμήσουσα | ποιήσουσα  | δηλώσουσα  |
+| Neut. Nom. sg| τιμήσον   | ποιήσον    | δηλώσον    |
+
+---
+
+## 🟣 Future Middle Participle
+
+| Masc Nom. sg | τιμήσόμενος | ποιησόμενος | δηλώσόμενος |
+| Fem. Nom. sg | τιμησομένη  | ποιησομένη  | δηλωσομένη  |
+| Neut. Nom. sg| τιμήσόμενον | ποιησόμενον | δηλώσόμενον |
+
+---
+
+## 🟣 Future Passive Participle (Rare, Theoretical)
+
+| Masc Nom. sg | τιμηθησόμενος | ποιηθησόμενος | δηλωθησόμενος |
+| Fem. Nom. sg | τιμηθησομένη  | ποιηθησομένη  | δηλωθησομένη  |
+| Neut. Nom. sg| τιμηθησόμενον | ποιηθησόμενον | δηλωθησόμενον |
+
+---
+
+## 🔴 Aorist Active Participle (1st Aorist)
+
+| Masc Nom. sg | τιμήσας   | ποιήσας    | δηλώσας    |
+| Fem. Nom. sg | τιμήσασα  | ποιήσασα   | δηλώσασα   |
+| Neut. Nom. sg| τιμῆσαν   | ποιῆσαν    | δηλῶσαν    |
+
+---
+
+## 🔴 Aorist Middle Participle (1st Aorist)
+
+| Masc Nom. sg | τιμησάμενος | ποιησάμενος | δηλωσάμενος |
+| Fem. Nom. sg | τιμησαμένη  | ποιησαμένη  | δηλωσαμένη  |
+| Neut. Nom. sg| τιμησάμενον | ποιησάμενον | δηλωσάμενον |
+
+---
+
+## 🔴 Aorist Passive Participle (1st Aorist Passive)
+
+| Masc Nom. sg | τιμηθείς   | ποιηθείς    | δηλωθείς    |
+| Fem. Nom. sg | τιμηθεῖσα  | ποιηθείσα   | δηλωθεῖσα   |
+| Neut. Nom. sg| τιμηθέν    | ποιηθέν     | δηλωθέν     |
+
+---
+
+## ✅ Notes
+
+- Contract verbs **contract** only in the **present system** (present, imperfect, present participle).
+- In all **non-present** systems (future, aorist, perfect, etc.), they conjugate like regular thematic verbs (λύω-type), without vowel contraction.
