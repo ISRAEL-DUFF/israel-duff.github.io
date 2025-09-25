@@ -1,0 +1,2112 @@
+{
+  "metadata": {
+    "description": "General-purpose Greek vocabulary list aggregated from the legacy word-bank set.",
+    "source": "word-bank/greek/data1.json",
+    "totalWords": 404,
+    "batchSize": 50,
+    "generatedAt": "2025-09-25T18:30:37.476Z"
+  },
+  "batches": [
+    {
+      "batchNumber": 1,
+      "rankRange": [
+        1,
+        50
+      ],
+      "words": [
+        {
+          "rank": 1,
+          "word": "ὁ, ἡ, τό",
+          "frequency": 20400
+        },
+        {
+          "rank": 2,
+          "word": "καί",
+          "frequency": 9268
+        },
+        {
+          "rank": 3,
+          "word": "σύ, ὑμεῖς",
+          "frequency": 2900
+        },
+        {
+          "rank": 4,
+          "word": "δέ",
+          "frequency": 2883
+        },
+        {
+          "rank": 5,
+          "word": "ἐν",
+          "frequency": 2803
+        },
+        {
+          "rank": 6,
+          "word": "ἐγώ, ἡμεῖς",
+          "frequency": 2500
+        },
+        {
+          "rank": 7,
+          "word": "εἰμί",
+          "frequency": 2500
+        },
+        {
+          "rank": 8,
+          "word": "λέγω",
+          "frequency": 2000
+        },
+        {
+          "rank": 9,
+          "word": "εἰς",
+          "frequency": 1774
+        },
+        {
+          "rank": 10,
+          "word": "ἀγαθοποιέω",
+          "frequency": 1000
+        },
+        {
+          "rank": 11,
+          "word": "ἀγαλλιάω",
+          "frequency": 1000
+        },
+        {
+          "rank": 12,
+          "word": "ἀγανακτέω",
+          "frequency": 1000
+        },
+        {
+          "rank": 13,
+          "word": "ἀγωνίζομαι",
+          "frequency": 1000
+        },
+        {
+          "rank": 14,
+          "word": "ἀναπηδάω",
+          "frequency": 1000
+        },
+        {
+          "rank": 15,
+          "word": "ἀνασπάω",
+          "frequency": 1000
+        },
+        {
+          "rank": 16,
+          "word": "ἀγνοέω",
+          "frequency": 950
+        },
+        {
+          "rank": 17,
+          "word": "ἀγρυπνέω",
+          "frequency": 950
+        },
+        {
+          "rank": 18,
+          "word": "ἀθλέω",
+          "frequency": 950
+        },
+        {
+          "rank": 19,
+          "word": "ἀνασείω",
+          "frequency": 950
+        },
+        {
+          "rank": 20,
+          "word": "ἀνατρέχω",
+          "frequency": 950
+        },
+        {
+          "rank": 21,
+          "word": "καλός",
+          "frequency": 950
+        },
+        {
+          "rank": 22,
+          "word": "ἀθετέω",
+          "frequency": 900
+        },
+        {
+          "rank": 23,
+          "word": "ἀθυμέω",
+          "frequency": 900
+        },
+        {
+          "rank": 24,
+          "word": "ἀποκλίνω",
+          "frequency": 900
+        },
+        {
+          "rank": 25,
+          "word": "ἄγιος",
+          "frequency": 880
+        },
+        {
+          "rank": 26,
+          "word": "ἀκμάζω",
+          "frequency": 850
+        },
+        {
+          "rank": 27,
+          "word": "ἀκριβόω",
+          "frequency": 850
+        },
+        {
+          "rank": 28,
+          "word": "ἀναγκαῖος",
+          "frequency": 850
+        },
+        {
+          "rank": 29,
+          "word": "ἀνασχίζω",
+          "frequency": 850
+        },
+        {
+          "rank": 30,
+          "word": "ἀποκρούω",
+          "frequency": 850
+        },
+        {
+          "rank": 31,
+          "word": "ἀποστέλλω",
+          "frequency": 850
+        },
+        {
+          "rank": 32,
+          "word": "δίκαιος",
+          "frequency": 850
+        },
+        {
+          "rank": 33,
+          "word": "ἰατρός",
+          "frequency": 810
+        },
+        {
+          "rank": 34,
+          "word": "ἀλαζονεύομαι",
+          "frequency": 800
+        },
+        {
+          "rank": 35,
+          "word": "ἀναγκάζω",
+          "frequency": 800
+        },
+        {
+          "rank": 36,
+          "word": "ἀναγνωρίζω",
+          "frequency": 800
+        },
+        {
+          "rank": 37,
+          "word": "ἀνατείνω",
+          "frequency": 800
+        },
+        {
+          "rank": 38,
+          "word": "υἱός",
+          "frequency": 800
+        },
+        {
+          "rank": 39,
+          "word": "ἰκανός",
+          "frequency": 780
+        },
+        {
+          "rank": 40,
+          "word": "ἀλείφω",
+          "frequency": 750
+        },
+        {
+          "rank": 41,
+          "word": "ἀναζητέω",
+          "frequency": 750
+        },
+        {
+          "rank": 42,
+          "word": "ἀναθεωρέω",
+          "frequency": 750
+        },
+        {
+          "rank": 43,
+          "word": "ἀναλογίζομαι",
+          "frequency": 750
+        },
+        {
+          "rank": 44,
+          "word": "ἔχω",
+          "frequency": 750
+        },
+        {
+          "rank": 45,
+          "word": "παρρησία",
+          "frequency": 750
+        },
+        {
+          "rank": 46,
+          "word": "ἀληθής",
+          "frequency": 700
+        },
+        {
+          "rank": 47,
+          "word": "ἀμαυρόω",
+          "frequency": 700
+        },
+        {
+          "rank": 48,
+          "word": "ἀνακοινόω",
+          "frequency": 700
+        },
+        {
+          "rank": 49,
+          "word": "ἀνακράζω",
+          "frequency": 700
+        },
+        {
+          "rank": 50,
+          "word": "ἀνήρ",
+          "frequency": 700
+        }
+      ]
+    },
+    {
+      "batchNumber": 2,
+      "rankRange": [
+        51,
+        100
+      ],
+      "words": [
+        {
+          "rank": 51,
+          "word": "λέξις",
+          "frequency": 700
+        },
+        {
+          "rank": 52,
+          "word": "πνευματικός",
+          "frequency": 680
+        },
+        {
+          "rank": 53,
+          "word": "ἀνθρώπινος",
+          "frequency": 660
+        },
+        {
+          "rank": 54,
+          "word": "φαυλός",
+          "frequency": 660
+        },
+        {
+          "rank": 55,
+          "word": "ἀγάπησις",
+          "frequency": 650
+        },
+        {
+          "rank": 56,
+          "word": "ἀμύνω",
+          "frequency": 650
+        },
+        {
+          "rank": 57,
+          "word": "ἀνακρίνω",
+          "frequency": 650
+        },
+        {
+          "rank": 58,
+          "word": "ἀνακύπτω",
+          "frequency": 650
+        },
+        {
+          "rank": 59,
+          "word": "δέσποτης",
+          "frequency": 650
+        },
+        {
+          "rank": 60,
+          "word": "μέσος",
+          "frequency": 640
+        },
+        {
+          "rank": 61,
+          "word": "ἀδελφός",
+          "frequency": 620
+        },
+        {
+          "rank": 62,
+          "word": "ἡγεμών",
+          "frequency": 620
+        },
+        {
+          "rank": 63,
+          "word": "πλούσιος",
+          "frequency": 620
+        },
+        {
+          "rank": 64,
+          "word": "ἀναβλέπω",
+          "frequency": 600
+        },
+        {
+          "rank": 65,
+          "word": "ἀναλύω",
+          "frequency": 600
+        },
+        {
+          "rank": 66,
+          "word": "ἀναστρέφω",
+          "frequency": 600
+        },
+        {
+          "rank": 67,
+          "word": "ἔρχομαι",
+          "frequency": 600
+        },
+        {
+          "rank": 68,
+          "word": "χρόνιος",
+          "frequency": 600
+        },
+        {
+          "rank": 69,
+          "word": "αἰώνιος",
+          "frequency": 580
+        },
+        {
+          "rank": 70,
+          "word": "ἱερεύς",
+          "frequency": 570
+        },
+        {
+          "rank": 71,
+          "word": "θυγάτηρ",
+          "frequency": 560
+        },
+        {
+          "rank": 72,
+          "word": "χαριτωμένος",
+          "frequency": 560
+        },
+        {
+          "rank": 73,
+          "word": "ἀναμένω",
+          "frequency": 550
+        },
+        {
+          "rank": 74,
+          "word": "ἀνασκοπέω",
+          "frequency": 550
+        },
+        {
+          "rank": 75,
+          "word": "ἀνθρωπος",
+          "frequency": 550
+        },
+        {
+          "rank": 76,
+          "word": "ἀντιλέγω",
+          "frequency": 550
+        },
+        {
+          "rank": 77,
+          "word": "ἀποστολή",
+          "frequency": 550
+        },
+        {
+          "rank": 78,
+          "word": "θέλημα",
+          "frequency": 550
+        },
+        {
+          "rank": 79,
+          "word": "βίαιος",
+          "frequency": 540
+        },
+        {
+          "rank": 80,
+          "word": "λαός",
+          "frequency": 540
+        },
+        {
+          "rank": 81,
+          "word": "πολίτης",
+          "frequency": 540
+        },
+        {
+          "rank": 82,
+          "word": "χριστός",
+          "frequency": 529
+        },
+        {
+          "rank": 83,
+          "word": "ἀρχαῖος",
+          "frequency": 520
+        },
+        {
+          "rank": 84,
+          "word": "δοῦλος",
+          "frequency": 520
+        },
+        {
+          "rank": 85,
+          "word": "ἁμαρτωλός",
+          "frequency": 500
+        },
+        {
+          "rank": 86,
+          "word": "ἀναθάλλω",
+          "frequency": 500
+        },
+        {
+          "rank": 87,
+          "word": "ἀναμιμνήσκω",
+          "frequency": 500
+        },
+        {
+          "rank": 88,
+          "word": "ἀπαγγέλλω",
+          "frequency": 500
+        },
+        {
+          "rank": 89,
+          "word": "παιδίον",
+          "frequency": 500
+        },
+        {
+          "rank": 90,
+          "word": "φιλοσοφία",
+          "frequency": 500
+        },
+        {
+          "rank": 91,
+          "word": "εὐχάριστος",
+          "frequency": 480
+        },
+        {
+          "rank": 92,
+          "word": "πολιτεία",
+          "frequency": 480
+        },
+        {
+          "rank": 93,
+          "word": "ὑποκριτής",
+          "frequency": 480
+        },
+        {
+          "rank": 94,
+          "word": "διάνοια",
+          "frequency": 460
+        },
+        {
+          "rank": 95,
+          "word": "ἀναλίσκω",
+          "frequency": 450
+        },
+        {
+          "rank": 96,
+          "word": "ἀναπείθω",
+          "frequency": 450
+        },
+        {
+          "rank": 97,
+          "word": "ἀπαιτέω",
+          "frequency": 450
+        },
+        {
+          "rank": 98,
+          "word": "διαθήκη",
+          "frequency": 450
+        },
+        {
+          "rank": 99,
+          "word": "ἰατρική",
+          "frequency": 450
+        },
+        {
+          "rank": 100,
+          "word": "ἀρχιερεύς",
+          "frequency": 440
+        }
+      ]
+    },
+    {
+      "batchNumber": 3,
+      "rankRange": [
+        101,
+        150
+      ],
+      "words": [
+        {
+          "rank": 101,
+          "word": "σοφιστής",
+          "frequency": 440
+        },
+        {
+          "rank": 102,
+          "word": "πάντες",
+          "frequency": 420
+        },
+        {
+          "rank": 103,
+          "word": "ἀγαπητός",
+          "frequency": 400
+        },
+        {
+          "rank": 104,
+          "word": "ἀκριβής",
+          "frequency": 400
+        },
+        {
+          "rank": 105,
+          "word": "ἀναπληρόω",
+          "frequency": 400
+        },
+        {
+          "rank": 106,
+          "word": "ἀναπνέω",
+          "frequency": 400
+        },
+        {
+          "rank": 107,
+          "word": "ἀποδείκνυμι",
+          "frequency": 400
+        },
+        {
+          "rank": 108,
+          "word": "ἀποθνήσκω",
+          "frequency": 400
+        },
+        {
+          "rank": 109,
+          "word": "ἀληθινός",
+          "frequency": 380
+        },
+        {
+          "rank": 110,
+          "word": "ἀνθρωπῖνος",
+          "frequency": 380
+        },
+        {
+          "rank": 111,
+          "word": "θελημα",
+          "frequency": 380
+        },
+        {
+          "rank": 112,
+          "word": "ἱερὸν",
+          "frequency": 370
+        },
+        {
+          "rank": 113,
+          "word": "οἰκία",
+          "frequency": 370
+        },
+        {
+          "rank": 114,
+          "word": "ἀγορά",
+          "frequency": 360
+        },
+        {
+          "rank": 115,
+          "word": "ἀνώτερος",
+          "frequency": 360
+        },
+        {
+          "rank": 116,
+          "word": "ὁμοῖος",
+          "frequency": 360
+        },
+        {
+          "rank": 117,
+          "word": "ἀναπτύσσω",
+          "frequency": 350
+        },
+        {
+          "rank": 118,
+          "word": "ἀναστενάζω",
+          "frequency": 350
+        },
+        {
+          "rank": 119,
+          "word": "ἄριστον",
+          "frequency": 350
+        },
+        {
+          "rank": 120,
+          "word": "διδάσκω",
+          "frequency": 350
+        },
+        {
+          "rank": 121,
+          "word": "ἀπαλός",
+          "frequency": 340
+        },
+        {
+          "rank": 122,
+          "word": "διώκτης",
+          "frequency": 340
+        },
+        {
+          "rank": 123,
+          "word": "ἡγεμονία",
+          "frequency": 340
+        },
+        {
+          "rank": 124,
+          "word": "ἐλευθερία",
+          "frequency": 330
+        },
+        {
+          "rank": 125,
+          "word": "ἀπρόσιτος",
+          "frequency": 320
+        },
+        {
+          "rank": 126,
+          "word": "ἀσφάλεια",
+          "frequency": 320
+        },
+        {
+          "rank": 127,
+          "word": "πονηρός",
+          "frequency": 320
+        },
+        {
+          "rank": 128,
+          "word": "ποτήριον",
+          "frequency": 320
+        },
+        {
+          "rank": 129,
+          "word": "ἀνάγκη",
+          "frequency": 310
+        },
+        {
+          "rank": 130,
+          "word": "ἀνατέλλω",
+          "frequency": 300
+        },
+        {
+          "rank": 131,
+          "word": "ἀναφωνέω",
+          "frequency": 300
+        },
+        {
+          "rank": 132,
+          "word": "ἀποκαλύπτω",
+          "frequency": 300
+        },
+        {
+          "rank": 133,
+          "word": "ἀρχαιολογία",
+          "frequency": 300
+        },
+        {
+          "rank": 134,
+          "word": "ἀσφαλής",
+          "frequency": 300
+        },
+        {
+          "rank": 135,
+          "word": "μαρτυρέω",
+          "frequency": 300
+        },
+        {
+          "rank": 136,
+          "word": "χρῖσμα",
+          "frequency": 300
+        },
+        {
+          "rank": 137,
+          "word": "κακόν",
+          "frequency": 290
+        },
+        {
+          "rank": 138,
+          "word": "συνείδησις",
+          "frequency": 290
+        },
+        {
+          "rank": 139,
+          "word": "ἀντίθεσις",
+          "frequency": 280
+        },
+        {
+          "rank": 140,
+          "word": "ἀτελής",
+          "frequency": 280
+        },
+        {
+          "rank": 141,
+          "word": "μὴ",
+          "frequency": 280
+        },
+        {
+          "rank": 142,
+          "word": "παιδεία",
+          "frequency": 280
+        },
+        {
+          "rank": 143,
+          "word": "ἀποστόλος",
+          "frequency": 270
+        },
+        {
+          "rank": 144,
+          "word": "διδαχή",
+          "frequency": 270
+        },
+        {
+          "rank": 145,
+          "word": "μαθητής",
+          "frequency": 261
+        },
+        {
+          "rank": 146,
+          "word": "ἀχρεῖος",
+          "frequency": 260
+        },
+        {
+          "rank": 147,
+          "word": "θεῖος",
+          "frequency": 260
+        },
+        {
+          "rank": 148,
+          "word": "μάχη",
+          "frequency": 260
+        },
+        {
+          "rank": 149,
+          "word": "πάθημα",
+          "frequency": 260
+        },
+        {
+          "rank": 150,
+          "word": "ἀναβαίνω",
+          "frequency": 250
+        }
+      ]
+    },
+    {
+      "batchNumber": 4,
+      "rankRange": [
+        151,
+        200
+      ],
+      "words": [
+        {
+          "rank": 151,
+          "word": "ἀναφέρω",
+          "frequency": 250
+        },
+        {
+          "rank": 152,
+          "word": "θάνατος",
+          "frequency": 250
+        },
+        {
+          "rank": 153,
+          "word": "νίκη",
+          "frequency": 250
+        },
+        {
+          "rank": 154,
+          "word": "μέγας, μεγάλη, μέγα",
+          "frequency": 243
+        },
+        {
+          "rank": 155,
+          "word": "δύνατος",
+          "frequency": 240
+        },
+        {
+          "rank": 156,
+          "word": "ἐλαφρός",
+          "frequency": 240
+        },
+        {
+          "rank": 157,
+          "word": "ἐπιθυμία",
+          "frequency": 240
+        },
+        {
+          "rank": 158,
+          "word": "ὄρος",
+          "frequency": 240
+        },
+        {
+          "rank": 159,
+          "word": "οὐδείς, οὐδεμία, οὐδέν",
+          "frequency": 234
+        },
+        {
+          "rank": 160,
+          "word": "ἅγιος, α, ον",
+          "frequency": 233
+        },
+        {
+          "rank": 161,
+          "word": "ἀποκρίνομαι",
+          "frequency": 231
+        },
+        {
+          "rank": 162,
+          "word": "ὄνομα",
+          "frequency": 231
+        },
+        {
+          "rank": 163,
+          "word": "ἀμπελῶν",
+          "frequency": 230
+        },
+        {
+          "rank": 164,
+          "word": "χρηστότης",
+          "frequency": 230
+        },
+        {
+          "rank": 165,
+          "word": "ἐπιθυμητός",
+          "frequency": 220
+        },
+        {
+          "rank": 166,
+          "word": "θέατρον",
+          "frequency": 220
+        },
+        {
+          "rank": 167,
+          "word": "ἰδιώτης",
+          "frequency": 220
+        },
+        {
+          "rank": 168,
+          "word": "τρυφώδης",
+          "frequency": 220
+        },
+        {
+          "rank": 169,
+          "word": "ὑπό",
+          "frequency": 220
+        },
+        {
+          "rank": 170,
+          "word": "ἐξέρχομαι",
+          "frequency": 218
+        },
+        {
+          "rank": 171,
+          "word": "ἀνήρ, ἀνδρός",
+          "frequency": 216
+        },
+        {
+          "rank": 172,
+          "word": "γυνή, αικός",
+          "frequency": 215
+        },
+        {
+          "rank": 173,
+          "word": "τέ",
+          "frequency": 215
+        },
+        {
+          "rank": 174,
+          "word": "ἀπολογία",
+          "frequency": 210
+        },
+        {
+          "rank": 175,
+          "word": "δύναμαι",
+          "frequency": 210
+        },
+        {
+          "rank": 176,
+          "word": "θέσις",
+          "frequency": 210
+        },
+        {
+          "rank": 177,
+          "word": "θέλω",
+          "frequency": 208
+        },
+        {
+          "rank": 178,
+          "word": "οὕτως",
+          "frequency": 208
+        },
+        {
+          "rank": 179,
+          "word": "ἀναχωρέω",
+          "frequency": 200
+        },
+        {
+          "rank": 180,
+          "word": "ἀπολαμβάνω",
+          "frequency": 200
+        },
+        {
+          "rank": 181,
+          "word": "ἐπιτήδειος",
+          "frequency": 200
+        },
+        {
+          "rank": 182,
+          "word": "θρόισμα",
+          "frequency": 200
+        },
+        {
+          "rank": 183,
+          "word": "ἰδού",
+          "frequency": 200
+        },
+        {
+          "rank": 184,
+          "word": "καταβαίνω",
+          "frequency": 200
+        },
+        {
+          "rank": 185,
+          "word": "πτωχός",
+          "frequency": 200
+        },
+        {
+          "rank": 186,
+          "word": "Ἰουδαῖος, α, ον",
+          "frequency": 195
+        },
+        {
+          "rank": 187,
+          "word": "εἰσέρχομαι",
+          "frequency": 194
+        },
+        {
+          "rank": 188,
+          "word": "παρά",
+          "frequency": 194
+        },
+        {
+          "rank": 189,
+          "word": "κύτος",
+          "frequency": 190
+        },
+        {
+          "rank": 190,
+          "word": "λατρεία",
+          "frequency": 190
+        },
+        {
+          "rank": 191,
+          "word": "καθώς",
+          "frequency": 182
+        },
+        {
+          "rank": 192,
+          "word": "ἀνάληψις",
+          "frequency": 180
+        },
+        {
+          "rank": 193,
+          "word": "ἐξουσία",
+          "frequency": 180
+        },
+        {
+          "rank": 194,
+          "word": "ἐπιχειρητικός",
+          "frequency": 180
+        },
+        {
+          "rank": 195,
+          "word": "εὐγενής",
+          "frequency": 180
+        },
+        {
+          "rank": 196,
+          "word": "μέν",
+          "frequency": 179
+        },
+        {
+          "rank": 197,
+          "word": "χείρ",
+          "frequency": 177
+        },
+        {
+          "rank": 198,
+          "word": "ἄγγελος",
+          "frequency": 175
+        },
+        {
+          "rank": 199,
+          "word": "ὄχλος",
+          "frequency": 175
+        },
+        {
+          "rank": 200,
+          "word": "στράτευμα",
+          "frequency": 170
+        }
+      ]
+    },
+    {
+      "batchNumber": 5,
+      "rankRange": [
+        201,
+        250
+      ],
+      "words": [
+        {
+          "rank": 201,
+          "word": "ἄν",
+          "frequency": 166
+        },
+        {
+          "rank": 202,
+          "word": "ἔθνος",
+          "frequency": 162
+        },
+        {
+          "rank": 203,
+          "word": "πόλις",
+          "frequency": 162
+        },
+        {
+          "rank": 204,
+          "word": "ἀριθμός",
+          "frequency": 160
+        },
+        {
+          "rank": 205,
+          "word": "ἐργατικός",
+          "frequency": 160
+        },
+        {
+          "rank": 206,
+          "word": "σχέσις",
+          "frequency": 160
+        },
+        {
+          "rank": 207,
+          "word": "τότε",
+          "frequency": 160
+        },
+        {
+          "rank": 208,
+          "word": "ἀνδρίζομαι",
+          "frequency": 150
+        },
+        {
+          "rank": 209,
+          "word": "ἀνοίγω",
+          "frequency": 150
+        },
+        {
+          "rank": 210,
+          "word": "ἀπολογέομαι",
+          "frequency": 150
+        },
+        {
+          "rank": 211,
+          "word": "δοξολογία",
+          "frequency": 150
+        },
+        {
+          "rank": 212,
+          "word": "ἴδιον",
+          "frequency": 150
+        },
+        {
+          "rank": 213,
+          "word": "προφήτης",
+          "frequency": 150
+        },
+        {
+          "rank": 214,
+          "word": "σώμα",
+          "frequency": 142
+        },
+        {
+          "rank": 215,
+          "word": "ἐρυθρός",
+          "frequency": 140
+        },
+        {
+          "rank": 216,
+          "word": "λάκκος",
+          "frequency": 140
+        },
+        {
+          "rank": 217,
+          "word": "συμμαχία",
+          "frequency": 140
+        },
+        {
+          "rank": 218,
+          "word": "φανερός",
+          "frequency": 140
+        },
+        {
+          "rank": 219,
+          "word": "ἀποκάλυψις",
+          "frequency": 130
+        },
+        {
+          "rank": 220,
+          "word": "κρατήρ",
+          "frequency": 130
+        },
+        {
+          "rank": 221,
+          "word": "ἐσχάτος",
+          "frequency": 120
+        },
+        {
+          "rank": 222,
+          "word": "ὁδός",
+          "frequency": 120
+        },
+        {
+          "rank": 223,
+          "word": "ἀσκησις",
+          "frequency": 110
+        },
+        {
+          "rank": 224,
+          "word": "ψυχή",
+          "frequency": 105
+        },
+        {
+          "rank": 225,
+          "word": "ἀδικία",
+          "frequency": 100
+        },
+        {
+          "rank": 226,
+          "word": "ἀνέχω",
+          "frequency": 100
+        },
+        {
+          "rank": 227,
+          "word": "ἀποπνίγω",
+          "frequency": 100
+        },
+        {
+          "rank": 228,
+          "word": "γῆ",
+          "frequency": 100
+        },
+        {
+          "rank": 229,
+          "word": "εὐδαίμων",
+          "frequency": 100
+        },
+        {
+          "rank": 230,
+          "word": "κλείω",
+          "frequency": 100
+        },
+        {
+          "rank": 231,
+          "word": "σφαλερός",
+          "frequency": 100
+        },
+        {
+          "rank": 232,
+          "word": "αἴτιος",
+          "frequency": 90
+        },
+        {
+          "rank": 233,
+          "word": "σκληρός",
+          "frequency": 90
+        },
+        {
+          "rank": 234,
+          "word": "εὐεργετικός",
+          "frequency": 80
+        },
+        {
+          "rank": 235,
+          "word": "παράκλησις",
+          "frequency": 80
+        },
+        {
+          "rank": 236,
+          "word": "τὸ ἔργον",
+          "frequency": 80
+        },
+        {
+          "rank": 237,
+          "word": "δικαιοσύνη",
+          "frequency": 77
+        },
+        {
+          "rank": 238,
+          "word": "εὐαγγέλιον",
+          "frequency": 76
+        },
+        {
+          "rank": 239,
+          "word": "ἐντολή",
+          "frequency": 70
+        },
+        {
+          "rank": 240,
+          "word": "κενός",
+          "frequency": 70
+        },
+        {
+          "rank": 241,
+          "word": "κηρύσσω",
+          "frequency": 61
+        },
+        {
+          "rank": 242,
+          "word": "ἀρχή",
+          "frequency": 60
+        },
+        {
+          "rank": 243,
+          "word": "διδάσκαλος",
+          "frequency": 60
+        },
+        {
+          "rank": 244,
+          "word": "δοξάζω",
+          "frequency": 60
+        },
+        {
+          "rank": 245,
+          "word": "εὐκαιρος",
+          "frequency": 60
+        },
+        {
+          "rank": 246,
+          "word": "θαυμάσιος",
+          "frequency": 60
+        },
+        {
+          "rank": 247,
+          "word": "σχῆμα",
+          "frequency": 60
+        },
+        {
+          "rank": 248,
+          "word": "χρηματισμός",
+          "frequency": 60
+        },
+        {
+          "rank": 249,
+          "word": "διό",
+          "frequency": 53
+        },
+        {
+          "rank": 250,
+          "word": "ἐπαγγελία",
+          "frequency": 52
+        }
+      ]
+    },
+    {
+      "batchNumber": 6,
+      "rankRange": [
+        251,
+        300
+      ],
+      "words": [
+        {
+          "rank": 251,
+          "word": "ἔσχατος",
+          "frequency": 52
+        },
+        {
+          "rank": 252,
+          "word": "πείθω",
+          "frequency": 52
+        },
+        {
+          "rank": 253,
+          "word": "σπείρω",
+          "frequency": 52
+        },
+        {
+          "rank": 254,
+          "word": "ἀνθίστημι",
+          "frequency": 50
+        },
+        {
+          "rank": 255,
+          "word": "ἀποστερέω",
+          "frequency": 50
+        },
+        {
+          "rank": 256,
+          "word": "ἁρμονία",
+          "frequency": 50
+        },
+        {
+          "rank": 257,
+          "word": "γλῶσσα",
+          "frequency": 50
+        },
+        {
+          "rank": 258,
+          "word": "γραφή",
+          "frequency": 50
+        },
+        {
+          "rank": 259,
+          "word": "κρείττων",
+          "frequency": 50
+        },
+        {
+          "rank": 260,
+          "word": "τυφλός",
+          "frequency": 50
+        },
+        {
+          "rank": 261,
+          "word": "παραβολή",
+          "frequency": 48
+        },
+        {
+          "rank": 262,
+          "word": "ἀναγινώσκω",
+          "frequency": 45
+        },
+        {
+          "rank": 263,
+          "word": "ἀνταποδίδωμι",
+          "frequency": 45
+        },
+        {
+          "rank": 264,
+          "word": "ἀποτυγχάνω",
+          "frequency": 45
+        },
+        {
+          "rank": 265,
+          "word": "ἀνάστασις",
+          "frequency": 42
+        },
+        {
+          "rank": 266,
+          "word": "γενεά",
+          "frequency": 42
+        },
+        {
+          "rank": 267,
+          "word": "ἀποφεύγω",
+          "frequency": 40
+        },
+        {
+          "rank": 268,
+          "word": "εὐνοϊκός",
+          "frequency": 40
+        },
+        {
+          "rank": 269,
+          "word": "ἀντιστρατεύομαι",
+          "frequency": 35
+        },
+        {
+          "rank": 270,
+          "word": "ἀρπάζω",
+          "frequency": 35
+        },
+        {
+          "rank": 271,
+          "word": "ἐρωτάω",
+          "frequency": 35
+        },
+        {
+          "rank": 272,
+          "word": "διακονέω",
+          "frequency": 34
+        },
+        {
+          "rank": 273,
+          "word": "ὑπομονή",
+          "frequency": 31
+        },
+        {
+          "rank": 274,
+          "word": "ἀπολύω",
+          "frequency": 30
+        },
+        {
+          "rank": 275,
+          "word": "ἀσθενέω",
+          "frequency": 30
+        },
+        {
+          "rank": 276,
+          "word": "ἐλπίζω",
+          "frequency": 30
+        },
+        {
+          "rank": 277,
+          "word": "μαρτυρία",
+          "frequency": 30
+        },
+        {
+          "rank": 278,
+          "word": "φιλέω",
+          "frequency": 30
+        },
+        {
+          "rank": 279,
+          "word": "παρακαλέω",
+          "frequency": 29
+        },
+        {
+          "rank": 280,
+          "word": "ἀτιμάζω",
+          "frequency": 25
+        },
+        {
+          "rank": 281,
+          "word": "σῴζω",
+          "frequency": 25
+        },
+        {
+          "rank": 282,
+          "word": "μετανοέω",
+          "frequency": 24
+        },
+        {
+          "rank": 283,
+          "word": "νοῦς",
+          "frequency": 24
+        },
+        {
+          "rank": 284,
+          "word": "προσκυνέω",
+          "frequency": 24
+        },
+        {
+          "rank": 285,
+          "word": "σωτήρ",
+          "frequency": 24
+        },
+        {
+          "rank": 286,
+          "word": "ἀπαλλάσσω",
+          "frequency": 20
+        },
+        {
+          "rank": 287,
+          "word": "ἀποστρέφω",
+          "frequency": 20
+        },
+        {
+          "rank": 288,
+          "word": "αὐξάνω",
+          "frequency": 20
+        },
+        {
+          "rank": 289,
+          "word": "ἐκλέγω",
+          "frequency": 20
+        },
+        {
+          "rank": 290,
+          "word": "ἐργάζομαι",
+          "frequency": 20
+        },
+        {
+          "rank": 291,
+          "word": "εὐπρεπής",
+          "frequency": 20
+        },
+        {
+          "rank": 292,
+          "word": "κρίσις",
+          "frequency": 20
+        },
+        {
+          "rank": 293,
+          "word": "λατρεύω",
+          "frequency": 20
+        },
+        {
+          "rank": 294,
+          "word": "μοιρα",
+          "frequency": 20
+        },
+        {
+          "rank": 295,
+          "word": "πληρόω",
+          "frequency": 20
+        },
+        {
+          "rank": 296,
+          "word": "χάρισμα",
+          "frequency": 17
+        },
+        {
+          "rank": 297,
+          "word": "ἀπατάω",
+          "frequency": 15
+        },
+        {
+          "rank": 298,
+          "word": "βασανίζω",
+          "frequency": 15
+        },
+        {
+          "rank": 299,
+          "word": "ἐπιστρέφω",
+          "frequency": 15
+        },
+        {
+          "rank": 300,
+          "word": "ὑπακούω",
+          "frequency": 15
+        }
+      ]
+    },
+    {
+      "batchNumber": 7,
+      "rankRange": [
+        301,
+        350
+      ],
+      "words": [
+        {
+          "rank": 301,
+          "word": "ἀνέχομαι",
+          "frequency": 10
+        },
+        {
+          "rank": 302,
+          "word": "ἀπειθέω",
+          "frequency": 10
+        },
+        {
+          "rank": 303,
+          "word": "ἀποκτείνω",
+          "frequency": 10
+        },
+        {
+          "rank": 304,
+          "word": "ἀφίημι",
+          "frequency": 10
+        },
+        {
+          "rank": 305,
+          "word": "βλασφημέω",
+          "frequency": 10
+        },
+        {
+          "rank": 306,
+          "word": "διακρίνω",
+          "frequency": 10
+        },
+        {
+          "rank": 307,
+          "word": "δικαστής",
+          "frequency": 10
+        },
+        {
+          "rank": 308,
+          "word": "δοκιμάζω",
+          "frequency": 10
+        },
+        {
+          "rank": 309,
+          "word": "ἐνδύω",
+          "frequency": 10
+        },
+        {
+          "rank": 310,
+          "word": "ἐξαγοράζω",
+          "frequency": 10
+        },
+        {
+          "rank": 311,
+          "word": "ἐπαγγέλλομαι",
+          "frequency": 10
+        },
+        {
+          "rank": 312,
+          "word": "ἐπιτιμάω",
+          "frequency": 10
+        },
+        {
+          "rank": 313,
+          "word": "θεραπεία",
+          "frequency": 10
+        },
+        {
+          "rank": 314,
+          "word": "καρποφορέω",
+          "frequency": 10
+        },
+        {
+          "rank": 315,
+          "word": "καταγγέλλω",
+          "frequency": 10
+        },
+        {
+          "rank": 316,
+          "word": "κατανοέω",
+          "frequency": 10
+        },
+        {
+          "rank": 317,
+          "word": "καταρτίζω",
+          "frequency": 10
+        },
+        {
+          "rank": 318,
+          "word": "μαρτύριον",
+          "frequency": 10
+        },
+        {
+          "rank": 319,
+          "word": "οἰκοδομέω",
+          "frequency": 10
+        },
+        {
+          "rank": 320,
+          "word": "παραγγέλλω",
+          "frequency": 10
+        },
+        {
+          "rank": 321,
+          "word": "προσκαλέομαι",
+          "frequency": 10
+        },
+        {
+          "rank": 322,
+          "word": "ἁγιασμός",
+          "frequency": 5
+        },
+        {
+          "rank": 323,
+          "word": "ἀπέχω",
+          "frequency": 5
+        },
+        {
+          "rank": 324,
+          "word": "βοάω",
+          "frequency": 5
+        },
+        {
+          "rank": 325,
+          "word": "ζητέω",
+          "frequency": 5
+        },
+        {
+          "rank": 326,
+          "word": "σωφρονέω",
+          "frequency": 5
+        },
+        {
+          "rank": 327,
+          "word": "σωφροσύνη",
+          "frequency": 5
+        },
+        {
+          "rank": 328,
+          "word": "ἀποβάλλω",
+          "frequency": 3
+        },
+        {
+          "rank": 329,
+          "word": "γελάω",
+          "frequency": 3
+        },
+        {
+          "rank": 330,
+          "word": "ἀγαθός",
+          "frequency": 1
+        },
+        {
+          "rank": 331,
+          "word": "ἀγαπάω",
+          "frequency": 1
+        },
+        {
+          "rank": 332,
+          "word": "ἀγάπη",
+          "frequency": 1
+        },
+        {
+          "rank": 333,
+          "word": "ἁγιάζω",
+          "frequency": 1
+        },
+        {
+          "rank": 334,
+          "word": "ἅγιος",
+          "frequency": 1
+        },
+        {
+          "rank": 335,
+          "word": "αἰών",
+          "frequency": 1
+        },
+        {
+          "rank": 336,
+          "word": "ἀκούω",
+          "frequency": 1
+        },
+        {
+          "rank": 337,
+          "word": "ἀλήθεια",
+          "frequency": 1
+        },
+        {
+          "rank": 338,
+          "word": "ἄλλος",
+          "frequency": 1
+        },
+        {
+          "rank": 339,
+          "word": "ἁμαρτία",
+          "frequency": 1
+        },
+        {
+          "rank": 340,
+          "word": "ἄνθρωπος",
+          "frequency": 1
+        },
+        {
+          "rank": 341,
+          "word": "ἄργυρος",
+          "frequency": 1
+        },
+        {
+          "rank": 342,
+          "word": "ἄρτος",
+          "frequency": 1
+        },
+        {
+          "rank": 343,
+          "word": "αὐτός",
+          "frequency": 1
+        },
+        {
+          "rank": 344,
+          "word": "βασιλεία",
+          "frequency": 1
+        },
+        {
+          "rank": 345,
+          "word": "βλέπω",
+          "frequency": 1
+        },
+        {
+          "rank": 346,
+          "word": "γινώσκω",
+          "frequency": 1
+        },
+        {
+          "rank": 347,
+          "word": "γράφω",
+          "frequency": 1
+        },
+        {
+          "rank": 348,
+          "word": "δίδωμι",
+          "frequency": 1
+        },
+        {
+          "rank": 349,
+          "word": "δόλος",
+          "frequency": 1
+        },
+        {
+          "rank": 350,
+          "word": "δόξα",
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "batchNumber": 8,
+      "rankRange": [
+        351,
+        400
+      ],
+      "words": [
+        {
+          "rank": 351,
+          "word": "ἐγείρω",
+          "frequency": 1
+        },
+        {
+          "rank": 352,
+          "word": "εἰρήνη",
+          "frequency": 1
+        },
+        {
+          "rank": 353,
+          "word": "ἕκαστος",
+          "frequency": 1
+        },
+        {
+          "rank": 354,
+          "word": "ἐκκλησία",
+          "frequency": 1
+        },
+        {
+          "rank": 355,
+          "word": "ἐλπίς",
+          "frequency": 1
+        },
+        {
+          "rank": 356,
+          "word": "ἐμός",
+          "frequency": 1
+        },
+        {
+          "rank": 357,
+          "word": "ἔργον",
+          "frequency": 1
+        },
+        {
+          "rank": 358,
+          "word": "εὑρίσκω",
+          "frequency": 1
+        },
+        {
+          "rank": 359,
+          "word": "ἐχθρός",
+          "frequency": 1
+        },
+        {
+          "rank": 360,
+          "word": "ζάω",
+          "frequency": 1
+        },
+        {
+          "rank": 361,
+          "word": "ζωή",
+          "frequency": 1
+        },
+        {
+          "rank": 362,
+          "word": "ἡμέρα",
+          "frequency": 1
+        },
+        {
+          "rank": 363,
+          "word": "θεός",
+          "frequency": 1
+        },
+        {
+          "rank": 364,
+          "word": "ἰσχυρός",
+          "frequency": 1
+        },
+        {
+          "rank": 365,
+          "word": "κακός",
+          "frequency": 1
+        },
+        {
+          "rank": 366,
+          "word": "καλέω",
+          "frequency": 1
+        },
+        {
+          "rank": 367,
+          "word": "καρδία",
+          "frequency": 1
+        },
+        {
+          "rank": 368,
+          "word": "κόσμος",
+          "frequency": 1
+        },
+        {
+          "rank": 369,
+          "word": "κύριος",
+          "frequency": 1
+        },
+        {
+          "rank": 370,
+          "word": "λαλέω",
+          "frequency": 1
+        },
+        {
+          "rank": 371,
+          "word": "λαμβάνω",
+          "frequency": 1
+        },
+        {
+          "rank": 372,
+          "word": "λόγος",
+          "frequency": 1
+        },
+        {
+          "rank": 373,
+          "word": "μακάριος",
+          "frequency": 1
+        },
+        {
+          "rank": 374,
+          "word": "μέγας",
+          "frequency": 1
+        },
+        {
+          "rank": 375,
+          "word": "μένω",
+          "frequency": 1
+        },
+        {
+          "rank": 376,
+          "word": "μικρός",
+          "frequency": 1
+        },
+        {
+          "rank": 377,
+          "word": "νέος",
+          "frequency": 1
+        },
+        {
+          "rank": 378,
+          "word": "νόμος",
+          "frequency": 1
+        },
+        {
+          "rank": 379,
+          "word": "νύξ",
+          "frequency": 1
+        },
+        {
+          "rank": 380,
+          "word": "οἶκος",
+          "frequency": 1
+        },
+        {
+          "rank": 381,
+          "word": "οὐρανός",
+          "frequency": 1
+        },
+        {
+          "rank": 382,
+          "word": "παλαιός",
+          "frequency": 1
+        },
+        {
+          "rank": 383,
+          "word": "πᾶς",
+          "frequency": 1
+        },
+        {
+          "rank": 384,
+          "word": "πατήρ",
+          "frequency": 1
+        },
+        {
+          "rank": 385,
+          "word": "πιστεύω",
+          "frequency": 1
+        },
+        {
+          "rank": 386,
+          "word": "πίστις",
+          "frequency": 1
+        },
+        {
+          "rank": 387,
+          "word": "πιστός",
+          "frequency": 1
+        },
+        {
+          "rank": 388,
+          "word": "πνεῦμα",
+          "frequency": 1
+        },
+        {
+          "rank": 389,
+          "word": "ποιέω",
+          "frequency": 1
+        },
+        {
+          "rank": 390,
+          "word": "πολύς",
+          "frequency": 1
+        },
+        {
+          "rank": 391,
+          "word": "πρώτος",
+          "frequency": 1
+        },
+        {
+          "rank": 392,
+          "word": "σοφία",
+          "frequency": 1
+        },
+        {
+          "rank": 393,
+          "word": "σοφός",
+          "frequency": 1
+        },
+        {
+          "rank": 394,
+          "word": "σωζω",
+          "frequency": 1
+        },
+        {
+          "rank": 395,
+          "word": "σῶμα",
+          "frequency": 1
+        },
+        {
+          "rank": 396,
+          "word": "σωτηρία",
+          "frequency": 1
+        },
+        {
+          "rank": 397,
+          "word": "τέλειος",
+          "frequency": 1
+        },
+        {
+          "rank": 398,
+          "word": "ὕδωρ",
+          "frequency": 1
+        },
+        {
+          "rank": 399,
+          "word": "φῶς",
+          "frequency": 1
+        },
+        {
+          "rank": 400,
+          "word": "χαρά",
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "batchNumber": 9,
+      "rankRange": [
+        401,
+        404
+      ],
+      "words": [
+        {
+          "rank": 401,
+          "word": "χάρις",
+          "frequency": 1
+        },
+        {
+          "rank": 402,
+          "word": "Χριστός",
+          "frequency": 1
+        },
+        {
+          "rank": 403,
+          "word": "χρόνος",
+          "frequency": 1
+        },
+        {
+          "rank": 404,
+          "word": "χρυσός",
+          "frequency": 1
+        }
+      ]
+    }
+  ]
+}

@@ -6,12 +6,6 @@ const DATASETS = [
     summary: 'Top lemmas from the Westcott-Hort Greek New Testament corpus.'
   },
   {
-    id: 'attic',
-    label: 'Attic Greek – 1,000 lemmas',
-    file: 'common-attic-greek-1000.json',
-    summary: 'Attic-targeted lemmas filtered from the Perseus Diogenes analyses.'
-  },
-  {
     id: 'koine-lxx',
     label: 'Koine Greek (LXX) – 1,500 lemmas',
     file: 'common-koine-lxx-greek-1500.json',
@@ -22,6 +16,24 @@ const DATASETS = [
     label: 'Koine Greek (Eusebius) – 1,500 lemmas',
     file: 'common-koine-eusebius-1500.json',
     summary: 'Vocabulary extracted from Eusebius of Caesarea’s Historia Ecclesiastica.'
+  },
+  {
+    id: 'attic',
+    label: 'Attic Greek – 1,000 lemmas',
+    file: 'common-attic-greek-1000.json',
+    summary: 'Attic-targeted lemmas filtered from the Perseus Diogenes analyses.'
+  },
+  {
+    id: 'general',
+    label: 'General Greek Vocabulary – 404 entries',
+    file: 'general-greek-vocabulary.json',
+    summary: 'Legacy mixed-discipline vocabulary collection from the word-bank general list.'
+  },
+  {
+    id: 'dcc-core',
+    label: 'DCC Greek Core – 524 entries',
+    file: 'dcc-greek-core-list.json',
+    summary: 'Dickinson College Commentaries Greek core list with frequency counts.'
   }
 ];
 
