@@ -99,7 +99,7 @@ async function loadDataset(dataset) {
   copyButton.disabled = true;
 
   try {
-    const response = await fetch(`data/${dataset.file}`);
+    const response = await fetch(`vocab-data/${dataset.file}`);
     if (!response.ok) {
       throw new Error(`Failed to load ${dataset.file}`);
     }

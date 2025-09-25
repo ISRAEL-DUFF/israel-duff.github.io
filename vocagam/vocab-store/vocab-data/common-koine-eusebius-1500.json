@@ -1,0 +1,7782 @@
+{
+  "metadata": {
+    "description": "Top 1,500 Koine-era vocabulary items drawn from Eusebius’s Ecclesiastical History (books III–X).",
+    "totalWords": 1500,
+    "batchSize": 50,
+    "source": "Eusebius of Caesarea – Historia Ecclesiastica (Perseus TEI XML)",
+    "tokensCounted": 82763,
+    "generatedAt": "2025-09-25T16:44:13.344Z"
+  },
+  "batches": [
+    {
+      "batchNumber": 1,
+      "rankRange": [
+        1,
+        50
+      ],
+      "words": [
+        {
+          "rank": 1,
+          "word": "καὶ",
+          "frequency": 4808
+        },
+        {
+          "rank": 2,
+          "word": "τῶν",
+          "frequency": 1681
+        },
+        {
+          "rank": 3,
+          "word": "τῆς",
+          "frequency": 1580
+        },
+        {
+          "rank": 4,
+          "word": "τοῦ",
+          "frequency": 1322
+        },
+        {
+          "rank": 5,
+          "word": "τὴν",
+          "frequency": 1236
+        },
+        {
+          "rank": 6,
+          "word": "δὲ",
+          "frequency": 1161
+        },
+        {
+          "rank": 7,
+          "word": "ἐν",
+          "frequency": 970
+        },
+        {
+          "rank": 8,
+          "word": "τὸν",
+          "frequency": 851
+        },
+        {
+          "rank": 9,
+          "word": "τε",
+          "frequency": 825
+        },
+        {
+          "rank": 10,
+          "word": "ὁ",
+          "frequency": 702
+        },
+        {
+          "rank": 11,
+          "word": "τὸ",
+          "frequency": 691
+        },
+        {
+          "rank": 12,
+          "word": "ἐπὶ",
+          "frequency": 647
+        },
+        {
+          "rank": 13,
+          "word": "κατὰ",
+          "frequency": 639
+        },
+        {
+          "rank": 14,
+          "word": "εἰς",
+          "frequency": 626
+        },
+        {
+          "rank": 15,
+          "word": "τὰ",
+          "frequency": 608
+        },
+        {
+          "rank": 16,
+          "word": "μὲν",
+          "frequency": 604
+        },
+        {
+          "rank": 17,
+          "word": "ὡς",
+          "frequency": 576
+        },
+        {
+          "rank": 18,
+          "word": "περὶ",
+          "frequency": 552
+        },
+        {
+          "rank": 19,
+          "word": "τοῖς",
+          "frequency": 546
+        },
+        {
+          "rank": 20,
+          "word": "πρὸς",
+          "frequency": 499
+        },
+        {
+          "rank": 21,
+          "word": "τοὺς",
+          "frequency": 499
+        },
+        {
+          "rank": 22,
+          "word": "τῷ",
+          "frequency": 446
+        },
+        {
+          "rank": 23,
+          "word": "αὐτοῦ",
+          "frequency": 440
+        },
+        {
+          "rank": 24,
+          "word": "τῇ",
+          "frequency": 400
+        },
+        {
+          "rank": 25,
+          "word": "δ",
+          "frequency": 386
+        },
+        {
+          "rank": 26,
+          "word": "τὰς",
+          "frequency": 360
+        },
+        {
+          "rank": 27,
+          "word": "γὰρ",
+          "frequency": 345
+        },
+        {
+          "rank": 28,
+          "word": "διὰ",
+          "frequency": 307
+        },
+        {
+          "rank": 29,
+          "word": "αὐτῶν",
+          "frequency": 276
+        },
+        {
+          "rank": 30,
+          "word": "οἱ",
+          "frequency": 265
+        },
+        {
+          "rank": 31,
+          "word": "αὐτῷ",
+          "frequency": 263
+        },
+        {
+          "rank": 32,
+          "word": "αὐτὸν",
+          "frequency": 255
+        },
+        {
+          "rank": 33,
+          "word": "ἡ",
+          "frequency": 255
+        },
+        {
+          "rank": 34,
+          "word": "μὴ",
+          "frequency": 253
+        },
+        {
+          "rank": 35,
+          "word": "οὐ",
+          "frequency": 230
+        },
+        {
+          "rank": 36,
+          "word": "ταῦτα",
+          "frequency": 228
+        },
+        {
+          "rank": 37,
+          "word": "μετὰ",
+          "frequency": 226
+        },
+        {
+          "rank": 38,
+          "word": "οὖν",
+          "frequency": 211
+        },
+        {
+          "rank": 39,
+          "word": "ἡμῶν",
+          "frequency": 210
+        },
+        {
+          "rank": 40,
+          "word": "αὐτοῖς",
+          "frequency": 207
+        },
+        {
+          "rank": 41,
+          "word": "δὴ",
+          "frequency": 206
+        },
+        {
+          "rank": 42,
+          "word": "ἦν",
+          "frequency": 203
+        },
+        {
+          "rank": 43,
+          "word": "ἐκ",
+          "frequency": 202
+        },
+        {
+          "rank": 44,
+          "word": "ταῖς",
+          "frequency": 202
+        },
+        {
+          "rank": 45,
+          "word": "ἀπὸ",
+          "frequency": 201
+        },
+        {
+          "rank": 46,
+          "word": "καθ",
+          "frequency": 200
+        },
+        {
+          "rank": 47,
+          "word": "ὧν",
+          "frequency": 196
+        },
+        {
+          "rank": 48,
+          "word": "ἂν",
+          "frequency": 194
+        },
+        {
+          "rank": 49,
+          "word": "παρὰ",
+          "frequency": 190
+        },
+        {
+          "rank": 50,
+          "word": "ἀλλὰ",
+          "frequency": 188
+        }
+      ]
+    },
+    {
+      "batchNumber": 2,
+      "rankRange": [
+        51,
+        100
+      ],
+      "words": [
+        {
+          "rank": 51,
+          "word": "οὐκ",
+          "frequency": 183
+        },
+        {
+          "rank": 52,
+          "word": "ἐξ",
+          "frequency": 173
+        },
+        {
+          "rank": 53,
+          "word": "ὑπὸ",
+          "frequency": 173
+        },
+        {
+          "rank": 54,
+          "word": "θεοῦ",
+          "frequency": 170
+        },
+        {
+          "rank": 55,
+          "word": "κατ",
+          "frequency": 164
+        },
+        {
+          "rank": 56,
+          "word": "γε",
+          "frequency": 162
+        },
+        {
+          "rank": 57,
+          "word": "ἡμᾶς",
+          "frequency": 161
+        },
+        {
+          "rank": 58,
+          "word": "ὅτι",
+          "frequency": 153
+        },
+        {
+          "rank": 59,
+          "word": "τούτοις",
+          "frequency": 153
+        },
+        {
+          "rank": 60,
+          "word": "τις",
+          "frequency": 152
+        },
+        {
+          "rank": 61,
+          "word": "ἔτι",
+          "frequency": 150
+        },
+        {
+          "rank": 62,
+          "word": "αὐτὸς",
+          "frequency": 147
+        },
+        {
+          "rank": 63,
+          "word": "δἰ",
+          "frequency": 147
+        },
+        {
+          "rank": 64,
+          "word": "ἡμῖν",
+          "frequency": 147
+        },
+        {
+          "rank": 65,
+          "word": "τούτων",
+          "frequency": 147
+        },
+        {
+          "rank": 66,
+          "word": "ἐκκλησίας",
+          "frequency": 139
+        },
+        {
+          "rank": 67,
+          "word": "τοῦτο",
+          "frequency": 138
+        },
+        {
+          "rank": 68,
+          "word": "ἢ",
+          "frequency": 133
+        },
+        {
+          "rank": 69,
+          "word": "ἤδη",
+          "frequency": 131
+        },
+        {
+          "rank": 70,
+          "word": "᾿",
+          "frequency": 124
+        },
+        {
+          "rank": 71,
+          "word": "ἀλλ",
+          "frequency": 122
+        },
+        {
+          "rank": 72,
+          "word": "παῤ",
+          "frequency": 115
+        },
+        {
+          "rank": 73,
+          "word": "τότε",
+          "frequency": 112
+        },
+        {
+          "rank": 74,
+          "word": "νῦν",
+          "frequency": 111
+        },
+        {
+          "rank": 75,
+          "word": "αὐτοὺς",
+          "frequency": 109
+        },
+        {
+          "rank": 76,
+          "word": "εἰ",
+          "frequency": 107
+        },
+        {
+          "rank": 77,
+          "word": "μὴν",
+          "frequency": 107
+        },
+        {
+          "rank": 78,
+          "word": "ὑπὲρ",
+          "frequency": 107
+        },
+        {
+          "rank": 79,
+          "word": "πάντα",
+          "frequency": 106
+        },
+        {
+          "rank": 80,
+          "word": "χριστοῦ",
+          "frequency": 104
+        },
+        {
+          "rank": 81,
+          "word": "εἶναι",
+          "frequency": 101
+        },
+        {
+          "rank": 82,
+          "word": "πάντων",
+          "frequency": 101
+        },
+        {
+          "rank": 83,
+          "word": "ῥωμαίων",
+          "frequency": 99
+        },
+        {
+          "rank": 84,
+          "word": "ὃν",
+          "frequency": 95
+        },
+        {
+          "rank": 85,
+          "word": "τι",
+          "frequency": 95
+        },
+        {
+          "rank": 86,
+          "word": "μόνον",
+          "frequency": 94
+        },
+        {
+          "rank": 87,
+          "word": "οἳ",
+          "frequency": 93
+        },
+        {
+          "rank": 88,
+          "word": "ἐπ",
+          "frequency": 92
+        },
+        {
+          "rank": 89,
+          "word": "ὃ",
+          "frequency": 87
+        },
+        {
+          "rank": 90,
+          "word": "οἷς",
+          "frequency": 87
+        },
+        {
+          "rank": 91,
+          "word": "πρὸ",
+          "frequency": 87
+        },
+        {
+          "rank": 92,
+          "word": "τοῦτον",
+          "frequency": 86
+        },
+        {
+          "rank": 93,
+          "word": "αὐτῆς",
+          "frequency": 85
+        },
+        {
+          "rank": 94,
+          "word": "δέ",
+          "frequency": 83
+        },
+        {
+          "rank": 95,
+          "word": "οὐδὲ",
+          "frequency": 82
+        },
+        {
+          "rank": 96,
+          "word": "τούτου",
+          "frequency": 82
+        },
+        {
+          "rank": 97,
+          "word": "οὕτως",
+          "frequency": 81
+        },
+        {
+          "rank": 98,
+          "word": "κυρίου",
+          "frequency": 77
+        },
+        {
+          "rank": 99,
+          "word": "πάλιν",
+          "frequency": 77
+        },
+        {
+          "rank": 100,
+          "word": "ἐφ",
+          "frequency": 76
+        }
+      ]
+    },
+    {
+      "batchNumber": 3,
+      "rankRange": [
+        101,
+        150
+      ],
+      "words": [
+        {
+          "rank": 101,
+          "word": "οὗτος",
+          "frequency": 76
+        },
+        {
+          "rank": 102,
+          "word": "πρότερον",
+          "frequency": 76
+        },
+        {
+          "rank": 103,
+          "word": "ἀποστόλων",
+          "frequency": 74
+        },
+        {
+          "rank": 104,
+          "word": "μάλιστα",
+          "frequency": 73
+        },
+        {
+          "rank": 105,
+          "word": "ὅπως",
+          "frequency": 73
+        },
+        {
+          "rank": 106,
+          "word": "ἣν",
+          "frequency": 72
+        },
+        {
+          "rank": 107,
+          "word": "αὖθις",
+          "frequency": 71
+        },
+        {
+          "rank": 108,
+          "word": "λόγος",
+          "frequency": 70
+        },
+        {
+          "rank": 109,
+          "word": "τούτῳ",
+          "frequency": 70
+        },
+        {
+          "rank": 110,
+          "word": "ἅμα",
+          "frequency": 69
+        },
+        {
+          "rank": 111,
+          "word": "λόγον",
+          "frequency": 68
+        },
+        {
+          "rank": 112,
+          "word": "μηδὲ",
+          "frequency": 68
+        },
+        {
+          "rank": 113,
+          "word": "τρόπον",
+          "frequency": 68
+        },
+        {
+          "rank": 114,
+          "word": "σὺν",
+          "frequency": 66
+        },
+        {
+          "rank": 115,
+          "word": "ὥσπερ",
+          "frequency": 64
+        },
+        {
+          "rank": 116,
+          "word": "αὐτὴν",
+          "frequency": 63
+        },
+        {
+          "rank": 117,
+          "word": "γοῦν",
+          "frequency": 62
+        },
+        {
+          "rank": 118,
+          "word": "μᾶλλον",
+          "frequency": 62
+        },
+        {
+          "rank": 119,
+          "word": "πίστεως",
+          "frequency": 62
+        },
+        {
+          "rank": 120,
+          "word": "ἧς",
+          "frequency": 61
+        },
+        {
+          "rank": 121,
+          "word": "ὃς",
+          "frequency": 61
+        },
+        {
+          "rank": 122,
+          "word": "οὗ",
+          "frequency": 60
+        },
+        {
+          "rank": 123,
+          "word": "οὐδ",
+          "frequency": 60
+        },
+        {
+          "rank": 124,
+          "word": "πρῶτον",
+          "frequency": 60
+        },
+        {
+          "rank": 125,
+          "word": "ἐπίσκοπος",
+          "frequency": 59
+        },
+        {
+          "rank": 126,
+          "word": "τινα",
+          "frequency": 59
+        },
+        {
+          "rank": 127,
+          "word": "λέγων",
+          "frequency": 58
+        },
+        {
+          "rank": 128,
+          "word": "μήτε",
+          "frequency": 58
+        },
+        {
+          "rank": 129,
+          "word": "οὔτε",
+          "frequency": 57
+        },
+        {
+          "rank": 130,
+          "word": "ἀδελφῶν",
+          "frequency": 56
+        },
+        {
+          "rank": 131,
+          "word": "οὐχ",
+          "frequency": 56
+        },
+        {
+          "rank": 132,
+          "word": "ὑπ",
+          "frequency": 56
+        },
+        {
+          "rank": 133,
+          "word": "ᾧ",
+          "frequency": 56
+        },
+        {
+          "rank": 134,
+          "word": "θεὸν",
+          "frequency": 55
+        },
+        {
+          "rank": 135,
+          "word": "μέχρι",
+          "frequency": 53
+        },
+        {
+          "rank": 136,
+          "word": "ἑαυτὸν",
+          "frequency": 52
+        },
+        {
+          "rank": 137,
+          "word": "ἔτεσιν",
+          "frequency": 52
+        },
+        {
+          "rank": 138,
+          "word": "ὥστε",
+          "frequency": 52
+        },
+        {
+          "rank": 139,
+          "word": "διαδέχεται",
+          "frequency": 51
+        },
+        {
+          "rank": 140,
+          "word": "ἵνα",
+          "frequency": 51
+        },
+        {
+          "rank": 141,
+          "word": "μοι",
+          "frequency": 51
+        },
+        {
+          "rank": 142,
+          "word": "οἷα",
+          "frequency": 51
+        },
+        {
+          "rank": 143,
+          "word": "χριστιανῶν",
+          "frequency": 51
+        },
+        {
+          "rank": 144,
+          "word": "πάσης",
+          "frequency": 50
+        },
+        {
+          "rank": 145,
+          "word": "ἐκκλησιῶν",
+          "frequency": 49
+        },
+        {
+          "rank": 146,
+          "word": "πάντας",
+          "frequency": 49
+        },
+        {
+          "rank": 147,
+          "word": "χρόνον",
+          "frequency": 49
+        },
+        {
+          "rank": 148,
+          "word": "ἐστιν",
+          "frequency": 48
+        },
+        {
+          "rank": 149,
+          "word": "λόγου",
+          "frequency": 48
+        },
+        {
+          "rank": 150,
+          "word": "πᾶσιν",
+          "frequency": 48
+        }
+      ]
+    },
+    {
+      "batchNumber": 4,
+      "rankRange": [
+        151,
+        200
+      ],
+      "words": [
+        {
+          "rank": 151,
+          "word": "ᾗ",
+          "frequency": 47
+        },
+        {
+          "rank": 152,
+          "word": "μεθ",
+          "frequency": 47
+        },
+        {
+          "rank": 153,
+          "word": "οὓς",
+          "frequency": 47
+        },
+        {
+          "rank": 154,
+          "word": "παντὸς",
+          "frequency": 47
+        },
+        {
+          "rank": 155,
+          "word": "χριστὸν",
+          "frequency": 47
+        },
+        {
+          "rank": 156,
+          "word": "καί",
+          "frequency": 46
+        },
+        {
+          "rank": 157,
+          "word": "με",
+          "frequency": 46
+        },
+        {
+          "rank": 158,
+          "word": "πόλιν",
+          "frequency": 46
+        },
+        {
+          "rank": 159,
+          "word": "σωτῆρος",
+          "frequency": 46
+        },
+        {
+          "rank": 160,
+          "word": "τί",
+          "frequency": 46
+        },
+        {
+          "rank": 161,
+          "word": "ἃ",
+          "frequency": 45
+        },
+        {
+          "rank": 162,
+          "word": "βίου",
+          "frequency": 45
+        },
+        {
+          "rank": 163,
+          "word": "δύο",
+          "frequency": 45
+        },
+        {
+          "rank": 164,
+          "word": "πᾶσαν",
+          "frequency": 45
+        },
+        {
+          "rank": 165,
+          "word": "πόλεως",
+          "frequency": 45
+        },
+        {
+          "rank": 166,
+          "word": "ἰωάννου",
+          "frequency": 44
+        },
+        {
+          "rank": 167,
+          "word": "πάλαι",
+          "frequency": 44
+        },
+        {
+          "rank": 168,
+          "word": "παροικίας",
+          "frequency": 44
+        },
+        {
+          "rank": 169,
+          "word": "σου",
+          "frequency": 44
+        },
+        {
+          "rank": 170,
+          "word": "ἀνθρώπων",
+          "frequency": 43
+        },
+        {
+          "rank": 171,
+          "word": "λόγῳ",
+          "frequency": 43
+        },
+        {
+          "rank": 172,
+          "word": "ῥώμης",
+          "frequency": 43
+        },
+        {
+          "rank": 173,
+          "word": "ταύτην",
+          "frequency": 43
+        },
+        {
+          "rank": 174,
+          "word": "ὅσα",
+          "frequency": 42
+        },
+        {
+          "rank": 175,
+          "word": "αἱρέσεως",
+          "frequency": 41
+        },
+        {
+          "rank": 176,
+          "word": "αὐτὸ",
+          "frequency": 41
+        },
+        {
+          "rank": 177,
+          "word": "ἑαυτοῦ",
+          "frequency": 41
+        },
+        {
+          "rank": 178,
+          "word": "πς",
+          "frequency": 41
+        },
+        {
+          "rank": 179,
+          "word": "βασιλείας",
+          "frequency": 40
+        },
+        {
+          "rank": 180,
+          "word": "γράφει",
+          "frequency": 40
+        },
+        {
+          "rank": 181,
+          "word": "εἶτα",
+          "frequency": 40
+        },
+        {
+          "rank": 182,
+          "word": "ἐπισκόπων",
+          "frequency": 40
+        },
+        {
+          "rank": 183,
+          "word": "λόγων",
+          "frequency": 40
+        },
+        {
+          "rank": 184,
+          "word": "μετ",
+          "frequency": 40
+        },
+        {
+          "rank": 185,
+          "word": "φησιν",
+          "frequency": 40
+        },
+        {
+          "rank": 186,
+          "word": "αἱ",
+          "frequency": 39
+        },
+        {
+          "rank": 187,
+          "word": "οὕτω",
+          "frequency": 39
+        },
+        {
+          "rank": 188,
+          "word": "πολλοῖς",
+          "frequency": 39
+        },
+        {
+          "rank": 189,
+          "word": "ἀπ",
+          "frequency": 38
+        },
+        {
+          "rank": 190,
+          "word": "αὐτόθι",
+          "frequency": 38
+        },
+        {
+          "rank": 191,
+          "word": "ἐπισκοπὴν",
+          "frequency": 38
+        },
+        {
+          "rank": 192,
+          "word": "ἐπιστολῆς",
+          "frequency": 38
+        },
+        {
+          "rank": 193,
+          "word": "ὁμοῦ",
+          "frequency": 38
+        },
+        {
+          "rank": 194,
+          "word": "πάντες",
+          "frequency": 38
+        },
+        {
+          "rank": 195,
+          "word": "πολὺ",
+          "frequency": 38
+        },
+        {
+          "rank": 196,
+          "word": "σώματος",
+          "frequency": 38
+        },
+        {
+          "rank": 197,
+          "word": "τούτους",
+          "frequency": 38
+        },
+        {
+          "rank": 198,
+          "word": "ἄλλων",
+          "frequency": 37
+        },
+        {
+          "rank": 199,
+          "word": "διωγμοῦ",
+          "frequency": 37
+        },
+        {
+          "rank": 200,
+          "word": "ιρεν",
+          "frequency": 37
+        }
+      ]
+    },
+    {
+      "batchNumber": 5,
+      "rankRange": [
+        201,
+        250
+      ],
+      "words": [
+        {
+          "rank": 201,
+          "word": "τινες",
+          "frequency": 37
+        },
+        {
+          "rank": 202,
+          "word": "ἄρα",
+          "frequency": 36
+        },
+        {
+          "rank": 203,
+          "word": "αὐτὰ",
+          "frequency": 36
+        },
+        {
+          "rank": 204,
+          "word": "γενέσθαι",
+          "frequency": 36
+        },
+        {
+          "rank": 205,
+          "word": "γῆς",
+          "frequency": 36
+        },
+        {
+          "rank": 206,
+          "word": "ἰουδαίων",
+          "frequency": 36
+        },
+        {
+          "rank": 207,
+          "word": "μαρτύρων",
+          "frequency": 36
+        },
+        {
+          "rank": 208,
+          "word": "μηδὲν",
+          "frequency": 36
+        },
+        {
+          "rank": 209,
+          "word": "οην",
+          "frequency": 36
+        },
+        {
+          "rank": 210,
+          "word": "ὁμοίως",
+          "frequency": 36
+        },
+        {
+          "rank": 211,
+          "word": "ταύτης",
+          "frequency": 36
+        },
+        {
+          "rank": 212,
+          "word": "ἄλλα",
+          "frequency": 35
+        },
+        {
+          "rank": 213,
+          "word": "ἁπάντων",
+          "frequency": 35
+        },
+        {
+          "rank": 214,
+          "word": "ἐθνῶν",
+          "frequency": 35
+        },
+        {
+          "rank": 215,
+          "word": "εἰπεῖν",
+          "frequency": 35
+        },
+        {
+          "rank": 216,
+          "word": "ἔστιν",
+          "frequency": 35
+        },
+        {
+          "rank": 217,
+          "word": "εὐσεβείας",
+          "frequency": 35
+        },
+        {
+          "rank": 218,
+          "word": "ματτ",
+          "frequency": 35
+        },
+        {
+          "rank": 219,
+          "word": "ξορ",
+          "frequency": 35
+        },
+        {
+          "rank": 220,
+          "word": "οὐδὲν",
+          "frequency": 35
+        },
+        {
+          "rank": 221,
+          "word": "γέ",
+          "frequency": 34
+        },
+        {
+          "rank": 222,
+          "word": "δῆτα",
+          "frequency": 34
+        },
+        {
+          "rank": 223,
+          "word": "διονύσιος",
+          "frequency": 34
+        },
+        {
+          "rank": 224,
+          "word": "ὅτε",
+          "frequency": 34
+        },
+        {
+          "rank": 225,
+          "word": "ταύτῃ",
+          "frequency": 34
+        },
+        {
+          "rank": 226,
+          "word": "τίς",
+          "frequency": 34
+        },
+        {
+          "rank": 227,
+          "word": "τοιαῦτα",
+          "frequency": 34
+        },
+        {
+          "rank": 228,
+          "word": "τόπον",
+          "frequency": 34
+        },
+        {
+          "rank": 229,
+          "word": "αὐτῇ",
+          "frequency": 33
+        },
+        {
+          "rank": 230,
+          "word": "βίον",
+          "frequency": 33
+        },
+        {
+          "rank": 231,
+          "word": "γραφῆς",
+          "frequency": 33
+        },
+        {
+          "rank": 232,
+          "word": "δεῖν",
+          "frequency": 33
+        },
+        {
+          "rank": 233,
+          "word": "μηδ",
+          "frequency": 33
+        },
+        {
+          "rank": 234,
+          "word": "ὄντα",
+          "frequency": 33
+        },
+        {
+          "rank": 235,
+          "word": "πνεύματος",
+          "frequency": 33
+        },
+        {
+          "rank": 236,
+          "word": "τοι",
+          "frequency": 33
+        },
+        {
+          "rank": 237,
+          "word": "ἀμφὶ",
+          "frequency": 32
+        },
+        {
+          "rank": 238,
+          "word": "ἑξῆς",
+          "frequency": 32
+        },
+        {
+          "rank": 239,
+          "word": "ἰησοῦ",
+          "frequency": 32
+        },
+        {
+          "rank": 240,
+          "word": "μέν",
+          "frequency": 32
+        },
+        {
+          "rank": 241,
+          "word": "μνημονεύει",
+          "frequency": 32
+        },
+        {
+          "rank": 242,
+          "word": "ἀλεξάνδρειαν",
+          "frequency": 31
+        },
+        {
+          "rank": 243,
+          "word": "ἄλλοι",
+          "frequency": 31
+        },
+        {
+          "rank": 244,
+          "word": "εἴ",
+          "frequency": 31
+        },
+        {
+          "rank": 245,
+          "word": "ἡμέρας",
+          "frequency": 31
+        },
+        {
+          "rank": 246,
+          "word": "ἱστορεῖ",
+          "frequency": 31
+        },
+        {
+          "rank": 247,
+          "word": "λέγειν",
+          "frequency": 31
+        },
+        {
+          "rank": 248,
+          "word": "λοιπῶν",
+          "frequency": 31
+        },
+        {
+          "rank": 249,
+          "word": "ὄνομα",
+          "frequency": 31
+        },
+        {
+          "rank": 250,
+          "word": "σπουδῆς",
+          "frequency": 31
+        }
+      ]
+    },
+    {
+      "batchNumber": 6,
+      "rankRange": [
+        251,
+        300
+      ],
+      "words": [
+        {
+          "rank": 251,
+          "word": "ἐκκλησίαν",
+          "frequency": 30
+        },
+        {
+          "rank": 252,
+          "word": "εὐαγγέλιον",
+          "frequency": 30
+        },
+        {
+          "rank": 253,
+          "word": "παύλου",
+          "frequency": 30
+        },
+        {
+          "rank": 254,
+          "word": "πλῆθος",
+          "frequency": 30
+        },
+        {
+          "rank": 255,
+          "word": "πρόσθεν",
+          "frequency": 30
+        },
+        {
+          "rank": 256,
+          "word": "σε",
+          "frequency": 30
+        },
+        {
+          "rank": 257,
+          "word": "ὑμῶν",
+          "frequency": 30
+        },
+        {
+          "rank": 258,
+          "word": "αξτς",
+          "frequency": 29
+        },
+        {
+          "rank": 259,
+          "word": "ἀρχῆς",
+          "frequency": 29
+        },
+        {
+          "rank": 260,
+          "word": "ἐγὼ",
+          "frequency": 29
+        },
+        {
+          "rank": 261,
+          "word": "εἴη",
+          "frequency": 29
+        },
+        {
+          "rank": 262,
+          "word": "εἰρήνης",
+          "frequency": 29
+        },
+        {
+          "rank": 263,
+          "word": "ἐκκλησίᾳ",
+          "frequency": 29
+        },
+        {
+          "rank": 264,
+          "word": "ἔνθα",
+          "frequency": 29
+        },
+        {
+          "rank": 265,
+          "word": "ἡμέραν",
+          "frequency": 29
+        },
+        {
+          "rank": 266,
+          "word": "θάνατον",
+          "frequency": 29
+        },
+        {
+          "rank": 267,
+          "word": "ἱστορίας",
+          "frequency": 29
+        },
+        {
+          "rank": 268,
+          "word": "οὗτοι",
+          "frequency": 29
+        },
+        {
+          "rank": 269,
+          "word": "τινας",
+          "frequency": 29
+        },
+        {
+          "rank": 270,
+          "word": "τινος",
+          "frequency": 29
+        },
+        {
+          "rank": 271,
+          "word": "ὑμῖν",
+          "frequency": 29
+        },
+        {
+          "rank": 272,
+          "word": "ἀληθείας",
+          "frequency": 28
+        },
+        {
+          "rank": 273,
+          "word": "ἀρχὴν",
+          "frequency": 28
+        },
+        {
+          "rank": 274,
+          "word": "γενόμενος",
+          "frequency": 28
+        },
+        {
+          "rank": 275,
+          "word": "γραφῶν",
+          "frequency": 28
+        },
+        {
+          "rank": 276,
+          "word": "εἰρηναῖος",
+          "frequency": 28
+        },
+        {
+          "rank": 277,
+          "word": "ἐπισκοπῆς",
+          "frequency": 28
+        },
+        {
+          "rank": 278,
+          "word": "ἐπίσκοπον",
+          "frequency": 28
+        },
+        {
+          "rank": 279,
+          "word": "ἔτος",
+          "frequency": 28
+        },
+        {
+          "rank": 280,
+          "word": "ξφ",
+          "frequency": 28
+        },
+        {
+          "rank": 281,
+          "word": "ὅλων",
+          "frequency": 28
+        },
+        {
+          "rank": 282,
+          "word": "πᾶν",
+          "frequency": 28
+        },
+        {
+          "rank": 283,
+          "word": "τιμ",
+          "frequency": 28
+        },
+        {
+          "rank": 284,
+          "word": "ἀθρόως",
+          "frequency": 27
+        },
+        {
+          "rank": 285,
+          "word": "ἀλεξανδρείας",
+          "frequency": 27
+        },
+        {
+          "rank": 286,
+          "word": "γέγονεν",
+          "frequency": 27
+        },
+        {
+          "rank": 287,
+          "word": "γραφῇ",
+          "frequency": 27
+        },
+        {
+          "rank": 288,
+          "word": "ἐκείνου",
+          "frequency": 27
+        },
+        {
+          "rank": 289,
+          "word": "ἐπεὶ",
+          "frequency": 27
+        },
+        {
+          "rank": 290,
+          "word": "θεῖον",
+          "frequency": 27
+        },
+        {
+          "rank": 291,
+          "word": "ὅθεν",
+          "frequency": 27
+        },
+        {
+          "rank": 292,
+          "word": "οὐχὶ",
+          "frequency": 27
+        },
+        {
+          "rank": 293,
+          "word": "πάσχα",
+          "frequency": 27
+        },
+        {
+          "rank": 294,
+          "word": "πρῶτος",
+          "frequency": 27
+        },
+        {
+          "rank": 295,
+          "word": "φέρεται",
+          "frequency": 27
+        },
+        {
+          "rank": 296,
+          "word": "ἀνδρῶν",
+          "frequency": 26
+        },
+        {
+          "rank": 297,
+          "word": "ἃς",
+          "frequency": 26
+        },
+        {
+          "rank": 298,
+          "word": "γεγονέναι",
+          "frequency": 26
+        },
+        {
+          "rank": 299,
+          "word": "ἑαυτῶν",
+          "frequency": 26
+        },
+        {
+          "rank": 300,
+          "word": "ἐπειδὴ",
+          "frequency": 26
+        }
+      ]
+    },
+    {
+      "batchNumber": 7,
+      "rankRange": [
+        301,
+        350
+      ],
+      "words": [
+        {
+          "rank": 301,
+          "word": "θεὸς",
+          "frequency": 26
+        },
+        {
+          "rank": 302,
+          "word": "θεῷ",
+          "frequency": 26
+        },
+        {
+          "rank": 303,
+          "word": "καιρὸν",
+          "frequency": 26
+        },
+        {
+          "rank": 304,
+          "word": "κύριος",
+          "frequency": 26
+        },
+        {
+          "rank": 305,
+          "word": "μου",
+          "frequency": 26
+        },
+        {
+          "rank": 306,
+          "word": "σοι",
+          "frequency": 26
+        },
+        {
+          "rank": 307,
+          "word": "τοτὲ",
+          "frequency": 26
+        },
+        {
+          "rank": 308,
+          "word": "ὢν",
+          "frequency": 26
+        },
+        {
+          "rank": 309,
+          "word": "ἀσίας",
+          "frequency": 25
+        },
+        {
+          "rank": 310,
+          "word": "β",
+          "frequency": 25
+        },
+        {
+          "rank": 311,
+          "word": "δεῖ",
+          "frequency": 25
+        },
+        {
+          "rank": 312,
+          "word": "ἕνεκα",
+          "frequency": 25
+        },
+        {
+          "rank": 313,
+          "word": "ἐστὶν",
+          "frequency": 25
+        },
+        {
+          "rank": 314,
+          "word": "ἕτερα",
+          "frequency": 25
+        },
+        {
+          "rank": 315,
+          "word": "ἔχει",
+          "frequency": 25
+        },
+        {
+          "rank": 316,
+          "word": "ἡμεῖς",
+          "frequency": 25
+        },
+        {
+          "rank": 317,
+          "word": "θείας",
+          "frequency": 25
+        },
+        {
+          "rank": 318,
+          "word": "ις",
+          "frequency": 25
+        },
+        {
+          "rank": 319,
+          "word": "κύριον",
+          "frequency": 25
+        },
+        {
+          "rank": 320,
+          "word": "μίαν",
+          "frequency": 25
+        },
+        {
+          "rank": 321,
+          "word": "ὅ",
+          "frequency": 25
+        },
+        {
+          "rank": 322,
+          "word": "ὅσον",
+          "frequency": 25
+        },
+        {
+          "rank": 323,
+          "word": "πέτρου",
+          "frequency": 25
+        },
+        {
+          "rank": 324,
+          "word": "πλείους",
+          "frequency": 25
+        },
+        {
+          "rank": 325,
+          "word": "ποτὲ",
+          "frequency": 25
+        },
+        {
+          "rank": 326,
+          "word": "πως",
+          "frequency": 25
+        },
+        {
+          "rank": 327,
+          "word": "ρεϝ",
+          "frequency": 25
+        },
+        {
+          "rank": 328,
+          "word": "σωτηρίας",
+          "frequency": 25
+        },
+        {
+          "rank": 329,
+          "word": "γένος",
+          "frequency": 24
+        },
+        {
+          "rank": 330,
+          "word": "δέκα",
+          "frequency": 24
+        },
+        {
+          "rank": 331,
+          "word": "ἕνεκεν",
+          "frequency": 24
+        },
+        {
+          "rank": 332,
+          "word": "ι",
+          "frequency": 24
+        },
+        {
+          "rank": 333,
+          "word": "πατρὸς",
+          "frequency": 24
+        },
+        {
+          "rank": 334,
+          "word": "τέλος",
+          "frequency": 24
+        },
+        {
+          "rank": 335,
+          "word": "τῇδε",
+          "frequency": 24
+        },
+        {
+          "rank": 336,
+          "word": "τινὰ",
+          "frequency": 24
+        },
+        {
+          "rank": 337,
+          "word": "χρόνους",
+          "frequency": 24
+        },
+        {
+          "rank": 338,
+          "word": "ψυχῆς",
+          "frequency": 24
+        },
+        {
+          "rank": 339,
+          "word": "ἀεὶ",
+          "frequency": 23
+        },
+        {
+          "rank": 340,
+          "word": "ἀνὴρ",
+          "frequency": 23
+        },
+        {
+          "rank": 341,
+          "word": "ἀνθρώποις",
+          "frequency": 23
+        },
+        {
+          "rank": 342,
+          "word": "αὐτόν",
+          "frequency": 23
+        },
+        {
+          "rank": 343,
+          "word": "ἑαυτῷ",
+          "frequency": 23
+        },
+        {
+          "rank": 344,
+          "word": "εἶπεν",
+          "frequency": 23
+        },
+        {
+          "rank": 345,
+          "word": "ἑτέρων",
+          "frequency": 23
+        },
+        {
+          "rank": 346,
+          "word": "ηεβ",
+          "frequency": 23
+        },
+        {
+          "rank": 347,
+          "word": "ἰωάννην",
+          "frequency": 23
+        },
+        {
+          "rank": 348,
+          "word": "κλήμεντος",
+          "frequency": 23
+        },
+        {
+          "rank": 349,
+          "word": "λοιπὸν",
+          "frequency": 23
+        },
+        {
+          "rank": 350,
+          "word": "μνήμην",
+          "frequency": 23
+        }
+      ]
+    },
+    {
+      "batchNumber": 8,
+      "rankRange": [
+        351,
+        400
+      ],
+      "words": [
+        {
+          "rank": 351,
+          "word": "πᾶσι",
+          "frequency": 23
+        },
+        {
+          "rank": 352,
+          "word": "πεποίηται",
+          "frequency": 23
+        },
+        {
+          "rank": 353,
+          "word": "πόλεις",
+          "frequency": 23
+        },
+        {
+          "rank": 354,
+          "word": "τοῦτ",
+          "frequency": 23
+        },
+        {
+          "rank": 355,
+          "word": "χάριν",
+          "frequency": 23
+        },
+        {
+          "rank": 356,
+          "word": "χεῖρας",
+          "frequency": 23
+        },
+        {
+          "rank": 357,
+          "word": "χρόνου",
+          "frequency": 23
+        },
+        {
+          "rank": 358,
+          "word": "ἅπασιν",
+          "frequency": 22
+        },
+        {
+          "rank": 359,
+          "word": "ἀριθμὸν",
+          "frequency": 22
+        },
+        {
+          "rank": 360,
+          "word": "αὐτοὶ",
+          "frequency": 22
+        },
+        {
+          "rank": 361,
+          "word": "γάρ",
+          "frequency": 22
+        },
+        {
+          "rank": 362,
+          "word": "γράφων",
+          "frequency": 22
+        },
+        {
+          "rank": 363,
+          "word": "ἐκείνων",
+          "frequency": 22
+        },
+        {
+          "rank": 364,
+          "word": "ἡμετέρων",
+          "frequency": 22
+        },
+        {
+          "rank": 365,
+          "word": "θείου",
+          "frequency": 22
+        },
+        {
+          "rank": 366,
+          "word": "θεῶν",
+          "frequency": 22
+        },
+        {
+          "rank": 367,
+          "word": "ὅλοις",
+          "frequency": 22
+        },
+        {
+          "rank": 368,
+          "word": "ὅσοι",
+          "frequency": 22
+        },
+        {
+          "rank": 369,
+          "word": "πέντε",
+          "frequency": 22
+        },
+        {
+          "rank": 370,
+          "word": "πόλει",
+          "frequency": 22
+        },
+        {
+          "rank": 371,
+          "word": "πρῶτα",
+          "frequency": 22
+        },
+        {
+          "rank": 372,
+          "word": "ὑμᾶς",
+          "frequency": 22
+        },
+        {
+          "rank": 373,
+          "word": "φησίν",
+          "frequency": 22
+        },
+        {
+          "rank": 374,
+          "word": "ἀληθῶς",
+          "frequency": 21
+        },
+        {
+          "rank": 375,
+          "word": "ἅτε",
+          "frequency": 21
+        },
+        {
+          "rank": 376,
+          "word": "διδασκαλίας",
+          "frequency": 21
+        },
+        {
+          "rank": 377,
+          "word": "δίκην",
+          "frequency": 21
+        },
+        {
+          "rank": 378,
+          "word": "διωγμὸν",
+          "frequency": 21
+        },
+        {
+          "rank": 379,
+          "word": "ἐπιστολῶν",
+          "frequency": 21
+        },
+        {
+          "rank": 380,
+          "word": "ἐπιφέρει",
+          "frequency": 21
+        },
+        {
+          "rank": 381,
+          "word": "ἔχειν",
+          "frequency": 21
+        },
+        {
+          "rank": 382,
+          "word": "ἡμετέρας",
+          "frequency": 21
+        },
+        {
+          "rank": 383,
+          "word": "θανάτου",
+          "frequency": 21
+        },
+        {
+          "rank": 384,
+          "word": "ἱερῶν",
+          "frequency": 21
+        },
+        {
+          "rank": 385,
+          "word": "ἰωάννης",
+          "frequency": 21
+        },
+        {
+          "rank": 386,
+          "word": "λειτουργίαν",
+          "frequency": 21
+        },
+        {
+          "rank": 387,
+          "word": "λόγους",
+          "frequency": 21
+        },
+        {
+          "rank": 388,
+          "word": "μάρτυρες",
+          "frequency": 21
+        },
+        {
+          "rank": 389,
+          "word": "μάρτυς",
+          "frequency": 21
+        },
+        {
+          "rank": 390,
+          "word": "μέγα",
+          "frequency": 21
+        },
+        {
+          "rank": 391,
+          "word": "ὅμως",
+          "frequency": 21
+        },
+        {
+          "rank": 392,
+          "word": "πίστιν",
+          "frequency": 21
+        },
+        {
+          "rank": 393,
+          "word": "πολύκαρπος",
+          "frequency": 21
+        },
+        {
+          "rank": 394,
+          "word": "ὑφ",
+          "frequency": 21
+        },
+        {
+          "rank": 395,
+          "word": "ψυχὴν",
+          "frequency": 21
+        },
+        {
+          "rank": 396,
+          "word": "αἵρεσιν",
+          "frequency": 20
+        },
+        {
+          "rank": 397,
+          "word": "ἄλλοις",
+          "frequency": 20
+        },
+        {
+          "rank": 398,
+          "word": "αὐτούς",
+          "frequency": 20
+        },
+        {
+          "rank": 399,
+          "word": "βασιλεὺς",
+          "frequency": 20
+        },
+        {
+          "rank": 400,
+          "word": "βίῳ",
+          "frequency": 20
+        }
+      ]
+    },
+    {
+      "batchNumber": 9,
+      "rankRange": [
+        401,
+        450
+      ],
+      "words": [
+        {
+          "rank": 401,
+          "word": "γνώμην",
+          "frequency": 20
+        },
+        {
+          "rank": 402,
+          "word": "ἐκκλησίαις",
+          "frequency": 20
+        },
+        {
+          "rank": 403,
+          "word": "ἔργοις",
+          "frequency": 20
+        },
+        {
+          "rank": 404,
+          "word": "εὖ",
+          "frequency": 20
+        },
+        {
+          "rank": 405,
+          "word": "ἦσαν",
+          "frequency": 20
+        },
+        {
+          "rank": 406,
+          "word": "θεῖα",
+          "frequency": 20
+        },
+        {
+          "rank": 407,
+          "word": "θρῃσκείαν",
+          "frequency": 20
+        },
+        {
+          "rank": 408,
+          "word": "ἱεροσολύμοις",
+          "frequency": 20
+        },
+        {
+          "rank": 409,
+          "word": "λυκε",
+          "frequency": 20
+        },
+        {
+          "rank": 410,
+          "word": "μέγας",
+          "frequency": 20
+        },
+        {
+          "rank": 411,
+          "word": "ὅλως",
+          "frequency": 20
+        },
+        {
+          "rank": 412,
+          "word": "ὅπερ",
+          "frequency": 20
+        },
+        {
+          "rank": 413,
+          "word": "πολέμου",
+          "frequency": 20
+        },
+        {
+          "rank": 414,
+          "word": "που",
+          "frequency": 20
+        },
+        {
+          "rank": 415,
+          "word": "πῶς",
+          "frequency": 20
+        },
+        {
+          "rank": 416,
+          "word": "τέλει",
+          "frequency": 20
+        },
+        {
+          "rank": 417,
+          "word": "τοσαῦτα",
+          "frequency": 20
+        },
+        {
+          "rank": 418,
+          "word": "τοσοῦτον",
+          "frequency": 20
+        },
+        {
+          "rank": 419,
+          "word": "ὧδε",
+          "frequency": 20
+        },
+        {
+          "rank": 420,
+          "word": "ὠριγένους",
+          "frequency": 20
+        },
+        {
+          "rank": 421,
+          "word": "ἀδελφοῖς",
+          "frequency": 19
+        },
+        {
+          "rank": 422,
+          "word": "ἀλεξανδρέων",
+          "frequency": 19
+        },
+        {
+          "rank": 423,
+          "word": "ἀλήθειαν",
+          "frequency": 19
+        },
+        {
+          "rank": 424,
+          "word": "ἄξιον",
+          "frequency": 19
+        },
+        {
+          "rank": 425,
+          "word": "ἀφ",
+          "frequency": 19
+        },
+        {
+          "rank": 426,
+          "word": "διονυσίου",
+          "frequency": 19
+        },
+        {
+          "rank": 427,
+          "word": "δόξαν",
+          "frequency": 19
+        },
+        {
+          "rank": 428,
+          "word": "εἴτε",
+          "frequency": 19
+        },
+        {
+          "rank": 429,
+          "word": "ἑλλήνων",
+          "frequency": 19
+        },
+        {
+          "rank": 430,
+          "word": "ἔφη",
+          "frequency": 19
+        },
+        {
+          "rank": 431,
+          "word": "θείων",
+          "frequency": 19
+        },
+        {
+          "rank": 432,
+          "word": "θεοσεβείας",
+          "frequency": 19
+        },
+        {
+          "rank": 433,
+          "word": "ἰδίας",
+          "frequency": 19
+        },
+        {
+          "rank": 434,
+          "word": "λόγοις",
+          "frequency": 19
+        },
+        {
+          "rank": 435,
+          "word": "μόνος",
+          "frequency": 19
+        },
+        {
+          "rank": 436,
+          "word": "πνεύματι",
+          "frequency": 19
+        },
+        {
+          "rank": 437,
+          "word": "πολλὰ",
+          "frequency": 19
+        },
+        {
+          "rank": 438,
+          "word": "τινων",
+          "frequency": 19
+        },
+        {
+          "rank": 439,
+          "word": "τοιοῦτος",
+          "frequency": 19
+        },
+        {
+          "rank": 440,
+          "word": "τόν",
+          "frequency": 19
+        },
+        {
+          "rank": 441,
+          "word": "ὕστερον",
+          "frequency": 19
+        },
+        {
+          "rank": 442,
+          "word": "ὧδέ",
+          "frequency": 19
+        },
+        {
+          "rank": 443,
+          "word": "ἄλλως",
+          "frequency": 18
+        },
+        {
+          "rank": 444,
+          "word": "ἀνὰ",
+          "frequency": 18
+        },
+        {
+          "rank": 445,
+          "word": "ἀνθρώπους",
+          "frequency": 18
+        },
+        {
+          "rank": 446,
+          "word": "ἀντιόχειαν",
+          "frequency": 18
+        },
+        {
+          "rank": 447,
+          "word": "ἀντιοχέων",
+          "frequency": 18
+        },
+        {
+          "rank": 448,
+          "word": "αὖ",
+          "frequency": 18
+        },
+        {
+          "rank": 449,
+          "word": "γένους",
+          "frequency": 18
+        },
+        {
+          "rank": 450,
+          "word": "ἑαυτοὺς",
+          "frequency": 18
+        }
+      ]
+    },
+    {
+      "batchNumber": 10,
+      "rankRange": [
+        451,
+        500
+      ],
+      "words": [
+        {
+          "rank": 451,
+          "word": "εἷς",
+          "frequency": 18
+        },
+        {
+          "rank": 452,
+          "word": "ἐπιστολὴ",
+          "frequency": 18
+        },
+        {
+          "rank": 453,
+          "word": "παῦλος",
+          "frequency": 18
+        },
+        {
+          "rank": 454,
+          "word": "πολλάκις",
+          "frequency": 18
+        },
+        {
+          "rank": 455,
+          "word": "πυρὸς",
+          "frequency": 18
+        },
+        {
+          "rank": 456,
+          "word": "τά",
+          "frequency": 18
+        },
+        {
+          "rank": 457,
+          "word": "α",
+          "frequency": 17
+        },
+        {
+          "rank": 458,
+          "word": "αἱρετικῶν",
+          "frequency": 17
+        },
+        {
+          "rank": 459,
+          "word": "αἷς",
+          "frequency": 17
+        },
+        {
+          "rank": 460,
+          "word": "ἄλλο",
+          "frequency": 17
+        },
+        {
+          "rank": 461,
+          "word": "ἀναγκαῖον",
+          "frequency": 17
+        },
+        {
+          "rank": 462,
+          "word": "ἄνδρας",
+          "frequency": 17
+        },
+        {
+          "rank": 463,
+          "word": "ἀντὶ",
+          "frequency": 17
+        },
+        {
+          "rank": 464,
+          "word": "ἀξίαν",
+          "frequency": 17
+        },
+        {
+          "rank": 465,
+          "word": "ἀποκαλύψεως",
+          "frequency": 17
+        },
+        {
+          "rank": 466,
+          "word": "ἀσίαν",
+          "frequency": 17
+        },
+        {
+          "rank": 467,
+          "word": "αὐτοκράτωρ",
+          "frequency": 17
+        },
+        {
+          "rank": 468,
+          "word": "γῆν",
+          "frequency": 17
+        },
+        {
+          "rank": 469,
+          "word": "γραμμάτων",
+          "frequency": 17
+        },
+        {
+          "rank": 470,
+          "word": "δυνάμει",
+          "frequency": 17
+        },
+        {
+          "rank": 471,
+          "word": "ἐπίσκοποι",
+          "frequency": 17
+        },
+        {
+          "rank": 472,
+          "word": "ἐπισκόπου",
+          "frequency": 17
+        },
+        {
+          "rank": 473,
+          "word": "ἑτέροις",
+          "frequency": 17
+        },
+        {
+          "rank": 474,
+          "word": "ἕτερος",
+          "frequency": 17
+        },
+        {
+          "rank": 475,
+          "word": "ἐχθρῶν",
+          "frequency": 17
+        },
+        {
+          "rank": 476,
+          "word": "κεφαλὴν",
+          "frequency": 17
+        },
+        {
+          "rank": 477,
+          "word": "κλήμης",
+          "frequency": 17
+        },
+        {
+          "rank": 478,
+          "word": "πλείστοις",
+          "frequency": 17
+        },
+        {
+          "rank": 479,
+          "word": "πόλεμον",
+          "frequency": 17
+        },
+        {
+          "rank": 480,
+          "word": "πολλοὺς",
+          "frequency": 17
+        },
+        {
+          "rank": 481,
+          "word": "πολλῶν",
+          "frequency": 17
+        },
+        {
+          "rank": 482,
+          "word": "ποτε",
+          "frequency": 17
+        },
+        {
+          "rank": 483,
+          "word": "ρομ",
+          "frequency": 17
+        },
+        {
+          "rank": 484,
+          "word": "σῶμα",
+          "frequency": 17
+        },
+        {
+          "rank": 485,
+          "word": "τάδε",
+          "frequency": 17
+        },
+        {
+          "rank": 486,
+          "word": "τήν",
+          "frequency": 17
+        },
+        {
+          "rank": 487,
+          "word": "τηνικάδε",
+          "frequency": 17
+        },
+        {
+          "rank": 488,
+          "word": "τιμῆς",
+          "frequency": 17
+        },
+        {
+          "rank": 489,
+          "word": "τινὲς",
+          "frequency": 17
+        },
+        {
+          "rank": 490,
+          "word": "φιλοσοφίας",
+          "frequency": 17
+        },
+        {
+          "rank": 491,
+          "word": "αἱρέσεων",
+          "frequency": 16
+        },
+        {
+          "rank": 492,
+          "word": "ἀληθῆ",
+          "frequency": 16
+        },
+        {
+          "rank": 493,
+          "word": "γράμματα",
+          "frequency": 16
+        },
+        {
+          "rank": 494,
+          "word": "γραφὰς",
+          "frequency": 16
+        },
+        {
+          "rank": 495,
+          "word": "δόξης",
+          "frequency": 16
+        },
+        {
+          "rank": 496,
+          "word": "ἑβραίους",
+          "frequency": 16
+        },
+        {
+          "rank": 497,
+          "word": "εἰκότως",
+          "frequency": 16
+        },
+        {
+          "rank": 498,
+          "word": "εἶχεν",
+          "frequency": 16
+        },
+        {
+          "rank": 499,
+          "word": "ἐκεῖνος",
+          "frequency": 16
+        },
+        {
+          "rank": 500,
+          "word": "ἑνὸς",
+          "frequency": 16
+        }
+      ]
+    },
+    {
+      "batchNumber": 11,
+      "rankRange": [
+        501,
+        550
+      ],
+      "words": [
+        {
+          "rank": 501,
+          "word": "ἔξωθεν",
+          "frequency": 16
+        },
+        {
+          "rank": 502,
+          "word": "ἐπισκόπῳ",
+          "frequency": 16
+        },
+        {
+          "rank": 503,
+          "word": "ἐφέσῳ",
+          "frequency": 16
+        },
+        {
+          "rank": 504,
+          "word": "ἡμέρᾳ",
+          "frequency": 16
+        },
+        {
+          "rank": 505,
+          "word": "ἡμέραις",
+          "frequency": 16
+        },
+        {
+          "rank": 506,
+          "word": "θηρίων",
+          "frequency": 16
+        },
+        {
+          "rank": 507,
+          "word": "ἱστορίαν",
+          "frequency": 16
+        },
+        {
+          "rank": 508,
+          "word": "μακρὸν",
+          "frequency": 16
+        },
+        {
+          "rank": 509,
+          "word": "μάρτυρας",
+          "frequency": 16
+        },
+        {
+          "rank": 510,
+          "word": "μέγιστος",
+          "frequency": 16
+        },
+        {
+          "rank": 511,
+          "word": "μέμνηται",
+          "frequency": 16
+        },
+        {
+          "rank": 512,
+          "word": "νύκτωρ",
+          "frequency": 16
+        },
+        {
+          "rank": 513,
+          "word": "οἶκον",
+          "frequency": 16
+        },
+        {
+          "rank": 514,
+          "word": "ὀνόματος",
+          "frequency": 16
+        },
+        {
+          "rank": 515,
+          "word": "πνεῦμα",
+          "frequency": 16
+        },
+        {
+          "rank": 516,
+          "word": "πολλὴν",
+          "frequency": 16
+        },
+        {
+          "rank": 517,
+          "word": "πράττειν",
+          "frequency": 16
+        },
+        {
+          "rank": 518,
+          "word": "πυρὶ",
+          "frequency": 16
+        },
+        {
+          "rank": 519,
+          "word": "τοίνυν",
+          "frequency": 16
+        },
+        {
+          "rank": 520,
+          "word": "ἀγαθῶν",
+          "frequency": 15
+        },
+        {
+          "rank": 521,
+          "word": "ἀλέξανδρος",
+          "frequency": 15
+        },
+        {
+          "rank": 522,
+          "word": "ἄλλην",
+          "frequency": 15
+        },
+        {
+          "rank": 523,
+          "word": "ἄλλους",
+          "frequency": 15
+        },
+        {
+          "rank": 524,
+          "word": "ἄνδρα",
+          "frequency": 15
+        },
+        {
+          "rank": 525,
+          "word": "ἀνδρὸς",
+          "frequency": 15
+        },
+        {
+          "rank": 526,
+          "word": "ἀποστόλου",
+          "frequency": 15
+        },
+        {
+          "rank": 527,
+          "word": "αὐτίκα",
+          "frequency": 15
+        },
+        {
+          "rank": 528,
+          "word": "βασιλέως",
+          "frequency": 15
+        },
+        {
+          "rank": 529,
+          "word": "γενόμενον",
+          "frequency": 15
+        },
+        {
+          "rank": 530,
+          "word": "γνῶσιν",
+          "frequency": 15
+        },
+        {
+          "rank": 531,
+          "word": "δηλοῖ",
+          "frequency": 15
+        },
+        {
+          "rank": 532,
+          "word": "εἴκοσι",
+          "frequency": 15
+        },
+        {
+          "rank": 533,
+          "word": "ἕκαστον",
+          "frequency": 15
+        },
+        {
+          "rank": 534,
+          "word": "ἐκεῖνο",
+          "frequency": 15
+        },
+        {
+          "rank": 535,
+          "word": "ἔν",
+          "frequency": 15
+        },
+        {
+          "rank": 536,
+          "word": "ἕνα",
+          "frequency": 15
+        },
+        {
+          "rank": 537,
+          "word": "ἐπιστολῇ",
+          "frequency": 15
+        },
+        {
+          "rank": 538,
+          "word": "ἑτέρας",
+          "frequency": 15
+        },
+        {
+          "rank": 539,
+          "word": "ἔτη",
+          "frequency": 15
+        },
+        {
+          "rank": 540,
+          "word": "ἐτῶν",
+          "frequency": 15
+        },
+        {
+          "rank": 541,
+          "word": "εὐαγγελίου",
+          "frequency": 15
+        },
+        {
+          "rank": 542,
+          "word": "ἵν",
+          "frequency": 15
+        },
+        {
+          "rank": 543,
+          "word": "καθὼς",
+          "frequency": 15
+        },
+        {
+          "rank": 544,
+          "word": "καταλέλοιπεν",
+          "frequency": 15
+        },
+        {
+          "rank": 545,
+          "word": "λέξιν",
+          "frequency": 15
+        },
+        {
+          "rank": 546,
+          "word": "μάλα",
+          "frequency": 15
+        },
+        {
+          "rank": 547,
+          "word": "μαρτυρίαν",
+          "frequency": 15
+        },
+        {
+          "rank": 548,
+          "word": "μαρτυρίας",
+          "frequency": 15
+        },
+        {
+          "rank": 549,
+          "word": "νεκρῶν",
+          "frequency": 15
+        },
+        {
+          "rank": 550,
+          "word": "οἰκουμένην",
+          "frequency": 15
+        }
+      ]
+    },
+    {
+      "batchNumber": 12,
+      "rankRange": [
+        551,
+        600
+      ],
+      "words": [
+        {
+          "rank": 551,
+          "word": "πάνυ",
+          "frequency": 15
+        },
+        {
+          "rank": 552,
+          "word": "παραδόσεως",
+          "frequency": 15
+        },
+        {
+          "rank": 553,
+          "word": "πάσας",
+          "frequency": 15
+        },
+        {
+          "rank": 554,
+          "word": "πατέρα",
+          "frequency": 15
+        },
+        {
+          "rank": 555,
+          "word": "πλάνης",
+          "frequency": 15
+        },
+        {
+          "rank": 556,
+          "word": "πλεῖστα",
+          "frequency": 15
+        },
+        {
+          "rank": 557,
+          "word": "πολλοὶ",
+          "frequency": 15
+        },
+        {
+          "rank": 558,
+          "word": "πρεσβυτέρων",
+          "frequency": 15
+        },
+        {
+          "rank": 559,
+          "word": "ῥώμῃ",
+          "frequency": 15
+        },
+        {
+          "rank": 560,
+          "word": "ῥώμην",
+          "frequency": 15
+        },
+        {
+          "rank": 561,
+          "word": "σαφῶς",
+          "frequency": 15
+        },
+        {
+          "rank": 562,
+          "word": "τινι",
+          "frequency": 15
+        },
+        {
+          "rank": 563,
+          "word": "φύσιν",
+          "frequency": 15
+        },
+        {
+          "rank": 564,
+          "word": "φωνῇ",
+          "frequency": 15
+        },
+        {
+          "rank": 565,
+          "word": "ὠριγένης",
+          "frequency": 15
+        },
+        {
+          "rank": 566,
+          "word": "ἁγίου",
+          "frequency": 14
+        },
+        {
+          "rank": 567,
+          "word": "ἁγίων",
+          "frequency": 14
+        },
+        {
+          "rank": 568,
+          "word": "ἀγῶνα",
+          "frequency": 14
+        },
+        {
+          "rank": 569,
+          "word": "αἱρέσεις",
+          "frequency": 14
+        },
+        {
+          "rank": 570,
+          "word": "ἀλλήλους",
+          "frequency": 14
+        },
+        {
+          "rank": 571,
+          "word": "ἀμφ",
+          "frequency": 14
+        },
+        {
+          "rank": 572,
+          "word": "ἄνθρωπον",
+          "frequency": 14
+        },
+        {
+          "rank": 573,
+          "word": "αὐταῖς",
+          "frequency": 14
+        },
+        {
+          "rank": 574,
+          "word": "βασάνοις",
+          "frequency": 14
+        },
+        {
+          "rank": 575,
+          "word": "βασιλεῖ",
+          "frequency": 14
+        },
+        {
+          "rank": 576,
+          "word": "γεγόνασιν",
+          "frequency": 14
+        },
+        {
+          "rank": 577,
+          "word": "δεύτερον",
+          "frequency": 14
+        },
+        {
+          "rank": 578,
+          "word": "διανοίας",
+          "frequency": 14
+        },
+        {
+          "rank": 579,
+          "word": "ἑβραίων",
+          "frequency": 14
+        },
+        {
+          "rank": 580,
+          "word": "ἐδόκει",
+          "frequency": 14
+        },
+        {
+          "rank": 581,
+          "word": "ἔθνη",
+          "frequency": 14
+        },
+        {
+          "rank": 582,
+          "word": "ἔθος",
+          "frequency": 14
+        },
+        {
+          "rank": 583,
+          "word": "ἕκαστος",
+          "frequency": 14
+        },
+        {
+          "rank": 584,
+          "word": "ἐκεῖσε",
+          "frequency": 14
+        },
+        {
+          "rank": 585,
+          "word": "ἐκκλησία",
+          "frequency": 14
+        },
+        {
+          "rank": 586,
+          "word": "ἐκκλησιαστικῆς",
+          "frequency": 14
+        },
+        {
+          "rank": 587,
+          "word": "ἐνταῦθα",
+          "frequency": 14
+        },
+        {
+          "rank": 588,
+          "word": "ἐπιστολὴν",
+          "frequency": 14
+        },
+        {
+          "rank": 589,
+          "word": "ἔργον",
+          "frequency": 14
+        },
+        {
+          "rank": 590,
+          "word": "ἔσεσθαι",
+          "frequency": 14
+        },
+        {
+          "rank": 591,
+          "word": "ἕτερον",
+          "frequency": 14
+        },
+        {
+          "rank": 592,
+          "word": "εὐθέως",
+          "frequency": 14
+        },
+        {
+          "rank": 593,
+          "word": "ἡγεῖτο",
+          "frequency": 14
+        },
+        {
+          "rank": 594,
+          "word": "ἡγεμονίας",
+          "frequency": 14
+        },
+        {
+          "rank": 595,
+          "word": "θανάτῳ",
+          "frequency": 14
+        },
+        {
+          "rank": 596,
+          "word": "θρῃσκείας",
+          "frequency": 14
+        },
+        {
+          "rank": 597,
+          "word": "ἰδίᾳ",
+          "frequency": 14
+        },
+        {
+          "rank": 598,
+          "word": "κρίσιν",
+          "frequency": 14
+        },
+        {
+          "rank": 599,
+          "word": "μεταξὺ",
+          "frequency": 14
+        },
+        {
+          "rank": 600,
+          "word": "μικρῷ",
+          "frequency": 14
+        }
+      ]
+    },
+    {
+      "batchNumber": 13,
+      "rankRange": [
+        601,
+        650
+      ],
+      "words": [
+        {
+          "rank": 601,
+          "word": "οἴκους",
+          "frequency": 14
+        },
+        {
+          "rank": 602,
+          "word": "ὄντος",
+          "frequency": 14
+        },
+        {
+          "rank": 603,
+          "word": "οσεπη",
+          "frequency": 14
+        },
+        {
+          "rank": 604,
+          "word": "οὔπω",
+          "frequency": 14
+        },
+        {
+          "rank": 605,
+          "word": "παῖς",
+          "frequency": 14
+        },
+        {
+          "rank": 606,
+          "word": "παράδοσιν",
+          "frequency": 14
+        },
+        {
+          "rank": 607,
+          "word": "πάσῃ",
+          "frequency": 14
+        },
+        {
+          "rank": 608,
+          "word": "πιστῶν",
+          "frequency": 14
+        },
+        {
+          "rank": 609,
+          "word": "πολλοῦ",
+          "frequency": 14
+        },
+        {
+          "rank": 610,
+          "word": "πρὶν",
+          "frequency": 14
+        },
+        {
+          "rank": 611,
+          "word": "ῥήμασιν",
+          "frequency": 14
+        },
+        {
+          "rank": 612,
+          "word": "σοῦ",
+          "frequency": 14
+        },
+        {
+          "rank": 613,
+          "word": "συγγραμμάτων",
+          "frequency": 14
+        },
+        {
+          "rank": 614,
+          "word": "ταύτας",
+          "frequency": 14
+        },
+        {
+          "rank": 615,
+          "word": "τό",
+          "frequency": 14
+        },
+        {
+          "rank": 616,
+          "word": "τόπῳ",
+          "frequency": 14
+        },
+        {
+          "rank": 617,
+          "word": "τυράννου",
+          "frequency": 14
+        },
+        {
+          "rank": 618,
+          "word": "υστιν",
+          "frequency": 14
+        },
+        {
+          "rank": 619,
+          "word": "φασιν",
+          "frequency": 14
+        },
+        {
+          "rank": 620,
+          "word": "χώραν",
+          "frequency": 14
+        },
+        {
+          "rank": 621,
+          "word": "ὥς",
+          "frequency": 14
+        },
+        {
+          "rank": 622,
+          "word": "῾καὶ",
+          "frequency": 13
+        },
+        {
+          "rank": 623,
+          "word": "ἀδελφὸν",
+          "frequency": 13
+        },
+        {
+          "rank": 624,
+          "word": "αἴγυπτον",
+          "frequency": 13
+        },
+        {
+          "rank": 625,
+          "word": "ἄλλη",
+          "frequency": 13
+        },
+        {
+          "rank": 626,
+          "word": "ἄλλος",
+          "frequency": 13
+        },
+        {
+          "rank": 627,
+          "word": "ἄν",
+          "frequency": 13
+        },
+        {
+          "rank": 628,
+          "word": "ἀντιοχείας",
+          "frequency": 13
+        },
+        {
+          "rank": 629,
+          "word": "ἀπόστολον",
+          "frequency": 13
+        },
+        {
+          "rank": 630,
+          "word": "ἀρχαίων",
+          "frequency": 13
+        },
+        {
+          "rank": 631,
+          "word": "ἀρχόντων",
+          "frequency": 13
+        },
+        {
+          "rank": 632,
+          "word": "ἀσεβῶν",
+          "frequency": 13
+        },
+        {
+          "rank": 633,
+          "word": "βασάνων",
+          "frequency": 13
+        },
+        {
+          "rank": 634,
+          "word": "γραφαῖς",
+          "frequency": 13
+        },
+        {
+          "rank": 635,
+          "word": "δή",
+          "frequency": 13
+        },
+        {
+          "rank": 636,
+          "word": "ἐκείνοις",
+          "frequency": 13
+        },
+        {
+          "rank": 637,
+          "word": "ἐκκλησιαστικῶν",
+          "frequency": 13
+        },
+        {
+          "rank": 638,
+          "word": "ἕλληνας",
+          "frequency": 13
+        },
+        {
+          "rank": 639,
+          "word": "ἐπαρχίας",
+          "frequency": 13
+        },
+        {
+          "rank": 640,
+          "word": "ἑτέρους",
+          "frequency": 13
+        },
+        {
+          "rank": 641,
+          "word": "εὐαγγελίων",
+          "frequency": 13
+        },
+        {
+          "rank": 642,
+          "word": "εχ",
+          "frequency": 13
+        },
+        {
+          "rank": 643,
+          "word": "ζωῆς",
+          "frequency": 13
+        },
+        {
+          "rank": 644,
+          "word": "ἡλικίαν",
+          "frequency": 13
+        },
+        {
+          "rank": 645,
+          "word": "ἰουστῖνος",
+          "frequency": 13
+        },
+        {
+          "rank": 646,
+          "word": "καθόλου",
+          "frequency": 13
+        },
+        {
+          "rank": 647,
+          "word": "κἂν",
+          "frequency": 13
+        },
+        {
+          "rank": 648,
+          "word": "κυρίῳ",
+          "frequency": 13
+        },
+        {
+          "rank": 649,
+          "word": "λιμῷ",
+          "frequency": 13
+        },
+        {
+          "rank": 650,
+          "word": "μαρτυρίου",
+          "frequency": 13
+        }
+      ]
+    },
+    {
+      "batchNumber": 14,
+      "rankRange": [
+        651,
+        700
+      ],
+      "words": [
+        {
+          "rank": 651,
+          "word": "μέχρις",
+          "frequency": 13
+        },
+        {
+          "rank": 652,
+          "word": "μηδαμῶς",
+          "frequency": 13
+        },
+        {
+          "rank": 653,
+          "word": "οἷον",
+          "frequency": 13
+        },
+        {
+          "rank": 654,
+          "word": "παντὶ",
+          "frequency": 13
+        },
+        {
+          "rank": 655,
+          "word": "περιέχει",
+          "frequency": 13
+        },
+        {
+          "rank": 656,
+          "word": "πλείστων",
+          "frequency": 13
+        },
+        {
+          "rank": 657,
+          "word": "πραγμάτων",
+          "frequency": 13
+        },
+        {
+          "rank": 658,
+          "word": "πράξεων",
+          "frequency": 13
+        },
+        {
+          "rank": 659,
+          "word": "πρεσβύτερος",
+          "frequency": 13
+        },
+        {
+          "rank": 660,
+          "word": "σύγγραμμα",
+          "frequency": 13
+        },
+        {
+          "rank": 661,
+          "word": "συγγράμματι",
+          "frequency": 13
+        },
+        {
+          "rank": 662,
+          "word": "τάς",
+          "frequency": 13
+        },
+        {
+          "rank": 663,
+          "word": "ταῦτ",
+          "frequency": 13
+        },
+        {
+          "rank": 664,
+          "word": "ταὐτὸν",
+          "frequency": 13
+        },
+        {
+          "rank": 665,
+          "word": "τηνικαῦτα",
+          "frequency": 13
+        },
+        {
+          "rank": 666,
+          "word": "τροφῆς",
+          "frequency": 13
+        },
+        {
+          "rank": 667,
+          "word": "φωνὰς",
+          "frequency": 13
+        },
+        {
+          "rank": 668,
+          "word": "ψυχὰς",
+          "frequency": 13
+        },
+        {
+          "rank": 669,
+          "word": "ἄνευ",
+          "frequency": 12
+        },
+        {
+          "rank": 670,
+          "word": "ἀποκάλυψιν",
+          "frequency": 12
+        },
+        {
+          "rank": 671,
+          "word": "απολ",
+          "frequency": 12
+        },
+        {
+          "rank": 672,
+          "word": "αὐτός",
+          "frequency": 12
+        },
+        {
+          "rank": 673,
+          "word": "γνώμης",
+          "frequency": 12
+        },
+        {
+          "rank": 674,
+          "word": "γράμμασιν",
+          "frequency": 12
+        },
+        {
+          "rank": 675,
+          "word": "γραφήν",
+          "frequency": 12
+        },
+        {
+          "rank": 676,
+          "word": "γραφὴν",
+          "frequency": 12
+        },
+        {
+          "rank": 677,
+          "word": "γυναικῶν",
+          "frequency": 12
+        },
+        {
+          "rank": 678,
+          "word": "δαιμόνων",
+          "frequency": 12
+        },
+        {
+          "rank": 679,
+          "word": "διάνοιαν",
+          "frequency": 12
+        },
+        {
+          "rank": 680,
+          "word": "δοκεῖν",
+          "frequency": 12
+        },
+        {
+          "rank": 681,
+          "word": "ἑαυτοῖς",
+          "frequency": 12
+        },
+        {
+          "rank": 682,
+          "word": "εἶθ",
+          "frequency": 12
+        },
+        {
+          "rank": 683,
+          "word": "εἴρηται",
+          "frequency": 12
+        },
+        {
+          "rank": 684,
+          "word": "εἰσὶν",
+          "frequency": 12
+        },
+        {
+          "rank": 685,
+          "word": "ἔτει",
+          "frequency": 12
+        },
+        {
+          "rank": 686,
+          "word": "εὐθὺς",
+          "frequency": 12
+        },
+        {
+          "rank": 687,
+          "word": "ἔχοντες",
+          "frequency": 12
+        },
+        {
+          "rank": 688,
+          "word": "ἡμετέρους",
+          "frequency": 12
+        },
+        {
+          "rank": 689,
+          "word": "θείᾳ",
+          "frequency": 12
+        },
+        {
+          "rank": 690,
+          "word": "ἱερουσαλὴμ",
+          "frequency": 12
+        },
+        {
+          "rank": 691,
+          "word": "ἰησοῦν",
+          "frequency": 12
+        },
+        {
+          "rank": 692,
+          "word": "καιροῦ",
+          "frequency": 12
+        },
+        {
+          "rank": 693,
+          "word": "κακῶν",
+          "frequency": 12
+        },
+        {
+          "rank": 694,
+          "word": "κύκλῳ",
+          "frequency": 12
+        },
+        {
+          "rank": 695,
+          "word": "λέγουσιν",
+          "frequency": 12
+        },
+        {
+          "rank": 696,
+          "word": "μέρος",
+          "frequency": 12
+        },
+        {
+          "rank": 697,
+          "word": "μή",
+          "frequency": 12
+        },
+        {
+          "rank": 698,
+          "word": "μηκέτι",
+          "frequency": 12
+        },
+        {
+          "rank": 699,
+          "word": "μόνων",
+          "frequency": 12
+        },
+        {
+          "rank": 700,
+          "word": "ὅλης",
+          "frequency": 12
+        }
+      ]
+    },
+    {
+      "batchNumber": 15,
+      "rankRange": [
+        701,
+        750
+      ],
+      "words": [
+        {
+          "rank": 701,
+          "word": "ὀνόματι",
+          "frequency": 12
+        },
+        {
+          "rank": 702,
+          "word": "ὁπότε",
+          "frequency": 12
+        },
+        {
+          "rank": 703,
+          "word": "παιδὶ",
+          "frequency": 12
+        },
+        {
+          "rank": 704,
+          "word": "παλαιστίνης",
+          "frequency": 12
+        },
+        {
+          "rank": 705,
+          "word": "πατὴρ",
+          "frequency": 12
+        },
+        {
+          "rank": 706,
+          "word": "πέτρος",
+          "frequency": 12
+        },
+        {
+          "rank": 707,
+          "word": "πλειόνων",
+          "frequency": 12
+        },
+        {
+          "rank": 708,
+          "word": "πλεῖστον",
+          "frequency": 12
+        },
+        {
+          "rank": 709,
+          "word": "πρόσωπον",
+          "frequency": 12
+        },
+        {
+          "rank": 710,
+          "word": "πρώτου",
+          "frequency": 12
+        },
+        {
+          "rank": 711,
+          "word": "συγγράμμασιν",
+          "frequency": 12
+        },
+        {
+          "rank": 712,
+          "word": "συγγράμματα",
+          "frequency": 12
+        },
+        {
+          "rank": 713,
+          "word": "σώματα",
+          "frequency": 12
+        },
+        {
+          "rank": 714,
+          "word": "τἀνδρὸς",
+          "frequency": 12
+        },
+        {
+          "rank": 715,
+          "word": "τελευτῆς",
+          "frequency": 12
+        },
+        {
+          "rank": 716,
+          "word": "τίνες",
+          "frequency": 12
+        },
+        {
+          "rank": 717,
+          "word": "τινὸς",
+          "frequency": 12
+        },
+        {
+          "rank": 718,
+          "word": "τισιν",
+          "frequency": 12
+        },
+        {
+          "rank": 719,
+          "word": "τισὶν",
+          "frequency": 12
+        },
+        {
+          "rank": 720,
+          "word": "τοὔνομα",
+          "frequency": 12
+        },
+        {
+          "rank": 721,
+          "word": "ὑπάρχειν",
+          "frequency": 12
+        },
+        {
+          "rank": 722,
+          "word": "χριστιανοὺς",
+          "frequency": 12
+        },
+        {
+          "rank": 723,
+          "word": "χρόνων",
+          "frequency": 12
+        },
+        {
+          "rank": 724,
+          "word": "χρώμενος",
+          "frequency": 12
+        },
+        {
+          "rank": 725,
+          "word": "αἰγύπτου",
+          "frequency": 11
+        },
+        {
+          "rank": 726,
+          "word": "ἄλλης",
+          "frequency": 11
+        },
+        {
+          "rank": 727,
+          "word": "ἄμφω",
+          "frequency": 11
+        },
+        {
+          "rank": 728,
+          "word": "ἀναστάσεως",
+          "frequency": 11
+        },
+        {
+          "rank": 729,
+          "word": "ἅπαντας",
+          "frequency": 11
+        },
+        {
+          "rank": 730,
+          "word": "ἁπάσης",
+          "frequency": 11
+        },
+        {
+          "rank": 731,
+          "word": "ἀρετῆς",
+          "frequency": 11
+        },
+        {
+          "rank": 732,
+          "word": "αὐτὰς",
+          "frequency": 11
+        },
+        {
+          "rank": 733,
+          "word": "αὕτη",
+          "frequency": 11
+        },
+        {
+          "rank": 734,
+          "word": "βασιλέα",
+          "frequency": 11
+        },
+        {
+          "rank": 735,
+          "word": "βιβλία",
+          "frequency": 11
+        },
+        {
+          "rank": 736,
+          "word": "γ",
+          "frequency": 11
+        },
+        {
+          "rank": 737,
+          "word": "γενομένης",
+          "frequency": 11
+        },
+        {
+          "rank": 738,
+          "word": "γραφὴ",
+          "frequency": 11
+        },
+        {
+          "rank": 739,
+          "word": "δεσμοῖς",
+          "frequency": 11
+        },
+        {
+          "rank": 740,
+          "word": "δεύτερος",
+          "frequency": 11
+        },
+        {
+          "rank": 741,
+          "word": "διά",
+          "frequency": 11
+        },
+        {
+          "rank": 742,
+          "word": "διαδοχὴν",
+          "frequency": 11
+        },
+        {
+          "rank": 743,
+          "word": "διαφόρους",
+          "frequency": 11
+        },
+        {
+          "rank": 744,
+          "word": "δυνάμεως",
+          "frequency": 11
+        },
+        {
+          "rank": 745,
+          "word": "ἐγγράφως",
+          "frequency": 11
+        },
+        {
+          "rank": 746,
+          "word": "ἐγνωρίζετο",
+          "frequency": 11
+        },
+        {
+          "rank": 747,
+          "word": "ἐκείνους",
+          "frequency": 11
+        },
+        {
+          "rank": 748,
+          "word": "ἕλλησιν",
+          "frequency": 11
+        },
+        {
+          "rank": 749,
+          "word": "ἓξ",
+          "frequency": 11
+        },
+        {
+          "rank": 750,
+          "word": "ἔξω",
+          "frequency": 11
+        }
+      ]
+    },
+    {
+      "batchNumber": 16,
+      "rankRange": [
+        751,
+        800
+      ],
+      "words": [
+        {
+          "rank": 751,
+          "word": "ἐπισκόπους",
+          "frequency": 11
+        },
+        {
+          "rank": 752,
+          "word": "ἐς",
+          "frequency": 11
+        },
+        {
+          "rank": 753,
+          "word": "ἕως",
+          "frequency": 11
+        },
+        {
+          "rank": 754,
+          "word": "ἡγεμονίαν",
+          "frequency": 11
+        },
+        {
+          "rank": 755,
+          "word": "ιγν",
+          "frequency": 11
+        },
+        {
+          "rank": 756,
+          "word": "ἰδίως",
+          "frequency": 11
+        },
+        {
+          "rank": 757,
+          "word": "ἱεροσολύμων",
+          "frequency": 11
+        },
+        {
+          "rank": 758,
+          "word": "ἴσμεν",
+          "frequency": 11
+        },
+        {
+          "rank": 759,
+          "word": "καισαρείᾳ",
+          "frequency": 11
+        },
+        {
+          "rank": 760,
+          "word": "καισαρείας",
+          "frequency": 11
+        },
+        {
+          "rank": 761,
+          "word": "κατά",
+          "frequency": 11
+        },
+        {
+          "rank": 762,
+          "word": "κατέχει",
+          "frequency": 11
+        },
+        {
+          "rank": 763,
+          "word": "κλῆρον",
+          "frequency": 11
+        },
+        {
+          "rank": 764,
+          "word": "κόσμῳ",
+          "frequency": 11
+        },
+        {
+          "rank": 765,
+          "word": "λαοῦ",
+          "frequency": 11
+        },
+        {
+          "rank": 766,
+          "word": "μαρκίωνος",
+          "frequency": 11
+        },
+        {
+          "rank": 767,
+          "word": "μάρκος",
+          "frequency": 11
+        },
+        {
+          "rank": 768,
+          "word": "μαρτυρίῳ",
+          "frequency": 11
+        },
+        {
+          "rank": 769,
+          "word": "μηδένα",
+          "frequency": 11
+        },
+        {
+          "rank": 770,
+          "word": "μυρία",
+          "frequency": 11
+        },
+        {
+          "rank": 771,
+          "word": "νόμους",
+          "frequency": 11
+        },
+        {
+          "rank": 772,
+          "word": "νόμῳ",
+          "frequency": 11
+        },
+        {
+          "rank": 773,
+          "word": "οἷός",
+          "frequency": 11
+        },
+        {
+          "rank": 774,
+          "word": "ὄντας",
+          "frequency": 11
+        },
+        {
+          "rank": 775,
+          "word": "ὄντως",
+          "frequency": 11
+        },
+        {
+          "rank": 776,
+          "word": "ὅπου",
+          "frequency": 11
+        },
+        {
+          "rank": 777,
+          "word": "οὐρανοῦ",
+          "frequency": 11
+        },
+        {
+          "rank": 778,
+          "word": "ὀφθαλμοῖς",
+          "frequency": 11
+        },
+        {
+          "rank": 779,
+          "word": "παραδοῦναι",
+          "frequency": 11
+        },
+        {
+          "rank": 780,
+          "word": "παρόντος",
+          "frequency": 11
+        },
+        {
+          "rank": 781,
+          "word": "πολυκάρπου",
+          "frequency": 11
+        },
+        {
+          "rank": 782,
+          "word": "προφήτας",
+          "frequency": 11
+        },
+        {
+          "rank": 783,
+          "word": "στέφανον",
+          "frequency": 11
+        },
+        {
+          "rank": 784,
+          "word": "σχεδὸν",
+          "frequency": 11
+        },
+        {
+          "rank": 785,
+          "word": "ταῦτά",
+          "frequency": 11
+        },
+        {
+          "rank": 786,
+          "word": "τοιούτων",
+          "frequency": 11
+        },
+        {
+          "rank": 787,
+          "word": "φάσκων",
+          "frequency": 11
+        },
+        {
+          "rank": 788,
+          "word": "φιλίππου",
+          "frequency": 11
+        },
+        {
+          "rank": 789,
+          "word": "ὠριγένει",
+          "frequency": 11
+        },
+        {
+          "rank": 790,
+          "word": "ἀγῶνας",
+          "frequency": 10
+        },
+        {
+          "rank": 791,
+          "word": "αἰτίαν",
+          "frequency": 10
+        },
+        {
+          "rank": 792,
+          "word": "ἄλλας",
+          "frequency": 10
+        },
+        {
+          "rank": 793,
+          "word": "ἀνωτάτω",
+          "frequency": 10
+        },
+        {
+          "rank": 794,
+          "word": "ἅπαξ",
+          "frequency": 10
+        },
+        {
+          "rank": 795,
+          "word": "ἀπολογίαν",
+          "frequency": 10
+        },
+        {
+          "rank": 796,
+          "word": "ἀπολογίας",
+          "frequency": 10
+        },
+        {
+          "rank": 797,
+          "word": "ἀποστόλους",
+          "frequency": 10
+        },
+        {
+          "rank": 798,
+          "word": "ἄρτι",
+          "frequency": 10
+        },
+        {
+          "rank": 799,
+          "word": "γένοιτο",
+          "frequency": 10
+        },
+        {
+          "rank": 800,
+          "word": "γίνεσθαι",
+          "frequency": 10
+        }
+      ]
+    },
+    {
+      "batchNumber": 17,
+      "rankRange": [
+        801,
+        850
+      ],
+      "words": [
+        {
+          "rank": 801,
+          "word": "γνώμῃ",
+          "frequency": 10
+        },
+        {
+          "rank": 802,
+          "word": "δεινὰ",
+          "frequency": 10
+        },
+        {
+          "rank": 803,
+          "word": "δεῦρο",
+          "frequency": 10
+        },
+        {
+          "rank": 804,
+          "word": "διαδοχῆς",
+          "frequency": 10
+        },
+        {
+          "rank": 805,
+          "word": "διαπρέψας",
+          "frequency": 10
+        },
+        {
+          "rank": 806,
+          "word": "διήγησιν",
+          "frequency": 10
+        },
+        {
+          "rank": 807,
+          "word": "δίκαιον",
+          "frequency": 10
+        },
+        {
+          "rank": 808,
+          "word": "δόγματος",
+          "frequency": 10
+        },
+        {
+          "rank": 809,
+          "word": "δύναμιν",
+          "frequency": 10
+        },
+        {
+          "rank": 810,
+          "word": "δυνατόν",
+          "frequency": 10
+        },
+        {
+          "rank": 811,
+          "word": "ἐὰν",
+          "frequency": 10
+        },
+        {
+          "rank": 812,
+          "word": "ἑβραίοις",
+          "frequency": 10
+        },
+        {
+          "rank": 813,
+          "word": "ἐγένετο",
+          "frequency": 10
+        },
+        {
+          "rank": 814,
+          "word": "εἶδος",
+          "frequency": 10
+        },
+        {
+          "rank": 815,
+          "word": "εἰρήνην",
+          "frequency": 10
+        },
+        {
+          "rank": 816,
+          "word": "ἑκάστῳ",
+          "frequency": 10
+        },
+        {
+          "rank": 817,
+          "word": "ἐλθεῖν",
+          "frequency": 10
+        },
+        {
+          "rank": 818,
+          "word": "ἐμαρτύρησεν",
+          "frequency": 10
+        },
+        {
+          "rank": 819,
+          "word": "ἐνθέου",
+          "frequency": 10
+        },
+        {
+          "rank": 820,
+          "word": "ἐπιστολαῖς",
+          "frequency": 10
+        },
+        {
+          "rank": 821,
+          "word": "ἐπιστολήν",
+          "frequency": 10
+        },
+        {
+          "rank": 822,
+          "word": "ἔργα",
+          "frequency": 10
+        },
+        {
+          "rank": 823,
+          "word": "ἕτεροι",
+          "frequency": 10
+        },
+        {
+          "rank": 824,
+          "word": "ἔχων",
+          "frequency": 10
+        },
+        {
+          "rank": 825,
+          "word": "ἣ",
+          "frequency": 10
+        },
+        {
+          "rank": 826,
+          "word": "ἡμετέραν",
+          "frequency": 10
+        },
+        {
+          "rank": 827,
+          "word": "θείαν",
+          "frequency": 10
+        },
+        {
+          "rank": 828,
+          "word": "θεός",
+          "frequency": 10
+        },
+        {
+          "rank": 829,
+          "word": "ἰακώβου",
+          "frequency": 10
+        },
+        {
+          "rank": 830,
+          "word": "ἰησοῦς",
+          "frequency": 10
+        },
+        {
+          "rank": 831,
+          "word": "κἀγὼ",
+          "frequency": 10
+        },
+        {
+          "rank": 832,
+          "word": "καθάπερ",
+          "frequency": 10
+        },
+        {
+          "rank": 833,
+          "word": "καθολικῆς",
+          "frequency": 10
+        },
+        {
+          "rank": 834,
+          "word": "καίσαρος",
+          "frequency": 10
+        },
+        {
+          "rank": 835,
+          "word": "καίτοι",
+          "frequency": 10
+        },
+        {
+          "rank": 836,
+          "word": "κακίας",
+          "frequency": 10
+        },
+        {
+          "rank": 837,
+          "word": "καλῶς",
+          "frequency": 10
+        },
+        {
+          "rank": 838,
+          "word": "κωνσταντῖνος",
+          "frequency": 10
+        },
+        {
+          "rank": 839,
+          "word": "λέγει",
+          "frequency": 10
+        },
+        {
+          "rank": 840,
+          "word": "λέξεις",
+          "frequency": 10
+        },
+        {
+          "rank": 841,
+          "word": "λιμοῦ",
+          "frequency": 10
+        },
+        {
+          "rank": 842,
+          "word": "λογισμῷ",
+          "frequency": 10
+        },
+        {
+          "rank": 843,
+          "word": "λοιποῖς",
+          "frequency": 10
+        },
+        {
+          "rank": 844,
+          "word": "μαξιμίνου",
+          "frequency": 10
+        },
+        {
+          "rank": 845,
+          "word": "μείζονα",
+          "frequency": 10
+        },
+        {
+          "rank": 846,
+          "word": "μετέπειτα",
+          "frequency": 10
+        },
+        {
+          "rank": 847,
+          "word": "μυρίοι",
+          "frequency": 10
+        },
+        {
+          "rank": 848,
+          "word": "νόμον",
+          "frequency": 10
+        },
+        {
+          "rank": 849,
+          "word": "ὁμολογίαν",
+          "frequency": 10
+        },
+        {
+          "rank": 850,
+          "word": "ὁρᾶν",
+          "frequency": 10
+        }
+      ]
+    },
+    {
+      "batchNumber": 18,
+      "rankRange": [
+        851,
+        900
+      ],
+      "words": [
+        {
+          "rank": 851,
+          "word": "παίδων",
+          "frequency": 10
+        },
+        {
+          "rank": 852,
+          "word": "παλαιᾶς",
+          "frequency": 10
+        },
+        {
+          "rank": 853,
+          "word": "παντελῶς",
+          "frequency": 10
+        },
+        {
+          "rank": 854,
+          "word": "παρῆν",
+          "frequency": 10
+        },
+        {
+          "rank": 855,
+          "word": "παρόντων",
+          "frequency": 10
+        },
+        {
+          "rank": 856,
+          "word": "πλέον",
+          "frequency": 10
+        },
+        {
+          "rank": 857,
+          "word": "πρᾶγμα",
+          "frequency": 10
+        },
+        {
+          "rank": 858,
+          "word": "προνοίας",
+          "frequency": 10
+        },
+        {
+          "rank": 859,
+          "word": "πρός",
+          "frequency": 10
+        },
+        {
+          "rank": 860,
+          "word": "προσηγορίας",
+          "frequency": 10
+        },
+        {
+          "rank": 861,
+          "word": "προστάττει",
+          "frequency": 10
+        },
+        {
+          "rank": 862,
+          "word": "πρώτῳ",
+          "frequency": 10
+        },
+        {
+          "rank": 863,
+          "word": "πῦρ",
+          "frequency": 10
+        },
+        {
+          "rank": 864,
+          "word": "σωτῆρα",
+          "frequency": 10
+        },
+        {
+          "rank": 865,
+          "word": "ταύταις",
+          "frequency": 10
+        },
+        {
+          "rank": 866,
+          "word": "τελευτᾷ",
+          "frequency": 10
+        },
+        {
+          "rank": 867,
+          "word": "τελευτὴν",
+          "frequency": 10
+        },
+        {
+          "rank": 868,
+          "word": "τίνα",
+          "frequency": 10
+        },
+        {
+          "rank": 869,
+          "word": "τοιαύτην",
+          "frequency": 10
+        },
+        {
+          "rank": 870,
+          "word": "τοιοῦτον",
+          "frequency": 10
+        },
+        {
+          "rank": 871,
+          "word": "τοῦδε",
+          "frequency": 10
+        },
+        {
+          "rank": 872,
+          "word": "τρισὶν",
+          "frequency": 10
+        },
+        {
+          "rank": 873,
+          "word": "τρίτος",
+          "frequency": 10
+        },
+        {
+          "rank": 874,
+          "word": "τρίτῳ",
+          "frequency": 10
+        },
+        {
+          "rank": 875,
+          "word": "τρόπῳ",
+          "frequency": 10
+        },
+        {
+          "rank": 876,
+          "word": "τυράννων",
+          "frequency": 10
+        },
+        {
+          "rank": 877,
+          "word": "ὑποθέσεως",
+          "frequency": 10
+        },
+        {
+          "rank": 878,
+          "word": "φησὶν",
+          "frequency": 10
+        },
+        {
+          "rank": 879,
+          "word": "χρὴ",
+          "frequency": 10
+        },
+        {
+          "rank": 880,
+          "word": "χριστόν",
+          "frequency": 10
+        },
+        {
+          "rank": 881,
+          "word": "χριστῷ",
+          "frequency": 10
+        },
+        {
+          "rank": 882,
+          "word": "χρόνῳ",
+          "frequency": 10
+        },
+        {
+          "rank": 883,
+          "word": "ψυχῇ",
+          "frequency": 10
+        },
+        {
+          "rank": 884,
+          "word": "ὠριγένην",
+          "frequency": 10
+        },
+        {
+          "rank": 885,
+          "word": "ὡσαύτως",
+          "frequency": 10
+        },
+        {
+          "rank": 886,
+          "word": "῾λχχ",
+          "frequency": 9
+        },
+        {
+          "rank": 887,
+          "word": "ἀδελφοὺς",
+          "frequency": 9
+        },
+        {
+          "rank": 888,
+          "word": "αἰτίας",
+          "frequency": 9
+        },
+        {
+          "rank": 889,
+          "word": "ἀκολούθως",
+          "frequency": 9
+        },
+        {
+          "rank": 890,
+          "word": "ἄλλοτε",
+          "frequency": 9
+        },
+        {
+          "rank": 891,
+          "word": "ἄνδρες",
+          "frequency": 9
+        },
+        {
+          "rank": 892,
+          "word": "ἅπαντα",
+          "frequency": 9
+        },
+        {
+          "rank": 893,
+          "word": "ἅπερ",
+          "frequency": 9
+        },
+        {
+          "rank": 894,
+          "word": "ἁπλῶς",
+          "frequency": 9
+        },
+        {
+          "rank": 895,
+          "word": "ἀποστολικῆς",
+          "frequency": 9
+        },
+        {
+          "rank": 896,
+          "word": "βασιλείαν",
+          "frequency": 9
+        },
+        {
+          "rank": 897,
+          "word": "βιβλίον",
+          "frequency": 9
+        },
+        {
+          "rank": 898,
+          "word": "βίβλος",
+          "frequency": 9
+        },
+        {
+          "rank": 899,
+          "word": "βραχέα",
+          "frequency": 9
+        },
+        {
+          "rank": 900,
+          "word": "βραχὺ",
+          "frequency": 9
+        }
+      ]
+    },
+    {
+      "batchNumber": 19,
+      "rankRange": [
+        901,
+        950
+      ],
+      "words": [
+        {
+          "rank": 901,
+          "word": "δευτέραν",
+          "frequency": 9
+        },
+        {
+          "rank": 902,
+          "word": "διάδοχος",
+          "frequency": 9
+        },
+        {
+          "rank": 903,
+          "word": "δικαστοῦ",
+          "frequency": 9
+        },
+        {
+          "rank": 904,
+          "word": "δόγματα",
+          "frequency": 9
+        },
+        {
+          "rank": 905,
+          "word": "δοκεῖ",
+          "frequency": 9
+        },
+        {
+          "rank": 906,
+          "word": "δομετιανοῦ",
+          "frequency": 9
+        },
+        {
+          "rank": 907,
+          "word": "δυνατὸν",
+          "frequency": 9
+        },
+        {
+          "rank": 908,
+          "word": "δυνηθῇ",
+          "frequency": 9
+        },
+        {
+          "rank": 909,
+          "word": "ε",
+          "frequency": 9
+        },
+        {
+          "rank": 910,
+          "word": "ἑβδομήκοντα",
+          "frequency": 9
+        },
+        {
+          "rank": 911,
+          "word": "ἔθους",
+          "frequency": 9
+        },
+        {
+          "rank": 912,
+          "word": "ἐκείνης",
+          "frequency": 9
+        },
+        {
+          "rank": 913,
+          "word": "ἐμοὶ",
+          "frequency": 9
+        },
+        {
+          "rank": 914,
+          "word": "ἐμοῦ",
+          "frequency": 9
+        },
+        {
+          "rank": 915,
+          "word": "ἐξουσίαν",
+          "frequency": 9
+        },
+        {
+          "rank": 916,
+          "word": "ἑπτὰ",
+          "frequency": 9
+        },
+        {
+          "rank": 917,
+          "word": "ἔσται",
+          "frequency": 9
+        },
+        {
+          "rank": 918,
+          "word": "εὐσέβειαν",
+          "frequency": 9
+        },
+        {
+          "rank": 919,
+          "word": "εὐχαῖς",
+          "frequency": 9
+        },
+        {
+          "rank": 920,
+          "word": "ἐχόντων",
+          "frequency": 9
+        },
+        {
+          "rank": 921,
+          "word": "η",
+          "frequency": 9
+        },
+        {
+          "rank": 922,
+          "word": "ἡγεμόνος",
+          "frequency": 9
+        },
+        {
+          "rank": 923,
+          "word": "θεία",
+          "frequency": 9
+        },
+        {
+          "rank": 924,
+          "word": "θεόν",
+          "frequency": 9
+        },
+        {
+          "rank": 925,
+          "word": "θεοὺς",
+          "frequency": 9
+        },
+        {
+          "rank": 926,
+          "word": "θρόνον",
+          "frequency": 9
+        },
+        {
+          "rank": 927,
+          "word": "ἰούδα",
+          "frequency": 9
+        },
+        {
+          "rank": 928,
+          "word": "ἰουδαίοις",
+          "frequency": 9
+        },
+        {
+          "rank": 929,
+          "word": "καθίσταται",
+          "frequency": 9
+        },
+        {
+          "rank": 930,
+          "word": "κοινῆς",
+          "frequency": 9
+        },
+        {
+          "rank": 931,
+          "word": "λοιποὺς",
+          "frequency": 9
+        },
+        {
+          "rank": 932,
+          "word": "λουκᾶς",
+          "frequency": 9
+        },
+        {
+          "rank": 933,
+          "word": "μαθήματα",
+          "frequency": 9
+        },
+        {
+          "rank": 934,
+          "word": "μέντοι",
+          "frequency": 9
+        },
+        {
+          "rank": 935,
+          "word": "μέσον",
+          "frequency": 9
+        },
+        {
+          "rank": 936,
+          "word": "μεταλλάξαντος",
+          "frequency": 9
+        },
+        {
+          "rank": 937,
+          "word": "μετανοίας",
+          "frequency": 9
+        },
+        {
+          "rank": 938,
+          "word": "μιᾷ",
+          "frequency": 9
+        },
+        {
+          "rank": 939,
+          "word": "μνήμης",
+          "frequency": 9
+        },
+        {
+          "rank": 940,
+          "word": "μόλις",
+          "frequency": 9
+        },
+        {
+          "rank": 941,
+          "word": "μόνα",
+          "frequency": 9
+        },
+        {
+          "rank": 942,
+          "word": "μόνῳ",
+          "frequency": 9
+        },
+        {
+          "rank": 943,
+          "word": "μωυσέως",
+          "frequency": 9
+        },
+        {
+          "rank": 944,
+          "word": "νέον",
+          "frequency": 9
+        },
+        {
+          "rank": 945,
+          "word": "νίκης",
+          "frequency": 9
+        },
+        {
+          "rank": 946,
+          "word": "οἰκουμένης",
+          "frequency": 9
+        },
+        {
+          "rank": 947,
+          "word": "ὀλίγον",
+          "frequency": 9
+        },
+        {
+          "rank": 948,
+          "word": "ὅσους",
+          "frequency": 9
+        },
+        {
+          "rank": 949,
+          "word": "ὅστις",
+          "frequency": 9
+        },
+        {
+          "rank": 950,
+          "word": "οὐδαμῶς",
+          "frequency": 9
+        }
+      ]
+    },
+    {
+      "batchNumber": 20,
+      "rankRange": [
+        951,
+        1000
+      ],
+      "words": [
+        {
+          "rank": 951,
+          "word": "πανταχοῦ",
+          "frequency": 9
+        },
+        {
+          "rank": 952,
+          "word": "πάρεστιν",
+          "frequency": 9
+        },
+        {
+          "rank": 953,
+          "word": "πᾶς",
+          "frequency": 9
+        },
+        {
+          "rank": 954,
+          "word": "πέτρον",
+          "frequency": 9
+        },
+        {
+          "rank": 955,
+          "word": "πλήθει",
+          "frequency": 9
+        },
+        {
+          "rank": 956,
+          "word": "πλήθους",
+          "frequency": 9
+        },
+        {
+          "rank": 957,
+          "word": "ποιεῖσθαι",
+          "frequency": 9
+        },
+        {
+          "rank": 958,
+          "word": "προθυμίαν",
+          "frequency": 9
+        },
+        {
+          "rank": 959,
+          "word": "προφητείας",
+          "frequency": 9
+        },
+        {
+          "rank": 960,
+          "word": "προφητῶν",
+          "frequency": 9
+        },
+        {
+          "rank": 961,
+          "word": "πρώτοις",
+          "frequency": 9
+        },
+        {
+          "rank": 962,
+          "word": "σημαίνει",
+          "frequency": 9
+        },
+        {
+          "rank": 963,
+          "word": "σωτήριον",
+          "frequency": 9
+        },
+        {
+          "rank": 964,
+          "word": "σωτηρίου",
+          "frequency": 9
+        },
+        {
+          "rank": 965,
+          "word": "τέκνα",
+          "frequency": 9
+        },
+        {
+          "rank": 966,
+          "word": "τινὰς",
+          "frequency": 9
+        },
+        {
+          "rank": 967,
+          "word": "τοσαύτην",
+          "frequency": 9
+        },
+        {
+          "rank": 968,
+          "word": "τρεῖς",
+          "frequency": 9
+        },
+        {
+          "rank": 969,
+          "word": "τύραννος",
+          "frequency": 9
+        },
+        {
+          "rank": 970,
+          "word": "ὑμεῖς",
+          "frequency": 9
+        },
+        {
+          "rank": 971,
+          "word": "ὑπό",
+          "frequency": 9
+        },
+        {
+          "rank": 972,
+          "word": "ὑπομνήματα",
+          "frequency": 9
+        },
+        {
+          "rank": 973,
+          "word": "φασὶν",
+          "frequency": 9
+        },
+        {
+          "rank": 974,
+          "word": "φίλιππον",
+          "frequency": 9
+        },
+        {
+          "rank": 975,
+          "word": "φίλον",
+          "frequency": 9
+        },
+        {
+          "rank": 976,
+          "word": "φῶς",
+          "frequency": 9
+        },
+        {
+          "rank": 977,
+          "word": "χάρις",
+          "frequency": 9
+        },
+        {
+          "rank": 978,
+          "word": "χάριτος",
+          "frequency": 9
+        },
+        {
+          "rank": 979,
+          "word": "χρημάτων",
+          "frequency": 9
+        },
+        {
+          "rank": 980,
+          "word": "χριστιανοῖς",
+          "frequency": 9
+        },
+        {
+          "rank": 981,
+          "word": "χριστὸς",
+          "frequency": 9
+        },
+        {
+          "rank": 982,
+          "word": "῾",
+          "frequency": 8
+        },
+        {
+          "rank": 983,
+          "word": "ἁγίαν",
+          "frequency": 8
+        },
+        {
+          "rank": 984,
+          "word": "ἁγίους",
+          "frequency": 8
+        },
+        {
+          "rank": 985,
+          "word": "ἁγίῳ",
+          "frequency": 8
+        },
+        {
+          "rank": 986,
+          "word": "ἀδελφούς",
+          "frequency": 8
+        },
+        {
+          "rank": 987,
+          "word": "ἁδριανοῦ",
+          "frequency": 8
+        },
+        {
+          "rank": 988,
+          "word": "ἀλεξανδρείᾳ",
+          "frequency": 8
+        },
+        {
+          "rank": 989,
+          "word": "ἀλεξάνδρου",
+          "frequency": 8
+        },
+        {
+          "rank": 990,
+          "word": "ἀληθοῦς",
+          "frequency": 8
+        },
+        {
+          "rank": 991,
+          "word": "ἄλλον",
+          "frequency": 8
+        },
+        {
+          "rank": 992,
+          "word": "ἀνατολῆς",
+          "frequency": 8
+        },
+        {
+          "rank": 993,
+          "word": "ἀνέκαθεν",
+          "frequency": 8
+        },
+        {
+          "rank": 994,
+          "word": "ἀνίκητος",
+          "frequency": 8
+        },
+        {
+          "rank": 995,
+          "word": "αντιγραφον",
+          "frequency": 8
+        },
+        {
+          "rank": 996,
+          "word": "ἀντωνῖνον",
+          "frequency": 8
+        },
+        {
+          "rank": 997,
+          "word": "ἄνωθεν",
+          "frequency": 8
+        },
+        {
+          "rank": 998,
+          "word": "ἀρχὰς",
+          "frequency": 8
+        },
+        {
+          "rank": 999,
+          "word": "ἀρχήν",
+          "frequency": 8
+        },
+        {
+          "rank": 1000,
+          "word": "αὐτὴ",
+          "frequency": 8
+        }
+      ]
+    },
+    {
+      "batchNumber": 21,
+      "rankRange": [
+        1001,
+        1050
+      ],
+      "words": [
+        {
+          "rank": 1001,
+          "word": "βαπτίσματος",
+          "frequency": 8
+        },
+        {
+          "rank": 1002,
+          "word": "βασιλέων",
+          "frequency": 8
+        },
+        {
+          "rank": 1003,
+          "word": "γεγονώς",
+          "frequency": 8
+        },
+        {
+          "rank": 1004,
+          "word": "γένοιτ",
+          "frequency": 8
+        },
+        {
+          "rank": 1005,
+          "word": "γενόμενοι",
+          "frequency": 8
+        },
+        {
+          "rank": 1006,
+          "word": "γενομένου",
+          "frequency": 8
+        },
+        {
+          "rank": 1007,
+          "word": "γινόμενον",
+          "frequency": 8
+        },
+        {
+          "rank": 1008,
+          "word": "γνήσιον",
+          "frequency": 8
+        },
+        {
+          "rank": 1009,
+          "word": "γνωρίμων",
+          "frequency": 8
+        },
+        {
+          "rank": 1010,
+          "word": "δεδήλωται",
+          "frequency": 8
+        },
+        {
+          "rank": 1011,
+          "word": "δεξιὰν",
+          "frequency": 8
+        },
+        {
+          "rank": 1012,
+          "word": "δῆλον",
+          "frequency": 8
+        },
+        {
+          "rank": 1013,
+          "word": "δηλουμένους",
+          "frequency": 8
+        },
+        {
+          "rank": 1014,
+          "word": "δηλῶν",
+          "frequency": 8
+        },
+        {
+          "rank": 1015,
+          "word": "δήμου",
+          "frequency": 8
+        },
+        {
+          "rank": 1016,
+          "word": "διαθήκης",
+          "frequency": 8
+        },
+        {
+          "rank": 1017,
+          "word": "διατριβῆς",
+          "frequency": 8
+        },
+        {
+          "rank": 1018,
+          "word": "διωγμόν",
+          "frequency": 8
+        },
+        {
+          "rank": 1019,
+          "word": "δύνασθαι",
+          "frequency": 8
+        },
+        {
+          "rank": 1020,
+          "word": "ἑαυτόν",
+          "frequency": 8
+        },
+        {
+          "rank": 1021,
+          "word": "ἐγίνετο",
+          "frequency": 8
+        },
+        {
+          "rank": 1022,
+          "word": "ἔγραψεν",
+          "frequency": 8
+        },
+        {
+          "rank": 1023,
+          "word": "ἔθνος",
+          "frequency": 8
+        },
+        {
+          "rank": 1024,
+          "word": "εἶτ",
+          "frequency": 8
+        },
+        {
+          "rank": 1025,
+          "word": "ἕκαστα",
+          "frequency": 8
+        },
+        {
+          "rank": 1026,
+          "word": "ἐκεῖνοι",
+          "frequency": 8
+        },
+        {
+          "rank": 1027,
+          "word": "ἔλεγχον",
+          "frequency": 8
+        },
+        {
+          "rank": 1028,
+          "word": "ἐλθόντα",
+          "frequency": 8
+        },
+        {
+          "rank": 1029,
+          "word": "ἔνδον",
+          "frequency": 8
+        },
+        {
+          "rank": 1030,
+          "word": "ἐνιαυτὸν",
+          "frequency": 8
+        },
+        {
+          "rank": 1031,
+          "word": "ἐξουσίας",
+          "frequency": 8
+        },
+        {
+          "rank": 1032,
+          "word": "ἑορτῆς",
+          "frequency": 8
+        },
+        {
+          "rank": 1033,
+          "word": "ἐπειρᾶτο",
+          "frequency": 8
+        },
+        {
+          "rank": 1034,
+          "word": "ἔπειτα",
+          "frequency": 8
+        },
+        {
+          "rank": 1035,
+          "word": "επη",
+          "frequency": 8
+        },
+        {
+          "rank": 1036,
+          "word": "ἐπιλέγει",
+          "frequency": 8
+        },
+        {
+          "rank": 1037,
+          "word": "ἐπισκόποις",
+          "frequency": 8
+        },
+        {
+          "rank": 1038,
+          "word": "ἐπιστολὰς",
+          "frequency": 8
+        },
+        {
+          "rank": 1039,
+          "word": "ἐποιεῖτο",
+          "frequency": 8
+        },
+        {
+          "rank": 1040,
+          "word": "ἔρημος",
+          "frequency": 8
+        },
+        {
+          "rank": 1041,
+          "word": "ἑτέρου",
+          "frequency": 8
+        },
+        {
+          "rank": 1042,
+          "word": "εὑρεῖν",
+          "frequency": 8
+        },
+        {
+          "rank": 1043,
+          "word": "ζ",
+          "frequency": 8
+        },
+        {
+          "rank": 1044,
+          "word": "ζωὴν",
+          "frequency": 8
+        },
+        {
+          "rank": 1045,
+          "word": "ἡγήσιππος",
+          "frequency": 8
+        },
+        {
+          "rank": 1046,
+          "word": "ἠξίωσεν",
+          "frequency": 8
+        },
+        {
+          "rank": 1047,
+          "word": "ἥτις",
+          "frequency": 8
+        },
+        {
+          "rank": 1048,
+          "word": "θηρία",
+          "frequency": 8
+        },
+        {
+          "rank": 1049,
+          "word": "θύειν",
+          "frequency": 8
+        },
+        {
+          "rank": 1050,
+          "word": "ἰουδαίας",
+          "frequency": 8
+        }
+      ]
+    },
+    {
+      "batchNumber": 22,
+      "rankRange": [
+        1051,
+        1100
+      ],
+      "words": [
+        {
+          "rank": 1051,
+          "word": "καῖσαρ",
+          "frequency": 8
+        },
+        {
+          "rank": 1052,
+          "word": "κανόνα",
+          "frequency": 8
+        },
+        {
+          "rank": 1053,
+          "word": "κατεστήσατο",
+          "frequency": 8
+        },
+        {
+          "rank": 1054,
+          "word": "κατηχήσεως",
+          "frequency": 8
+        },
+        {
+          "rank": 1055,
+          "word": "κεκοίμηται",
+          "frequency": 8
+        },
+        {
+          "rank": 1056,
+          "word": "κοινοῦ",
+          "frequency": 8
+        },
+        {
+          "rank": 1057,
+          "word": "κομιδῇ",
+          "frequency": 8
+        },
+        {
+          "rank": 1058,
+          "word": "κορινθίων",
+          "frequency": 8
+        },
+        {
+          "rank": 1059,
+          "word": "κόσμον",
+          "frequency": 8
+        },
+        {
+          "rank": 1060,
+          "word": "λαβεῖν",
+          "frequency": 8
+        },
+        {
+          "rank": 1061,
+          "word": "λεγομένων",
+          "frequency": 8
+        },
+        {
+          "rank": 1062,
+          "word": "λέγοντες",
+          "frequency": 8
+        },
+        {
+          "rank": 1063,
+          "word": "λόγοι",
+          "frequency": 8
+        },
+        {
+          "rank": 1064,
+          "word": "λοιποὶ",
+          "frequency": 8
+        },
+        {
+          "rank": 1065,
+          "word": "μαθεῖν",
+          "frequency": 8
+        },
+        {
+          "rank": 1066,
+          "word": "μαθημάτων",
+          "frequency": 8
+        },
+        {
+          "rank": 1067,
+          "word": "μακάριον",
+          "frequency": 8
+        },
+        {
+          "rank": 1068,
+          "word": "μάρτυρος",
+          "frequency": 8
+        },
+        {
+          "rank": 1069,
+          "word": "μεγάλου",
+          "frequency": 8
+        },
+        {
+          "rank": 1070,
+          "word": "μέγαν",
+          "frequency": 8
+        },
+        {
+          "rank": 1071,
+          "word": "μέγεθος",
+          "frequency": 8
+        },
+        {
+          "rank": 1072,
+          "word": "μέγιστον",
+          "frequency": 8
+        },
+        {
+          "rank": 1073,
+          "word": "μελλόντων",
+          "frequency": 8
+        },
+        {
+          "rank": 1074,
+          "word": "μελῶν",
+          "frequency": 8
+        },
+        {
+          "rank": 1075,
+          "word": "μνήμῃ",
+          "frequency": 8
+        },
+        {
+          "rank": 1076,
+          "word": "μνημονεύουσιν",
+          "frequency": 8
+        },
+        {
+          "rank": 1077,
+          "word": "μόνην",
+          "frequency": 8
+        },
+        {
+          "rank": 1078,
+          "word": "μόνους",
+          "frequency": 8
+        },
+        {
+          "rank": 1079,
+          "word": "μοντανοῦ",
+          "frequency": 8
+        },
+        {
+          "rank": 1080,
+          "word": "νόμου",
+          "frequency": 8
+        },
+        {
+          "rank": 1081,
+          "word": "ξλεμ",
+          "frequency": 8
+        },
+        {
+          "rank": 1082,
+          "word": "ξύλου",
+          "frequency": 8
+        },
+        {
+          "rank": 1083,
+          "word": "οἵ",
+          "frequency": 8
+        },
+        {
+          "rank": 1084,
+          "word": "οἶδ",
+          "frequency": 8
+        },
+        {
+          "rank": 1085,
+          "word": "οἷόν",
+          "frequency": 8
+        },
+        {
+          "rank": 1086,
+          "word": "ὀρθοδοξίας",
+          "frequency": 8
+        },
+        {
+          "rank": 1087,
+          "word": "ὁσημέραι",
+          "frequency": 8
+        },
+        {
+          "rank": 1088,
+          "word": "οὐκέτ",
+          "frequency": 8
+        },
+        {
+          "rank": 1089,
+          "word": "παῖδας",
+          "frequency": 8
+        },
+        {
+          "rank": 1090,
+          "word": "πανταχόσε",
+          "frequency": 8
+        },
+        {
+          "rank": 1091,
+          "word": "παρά",
+          "frequency": 8
+        },
+        {
+          "rank": 1092,
+          "word": "παραθήσομαι",
+          "frequency": 8
+        },
+        {
+          "rank": 1093,
+          "word": "παρατέθειται",
+          "frequency": 8
+        },
+        {
+          "rank": 1094,
+          "word": "παρέχειν",
+          "frequency": 8
+        },
+        {
+          "rank": 1095,
+          "word": "παροικιῶν",
+          "frequency": 8
+        },
+        {
+          "rank": 1096,
+          "word": "πᾶσα",
+          "frequency": 8
+        },
+        {
+          "rank": 1097,
+          "word": "πηιλ",
+          "frequency": 8
+        },
+        {
+          "rank": 1098,
+          "word": "πλείστους",
+          "frequency": 8
+        },
+        {
+          "rank": 1099,
+          "word": "πλήθη",
+          "frequency": 8
+        },
+        {
+          "rank": 1100,
+          "word": "πλὴν",
+          "frequency": 8
+        }
+      ]
+    },
+    {
+      "batchNumber": 23,
+      "rankRange": [
+        1101,
+        1150
+      ],
+      "words": [
+        {
+          "rank": 1101,
+          "word": "πλησίον",
+          "frequency": 8
+        },
+        {
+          "rank": 1102,
+          "word": "ποιήσασθαι",
+          "frequency": 8
+        },
+        {
+          "rank": 1103,
+          "word": "πολλῆς",
+          "frequency": 8
+        },
+        {
+          "rank": 1104,
+          "word": "πολλῷ",
+          "frequency": 8
+        },
+        {
+          "rank": 1105,
+          "word": "πολύκαρπον",
+          "frequency": 8
+        },
+        {
+          "rank": 1106,
+          "word": "πολὺν",
+          "frequency": 8
+        },
+        {
+          "rank": 1107,
+          "word": "πρεσβύτεροι",
+          "frequency": 8
+        },
+        {
+          "rank": 1108,
+          "word": "προθύμως",
+          "frequency": 8
+        },
+        {
+          "rank": 1109,
+          "word": "πρόνοιαν",
+          "frequency": 8
+        },
+        {
+          "rank": 1110,
+          "word": "προσηγορίαν",
+          "frequency": 8
+        },
+        {
+          "rank": 1111,
+          "word": "προφήτης",
+          "frequency": 8
+        },
+        {
+          "rank": 1112,
+          "word": "πώποτε",
+          "frequency": 8
+        },
+        {
+          "rank": 1113,
+          "word": "σεβαστὸς",
+          "frequency": 8
+        },
+        {
+          "rank": 1114,
+          "word": "σπουδῇ",
+          "frequency": 8
+        },
+        {
+          "rank": 1115,
+          "word": "στήλαις",
+          "frequency": 8
+        },
+        {
+          "rank": 1116,
+          "word": "σὺ",
+          "frequency": 8
+        },
+        {
+          "rank": 1117,
+          "word": "συγγράμματος",
+          "frequency": 8
+        },
+        {
+          "rank": 1118,
+          "word": "συγγραφέως",
+          "frequency": 8
+        },
+        {
+          "rank": 1119,
+          "word": "συμβεβηκότων",
+          "frequency": 8
+        },
+        {
+          "rank": 1120,
+          "word": "σφῶν",
+          "frequency": 8
+        },
+        {
+          "rank": 1121,
+          "word": "σώματι",
+          "frequency": 8
+        },
+        {
+          "rank": 1122,
+          "word": "σωμάτων",
+          "frequency": 8
+        },
+        {
+          "rank": 1123,
+          "word": "ταὐτῷ",
+          "frequency": 8
+        },
+        {
+          "rank": 1124,
+          "word": "τεσσαράκοντα",
+          "frequency": 8
+        },
+        {
+          "rank": 1125,
+          "word": "τιμωρίαν",
+          "frequency": 8
+        },
+        {
+          "rank": 1126,
+          "word": "τινῶν",
+          "frequency": 8
+        },
+        {
+          "rank": 1127,
+          "word": "τοιούτου",
+          "frequency": 8
+        },
+        {
+          "rank": 1128,
+          "word": "τούς",
+          "frequency": 8
+        },
+        {
+          "rank": 1129,
+          "word": "τούσδε",
+          "frequency": 8
+        },
+        {
+          "rank": 1130,
+          "word": "τραϊανοῦ",
+          "frequency": 8
+        },
+        {
+          "rank": 1131,
+          "word": "τρίτον",
+          "frequency": 8
+        },
+        {
+          "rank": 1132,
+          "word": "τριῶν",
+          "frequency": 8
+        },
+        {
+          "rank": 1133,
+          "word": "ὕδατος",
+          "frequency": 8
+        },
+        {
+          "rank": 1134,
+          "word": "υἱὸν",
+          "frequency": 8
+        },
+        {
+          "rank": 1135,
+          "word": "ὑπομνημάτων",
+          "frequency": 8
+        },
+        {
+          "rank": 1136,
+          "word": "ὑπομονῆς",
+          "frequency": 8
+        },
+        {
+          "rank": 1137,
+          "word": "φέρε",
+          "frequency": 8
+        },
+        {
+          "rank": 1138,
+          "word": "φιλοσόφου",
+          "frequency": 8
+        },
+        {
+          "rank": 1139,
+          "word": "φύσεως",
+          "frequency": 8
+        },
+        {
+          "rank": 1140,
+          "word": "φωναῖς",
+          "frequency": 8
+        },
+        {
+          "rank": 1141,
+          "word": "φωνὴν",
+          "frequency": 8
+        },
+        {
+          "rank": 1142,
+          "word": "χαίρειν",
+          "frequency": 8
+        },
+        {
+          "rank": 1143,
+          "word": "χάριτι",
+          "frequency": 8
+        },
+        {
+          "rank": 1144,
+          "word": "χειρῶν",
+          "frequency": 8
+        },
+        {
+          "rank": 1145,
+          "word": "ψυχῶν",
+          "frequency": 8
+        },
+        {
+          "rank": 1146,
+          "word": "ὥρας",
+          "frequency": 8
+        },
+        {
+          "rank": 1147,
+          "word": "ὠφελείας",
+          "frequency": 8
+        },
+        {
+          "rank": 1148,
+          "word": "῾ὁ",
+          "frequency": 7
+        },
+        {
+          "rank": 1149,
+          "word": "ἀγάπην",
+          "frequency": 7
+        },
+        {
+          "rank": 1150,
+          "word": "ἀγγέλων",
+          "frequency": 7
+        }
+      ]
+    },
+    {
+      "batchNumber": 24,
+      "rankRange": [
+        1151,
+        1200
+      ],
+      "words": [
+        {
+          "rank": 1151,
+          "word": "ἅγιον",
+          "frequency": 7
+        },
+        {
+          "rank": 1152,
+          "word": "ἀδελφοί",
+          "frequency": 7
+        },
+        {
+          "rank": 1153,
+          "word": "αἳ",
+          "frequency": 7
+        },
+        {
+          "rank": 1154,
+          "word": "αἵματος",
+          "frequency": 7
+        },
+        {
+          "rank": 1155,
+          "word": "αἴτιον",
+          "frequency": 7
+        },
+        {
+          "rank": 1156,
+          "word": "ἀκοῦσαι",
+          "frequency": 7
+        },
+        {
+          "rank": 1157,
+          "word": "ἀλλήλων",
+          "frequency": 7
+        },
+        {
+          "rank": 1158,
+          "word": "ἄνθρωπος",
+          "frequency": 7
+        },
+        {
+          "rank": 1159,
+          "word": "ἀντωνίνου",
+          "frequency": 7
+        },
+        {
+          "rank": 1160,
+          "word": "ἀπόστολος",
+          "frequency": 7
+        },
+        {
+          "rank": 1161,
+          "word": "ἀπωλείας",
+          "frequency": 7
+        },
+        {
+          "rank": 1162,
+          "word": "ἀρχηγὸν",
+          "frequency": 7
+        },
+        {
+          "rank": 1163,
+          "word": "ἀρχιερεὺς",
+          "frequency": 7
+        },
+        {
+          "rank": 1164,
+          "word": "ἀρχόμενος",
+          "frequency": 7
+        },
+        {
+          "rank": 1165,
+          "word": "ἄρχοντας",
+          "frequency": 7
+        },
+        {
+          "rank": 1166,
+          "word": "ἅτινα",
+          "frequency": 7
+        },
+        {
+          "rank": 1167,
+          "word": "αὐτήν",
+          "frequency": 7
+        },
+        {
+          "rank": 1168,
+          "word": "αὐτοκράτορος",
+          "frequency": 7
+        },
+        {
+          "rank": 1169,
+          "word": "βασάνους",
+          "frequency": 7
+        },
+        {
+          "rank": 1170,
+          "word": "βασιλείᾳ",
+          "frequency": 7
+        },
+        {
+          "rank": 1171,
+          "word": "βῆμα",
+          "frequency": 7
+        },
+        {
+          "rank": 1172,
+          "word": "βιβλίων",
+          "frequency": 7
+        },
+        {
+          "rank": 1173,
+          "word": "βούλεσθαι",
+          "frequency": 7
+        },
+        {
+          "rank": 1174,
+          "word": "γαλ",
+          "frequency": 7
+        },
+        {
+          "rank": 1175,
+          "word": "γέγραπται",
+          "frequency": 7
+        },
+        {
+          "rank": 1176,
+          "word": "γένει",
+          "frequency": 7
+        },
+        {
+          "rank": 1177,
+          "word": "γένηται",
+          "frequency": 7
+        },
+        {
+          "rank": 1178,
+          "word": "γράψας",
+          "frequency": 7
+        },
+        {
+          "rank": 1179,
+          "word": "γυναῖκας",
+          "frequency": 7
+        },
+        {
+          "rank": 1180,
+          "word": "γυναιξὶν",
+          "frequency": 7
+        },
+        {
+          "rank": 1181,
+          "word": "δέκατον",
+          "frequency": 7
+        },
+        {
+          "rank": 1182,
+          "word": "δευτέρῳ",
+          "frequency": 7
+        },
+        {
+          "rank": 1183,
+          "word": "δημοσίᾳ",
+          "frequency": 7
+        },
+        {
+          "rank": 1184,
+          "word": "διαγενομένου",
+          "frequency": 7
+        },
+        {
+          "rank": 1185,
+          "word": "διαθέσεως",
+          "frequency": 7
+        },
+        {
+          "rank": 1186,
+          "word": "διακόνων",
+          "frequency": 7
+        },
+        {
+          "rank": 1187,
+          "word": "διαφόροις",
+          "frequency": 7
+        },
+        {
+          "rank": 1188,
+          "word": "διαφόρων",
+          "frequency": 7
+        },
+        {
+          "rank": 1189,
+          "word": "διδάσκαλος",
+          "frequency": 7
+        },
+        {
+          "rank": 1190,
+          "word": "διδασκάλου",
+          "frequency": 7
+        },
+        {
+          "rank": 1191,
+          "word": "διονύσιον",
+          "frequency": 7
+        },
+        {
+          "rank": 1192,
+          "word": "διονυσίῳ",
+          "frequency": 7
+        },
+        {
+          "rank": 1193,
+          "word": "δόγμα",
+          "frequency": 7
+        },
+        {
+          "rank": 1194,
+          "word": "δογμάτων",
+          "frequency": 7
+        },
+        {
+          "rank": 1195,
+          "word": "δόξα",
+          "frequency": 7
+        },
+        {
+          "rank": 1196,
+          "word": "δόξας",
+          "frequency": 7
+        },
+        {
+          "rank": 1197,
+          "word": "δύναται",
+          "frequency": 7
+        },
+        {
+          "rank": 1198,
+          "word": "δώδεκα",
+          "frequency": 7
+        },
+        {
+          "rank": 1199,
+          "word": "ἔγνωμεν",
+          "frequency": 7
+        },
+        {
+          "rank": 1200,
+          "word": "εἰδέναι",
+          "frequency": 7
+        }
+      ]
+    },
+    {
+      "batchNumber": 25,
+      "rankRange": [
+        1201,
+        1250
+      ],
+      "words": [
+        {
+          "rank": 1201,
+          "word": "εἴδωλα",
+          "frequency": 7
+        },
+        {
+          "rank": 1202,
+          "word": "εἰπών",
+          "frequency": 7
+        },
+        {
+          "rank": 1203,
+          "word": "εἰρημένα",
+          "frequency": 7
+        },
+        {
+          "rank": 1204,
+          "word": "εἱρκτῇ",
+          "frequency": 7
+        },
+        {
+          "rank": 1205,
+          "word": "εἰσιν",
+          "frequency": 7
+        },
+        {
+          "rank": 1206,
+          "word": "εἴσω",
+          "frequency": 7
+        },
+        {
+          "rank": 1207,
+          "word": "ἔκ",
+          "frequency": 7
+        },
+        {
+          "rank": 1208,
+          "word": "ἑκάστην",
+          "frequency": 7
+        },
+        {
+          "rank": 1209,
+          "word": "ἑκάστου",
+          "frequency": 7
+        },
+        {
+          "rank": 1210,
+          "word": "ἐκεῖνον",
+          "frequency": 7
+        },
+        {
+          "rank": 1211,
+          "word": "ἐκείνῳ",
+          "frequency": 7
+        },
+        {
+          "rank": 1212,
+          "word": "ἐκέλευσεν",
+          "frequency": 7
+        },
+        {
+          "rank": 1213,
+          "word": "ἐκκλησίαι",
+          "frequency": 7
+        },
+        {
+          "rank": 1214,
+          "word": "ἔλεος",
+          "frequency": 7
+        },
+        {
+          "rank": 1215,
+          "word": "ἐλευθερίας",
+          "frequency": 7
+        },
+        {
+          "rank": 1216,
+          "word": "ἐλθὼν",
+          "frequency": 7
+        },
+        {
+          "rank": 1217,
+          "word": "ἐλπίδα",
+          "frequency": 7
+        },
+        {
+          "rank": 1218,
+          "word": "ἓν",
+          "frequency": 7
+        },
+        {
+          "rank": 1219,
+          "word": "ἐνδοτάτω",
+          "frequency": 7
+        },
+        {
+          "rank": 1220,
+          "word": "ἐνθάδε",
+          "frequency": 7
+        },
+        {
+          "rank": 1221,
+          "word": "ἐπιστολάς",
+          "frequency": 7
+        },
+        {
+          "rank": 1222,
+          "word": "ἔρημον",
+          "frequency": 7
+        },
+        {
+          "rank": 1223,
+          "word": "ἔτ",
+          "frequency": 7
+        },
+        {
+          "rank": 1224,
+          "word": "ἕτερά",
+          "frequency": 7
+        },
+        {
+          "rank": 1225,
+          "word": "ἔτυχεν",
+          "frequency": 7
+        },
+        {
+          "rank": 1226,
+          "word": "ἔχουσαν",
+          "frequency": 7
+        },
+        {
+          "rank": 1227,
+          "word": "ἔχουσιν",
+          "frequency": 7
+        },
+        {
+          "rank": 1228,
+          "word": "ζῆν",
+          "frequency": 7
+        },
+        {
+          "rank": 1229,
+          "word": "ζητήματος",
+          "frequency": 7
+        },
+        {
+          "rank": 1230,
+          "word": "ζῶντας",
+          "frequency": 7
+        },
+        {
+          "rank": 1231,
+          "word": "ἡγουμένου",
+          "frequency": 7
+        },
+        {
+          "rank": 1232,
+          "word": "ἡμερῶν",
+          "frequency": 7
+        },
+        {
+          "rank": 1233,
+          "word": "ἡρακλᾶ",
+          "frequency": 7
+        },
+        {
+          "rank": 1234,
+          "word": "θ",
+          "frequency": 7
+        },
+        {
+          "rank": 1235,
+          "word": "θέαν",
+          "frequency": 7
+        },
+        {
+          "rank": 1236,
+          "word": "θείῳ",
+          "frequency": 7
+        },
+        {
+          "rank": 1237,
+          "word": "θεότεκνος",
+          "frequency": 7
+        },
+        {
+          "rank": 1238,
+          "word": "θεόφιλος",
+          "frequency": 7
+        },
+        {
+          "rank": 1239,
+          "word": "θρῃσκείᾳ",
+          "frequency": 7
+        },
+        {
+          "rank": 1240,
+          "word": "θυμοῦ",
+          "frequency": 7
+        },
+        {
+          "rank": 1241,
+          "word": "ια",
+          "frequency": 7
+        },
+        {
+          "rank": 1242,
+          "word": "ἴδιον",
+          "frequency": 7
+        },
+        {
+          "rank": 1243,
+          "word": "ἰδοὺ",
+          "frequency": 7
+        },
+        {
+          "rank": 1244,
+          "word": "ἱεροὺς",
+          "frequency": 7
+        },
+        {
+          "rank": 1245,
+          "word": "ἰουδαίους",
+          "frequency": 7
+        },
+        {
+          "rank": 1246,
+          "word": "καθολικῇ",
+          "frequency": 7
+        },
+        {
+          "rank": 1247,
+          "word": "καιρῷ",
+          "frequency": 7
+        },
+        {
+          "rank": 1248,
+          "word": "κατέστη",
+          "frequency": 7
+        },
+        {
+          "rank": 1249,
+          "word": "κέχρηται",
+          "frequency": 7
+        },
+        {
+          "rank": 1250,
+          "word": "κόλασιν",
+          "frequency": 7
+        }
+      ]
+    },
+    {
+      "batchNumber": 26,
+      "rankRange": [
+        1251,
+        1300
+      ],
+      "words": [
+        {
+          "rank": 1251,
+          "word": "κόσμου",
+          "frequency": 7
+        },
+        {
+          "rank": 1252,
+          "word": "κρατούντων",
+          "frequency": 7
+        },
+        {
+          "rank": 1253,
+          "word": "κωνσταντίνου",
+          "frequency": 7
+        },
+        {
+          "rank": 1254,
+          "word": "λαῷ",
+          "frequency": 7
+        },
+        {
+          "rank": 1255,
+          "word": "λογισμοῦ",
+          "frequency": 7
+        },
+        {
+          "rank": 1256,
+          "word": "μακάριος",
+          "frequency": 7
+        },
+        {
+          "rank": 1257,
+          "word": "μαξιμῖνος",
+          "frequency": 7
+        },
+        {
+          "rank": 1258,
+          "word": "μάξιμος",
+          "frequency": 7
+        },
+        {
+          "rank": 1259,
+          "word": "μαρκίωνα",
+          "frequency": 7
+        },
+        {
+          "rank": 1260,
+          "word": "μάρτυρα",
+          "frequency": 7
+        },
+        {
+          "rank": 1261,
+          "word": "μαρτυρίαις",
+          "frequency": 7
+        },
+        {
+          "rank": 1262,
+          "word": "μαρτύριον",
+          "frequency": 7
+        },
+        {
+          "rank": 1263,
+          "word": "μεγάλα",
+          "frequency": 7
+        },
+        {
+          "rank": 1264,
+          "word": "μεγάλως",
+          "frequency": 7
+        },
+        {
+          "rank": 1265,
+          "word": "μεγίστην",
+          "frequency": 7
+        },
+        {
+          "rank": 1266,
+          "word": "μέρη",
+          "frequency": 7
+        },
+        {
+          "rank": 1267,
+          "word": "μία",
+          "frequency": 7
+        },
+        {
+          "rank": 1268,
+          "word": "μικροῦ",
+          "frequency": 7
+        },
+        {
+          "rank": 1269,
+          "word": "μυρίους",
+          "frequency": 7
+        },
+        {
+          "rank": 1270,
+          "word": "μυρίων",
+          "frequency": 7
+        },
+        {
+          "rank": 1271,
+          "word": "νεὼ",
+          "frequency": 7
+        },
+        {
+          "rank": 1272,
+          "word": "νόσου",
+          "frequency": 7
+        },
+        {
+          "rank": 1273,
+          "word": "νοῦν",
+          "frequency": 7
+        },
+        {
+          "rank": 1274,
+          "word": "οἴκου",
+          "frequency": 7
+        },
+        {
+          "rank": 1275,
+          "word": "οἷος",
+          "frequency": 7
+        },
+        {
+          "rank": 1276,
+          "word": "ὅλον",
+          "frequency": 7
+        },
+        {
+          "rank": 1277,
+          "word": "ὁμολογίᾳ",
+          "frequency": 7
+        },
+        {
+          "rank": 1278,
+          "word": "ὁμολογίας",
+          "frequency": 7
+        },
+        {
+          "rank": 1279,
+          "word": "ὁμολογοῦντες",
+          "frequency": 7
+        },
+        {
+          "rank": 1280,
+          "word": "ὁμόσε",
+          "frequency": 7
+        },
+        {
+          "rank": 1281,
+          "word": "ὄντων",
+          "frequency": 7
+        },
+        {
+          "rank": 1282,
+          "word": "ὅπῃ",
+          "frequency": 7
+        },
+        {
+          "rank": 1283,
+          "word": "οὐράνιος",
+          "frequency": 7
+        },
+        {
+          "rank": 1284,
+          "word": "οὐρανὸν",
+          "frequency": 7
+        },
+        {
+          "rank": 1285,
+          "word": "οὔσης",
+          "frequency": 7
+        },
+        {
+          "rank": 1286,
+          "word": "οὐσίας",
+          "frequency": 7
+        },
+        {
+          "rank": 1287,
+          "word": "οὔτ",
+          "frequency": 7
+        },
+        {
+          "rank": 1288,
+          "word": "ὀφθαλμῶν",
+          "frequency": 7
+        },
+        {
+          "rank": 1289,
+          "word": "ὄψιν",
+          "frequency": 7
+        },
+        {
+          "rank": 1290,
+          "word": "παιδείας",
+          "frequency": 7
+        },
+        {
+          "rank": 1291,
+          "word": "παιδὸς",
+          "frequency": 7
+        },
+        {
+          "rank": 1292,
+          "word": "παναγάθου",
+          "frequency": 7
+        },
+        {
+          "rank": 1293,
+          "word": "πανταχόθεν",
+          "frequency": 7
+        },
+        {
+          "rank": 1294,
+          "word": "παραδίδωσιν",
+          "frequency": 7
+        },
+        {
+          "rank": 1295,
+          "word": "παράδοξον",
+          "frequency": 7
+        },
+        {
+          "rank": 1296,
+          "word": "παρόντα",
+          "frequency": 7
+        },
+        {
+          "rank": 1297,
+          "word": "παρουσίας",
+          "frequency": 7
+        },
+        {
+          "rank": 1298,
+          "word": "πασῶν",
+          "frequency": 7
+        },
+        {
+          "rank": 1299,
+          "word": "πεῖραν",
+          "frequency": 7
+        },
+        {
+          "rank": 1300,
+          "word": "πεπραγμένων",
+          "frequency": 7
+        }
+      ]
+    },
+    {
+      "batchNumber": 27,
+      "rankRange": [
+        1301,
+        1350
+      ],
+      "words": [
+        {
+          "rank": 1301,
+          "word": "πετ",
+          "frequency": 7
+        },
+        {
+          "rank": 1302,
+          "word": "πλεῖστοι",
+          "frequency": 7
+        },
+        {
+          "rank": 1303,
+          "word": "πληρέστατα",
+          "frequency": 7
+        },
+        {
+          "rank": 1304,
+          "word": "ποδῶν",
+          "frequency": 7
+        },
+        {
+          "rank": 1305,
+          "word": "πόθεν",
+          "frequency": 7
+        },
+        {
+          "rank": 1306,
+          "word": "ποιμένες",
+          "frequency": 7
+        },
+        {
+          "rank": 1307,
+          "word": "πόλεμος",
+          "frequency": 7
+        },
+        {
+          "rank": 1308,
+          "word": "πολέμῳ",
+          "frequency": 7
+        },
+        {
+          "rank": 1309,
+          "word": "πολιορκίας",
+          "frequency": 7
+        },
+        {
+          "rank": 1310,
+          "word": "πόλις",
+          "frequency": 7
+        },
+        {
+          "rank": 1311,
+          "word": "πολλαῖς",
+          "frequency": 7
+        },
+        {
+          "rank": 1312,
+          "word": "πολὺς",
+          "frequency": 7
+        },
+        {
+          "rank": 1313,
+          "word": "πόντον",
+          "frequency": 7
+        },
+        {
+          "rank": 1314,
+          "word": "πόρρω",
+          "frequency": 7
+        },
+        {
+          "rank": 1315,
+          "word": "πράγμασιν",
+          "frequency": 7
+        },
+        {
+          "rank": 1316,
+          "word": "πράγματος",
+          "frequency": 7
+        },
+        {
+          "rank": 1317,
+          "word": "πρεσβύτερον",
+          "frequency": 7
+        },
+        {
+          "rank": 1318,
+          "word": "προθέσεως",
+          "frequency": 7
+        },
+        {
+          "rank": 1319,
+          "word": "προσιέναι",
+          "frequency": 7
+        },
+        {
+          "rank": 1320,
+          "word": "προτέρων",
+          "frequency": 7
+        },
+        {
+          "rank": 1321,
+          "word": "ῥωμαίοις",
+          "frequency": 7
+        },
+        {
+          "rank": 1322,
+          "word": "ῥωμαίους",
+          "frequency": 7
+        },
+        {
+          "rank": 1323,
+          "word": "σ",
+          "frequency": 7
+        },
+        {
+          "rank": 1324,
+          "word": "σὲ",
+          "frequency": 7
+        },
+        {
+          "rank": 1325,
+          "word": "σεραπίωνος",
+          "frequency": 7
+        },
+        {
+          "rank": 1326,
+          "word": "σμικρὸν",
+          "frequency": 7
+        },
+        {
+          "rank": 1327,
+          "word": "σοφίας",
+          "frequency": 7
+        },
+        {
+          "rank": 1328,
+          "word": "σπουδὴν",
+          "frequency": 7
+        },
+        {
+          "rank": 1329,
+          "word": "συγγραφέων",
+          "frequency": 7
+        },
+        {
+          "rank": 1330,
+          "word": "συνόδου",
+          "frequency": 7
+        },
+        {
+          "rank": 1331,
+          "word": "σφόδρα",
+          "frequency": 7
+        },
+        {
+          "rank": 1332,
+          "word": "σωτῆρι",
+          "frequency": 7
+        },
+        {
+          "rank": 1333,
+          "word": "τελευταῖον",
+          "frequency": 7
+        },
+        {
+          "rank": 1334,
+          "word": "τέλους",
+          "frequency": 7
+        },
+        {
+          "rank": 1335,
+          "word": "τεσσάρων",
+          "frequency": 7
+        },
+        {
+          "rank": 1336,
+          "word": "τιμὴν",
+          "frequency": 7
+        },
+        {
+          "rank": 1337,
+          "word": "τιμιώτατε",
+          "frequency": 7
+        },
+        {
+          "rank": 1338,
+          "word": "τιμωρίας",
+          "frequency": 7
+        },
+        {
+          "rank": 1339,
+          "word": "τοιαύτη",
+          "frequency": 7
+        },
+        {
+          "rank": 1340,
+          "word": "τοιόνδε",
+          "frequency": 7
+        },
+        {
+          "rank": 1341,
+          "word": "τόπους",
+          "frequency": 7
+        },
+        {
+          "rank": 1342,
+          "word": "τρόπου",
+          "frequency": 7
+        },
+        {
+          "rank": 1343,
+          "word": "τυχεῖν",
+          "frequency": 7
+        },
+        {
+          "rank": 1344,
+          "word": "των",
+          "frequency": 7
+        },
+        {
+          "rank": 1345,
+          "word": "φανερὸν",
+          "frequency": 7
+        },
+        {
+          "rank": 1346,
+          "word": "φιλοσόφων",
+          "frequency": 7
+        },
+        {
+          "rank": 1347,
+          "word": "φρυγίαν",
+          "frequency": 7
+        },
+        {
+          "rank": 1348,
+          "word": "φωτὸς",
+          "frequency": 7
+        },
+        {
+          "rank": 1349,
+          "word": "ψῆφον",
+          "frequency": 7
+        },
+        {
+          "rank": 1350,
+          "word": "ὦ",
+          "frequency": 7
+        }
+      ]
+    },
+    {
+      "batchNumber": 28,
+      "rankRange": [
+        1351,
+        1400
+      ],
+      "words": [
+        {
+          "rank": 1351,
+          "word": "ὤν",
+          "frequency": 7
+        },
+        {
+          "rank": 1352,
+          "word": "ἁγίας",
+          "frequency": 6
+        },
+        {
+          "rank": 1353,
+          "word": "ἀγνοεῖν",
+          "frequency": 6
+        },
+        {
+          "rank": 1354,
+          "word": "αἰκίας",
+          "frequency": 6
+        },
+        {
+          "rank": 1355,
+          "word": "αἰῶνα",
+          "frequency": 6
+        },
+        {
+          "rank": 1356,
+          "word": "ἀκοαῖς",
+          "frequency": 6
+        },
+        {
+          "rank": 1357,
+          "word": "ἄκουε",
+          "frequency": 6
+        },
+        {
+          "rank": 1358,
+          "word": "ἀκριβῶς",
+          "frequency": 6
+        },
+        {
+          "rank": 1359,
+          "word": "ἀλγηδόνας",
+          "frequency": 6
+        },
+        {
+          "rank": 1360,
+          "word": "ἄλλαι",
+          "frequency": 6
+        },
+        {
+          "rank": 1361,
+          "word": "ἄλλαις",
+          "frequency": 6
+        },
+        {
+          "rank": 1362,
+          "word": "ἀναγκαίως",
+          "frequency": 6
+        },
+        {
+          "rank": 1363,
+          "word": "ἀνθύπατος",
+          "frequency": 6
+        },
+        {
+          "rank": 1364,
+          "word": "ἀνικήτου",
+          "frequency": 6
+        },
+        {
+          "rank": 1365,
+          "word": "ἀντίγραφα",
+          "frequency": 6
+        },
+        {
+          "rank": 1366,
+          "word": "ἀνυλῖνε",
+          "frequency": 6
+        },
+        {
+          "rank": 1367,
+          "word": "ἄξια",
+          "frequency": 6
+        },
+        {
+          "rank": 1368,
+          "word": "ἀξίας",
+          "frequency": 6
+        },
+        {
+          "rank": 1369,
+          "word": "ἀπόστολοι",
+          "frequency": 6
+        },
+        {
+          "rank": 1370,
+          "word": "ἀριθμόν",
+          "frequency": 6
+        },
+        {
+          "rank": 1371,
+          "word": "ἀρχαίου",
+          "frequency": 6
+        },
+        {
+          "rank": 1372,
+          "word": "ἀρχηγὸς",
+          "frequency": 6
+        },
+        {
+          "rank": 1373,
+          "word": "ἄρχοντες",
+          "frequency": 6
+        },
+        {
+          "rank": 1374,
+          "word": "ἄρχουσιν",
+          "frequency": 6
+        },
+        {
+          "rank": 1375,
+          "word": "ἀσεβείας",
+          "frequency": 6
+        },
+        {
+          "rank": 1376,
+          "word": "ἀσκήσεως",
+          "frequency": 6
+        },
+        {
+          "rank": 1377,
+          "word": "βασιλικῆς",
+          "frequency": 6
+        },
+        {
+          "rank": 1378,
+          "word": "βασιλικῶν",
+          "frequency": 6
+        },
+        {
+          "rank": 1379,
+          "word": "βίκτορος",
+          "frequency": 6
+        },
+        {
+          "rank": 1380,
+          "word": "γνώσεως",
+          "frequency": 6
+        },
+        {
+          "rank": 1381,
+          "word": "γραφάς",
+          "frequency": 6
+        },
+        {
+          "rank": 1382,
+          "word": "γυναῖκα",
+          "frequency": 6
+        },
+        {
+          "rank": 1383,
+          "word": "γυναῖκες",
+          "frequency": 6
+        },
+        {
+          "rank": 1384,
+          "word": "δέοι",
+          "frequency": 6
+        },
+        {
+          "rank": 1385,
+          "word": "δέον",
+          "frequency": 6
+        },
+        {
+          "rank": 1386,
+          "word": "δεσμωτηρίῳ",
+          "frequency": 6
+        },
+        {
+          "rank": 1387,
+          "word": "δηλούμενον",
+          "frequency": 6
+        },
+        {
+          "rank": 1388,
+          "word": "δηλωθεὶς",
+          "frequency": 6
+        },
+        {
+          "rank": 1389,
+          "word": "δημήτριος",
+          "frequency": 6
+        },
+        {
+          "rank": 1390,
+          "word": "διαγνῶναι",
+          "frequency": 6
+        },
+        {
+          "rank": 1391,
+          "word": "διακόνοις",
+          "frequency": 6
+        },
+        {
+          "rank": 1392,
+          "word": "διδασκαλεῖον",
+          "frequency": 6
+        },
+        {
+          "rank": 1393,
+          "word": "διδασκαλίαν",
+          "frequency": 6
+        },
+        {
+          "rank": 1394,
+          "word": "διδάσκαλον",
+          "frequency": 6
+        },
+        {
+          "rank": 1395,
+          "word": "διεδέξατο",
+          "frequency": 6
+        },
+        {
+          "rank": 1396,
+          "word": "διηγήσεις",
+          "frequency": 6
+        },
+        {
+          "rank": 1397,
+          "word": "δὶς",
+          "frequency": 6
+        },
+        {
+          "rank": 1398,
+          "word": "διωγμῶν",
+          "frequency": 6
+        },
+        {
+          "rank": 1399,
+          "word": "δυεῖν",
+          "frequency": 6
+        },
+        {
+          "rank": 1400,
+          "word": "ἑαυτὴν",
+          "frequency": 6
+        }
+      ]
+    },
+    {
+      "batchNumber": 29,
+      "rankRange": [
+        1401,
+        1450
+      ],
+      "words": [
+        {
+          "rank": 1401,
+          "word": "ἑαυτῆς",
+          "frequency": 6
+        },
+        {
+          "rank": 1402,
+          "word": "ἐγώ",
+          "frequency": 6
+        },
+        {
+          "rank": 1403,
+          "word": "ἔδαφος",
+          "frequency": 6
+        },
+        {
+          "rank": 1404,
+          "word": "ἐδόκουν",
+          "frequency": 6
+        },
+        {
+          "rank": 1405,
+          "word": "ἔδοξεν",
+          "frequency": 6
+        },
+        {
+          "rank": 1406,
+          "word": "εἶεν",
+          "frequency": 6
+        },
+        {
+          "rank": 1407,
+          "word": "εἰκὸς",
+          "frequency": 6
+        },
+        {
+          "rank": 1408,
+          "word": "εἰρημένων",
+          "frequency": 6
+        },
+        {
+          "rank": 1409,
+          "word": "εἰρηναίου",
+          "frequency": 6
+        },
+        {
+          "rank": 1410,
+          "word": "ἑκάστης",
+          "frequency": 6
+        },
+        {
+          "rank": 1411,
+          "word": "ἔλεγεν",
+          "frequency": 6
+        },
+        {
+          "rank": 1412,
+          "word": "ἔλεγον",
+          "frequency": 6
+        },
+        {
+          "rank": 1413,
+          "word": "ἐλπίδος",
+          "frequency": 6
+        },
+        {
+          "rank": 1414,
+          "word": "ἐμαυτοῦ",
+          "frequency": 6
+        },
+        {
+          "rank": 1415,
+          "word": "ἐμνημόνευσεν",
+          "frequency": 6
+        },
+        {
+          "rank": 1416,
+          "word": "ἐναντίας",
+          "frequency": 6
+        },
+        {
+          "rank": 1417,
+          "word": "ἐντεῦθεν",
+          "frequency": 6
+        },
+        {
+          "rank": 1418,
+          "word": "ἐπαξίως",
+          "frequency": 6
+        },
+        {
+          "rank": 1419,
+          "word": "ἐπαρχίαν",
+          "frequency": 6
+        },
+        {
+          "rank": 1420,
+          "word": "ἐπιβουλὴν",
+          "frequency": 6
+        },
+        {
+          "rank": 1421,
+          "word": "ἐποίησεν",
+          "frequency": 6
+        },
+        {
+          "rank": 1422,
+          "word": "ἑρμηνείας",
+          "frequency": 6
+        },
+        {
+          "rank": 1423,
+          "word": "ἐτύγχανεν",
+          "frequency": 6
+        },
+        {
+          "rank": 1424,
+          "word": "ἐτύγχανον",
+          "frequency": 6
+        },
+        {
+          "rank": 1425,
+          "word": "εὐσεβὴς",
+          "frequency": 6
+        },
+        {
+          "rank": 1426,
+          "word": "εὐσέβιος",
+          "frequency": 6
+        },
+        {
+          "rank": 1427,
+          "word": "εὐχῶν",
+          "frequency": 6
+        },
+        {
+          "rank": 1428,
+          "word": "ἔφην",
+          "frequency": 6
+        },
+        {
+          "rank": 1429,
+          "word": "ἔχεσθαι",
+          "frequency": 6
+        },
+        {
+          "rank": 1430,
+          "word": "ἡγούμενος",
+          "frequency": 6
+        },
+        {
+          "rank": 1431,
+          "word": "ἡλίου",
+          "frequency": 6
+        },
+        {
+          "rank": 1432,
+          "word": "ἡνίκα",
+          "frequency": 6
+        },
+        {
+          "rank": 1433,
+          "word": "θᾶττον",
+          "frequency": 6
+        },
+        {
+          "rank": 1434,
+          "word": "θαῦμα",
+          "frequency": 6
+        },
+        {
+          "rank": 1435,
+          "word": "θείαις",
+          "frequency": 6
+        },
+        {
+          "rank": 1436,
+          "word": "θεοῖς",
+          "frequency": 6
+        },
+        {
+          "rank": 1437,
+          "word": "ιβ",
+          "frequency": 6
+        },
+        {
+          "rank": 1438,
+          "word": "ιγ",
+          "frequency": 6
+        },
+        {
+          "rank": 1439,
+          "word": "ιδ",
+          "frequency": 6
+        },
+        {
+          "rank": 1440,
+          "word": "ἰδεῖν",
+          "frequency": 6
+        },
+        {
+          "rank": 1441,
+          "word": "ἰδίαν",
+          "frequency": 6
+        },
+        {
+          "rank": 1442,
+          "word": "ἰδίῳ",
+          "frequency": 6
+        },
+        {
+          "rank": 1443,
+          "word": "ιε",
+          "frequency": 6
+        },
+        {
+          "rank": 1444,
+          "word": "ἱεραπόλει",
+          "frequency": 6
+        },
+        {
+          "rank": 1445,
+          "word": "ἱεροῖς",
+          "frequency": 6
+        },
+        {
+          "rank": 1446,
+          "word": "ιζ",
+          "frequency": 6
+        },
+        {
+          "rank": 1447,
+          "word": "ἰουστίνου",
+          "frequency": 6
+        },
+        {
+          "rank": 1448,
+          "word": "ἰοῦστος",
+          "frequency": 6
+        },
+        {
+          "rank": 1449,
+          "word": "ἱστορία",
+          "frequency": 6
+        },
+        {
+          "rank": 1450,
+          "word": "ἴσως",
+          "frequency": 6
+        }
+      ]
+    },
+    {
+      "batchNumber": 30,
+      "rankRange": [
+        1451,
+        1500
+      ],
+      "words": [
+        {
+          "rank": 1451,
+          "word": "κ",
+          "frequency": 6
+        },
+        {
+          "rank": 1452,
+          "word": "καίπερ",
+          "frequency": 6
+        },
+        {
+          "rank": 1453,
+          "word": "καισάρειαν",
+          "frequency": 6
+        },
+        {
+          "rank": 1454,
+          "word": "κἄπειτα",
+          "frequency": 6
+        },
+        {
+          "rank": 1455,
+          "word": "κατάλογον",
+          "frequency": 6
+        },
+        {
+          "rank": 1456,
+          "word": "κβ",
+          "frequency": 6
+        },
+        {
+          "rank": 1457,
+          "word": "κηρύγματος",
+          "frequency": 6
+        },
+        {
+          "rank": 1458,
+          "word": "κλωπᾶ",
+          "frequency": 6
+        },
+        {
+          "rank": 1459,
+          "word": "κοινὸν",
+          "frequency": 6
+        },
+        {
+          "rank": 1460,
+          "word": "κοινῷ",
+          "frequency": 6
+        },
+        {
+          "rank": 1461,
+          "word": "κολάσεως",
+          "frequency": 6
+        },
+        {
+          "rank": 1462,
+          "word": "κς",
+          "frequency": 6
+        },
+        {
+          "rank": 1463,
+          "word": "λαβὼν",
+          "frequency": 6
+        },
+        {
+          "rank": 1464,
+          "word": "λαλεῖν",
+          "frequency": 6
+        },
+        {
+          "rank": 1465,
+          "word": "λαμπρὸν",
+          "frequency": 6
+        },
+        {
+          "rank": 1466,
+          "word": "λέγεται",
+          "frequency": 6
+        },
+        {
+          "rank": 1467,
+          "word": "λέγοντος",
+          "frequency": 6
+        },
+        {
+          "rank": 1468,
+          "word": "λειτουργίας",
+          "frequency": 6
+        },
+        {
+          "rank": 1469,
+          "word": "λικίννιος",
+          "frequency": 6
+        },
+        {
+          "rank": 1470,
+          "word": "λιμὸς",
+          "frequency": 6
+        },
+        {
+          "rank": 1471,
+          "word": "λόγιον",
+          "frequency": 6
+        },
+        {
+          "rank": 1472,
+          "word": "λοιπαῖς",
+          "frequency": 6
+        },
+        {
+          "rank": 1473,
+          "word": "μαθήμασιν",
+          "frequency": 6
+        },
+        {
+          "rank": 1474,
+          "word": "μαθὼν",
+          "frequency": 6
+        },
+        {
+          "rank": 1475,
+          "word": "μακαρίων",
+          "frequency": 6
+        },
+        {
+          "rank": 1476,
+          "word": "μακρὰν",
+          "frequency": 6
+        },
+        {
+          "rank": 1477,
+          "word": "μάρκον",
+          "frequency": 6
+        },
+        {
+          "rank": 1478,
+          "word": "μαρτυρησάντων",
+          "frequency": 6
+        },
+        {
+          "rank": 1479,
+          "word": "μάρτυρι",
+          "frequency": 6
+        },
+        {
+          "rank": 1480,
+          "word": "μεγάλη",
+          "frequency": 6
+        },
+        {
+          "rank": 1481,
+          "word": "μεῖζον",
+          "frequency": 6
+        },
+        {
+          "rank": 1482,
+          "word": "μελίτωνος",
+          "frequency": 6
+        },
+        {
+          "rank": 1483,
+          "word": "μέσῳ",
+          "frequency": 6
+        },
+        {
+          "rank": 1484,
+          "word": "μετά",
+          "frequency": 6
+        },
+        {
+          "rank": 1485,
+          "word": "μετρίως",
+          "frequency": 6
+        },
+        {
+          "rank": 1486,
+          "word": "μηδενὶ",
+          "frequency": 6
+        },
+        {
+          "rank": 1487,
+          "word": "μηδενὸς",
+          "frequency": 6
+        },
+        {
+          "rank": 1488,
+          "word": "μικρὸν",
+          "frequency": 6
+        },
+        {
+          "rank": 1489,
+          "word": "μνημονεύειν",
+          "frequency": 6
+        },
+        {
+          "rank": 1490,
+          "word": "μνημονεύσας",
+          "frequency": 6
+        },
+        {
+          "rank": 1491,
+          "word": "μόνῃ",
+          "frequency": 6
+        },
+        {
+          "rank": 1492,
+          "word": "μόνοι",
+          "frequency": 6
+        },
+        {
+          "rank": 1493,
+          "word": "μόνοις",
+          "frequency": 6
+        },
+        {
+          "rank": 1494,
+          "word": "μυριάδας",
+          "frequency": 6
+        },
+        {
+          "rank": 1495,
+          "word": "μυστήριον",
+          "frequency": 6
+        },
+        {
+          "rank": 1496,
+          "word": "νάρκισσος",
+          "frequency": 6
+        },
+        {
+          "rank": 1497,
+          "word": "νηστείας",
+          "frequency": 6
+        },
+        {
+          "rank": 1498,
+          "word": "νόμων",
+          "frequency": 6
+        },
+        {
+          "rank": 1499,
+          "word": "νοουάτον",
+          "frequency": 6
+        },
+        {
+          "rank": 1500,
+          "word": "νυκτὸς",
+          "frequency": 6
+        }
+      ]
+    }
+  ]
+}

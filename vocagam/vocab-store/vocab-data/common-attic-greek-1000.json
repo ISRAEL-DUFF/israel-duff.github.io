@@ -1,0 +1,6191 @@
+{
+  "metadata": {
+    "description": "Top 1,000 Attic Greek lemmas filtered from the Perseus Diogenes morphological analyses (entries tagged with Attic forms).",
+    "totalWords": 1000,
+    "batchSize": 50,
+    "source": "Perseus Diogenes project – Greek lemmata analyses",
+    "generatedAt": "2025-09-25T16:30:39.532Z"
+  },
+  "batches": [
+    {
+      "batchNumber": 1,
+      "rankRange": [
+        1,
+        50
+      ],
+      "words": [
+        {
+          "rank": 1,
+          "word": "ᾠώδης",
+          "betaCode": "w)|w/dhs",
+          "frequency": 115549357
+        },
+        {
+          "rank": 2,
+          "word": "ὠχρός",
+          "betaCode": "w)xro/s",
+          "frequency": 115540675
+        },
+        {
+          "rank": 3,
+          "word": "ὠχροειδής",
+          "betaCode": "w)xroeidh/s",
+          "frequency": 115537734
+        },
+        {
+          "rank": 4,
+          "word": "ὠχριάω",
+          "betaCode": "w)xria/w",
+          "frequency": 115536593
+        },
+        {
+          "rank": 5,
+          "word": "ὠχρίασις",
+          "betaCode": "w)xri/asis",
+          "frequency": 115535683
+        },
+        {
+          "rank": 6,
+          "word": "ὠχρίας",
+          "betaCode": "w)xri/as",
+          "frequency": 115535232
+        },
+        {
+          "rank": 7,
+          "word": "ὠχρία",
+          "betaCode": "w)xri/a",
+          "frequency": 115534869
+        },
+        {
+          "rank": 8,
+          "word": "ὠχράω",
+          "betaCode": "w)xra/w",
+          "frequency": 115534372
+        },
+        {
+          "rank": 9,
+          "word": "ὤχρα",
+          "betaCode": "w)/xra",
+          "frequency": 115531788
+        },
+        {
+          "rank": 10,
+          "word": "ὠφέλιμος",
+          "betaCode": "w)fe/limos",
+          "frequency": 115527240
+        },
+        {
+          "rank": 11,
+          "word": "ὠφελητικός",
+          "betaCode": "w)felhtiko/s",
+          "frequency": 115526210
+        },
+        {
+          "rank": 12,
+          "word": "ὠφελητέον",
+          "betaCode": "w)felhte/on",
+          "frequency": 115525420
+        },
+        {
+          "rank": 13,
+          "word": "ὠφέλησις",
+          "betaCode": "w)fe/lhsis",
+          "frequency": 115524756
+        },
+        {
+          "rank": 14,
+          "word": "ἀπό-ὠφελέω",
+          "betaCode": "a)po/-w)fele/w",
+          "frequency": 115510571
+        },
+        {
+          "rank": 15,
+          "word": "ὠφελέω",
+          "betaCode": "w)fele/w",
+          "frequency": 115510571
+        },
+        {
+          "rank": 16,
+          "word": "ὠφέλεια",
+          "betaCode": "w)fe/leia",
+          "frequency": 115501202
+        },
+        {
+          "rank": 17,
+          "word": "ὡφελεία",
+          "betaCode": "w(felei/a",
+          "frequency": 115501202
+        },
+        {
+          "rank": 18,
+          "word": "ὠτοκωφέω",
+          "betaCode": "w)tokwfe/w",
+          "frequency": 115495155
+        },
+        {
+          "rank": 19,
+          "word": "ὠτοκοπέω",
+          "betaCode": "w)tokope/w",
+          "frequency": 115494859
+        },
+        {
+          "rank": 20,
+          "word": "ὠτοθλαδίας",
+          "betaCode": "w)toqladi/as",
+          "frequency": 115493189
+        },
+        {
+          "rank": 21,
+          "word": "ὠτοειδής",
+          "betaCode": "w)toeidh/s",
+          "frequency": 115492699
+        },
+        {
+          "rank": 22,
+          "word": "ὠτικός",
+          "betaCode": "w)tiko/s",
+          "frequency": 115487856
+        },
+        {
+          "rank": 23,
+          "word": "ὠτειλή",
+          "betaCode": "w)teilh/",
+          "frequency": 115483189
+        },
+        {
+          "rank": 24,
+          "word": "ὠτεγχύτης",
+          "betaCode": "w)tegxu/ths",
+          "frequency": 115482684
+        },
+        {
+          "rank": 25,
+          "word": "ὠταλγιάω",
+          "betaCode": "w)talgia/w",
+          "frequency": 115478467
+        },
+        {
+          "rank": 26,
+          "word": "ὠταλγία",
+          "betaCode": "w)talgi/a",
+          "frequency": 115477962
+        },
+        {
+          "rank": 27,
+          "word": "ὠταλγέω",
+          "betaCode": "w)talge/w",
+          "frequency": 115477674
+        },
+        {
+          "rank": 28,
+          "word": "ὠτακουστής",
+          "betaCode": "w)takousth/s",
+          "frequency": 115476884
+        },
+        {
+          "rank": 29,
+          "word": "ὠτακουστέω",
+          "betaCode": "w)takouste/w",
+          "frequency": 115476081
+        },
+        {
+          "rank": 30,
+          "word": "ὠσχοφορέω",
+          "betaCode": "w)sxofore/w",
+          "frequency": 115472668
+        },
+        {
+          "rank": 31,
+          "word": "ὤσχη",
+          "betaCode": "w)/sxh",
+          "frequency": 115469717
+        },
+        {
+          "rank": 32,
+          "word": "ὠστικός",
+          "betaCode": "w)stiko/s",
+          "frequency": 115467963
+        },
+        {
+          "rank": 33,
+          "word": "ὠστίζομαι",
+          "betaCode": "w)sti/zomai",
+          "frequency": 115466224
+        },
+        {
+          "rank": 34,
+          "word": "ὤστης",
+          "betaCode": "w)/sths",
+          "frequency": 115465666
+        },
+        {
+          "rank": 35,
+          "word": "ὦσις",
+          "betaCode": "w)=sis",
+          "frequency": 115428861
+        },
+        {
+          "rank": 36,
+          "word": "ὠρώπιος",
+          "betaCode": "w)rw/pios",
+          "frequency": 115337075
+        },
+        {
+          "rank": 37,
+          "word": "ὠρυγή",
+          "betaCode": "w)rugh/",
+          "frequency": 115329713
+        },
+        {
+          "rank": 38,
+          "word": "ὡροσκοπικός",
+          "betaCode": "w(roskopiko/s",
+          "frequency": 115325290
+        },
+        {
+          "rank": 39,
+          "word": "ὡροσκοπία",
+          "betaCode": "w(roskopi/a",
+          "frequency": 115324705
+        },
+        {
+          "rank": 40,
+          "word": "ὡροσκόπησις",
+          "betaCode": "w(rosko/phsis",
+          "frequency": 115324116
+        },
+        {
+          "rank": 41,
+          "word": "κατά-ὡροσκοπέω",
+          "betaCode": "kata/-w(roskope/w",
+          "frequency": 115323214
+        },
+        {
+          "rank": 42,
+          "word": "ὡροσκοπέω",
+          "betaCode": "w(roskope/w",
+          "frequency": 115323214
+        },
+        {
+          "rank": 43,
+          "word": "ὡρονομέω",
+          "betaCode": "w(ronome/w",
+          "frequency": 115315549
+        },
+        {
+          "rank": 44,
+          "word": "ὡρολογητής",
+          "betaCode": "w(rologhth/s",
+          "frequency": 115308617
+        },
+        {
+          "rank": 45,
+          "word": "ὡρολογέω",
+          "betaCode": "w(rologe/w",
+          "frequency": 115308222
+        },
+        {
+          "rank": 46,
+          "word": "ὡροθετέω",
+          "betaCode": "w(roqete/w",
+          "frequency": 115307023
+        },
+        {
+          "rank": 47,
+          "word": "ὡρογνωμονέω",
+          "betaCode": "w(rognwmone/w",
+          "frequency": 115304326
+        },
+        {
+          "rank": 48,
+          "word": "ὡρογενής",
+          "betaCode": "w(rogenh/s",
+          "frequency": 115303871
+        },
+        {
+          "rank": 49,
+          "word": "ὡρίτης",
+          "betaCode": "w(ri/ths",
+          "frequency": 115299512
+        },
+        {
+          "rank": 50,
+          "word": "ὥριμος",
+          "betaCode": "w(/rimos",
+          "frequency": 115288440
+        }
+      ]
+    },
+    {
+      "batchNumber": 2,
+      "rankRange": [
+        51,
+        100
+      ],
+      "words": [
+        {
+          "rank": 51,
+          "word": "ὡριμαία",
+          "betaCode": "w(rimai/a",
+          "frequency": 115287669
+        },
+        {
+          "rank": 52,
+          "word": "ὡρικός",
+          "betaCode": "w(riko/s",
+          "frequency": 115285749
+        },
+        {
+          "rank": 53,
+          "word": "διά-ὡρίζω",
+          "betaCode": "dia/-w(ri/zw",
+          "frequency": 115285085
+        },
+        {
+          "rank": 54,
+          "word": "μετά,ἐκ-ὡρίζω",
+          "betaCode": "meta/,e)k-w(ri/zw",
+          "frequency": 115285085
+        },
+        {
+          "rank": 55,
+          "word": "ὠριγένης",
+          "betaCode": "w)rige/nhs",
+          "frequency": 115284826
+        },
+        {
+          "rank": 56,
+          "word": "ὡριαῖος",
+          "betaCode": "w(riai=os",
+          "frequency": 115283098
+        },
+        {
+          "rank": 57,
+          "word": "ἀνά-ὠρέω",
+          "betaCode": "a)na/-w)re/w",
+          "frequency": 115279429
+        },
+        {
+          "rank": 58,
+          "word": "ἀντί-ὠρέω",
+          "betaCode": "a)nti/-w)re/w",
+          "frequency": 115279429
+        },
+        {
+          "rank": 59,
+          "word": "ἐκ-ὠρέω",
+          "betaCode": "e)k-w)re/w",
+          "frequency": 115279429
+        },
+        {
+          "rank": 60,
+          "word": "ἐπί-ὠρέω",
+          "betaCode": "e)pi/-w)re/w",
+          "frequency": 115279429
+        },
+        {
+          "rank": 61,
+          "word": "παρά-ὠρέω",
+          "betaCode": "para/-w)re/w",
+          "frequency": 115279429
+        },
+        {
+          "rank": 62,
+          "word": "πρό-ὠρέω",
+          "betaCode": "pro/-w)re/w",
+          "frequency": 115279429
+        },
+        {
+          "rank": 63,
+          "word": "σύν-ὠρέω",
+          "betaCode": "su/n-w)re/w",
+          "frequency": 115279429
+        },
+        {
+          "rank": 64,
+          "word": "ὑπέρ-ὠρέω",
+          "betaCode": "u(pe/r-w)re/w",
+          "frequency": 115279429
+        },
+        {
+          "rank": 65,
+          "word": "ὠρέω",
+          "betaCode": "w)re/w",
+          "frequency": 115279429
+        },
+        {
+          "rank": 66,
+          "word": "ὠρεύω",
+          "betaCode": "w)reu/w",
+          "frequency": 115278275
+        },
+        {
+          "rank": 67,
+          "word": "ὡρεσιδώτης",
+          "betaCode": "w(residw/ths",
+          "frequency": 115277332
+        },
+        {
+          "rank": 68,
+          "word": "ὠρείθυια",
+          "betaCode": "w)rei/quia",
+          "frequency": 115275109
+        },
+        {
+          "rank": 69,
+          "word": "ὡρακίζω",
+          "betaCode": "w(raki/zw",
+          "frequency": 115270399
+        },
+        {
+          "rank": 70,
+          "word": "ὡρακιάω",
+          "betaCode": "w(rakia/w",
+          "frequency": 115268947
+        },
+        {
+          "rank": 71,
+          "word": "ὡραιστής",
+          "betaCode": "w(raisth/s",
+          "frequency": 115268446
+        },
+        {
+          "rank": 72,
+          "word": "ὡραῖος",
+          "betaCode": "w(rai=os",
+          "frequency": 115253320
+        },
+        {
+          "rank": 73,
+          "word": "ὡραιοπολέω",
+          "betaCode": "w(raiopole/w",
+          "frequency": 115252468
+        },
+        {
+          "rank": 74,
+          "word": "ὠραίη",
+          "betaCode": "w)rai/h",
+          "frequency": 115250979
+        },
+        {
+          "rank": 75,
+          "word": "ἐκ-ὡραίζω",
+          "betaCode": "e)k-w(rai/zw",
+          "frequency": 115248154
+        },
+        {
+          "rank": 76,
+          "word": "ὡραίζω",
+          "betaCode": "w(rai/zw",
+          "frequency": 115248154
+        },
+        {
+          "rank": 77,
+          "word": "ὤρα",
+          "betaCode": "w)/ra",
+          "frequency": 115202415
+        },
+        {
+          "rank": 78,
+          "word": "ὥρα",
+          "betaCode": "w(/ra",
+          "frequency": 115202415
+        },
+        {
+          "rank": 79,
+          "word": "ὠπλή",
+          "betaCode": "w)plh/",
+          "frequency": 115201237
+        },
+        {
+          "rank": 80,
+          "word": "ὠπή",
+          "betaCode": "w)ph/",
+          "frequency": 115199241
+        },
+        {
+          "rank": 81,
+          "word": "ἀντί,μετά-ὠπάω",
+          "betaCode": "a)nti/,meta/-w)pa/w",
+          "frequency": 115198813
+        },
+        {
+          "rank": 82,
+          "word": "κατά-ὠπάω",
+          "betaCode": "kata/-w)pa/w",
+          "frequency": 115198813
+        },
+        {
+          "rank": 83,
+          "word": "ᾠοτοκία",
+          "betaCode": "w)|otoki/a",
+          "frequency": 115193845
+        },
+        {
+          "rank": 84,
+          "word": "ᾠοτοκέω",
+          "betaCode": "w)|otoke/w",
+          "frequency": 115192593
+        },
+        {
+          "rank": 85,
+          "word": "ᾠοσκοπία",
+          "betaCode": "w)|oskopi/a",
+          "frequency": 115190980
+        },
+        {
+          "rank": 86,
+          "word": "ᾠοθεσία",
+          "betaCode": "w)|oqesi/a",
+          "frequency": 115180599
+        },
+        {
+          "rank": 87,
+          "word": "ᾠοειδής",
+          "betaCode": "w)|oeidh/s",
+          "frequency": 115179578
+        },
+        {
+          "rank": 88,
+          "word": "ᾠογονία",
+          "betaCode": "w)|ogoni/a",
+          "frequency": 115179171
+        },
+        {
+          "rank": 89,
+          "word": "ᾠογενής",
+          "betaCode": "w)|ogenh/s",
+          "frequency": 115178423
+        },
+        {
+          "rank": 90,
+          "word": "ὤνιος",
+          "betaCode": "w)/nios",
+          "frequency": 115168257
+        },
+        {
+          "rank": 91,
+          "word": "ὠνητός",
+          "betaCode": "w)nhto/s",
+          "frequency": 115164262
+        },
+        {
+          "rank": 92,
+          "word": "ὠνητιάω",
+          "betaCode": "w)nhtia/w",
+          "frequency": 115163208
+        },
+        {
+          "rank": 93,
+          "word": "ὠνητής",
+          "betaCode": "w)nhth/s",
+          "frequency": 115161788
+        },
+        {
+          "rank": 94,
+          "word": "ὠνητέος",
+          "betaCode": "w)nhte/os",
+          "frequency": 115161040
+        },
+        {
+          "rank": 95,
+          "word": "ὤνησις",
+          "betaCode": "w)/nhsis",
+          "frequency": 115160547
+        },
+        {
+          "rank": 96,
+          "word": "ὠνή",
+          "betaCode": "w)nh/",
+          "frequency": 115155638
+        },
+        {
+          "rank": 97,
+          "word": "ὑπό-ὠνέομαι",
+          "betaCode": "u(po/-w)ne/omai",
+          "frequency": 115140072
+        },
+        {
+          "rank": 98,
+          "word": "ὠνέομαι",
+          "betaCode": "w)ne/omai",
+          "frequency": 115140072
+        },
+        {
+          "rank": 99,
+          "word": "ὠμφύνω",
+          "betaCode": "w)mfu/nw",
+          "frequency": 115138076
+        },
+        {
+          "rank": 100,
+          "word": "ὠμοφαγία",
+          "betaCode": "w)mofagi/a",
+          "frequency": 115131532
+        }
+      ]
+    },
+    {
+      "batchNumber": 3,
+      "rankRange": [
+        101,
+        150
+      ],
+      "words": [
+        {
+          "rank": 101,
+          "word": "ὠμοφαγέω",
+          "betaCode": "w)mofage/w",
+          "frequency": 115130878
+        },
+        {
+          "rank": 102,
+          "word": "ὠμοτριβής",
+          "betaCode": "w)motribh/s",
+          "frequency": 115129662
+        },
+        {
+          "rank": 103,
+          "word": "ὠμοτομέω",
+          "betaCode": "w)motome/w",
+          "frequency": 115129128
+        },
+        {
+          "rank": 104,
+          "word": "ὠμοτοκία",
+          "betaCode": "w)motoki/a",
+          "frequency": 115127730
+        },
+        {
+          "rank": 105,
+          "word": "ὠμοτοκέω",
+          "betaCode": "w)motoke/w",
+          "frequency": 115127156
+        },
+        {
+          "rank": 106,
+          "word": "ὠμοσιτία",
+          "betaCode": "w)mositi/a",
+          "frequency": 115122019
+        },
+        {
+          "rank": 107,
+          "word": "ὠμός",
+          "betaCode": "w)mo/s",
+          "frequency": 115112632
+        },
+        {
+          "rank": 108,
+          "word": "ὠμοπλάτη",
+          "betaCode": "w)mopla/th",
+          "frequency": 115101393
+        },
+        {
+          "rank": 109,
+          "word": "ὠμοκυδιάω",
+          "betaCode": "w)mokudia/w",
+          "frequency": 115098779
+        },
+        {
+          "rank": 110,
+          "word": "ὠμοκοτύλη",
+          "betaCode": "w)mokotu/lh",
+          "frequency": 115097830
+        },
+        {
+          "rank": 111,
+          "word": "ὠμοθετέω",
+          "betaCode": "w)moqete/w",
+          "frequency": 115094838
+        },
+        {
+          "rank": 112,
+          "word": "ὠμοβόειος",
+          "betaCode": "w)mobo/eios",
+          "frequency": 115084400
+        },
+        {
+          "rank": 113,
+          "word": "ὠμίας",
+          "betaCode": "w)mi/as",
+          "frequency": 115080747
+        },
+        {
+          "rank": 114,
+          "word": "ὠμία",
+          "betaCode": "w)mi/a",
+          "frequency": 115079421
+        },
+        {
+          "rank": 115,
+          "word": "ὠμηστής",
+          "betaCode": "w)mhsth/s",
+          "frequency": 115076484
+        },
+        {
+          "rank": 116,
+          "word": "ὠμήλυσις",
+          "betaCode": "w)mh/lusis",
+          "frequency": 115074543
+        },
+        {
+          "rank": 117,
+          "word": "ὠλίγγη",
+          "betaCode": "w)li/ggh",
+          "frequency": 115064648
+        },
+        {
+          "rank": 118,
+          "word": "ὠλιγγιάω",
+          "betaCode": "w)liggia/w",
+          "frequency": 115064648
+        },
+        {
+          "rank": 119,
+          "word": "ὠλένιος",
+          "betaCode": "w)le/nios",
+          "frequency": 115056611
+        },
+        {
+          "rank": 120,
+          "word": "ὠλενίτης",
+          "betaCode": "w)leni/ths",
+          "frequency": 115056146
+        },
+        {
+          "rank": 121,
+          "word": "ὠλένη",
+          "betaCode": "w)le/nh",
+          "frequency": 115051205
+        },
+        {
+          "rank": 122,
+          "word": "ὠκυτοκία",
+          "betaCode": "w)kutoki/a",
+          "frequency": 115044781
+        },
+        {
+          "rank": 123,
+          "word": "ὠκύς",
+          "betaCode": "w)ku/s",
+          "frequency": 115033845
+        },
+        {
+          "rank": 124,
+          "word": "ὠκύροη",
+          "betaCode": "w)ku/roh",
+          "frequency": 115033068
+        },
+        {
+          "rank": 125,
+          "word": "ὠκυρόης",
+          "betaCode": "w)kuro/hs",
+          "frequency": 115032349
+        },
+        {
+          "rank": 126,
+          "word": "ὠκύπους",
+          "betaCode": "w)ku/pous",
+          "frequency": 115029039
+        },
+        {
+          "rank": 127,
+          "word": "ὠκυπορέω",
+          "betaCode": "w)kupore/w",
+          "frequency": 115026999
+        },
+        {
+          "rank": 128,
+          "word": "ὠκυπόδη",
+          "betaCode": "w)kupo/dh",
+          "frequency": 115024877
+        },
+        {
+          "rank": 129,
+          "word": "ὠκυπόδης",
+          "betaCode": "w)kupo/dhs",
+          "frequency": 115024877
+        },
+        {
+          "rank": 130,
+          "word": "ὠκυπέτη",
+          "betaCode": "w)kupe/th",
+          "frequency": 115022594
+        },
+        {
+          "rank": 131,
+          "word": "ὠκυπέτης",
+          "betaCode": "w)kupe/ths",
+          "frequency": 115022594
+        },
+        {
+          "rank": 132,
+          "word": "ὠκυθόη",
+          "betaCode": "w)kuqo/h",
+          "frequency": 115016206
+        },
+        {
+          "rank": 133,
+          "word": "ὠκύθοος",
+          "betaCode": "w)ku/qoos",
+          "frequency": 115016206
+        },
+        {
+          "rank": 134,
+          "word": "ὠκυεπής",
+          "betaCode": "w)kueph/s",
+          "frequency": 115015801
+        },
+        {
+          "rank": 135,
+          "word": "ὠκύδρομος",
+          "betaCode": "w)ku/dromos",
+          "frequency": 115014400
+        },
+        {
+          "rank": 136,
+          "word": "ὠκυδρομέω",
+          "betaCode": "w)kudrome/w",
+          "frequency": 115013921
+        },
+        {
+          "rank": 137,
+          "word": "ὠκιμοειδής",
+          "betaCode": "w)kimoeidh/s",
+          "frequency": 115004744
+        },
+        {
+          "rank": 138,
+          "word": "ὠκεανίνη",
+          "betaCode": "w)keani/nh",
+          "frequency": 114994365
+        },
+        {
+          "rank": 139,
+          "word": "ὠκεάνης",
+          "betaCode": "w)kea/nhs",
+          "frequency": 114993812
+        },
+        {
+          "rank": 140,
+          "word": "ὠκαλέη",
+          "betaCode": "w)kale/h",
+          "frequency": 114992259
+        },
+        {
+          "rank": 141,
+          "word": "ὠίζω",
+          "betaCode": "w)i/zw",
+          "frequency": 114989776
+        },
+        {
+          "rank": 142,
+          "word": "ὠθίζομαι",
+          "betaCode": "w)qi/zomai",
+          "frequency": 114986205
+        },
+        {
+          "rank": 143,
+          "word": "ὠθίζω",
+          "betaCode": "w)qi/zw",
+          "frequency": 114986205
+        },
+        {
+          "rank": 144,
+          "word": "ὤθησις",
+          "betaCode": "w)/qhsis",
+          "frequency": 114985372
+        },
+        {
+          "rank": 145,
+          "word": "ἀμφί-ὠθέω",
+          "betaCode": "a)mfi/-w)qe/w",
+          "frequency": 114965554
+        },
+        {
+          "rank": 146,
+          "word": "ἀντί-ὠθέω",
+          "betaCode": "a)nti/-w)qe/w",
+          "frequency": 114965554
+        },
+        {
+          "rank": 147,
+          "word": "ἐπί,μετά-ὠθέω",
+          "betaCode": "e)pi/,meta/-w)qe/w",
+          "frequency": 114965554
+        },
+        {
+          "rank": 148,
+          "word": "κατά,ἐν,μετά-ὠθέω",
+          "betaCode": "kata/,e)n,meta/-w)qe/w",
+          "frequency": 114965554
+        },
+        {
+          "rank": 149,
+          "word": "πρόσ-ὠθέω",
+          "betaCode": "pro/s-w)qe/w",
+          "frequency": 114965554
+        },
+        {
+          "rank": 150,
+          "word": "ὑπέρ-ὠθέω",
+          "betaCode": "u(pe/r-w)qe/w",
+          "frequency": 114965554
+        }
+      ]
+    },
+    {
+      "batchNumber": 4,
+      "rankRange": [
+        151,
+        200
+      ],
+      "words": [
+        {
+          "rank": 151,
+          "word": "ὠθέω",
+          "betaCode": "w)qe/w",
+          "frequency": 114965554
+        },
+        {
+          "rank": 152,
+          "word": "ἐπί-ὤζω",
+          "betaCode": "e)pi/-w)/zw",
+          "frequency": 114964476
+        },
+        {
+          "rank": 153,
+          "word": "ὠερόη",
+          "betaCode": "w)ero/h",
+          "frequency": 114964476
+        },
+        {
+          "rank": 154,
+          "word": "ὤζω",
+          "betaCode": "w)/zw",
+          "frequency": 114964476
+        },
+        {
+          "rank": 155,
+          "word": "ἐπί-ὠδίνω",
+          "betaCode": "e)pi/-w)di/nw",
+          "frequency": 114947002
+        },
+        {
+          "rank": 156,
+          "word": "πρό-ὠδίνω",
+          "betaCode": "pro/-w)di/nw",
+          "frequency": 114947002
+        },
+        {
+          "rank": 157,
+          "word": "πρόσ-ὠδίνω",
+          "betaCode": "pro/s-w)di/nw",
+          "frequency": 114947002
+        },
+        {
+          "rank": 158,
+          "word": "ὠδίνω",
+          "betaCode": "w)di/nw",
+          "frequency": 114947002
+        },
+        {
+          "rank": 159,
+          "word": "ᾠδικός",
+          "betaCode": "w)|diko/s",
+          "frequency": 114944083
+        },
+        {
+          "rank": 160,
+          "word": "ὡδί",
+          "betaCode": "w(di/",
+          "frequency": 114926652
+        },
+        {
+          "rank": 161,
+          "word": "ὠγύγιος",
+          "betaCode": "w)gu/gios",
+          "frequency": 114923726
+        },
+        {
+          "rank": 162,
+          "word": "ωἀριώνειος",
+          "betaCode": "wa)riw/neios",
+          "frequency": 114914984
+        },
+        {
+          "rank": 163,
+          "word": "ᾤα",
+          "betaCode": "w)/|a",
+          "frequency": 114908059
+        },
+        {
+          "rank": 164,
+          "word": "ψώχω",
+          "betaCode": "yw/xw",
+          "frequency": 114894204
+        },
+        {
+          "rank": 165,
+          "word": "ψωφίδιος",
+          "betaCode": "ywfi/dios",
+          "frequency": 114893914
+        },
+        {
+          "rank": 166,
+          "word": "ψωρώδης",
+          "betaCode": "ywrw/dhs",
+          "frequency": 114891882
+        },
+        {
+          "rank": 167,
+          "word": "ψωροφθαλμία",
+          "betaCode": "ywrofqalmi/a",
+          "frequency": 114891123
+        },
+        {
+          "rank": 168,
+          "word": "ψωροφθαλμιάω",
+          "betaCode": "ywrofqalmia/w",
+          "frequency": 114891123
+        },
+        {
+          "rank": 169,
+          "word": "ψωρίτης",
+          "betaCode": "ywri/ths",
+          "frequency": 114889405
+        },
+        {
+          "rank": 170,
+          "word": "ψωρικός",
+          "betaCode": "ywriko/s",
+          "frequency": 114888255
+        },
+        {
+          "rank": 171,
+          "word": "ψωρίασις",
+          "betaCode": "ywri/asis",
+          "frequency": 114886650
+        },
+        {
+          "rank": 172,
+          "word": "ψωράω",
+          "betaCode": "ywra/w",
+          "frequency": 114886129
+        },
+        {
+          "rank": 173,
+          "word": "ψωραλέος",
+          "betaCode": "ywrale/os",
+          "frequency": 114884732
+        },
+        {
+          "rank": 174,
+          "word": "ψωραγριάω",
+          "betaCode": "ywragria/w",
+          "frequency": 114884367
+        },
+        {
+          "rank": 175,
+          "word": "ψώρα",
+          "betaCode": "yw/ra",
+          "frequency": 114881742
+        },
+        {
+          "rank": 176,
+          "word": "ψωμολεθρία",
+          "betaCode": "ywmoleqri/a",
+          "frequency": 114879988
+        },
+        {
+          "rank": 177,
+          "word": "ψωμίζω",
+          "betaCode": "ywmi/zw",
+          "frequency": 114874064
+        },
+        {
+          "rank": 178,
+          "word": "ψωλή",
+          "betaCode": "ywlh/",
+          "frequency": 114871144
+        },
+        {
+          "rank": 179,
+          "word": "ψώκτης",
+          "betaCode": "yw/kths",
+          "frequency": 114870087
+        },
+        {
+          "rank": 180,
+          "word": "ψωθία",
+          "betaCode": "ywqi/a",
+          "frequency": 114869171
+        },
+        {
+          "rank": 181,
+          "word": "ψυχωφελής",
+          "betaCode": "yuxwfelh/s",
+          "frequency": 114867023
+        },
+        {
+          "rank": 182,
+          "word": "ψύχωσις",
+          "betaCode": "yu/xwsis",
+          "frequency": 114866291
+        },
+        {
+          "rank": 183,
+          "word": "ἀντί-ψύχω",
+          "betaCode": "a)nti/-yu/xw",
+          "frequency": 114857367
+        },
+        {
+          "rank": 184,
+          "word": "ἐν-ψύχω",
+          "betaCode": "e)n-yu/xw",
+          "frequency": 114857367
+        },
+        {
+          "rank": 185,
+          "word": "περί-ψύχω",
+          "betaCode": "peri/-yu/xw",
+          "frequency": 114857367
+        },
+        {
+          "rank": 186,
+          "word": "πρό-ψύχω",
+          "betaCode": "pro/-yu/xw",
+          "frequency": 114857367
+        },
+        {
+          "rank": 187,
+          "word": "ὑπό-ψύχω",
+          "betaCode": "u(po/-yu/xw",
+          "frequency": 114857367
+        },
+        {
+          "rank": 188,
+          "word": "ὑπό,περί-ψύχω",
+          "betaCode": "u(po/,peri/-yu/xw",
+          "frequency": 114857367
+        },
+        {
+          "rank": 189,
+          "word": "ψύχω",
+          "betaCode": "yu/xw",
+          "frequency": 114857367
+        },
+        {
+          "rank": 190,
+          "word": "ψυχρουδρία",
+          "betaCode": "yuxroudri/a",
+          "frequency": 114855484
+        },
+        {
+          "rank": 191,
+          "word": "ψυχρός",
+          "betaCode": "yuxro/s",
+          "frequency": 114844392
+        },
+        {
+          "rank": 192,
+          "word": "ψυχροπότης",
+          "betaCode": "yuxropo/ths",
+          "frequency": 114843767
+        },
+        {
+          "rank": 193,
+          "word": "ψυχροποτέω",
+          "betaCode": "yuxropote/w",
+          "frequency": 114843276
+        },
+        {
+          "rank": 194,
+          "word": "ψυχροποσία",
+          "betaCode": "yuxroposi/a",
+          "frequency": 114842650
+        },
+        {
+          "rank": 195,
+          "word": "ψυχρολουτρέω",
+          "betaCode": "yuxroloutre/w",
+          "frequency": 114839972
+        },
+        {
+          "rank": 196,
+          "word": "ψυχρολουτέω",
+          "betaCode": "yuxroloute/w",
+          "frequency": 114838129
+        },
+        {
+          "rank": 197,
+          "word": "ψυχρολουσία",
+          "betaCode": "yuxrolousi/a",
+          "frequency": 114837010
+        },
+        {
+          "rank": 198,
+          "word": "ψυχρολογία",
+          "betaCode": "yuxrologi/a",
+          "frequency": 114836014
+        },
+        {
+          "rank": 199,
+          "word": "ψυχρολογέω",
+          "betaCode": "yuxrologe/w",
+          "frequency": 114835500
+        },
+        {
+          "rank": 200,
+          "word": "ψυχροδοσία",
+          "betaCode": "yuxrodosi/a",
+          "frequency": 114832957
+        }
+      ]
+    },
+    {
+      "batchNumber": 5,
+      "rankRange": [
+        201,
+        250
+      ],
+      "words": [
+        {
+          "rank": 201,
+          "word": "ψυχρογραφέω",
+          "betaCode": "yuxrografe/w",
+          "frequency": 114832584
+        },
+        {
+          "rank": 202,
+          "word": "ψυχροβαφής",
+          "betaCode": "yuxrobafh/s",
+          "frequency": 114831887
+        },
+        {
+          "rank": 203,
+          "word": "ψυχρίζω",
+          "betaCode": "yuxri/zw",
+          "frequency": 114831185
+        },
+        {
+          "rank": 204,
+          "word": "ψυχρία",
+          "betaCode": "yuxri/a",
+          "frequency": 114830660
+        },
+        {
+          "rank": 205,
+          "word": "ψυχρηλατέω",
+          "betaCode": "yuxrhlate/w",
+          "frequency": 114829275
+        },
+        {
+          "rank": 206,
+          "word": "ψυχρασία",
+          "betaCode": "yuxrasi/a",
+          "frequency": 114828011
+        },
+        {
+          "rank": 207,
+          "word": "ψύχρα",
+          "betaCode": "yu/xra",
+          "frequency": 114826323
+        },
+        {
+          "rank": 208,
+          "word": "ἀνά-ψυχόω",
+          "betaCode": "a)na/-yuxo/w",
+          "frequency": 114824275
+        },
+        {
+          "rank": 209,
+          "word": "ψυχόω",
+          "betaCode": "yuxo/w",
+          "frequency": 114824275
+        },
+        {
+          "rank": 210,
+          "word": "ψυχουλκέομαι",
+          "betaCode": "yuxoulke/omai",
+          "frequency": 114822415
+        },
+        {
+          "rank": 211,
+          "word": "ψυχοταμίας",
+          "betaCode": "yuxotami/as",
+          "frequency": 114821175
+        },
+        {
+          "rank": 212,
+          "word": "ψυχοτακής",
+          "betaCode": "yuxotakh/s",
+          "frequency": 114820452
+        },
+        {
+          "rank": 213,
+          "word": "ψυχοστασία",
+          "betaCode": "yuxostasi/a",
+          "frequency": 114819445
+        },
+        {
+          "rank": 214,
+          "word": "ψῦχος",
+          "betaCode": "yu=xos",
+          "frequency": 114816286
+        },
+        {
+          "rank": 215,
+          "word": "ψυχορροφέω",
+          "betaCode": "yuxorrofe/w",
+          "frequency": 114815576
+        },
+        {
+          "rank": 216,
+          "word": "ψυχορραγία",
+          "betaCode": "yuxorragi/a",
+          "frequency": 114815145
+        },
+        {
+          "rank": 217,
+          "word": "ψυχορραγής",
+          "betaCode": "yuxorragh/s",
+          "frequency": 114814584
+        },
+        {
+          "rank": 218,
+          "word": "ψυχορραγέω",
+          "betaCode": "yuxorrage/w",
+          "frequency": 114813821
+        },
+        {
+          "rank": 219,
+          "word": "ψυχοπονία",
+          "betaCode": "yuxoponi/a",
+          "frequency": 114812608
+        },
+        {
+          "rank": 220,
+          "word": "ψυχοποιία",
+          "betaCode": "yuxopoii/a",
+          "frequency": 114810255
+        },
+        {
+          "rank": 221,
+          "word": "ψυχοπλανής",
+          "betaCode": "yuxoplanh/s",
+          "frequency": 114809816
+        },
+        {
+          "rank": 222,
+          "word": "ψυχομαχία",
+          "betaCode": "yuxomaxi/a",
+          "frequency": 114809425
+        },
+        {
+          "rank": 223,
+          "word": "ψυχομαχέω",
+          "betaCode": "yuxomaxe/w",
+          "frequency": 114808662
+        },
+        {
+          "rank": 224,
+          "word": "ψυχομαντεία",
+          "betaCode": "yuxomantei/a",
+          "frequency": 114807379
+        },
+        {
+          "rank": 225,
+          "word": "ψυχοειδής",
+          "betaCode": "yuxoeidh/s",
+          "frequency": 114804769
+        },
+        {
+          "rank": 226,
+          "word": "ψυχοδαικτής",
+          "betaCode": "yuxodaikth/s",
+          "frequency": 114803387
+        },
+        {
+          "rank": 227,
+          "word": "ψυχογονικός",
+          "betaCode": "yuxogoniko/s",
+          "frequency": 114801931
+        },
+        {
+          "rank": 228,
+          "word": "ψυχογονία",
+          "betaCode": "yuxogoni/a",
+          "frequency": 114801339
+        },
+        {
+          "rank": 229,
+          "word": "ψυχικός",
+          "betaCode": "yuxiko/s",
+          "frequency": 114797821
+        },
+        {
+          "rank": 230,
+          "word": "ψυχίζομαι",
+          "betaCode": "yuxi/zomai",
+          "frequency": 114797460
+        },
+        {
+          "rank": 231,
+          "word": "ψυχή",
+          "betaCode": "yuxh/",
+          "frequency": 114748074
+        },
+        {
+          "rank": 232,
+          "word": "ψυχεμπορικός",
+          "betaCode": "yuxemporiko/s",
+          "frequency": 114747104
+        },
+        {
+          "rank": 233,
+          "word": "ψυχεινός",
+          "betaCode": "yuxeino/s",
+          "frequency": 114745322
+        },
+        {
+          "rank": 234,
+          "word": "ψυχαπάτης",
+          "betaCode": "yuxapa/ths",
+          "frequency": 114742467
+        },
+        {
+          "rank": 235,
+          "word": "ἀνά-ψυχάζω",
+          "betaCode": "a)na/-yuxa/zw",
+          "frequency": 114741178
+        },
+        {
+          "rank": 236,
+          "word": "ἀπό-ψυχάζω",
+          "betaCode": "a)po/-yuxa/zw",
+          "frequency": 114741178
+        },
+        {
+          "rank": 237,
+          "word": "ἐν-ψυχάζω",
+          "betaCode": "e)n-yuxa/zw",
+          "frequency": 114741178
+        },
+        {
+          "rank": 238,
+          "word": "σύν-ψυχάζω",
+          "betaCode": "su/n-yuxa/zw",
+          "frequency": 114741178
+        },
+        {
+          "rank": 239,
+          "word": "ψυχάζω",
+          "betaCode": "yuxa/zw",
+          "frequency": 114741178
+        },
+        {
+          "rank": 240,
+          "word": "ψυχαγωγία",
+          "betaCode": "yuxagwgi/a",
+          "frequency": 114735772
+        },
+        {
+          "rank": 241,
+          "word": "ψυχαγωγή",
+          "betaCode": "yuxagwgh/",
+          "frequency": 114735412
+        },
+        {
+          "rank": 242,
+          "word": "ψυχαγωγέω",
+          "betaCode": "yuxagwge/w",
+          "frequency": 114731561
+        },
+        {
+          "rank": 243,
+          "word": "ψυτταλεία",
+          "betaCode": "yuttalei/a",
+          "frequency": 114730921
+        },
+        {
+          "rank": 244,
+          "word": "ψυρίη",
+          "betaCode": "yuri/h",
+          "frequency": 114728403
+        },
+        {
+          "rank": 245,
+          "word": "ψῦξις",
+          "betaCode": "yu=cis",
+          "frequency": 114726482
+        },
+        {
+          "rank": 246,
+          "word": "ψυλλία",
+          "betaCode": "yulli/a",
+          "frequency": 114723021
+        },
+        {
+          "rank": 247,
+          "word": "ψύλλα",
+          "betaCode": "yu/lla",
+          "frequency": 114719858
+        },
+        {
+          "rank": 248,
+          "word": "ψύκτρα",
+          "betaCode": "yu/ktra",
+          "frequency": 114719236
+        },
+        {
+          "rank": 249,
+          "word": "ψυκτικός",
+          "betaCode": "yuktiko/s",
+          "frequency": 114717795
+        },
+        {
+          "rank": 250,
+          "word": "ψυκτήριος",
+          "betaCode": "yukth/rios",
+          "frequency": 114716824
+        }
+      ]
+    },
+    {
+      "batchNumber": 6,
+      "rankRange": [
+        251,
+        300
+      ],
+      "words": [
+        {
+          "rank": 251,
+          "word": "ψυκτηρίας",
+          "betaCode": "yukthri/as",
+          "frequency": 114714757
+        },
+        {
+          "rank": 252,
+          "word": "ψυκτέον",
+          "betaCode": "yukte/on",
+          "frequency": 114711851
+        },
+        {
+          "rank": 253,
+          "word": "ψύθος",
+          "betaCode": "yu/qos",
+          "frequency": 114710134
+        },
+        {
+          "rank": 254,
+          "word": "ψυδρακόω",
+          "betaCode": "yudrako/w",
+          "frequency": 114707296
+        },
+        {
+          "rank": 255,
+          "word": "ψυδνός",
+          "betaCode": "yudno/s",
+          "frequency": 114705689
+        },
+        {
+          "rank": 256,
+          "word": "ψοφώδης",
+          "betaCode": "yofw/dhs",
+          "frequency": 114697052
+        },
+        {
+          "rank": 257,
+          "word": "ψοφοειδής",
+          "betaCode": "yofoeidh/s",
+          "frequency": 114691491
+        },
+        {
+          "rank": 258,
+          "word": "ψοφοδεής",
+          "betaCode": "yofodeh/s",
+          "frequency": 114689714
+        },
+        {
+          "rank": 259,
+          "word": "ψοφοδέεια",
+          "betaCode": "yofode/eia",
+          "frequency": 114689377
+        },
+        {
+          "rank": 260,
+          "word": "ψοφητικός",
+          "betaCode": "yofhtiko/s",
+          "frequency": 114688445
+        },
+        {
+          "rank": 261,
+          "word": "ψόφησις",
+          "betaCode": "yo/fhsis",
+          "frequency": 114687833
+        },
+        {
+          "rank": 262,
+          "word": "ἐπί-ψοφέω",
+          "betaCode": "e)pi/-yofe/w",
+          "frequency": 114681366
+        },
+        {
+          "rank": 263,
+          "word": "περί-ψοφέω",
+          "betaCode": "peri/-yofe/w",
+          "frequency": 114681366
+        },
+        {
+          "rank": 264,
+          "word": "ὑπό-ψοφέω",
+          "betaCode": "u(po/-yofe/w",
+          "frequency": 114681366
+        },
+        {
+          "rank": 265,
+          "word": "ψοφέω",
+          "betaCode": "yofe/w",
+          "frequency": 114681366
+        },
+        {
+          "rank": 266,
+          "word": "ψολοκομπία",
+          "betaCode": "yolokompi/a",
+          "frequency": 114678538
+        },
+        {
+          "rank": 267,
+          "word": "ψολόεις",
+          "betaCode": "yolo/eis",
+          "frequency": 114676411
+        },
+        {
+          "rank": 268,
+          "word": "ψογέω",
+          "betaCode": "yoge/w",
+          "frequency": 114667058
+        },
+        {
+          "rank": 269,
+          "word": "ψογερός",
+          "betaCode": "yogero/s",
+          "frequency": 114666081
+        },
+        {
+          "rank": 270,
+          "word": "ψύα",
+          "betaCode": "yu/a",
+          "frequency": 114662152
+        },
+        {
+          "rank": 271,
+          "word": "ψιχιώδης",
+          "betaCode": "yixiw/dhs",
+          "frequency": 114660425
+        },
+        {
+          "rank": 272,
+          "word": "ψιφαῖος",
+          "betaCode": "yifai=os",
+          "frequency": 114658946
+        },
+        {
+          "rank": 273,
+          "word": "ψιττάκη",
+          "betaCode": "yitta/kh",
+          "frequency": 114655861
+        },
+        {
+          "rank": 274,
+          "word": "ψιττάζω",
+          "betaCode": "yitta/zw",
+          "frequency": 114655535
+        },
+        {
+          "rank": 275,
+          "word": "ψιμυθοειδής",
+          "betaCode": "yimuqoeidh/s",
+          "frequency": 114649319
+        },
+        {
+          "rank": 276,
+          "word": "ψιμυθιόω",
+          "betaCode": "yimuqio/w",
+          "frequency": 114647697
+        },
+        {
+          "rank": 277,
+          "word": "ψιμυθίζω",
+          "betaCode": "yimuqi/zw",
+          "frequency": 114643241
+        },
+        {
+          "rank": 278,
+          "word": "ψίλωσις",
+          "betaCode": "yi/lwsis",
+          "frequency": 114639180
+        },
+        {
+          "rank": 279,
+          "word": "κατά-ψιλόω",
+          "betaCode": "kata/-yilo/w",
+          "frequency": 114632588
+        },
+        {
+          "rank": 280,
+          "word": "πρό-ψιλόω",
+          "betaCode": "pro/-yilo/w",
+          "frequency": 114632588
+        },
+        {
+          "rank": 281,
+          "word": "ψιλόω",
+          "betaCode": "yilo/w",
+          "frequency": 114632588
+        },
+        {
+          "rank": 282,
+          "word": "ψιλός",
+          "betaCode": "yilo/s",
+          "frequency": 114609518
+        },
+        {
+          "rank": 283,
+          "word": "ψιλομετρία",
+          "betaCode": "yilometri/a",
+          "frequency": 114607654
+        },
+        {
+          "rank": 284,
+          "word": "ψιλογραφέω",
+          "betaCode": "yilografe/w",
+          "frequency": 114602287
+        },
+        {
+          "rank": 285,
+          "word": "ψιλᾶς",
+          "betaCode": "yila=s",
+          "frequency": 114596897
+        },
+        {
+          "rank": 286,
+          "word": "ψιλαγία",
+          "betaCode": "yilagi/a",
+          "frequency": 114594537
+        },
+        {
+          "rank": 287,
+          "word": "ψίθυρος",
+          "betaCode": "yi/quros",
+          "frequency": 114592919
+        },
+        {
+          "rank": 288,
+          "word": "ψιθυριστής",
+          "betaCode": "yiquristh/s",
+          "frequency": 114591694
+        },
+        {
+          "rank": 289,
+          "word": "ψιθυρίζω",
+          "betaCode": "yiquri/zw",
+          "frequency": 114587320
+        },
+        {
+          "rank": 290,
+          "word": "ψιθύρα",
+          "betaCode": "yiqu/ra",
+          "frequency": 114586575
+        },
+        {
+          "rank": 291,
+          "word": "ψίθιος",
+          "betaCode": "yi/qios",
+          "frequency": 114584521
+        },
+        {
+          "rank": 292,
+          "word": "ἐπί-ψίζω",
+          "betaCode": "e)pi/-yi/zw",
+          "frequency": 114581620
+        },
+        {
+          "rank": 293,
+          "word": "ἐπί-ψίζομαι",
+          "betaCode": "e)pi/-yi/zomai",
+          "frequency": 114580952
+        },
+        {
+          "rank": 294,
+          "word": "ψίζομαι",
+          "betaCode": "yi/zomai",
+          "frequency": 114580952
+        },
+        {
+          "rank": 295,
+          "word": "ψιά",
+          "betaCode": "yia/",
+          "frequency": 114569794
+        },
+        {
+          "rank": 296,
+          "word": "παρά-ψήχω",
+          "betaCode": "para/-yh/xw",
+          "frequency": 114567049
+        },
+        {
+          "rank": 297,
+          "word": "περί-ψήχω",
+          "betaCode": "peri/-yh/xw",
+          "frequency": 114567049
+        },
+        {
+          "rank": 298,
+          "word": "ὑπό,ἀπό-ψήχω",
+          "betaCode": "u(po/,a)po/-yh/xw",
+          "frequency": 114567049
+        },
+        {
+          "rank": 299,
+          "word": "ψήχω",
+          "betaCode": "yh/xw",
+          "frequency": 114567049
+        },
+        {
+          "rank": 300,
+          "word": "ψηχρός",
+          "betaCode": "yhxro/s",
+          "frequency": 114566632
+        }
+      ]
+    },
+    {
+      "batchNumber": 7,
+      "rankRange": [
+        301,
+        350
+      ],
+      "words": [
+        {
+          "rank": 301,
+          "word": "ψηφόω",
+          "betaCode": "yhfo/w",
+          "frequency": 114564477
+        },
+        {
+          "rank": 302,
+          "word": "ψηφοφορία",
+          "betaCode": "yhfofori/a",
+          "frequency": 114562031
+        },
+        {
+          "rank": 303,
+          "word": "ψηφοφορέω",
+          "betaCode": "yhfofore/w",
+          "frequency": 114560682
+        },
+        {
+          "rank": 304,
+          "word": "ψηφοπαικτέω",
+          "betaCode": "yhfopaikte/w",
+          "frequency": 114542702
+        },
+        {
+          "rank": 305,
+          "word": "ψηφολογικός",
+          "betaCode": "yhfologiko/s",
+          "frequency": 114541870
+        },
+        {
+          "rank": 306,
+          "word": "σύν-ψηφολογέω",
+          "betaCode": "su/n-yhfologe/w",
+          "frequency": 114540748
+        },
+        {
+          "rank": 307,
+          "word": "ψηφολογέω",
+          "betaCode": "yhfologe/w",
+          "frequency": 114540748
+        },
+        {
+          "rank": 308,
+          "word": "ψηφοθήκη",
+          "betaCode": "yhfoqh/kh",
+          "frequency": 114539366
+        },
+        {
+          "rank": 309,
+          "word": "ψηφισματώδης",
+          "betaCode": "yhfismatw/dhs",
+          "frequency": 114535574
+        },
+        {
+          "rank": 310,
+          "word": "ψήφισις",
+          "betaCode": "yh/fisis",
+          "frequency": 114529533
+        },
+        {
+          "rank": 311,
+          "word": "πρό-ψηφίζω",
+          "betaCode": "pro/-yhfi/zw",
+          "frequency": 114515983
+        },
+        {
+          "rank": 312,
+          "word": "ψηφίζομαι",
+          "betaCode": "yhfi/zomai",
+          "frequency": 114515983
+        },
+        {
+          "rank": 313,
+          "word": "ψηφίζω",
+          "betaCode": "yhfi/zw",
+          "frequency": 114515983
+        },
+        {
+          "rank": 314,
+          "word": "ψηφιδώδης",
+          "betaCode": "yhfidw/dhs",
+          "frequency": 114515537
+        },
+        {
+          "rank": 315,
+          "word": "ψηττοειδής",
+          "betaCode": "yhttoeidh/s",
+          "frequency": 114513142
+        },
+        {
+          "rank": 316,
+          "word": "ψῆττα",
+          "betaCode": "yh=tta",
+          "frequency": 114510956
+        },
+        {
+          "rank": 317,
+          "word": "ψηρής",
+          "betaCode": "yhrh/s",
+          "frequency": 114509696
+        },
+        {
+          "rank": 318,
+          "word": "ψῆξις",
+          "betaCode": "yh=cis",
+          "frequency": 114508812
+        },
+        {
+          "rank": 319,
+          "word": "ὑπό-ψηνίζω",
+          "betaCode": "u(po/-yhni/zw",
+          "frequency": 114507075
+        },
+        {
+          "rank": 320,
+          "word": "ψηλαφία",
+          "betaCode": "yhlafi/a",
+          "frequency": 114503123
+        },
+        {
+          "rank": 321,
+          "word": "ψηλαφητός",
+          "betaCode": "yhlafhto/s",
+          "frequency": 114502581
+        },
+        {
+          "rank": 322,
+          "word": "ψηλαφητής",
+          "betaCode": "yhlafhth/s",
+          "frequency": 114501704
+        },
+        {
+          "rank": 323,
+          "word": "ψηλαφητέον",
+          "betaCode": "yhlafhte/on",
+          "frequency": 114501309
+        },
+        {
+          "rank": 324,
+          "word": "ψηλάφησις",
+          "betaCode": "yhla/fhsis",
+          "frequency": 114500293
+        },
+        {
+          "rank": 325,
+          "word": "ἀνά-ψηλαφάω",
+          "betaCode": "a)na/-yhlafa/w",
+          "frequency": 114494646
+        },
+        {
+          "rank": 326,
+          "word": "ψηλαφάω",
+          "betaCode": "yhlafa/w",
+          "frequency": 114494646
+        },
+        {
+          "rank": 327,
+          "word": "ψηκτρίζω",
+          "betaCode": "yhktri/zw",
+          "frequency": 114493865
+        },
+        {
+          "rank": 328,
+          "word": "ψήκτρα",
+          "betaCode": "yh/ktra",
+          "frequency": 114492442
+        },
+        {
+          "rank": 329,
+          "word": "ὑπό,ἀνά-ψέω",
+          "betaCode": "u(po/,a)na/-ye/w",
+          "frequency": 114488866
+        },
+        {
+          "rank": 330,
+          "word": "ψέω",
+          "betaCode": "ye/w",
+          "frequency": 114488866
+        },
+        {
+          "rank": 331,
+          "word": "ψέφος",
+          "betaCode": "ye/fos",
+          "frequency": 114487841
+        },
+        {
+          "rank": 332,
+          "word": "ψεφαυγής",
+          "betaCode": "yefaugh/s",
+          "frequency": 114486678
+        },
+        {
+          "rank": 333,
+          "word": "ψεφαρός",
+          "betaCode": "yefaro/s",
+          "frequency": 114485720
+        },
+        {
+          "rank": 334,
+          "word": "ψεύστης",
+          "betaCode": "yeu/sths",
+          "frequency": 114481800
+        },
+        {
+          "rank": 335,
+          "word": "ψευστέω",
+          "betaCode": "yeuste/w",
+          "frequency": 114481102
+        },
+        {
+          "rank": 336,
+          "word": "ψευδωμότης",
+          "betaCode": "yeudwmo/ths",
+          "frequency": 114476296
+        },
+        {
+          "rank": 337,
+          "word": "παρά-ψεύδω",
+          "betaCode": "para/-yeu/dw",
+          "frequency": 114458962
+        },
+        {
+          "rank": 338,
+          "word": "σύν-ψεύδω",
+          "betaCode": "su/n-yeu/dw",
+          "frequency": 114458962
+        },
+        {
+          "rank": 339,
+          "word": "ψεύδω",
+          "betaCode": "yeu/dw",
+          "frequency": 114458962
+        },
+        {
+          "rank": 340,
+          "word": "ψευδοφανής",
+          "betaCode": "yeudofanh/s",
+          "frequency": 114455959
+        },
+        {
+          "rank": 341,
+          "word": "ψευδοφαής",
+          "betaCode": "yeudofah/s",
+          "frequency": 114455504
+        },
+        {
+          "rank": 342,
+          "word": "ψευδοτεχνία",
+          "betaCode": "yeudotexni/a",
+          "frequency": 114454061
+        },
+        {
+          "rank": 343,
+          "word": "ψευδοστομέω",
+          "betaCode": "yeudostome/w",
+          "frequency": 114451226
+        },
+        {
+          "rank": 344,
+          "word": "ψευδοστιγματίας",
+          "betaCode": "yeudostigmati/as",
+          "frequency": 114450292
+        },
+        {
+          "rank": 345,
+          "word": "ψευδοσοφία",
+          "betaCode": "yeudosofi/a",
+          "frequency": 114449343
+        },
+        {
+          "rank": 346,
+          "word": "ψεῦδος",
+          "betaCode": "yeu=dos",
+          "frequency": 114443008
+        },
+        {
+          "rank": 347,
+          "word": "ψευδορκία",
+          "betaCode": "yeudorki/a",
+          "frequency": 114441083
+        },
+        {
+          "rank": 348,
+          "word": "ψευδορκέω",
+          "betaCode": "yeudorke/w",
+          "frequency": 114440554
+        },
+        {
+          "rank": 349,
+          "word": "ψευδοπροφήτης",
+          "betaCode": "yeudoprofh/ths",
+          "frequency": 114437886
+        },
+        {
+          "rank": 350,
+          "word": "ψευδοπροδότης",
+          "betaCode": "yeudoprodo/ths",
+          "frequency": 114437419
+        }
+      ]
+    },
+    {
+      "batchNumber": 8,
+      "rankRange": [
+        351,
+        400
+      ],
+      "words": [
+        {
+          "rank": 351,
+          "word": "ψευδοπροδοσία",
+          "betaCode": "yeudoprodosi/a",
+          "frequency": 114436992
+        },
+        {
+          "rank": 352,
+          "word": "ψευδοποιέω",
+          "betaCode": "yeudopoie/w",
+          "frequency": 114434322
+        },
+        {
+          "rank": 353,
+          "word": "ψευδοπαρήχησις",
+          "betaCode": "yeudoparh/xhsis",
+          "frequency": 114429711
+        },
+        {
+          "rank": 354,
+          "word": "ψευδοπαιδεία",
+          "betaCode": "yeudopaidei/a",
+          "frequency": 114428369
+        },
+        {
+          "rank": 355,
+          "word": "ψευδομαρτυρία",
+          "betaCode": "yeudomarturi/a",
+          "frequency": 114420081
+        },
+        {
+          "rank": 356,
+          "word": "σύν-ψευδομαρτυρέω",
+          "betaCode": "su/n-yeudomarture/w",
+          "frequency": 114419150
+        },
+        {
+          "rank": 357,
+          "word": "ψευδομαρτυρέω",
+          "betaCode": "yeudomarture/w",
+          "frequency": 114419150
+        },
+        {
+          "rank": 358,
+          "word": "ψευδόμαντις",
+          "betaCode": "yeudo/mantis",
+          "frequency": 114417577
+        },
+        {
+          "rank": 359,
+          "word": "ψευδολογικός",
+          "betaCode": "yeudologiko/s",
+          "frequency": 114415591
+        },
+        {
+          "rank": 360,
+          "word": "ψευδολογία",
+          "betaCode": "yeudologi/a",
+          "frequency": 114414959
+        },
+        {
+          "rank": 361,
+          "word": "ψευδολογέω",
+          "betaCode": "yeudologe/w",
+          "frequency": 114413923
+        },
+        {
+          "rank": 362,
+          "word": "ψευδοκλητεία",
+          "betaCode": "yeudoklhtei/a",
+          "frequency": 114408409
+        },
+        {
+          "rank": 363,
+          "word": "ψευδοκασσία",
+          "betaCode": "yeudokassi/a",
+          "frequency": 114405566
+        },
+        {
+          "rank": 364,
+          "word": "ψευδοιστορέω",
+          "betaCode": "yeudoistore/w",
+          "frequency": 114404835
+        },
+        {
+          "rank": 365,
+          "word": "ψευδοεπέω",
+          "betaCode": "yeudoepe/w",
+          "frequency": 114403318
+        },
+        {
+          "rank": 366,
+          "word": "ψευδοενέδρα",
+          "betaCode": "yeudoene/dra",
+          "frequency": 114402907
+        },
+        {
+          "rank": 367,
+          "word": "ψευδοδοξία",
+          "betaCode": "yeudodoci/a",
+          "frequency": 114401744
+        },
+        {
+          "rank": 368,
+          "word": "ψευδοδοξέω",
+          "betaCode": "yeudodoce/w",
+          "frequency": 114400965
+        },
+        {
+          "rank": 369,
+          "word": "ψευδογραφία",
+          "betaCode": "yeudografi/a",
+          "frequency": 114396955
+        },
+        {
+          "rank": 370,
+          "word": "ψευδογραφέω",
+          "betaCode": "yeudografe/w",
+          "frequency": 114395206
+        },
+        {
+          "rank": 371,
+          "word": "ψευδογλωττέω",
+          "betaCode": "yeudoglwtte/w",
+          "frequency": 114394810
+        },
+        {
+          "rank": 372,
+          "word": "ψευδοβοήθεια",
+          "betaCode": "yeudoboh/qeia",
+          "frequency": 114393412
+        },
+        {
+          "rank": 373,
+          "word": "ψεῦδις",
+          "betaCode": "yeu=dis",
+          "frequency": 114392505
+        },
+        {
+          "rank": 374,
+          "word": "ψευδής",
+          "betaCode": "yeudh/s",
+          "frequency": 114384539
+        },
+        {
+          "rank": 375,
+          "word": "ψευδηγορία",
+          "betaCode": "yeudhgori/a",
+          "frequency": 114381549
+        },
+        {
+          "rank": 376,
+          "word": "ψευδηγορέω",
+          "betaCode": "yeudhgore/w",
+          "frequency": 114380680
+        },
+        {
+          "rank": 377,
+          "word": "ψευδεπιεικής",
+          "betaCode": "yeudepieikh/s",
+          "frequency": 114378941
+        },
+        {
+          "rank": 378,
+          "word": "ψευδενέδρα",
+          "betaCode": "yeudene/dra",
+          "frequency": 114376808
+        },
+        {
+          "rank": 379,
+          "word": "ψευδαυτομολία",
+          "betaCode": "yeudautomoli/a",
+          "frequency": 114374445
+        },
+        {
+          "rank": 380,
+          "word": "ψευδαγνοέω",
+          "betaCode": "yeudagnoe/w",
+          "frequency": 114365487
+        },
+        {
+          "rank": 381,
+          "word": "ψευδαγγελία",
+          "betaCode": "yeudaggeli/a",
+          "frequency": 114364392
+        },
+        {
+          "rank": 382,
+          "word": "ψευδαγγελέω",
+          "betaCode": "yeudaggele/w",
+          "frequency": 114363434
+        },
+        {
+          "rank": 383,
+          "word": "ψέξις",
+          "betaCode": "ye/cis",
+          "frequency": 114362718
+        },
+        {
+          "rank": 384,
+          "word": "ψελλός",
+          "betaCode": "yello/s",
+          "frequency": 114360335
+        },
+        {
+          "rank": 385,
+          "word": "πρό-ψελλίζω",
+          "betaCode": "pro/-yelli/zw",
+          "frequency": 114355293
+        },
+        {
+          "rank": 386,
+          "word": "σύν,διά-ψελλίζω",
+          "betaCode": "su/n,dia/-yelli/zw",
+          "frequency": 114355293
+        },
+        {
+          "rank": 387,
+          "word": "ψελλίζω",
+          "betaCode": "yelli/zw",
+          "frequency": 114355293
+        },
+        {
+          "rank": 388,
+          "word": "ψελιόω",
+          "betaCode": "yelio/w",
+          "frequency": 114354352
+        },
+        {
+          "rank": 389,
+          "word": "ψεκτός",
+          "betaCode": "yekto/s",
+          "frequency": 114349286
+        },
+        {
+          "rank": 390,
+          "word": "ψεκτικός",
+          "betaCode": "yektiko/s",
+          "frequency": 114348497
+        },
+        {
+          "rank": 391,
+          "word": "ψέκτης",
+          "betaCode": "ye/kths",
+          "frequency": 114347898
+        },
+        {
+          "rank": 392,
+          "word": "ὑπό-ψιάω",
+          "betaCode": "u(po/-yia/w",
+          "frequency": 114346115
+        },
+        {
+          "rank": 393,
+          "word": "ψιάω",
+          "betaCode": "yia/w",
+          "frequency": 114346115
+        },
+        {
+          "rank": 394,
+          "word": "ψεδνός",
+          "betaCode": "yedno/s",
+          "frequency": 114342272
+        },
+        {
+          "rank": 395,
+          "word": "διά-ψέγω",
+          "betaCode": "dia/-ye/gw",
+          "frequency": 114336243
+        },
+        {
+          "rank": 396,
+          "word": "ἐπί-ψέγω",
+          "betaCode": "e)pi/-ye/gw",
+          "frequency": 114336243
+        },
+        {
+          "rank": 397,
+          "word": "σύν,κατά-ψέγω",
+          "betaCode": "su/n,kata/-ye/gw",
+          "frequency": 114336243
+        },
+        {
+          "rank": 398,
+          "word": "ψέγω",
+          "betaCode": "ye/gw",
+          "frequency": 114336243
+        },
+        {
+          "rank": 399,
+          "word": "ψάω",
+          "betaCode": "ya/w",
+          "frequency": 114331877
+        },
+        {
+          "rank": 400,
+          "word": "ψαφαροχαίτης",
+          "betaCode": "yafaroxai/ths",
+          "frequency": 114329021
+        }
+      ]
+    },
+    {
+      "batchNumber": 9,
+      "rankRange": [
+        401,
+        450
+      ],
+      "words": [
+        {
+          "rank": 401,
+          "word": "ψαφαρός",
+          "betaCode": "yafaro/s",
+          "frequency": 114325040
+        },
+        {
+          "rank": 402,
+          "word": "ψαφαρία",
+          "betaCode": "yafari/a",
+          "frequency": 114323638
+        },
+        {
+          "rank": 403,
+          "word": "διά-ψαύω",
+          "betaCode": "dia/-yau/w",
+          "frequency": 114314598
+        },
+        {
+          "rank": 404,
+          "word": "κατά-ψαύω",
+          "betaCode": "kata/-yau/w",
+          "frequency": 114314598
+        },
+        {
+          "rank": 405,
+          "word": "παρά-ψαύω",
+          "betaCode": "para/-yau/w",
+          "frequency": 114314598
+        },
+        {
+          "rank": 406,
+          "word": "περί-ψαύω",
+          "betaCode": "peri/-yau/w",
+          "frequency": 114314598
+        },
+        {
+          "rank": 407,
+          "word": "ψαύω",
+          "betaCode": "yau/w",
+          "frequency": 114314598
+        },
+        {
+          "rank": 408,
+          "word": "ψαῦσις",
+          "betaCode": "yau=sis",
+          "frequency": 114312355
+        },
+        {
+          "rank": 409,
+          "word": "ψαρός",
+          "betaCode": "yaro/s",
+          "frequency": 114307419
+        },
+        {
+          "rank": 410,
+          "word": "ψαρομαχία",
+          "betaCode": "yaromaxi/a",
+          "frequency": 114306530
+        },
+        {
+          "rank": 411,
+          "word": "ψαμμώδης",
+          "betaCode": "yammw/dhs",
+          "frequency": 114302366
+        },
+        {
+          "rank": 412,
+          "word": "ψαμμουργία",
+          "betaCode": "yammourgi/a",
+          "frequency": 114301830
+        },
+        {
+          "rank": 413,
+          "word": "ψαμμοειδής",
+          "betaCode": "yammoeidh/s",
+          "frequency": 114298344
+        },
+        {
+          "rank": 414,
+          "word": "ψαμμίτης",
+          "betaCode": "yammi/ths",
+          "frequency": 114296234
+        },
+        {
+          "rank": 415,
+          "word": "ψάμμιος",
+          "betaCode": "ya/mmios",
+          "frequency": 114295826
+        },
+        {
+          "rank": 416,
+          "word": "ψάμμη",
+          "betaCode": "ya/mmh",
+          "frequency": 114292525
+        },
+        {
+          "rank": 417,
+          "word": "ψαμματίζω",
+          "betaCode": "yammati/zw",
+          "frequency": 114292242
+        },
+        {
+          "rank": 418,
+          "word": "ψαμαθώδης",
+          "betaCode": "yamaqw/dhs",
+          "frequency": 114289577
+        },
+        {
+          "rank": 419,
+          "word": "ψαμαθία",
+          "betaCode": "yamaqi/a",
+          "frequency": 114285770
+        },
+        {
+          "rank": 420,
+          "word": "ψαμάθη",
+          "betaCode": "yama/qh",
+          "frequency": 114285324
+        },
+        {
+          "rank": 421,
+          "word": "ψαλτῳδέω",
+          "betaCode": "yaltw|de/w",
+          "frequency": 114283965
+        },
+        {
+          "rank": 422,
+          "word": "ψάλτρια",
+          "betaCode": "ya/ltria",
+          "frequency": 114283223
+        },
+        {
+          "rank": 423,
+          "word": "ψαλτικός",
+          "betaCode": "yaltiko/s",
+          "frequency": 114281949
+        },
+        {
+          "rank": 424,
+          "word": "ψάλτης",
+          "betaCode": "ya/lths",
+          "frequency": 114280120
+        },
+        {
+          "rank": 425,
+          "word": "ψάλσις",
+          "betaCode": "ya/lsis",
+          "frequency": 114278642
+        },
+        {
+          "rank": 426,
+          "word": "ψαλμοχαρής",
+          "betaCode": "yalmoxarh/s",
+          "frequency": 114277459
+        },
+        {
+          "rank": 427,
+          "word": "ἀπό-ψάλλω",
+          "betaCode": "a)po/-ya/llw",
+          "frequency": 114269136
+        },
+        {
+          "rank": 428,
+          "word": "διά-ψάλλω",
+          "betaCode": "dia/-ya/llw",
+          "frequency": 114269136
+        },
+        {
+          "rank": 429,
+          "word": "ἐπί-ψάλλω",
+          "betaCode": "e)pi/-ya/llw",
+          "frequency": 114269136
+        },
+        {
+          "rank": 430,
+          "word": "σύν-ψάλλω",
+          "betaCode": "su/n-ya/llw",
+          "frequency": 114269136
+        },
+        {
+          "rank": 431,
+          "word": "ὑπό-ψάλλω",
+          "betaCode": "u(po/-ya/llw",
+          "frequency": 114269136
+        },
+        {
+          "rank": 432,
+          "word": "ψάλλω",
+          "betaCode": "ya/llw",
+          "frequency": 114269136
+        },
+        {
+          "rank": 433,
+          "word": "διά-ψαλίζω",
+          "betaCode": "dia/-yali/zw",
+          "frequency": 114257894
+        },
+        {
+          "rank": 434,
+          "word": "ψαλίζω",
+          "betaCode": "yali/zw",
+          "frequency": 114257894
+        },
+        {
+          "rank": 435,
+          "word": "ψαλιδοειδής",
+          "betaCode": "yalidoeidh/s",
+          "frequency": 114255367
+        },
+        {
+          "rank": 436,
+          "word": "διά-ψαλάσσω",
+          "betaCode": "dia/-yala/ssw",
+          "frequency": 114253779
+        },
+        {
+          "rank": 437,
+          "word": "ψαλάσσω",
+          "betaCode": "yala/ssw",
+          "frequency": 114253779
+        },
+        {
+          "rank": 438,
+          "word": "ψαλάκανθα",
+          "betaCode": "yala/kanqa",
+          "frequency": 114252370
+        },
+        {
+          "rank": 439,
+          "word": "ἀνά-ψεκάζω",
+          "betaCode": "a)na/-yeka/zw",
+          "frequency": 114243756
+        },
+        {
+          "rank": 440,
+          "word": "ἐπί-ψακάζω",
+          "betaCode": "e)pi/-yaka/zw",
+          "frequency": 114243756
+        },
+        {
+          "rank": 441,
+          "word": "ὑπό-ψακάζω",
+          "betaCode": "u(po/-yaka/zw",
+          "frequency": 114243756
+        },
+        {
+          "rank": 442,
+          "word": "ψακάζω",
+          "betaCode": "yaka/zw",
+          "frequency": 114243756
+        },
+        {
+          "rank": 443,
+          "word": "ψεκάζω",
+          "betaCode": "yeka/zw",
+          "frequency": 114243756
+        },
+        {
+          "rank": 444,
+          "word": "ψαιστός",
+          "betaCode": "yaisto/s",
+          "frequency": 114238885
+        },
+        {
+          "rank": 445,
+          "word": "διά-ψαίρω",
+          "betaCode": "dia/-yai/rw",
+          "frequency": 114236411
+        },
+        {
+          "rank": 446,
+          "word": "κατά-ψαίρω",
+          "betaCode": "kata/-yai/rw",
+          "frequency": 114236411
+        },
+        {
+          "rank": 447,
+          "word": "ψαίρω",
+          "betaCode": "yai/rw",
+          "frequency": 114236411
+        },
+        {
+          "rank": 448,
+          "word": "ψαθυρός",
+          "betaCode": "yaquro/s",
+          "frequency": 114229520
+        },
+        {
+          "rank": 449,
+          "word": "χωστός",
+          "betaCode": "xwsto/s",
+          "frequency": 114218804
+        },
+        {
+          "rank": 450,
+          "word": "χῶσις",
+          "betaCode": "xw=sis",
+          "frequency": 114216747
+        }
+      ]
+    },
+    {
+      "batchNumber": 10,
+      "rankRange": [
+        451,
+        500
+      ],
+      "words": [
+        {
+          "rank": 451,
+          "word": "χωροφιλέω",
+          "betaCode": "xwrofile/w",
+          "frequency": 114214552
+        },
+        {
+          "rank": 452,
+          "word": "χωροθεσία",
+          "betaCode": "xwroqesi/a",
+          "frequency": 114204875
+        },
+        {
+          "rank": 453,
+          "word": "χωρογραφικός",
+          "betaCode": "xwrografiko/s",
+          "frequency": 114203727
+        },
+        {
+          "rank": 454,
+          "word": "χωρογραφία",
+          "betaCode": "xwrografi/a",
+          "frequency": 114202673
+        },
+        {
+          "rank": 455,
+          "word": "χωρογραφέω",
+          "betaCode": "xwrografe/w",
+          "frequency": 114201403
+        },
+        {
+          "rank": 456,
+          "word": "χωροβάτης",
+          "betaCode": "xwroba/ths",
+          "frequency": 114200756
+        },
+        {
+          "rank": 457,
+          "word": "χωροβατέω",
+          "betaCode": "xwrobate/w",
+          "frequency": 114200020
+        },
+        {
+          "rank": 458,
+          "word": "χωριτικός",
+          "betaCode": "xwritiko/s",
+          "frequency": 114199039
+        },
+        {
+          "rank": 459,
+          "word": "χωρίτης",
+          "betaCode": "xwri/ths",
+          "frequency": 114197250
+        },
+        {
+          "rank": 460,
+          "word": "χωριστός",
+          "betaCode": "xwristo/s",
+          "frequency": 114194765
+        },
+        {
+          "rank": 461,
+          "word": "χωριστικός",
+          "betaCode": "xwristiko/s",
+          "frequency": 114194312
+        },
+        {
+          "rank": 462,
+          "word": "χωριστής",
+          "betaCode": "xwristh/s",
+          "frequency": 114193948
+        },
+        {
+          "rank": 463,
+          "word": "χώρισις",
+          "betaCode": "xw/risis",
+          "frequency": 114190031
+        },
+        {
+          "rank": 464,
+          "word": "χωρικός",
+          "betaCode": "xwriko/s",
+          "frequency": 114174308
+        },
+        {
+          "rank": 465,
+          "word": "εἰσ-χωρίζω",
+          "betaCode": "ei)s-xwri/zw",
+          "frequency": 114167311
+        },
+        {
+          "rank": 466,
+          "word": "χωρίζω",
+          "betaCode": "xwri/zw",
+          "frequency": 114167311
+        },
+        {
+          "rank": 467,
+          "word": "χωρητικός",
+          "betaCode": "xwrhtiko/s",
+          "frequency": 114164500
+        },
+        {
+          "rank": 468,
+          "word": "χωρητέον",
+          "betaCode": "xwrhte/on",
+          "frequency": 114163764
+        },
+        {
+          "rank": 469,
+          "word": "χώρησις",
+          "betaCode": "xw/rhsis",
+          "frequency": 114162918
+        },
+        {
+          "rank": 470,
+          "word": "εἰσ-χωρέω",
+          "betaCode": "ei)s-xwre/w",
+          "frequency": 114141459
+        },
+        {
+          "rank": 471,
+          "word": "χωρέω",
+          "betaCode": "xwre/w",
+          "frequency": 114141459
+        },
+        {
+          "rank": 472,
+          "word": "χωραρχία",
+          "betaCode": "xwrarxi/a",
+          "frequency": 114138353
+        },
+        {
+          "rank": 473,
+          "word": "σύν,πρόσ-χωράζω",
+          "betaCode": "su/n,pro/s-xwra/zw",
+          "frequency": 114137585
+        },
+        {
+          "rank": 474,
+          "word": "χωράζω",
+          "betaCode": "xwra/zw",
+          "frequency": 114137585
+        },
+        {
+          "rank": 475,
+          "word": "χώρα",
+          "betaCode": "xw/ra",
+          "frequency": 114120219
+        },
+        {
+          "rank": 476,
+          "word": "χώομαι",
+          "betaCode": "xw/omai",
+          "frequency": 114116032
+        },
+        {
+          "rank": 477,
+          "word": "χωνευτός",
+          "betaCode": "xwneuto/s",
+          "frequency": 114110827
+        },
+        {
+          "rank": 478,
+          "word": "χωνευτής",
+          "betaCode": "xwneuth/s",
+          "frequency": 114110143
+        },
+        {
+          "rank": 479,
+          "word": "χώνευσις",
+          "betaCode": "xw/neusis",
+          "frequency": 114108649
+        },
+        {
+          "rank": 480,
+          "word": "χωνεία",
+          "betaCode": "xwnei/a",
+          "frequency": 114107145
+        },
+        {
+          "rank": 481,
+          "word": "χωλός",
+          "betaCode": "xwlo/s",
+          "frequency": 114089489
+        },
+        {
+          "rank": 482,
+          "word": "χωλόπους",
+          "betaCode": "xwlo/pous",
+          "frequency": 114089019
+        },
+        {
+          "rank": 483,
+          "word": "χωλιαμβοποιέω",
+          "betaCode": "xwliambopoie/w",
+          "frequency": 114085999
+        },
+        {
+          "rank": 484,
+          "word": "ἐπί-χωλεύω",
+          "betaCode": "e)pi/-xwleu/w",
+          "frequency": 114083601
+        },
+        {
+          "rank": 485,
+          "word": "χωλεύω",
+          "betaCode": "xwleu/w",
+          "frequency": 114083601
+        },
+        {
+          "rank": 486,
+          "word": "χωλεία",
+          "betaCode": "xwlei/a",
+          "frequency": 114082583
+        },
+        {
+          "rank": 487,
+          "word": "ἀπό-χωλάω",
+          "betaCode": "a)po/-xwla/w",
+          "frequency": 114082228
+        },
+        {
+          "rank": 488,
+          "word": "χωλάω",
+          "betaCode": "xwla/w",
+          "frequency": 114082228
+        },
+        {
+          "rank": 489,
+          "word": "ἐπί-χωλαίνω",
+          "betaCode": "e)pi/-xwlai/nw",
+          "frequency": 114079986
+        },
+        {
+          "rank": 490,
+          "word": "ὑπό-χωλαίνω",
+          "betaCode": "u(po/-xwlai/nw",
+          "frequency": 114079986
+        },
+        {
+          "rank": 491,
+          "word": "χωλαίνω",
+          "betaCode": "xwlai/nw",
+          "frequency": 114079986
+        },
+        {
+          "rank": 492,
+          "word": "χυτροτομέω",
+          "betaCode": "xutrotome/w",
+          "frequency": 114078855
+        },
+        {
+          "rank": 493,
+          "word": "χυτρόπους",
+          "betaCode": "xutro/pous",
+          "frequency": 114074152
+        },
+        {
+          "rank": 494,
+          "word": "χυτροειδής",
+          "betaCode": "xutroeidh/s",
+          "frequency": 114073198
+        },
+        {
+          "rank": 495,
+          "word": "χυτρίτης",
+          "betaCode": "xutri/ths",
+          "frequency": 114071498
+        },
+        {
+          "rank": 496,
+          "word": "χύτρειος",
+          "betaCode": "xu/treios",
+          "frequency": 114062210
+        },
+        {
+          "rank": 497,
+          "word": "χυτραῖος",
+          "betaCode": "xutrai=os",
+          "frequency": 114061677
+        },
+        {
+          "rank": 498,
+          "word": "χύτρα",
+          "betaCode": "xu/tra",
+          "frequency": 114056530
+        },
+        {
+          "rank": 499,
+          "word": "χυτός",
+          "betaCode": "xuto/s",
+          "frequency": 114051807
+        },
+        {
+          "rank": 500,
+          "word": "χυτλόω",
+          "betaCode": "xutlo/w",
+          "frequency": 114050468
+        }
+      ]
+    },
+    {
+      "batchNumber": 11,
+      "rankRange": [
+        501,
+        550
+      ],
+      "words": [
+        {
+          "rank": 501,
+          "word": "χυτλάζω",
+          "betaCode": "xutla/zw",
+          "frequency": 114048205
+        },
+        {
+          "rank": 502,
+          "word": "χύτης",
+          "betaCode": "xu/ths",
+          "frequency": 114047279
+        },
+        {
+          "rank": 503,
+          "word": "χύσις",
+          "betaCode": "xu/sis",
+          "frequency": 114041370
+        },
+        {
+          "rank": 504,
+          "word": "χύμωσις",
+          "betaCode": "xu/mwsis",
+          "frequency": 114039389
+        },
+        {
+          "rank": 505,
+          "word": "χυμώδης",
+          "betaCode": "xumw/dhs",
+          "frequency": 114038978
+        },
+        {
+          "rank": 506,
+          "word": "χυμόω",
+          "betaCode": "xumo/w",
+          "frequency": 114038472
+        },
+        {
+          "rank": 507,
+          "word": "χυμευτικός",
+          "betaCode": "xumeutiko/s",
+          "frequency": 114033093
+        },
+        {
+          "rank": 508,
+          "word": "χύμευσις",
+          "betaCode": "xu/meusis",
+          "frequency": 114032542
+        },
+        {
+          "rank": 509,
+          "word": "χυμεία",
+          "betaCode": "xumei/a",
+          "frequency": 114030720
+        },
+        {
+          "rank": 510,
+          "word": "χύλωσις",
+          "betaCode": "xu/lwsis",
+          "frequency": 114025917
+        },
+        {
+          "rank": 511,
+          "word": "χυλώδης",
+          "betaCode": "xulw/dhs",
+          "frequency": 114025035
+        },
+        {
+          "rank": 512,
+          "word": "διά-χυλόω",
+          "betaCode": "dia/-xulo/w",
+          "frequency": 114023655
+        },
+        {
+          "rank": 513,
+          "word": "ἐκ-χυλόω",
+          "betaCode": "e)k-xulo/w",
+          "frequency": 114023655
+        },
+        {
+          "rank": 514,
+          "word": "χυλόω",
+          "betaCode": "xulo/w",
+          "frequency": 114023655
+        },
+        {
+          "rank": 515,
+          "word": "χυλοποιέω",
+          "betaCode": "xulopoie/w",
+          "frequency": 114018242
+        },
+        {
+          "rank": 516,
+          "word": "χυλοποίησις",
+          "betaCode": "xulopoi/hsis",
+          "frequency": 114018242
+        },
+        {
+          "rank": 517,
+          "word": "ἐκ-χυλίζω",
+          "betaCode": "e)k-xuli/zw",
+          "frequency": 114015712
+        },
+        {
+          "rank": 518,
+          "word": "χυλίζω",
+          "betaCode": "xuli/zw",
+          "frequency": 114015712
+        },
+        {
+          "rank": 519,
+          "word": "χυδανός",
+          "betaCode": "xudano/s",
+          "frequency": 114010621
+        },
+        {
+          "rank": 520,
+          "word": "χυδαιόω",
+          "betaCode": "xudaio/w",
+          "frequency": 114009864
+        },
+        {
+          "rank": 521,
+          "word": "χυδαιολογία",
+          "betaCode": "xudaiologi/a",
+          "frequency": 114006090
+        },
+        {
+          "rank": 522,
+          "word": "χυδαίζομαι",
+          "betaCode": "xudai/zomai",
+          "frequency": 114005607
+        },
+        {
+          "rank": 523,
+          "word": "χρωτίζω",
+          "betaCode": "xrwti/zw",
+          "frequency": 114004897
+        },
+        {
+          "rank": 524,
+          "word": "χρῶσις",
+          "betaCode": "xrw=sis",
+          "frequency": 114003269
+        },
+        {
+          "rank": 525,
+          "word": "χρώς",
+          "betaCode": "xrw/s",
+          "frequency": 113991758
+        },
+        {
+          "rank": 526,
+          "word": "χρωματουργία",
+          "betaCode": "xrwmatourgi/a",
+          "frequency": 113989550
+        },
+        {
+          "rank": 527,
+          "word": "χρωματοποιία",
+          "betaCode": "xrwmatopoii/a",
+          "frequency": 113988708
+        },
+        {
+          "rank": 528,
+          "word": "χρωμάτινος",
+          "betaCode": "xrwma/tinos",
+          "frequency": 113987104
+        },
+        {
+          "rank": 529,
+          "word": "χρωματικός",
+          "betaCode": "xrwmatiko/s",
+          "frequency": 113985496
+        },
+        {
+          "rank": 530,
+          "word": "ἀνά-χρώζω",
+          "betaCode": "a)na/-xrw/zw",
+          "frequency": 113970586
+        },
+        {
+          "rank": 531,
+          "word": "μετά-χρώζω",
+          "betaCode": "meta/-xrw/zw",
+          "frequency": 113970586
+        },
+        {
+          "rank": 532,
+          "word": "περί-χρώζω",
+          "betaCode": "peri/-xrw/zw",
+          "frequency": 113970586
+        },
+        {
+          "rank": 533,
+          "word": "πρόσ-χρώζω",
+          "betaCode": "pro/s-xrw/zw",
+          "frequency": 113970586
+        },
+        {
+          "rank": 534,
+          "word": "σύν,ἀνά-χρώζω",
+          "betaCode": "su/n,a)na/-xrw/zw",
+          "frequency": 113970586
+        },
+        {
+          "rank": 535,
+          "word": "χρώζω",
+          "betaCode": "xrw/zw",
+          "frequency": 113970586
+        },
+        {
+          "rank": 536,
+          "word": "χρύσωσις",
+          "betaCode": "xru/swsis",
+          "frequency": 113967396
+        },
+        {
+          "rank": 537,
+          "word": "χρυσωρυχέω",
+          "betaCode": "xruswruxe/w",
+          "frequency": 113965508
+        },
+        {
+          "rank": 538,
+          "word": "χρυσωματοθήκη",
+          "betaCode": "xruswmatoqh/kh",
+          "frequency": 113959999
+        },
+        {
+          "rank": 539,
+          "word": "περί-χρυσόω",
+          "betaCode": "peri/-xruso/w",
+          "frequency": 113956199
+        },
+        {
+          "rank": 540,
+          "word": "χρυσόω",
+          "betaCode": "xruso/w",
+          "frequency": 113956199
+        },
+        {
+          "rank": 541,
+          "word": "χρυσοχοικός",
+          "betaCode": "xrusoxoiko/s",
+          "frequency": 113952592
+        },
+        {
+          "rank": 542,
+          "word": "χρυσοχοέω",
+          "betaCode": "xrusoxoe/w",
+          "frequency": 113951055
+        },
+        {
+          "rank": 543,
+          "word": "χρυσοχαίτης",
+          "betaCode": "xrusoxai/ths",
+          "frequency": 113946658
+        },
+        {
+          "rank": 544,
+          "word": "χρυσοφορία",
+          "betaCode": "xrusofori/a",
+          "frequency": 113941071
+        },
+        {
+          "rank": 545,
+          "word": "χρυσοφορέω",
+          "betaCode": "xrusofore/w",
+          "frequency": 113938567
+        },
+        {
+          "rank": 546,
+          "word": "χρυσοφεγγής",
+          "betaCode": "xrusofeggh/s",
+          "frequency": 113938107
+        },
+        {
+          "rank": 547,
+          "word": "χρυσοφάνεια",
+          "betaCode": "xrusofa/neia",
+          "frequency": 113936611
+        },
+        {
+          "rank": 548,
+          "word": "χρυσοφανής",
+          "betaCode": "xrusofanh/s",
+          "frequency": 113936611
+        },
+        {
+          "rank": 549,
+          "word": "χρυσοφαής",
+          "betaCode": "xrusofah/s",
+          "frequency": 113934667
+        },
+        {
+          "rank": 550,
+          "word": "χρυσουργέω",
+          "betaCode": "xrusourge/w",
+          "frequency": 113931901
+        }
+      ]
+    },
+    {
+      "batchNumber": 12,
+      "rankRange": [
+        551,
+        600
+      ],
+      "words": [
+        {
+          "rank": 551,
+          "word": "χρυσότερος",
+          "betaCode": "xruso/teros",
+          "frequency": 113925346
+        },
+        {
+          "rank": 552,
+          "word": "χρυσόρθη",
+          "betaCode": "xruso/rqh",
+          "frequency": 113905407
+        },
+        {
+          "rank": 553,
+          "word": "χρυσόπους",
+          "betaCode": "xruso/pous",
+          "frequency": 113897563
+        },
+        {
+          "rank": 554,
+          "word": "χρυσόπολις",
+          "betaCode": "xruso/polis",
+          "frequency": 113896890
+        },
+        {
+          "rank": 555,
+          "word": "χρυσοποιία",
+          "betaCode": "xrusopoii/a",
+          "frequency": 113894617
+        },
+        {
+          "rank": 556,
+          "word": "χρυσόπλοκος",
+          "betaCode": "xruso/plokos",
+          "frequency": 113893487
+        },
+        {
+          "rank": 557,
+          "word": "χρυσοπέλεια",
+          "betaCode": "xrusope/leia",
+          "frequency": 113889671
+        },
+        {
+          "rank": 558,
+          "word": "χρυσοπαγής",
+          "betaCode": "xrusopagh/s",
+          "frequency": 113885638
+        },
+        {
+          "rank": 559,
+          "word": "χρυσομίτρης",
+          "betaCode": "xrusomi/trhs",
+          "frequency": 113879832
+        },
+        {
+          "rank": 560,
+          "word": "χρυσομανέω",
+          "betaCode": "xrusomane/w",
+          "frequency": 113877466
+        },
+        {
+          "rank": 561,
+          "word": "χρυσομανής",
+          "betaCode": "xrusomanh/s",
+          "frequency": 113877466
+        },
+        {
+          "rank": 562,
+          "word": "χρυσομανία",
+          "betaCode": "xrusomani/a",
+          "frequency": 113877466
+        },
+        {
+          "rank": 563,
+          "word": "χρυσολύρης",
+          "betaCode": "xrusolu/rhs",
+          "frequency": 113875427
+        },
+        {
+          "rank": 564,
+          "word": "χρυσολογέω",
+          "betaCode": "xrusologe/w",
+          "frequency": 113872757
+        },
+        {
+          "rank": 565,
+          "word": "χρυσοκόμης",
+          "betaCode": "xrusoko/mhs",
+          "frequency": 113864784
+        },
+        {
+          "rank": 566,
+          "word": "χρυσοκόμη",
+          "betaCode": "xrusoko/mh",
+          "frequency": 113864285
+        },
+        {
+          "rank": 567,
+          "word": "χρυσοκομέω",
+          "betaCode": "xrusokome/w",
+          "frequency": 113863901
+        },
+        {
+          "rank": 568,
+          "word": "χρυσοκόλλα",
+          "betaCode": "xrusoko/lla",
+          "frequency": 113861670
+        },
+        {
+          "rank": 569,
+          "word": "χρυσοκαλλίας",
+          "betaCode": "xrusokalli/as",
+          "frequency": 113853194
+        },
+        {
+          "rank": 570,
+          "word": "χρυσοειδής",
+          "betaCode": "xrusoeidh/s",
+          "frequency": 113847180
+        },
+        {
+          "rank": 571,
+          "word": "χρυσογραφία",
+          "betaCode": "xrusografi/a",
+          "frequency": 113842030
+        },
+        {
+          "rank": 572,
+          "word": "χρυσογραφής",
+          "betaCode": "xrusografh/s",
+          "frequency": 113841563
+        },
+        {
+          "rank": 573,
+          "word": "χρυσογενεία",
+          "betaCode": "xrusogenei/a",
+          "frequency": 113838906
+        },
+        {
+          "rank": 574,
+          "word": "χρυσοβαφής",
+          "betaCode": "xrusobafh/s",
+          "frequency": 113836449
+        },
+        {
+          "rank": 575,
+          "word": "χρυσίτης",
+          "betaCode": "xrusi/ths",
+          "frequency": 113834238
+        },
+        {
+          "rank": 576,
+          "word": "χρυσίππη",
+          "betaCode": "xrusi/pph",
+          "frequency": 113832441
+        },
+        {
+          "rank": 577,
+          "word": "χρύσιλλα",
+          "betaCode": "xru/silla",
+          "frequency": 113827058
+        },
+        {
+          "rank": 578,
+          "word": "χρύσινος",
+          "betaCode": "xru/sinos",
+          "frequency": 113827058
+        },
+        {
+          "rank": 579,
+          "word": "χρυσικός",
+          "betaCode": "xrusiko/s",
+          "frequency": 113826116
+        },
+        {
+          "rank": 580,
+          "word": "χρυσίζω",
+          "betaCode": "xrusi/zw",
+          "frequency": 113825126
+        },
+        {
+          "rank": 581,
+          "word": "χρύσης",
+          "betaCode": "xru/shs",
+          "frequency": 113823185
+        },
+        {
+          "rank": 582,
+          "word": "χρυσιαῖος",
+          "betaCode": "xrusiai=os",
+          "frequency": 113823185
+        },
+        {
+          "rank": 583,
+          "word": "χρυσήρης",
+          "betaCode": "xrush/rhs",
+          "frequency": 113822380
+        },
+        {
+          "rank": 584,
+          "word": "χρύση",
+          "betaCode": "xru/sh",
+          "frequency": 113818187
+        },
+        {
+          "rank": 585,
+          "word": "χρυσεψητής",
+          "betaCode": "xruseyhth/s",
+          "frequency": 113817723
+        },
+        {
+          "rank": 586,
+          "word": "χρυσευτική",
+          "betaCode": "xruseutikh/",
+          "frequency": 113817246
+        },
+        {
+          "rank": 587,
+          "word": "χρύσεος",
+          "betaCode": "xru/seos",
+          "frequency": 113799603
+        },
+        {
+          "rank": 588,
+          "word": "χρυσεομίτρης",
+          "betaCode": "xruseomi/trhs",
+          "frequency": 113796318
+        },
+        {
+          "rank": 589,
+          "word": "χρυσελεφάντινος",
+          "betaCode": "xruselefa/ntinos",
+          "frequency": 113789731
+        },
+        {
+          "rank": 590,
+          "word": "χρυσαυγής",
+          "betaCode": "xrusaugh/s",
+          "frequency": 113783653
+        },
+        {
+          "rank": 591,
+          "word": "χρυσαυγέω",
+          "betaCode": "xrusauge/w",
+          "frequency": 113783289
+        },
+        {
+          "rank": 592,
+          "word": "χρυσαύγεια",
+          "betaCode": "xrusau/geia",
+          "frequency": 113782888
+        },
+        {
+          "rank": 593,
+          "word": "χρυσανταυγής",
+          "betaCode": "xrusantaugh/s",
+          "frequency": 113775516
+        },
+        {
+          "rank": 594,
+          "word": "χρυσανθής",
+          "betaCode": "xrusanqh/s",
+          "frequency": 113773473
+        },
+        {
+          "rank": 595,
+          "word": "χρονουλκέω",
+          "betaCode": "xronoulke/w",
+          "frequency": 113764387
+        },
+        {
+          "rank": 596,
+          "word": "χρονοτριβέω",
+          "betaCode": "xronotribe/w",
+          "frequency": 113763183
+        },
+        {
+          "rank": 597,
+          "word": "χρονοκρατορέω",
+          "betaCode": "xronokratore/w",
+          "frequency": 113739590
+        },
+        {
+          "rank": 598,
+          "word": "χρονοκρατορία",
+          "betaCode": "xronokratori/a",
+          "frequency": 113739590
+        },
+        {
+          "rank": 599,
+          "word": "χρονογραφία",
+          "betaCode": "xronografi/a",
+          "frequency": 113737961
+        },
+        {
+          "rank": 600,
+          "word": "χρονογραφέω",
+          "betaCode": "xronografe/w",
+          "frequency": 113737572
+        }
+      ]
+    },
+    {
+      "batchNumber": 13,
+      "rankRange": [
+        601,
+        650
+      ],
+      "words": [
+        {
+          "rank": 601,
+          "word": "χρόνιος",
+          "betaCode": "xro/nios",
+          "frequency": 113727663
+        },
+        {
+          "rank": 602,
+          "word": "χρονικός",
+          "betaCode": "xroniko/s",
+          "frequency": 113724379
+        },
+        {
+          "rank": 603,
+          "word": "διά-χρονίζω",
+          "betaCode": "dia/-xroni/zw",
+          "frequency": 113719125
+        },
+        {
+          "rank": 604,
+          "word": "χρονίζω",
+          "betaCode": "xroni/zw",
+          "frequency": 113719125
+        },
+        {
+          "rank": 605,
+          "word": "χρομίη",
+          "betaCode": "xromi/h",
+          "frequency": 113717970
+        },
+        {
+          "rank": 606,
+          "word": "χρόμη",
+          "betaCode": "xro/mh",
+          "frequency": 113717531
+        },
+        {
+          "rank": 607,
+          "word": "χροίζω",
+          "betaCode": "xroi/zw",
+          "frequency": 113714809
+        },
+        {
+          "rank": 608,
+          "word": "χροιά",
+          "betaCode": "xroia/",
+          "frequency": 113708091
+        },
+        {
+          "rank": 609,
+          "word": "χροάζω",
+          "betaCode": "xroa/zw",
+          "frequency": 113707487
+        },
+        {
+          "rank": 610,
+          "word": "ἀνά-χρίω",
+          "betaCode": "a)na/-xri/w",
+          "frequency": 113697315
+        },
+        {
+          "rank": 611,
+          "word": "ἀπό-χρίω",
+          "betaCode": "a)po/-xri/w",
+          "frequency": 113697315
+        },
+        {
+          "rank": 612,
+          "word": "διά-χρίω",
+          "betaCode": "dia/-xri/w",
+          "frequency": 113697315
+        },
+        {
+          "rank": 613,
+          "word": "ἐν,κατά-χρίω",
+          "betaCode": "e)n,kata/-xri/w",
+          "frequency": 113697315
+        },
+        {
+          "rank": 614,
+          "word": "κατά-χρίω",
+          "betaCode": "kata/-xri/w",
+          "frequency": 113697315
+        },
+        {
+          "rank": 615,
+          "word": "παρά-χρίω",
+          "betaCode": "para/-xri/w",
+          "frequency": 113697315
+        },
+        {
+          "rank": 616,
+          "word": "πρό,κατά-χρίω",
+          "betaCode": "pro/,kata/-xri/w",
+          "frequency": 113697315
+        },
+        {
+          "rank": 617,
+          "word": "πρό,σύν-χρίω",
+          "betaCode": "pro/,su/n-xri/w",
+          "frequency": 113697315
+        },
+        {
+          "rank": 618,
+          "word": "πρόσ-χρίω",
+          "betaCode": "pro/s-xri/w",
+          "frequency": 113697315
+        },
+        {
+          "rank": 619,
+          "word": "σύν-χρίω",
+          "betaCode": "su/n-xri/w",
+          "frequency": 113697315
+        },
+        {
+          "rank": 620,
+          "word": "χρίω",
+          "betaCode": "xri/w",
+          "frequency": 113697315
+        },
+        {
+          "rank": 621,
+          "word": "χριστιανικός",
+          "betaCode": "xristianiko/s",
+          "frequency": 113693434
+        },
+        {
+          "rank": 622,
+          "word": "χρῖσις",
+          "betaCode": "xri=sis",
+          "frequency": 113688370
+        },
+        {
+          "rank": 623,
+          "word": "χρίμπτω",
+          "betaCode": "xri/mptw",
+          "frequency": 113683783
+        },
+        {
+          "rank": 624,
+          "word": "χρηστοφωνία",
+          "betaCode": "xrhstofwni/a",
+          "frequency": 113680999
+        },
+        {
+          "rank": 625,
+          "word": "χρηστοφιλία",
+          "betaCode": "xrhstofili/a",
+          "frequency": 113679929
+        },
+        {
+          "rank": 626,
+          "word": "χρηστουργία",
+          "betaCode": "xrhstourgi/a",
+          "frequency": 113679540
+        },
+        {
+          "rank": 627,
+          "word": "χρηστός",
+          "betaCode": "xrhsto/s",
+          "frequency": 113662938
+        },
+        {
+          "rank": 628,
+          "word": "χρηστομουσέω",
+          "betaCode": "xrhstomouse/w",
+          "frequency": 113662548
+        },
+        {
+          "rank": 629,
+          "word": "χρηστομαθέω",
+          "betaCode": "xrhstomaqe/w",
+          "frequency": 113661564
+        },
+        {
+          "rank": 630,
+          "word": "χρηστομάθεια",
+          "betaCode": "xrhstoma/qeia",
+          "frequency": 113660388
+        },
+        {
+          "rank": 631,
+          "word": "χρηστολογία",
+          "betaCode": "xrhstologi/a",
+          "frequency": 113659555
+        },
+        {
+          "rank": 632,
+          "word": "χρηστολογέομαι",
+          "betaCode": "xrhstologe/omai",
+          "frequency": 113659081
+        },
+        {
+          "rank": 633,
+          "word": "χρηστοκαρπία",
+          "betaCode": "xrhstokarpi/a",
+          "frequency": 113658257
+        },
+        {
+          "rank": 634,
+          "word": "χρηστοινέω",
+          "betaCode": "xrhstoine/w",
+          "frequency": 113657902
+        },
+        {
+          "rank": 635,
+          "word": "χρηστοήθης",
+          "betaCode": "xrhstoh/qhs",
+          "frequency": 113657361
+        },
+        {
+          "rank": 636,
+          "word": "χρηστοήθεια",
+          "betaCode": "xrhstoh/qeia",
+          "frequency": 113656839
+        },
+        {
+          "rank": 637,
+          "word": "χρηστογραφία",
+          "betaCode": "xrhstografi/a",
+          "frequency": 113656392
+        },
+        {
+          "rank": 638,
+          "word": "χρηστικός",
+          "betaCode": "xrhstiko/s",
+          "frequency": 113654347
+        },
+        {
+          "rank": 639,
+          "word": "χρήστης",
+          "betaCode": "xrh/sths",
+          "frequency": 113652148
+        },
+        {
+          "rank": 640,
+          "word": "χρηστηριώδης",
+          "betaCode": "xrhsthriw/dhs",
+          "frequency": 113651585
+        },
+        {
+          "rank": 641,
+          "word": "χρηστήριος",
+          "betaCode": "xrhsth/rios",
+          "frequency": 113648421
+        },
+        {
+          "rank": 642,
+          "word": "χρηστηριάζω",
+          "betaCode": "xrhsthria/zw",
+          "frequency": 113642741
+        },
+        {
+          "rank": 643,
+          "word": "χρηστεύομαι",
+          "betaCode": "xrhsteu/omai",
+          "frequency": 113641913
+        },
+        {
+          "rank": 644,
+          "word": "χρηστέον",
+          "betaCode": "xrhste/on",
+          "frequency": 113640546
+        },
+        {
+          "rank": 645,
+          "word": "χρησμῳδία",
+          "betaCode": "xrhsmw|di/a",
+          "frequency": 113637253
+        },
+        {
+          "rank": 646,
+          "word": "χρησμώδης",
+          "betaCode": "xrhsmw/dhs",
+          "frequency": 113636685
+        },
+        {
+          "rank": 647,
+          "word": "ἐπί-χρησμῳδέω",
+          "betaCode": "e)pi/-xrhsmw|de/w",
+          "frequency": 113634400
+        },
+        {
+          "rank": 648,
+          "word": "κατά-χρησμῳδέω",
+          "betaCode": "kata/-xrhsmw|de/w",
+          "frequency": 113634400
+        },
+        {
+          "rank": 649,
+          "word": "πρό-χρησμῳδέω",
+          "betaCode": "pro/-xrhsmw|de/w",
+          "frequency": 113634400
+        },
+        {
+          "rank": 650,
+          "word": "χρησμῳδέω",
+          "betaCode": "xrhsmw|de/w",
+          "frequency": 113634400
+        }
+      ]
+    },
+    {
+      "batchNumber": 14,
+      "rankRange": [
+        651,
+        700
+      ],
+      "words": [
+        {
+          "rank": 651,
+          "word": "χρησμοσύνη",
+          "betaCode": "xrhsmosu/nh",
+          "frequency": 113631987
+        },
+        {
+          "rank": 652,
+          "word": "χρησμολύτης",
+          "betaCode": "xrhsmolu/ths",
+          "frequency": 113628252
+        },
+        {
+          "rank": 653,
+          "word": "χρησμολογική",
+          "betaCode": "xrhsmologikh/",
+          "frequency": 113626115
+        },
+        {
+          "rank": 654,
+          "word": "χρησμολογία",
+          "betaCode": "xrhsmologi/a",
+          "frequency": 113625627
+        },
+        {
+          "rank": 655,
+          "word": "χρησμολογέω",
+          "betaCode": "xrhsmologe/w",
+          "frequency": 113624953
+        },
+        {
+          "rank": 656,
+          "word": "χρησμολέσχης",
+          "betaCode": "xrhsmole/sxhs",
+          "frequency": 113624569
+        },
+        {
+          "rank": 657,
+          "word": "χρησμοδότης",
+          "betaCode": "xrhsmodo/ths",
+          "frequency": 113623563
+        },
+        {
+          "rank": 658,
+          "word": "χρησμοδοτέω",
+          "betaCode": "xrhsmodote/w",
+          "frequency": 113622373
+        },
+        {
+          "rank": 659,
+          "word": "χρησμοδοσία",
+          "betaCode": "xrhsmodosi/a",
+          "frequency": 113621953
+        },
+        {
+          "rank": 660,
+          "word": "χρῆσις",
+          "betaCode": "xrh=sis",
+          "frequency": 113613948
+        },
+        {
+          "rank": 661,
+          "word": "χρήσιμος",
+          "betaCode": "xrh/simos",
+          "frequency": 113607133
+        },
+        {
+          "rank": 662,
+          "word": "χρησιμεύω",
+          "betaCode": "xrhsimeu/w",
+          "frequency": 113604624
+        },
+        {
+          "rank": 663,
+          "word": "χρημοσύνη",
+          "betaCode": "xrhmosu/nh",
+          "frequency": 113602827
+        },
+        {
+          "rank": 664,
+          "word": "χρήμη",
+          "betaCode": "xrh/mh",
+          "frequency": 113602013
+        },
+        {
+          "rank": 665,
+          "word": "χρηματίτης",
+          "betaCode": "xrhmati/ths",
+          "frequency": 113598169
+        },
+        {
+          "rank": 666,
+          "word": "χρηματιστικός",
+          "betaCode": "xrhmatistiko/s",
+          "frequency": 113594980
+        },
+        {
+          "rank": 667,
+          "word": "χρηματιστής",
+          "betaCode": "xrhmatisth/s",
+          "frequency": 113592986
+        },
+        {
+          "rank": 668,
+          "word": "χρημάτισις",
+          "betaCode": "xrhma/tisis",
+          "frequency": 113585418
+        },
+        {
+          "rank": 669,
+          "word": "χρηματικός",
+          "betaCode": "xrhmatiko/s",
+          "frequency": 113583810
+        },
+        {
+          "rank": 670,
+          "word": "χρηματίζω",
+          "betaCode": "xrhmati/zw",
+          "frequency": 113567935
+        },
+        {
+          "rank": 671,
+          "word": "ἐν-χρήζω",
+          "betaCode": "e)n-xrh/zw",
+          "frequency": 113538468
+        },
+        {
+          "rank": 672,
+          "word": "χρείζω",
+          "betaCode": "xrei/zw",
+          "frequency": 113538468
+        },
+        {
+          "rank": 673,
+          "word": "χρήζω",
+          "betaCode": "xrh/zw",
+          "frequency": 113538468
+        },
+        {
+          "rank": 674,
+          "word": "χρῄζω",
+          "betaCode": "xrh/|zw",
+          "frequency": 113538468
+        },
+        {
+          "rank": 675,
+          "word": "χρῆ",
+          "betaCode": "xrh=",
+          "frequency": 113521005
+        },
+        {
+          "rank": 676,
+          "word": "χρεωφειλέτης",
+          "betaCode": "xrewfeile/ths",
+          "frequency": 113515129
+        },
+        {
+          "rank": 677,
+          "word": "χρεωστία",
+          "betaCode": "xrewsti/a",
+          "frequency": 113514353
+        },
+        {
+          "rank": 678,
+          "word": "χρεώστησις",
+          "betaCode": "xrew/sthsis",
+          "frequency": 113513974
+        },
+        {
+          "rank": 679,
+          "word": "χρεώστης",
+          "betaCode": "xrew/sths",
+          "frequency": 113513137
+        },
+        {
+          "rank": 680,
+          "word": "πρόσ-χρεωστέω",
+          "betaCode": "pro/s-xrewste/w",
+          "frequency": 113511574
+        },
+        {
+          "rank": 681,
+          "word": "χρεωστέω",
+          "betaCode": "xrewste/w",
+          "frequency": 113511574
+        },
+        {
+          "rank": 682,
+          "word": "χρεωλυτέω",
+          "betaCode": "xrewlute/w",
+          "frequency": 113501533
+        },
+        {
+          "rank": 683,
+          "word": "χρεωκοπία",
+          "betaCode": "xrewkopi/a",
+          "frequency": 113500085
+        },
+        {
+          "rank": 684,
+          "word": "χρεωκοπέω",
+          "betaCode": "xrewkope/w",
+          "frequency": 113498095
+        },
+        {
+          "rank": 685,
+          "word": "χρέος",
+          "betaCode": "xre/os",
+          "frequency": 113473028
+        },
+        {
+          "rank": 686,
+          "word": "χρεοδοτέω",
+          "betaCode": "xreodote/w",
+          "frequency": 113471803
+        },
+        {
+          "rank": 687,
+          "word": "χρεοδοσία",
+          "betaCode": "xreodosi/a",
+          "frequency": 113471344
+        },
+        {
+          "rank": 688,
+          "word": "ἀνά-χρέμπτομαι",
+          "betaCode": "a)na/-xre/mptomai",
+          "frequency": 113468096
+        },
+        {
+          "rank": 689,
+          "word": "ἀπό-χρέμπτομαι",
+          "betaCode": "a)po/-xre/mptomai",
+          "frequency": 113468096
+        },
+        {
+          "rank": 690,
+          "word": "χρέμπτομαι",
+          "betaCode": "xre/mptomai",
+          "frequency": 113468096
+        },
+        {
+          "rank": 691,
+          "word": "χρεμετιστικός",
+          "betaCode": "xremetistiko/s",
+          "frequency": 113465780
+        },
+        {
+          "rank": 692,
+          "word": "ἐπί-χρεμετίζω",
+          "betaCode": "e)pi/-xremeti/zw",
+          "frequency": 113462907
+        },
+        {
+          "rank": 693,
+          "word": "κατά-χρεμετίζω",
+          "betaCode": "kata/-xremeti/zw",
+          "frequency": 113462907
+        },
+        {
+          "rank": 694,
+          "word": "χρεμετίζω",
+          "betaCode": "xremeti/zw",
+          "frequency": 113462907
+        },
+        {
+          "rank": 695,
+          "word": "χρειώδης",
+          "betaCode": "xreiw/dhs",
+          "frequency": 113457857
+        },
+        {
+          "rank": 696,
+          "word": "ἀπό-χρειόω",
+          "betaCode": "a)po/-xreio/w",
+          "frequency": 113457268
+        },
+        {
+          "rank": 697,
+          "word": "χρειόω",
+          "betaCode": "xreio/w",
+          "frequency": 113457268
+        },
+        {
+          "rank": 698,
+          "word": "χρεία",
+          "betaCode": "xrei/a",
+          "frequency": 113436670
+        },
+        {
+          "rank": 699,
+          "word": "χρέα",
+          "betaCode": "xre/a",
+          "frequency": 113435489
+        },
+        {
+          "rank": 700,
+          "word": "ἀνά-χράομαι",
+          "betaCode": "a)na/-xra/omai",
+          "frequency": 113389490
+        }
+      ]
+    },
+    {
+      "batchNumber": 15,
+      "rankRange": [
+        701,
+        750
+      ],
+      "words": [
+        {
+          "rank": 701,
+          "word": "μετά-χράομαι",
+          "betaCode": "meta/-xra/omai",
+          "frequency": 113389490
+        },
+        {
+          "rank": 702,
+          "word": "πρό-χράομαι",
+          "betaCode": "pro/-xra/omai",
+          "frequency": 113389490
+        },
+        {
+          "rank": 703,
+          "word": "πρόσ-χράομαι",
+          "betaCode": "pro/s-xra/omai",
+          "frequency": 113389490
+        },
+        {
+          "rank": 704,
+          "word": "ὑπέρ-χράομαι",
+          "betaCode": "u(pe/r-xra/omai",
+          "frequency": 113389490
+        },
+        {
+          "rank": 705,
+          "word": "χράομαι",
+          "betaCode": "xra/omai",
+          "frequency": 113389490
+        },
+        {
+          "rank": 706,
+          "word": "ἀνά-χράω2",
+          "betaCode": "a)na/-xra/w2",
+          "frequency": 113367183
+        },
+        {
+          "rank": 707,
+          "word": "ἀπό-χράω2",
+          "betaCode": "a)po/-xra/w2",
+          "frequency": 113367183
+        },
+        {
+          "rank": 708,
+          "word": "ἐκ-χράω2",
+          "betaCode": "e)k-xra/w2",
+          "frequency": 113367183
+        },
+        {
+          "rank": 709,
+          "word": "ἐν,ἀπό-χράω2",
+          "betaCode": "e)n,a)po/-xra/w2",
+          "frequency": 113367183
+        },
+        {
+          "rank": 710,
+          "word": "ἐν,κατά-χράω2",
+          "betaCode": "e)n,kata/-xra/w2",
+          "frequency": 113367183
+        },
+        {
+          "rank": 711,
+          "word": "κατά-χράω2",
+          "betaCode": "kata/-xra/w2",
+          "frequency": 113367183
+        },
+        {
+          "rank": 712,
+          "word": "περί-χράω2",
+          "betaCode": "peri/-xra/w2",
+          "frequency": 113367183
+        },
+        {
+          "rank": 713,
+          "word": "πρό-χράω2",
+          "betaCode": "pro/-xra/w2",
+          "frequency": 113367183
+        },
+        {
+          "rank": 714,
+          "word": "πρόσ-χράω2",
+          "betaCode": "pro/s-xra/w2",
+          "frequency": 113367183
+        },
+        {
+          "rank": 715,
+          "word": "πρός,ἀπό-χράω2",
+          "betaCode": "pro/s,a)po/-xra/w2",
+          "frequency": 113367183
+        },
+        {
+          "rank": 716,
+          "word": "σύν-χράω2",
+          "betaCode": "su/n-xra/w2",
+          "frequency": 113367183
+        },
+        {
+          "rank": 717,
+          "word": "σύν,ἀπό-χράω2",
+          "betaCode": "su/n,a)po/-xra/w2",
+          "frequency": 113367183
+        },
+        {
+          "rank": 718,
+          "word": "σύν,κατά-χράω2",
+          "betaCode": "su/n,kata/-xra/w2",
+          "frequency": 113367183
+        },
+        {
+          "rank": 719,
+          "word": "χράω2",
+          "betaCode": "xra/w2",
+          "frequency": 113367183
+        },
+        {
+          "rank": 720,
+          "word": "ἀνά-χράω1",
+          "betaCode": "a)na/-xra/w1",
+          "frequency": 113364991
+        },
+        {
+          "rank": 721,
+          "word": "ἐν,ἀπό-χράω1",
+          "betaCode": "e)n,a)po/-xra/w1",
+          "frequency": 113364991
+        },
+        {
+          "rank": 722,
+          "word": "ἐν,κατά-χράω1",
+          "betaCode": "e)n,kata/-xra/w1",
+          "frequency": 113364991
+        },
+        {
+          "rank": 723,
+          "word": "μετά-χράω1",
+          "betaCode": "meta/-xra/w1",
+          "frequency": 113364991
+        },
+        {
+          "rank": 724,
+          "word": "περί-χράω1",
+          "betaCode": "peri/-xra/w1",
+          "frequency": 113364991
+        },
+        {
+          "rank": 725,
+          "word": "πρός,ἀπό-χράω1",
+          "betaCode": "pro/s,a)po/-xra/w1",
+          "frequency": 113364991
+        },
+        {
+          "rank": 726,
+          "word": "χράω1",
+          "betaCode": "xra/w1",
+          "frequency": 113364991
+        },
+        {
+          "rank": 727,
+          "word": "χραύω",
+          "betaCode": "xrau/w",
+          "frequency": 113363779
+        },
+        {
+          "rank": 728,
+          "word": "χραῦσις",
+          "betaCode": "xrau=sis",
+          "frequency": 113363048
+        },
+        {
+          "rank": 729,
+          "word": "χραίσμησις",
+          "betaCode": "xrai/smhsis",
+          "frequency": 113361693
+        },
+        {
+          "rank": 730,
+          "word": "χραίσμη",
+          "betaCode": "xrai/smh",
+          "frequency": 113359930
+        },
+        {
+          "rank": 731,
+          "word": "χραισμέω",
+          "betaCode": "xraisme/w",
+          "frequency": 113355258
+        },
+        {
+          "rank": 732,
+          "word": "ὑπό-χραίνω",
+          "betaCode": "u(po/-xrai/nw",
+          "frequency": 113350030
+        },
+        {
+          "rank": 733,
+          "word": "χραίνω",
+          "betaCode": "xrai/nw",
+          "frequency": 113350030
+        },
+        {
+          "rank": 734,
+          "word": "ἐν-χόω",
+          "betaCode": "e)n-xo/w",
+          "frequency": 113342151
+        },
+        {
+          "rank": 735,
+          "word": "ἐπί-χόω",
+          "betaCode": "e)pi/-xo/w",
+          "frequency": 113342151
+        },
+        {
+          "rank": 736,
+          "word": "περί-χόω",
+          "betaCode": "peri/-xo/w",
+          "frequency": 113342151
+        },
+        {
+          "rank": 737,
+          "word": "πρό-χόω",
+          "betaCode": "pro/-xo/w",
+          "frequency": 113342151
+        },
+        {
+          "rank": 738,
+          "word": "χόω",
+          "betaCode": "xo/w",
+          "frequency": 113342151
+        },
+        {
+          "rank": 739,
+          "word": "χοῦς",
+          "betaCode": "xou=s2",
+          "frequency": 113339326
+        },
+        {
+          "rank": 740,
+          "word": "χορῳδία",
+          "betaCode": "xorw|di/a",
+          "frequency": 113326074
+        },
+        {
+          "rank": 741,
+          "word": "χορτώδης",
+          "betaCode": "xortw/dhs",
+          "frequency": 113324839
+        },
+        {
+          "rank": 742,
+          "word": "χορτοφαγέω",
+          "betaCode": "xortofage/w",
+          "frequency": 113322839
+        },
+        {
+          "rank": 743,
+          "word": "χορτασία",
+          "betaCode": "xortasi/a",
+          "frequency": 113297904
+        },
+        {
+          "rank": 744,
+          "word": "χορτάζω",
+          "betaCode": "xorta/zw",
+          "frequency": 113290891
+        },
+        {
+          "rank": 745,
+          "word": "χοροστατικός",
+          "betaCode": "xorostatiko/s",
+          "frequency": 113289338
+        },
+        {
+          "rank": 746,
+          "word": "χοροστάτης",
+          "betaCode": "xorosta/ths",
+          "frequency": 113288305
+        },
+        {
+          "rank": 747,
+          "word": "σύν-χοροστατέω",
+          "betaCode": "su/n-xorostate/w",
+          "frequency": 113287873
+        },
+        {
+          "rank": 748,
+          "word": "χοροστατέω",
+          "betaCode": "xorostate/w",
+          "frequency": 113287873
+        },
+        {
+          "rank": 749,
+          "word": "χοροστασία",
+          "betaCode": "xorostasi/a",
+          "frequency": 113287103
+        },
+        {
+          "rank": 750,
+          "word": "χοροποιία",
+          "betaCode": "xoropoii/a",
+          "frequency": 113273548
+        }
+      ]
+    },
+    {
+      "batchNumber": 16,
+      "rankRange": [
+        751,
+        800
+      ],
+      "words": [
+        {
+          "rank": 751,
+          "word": "χορομανής",
+          "betaCode": "xoromanh/s",
+          "frequency": 113270793
+        },
+        {
+          "rank": 752,
+          "word": "χορολέκτης",
+          "betaCode": "xorole/kths",
+          "frequency": 113270137
+        },
+        {
+          "rank": 753,
+          "word": "χοροιτυπία",
+          "betaCode": "xoroitupi/a",
+          "frequency": 113265330
+        },
+        {
+          "rank": 754,
+          "word": "χοροδιδασκαλικός",
+          "betaCode": "xorodidaskaliko/s",
+          "frequency": 113261360
+        },
+        {
+          "rank": 755,
+          "word": "χοροδιδασκαλία",
+          "betaCode": "xorodidaskali/a",
+          "frequency": 113260902
+        },
+        {
+          "rank": 756,
+          "word": "χοροβατέω",
+          "betaCode": "xorobate/w",
+          "frequency": 113259976
+        },
+        {
+          "rank": 757,
+          "word": "χοριοειδής",
+          "betaCode": "xorioeidh/s",
+          "frequency": 113253729
+        },
+        {
+          "rank": 758,
+          "word": "χορικός",
+          "betaCode": "xoriko/s",
+          "frequency": 113252091
+        },
+        {
+          "rank": 759,
+          "word": "χοριαμβικός",
+          "betaCode": "xoriambiko/s",
+          "frequency": 113250971
+        },
+        {
+          "rank": 760,
+          "word": "χορηγικός",
+          "betaCode": "xorhgiko/s",
+          "frequency": 113243664
+        },
+        {
+          "rank": 761,
+          "word": "χορηγία",
+          "betaCode": "xorhgi/a",
+          "frequency": 113239441
+        },
+        {
+          "rank": 762,
+          "word": "χορήγησις",
+          "betaCode": "xorh/ghsis",
+          "frequency": 113238798
+        },
+        {
+          "rank": 763,
+          "word": "παρά-χορηγέω",
+          "betaCode": "para/-xorhge/w",
+          "frequency": 113228234
+        },
+        {
+          "rank": 764,
+          "word": "χορηγέω",
+          "betaCode": "xorhge/w",
+          "frequency": 113228234
+        },
+        {
+          "rank": 765,
+          "word": "σύν,κατά-χορεύω",
+          "betaCode": "su/n,kata/-xoreu/w",
+          "frequency": 113216976
+        },
+        {
+          "rank": 766,
+          "word": "χορεύω",
+          "betaCode": "xoreu/w",
+          "frequency": 113216976
+        },
+        {
+          "rank": 767,
+          "word": "χορευτικός",
+          "betaCode": "xoreutiko/s",
+          "frequency": 113216400
+        },
+        {
+          "rank": 768,
+          "word": "χορευτής",
+          "betaCode": "xoreuth/s",
+          "frequency": 113214338
+        },
+        {
+          "rank": 769,
+          "word": "χόρευσις",
+          "betaCode": "xo/reusis",
+          "frequency": 113213500
+        },
+        {
+          "rank": 770,
+          "word": "χορεία",
+          "betaCode": "xorei/a",
+          "frequency": 113206822
+        },
+        {
+          "rank": 771,
+          "word": "χορδοστροφία",
+          "betaCode": "xordostrofi/a",
+          "frequency": 113204256
+        },
+        {
+          "rank": 772,
+          "word": "χορδοποιία",
+          "betaCode": "xordopoii/a",
+          "frequency": 113202929
+        },
+        {
+          "rank": 773,
+          "word": "χορδολογέω",
+          "betaCode": "xordologe/w",
+          "frequency": 113202544
+        },
+        {
+          "rank": 774,
+          "word": "χορδή",
+          "betaCode": "xordh/",
+          "frequency": 113198513
+        },
+        {
+          "rank": 775,
+          "word": "χορδεύω",
+          "betaCode": "xordeu/w",
+          "frequency": 113198056
+        },
+        {
+          "rank": 776,
+          "word": "χοραύλης",
+          "betaCode": "xorau/lhs",
+          "frequency": 113195374
+        },
+        {
+          "rank": 777,
+          "word": "χοραυλέω",
+          "betaCode": "xoraule/w",
+          "frequency": 113195014
+        },
+        {
+          "rank": 778,
+          "word": "χοοπότης",
+          "betaCode": "xoopo/ths",
+          "frequency": 113192403
+        },
+        {
+          "rank": 779,
+          "word": "χονδρώδης",
+          "betaCode": "xondrw/dhs",
+          "frequency": 113188687
+        },
+        {
+          "rank": 780,
+          "word": "χονδρός",
+          "betaCode": "xondro/s",
+          "frequency": 113184415
+        },
+        {
+          "rank": 781,
+          "word": "χονδροπτισάνη",
+          "betaCode": "xondroptisa/nh",
+          "frequency": 113178222
+        },
+        {
+          "rank": 782,
+          "word": "χονδροποιητικός",
+          "betaCode": "xondropoihtiko/s",
+          "frequency": 113177670
+        },
+        {
+          "rank": 783,
+          "word": "χονδρονευρώδης",
+          "betaCode": "xondroneurw/dhs",
+          "frequency": 113177129
+        },
+        {
+          "rank": 784,
+          "word": "χονδρίτης",
+          "betaCode": "xondri/ths",
+          "frequency": 113174771
+        },
+        {
+          "rank": 785,
+          "word": "χονδρίλη",
+          "betaCode": "xondri/lh",
+          "frequency": 113172234
+        },
+        {
+          "rank": 786,
+          "word": "χονδριάω",
+          "betaCode": "xondria/w",
+          "frequency": 113171915
+        },
+        {
+          "rank": 787,
+          "word": "χονδρεύω",
+          "betaCode": "xondreu/w",
+          "frequency": 113171529
+        },
+        {
+          "rank": 788,
+          "word": "χολώδης",
+          "betaCode": "xolw/dhs",
+          "frequency": 113167181
+        },
+        {
+          "rank": 789,
+          "word": "ἀμφί-χολόομαι",
+          "betaCode": "a)mfi/-xolo/omai",
+          "frequency": 113159825
+        },
+        {
+          "rank": 790,
+          "word": "ἀμφί-χολόω",
+          "betaCode": "a)mfi/-xolo/w",
+          "frequency": 113159825
+        },
+        {
+          "rank": 791,
+          "word": "χολόομαι",
+          "betaCode": "xolo/omai",
+          "frequency": 113159825
+        },
+        {
+          "rank": 792,
+          "word": "χολόω",
+          "betaCode": "xolo/w",
+          "frequency": 113159825
+        },
+        {
+          "rank": 793,
+          "word": "χολοβάφινος",
+          "betaCode": "xoloba/finos",
+          "frequency": 113148272
+        },
+        {
+          "rank": 794,
+          "word": "χολοβαφής",
+          "betaCode": "xolobafh/s",
+          "frequency": 113147884
+        },
+        {
+          "rank": 795,
+          "word": "χόλιος",
+          "betaCode": "xo/lios",
+          "frequency": 113146473
+        },
+        {
+          "rank": 796,
+          "word": "χολημετέω",
+          "betaCode": "xolhmete/w",
+          "frequency": 113143092
+        },
+        {
+          "rank": 797,
+          "word": "χολημεσία",
+          "betaCode": "xolhmesi/a",
+          "frequency": 113142542
+        },
+        {
+          "rank": 798,
+          "word": "χολή",
+          "betaCode": "xolh/",
+          "frequency": 113134721
+        },
+        {
+          "rank": 799,
+          "word": "χολερώδης",
+          "betaCode": "xolerw/dhs",
+          "frequency": 113133902
+        },
+        {
+          "rank": 800,
+          "word": "χολερικός",
+          "betaCode": "xoleriko/s",
+          "frequency": 113132561
+        }
+      ]
+    },
+    {
+      "batchNumber": 17,
+      "rankRange": [
+        801,
+        850
+      ],
+      "words": [
+        {
+          "rank": 801,
+          "word": "χολεριάω",
+          "betaCode": "xoleria/w",
+          "frequency": 113132137
+        },
+        {
+          "rank": 802,
+          "word": "χολέρα",
+          "betaCode": "xole/ra",
+          "frequency": 113130362
+        },
+        {
+          "rank": 803,
+          "word": "χολεμετέω",
+          "betaCode": "xolemete/w",
+          "frequency": 113130006
+        },
+        {
+          "rank": 804,
+          "word": "χολέδρα",
+          "betaCode": "xole/dra",
+          "frequency": 113129153
+        },
+        {
+          "rank": 805,
+          "word": "ἀπό,εἰσ-χολάω",
+          "betaCode": "a)po/,ei)s-xola/w",
+          "frequency": 113127637
+        },
+        {
+          "rank": 806,
+          "word": "ἐκ-χολάω",
+          "betaCode": "e)k-xola/w",
+          "frequency": 113127637
+        },
+        {
+          "rank": 807,
+          "word": "χολάω",
+          "betaCode": "xola/w",
+          "frequency": 113127637
+        },
+        {
+          "rank": 808,
+          "word": "χοιρωδία",
+          "betaCode": "xoirwdi/a",
+          "frequency": 113122533
+        },
+        {
+          "rank": 809,
+          "word": "χοιρώδης",
+          "betaCode": "xoirw/dhs",
+          "frequency": 113122015
+        },
+        {
+          "rank": 810,
+          "word": "χοιροφορέω",
+          "betaCode": "xoirofore/w",
+          "frequency": 113120684
+        },
+        {
+          "rank": 811,
+          "word": "χοιροσφαγία",
+          "betaCode": "xoirosfagi/a",
+          "frequency": 113118805
+        },
+        {
+          "rank": 812,
+          "word": "χοιροπωλέω",
+          "betaCode": "xoiropwle/w",
+          "frequency": 113113664
+        },
+        {
+          "rank": 813,
+          "word": "χοίρινος",
+          "betaCode": "xoi/rinos",
+          "frequency": 113106009
+        },
+        {
+          "rank": 814,
+          "word": "χοιρίνας",
+          "betaCode": "xoiri/nas",
+          "frequency": 113104638
+        },
+        {
+          "rank": 815,
+          "word": "χοίρη",
+          "betaCode": "xoi/rh",
+          "frequency": 113102049
+        },
+        {
+          "rank": 816,
+          "word": "χοίρειος",
+          "betaCode": "xoi/reios",
+          "frequency": 113099338
+        },
+        {
+          "rank": 817,
+          "word": "χοιραδώδης",
+          "betaCode": "xoiradw/dhs",
+          "frequency": 113095551
+        },
+        {
+          "rank": 818,
+          "word": "χοιραδικός",
+          "betaCode": "xoiradiko/s",
+          "frequency": 113094259
+        },
+        {
+          "rank": 819,
+          "word": "χοίρα",
+          "betaCode": "xoi/ra",
+          "frequency": 113093391
+        },
+        {
+          "rank": 820,
+          "word": "χοινικομέτρης",
+          "betaCode": "xoinikome/trhs",
+          "frequency": 113089885
+        },
+        {
+          "rank": 821,
+          "word": "χοινίκη",
+          "betaCode": "xoini/kh",
+          "frequency": 113085654
+        },
+        {
+          "rank": 822,
+          "word": "χοικός",
+          "betaCode": "xoiko/s",
+          "frequency": 113084908
+        },
+        {
+          "rank": 823,
+          "word": "χοή",
+          "betaCode": "xoh/",
+          "frequency": 113079269
+        },
+        {
+          "rank": 824,
+          "word": "χοάσπης",
+          "betaCode": "xoa/sphs",
+          "frequency": 113075894
+        },
+        {
+          "rank": 825,
+          "word": "χοάνη",
+          "betaCode": "xoa/nh",
+          "frequency": 113071500
+        },
+        {
+          "rank": 826,
+          "word": "χώνη",
+          "betaCode": "xw/nh",
+          "frequency": 113071500
+        },
+        {
+          "rank": 827,
+          "word": "χοανεύω",
+          "betaCode": "xoaneu/w",
+          "frequency": 113069128
+        },
+        {
+          "rank": 828,
+          "word": "χνοώδης",
+          "betaCode": "xnow/dhs",
+          "frequency": 113066697
+        },
+        {
+          "rank": 829,
+          "word": "χνόος",
+          "betaCode": "xno/os",
+          "frequency": 113061683
+        },
+        {
+          "rank": 830,
+          "word": "χνόη",
+          "betaCode": "xno/h",
+          "frequency": 113059254
+        },
+        {
+          "rank": 831,
+          "word": "χνοάω",
+          "betaCode": "xnoa/w",
+          "frequency": 113057499
+        },
+        {
+          "rank": 832,
+          "word": "χνοάζω",
+          "betaCode": "xnoa/zw",
+          "frequency": 113056597
+        },
+        {
+          "rank": 833,
+          "word": "χναύω",
+          "betaCode": "xnau/w",
+          "frequency": 113055562
+        },
+        {
+          "rank": 834,
+          "word": "χναυρός",
+          "betaCode": "xnauro/s",
+          "frequency": 113054639
+        },
+        {
+          "rank": 835,
+          "word": "χλωροσαῦρα",
+          "betaCode": "xlwrosau=ra",
+          "frequency": 113049166
+        },
+        {
+          "rank": 836,
+          "word": "χλωρός",
+          "betaCode": "xlwro/s",
+          "frequency": 113039937
+        },
+        {
+          "rank": 837,
+          "word": "χλωροειδής",
+          "betaCode": "xlwroeidh/s",
+          "frequency": 113037194
+        },
+        {
+          "rank": 838,
+          "word": "χλωρικός",
+          "betaCode": "xlwriko/s",
+          "frequency": 113034395
+        },
+        {
+          "rank": 839,
+          "word": "ὑπό-χλωρίζω",
+          "betaCode": "u(po/-xlwri/zw",
+          "frequency": 113033762
+        },
+        {
+          "rank": 840,
+          "word": "χλωρίζω",
+          "betaCode": "xlwri/zw",
+          "frequency": 113033762
+        },
+        {
+          "rank": 841,
+          "word": "ἀπό-χλωριάω",
+          "betaCode": "a)po/-xlwria/w",
+          "frequency": 113033299
+        },
+        {
+          "rank": 842,
+          "word": "χλωριάω",
+          "betaCode": "xlwria/w",
+          "frequency": 113033299
+        },
+        {
+          "rank": 843,
+          "word": "χλωρίασις",
+          "betaCode": "xlwri/asis",
+          "frequency": 113032900
+        },
+        {
+          "rank": 844,
+          "word": "χλωράω",
+          "betaCode": "xlwra/w",
+          "frequency": 113031239
+        },
+        {
+          "rank": 845,
+          "word": "χλωρέω",
+          "betaCode": "xlwre/w",
+          "frequency": 113031239
+        },
+        {
+          "rank": 846,
+          "word": "χλωράζω",
+          "betaCode": "xlwra/zw",
+          "frequency": 113027724
+        },
+        {
+          "rank": 847,
+          "word": "χλοώδης",
+          "betaCode": "xlow/dhs",
+          "frequency": 113026657
+        },
+        {
+          "rank": 848,
+          "word": "χλούνης",
+          "betaCode": "xlou/nhs",
+          "frequency": 113021841
+        },
+        {
+          "rank": 849,
+          "word": "χλοηφορέω",
+          "betaCode": "xlohfore/w",
+          "frequency": 113014903
+        },
+        {
+          "rank": 850,
+          "word": "χλοηφαγία",
+          "betaCode": "xlohfagi/a",
+          "frequency": 113014021
+        }
+      ]
+    },
+    {
+      "batchNumber": 18,
+      "rankRange": [
+        851,
+        900
+      ],
+      "words": [
+        {
+          "rank": 851,
+          "word": "χλοηφαγέω",
+          "betaCode": "xlohfage/w",
+          "frequency": 113013661
+        },
+        {
+          "rank": 852,
+          "word": "χλόη",
+          "betaCode": "xlo/h",
+          "frequency": 113007149
+        },
+        {
+          "rank": 853,
+          "word": "χλοερός",
+          "betaCode": "xloero/s",
+          "frequency": 113005339
+        },
+        {
+          "rank": 854,
+          "word": "ἀνά-χλοάω",
+          "betaCode": "a)na/-xloa/w",
+          "frequency": 113004061
+        },
+        {
+          "rank": 855,
+          "word": "χλοάω",
+          "betaCode": "xloa/w",
+          "frequency": 113004061
+        },
+        {
+          "rank": 856,
+          "word": "χλοανθής",
+          "betaCode": "xloanqh/s",
+          "frequency": 113001652
+        },
+        {
+          "rank": 857,
+          "word": "χλοανθέω",
+          "betaCode": "xloanqe/w",
+          "frequency": 113001373
+        },
+        {
+          "rank": 858,
+          "word": "ἀνά-χλοάζω",
+          "betaCode": "a)na/-xloa/zw",
+          "frequency": 112999590
+        },
+        {
+          "rank": 859,
+          "word": "ἐν-χλοάζω",
+          "betaCode": "e)n-xloa/zw",
+          "frequency": 112999590
+        },
+        {
+          "rank": 860,
+          "word": "χλοάζω",
+          "betaCode": "xloa/zw",
+          "frequency": 112999590
+        },
+        {
+          "rank": 861,
+          "word": "χλιώδης",
+          "betaCode": "xliw/dhs",
+          "frequency": 112999114
+        },
+        {
+          "rank": 862,
+          "word": "χλίω",
+          "betaCode": "xli/w",
+          "frequency": 112998435
+        },
+        {
+          "rank": 863,
+          "word": "χλίδος",
+          "betaCode": "xli/dos",
+          "frequency": 112993205
+        },
+        {
+          "rank": 864,
+          "word": "χλιδή",
+          "betaCode": "xlidh/",
+          "frequency": 112988778
+        },
+        {
+          "rank": 865,
+          "word": "χλιδάω",
+          "betaCode": "xlida/w",
+          "frequency": 112986931
+        },
+        {
+          "rank": 866,
+          "word": "χλιδανός",
+          "betaCode": "xlidano/s",
+          "frequency": 112985251
+        },
+        {
+          "rank": 867,
+          "word": "χλιάω",
+          "betaCode": "xlia/w",
+          "frequency": 112983415
+        },
+        {
+          "rank": 868,
+          "word": "χλιαρός",
+          "betaCode": "xliaro/s",
+          "frequency": 112979156
+        },
+        {
+          "rank": 869,
+          "word": "χλιερός",
+          "betaCode": "xliero/s",
+          "frequency": 112979156
+        },
+        {
+          "rank": 870,
+          "word": "ἀνά-χλιαίνω",
+          "betaCode": "a)na/-xliai/nw",
+          "frequency": 112975400
+        },
+        {
+          "rank": 871,
+          "word": "παρά-χλιαίνω",
+          "betaCode": "para/-xliai/nw",
+          "frequency": 112975400
+        },
+        {
+          "rank": 872,
+          "word": "σύν-χλιαίνω",
+          "betaCode": "su/n-xliai/nw",
+          "frequency": 112975400
+        },
+        {
+          "rank": 873,
+          "word": "ὑπό-χλιαίνω",
+          "betaCode": "u(po/-xliai/nw",
+          "frequency": 112975400
+        },
+        {
+          "rank": 874,
+          "word": "χλιαίνω",
+          "betaCode": "xliai/nw",
+          "frequency": 112975400
+        },
+        {
+          "rank": 875,
+          "word": "χλιά",
+          "betaCode": "xlia/",
+          "frequency": 112974665
+        },
+        {
+          "rank": 876,
+          "word": "χλεύη",
+          "betaCode": "xleu/h",
+          "frequency": 112972353
+        },
+        {
+          "rank": 877,
+          "word": "χλευαστικός",
+          "betaCode": "xleuastiko/s",
+          "frequency": 112971352
+        },
+        {
+          "rank": 878,
+          "word": "χλευαστής",
+          "betaCode": "xleuasth/s",
+          "frequency": 112970610
+        },
+        {
+          "rank": 879,
+          "word": "χλευασία",
+          "betaCode": "xleuasi/a",
+          "frequency": 112968201
+        },
+        {
+          "rank": 880,
+          "word": "μετά-χλευάζω",
+          "betaCode": "meta/-xleua/zw",
+          "frequency": 112965283
+        },
+        {
+          "rank": 881,
+          "word": "χλευάζω",
+          "betaCode": "xleua/zw",
+          "frequency": 112965283
+        },
+        {
+          "rank": 882,
+          "word": "χλαρός",
+          "betaCode": "xlaro/s",
+          "frequency": 112963564
+        },
+        {
+          "rank": 883,
+          "word": "χλανιδουργία",
+          "betaCode": "xlanidourgi/a",
+          "frequency": 112958565
+        },
+        {
+          "rank": 884,
+          "word": "χλανιδοποιία",
+          "betaCode": "xlanidopoii/a",
+          "frequency": 112957695
+        },
+        {
+          "rank": 885,
+          "word": "χλαμυδοφορέω",
+          "betaCode": "xlamudofore/w",
+          "frequency": 112948720
+        },
+        {
+          "rank": 886,
+          "word": "χλαμυδουργία",
+          "betaCode": "xlamudourgi/a",
+          "frequency": 112947924
+        },
+        {
+          "rank": 887,
+          "word": "χλαμυδοποιία",
+          "betaCode": "xlamudopoii/a",
+          "frequency": 112947317
+        },
+        {
+          "rank": 888,
+          "word": "χλαμυδοειδής",
+          "betaCode": "xlamudoeidh/s",
+          "frequency": 112946842
+        },
+        {
+          "rank": 889,
+          "word": "χλαινοθήρας",
+          "betaCode": "xlainoqh/ras",
+          "frequency": 112942800
+        },
+        {
+          "rank": 890,
+          "word": "χλαινέας",
+          "betaCode": "xlaine/as",
+          "frequency": 112941096
+        },
+        {
+          "rank": 891,
+          "word": "χλαῖνα",
+          "betaCode": "xlai=na",
+          "frequency": 112936265
+        },
+        {
+          "rank": 892,
+          "word": "χλάδω",
+          "betaCode": "xla/dw",
+          "frequency": 112935313
+        },
+        {
+          "rank": 893,
+          "word": "χιωνίδης",
+          "betaCode": "xiwni/dhs",
+          "frequency": 112934913
+        },
+        {
+          "rank": 894,
+          "word": "χιτωνία",
+          "betaCode": "xitwni/a",
+          "frequency": 112925175
+        },
+        {
+          "rank": 895,
+          "word": "χιτώνη",
+          "betaCode": "xitw/nh",
+          "frequency": 112924262
+        },
+        {
+          "rank": 896,
+          "word": "χιόω",
+          "betaCode": "xio/w",
+          "frequency": 112912344
+        },
+        {
+          "rank": 897,
+          "word": "χῖος",
+          "betaCode": "xi=os",
+          "frequency": 112907470
+        },
+        {
+          "rank": 898,
+          "word": "χιονώδης",
+          "betaCode": "xionw/dhs",
+          "frequency": 112904945
+        },
+        {
+          "rank": 899,
+          "word": "χιονοβολέομαι",
+          "betaCode": "xionobole/omai",
+          "frequency": 112898468
+        },
+        {
+          "rank": 900,
+          "word": "χιόνη",
+          "betaCode": "xio/nh",
+          "frequency": 112893884
+        }
+      ]
+    },
+    {
+      "batchNumber": 19,
+      "rankRange": [
+        901,
+        950
+      ],
+      "words": [
+        {
+          "rank": 901,
+          "word": "χιονίζω",
+          "betaCode": "xioni/zw",
+          "frequency": 112893884
+        },
+        {
+          "rank": 902,
+          "word": "χιόνεος",
+          "betaCode": "xio/neos",
+          "frequency": 112892444
+        },
+        {
+          "rank": 903,
+          "word": "χιοειδής",
+          "betaCode": "xioeidh/s",
+          "frequency": 112891155
+        },
+        {
+          "rank": 904,
+          "word": "χιογενής",
+          "betaCode": "xiogenh/s",
+          "frequency": 112890729
+        },
+        {
+          "rank": 905,
+          "word": "χιμετλιάω",
+          "betaCode": "ximetlia/w",
+          "frequency": 112889498
+        },
+        {
+          "rank": 906,
+          "word": "χιμέτλη",
+          "betaCode": "xime/tlh",
+          "frequency": 112889173
+        },
+        {
+          "rank": 907,
+          "word": "χιμάρα",
+          "betaCode": "xima/ra",
+          "frequency": 112884832
+        },
+        {
+          "rank": 908,
+          "word": "χιμαιροθύτης",
+          "betaCode": "ximairoqu/ths",
+          "frequency": 112883334
+        },
+        {
+          "rank": 909,
+          "word": "χίμαιρα",
+          "betaCode": "xi/maira",
+          "frequency": 112878922
+        },
+        {
+          "rank": 910,
+          "word": "ἐκ-χιλόω",
+          "betaCode": "e)k-xilo/w",
+          "frequency": 112876400
+        },
+        {
+          "rank": 911,
+          "word": "χιλοποιόω",
+          "betaCode": "xilopoio/w",
+          "frequency": 112876400
+        },
+        {
+          "rank": 912,
+          "word": "χιλοποιέομαι",
+          "betaCode": "xilopoie/omai",
+          "frequency": 112873579
+        },
+        {
+          "rank": 913,
+          "word": "χιλοποίησις",
+          "betaCode": "xilopoi/hsis",
+          "frequency": 112873579
+        },
+        {
+          "rank": 914,
+          "word": "χιλιοστός",
+          "betaCode": "xiliosto/s",
+          "frequency": 112869665
+        },
+        {
+          "rank": 915,
+          "word": "χίλιος",
+          "betaCode": "xi/lios",
+          "frequency": 112869478
+        },
+        {
+          "rank": 916,
+          "word": "χιλιόμβη",
+          "betaCode": "xilio/mbh",
+          "frequency": 112864627
+        },
+        {
+          "rank": 917,
+          "word": "χίλιοι",
+          "betaCode": "xi/lioi",
+          "frequency": 112856344
+        },
+        {
+          "rank": 918,
+          "word": "χιλιέτης",
+          "betaCode": "xilie/ths",
+          "frequency": 112854423
+        },
+        {
+          "rank": 919,
+          "word": "χιλιαρχικός",
+          "betaCode": "xiliarxiko/s",
+          "frequency": 112848457
+        },
+        {
+          "rank": 920,
+          "word": "χιλιαρχία",
+          "betaCode": "xiliarxi/a",
+          "frequency": 112846461
+        },
+        {
+          "rank": 921,
+          "word": "χιλιάρχης",
+          "betaCode": "xilia/rxhs",
+          "frequency": 112845245
+        },
+        {
+          "rank": 922,
+          "word": "χιλιαρχέω",
+          "betaCode": "xiliarxe/w",
+          "frequency": 112843993
+        },
+        {
+          "rank": 923,
+          "word": "χιλιάζω",
+          "betaCode": "xilia/zw",
+          "frequency": 112841721
+        },
+        {
+          "rank": 924,
+          "word": "χιλή",
+          "betaCode": "xilh/",
+          "frequency": 112840406
+        },
+        {
+          "rank": 925,
+          "word": "χιλεύω",
+          "betaCode": "xileu/w",
+          "frequency": 112839785
+        },
+        {
+          "rank": 926,
+          "word": "χίδρα",
+          "betaCode": "xi/dra",
+          "frequency": 112836132
+        },
+        {
+          "rank": 927,
+          "word": "χιδρίας",
+          "betaCode": "xidri/as",
+          "frequency": 112835698
+        },
+        {
+          "rank": 928,
+          "word": "χιαστός",
+          "betaCode": "xiasto/s",
+          "frequency": 112832515
+        },
+        {
+          "rank": 929,
+          "word": "ἐν-χιάζω",
+          "betaCode": "e)n-xia/zw",
+          "frequency": 112824771
+        },
+        {
+          "rank": 930,
+          "word": "χιάζω",
+          "betaCode": "xia/zw",
+          "frequency": 112824771
+        },
+        {
+          "rank": 931,
+          "word": "χθονοφύλη",
+          "betaCode": "xqonofu/lh",
+          "frequency": 112814811
+        },
+        {
+          "rank": 932,
+          "word": "χθονοστιβής",
+          "betaCode": "xqonostibh/s",
+          "frequency": 112813868
+        },
+        {
+          "rank": 933,
+          "word": "χθονοριφής",
+          "betaCode": "xqonorifh/s",
+          "frequency": 112813467
+        },
+        {
+          "rank": 934,
+          "word": "χθόνια",
+          "betaCode": "xqo/nia",
+          "frequency": 112804703
+        },
+        {
+          "rank": 935,
+          "word": "χθονίη",
+          "betaCode": "xqoni/h",
+          "frequency": 112804703
+        },
+        {
+          "rank": 936,
+          "word": "χθόνιος",
+          "betaCode": "xqo/nios",
+          "frequency": 112804703
+        },
+        {
+          "rank": 937,
+          "word": "χθιζός",
+          "betaCode": "xqizo/s",
+          "frequency": 112800869
+        },
+        {
+          "rank": 938,
+          "word": "χθιζινός",
+          "betaCode": "xqizino/s",
+          "frequency": 112800005
+        },
+        {
+          "rank": 939,
+          "word": "χθεσινός",
+          "betaCode": "xqesino/s",
+          "frequency": 112798862
+        },
+        {
+          "rank": 940,
+          "word": "χθαμαλός",
+          "betaCode": "xqamalo/s",
+          "frequency": 112791911
+        },
+        {
+          "rank": 941,
+          "word": "χητοσύνη",
+          "betaCode": "xhtosu/nh",
+          "frequency": 112790974
+        },
+        {
+          "rank": 942,
+          "word": "χῆτις",
+          "betaCode": "xh=tis",
+          "frequency": 112788530
+        },
+        {
+          "rank": 943,
+          "word": "χῆτος",
+          "betaCode": "xh=tos",
+          "frequency": 112788530
+        },
+        {
+          "rank": 944,
+          "word": "χήτειος",
+          "betaCode": "xh/teios",
+          "frequency": 112787665
+        },
+        {
+          "rank": 945,
+          "word": "χήρωσις",
+          "betaCode": "xh/rwsis",
+          "frequency": 112785331
+        },
+        {
+          "rank": 946,
+          "word": "χηρόω",
+          "betaCode": "xhro/w",
+          "frequency": 112782371
+        },
+        {
+          "rank": 947,
+          "word": "χηροσύνη",
+          "betaCode": "xhrosu/nh",
+          "frequency": 112781684
+        },
+        {
+          "rank": 948,
+          "word": "χηρεύω",
+          "betaCode": "xhreu/w",
+          "frequency": 112778220
+        },
+        {
+          "rank": 949,
+          "word": "χήρευσις",
+          "betaCode": "xh/reusis",
+          "frequency": 112777641
+        },
+        {
+          "rank": 950,
+          "word": "χήρειος",
+          "betaCode": "xh/reios",
+          "frequency": 112776877
+        }
+      ]
+    },
+    {
+      "batchNumber": 20,
+      "rankRange": [
+        951,
+        1000
+      ],
+      "words": [
+        {
+          "rank": 951,
+          "word": "χηραμοδύτης",
+          "betaCode": "xhramodu/ths",
+          "frequency": 112771101
+        },
+        {
+          "rank": 952,
+          "word": "χηράμβη",
+          "betaCode": "xhra/mbh",
+          "frequency": 112769796
+        },
+        {
+          "rank": 953,
+          "word": "χήρα",
+          "betaCode": "xh/ra",
+          "frequency": 112764409
+        },
+        {
+          "rank": 954,
+          "word": "χῆρα",
+          "betaCode": "xh=ra",
+          "frequency": 112764409
+        },
+        {
+          "rank": 955,
+          "word": "χηνώδης",
+          "betaCode": "xhnw/dhs",
+          "frequency": 112763631
+        },
+        {
+          "rank": 956,
+          "word": "χηνύστρα",
+          "betaCode": "xhnu/stra",
+          "frequency": 112762672
+        },
+        {
+          "rank": 957,
+          "word": "χηνοβωτία",
+          "betaCode": "xhnobwti/a",
+          "frequency": 112760714
+        },
+        {
+          "rank": 958,
+          "word": "χηνοβοσία",
+          "betaCode": "xhnobosi/a",
+          "frequency": 112757772
+        },
+        {
+          "rank": 959,
+          "word": "χηνίζω",
+          "betaCode": "xhni/zw",
+          "frequency": 112755728
+        },
+        {
+          "rank": 960,
+          "word": "χήνειος",
+          "betaCode": "xh/neios",
+          "frequency": 112751932
+        },
+        {
+          "rank": 961,
+          "word": "χήμωσις",
+          "betaCode": "xh/mwsis",
+          "frequency": 112743883
+        },
+        {
+          "rank": 962,
+          "word": "χημία",
+          "betaCode": "xhmi/a",
+          "frequency": 112742958
+        },
+        {
+          "rank": 963,
+          "word": "χήμη",
+          "betaCode": "xh/mh",
+          "frequency": 112741658
+        },
+        {
+          "rank": 964,
+          "word": "χηλόω",
+          "betaCode": "xhlo/w",
+          "frequency": 112739734
+        },
+        {
+          "rank": 965,
+          "word": "χηλή",
+          "betaCode": "xhlh/",
+          "frequency": 112731903
+        },
+        {
+          "rank": 966,
+          "word": "χηλεύω",
+          "betaCode": "xhleu/w",
+          "frequency": 112731202
+        },
+        {
+          "rank": 967,
+          "word": "ἀντί,μετά-χέω",
+          "betaCode": "a)nti/,meta/-xe/w",
+          "frequency": 112698761
+        },
+        {
+          "rank": 968,
+          "word": "ἀπό,ἀντί-χέω",
+          "betaCode": "a)po/,a)nti/-xe/w",
+          "frequency": 112698761
+        },
+        {
+          "rank": 969,
+          "word": "κατά,ὑπέρ-χέω",
+          "betaCode": "kata/,u(pe/r-xe/w",
+          "frequency": 112698761
+        },
+        {
+          "rank": 970,
+          "word": "ὑπέρ-χέω",
+          "betaCode": "u(pe/r-xe/w",
+          "frequency": 112698761
+        },
+        {
+          "rank": 971,
+          "word": "χέω",
+          "betaCode": "xe/w",
+          "frequency": 112698761
+        },
+        {
+          "rank": 972,
+          "word": "χεύω",
+          "betaCode": "xeu/w",
+          "frequency": 112698583
+        },
+        {
+          "rank": 973,
+          "word": "χερσώδης",
+          "betaCode": "xersw/dhs",
+          "frequency": 112692340
+        },
+        {
+          "rank": 974,
+          "word": "ἀπό-χερσόω",
+          "betaCode": "a)po/-xerso/w",
+          "frequency": 112690672
+        },
+        {
+          "rank": 975,
+          "word": "ὑπό-χερσόω",
+          "betaCode": "u(po/-xerso/w",
+          "frequency": 112690672
+        },
+        {
+          "rank": 976,
+          "word": "χερσόω",
+          "betaCode": "xerso/w",
+          "frequency": 112690672
+        },
+        {
+          "rank": 977,
+          "word": "χέρσος",
+          "betaCode": "xe/rsos",
+          "frequency": 112684347
+        },
+        {
+          "rank": 978,
+          "word": "χερσόνησος",
+          "betaCode": "xerso/nhsos",
+          "frequency": 112681503
+        },
+        {
+          "rank": 979,
+          "word": "χερσονησοειδής",
+          "betaCode": "xersonhsoeidh/s",
+          "frequency": 112680803
+        },
+        {
+          "rank": 980,
+          "word": "χερσονησίτης",
+          "betaCode": "xersonhsi/ths",
+          "frequency": 112680097
+        },
+        {
+          "rank": 981,
+          "word": "χερσονήσιος",
+          "betaCode": "xersonh/sios",
+          "frequency": 112678864
+        },
+        {
+          "rank": 982,
+          "word": "χερρονησιάζω",
+          "betaCode": "xerronhsia/zw",
+          "frequency": 112677989
+        },
+        {
+          "rank": 983,
+          "word": "χερσονησίζω",
+          "betaCode": "xersonhsi/zw",
+          "frequency": 112677989
+        },
+        {
+          "rank": 984,
+          "word": "χερσίης",
+          "betaCode": "xersi/hs",
+          "frequency": 112672932
+        },
+        {
+          "rank": 985,
+          "word": "ἐκ-χερσεύω",
+          "betaCode": "e)k-xerseu/w",
+          "frequency": 112670105
+        },
+        {
+          "rank": 986,
+          "word": "χερσεύω",
+          "betaCode": "xerseu/w",
+          "frequency": 112670105
+        },
+        {
+          "rank": 987,
+          "word": "χερσεία",
+          "betaCode": "xersei/a",
+          "frequency": 112669611
+        },
+        {
+          "rank": 988,
+          "word": "χερσαῖος",
+          "betaCode": "xersai=os",
+          "frequency": 112663283
+        },
+        {
+          "rank": 989,
+          "word": "χεροπληθής",
+          "betaCode": "xeroplhqh/s",
+          "frequency": 112661275
+        },
+        {
+          "rank": 990,
+          "word": "χερομυσής",
+          "betaCode": "xeromush/s",
+          "frequency": 112659867
+        },
+        {
+          "rank": 991,
+          "word": "χερνίπτομαι",
+          "betaCode": "xerni/ptomai",
+          "frequency": 112652842
+        },
+        {
+          "rank": 992,
+          "word": "χερνήτης",
+          "betaCode": "xernh/ths",
+          "frequency": 112646838
+        },
+        {
+          "rank": 993,
+          "word": "χέραδος",
+          "betaCode": "xe/rados",
+          "frequency": 112628984
+        },
+        {
+          "rank": 994,
+          "word": "χέμμις",
+          "betaCode": "xe/mmis",
+          "frequency": 112627337
+        },
+        {
+          "rank": 995,
+          "word": "χελωνοειδής",
+          "betaCode": "xelwnoeidh/s",
+          "frequency": 112625336
+        },
+        {
+          "rank": 996,
+          "word": "χελώνη",
+          "betaCode": "xelw/nh",
+          "frequency": 112615208
+        },
+        {
+          "rank": 997,
+          "word": "χελύνη",
+          "betaCode": "xelu/nh",
+          "frequency": 112604448
+        },
+        {
+          "rank": 998,
+          "word": "χελυνάζω",
+          "betaCode": "xeluna/zw",
+          "frequency": 112603636
+        },
+        {
+          "rank": 999,
+          "word": "χελλύσσω",
+          "betaCode": "xellu/ssw",
+          "frequency": 112600183
+        },
+        {
+          "rank": 1000,
+          "word": "χελλαρίης",
+          "betaCode": "xellari/hs",
+          "frequency": 112598068
+        }
+      ]
+    }
+  ]
+}
