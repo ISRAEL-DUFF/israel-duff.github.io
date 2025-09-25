@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vocab Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>Ancient Greek Vocab Store</h1>
+    <p class="tagline">Explore curated Ancient Greek vocabulary lists across corpora.</p>
+  </header>
+
+  <main class="app-main">
+    <section class="controls-panel" aria-label="Dataset controls">
+      <div class="control">
+        <label for="dataset-select">Corpus</label>
+        <select id="dataset-select" aria-label="Select corpus"></select>
+      </div>
+      <div class="control">
+        <label for="search-input">Search</label>
+        <input id="search-input" type="search" placeholder="Filter by lemma or beta code" aria-label="Filter words">
+      </div>
+      <div class="control">
+        <label for="freq-sort">Order</label>
+        <select id="freq-sort" aria-label="Sort order">
+          <option value="desc">Frequency ↓</option>
+          <option value="asc">Frequency ↑</option>
+          <option value="rank">Rank</option>
+        </select>
+      </div>
+      <button id="reset-button" type="button" class="secondary">Reset</button>
+    </section>
+
+    <section class="info-panel" aria-live="polite">
+      <h2 id="dataset-title">Dataset</h2>
+      <dl class="metadata" id="metadata"></dl>
+    </section>
+
+    <section class="content-panel">
+      <div class="batch-sidebar" aria-label="Batch navigation">
+        <h3>Batches</h3>
+        <ul id="batch-list" class="batch-list"></ul>
+      </div>
+
+      <div class="table-wrapper" role="region" aria-live="polite" aria-label="Vocabulary results">
+        <div class="table-header">
+          <div id="table-status" class="table-status" aria-live="polite"></div>
+          <button id="copy-batch" type="button" class="primary-button" aria-label="Copy current batch" data-default-label="Copy batch">Copy batch</button>
+        </div>
+        <div class="table-scroll" tabindex="0">
+          <table id="vocab-table">
+            <thead>
+              <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Word</th>
+                <th scope="col">Beta</th>
+                <th scope="col">Frequency</th>
+              </tr>
+            </thead>
+            <tbody id="vocab-body"></tbody>
+          </table>
+        </div>
+        <p id="empty-state" class="empty-state" hidden>No entries match your filters.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>Data sourced from curated corpora (NT, CATSS LXX, Eusebius, Attic Diogenes). Generated locally.</p>
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
