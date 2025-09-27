@@ -40,6 +40,7 @@ const DATASETS = [
 const state = {
   datasetId: null,
   rows: [],
+  drill: null,
   filters: {
     search: '',
     batch: 'all',
@@ -58,6 +59,17 @@ const tableBody = document.getElementById('vocab-body');
 const emptyState = document.getElementById('empty-state');
 const tableStatus = document.getElementById('table-status');
 const copyButton = document.getElementById('copy-batch');
+const drillStartButton = document.getElementById('drill-start');
+const drillRevealButton = document.getElementById('drill-reveal');
+const drillSkipButton = document.getElementById('drill-skip');
+const drillCard = document.getElementById('drill-card');
+const drillWord = document.getElementById('drill-word');
+const drillMeta = document.getElementById('drill-meta');
+const drillRememberedButton = document.getElementById('drill-remembered');
+const drillReviewButton = document.getElementById('drill-review');
+const drillProgress = document.getElementById('drill-progress');
+
+const DRILL_SAMPLE_SIZE = 20;
 
 function init() {
   datasetSelect.innerHTML = DATASETS.map(dataset => `<option value="${dataset.id}">${dataset.label}</option>`).join('');
@@ -68,6 +80,21 @@ function init() {
   sortSelect.addEventListener('change', handleSortChange);
   resetButton.addEventListener('click', handleReset);
   copyButton.addEventListener('click', handleCopyBatch);
+  if (drillStartButton) {
+    drillStartButton.addEventListener('click', handleDrillStart);
+  }
+  if (drillRevealButton) {
+    drillRevealButton.addEventListener('click', toggleDrillReveal);
+  }
+  if (drillSkipButton) {
+    drillSkipButton.addEventListener('click', skipDrillCard);
+  }
+  if (drillRememberedButton) {
+    drillRememberedButton.addEventListener('click', () => handleDrillResponse('remembered'));
+  }
+  if (drillReviewButton) {
+    drillReviewButton.addEventListener('click', () => handleDrillResponse('review'));
+  }
 
   // Auto-load first dataset
   if (DATASETS.length) {
@@ -109,6 +136,10 @@ async function loadDataset(dataset) {
   tableBody.innerHTML = '';
   emptyState.hidden = true;
   copyButton.disabled = true;
+  if (drillStartButton) {
+    drillStartButton.disabled = true;
+  }
+  resetDrill();
 
   try {
     const response = await fetch(`vocab-data/${dataset.file}`);
@@ -211,6 +242,7 @@ function render() {
     tableBody.innerHTML = '';
     updateTableStatus([]);
     copyButton.disabled = true;
+    updateDrillAvailability();
     return;
   }
 
@@ -219,6 +251,7 @@ function render() {
   renderTable(filtered);
   state.currentRows = filtered;
   copyButton.disabled = filtered.length === 0;
+  updateDrillAvailability();
 }
 
 function applyFilters() {
@@ -336,6 +369,164 @@ function fallbackCopy(text) {
 
 function sanitiseWord(word = '') {
   return word.replace(/[-\u2010-\u2015\u2212]/g, '');
+}
+
+function handleDrillStart() {
+  const pool = (state.currentRows && state.currentRows.length ? state.currentRows : state.rows).slice();
+  if (!pool.length) {
+    resetDrill('Select some words to start a drill.');
+    return;
+  }
+
+  const deck = shuffle(pool).slice(0, Math.min(DRILL_SAMPLE_SIZE, pool.length));
+  state.drill = {
+    deck,
+    index: 0,
+    revealed: false,
+    stats: {
+      total: deck.length,
+      seen: 0,
+      remembered: 0,
+      review: 0
+    }
+  };
+  updateDrillUI();
+}
+
+function toggleDrillReveal() {
+  if (!state.drill || !state.drill.deck.length) return;
+  state.drill.revealed = !state.drill.revealed;
+  updateDrillUI();
+}
+
+function skipDrillCard() {
+  if (!state.drill || !state.drill.deck.length) return;
+  advanceDrill();
+}
+
+function handleDrillResponse(result) {
+  if (!state.drill || !state.drill.revealed) return;
+  state.drill.stats.seen += 1;
+  if (result === 'remembered') {
+    state.drill.stats.remembered += 1;
+  } else {
+    state.drill.stats.review += 1;
+  }
+  advanceDrill();
+}
+
+function advanceDrill() {
+  if (!state.drill) return;
+  state.drill.index += 1;
+  state.drill.revealed = false;
+  if (state.drill.index >= state.drill.deck.length) {
+    const summary = `Drill complete • ${state.drill.stats.remembered} remembered · ${state.drill.stats.review} to review`;
+    resetDrill(summary);
+  } else {
+    updateDrillUI();
+  }
+}
+
+function updateDrillUI() {
+  if (!drillStartButton) return;
+  const drill = state.drill;
+  if (!drill || !drill.deck.length) {
+    drillStartButton.textContent = 'Start Drill';
+    drillRevealButton.disabled = true;
+    drillSkipButton.disabled = true;
+    drillRememberedButton.disabled = true;
+    drillReviewButton.disabled = true;
+    if (drillCard) drillCard.hidden = true;
+    if (drillMeta) drillMeta.hidden = true;
+    return;
+  }
+
+  drillStartButton.textContent = 'Restart Drill';
+  drillRevealButton.disabled = false;
+  drillSkipButton.disabled = false;
+  if (drillCard) drillCard.hidden = false;
+
+  const current = drill.deck[drill.index];
+  if (drillWord) drillWord.textContent = current.word;
+
+  if (drill.revealed) {
+    const metaParts = [`Rank ${current.rank}`];
+    if (Number.isFinite(current.frequency)) {
+      metaParts.push(`Frequency ${current.frequency.toLocaleString()}`);
+    }
+    if (current.betaCode) {
+      metaParts.push(`Beta ${current.betaCode}`);
+    }
+    if (drillMeta) {
+      drillMeta.hidden = false;
+      drillMeta.textContent = metaParts.join(' · ');
+    }
+    drillRememberedButton.disabled = false;
+    drillReviewButton.disabled = false;
+    drillRevealButton.textContent = 'Hide info';
+  } else {
+    if (drillMeta) {
+      drillMeta.hidden = true;
+      drillMeta.textContent = '';
+    }
+    drillRememberedButton.disabled = true;
+    drillReviewButton.disabled = true;
+    drillRevealButton.textContent = 'Reveal info';
+  }
+
+  if (drillProgress) {
+    const progressText = `Card ${drill.index + 1} of ${drill.stats.total} · Remembered ${drill.stats.remembered} · To review ${drill.stats.review}`;
+    drillProgress.textContent = progressText;
+  }
+}
+
+function resetDrill(message = '') {
+  state.drill = null;
+  if (drillStartButton) {
+    drillStartButton.textContent = 'Start Drill';
+  }
+  if (drillRevealButton) {
+    drillRevealButton.disabled = true;
+    drillRevealButton.textContent = 'Reveal info';
+  }
+  if (drillSkipButton) {
+    drillSkipButton.disabled = true;
+  }
+  if (drillRememberedButton) {
+    drillRememberedButton.disabled = true;
+  }
+  if (drillReviewButton) {
+    drillReviewButton.disabled = true;
+  }
+  if (drillCard) {
+    drillCard.hidden = true;
+  }
+  if (drillMeta) {
+    drillMeta.hidden = true;
+    drillMeta.textContent = '';
+  }
+  if (drillProgress) {
+    drillProgress.textContent = message;
+  }
+}
+
+function updateDrillAvailability() {
+  if (!drillStartButton) return;
+  const pool = state.currentRows && state.currentRows.length ? state.currentRows : state.rows;
+  const available = Boolean(pool && pool.length);
+  drillStartButton.disabled = !available;
+  if (!available) {
+    resetDrill('Select words to begin a drill.');
+  }
+}
+
+function shuffle(items) {
+  const copy = [...items];
+  for (let i = copy.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
 }
 
 function flashCopyButton() {

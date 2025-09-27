@@ -67,6 +67,28 @@
     </section>
   </main>
 
+  <section class="drill-panel" aria-labelledby="drill-title">
+    <div class="drill-header">
+      <h2 id="drill-title">Quick Drill</h2>
+      <p class="drill-description">Use the current selection to self-test. Think of the meaning first, then reveal the details and mark how it went.</p>
+    </div>
+    <div class="drill-controls">
+      <button id="drill-start" type="button" class="primary-button" disabled>Start Drill</button>
+      <button id="drill-reveal" type="button" class="secondary-button" disabled>Reveal info</button>
+      <button id="drill-skip" type="button" class="secondary-button" disabled>Skip</button>
+    </div>
+    <div id="drill-card" class="drill-card" hidden>
+      <p class="drill-prompt">Pause and recall the definition or an example before revealing the info.</p>
+      <div id="drill-word" class="drill-word">—</div>
+      <div id="drill-meta" class="drill-meta" hidden></div>
+      <div class="drill-actions">
+        <button id="drill-remembered" type="button" class="primary-button" disabled>I remembered</button>
+        <button id="drill-review" type="button" class="secondary-button" disabled>Needs review</button>
+      </div>
+    </div>
+    <p id="drill-progress" class="drill-progress"></p>
+  </section>
+
   <footer class="app-footer">
     <p>Data sourced from curated corpora (NT, CATSS LXX, Eusebius, Attic Diogenes). Generated locally.</p>
   </footer>
