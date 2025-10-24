@@ -3,7 +3,7 @@ Multi-Sig Approval & Auto-Release with Oracles means that SynLedger can **secure
 > Multi-Sig Approval & Auto-Release with Oracles is part of SynLedger’s Core Concepts.
 
 ### High-Level System Overview
-![High Level overview](./assets/multi-sig-high-level.svg "High-Level System Overview")
+![High Level overview](./assets/multi-sig-high-level2.svg "High-Level System Overview")
 
 ---
 
@@ -56,7 +56,8 @@ Multi-signature (multi-sig) approval means that **more than one address must sig
 ![Sequence flow](./assets/multi-sig-sequence-flow.svg "Signature Collection (EIP-712)")
 
 #### Decision Logic
-![Decision Logic](./assets/multi-sig-decision-logic.svg "Decision Logic")
+<!-- ![Decision Logic](./assets/multi-sig-decision-logic.svg "Decision Logic") -->
+<img src="./assets/multi-sig-decision-logic.svg" alt="Decision Logic" width="300" height="200">
 ---
 
 
@@ -101,7 +102,9 @@ Auto-release means funds are released **automatically** when the oracle confirms
 
 ## 3. Hybrid Mode (Oracle Trigger + Multi-Sig Fallback)
 #### Authorization & Validation
-![Hybrid Mode](./assets/multi-sig-hybrid.svg "Hybrid Mode")
+<!-- ![Hybrid Mode](./assets/multi-sig-hybrid.svg "Hybrid Mode") -->
+<img src="./assets/multi-sig-hybrid.svg" alt="Hybrid Mode" width="300" height="200">
+
 
 ## 🧠 Why SynLedger Supports Both
 
