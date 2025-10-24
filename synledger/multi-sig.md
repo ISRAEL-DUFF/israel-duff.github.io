@@ -3,35 +3,7 @@ Multi-Sig Approval & Auto-Release with Oracles means that SynLedger can **secure
 > Multi-Sig Approval & Auto-Release with Oracles is part of SynLedger’s Core Concepts.
 
 ### High-Level System Overview
-<!-- ![High Level overview](./assets/multi-sig-high-level.svg "High-Level System Overview") -->
-```mermaid
-flowchart LR
-  subgraph Users
-    C["Client Wallet"]
-    F["Freelancer Wallet"]
-    A["Arbitrator Wallet (optional)"]
-  end
-
-  subgraph App["SynLedger DApp"]
-    UI["Web/App UI"]
-    API["SynLedger API"]
-  end
-
-  subgraph L2["Arbitrum L2"]
-    ESC["Escrow Smart Contract"]
-    ORC["Oracle Consumer Module"]
-  end
-
-  subgraph Oracles
-    CL["Chainlink / Pyth / SynLedger Oracle"]
-  end
-
-  C --> UI --> API --> ESC
-  F --> UI
-  A --> UI
-  CL --> ORC --> ESC
-  ESC -. "events" .-> API -. "notifications" .-> Users
-```
+![High Level overview](./assets/multi-sig-high-level.svg "High-Level System Overview")
 
 ---
 
@@ -45,16 +17,7 @@ In the context of **SynLedger**, Multi-Sig Approval & Auto-Release with Oracles 
 
 These two options allow SynLedger to support both **human trust workflows** and **automated programmable payments**.
 
-<!-- ![Meaning](./assets/multi-sig-meaning.svg "Multi-Signature") -->
-```mermaid
-flowchart LR
-  FND["Client funds escrow"] --> DEC{Release Mode}
-  DEC -- "Multi-sig" --> MSFLOW["Collect >= threshold approvals"]
-  DEC -- "Oracle" --> ORFLOW["Oracle verifies condition"]
-  MSFLOW --> REL["releaseFunds()"]
-  ORFLOW --> REL
-  REL --> DONE["Funds to Freelancer"]
-```
+![Meaning](./assets/multi-sig-meaning.svg "Multi-Signature")
 
 ---
 
@@ -64,20 +27,7 @@ flowchart LR
 Multi-signature (multi-sig) approval means that **more than one address must sign** a transaction before the funds are released from escrow.
 
 #### Escrow Lifecycle (Overview)
-<!-- ![Life Cycle Overview](./assets/multi-sig-life-cycle.svg "Life Cycle Overview") -->
-```mermaid
-stateDiagram-v2
-  [*] --> Draft
-  Draft --> Funded: client funds escrow (ERC20)
-  Funded --> InProgress: work begins / milestones created
-  InProgress --> ReadyForRelease: milestone marked complete
-  ReadyForRelease --> Released: Multi-sig >= threshold OR Oracle condition true
-  InProgress --> Cancelled: cancellable && client cancels before start
-  Funded --> Refunded: cancellable && cancellation before start
-  Released --> [*]
-  Cancelled --> [*]
-  Refunded --> [*]
-```
+![Life Cycle Overview](./assets/multi-sig-life-cycle.svg "Life Cycle Overview")
 
 
 ### Example (2-of-3 model)
@@ -99,61 +49,14 @@ stateDiagram-v2
 - Optional integration with **Gnosis Safe modules** for institutional use.
 
 ### Actors & Threshold (2-of-3)
-<!-- ![Actors and Threshold](./assets/multi-sig-actors.svg "Actors & Threshold (2-of-3)") -->
-```mermaid
-classDiagram
-  class Escrow {
-    +client: address
-    +freelancer: address
-    +arbiter: address
-    +threshold: uint8
-    +approvals: mapping(address=>bool)
-    +releaseFunds()
-  }
-  class Wallet{
-    +sign(message)
-  }
-  Wallet <|-- ClientWallet
-  Wallet <|-- FreelancerWallet
-  Wallet <|-- ArbiterWallet
-```
+![Actors and Threshold](./assets/multi-sig-actors.svg "Actors & Threshold (2-of-3)")
 
 
 #### Sequence Flow (Signature Collection (EIP-712))
-<!-- ![Sequence flow](./assets/multi-sig-sequence-flow.svg "Signature Collection (EIP-712)") -->
-```mermaid
-sequenceDiagram
-  participant C as Client Wallet
-  participant F as Freelancer Wallet
-  participant A as Arbiter Wallet (optional)
-  participant UI as SynLedger UI/API
-  participant ESC as Escrow Contract
-
-  Note over UI,ESC: Milestone is ReadyForRelease
-  C->>UI: Sign EIP-712 approval
-  UI->>ESC: submitApproval(sig_C)
-  ESC-->>UI: record approval (C=true)
-  F->>UI: Sign EIP-712 approval
-  UI->>ESC: submitApproval(sig_F)
-  ESC-->>UI: record approval (F=true)
-  alt approvals >= threshold (e.g., 2 of 3)
-    UI->>ESC: releaseFunds(milestoneId)
-    ESC-->>UI: transfer to Freelancer
-  else not enough approvals
-    ESC-->>UI: revert("Not enough approvals")
-  end
-```
+![Sequence flow](./assets/multi-sig-sequence-flow.svg "Signature Collection (EIP-712)")
 
 #### Decision Logic
-<!-- ![Decision Logic](./assets/multi-sig-decision-logic.svg "Decision Logic") -->
-```mermaid
-flowchart TD
-  S((Start)) --> Q{Approvals >= threshold?}
-  Q -- "Yes" --> R["releaseFunds()"]
-  R --> E((End))
-  Q -- "No" --> W["Wait/collect more signatures"]
-  W --> Q
-```
+![Decision Logic](./assets/multi-sig-decision-logic.svg "Decision Logic")
 ---
 
 
@@ -165,56 +68,14 @@ Auto-release means funds are released **automatically** when the oracle confirms
 
 
 #### Auto-Release with Oracles
-<!-- ![Auto trigger](./assets/multi-sig-auto-trigger.svg "Auto-Release with Oracles") -->
-```mermaid
-flowchart LR
-  subgraph Triggers
-    GH["GitHub milestone complete"]
-    CO["Courier delivery confirmed"]
-    TM["Time lock: block.timestamp > unlock"]
-    SLA["Uptime >= SLA target"]
-  end
-  GH --> O["Oracle"]
-  CO --> O
-  TM --> O
-  SLA --> O
-  O -->|"postCondition()/report"| OC["Oracle Consumer Module"]
-  OC -->|"conditionMet()"| ESC["Escrow Contract"]
-  ESC -->|"releaseFunds()"| PAY["Funds to Freelancer"]
-```
+![Auto trigger](./assets/multi-sig-auto-trigger.svg "Auto-Release with Oracles")
 
 #### Release Sequence
-<!-- ![Release Sequence](./assets/multi-sig-auto-release-sequence.svg "Release Sequence") -->
-```mermaid
-sequenceDiagram
-  participant S as External System/API
-  participant OR as Oracle Node/Network
-  participant OC as Oracle Consumer (on-chain)
-  participant ESC as Escrow Contract
+![Release Sequence](./assets/multi-sig-auto-release-sequence.svg "Release Sequence")
 
-  S->>OR: Event/Reading (e.g., "milestone complete")
-  OR->>OC: postCondition(data, proof/signature)
-  OC->>ESC: assert conditionMet(data)
-  alt valid & authorized
-    ESC->>ESC: releaseFunds()
-  else invalid/unauthorized
-    ESC-->>OC: revert("Condition not met")
-  end
-```
 
 #### Authorization & Validation
-<!-- ![Authorization & Validation](./assets/multi-sig-authorization.svg "Authorization & Validation") -->
-```mermaid
-flowchart TD
-  S((Start)) --> A{msg.sender == oracleAddress?}
-  A -- "No" --> X["revert(Unauthorized oracle)"]
-  A -- "Yes" --> B{validateProof-data}
-  B -- "Fail" --> Y["revert(Invalid proof)"]
-  B -- "Pass" --> C{ conditionMet-data? }
-  C -- "No" --> Z["revert(Condition not met)"]
-  C -- "Yes" --> R["releaseFunds()"]
-  R --> E((End))
-```
+![Authorization & Validation](./assets/multi-sig-authorization.svg "Authorization & Validation")
 
 ### Use Case Examples
 
@@ -240,21 +101,7 @@ flowchart TD
 
 ## 3. Hybrid Mode (Oracle Trigger + Multi-Sig Fallback)
 #### Authorization & Validation
-<!-- ![Hybrid Mode](./assets/multi-sig-hybrid.svg "Hybrid Mode") -->
-```mermaid
-stateDiagram-v2
-  [*] --> AwaitingTrigger
-  AwaitingTrigger --> OracleTriggered: Oracle condition true
-  OracleTriggered --> Released: releaseFunds()
-  AwaitingTrigger --> ManualPath: Oracle timeout or disputed signal
-  ManualPath --> CollectingApprovals: gather EIP-712 signatures
-  CollectingApprovals --> Released: approvals >= threshold
-  CollectingApprovals --> Dispute: threshold not met + time elapsed
-  Dispute --> ArbitrationOutcome: arbiter decides
-  ArbitrationOutcome --> Released: releaseFunds()
-  ArbitrationOutcome --> Refunded: refund client
-```
-
+![Hybrid Mode](./assets/multi-sig-hybrid.svg "Hybrid Mode")
 
 ## 🧠 Why SynLedger Supports Both
 
@@ -272,36 +119,10 @@ This dual approach means SynLedger can fit:
 - fully automated smart contract workflows.
 
 #### Why Support Both
-<!-- ![Why Support Both](./assets/multi-sig-why-hybrid.svg "Why Support Both") -->
-```mermaid
-journey
-  title Choosing Release Mode
-  section Human-Verified Work
-    Freelance engagement: 4: Client
-    Needs consensus on quality: 4: Freelancer
-    Optional neutral arbiter: 3: Arbiter
-  section Automated Conditions
-    On-chain bounties: 4: Protocol
-    SLA / uptime payments: 5: DevOps/Infra
-    Delivery confirmations: 4: Commerce
-```
+![Why Support Both](./assets/multi-sig-why-hybrid.svg "Why Support Both")
 
 #### Security & Safeguards (Both Modes)
-<!-- ![Security & Safeguards (Both Modes)](./assets/multi-sig-hybrid-safeguard.svg "Security & Safeguards (Both Modes)") -->
-```mermaid
-flowchart LR
-  I((Initiate Release)) --> A{Mode == MULTISIG?}
-  A -- "Yes" --> M["Check approvals >= threshold"]
-  M -->|"No"| W["Wait/collect signatures"]
-  M -->|"Yes"| RF["releaseFunds()"]
-  A -- "No" --> O["Oracle path: sender==oracleAddress"]
-  O -->|"No"| U["revert Unauthorized"]
-  O -->|"Yes"| V["validate proof + conditionMet()"]
-  V -->|"Fail"| R1["revert"]
-  V -->|"Pass"| RF
-  RF --> EVT["Emit events + update state"]
-  EVT --> DONE((Complete))
-```
+![Security & Safeguards (Both Modes)](./assets/multi-sig-hybrid-safeguard.svg "Security & Safeguards (Both Modes)")
 
 ---
 
